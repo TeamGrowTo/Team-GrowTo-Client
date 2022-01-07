@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "styled-components";
 
 import { GlobalStyle } from "../styles/GlobalStyles";
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
     </ThemeProvider>
   );
 }
