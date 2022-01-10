@@ -1,6 +1,7 @@
-import { MainBannerIcon } from "public/assets/icons";
 import React from "react";
 import { StyledRoot, TitleWrapper, IconWrapper } from "./style";
+import { MainBannerCompass } from "public/assets/images";
+import Image from "next/image";
 
 const MainBanner = () => {
   return (
@@ -10,7 +11,7 @@ const MainBanner = () => {
         <h2>광고 없는 정직한 IT강의 비교 서비스, 그로투</h2>
       </TitleWrapper>
       <IconWrapper>
-        <MainBannerIcon />
+        <Image src={MainBannerCompass} alt="bannerImg" />
       </IconWrapper>
     </StyledRoot>
   );
