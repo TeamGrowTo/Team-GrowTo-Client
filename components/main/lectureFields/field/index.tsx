@@ -1,7 +1,12 @@
 import React from "react";
+import { StyledRoot } from "./style";
 
-const index = () => {
-  return <div></div>;
+interface Prop {
+  children: string;
+}
+
+const Field = ({ children }: Prop) => {
+  return <StyledRoot>{children}</StyledRoot>;
 };
 
-export default index;
+export default Field;
