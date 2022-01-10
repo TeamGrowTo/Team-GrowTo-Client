@@ -16,6 +16,10 @@ module.exports = {
       assets: path.resolve(__dirname, "public/assets"),
       apis: path.resolve(__dirname, "pages/apis"),
     };
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
 
     return config;
   },

@@ -23,7 +23,7 @@
       "types/*": ["types/*"],
       "types": ["types"],
       "pages/*": ["pages/*"],
-      "assets/*": ["assets/*"],
+      "assets/*": ["public/assets/*"],
       "apis/*": ["pages/apis/*"],
     }
   },
