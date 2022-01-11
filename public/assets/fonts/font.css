@@ -1,0 +1,36 @@
+/* 
+  src: 사용할 폰트의 위치 및 형식 
+    Modern Browsers => woff2
+    IE => woff
+*/
+
+/* 폰트 적용할 때 fallback폰트도 같이 써주기 */
+/* font-family:Pretendard-???, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; */
+
+@font-face {
+  font-family: "Pretendard-Light";
+  font-display: fallback;
+  src: 
+    local("Pretendard-Light"),
+    url("./Pretendard-Light.subset.woff2") format("woff2"),
+    url("./Pretendard-Light.subset.woff") format("woff"),
+    url("./Pretendard-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  font-display: fallback;
+  src: 
+    local("Pretendard-Regular"),
+    url("./Pretendard-Regular.subset.woff2") format("woff2"),
+    url("./Pretendard-Regular.subset.woff") format("woff"),
+    url("./Pretendard-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: 
+    local("Pretendard-Bold"),
+    url("./Pretendard-Bold.subset.woff2") format("woff2"),
+    url("./Pretendard-Bold.subset.woff") format("woff"),
+    url("./Pretendard-Bold.ttf") format("ttf");
+}
