@@ -57,7 +57,6 @@
 ┃ ┣ 📂apis<br />
 ┃ ┣ 📂category<br />
 ┃ ┣ 📂choice<br />
-┃ ┣ 📂result<br />
 ┃ ┣ 📂process<br />
 ┃ ┣ 📂result<br />
 ┃ ┣ 📜index.tsx<br />
