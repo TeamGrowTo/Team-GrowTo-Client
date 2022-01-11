@@ -1,7 +1,17 @@
 import React from "react";
-import Link from "next/link";
 import { StyledRoot, Container, StoryLink, Slogan, Share, ShareButton } from "./style";
 function MainShare() {
+  const shareUrl = async () => {
+    const el = document.createElement("input");
+    el.value = window.location.href;
+    try {
+      await navigator.clipboard.writeText(`${el.value}`);
+      alert(`${el.value}을 클립보드에 복사했습니다.`);
+    } catch {
+      alert(`복사 실패!`);
+    }
+  };
+
   return (
     <StyledRoot>
       <Container>
@@ -17,7 +27,7 @@ function MainShare() {
           <p>
             <span>그로투</span>가 필요한 친구에게
           </p>
-          <ShareButton>공유하기</ShareButton>
+          <ShareButton onClick={shareUrl}>공유하기</ShareButton>
         </Share>
       </Container>
     </StyledRoot>
