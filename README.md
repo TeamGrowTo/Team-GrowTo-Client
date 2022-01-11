@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Group 205@3x 1](https://user-images.githubusercontent.com/60960130/148967729-538fbb0d-045f-4cc3-a175-e8bb5f5e547f.png)
 
-## Getting Started
 
-First, run the development server:
+## Grow to
 
-```bash
-npm run dev
-# or
-yarn dev
+맛있는 음식과 좋은 옷 대신 ‘성장’을 택한 사람들이 더 쉽게 자신에게 맞는 강의를 찾으면 좋겠어요
+
+광고 없는 정직한 IT강의 비교 서비스, 그로투
+
+## 기술 스택
+
+| HTML | CSS | React | Typescript | Next.js |
+| --- | --- | --- | --- | --- |
+| Recoil | Eslint | prettier | axios | styled-components |
+
 ```
+"dependencies": {
+    "@types/styled-components": "^5.1.19",
+    "axios": "^0.24.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "recoil": "^0.5.2",
+    "styled-components": "^5.3.3",
+    "styled-reset": "^4.3.4"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.1.2",
+    "@types/node": "17.0.8",
+    "@types/react": "17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "babel-plugin-styled-components": "^2.0.2",
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "4.5.4"
+  }
+```
+## 폴더 구조
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+📦Team-GrowTo-Client <br />
+┣ 📂components <br />
+┣ 📂common <br />
+┃ ┗ 📜Layout.tsx <br />
+┣ 📂libs<br />
+┃ ┗ 📜axios.ts<br />
+┣ 📂pages<br />
+┃ ┣ 📂apis<br />
+┃ ┣ 📂category<br />
+┃ ┣ 📂choice<br />
+┃ ┣ 📂choiceRequest<br />
+┃ ┣ 📂process<br />
+┃ ┣ 📂result<br />
+┃ ┣ 📜index.tsx<br />
+┃ ┣ 📜_app.tsx<br />
+┃ ┗ 📜_document.tsx<br />
+┣ 📂public<br />
+┃ ┣ 📂assets<br />
+┃ ┃ ┣ 📂fonts<br />
+┃ ┃ ┃ ┗ 📜font.css<br />
+┃ ┃ ┣ 📂icons<br />
+┃ ┗ ┗ 📂images<br />
+┣ 📂styles<br />
+┃ ┣ 📜colors.ts<br />
+┃ ┣ 📜GlobalStyles.ts<br />
+┃ ┗ 📜theme.ts<br />
+┣ 📂types<br />
+┃ ┗ 📜index.ts<br />
+┣ 📜.babelrc<br />
+┣ 📜.eslintrc.json<br />
+┣ 📜.gitignore<br />
+┣ 📜.prettierrc.json<br />
+┣ 📜next-env.d.ts<br />
+┣ 📜next.config.js<br />
+┣ 📜package-lock.json<br />
+┣ 📜package.json<br />
+┣ 📜README.md<br />
+┗ 📜tsconfig.json<br />
