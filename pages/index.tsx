@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import Test from "components/common/Test";
+import MainReport from "components/main/MainReport";
 const Home: NextPage = () => {
   return (
     <div>
-      hello<Test></Test>
+      <MainReport />
     </div>
   );
 };
