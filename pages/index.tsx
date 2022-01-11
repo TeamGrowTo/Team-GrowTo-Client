@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Test from "components/common/Test";
+import MainShare from "components/main/MainShare";
 const Home: NextPage = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
         }
       `}
       </style>
+      <MainShare />
     </>
   );
 };
