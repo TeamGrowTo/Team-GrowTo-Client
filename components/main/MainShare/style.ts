@@ -5,6 +5,7 @@ export const StyledRoot = styled.section`
   width: 100%;
   height: 80rem;
   background: ${colors.gray4};
+  font-family: "Pretendard-Regular";
 `;
 
 export const Container = styled.div`
