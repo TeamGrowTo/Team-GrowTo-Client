@@ -8,11 +8,6 @@ const StyledRoot = styled.div`
   margin: 0 6rem 2.3rem;
 `;
 
-const Icon = styled.img`
-  width: 9.7rem;
-  height: 9.7rem;
-`;
-
 const TitleWrapper = styled.div`
   width: 17rem;
   height: 5.2rem;
@@ -49,4 +44,4 @@ const Unit = styled.span`
   /*세미볼드로 설정 바꿔주기 */
 `;
 
-export { Count, Data, Icon, StyledRoot, Title, TitleWrapper, Unit };
+export { Count, Data, StyledRoot, Title, TitleWrapper, Unit };

@@ -1,28 +1,26 @@
-import { Count, Data, Icon, StyledRoot, Title, TitleWrapper, Unit } from "./style";
+import { Count, Data, StyledRoot, Title, TitleWrapper, Unit } from "./style";
 //props의 타입 정의
 interface IProps {
   reportInfo: {
-    reportIcon: object;
-    reportTitle: string;
-    reportCount: number;
-    reportUnit: string;
+    Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    title: string;
+    count: number;
+    unit: string;
   };
 }
 
 export default function ReportSection({ reportInfo }: IProps) {
-  const { reportIcon, reportTitle, reportCount, reportUnit } = reportInfo;
-
-  console.log({ reportIcon });
+  const { Icon, title, count, unit } = reportInfo;
 
   return (
     <StyledRoot>
-      <Icon src={reportIcon} />
+      <Icon />
       <TitleWrapper>
-        <Title>{reportTitle}</Title>
+        <Title>{title}</Title>
       </TitleWrapper>
       <Data>
-        <Count>{reportCount}</Count>
-        <Unit>{reportUnit}</Unit>
+        <Count>{count}</Count>
+        <Unit>{unit}</Unit>
       </Data>
     </StyledRoot>
   );

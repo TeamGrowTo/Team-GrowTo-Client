@@ -6,25 +6,23 @@ import { Line, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
   const TotalCompare = {
-    reportIcon: ReportIcon,
-    reportTitle: "총 비교 강의",
-    reportCount: 250,
-    reportUnit: "개",
+    Icon: ReportIcon,
+    title: "총 비교 강의",
+    count: 250,
+    unit: "개",
   };
   const CustomSearch = {
-    reportIcon: ReportIcon,
-    reportTitle: "맞춤 강의 찾기",
-    reportCount: 3500,
-    reportUnit: "회",
+    Icon: ReportIcon,
+    title: "맞춤 강의 찾기",
+    count: 3500,
+    unit: "회",
   };
   const RequestCompare = {
-    reportIcon: ReportIcon,
-    reportTitle: "비교 요청",
-    reportCount: 99,
-    reportUnit: "건",
+    Icon: ReportIcon,
+    title: "비교 요청",
+    count: 99,
+    unit: "건",
   };
-
-  console.log(ReportIcon);
 
   return (
     <StyledRoot>
