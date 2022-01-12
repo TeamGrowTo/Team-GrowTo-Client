@@ -49,4 +49,4 @@ const Unit = styled.span`
   /*세미볼드로 설정 바꿔주기 */
 `;
 
-export { StyledRoot, Icon, TitleWrapper, Title, Data, Count, Unit };
+export { Count, Data, Icon, StyledRoot, Title, TitleWrapper, Unit };

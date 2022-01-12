@@ -1,9 +1,8 @@
-import { SVGProps } from "react";
-import { StyledRoot, Icon, TitleWrapper, Title, Data, Count, Unit } from "./style";
+import { Count, Data, Icon, StyledRoot, Title, TitleWrapper, Unit } from "./style";
 //props의 타입 정의
 interface IProps {
   reportInfo: {
-    reportIcon: string;
+    reportIcon: object;
     reportTitle: string;
     reportCount: number;
     reportUnit: string;
@@ -13,9 +12,11 @@ interface IProps {
 export default function ReportSection({ reportInfo }: IProps) {
   const { reportIcon, reportTitle, reportCount, reportUnit } = reportInfo;
 
+  console.log({ reportIcon });
+
   return (
     <StyledRoot>
-      <Icon src={reportIcon} alt="" />
+      <Icon src={reportIcon} />
       <TitleWrapper>
         <Title>{reportTitle}</Title>
       </TitleWrapper>

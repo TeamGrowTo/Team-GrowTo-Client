@@ -1,11 +1,12 @@
+import ReportIcon from "public/assets/icons/reportIcon.svg";
 import React from "react";
-import { StyledRoot, Wrapper, Line } from "./style";
+
 import ReportSection from "./ReportSection";
-import { ReportIcon } from "public/assets/icons";
+import { Line, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
   const TotalCompare = {
-    reportIcon: `${ReportIcon}`,
+    reportIcon: ReportIcon,
     reportTitle: "총 비교 강의",
     reportCount: 250,
     reportUnit: "개",
@@ -22,6 +23,8 @@ export default function MainReport() {
     reportCount: 99,
     reportUnit: "건",
   };
+
+  console.log(ReportIcon);
 
   return (
     <StyledRoot>

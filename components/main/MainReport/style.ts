@@ -1,6 +1,6 @@
+import { ReportLine } from "public/assets/icons";
 import styled from "styled-components";
 import { colors } from "styles/color";
-import { ReportLine } from "public/assets/icons";
 
 const StyledRoot = styled.div`
   box-sizing: border-box;
@@ -15,9 +15,11 @@ const StyledRoot = styled.div`
 const Wrapper = styled.div`
   width: 98rem;
   height: 40rem;
-  background-color: ${colors.gray1};
-
+  background: ${colors.gray1};
+  opacity: 0.8;
+  /* backdrop-filter: blur(10rem); */
   /*블러처리 어떻게 해*/
+  border: 0.2rem solid #ffffff;
   border-radius: 3rem;
   display: flex;
   justify-content: center;
@@ -29,4 +31,4 @@ const Line = styled(ReportLine)`
   margin-top: 1.4rem;
 `;
 
-export { StyledRoot, Wrapper, Line };
+export { Line, StyledRoot, Wrapper };
