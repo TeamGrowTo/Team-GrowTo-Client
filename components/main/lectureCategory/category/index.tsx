@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+
 import { StyledRoot } from "./style";
 
 interface Prop {
@@ -9,9 +10,7 @@ interface Prop {
 const Category = ({ children }: Prop) => {
   return (
     <StyledRoot>
-      <Link href="/category">
-        <a>{children}</a>
-      </Link>
+      <Link href="/category">{children}</Link>
     </StyledRoot>
   );
 };

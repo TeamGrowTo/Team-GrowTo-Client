@@ -1,4 +1,8 @@
-import React from "react";
+// import { getLectureCategoryData } from "pages/apis/info.api";
+// import React, { useEffect } from "react";
+// import { useRecoilState } from "recoil";
+// import { lectureCategoryState } from "store/state";
+
 import Category from "./category";
 import { CategoryWrapper, StyledRoot } from "./style";
 
@@ -12,6 +16,12 @@ const dummy = [
 ];
 
 const MainLectureCategory = () => {
+  // const [category, setCategory] = useRecoilState(lectureCategoryState);
+
+  // useEffect(() => {
+  //   setCategory(getLectureCategoryData);
+  // }, []);
+
   return (
     <StyledRoot>
       <h3>내가 찾고 싶은 강의 분야는?</h3>

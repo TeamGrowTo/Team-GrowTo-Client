@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
   display: flex;
@@ -10,16 +11,17 @@ const StyledRoot = styled.div`
   margin-bottom: 13.9rem;
   & > h3 {
     font-size: 3.8rem;
-    font-weight: bold;
     line-height: 4.6rem;
     margin-bottom: 1rem;
+    font-family: "Pretendard-Bold";
+    color: ${colors.subBlack};
   }
   & > small {
     font-size: 1.8rem;
-    color: #868686;
+    color: ${colors.gray5};
     margin-bottom: 5.6rem;
     line-height: 2.2rem;
-    //나중에 {--gray4}로 바꾸기
+    font-family: "Pretendard-Regular";
   }
 `;
 
@@ -27,6 +29,8 @@ const CategoryWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 71.2rem;
+  flex-wrap: wrap;
+  /* font-family: "Pretendard-Medium"; */
 `;
 
-export { StyledRoot, CategoryWrapper };
+export { CategoryWrapper, StyledRoot };
