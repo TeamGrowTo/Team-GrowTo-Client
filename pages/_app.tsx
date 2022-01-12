@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "styled-components";
+import "public/assets/fonts/font.css";
 
 import Layout from "../components/common/Layout";
 import { GlobalStyle } from "../styles/GlobalStyles";

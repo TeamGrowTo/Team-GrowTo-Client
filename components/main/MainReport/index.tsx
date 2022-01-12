@@ -1,6 +1,5 @@
 import React from "react";
-import { ReportLine } from "public/assets/icons";
-import { StyledRoot, Wrapper } from "./style";
+import { StyledRoot, Wrapper, Line } from "./style";
 import ReportSection from "./ReportSection";
 import { ReportIcon } from "public/assets/icons";
 
@@ -28,9 +27,9 @@ export default function MainReport() {
     <StyledRoot>
       <Wrapper>
         <ReportSection reportInfo={TotalCompare} />
-        <ReportLine />
+        <Line />
         <ReportSection reportInfo={CustomSearch} />
-        <ReportLine />
+        <Line />
         <ReportSection reportInfo={RequestCompare} />
       </Wrapper>
     </StyledRoot>

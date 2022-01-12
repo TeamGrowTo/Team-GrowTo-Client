@@ -5,6 +5,7 @@ const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 6rem 2.3rem;
 `;
 
 const Icon = styled.img`
@@ -26,18 +27,26 @@ const TitleWrapper = styled.div`
 
 const Title = styled.p`
   font-size: 2rem;
+  font-family: "Pretendard-Light";
 `;
 
 const Data = styled.div`
   color: ${colors.mainBlue};
+  display: flex;
+  align-items: center;
 `;
 
 const Count = styled.span`
   font-size: 4.4rem;
+  font-family: "Pretendard-Bold";
+  letter-spacing: -0.1rem;
+  margin-right: 0.6rem;
 `;
 
 const Unit = styled.span`
   font-size: 3rem;
+  font-family: "Pretendard-Bold";
+  /*세미볼드로 설정 바꿔주기 */
 `;
 
 export { StyledRoot, Icon, TitleWrapper, Title, Data, Count, Unit };
