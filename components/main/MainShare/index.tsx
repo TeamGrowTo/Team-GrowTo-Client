@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { StyledRoot, Container, StoryLink, Slogan, Share, ShareButton } from "./style";
 function MainShare() {
@@ -15,7 +16,10 @@ function MainShare() {
   return (
     <StyledRoot>
       <Container>
-        <StoryLink>Growto 스토리 보러가기 &gt; </StoryLink>
+        <Link href="/">
+          <StoryLink>Growto 스토리 보러가기 &gt; </StoryLink>
+        </Link>
+
         <Slogan>
           <p>
             맛있는 음식과 좋은 옷 대신 <span>‘성장’</span>을 택한 사람들이 <br />더 쉽게 자신에게

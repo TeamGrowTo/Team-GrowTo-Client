@@ -19,6 +19,9 @@ export const StoryLink = styled.div`
   margin-top: 9.1rem;
   text-align: right;
   color: white;
+  :hover {
+    cursor: pointer;
+  }
 `;
 export const Slogan = styled.div`
   display: flex;
