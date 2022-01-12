@@ -8,7 +8,7 @@ export const StyledRoot = styled.section`
   font-family: "Pretendard-Regular";
 `;
 
-export const Box = styled.div`
+export const ShareBox = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -46,7 +46,7 @@ export const Slogan = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { StyledRoot, Box, StoryLink, Slogan, Wrapper, ShareButton } from "./style";
+import { StyledRoot, ShareBox, StoryLink, Slogan, ButtonWrapper, ShareButton } from "./style";
 import ShareModal from "components/main/ShareModal";
 
 function Share() {
@@ -18,7 +18,7 @@ function Share() {
 
   return (
     <StyledRoot>
-      <Box>
+      <ShareBox>
         <Link href="/">
           <StoryLink>Growto 스토리 보러가기 &gt; </StoryLink>
         </Link>
@@ -29,13 +29,13 @@ function Share() {
           </p>
           <p>- 그로투 팀원 일동 -</p>
         </Slogan>
-        <Wrapper>
+        <ButtonWrapper>
           <p>
             <span>그로투</span>가 필요한 친구에게
           </p>
           <ShareButton onClick={shareUrl}>공유하기</ShareButton>
-        </Wrapper>
-      </Box>
+        </ButtonWrapper>
+      </ShareBox>
       <ShareModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </StyledRoot>
   );
