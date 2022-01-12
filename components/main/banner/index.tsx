@@ -1,9 +1,10 @@
-import React from "react";
-import { StyledRoot, TitleWrapper, IconWrapper } from "./style";
-import { MainBannerCompass } from "public/assets/images";
 import Image from "next/image";
+import { MainBannerCompass } from "public/assets/images";
+import React from "react";
 
-const MainBanner = () => {
+import { IconWrapper, StyledRoot, TitleWrapper } from "./style";
+
+const Banner = () => {
   return (
     <StyledRoot>
       <TitleWrapper>
@@ -17,4 +18,4 @@ const MainBanner = () => {
   );
 };
 
-export default MainBanner;
+export default Banner;

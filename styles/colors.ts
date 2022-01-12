@@ -1,5 +1,6 @@
 export const colors = {
   mainBlue: "#4579FF",
+  white: "#ffffff",
   subOrange: "#FF8C21",
   subBlack: "#353535",
   gray1: "#F5F5F5",
