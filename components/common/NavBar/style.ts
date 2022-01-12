@@ -35,7 +35,7 @@ const NavItem = styled.a`
   color: #606060;
   `;
 
-const LogoWrapper = styled.div`
+const LogoWrapper = styled.a`
   margin-right: 10.4rem;
   cursor: pointer;
 `;

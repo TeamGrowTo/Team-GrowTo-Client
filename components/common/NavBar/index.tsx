@@ -1,13 +1,14 @@
-import React from 'react';
-import { LogoIcon } from 'public/assets/icons';
-import Link from 'next/link';
-import { StyledRoot, LogoWrapper, NavItem, NavItemBox, NavItemWrapper } from "./style";
+import Link from "next/link";
+import { LogoIcon } from "public/assets/icons";
+import React from "react";
+
+import { LogoWrapper, NavItem, NavItemBox, NavItemWrapper, StyledRoot } from "./style";
 
 function NavBar() {
   return (
     <StyledRoot>
       <NavItemBox>
-        <Link href="/">
+        <Link href="/" passHref>
           <LogoWrapper>
             <LogoIcon />
           </LogoWrapper>
@@ -25,7 +26,7 @@ function NavBar() {
         </NavItemWrapper>
       </NavItemBox>
     </StyledRoot>
-  )
+  );
 }
 
 export default NavBar;
