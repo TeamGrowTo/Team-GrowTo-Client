@@ -7,9 +7,11 @@ function Navbar() {
   return (
     <StyledRoot>
       <NavItemBox>
-        <div>
-          <LogoIcon />
-        </div>
+        <Link href="/">
+          <LogoWrapper>
+            <LogoIcon />
+          </LogoWrapper>
+        </Link>
         <NavItemWrapper>
           <Link href="/category" passHref>
             <NavItem>전체강의</NavItem>
@@ -32,6 +34,7 @@ const StyledRoot = styled.nav`
   width: 100%;
   height: 11.6rem;
   padding: 0 2.5rem;
+  min-width: 55rem;
 
   display: flex;
   align-items: center;
@@ -44,14 +47,14 @@ const StyledRoot = styled.nav`
 const NavItemBox = styled.div`
   width: 100%;
   max-width: 128rem;
+  min-width: 54rem;
   display: flex;
 `;
 
 const NavItemWrapper = styled.div`
-  margin-left: 10.4rem;
   display: flex;
   align-items: center;
-  min-width: 48rem;
+  min-width: 33rem;
 `;
 
 const NavItem = styled.a`
@@ -62,3 +65,8 @@ const NavItem = styled.a`
   letter-spacing: -0.05em;
   color: #606060;
   `;
+
+const LogoWrapper = styled.div`
+  margin-right: 10.4rem;
+  cursor: pointer;
+`;
