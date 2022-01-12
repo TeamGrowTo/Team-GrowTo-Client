@@ -1,11 +1,23 @@
 import styled from "styled-components";
+import { colors } from "styles/color";
 
-const Wrapper = styled.div``;
+const StyledRoot = styled.div`
+  width: 100%;
+  height: 58rem;
+  background-color: ${colors.mainBlue};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-const TotalCompare = styled.div``;
+const Wrapper = styled.div`
+  width: 98rem;
+  height: 40rem;
+  background-color: ${colors.gray1};
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-const CustomSearch = styled.div``;
-
-const RequestCompare = styled.div``;
-
-export { Wrapper, TotalCompare, CustomSearch, RequestCompare };
+export { StyledRoot, Wrapper };
