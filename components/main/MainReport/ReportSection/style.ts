@@ -11,6 +11,10 @@ const Icon = styled.img`
 const TitleWrapper = styled.div`
   width: 17rem;
   height: 5.2rem;
+  border: 0.1rem solid ${colors.gray4};
+  border-radius: 3.9rem;
+  margin-top: 1.9rem;
+  margin-bottom: 2.4rem;
 `;
 
 const Title = styled.p`
