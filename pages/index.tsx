@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Test from "components/common/Test";
 import Share from "components/main/Share";
+import { EmailIcon } from "public/assets/icons";
 const Home: NextPage = () => {
   return (
     <>

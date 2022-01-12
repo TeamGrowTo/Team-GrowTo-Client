@@ -1,13 +1,16 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { StyledRoot, Box, StoryLink, Slogan, Wrapper, ShareButton } from "./style";
+import ShareModal from "components/main/ShareModal";
+
 function Share() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const shareUrl = async () => {
     const el = document.createElement("input");
     el.value = window.location.href;
     try {
       await navigator.clipboard.writeText(`${el.value}`);
-      alert(`${el.value}을 클립보드에 복사했습니다.`);
+      setIsModalOpen(true);
     } catch {
       alert(`복사 실패!`);
     }
@@ -33,6 +36,7 @@ function Share() {
           <ShareButton onClick={shareUrl}>공유하기</ShareButton>
         </Wrapper>
       </Box>
+      <ShareModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </StyledRoot>
   );
 }
