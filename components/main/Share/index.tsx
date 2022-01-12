@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { StyledRoot, Container, StoryLink, Slogan, Share, ShareButton } from "./style";
-function MainShare() {
+import { StyledRoot, Box, StoryLink, Slogan, Wrapper, ShareButton } from "./style";
+function Share() {
   const shareUrl = async () => {
     const el = document.createElement("input");
     el.value = window.location.href;
@@ -15,11 +15,10 @@ function MainShare() {
 
   return (
     <StyledRoot>
-      <Container>
+      <Box>
         <Link href="/">
           <StoryLink>Growto 스토리 보러가기 &gt; </StoryLink>
         </Link>
-
         <Slogan>
           <p>
             맛있는 음식과 좋은 옷 대신 <span>‘성장’</span>을 택한 사람들이 <br />더 쉽게 자신에게
@@ -27,15 +26,15 @@ function MainShare() {
           </p>
           <p>- 그로투 팀원 일동 -</p>
         </Slogan>
-        <Share>
+        <Wrapper>
           <p>
             <span>그로투</span>가 필요한 친구에게
           </p>
           <ShareButton onClick={shareUrl}>공유하기</ShareButton>
-        </Share>
-      </Container>
+        </Wrapper>
+      </Box>
     </StyledRoot>
   );
 }
 
-export default MainShare;
+export default Share;
