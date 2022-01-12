@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { colors } from "styles/color";
 
-const StyledRoot = styled.div``;
+const StyledRoot = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Icon = styled.img`
   width: 9.7rem;
@@ -15,6 +19,9 @@ const TitleWrapper = styled.div`
   border-radius: 3.9rem;
   margin-top: 1.9rem;
   margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.p`

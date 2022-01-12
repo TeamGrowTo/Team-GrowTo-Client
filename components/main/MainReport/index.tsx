@@ -6,7 +6,7 @@ import { ReportIcon } from "public/assets/icons";
 
 export default function MainReport() {
   const TotalCompare = {
-    reportIcon: { ReportIcon },
+    reportIcon: `${ReportIcon}`,
     reportTitle: "총 비교 강의",
     reportCount: 250,
     reportUnit: "개",
