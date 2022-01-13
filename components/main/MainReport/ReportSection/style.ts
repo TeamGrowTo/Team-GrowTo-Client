@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/color";
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
