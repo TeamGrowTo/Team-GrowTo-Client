@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BackGround, StyledRoot, Wrapper } from "./style";
+import { BackGround, Wrapper } from "./style";
 
 interface IProps {
   isModalOpen: boolean;
@@ -9,15 +9,16 @@ interface IProps {
 function ShareModal({ isModalOpen, setIsModalOpen }: IProps) {
   const handleClose = (): void => {
     setIsModalOpen(false);
+    document.body.style.overflow = "unset";
   };
 
   return isModalOpen ? (
-    <StyledRoot>
+    <>
       <BackGround isBlur={true} onClick={handleClose}></BackGround>
       <Wrapper>
         <p>링크가 복사되었습니다!</p>
       </Wrapper>
-    </StyledRoot>
+    </>
   ) : (
     <></>
   );

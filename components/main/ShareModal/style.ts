@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const StyledRoot = styled.div`
-  position: absolute;
-  z-index: 100;
-`;
 export const BackGround = styled.div<{ isBlur: boolean }>`
   position: fixed;
   top: 0;
@@ -14,7 +10,7 @@ export const BackGround = styled.div<{ isBlur: boolean }>`
   background-color: ${(props) => (props.isBlur ? "rgba(0,0,0,0.7)" : undefined)};
 `;
 export const Wrapper = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;

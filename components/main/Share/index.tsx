@@ -7,12 +7,11 @@ import { ButtonWrapper, ShareBox, ShareButton, Slogan, StoryLink, StyledRoot } f
 function Share() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const shareUrl = async () => {
-    const el = document.createElement("input");
-
-    el.value = window.location.href;
     try {
-      await navigator.clipboard.writeText(`${el.value}`);
+      //임시 url, 나중에 도메인 링크로 변경 예정
+      await navigator.clipboard.writeText("http://localhost:3000/");
       setIsModalOpen(true);
+      document.body.style.overflow = "hidden";
     } catch {
       alert("복사 실패!");
     }
