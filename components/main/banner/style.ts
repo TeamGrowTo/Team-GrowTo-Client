@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
   width: 100%;
@@ -10,9 +9,11 @@ const StyledRoot = styled.div`
   flex-wrap: wrap;
 `;
 
-const IconWrapper = styled.span`
+const ImageWrapper = styled.span`
   display: flex;
   align-items: end;
+  /* width: 54.5rem;
+  height: 28.9rem; */
 `;
 
 const TitleWrapper = styled.span`
@@ -22,18 +23,18 @@ const TitleWrapper = styled.span`
   flex-direction: column;
   justify-content: center;
   & > h1 {
-    color: ${colors.white};
+    color: white;
     font-size: 5.4rem;
     font-family: "Pretendard-ExtraBold";
     margin-bottom: 2.8rem;
     line-height: 6.8rem;
   }
-  & > h2 {
-    color: ${colors.white};
+  & > p {
+    color: white;
     font-size: 2.2rem;
     line-height: 2.2rem;
     letter-spacing: -0.01em;
   }
 `;
 
-export { IconWrapper, StyledRoot, TitleWrapper };
+export { ImageWrapper, StyledRoot, TitleWrapper };
