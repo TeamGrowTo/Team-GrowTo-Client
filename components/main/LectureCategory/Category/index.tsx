@@ -7,7 +7,7 @@ interface Prop {
   children: string;
 }
 
-const Category = ({ children }: Prop) => {
+const Category = function ({ children }: Prop) {
   return (
     <StyledRoot>
       <Link href="/category">{children}</Link>

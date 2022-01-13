@@ -3,7 +3,7 @@
 // import { useRecoilState } from "recoil";
 // import { lectureCategoryState } from "store/state";
 
-import Category from "./category";
+import Category from "./Category";
 import { CategoryWrapper, StyledRoot } from "./style";
 
 const dummy = [
@@ -15,11 +15,11 @@ const dummy = [
   { id: 6, name: "기타" },
 ];
 
-const MainLectureCategory = () => {
+const MainLectureCategory = function () {
   // const [category, setCategory] = useRecoilState(lectureCategoryState);
 
-  // useEffect(() => {
-  //   setCategory(getLectureCategoryData);
+  // useEffect(async () => {
+  //   setCategory(await getLectureCategoryData);
   // }, []);
 
   return (
