@@ -5,7 +5,9 @@ interface SortingBtnProps {
   value: sortingType;
   children: React.ReactNode;
   dropListName: IDropListName;
+  sortingCriteria: sortingType[];
   isOpen: ISorting;
+  // setIsOpen: React.Dispatch<React.SetStateAction<ISorting>>;
   onClickOpenSorting: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -13,7 +15,9 @@ interface SortingBtnProps {
 function SortingBtn({
   children,
   onClickOpenSorting,
+  // setIsOpen,
   isOpen,
+  sortingCriteria,
   dropListName,
   value,
 }: SortingBtnProps) {
@@ -23,7 +27,7 @@ function SortingBtn({
       {isOpen[value] && (
         <DropDownBox>
           {dropListName[value].map((item) => (
-            <DropDownItem>{item}</DropDownItem>
+            <DropDownItem key={item}>{item}</DropDownItem>
           ))}
         </DropDownBox>
       )}

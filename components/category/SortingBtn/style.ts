@@ -24,7 +24,7 @@ const StyledRoot = styled.button`
   }
 `;
 
-const DropDownBox = styled.div`
+const DropDownBox = styled.ul`
 position: absolute;
 top: 5.4rem;
 left: 0;
@@ -47,7 +47,7 @@ border-radius: 1.2rem;
 }
 `;
 
-const DropDownItem = styled.button`
+const DropDownItem = styled.li`
 display: flex;
 flex-direction: column;
 width: 100%;
