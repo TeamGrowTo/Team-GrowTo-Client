@@ -1,12 +1,13 @@
-import React from 'react'
-import CardBox from '../CardBox'
+import React from "react";
+import CardBox from "../CardBox";
+import { StyledRoot } from "./style";
 
 function CardListContainer() {
   return (
-    <div>
+    <StyledRoot>
       <CardBox />
-    </div>
-  )
+    </StyledRoot>
+  );
 }
 
-export default CardListContainer
+export default CardListContainer;

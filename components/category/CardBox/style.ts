@@ -9,4 +9,6 @@ const StyledRoot = styled.div`
   border-radius: 2.4rem;
 `;
 
+
+
 export { StyledRoot }

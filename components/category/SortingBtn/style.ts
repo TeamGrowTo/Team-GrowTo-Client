@@ -2,24 +2,26 @@ import { colors } from "styles/colors";
 import styled from 'styled-components';
 
 const StyledRoot = styled.button`
-background-color: white;
-position: relative;
-height: 4.8rem;
-padding: 1.6rem 2.7rem;
+  background-color: white;
+  position: relative;
+  height: 4.8rem;
+  padding: 1.6rem 2.7rem;
 
-border: 1px solid #E3E3E3;
-border-radius: 4.8rem;
+  border: 1px solid #E3E3E3;
+  border-radius: 4.8rem;
 
-font-family: "Pretendard-Medium";
-color: ${colors.gray6}
+  font-family: "Pretendard-Medium";
+  color: ${colors.gray6}
+  cursor: pointer;
+  transition: 200ms;
 
-&:active {
-  background-color: ${colors.gray2};
-}
+  &:active {
+    background-color: ${colors.gray2};
+  }
 
-& + & {
-  margin-left: 1.2rem;
-}
+  & + & {
+    margin-left: 1.2rem;
+  }
 `;
 
 const DropDownBox = styled.div`
@@ -61,3 +63,5 @@ color: ${colors.gray6};
   background: ${colors.gray1};
 }
 `;
+
+export {StyledRoot, DropDownBox, DropDownItem};
