@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Bottom, Comment, Id, StyledRoot, Wrapper } from "./style";
+import { Bottom, Comment, Id, StyledRoot } from "./style";
 
 interface IProps {
   review: {
@@ -17,10 +17,8 @@ export default function Review({ review }: IProps) {
     <StyledRoot>
       <Comment>{comment}</Comment>
       <Bottom>
-        <Wrapper>
-          <Profile />
-          <Id>{id}</Id>
-        </Wrapper>
+        <Profile />
+        <Id>{id}</Id>
       </Bottom>
     </StyledRoot>
   );

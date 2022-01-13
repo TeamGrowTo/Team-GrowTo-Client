@@ -4,14 +4,19 @@ const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 94rem;
-  padding-top: 13.6rem;
-  padding-bottom: 16.2rem;
-  display: flex;
-  flex-direction: column;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 `;
 
 const Wrapper = styled.div`
   width: 101.2rem;
+  height: 64rem;
+  margin: 15.4rem 0 16.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Title = styled.div`
@@ -30,6 +35,8 @@ const Title = styled.div`
 
 const ReviewList = styled.div`
   display: flex;
+  flex-flow: row wrap;
+  width: 120rem;
 `;
 
 export { ReviewList, StyledRoot, Title, Wrapper };
