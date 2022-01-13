@@ -46,6 +46,7 @@
 
 @font-face {
   font-family: "Pretendard-SemiBold";
+  font-display: fallback;
   src: 
     local("Pretendard-SemiBold"),
     url("./Pretendard-SemiBold.subset.woff2") format("woff2"),
@@ -54,6 +55,7 @@
 }
 @font-face {
   font-family: "Pretendard-Bold";
+  font-display: fallback;
   src: 
     local("Pretendard-Bold"),
     url("./Pretendard-Bold.subset.woff2") format("woff2"),
