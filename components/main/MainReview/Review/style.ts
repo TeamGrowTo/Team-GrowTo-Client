@@ -25,4 +25,4 @@ const Id = styled.span`
   font-size: 1.2rem;
 `;
 
-export { StyledRoot, Comment, Bottom, Id };
+export { Bottom, Comment, Id, StyledRoot };

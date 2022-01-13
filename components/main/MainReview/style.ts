@@ -27,4 +27,4 @@ const Title = styled.header``;
 
 const ReviewList = styled.div``;
 
-export { StyledRoot, Wrapper, Title, ReviewList };
+export { ReviewList, StyledRoot, Title, Wrapper };
