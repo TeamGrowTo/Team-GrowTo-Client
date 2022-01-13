@@ -50,9 +50,10 @@ export default function MainReview() {
           <p>그로투 이메일 & DM 으로 보내주신 메시지 기반</p>
         </Title>
         <ReviewList>
-          {reviewInfo.map((review, comment) => {
-            <Review review={review} key={comment} />;
-          })}
+          {reviewInfo &&
+            reviewInfo.map((review, comment) => {
+              <Review review={review} key={comment} />;
+            })}
         </ReviewList>
       </Wrapper>
     </StyledRoot>
