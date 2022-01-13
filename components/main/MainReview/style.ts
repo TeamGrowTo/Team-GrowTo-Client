@@ -3,20 +3,16 @@ import styled from "styled-components";
 const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 94rem;
-
-  /* display: flex;
+  height: 95.8rem;
+  display: flex;
   justify-content: center;
-  align-items: center; */
 `;
 
 const Wrapper = styled.div`
   width: 101.2rem;
   height: 64rem;
-  margin: 15.4rem 0 16.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 15.4rem;
+  margin-bottom: 16.4rem;
 `;
 
 const Title = styled.div`

@@ -7,7 +7,7 @@ import { ReviewList, StyledRoot, Title, Wrapper } from "./style";
 export default function MainReview() {
   const reviewInfo = [
     {
-      comment: "불편하게 일일히 돌아다니지 않아도 되어서 너무 편해요. 고마워요!",
+      comment: "불편하게 일일이 돌아다니지 않아도 되어서 너무 편해요. 고마워요!",
       Profile: ReviewProfile,
       id: "1년차 마케터 봉봉음료수짱",
     },
