@@ -9,16 +9,14 @@ function ShareModal({ isModalOpen, setIsModalOpen }: IProps) {
     setIsModalOpen(false);
   };
   return (
-    <StyledRoot>
-      {isModalOpen && (
-        <>
-          <BackGround isBlur={true} onClick={handleClose}></BackGround>
-          <Wrapper>
-            <p>링크가 복사되었습니다!</p>
-          </Wrapper>
-        </>
-      )}
-    </StyledRoot>
+    isModalOpen && (
+      <StyledRoot>
+        <BackGround isBlur={true} onClick={handleClose}></BackGround>
+        <Wrapper>
+          <p>링크가 복사되었습니다!</p>
+        </Wrapper>
+      </StyledRoot>
+    )
   );
 }
 
