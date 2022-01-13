@@ -1,25 +1,27 @@
+import ShareModal from "components/main/ShareModal";
 import Link from "next/link";
 import React, { useState } from "react";
-import { StyledRoot, ShareBox, StoryLink, Slogan, ButtonWrapper, ShareButton } from "./style";
-import ShareModal from "components/main/ShareModal";
+
+import { ButtonWrapper, ShareBox, ShareButton, Slogan, StoryLink, StyledRoot } from "./style";
 
 function Share() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const shareUrl = async () => {
     const el = document.createElement("input");
+
     el.value = window.location.href;
     try {
       await navigator.clipboard.writeText(`${el.value}`);
       setIsModalOpen(true);
     } catch {
-      alert(`복사 실패!`);
+      alert("복사 실패!");
     }
   };
 
   return (
     <StyledRoot>
       <ShareBox>
-        <Link href="/">
+        <Link href="/" passHref>
           <StoryLink>Growto 스토리 보러가기 &gt; </StoryLink>
         </Link>
         <Slogan>
