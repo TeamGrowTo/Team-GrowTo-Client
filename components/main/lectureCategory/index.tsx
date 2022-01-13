@@ -1,4 +1,5 @@
 // import { getLectureCategoryData } from "pages/apis/info.api";
+// import React, { useEffect } from "react";
 // import { useRecoilState } from "recoil";
 // import { lectureCategoryState } from "store/state";
 
