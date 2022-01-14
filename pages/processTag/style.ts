@@ -3,7 +3,7 @@ import { colors } from "styles/colors";
 export const StyledRoot = styled.section`
   width: 100%;
   height: 100%;
-  background: ${colors.gray3};
+  background: linear-gradient(to right, ${colors.mainBlue}, ${colors.subPink});
 `;
 
 export const Container = styled.div`
@@ -14,20 +14,11 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const CardTitle = styled.section`
-  width: 102rem;
-  height: 16.7rem;
-  margin-top: 4rem;
-  background: white;
-  opacity: 0.7;
-  border-radius: 2.8rem 2.8rem 0 0;
-`;
-
 export const CardChoice = styled.section`
   width: 102rem;
   height: 49.3rem;
   background: white;
-  opacity: 0.2;
+  opacity: 0.5;
   border-radius: 0 0 2.8rem 2.8rem;
 `;
 export const NextButtonWrapper = styled.div`
