@@ -1,4 +1,4 @@
-import Banner from "components/main/banner";
+import Banner from "components/main/Banner";
 import Share from "components/main/Share";
 import type { NextPage } from "next";
 
