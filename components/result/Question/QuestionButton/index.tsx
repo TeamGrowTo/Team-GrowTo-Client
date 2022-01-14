@@ -1,5 +1,6 @@
 import { QuestionIcon } from "public/assets/icons";
 import React from "react";
+
 import { StyledRoot } from "./style";
 
 interface Props {

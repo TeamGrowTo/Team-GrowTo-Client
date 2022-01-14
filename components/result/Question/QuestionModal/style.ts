@@ -127,14 +127,14 @@ const Line = styled.div`
 `;
 
 export {
-  StyledRoot,
-  Modal,
-  TitleWrapper,
-  Title,
-  InputWrapper,
-  EssentialInput,
   Dropdown,
-  TextArea,
-  ReportButton,
+  EssentialInput,
+  InputWrapper,
   Line,
+  Modal,
+  ReportButton,
+  StyledRoot,
+  TextArea,
+  Title,
+  TitleWrapper,
 };

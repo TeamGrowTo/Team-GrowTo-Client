@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import QuestionButton from "./QuestionButton";
 import QuestionModal from "./QuestionModal";
 import { StyledRoot } from "./style";
@@ -8,6 +9,7 @@ const Question = function () {
   const handleModal = () => {
     setFlagModal(!flagModal);
   };
+
   return (
     <StyledRoot>
       <QuestionButton onClickQuestionButton={handleModal} />
