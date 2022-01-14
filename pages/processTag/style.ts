@@ -53,15 +53,3 @@ export const NextButton = styled.button`
     cursor: pointer;
   }
 `;
-
-export const TagButton = styled.button<{ isTagClicked: boolean }>`
-  height: 4.8rem;
-  margin-right: 0.8rem;
-  margin-bottom: 1.2rem;
-  padding: 0.7rem 3.2rem;
-  background: ${({ isTagClicked }) => (isTagClicked ? `${colors.mainBlue}` : "white")};
-  opacity: 2;
-  font-family: "Pretendard-Bold";
-  color: ${({ isTagClicked }) => (isTagClicked ? "white" : `${colors.gray6}`)};
-  border-radius: 4.8rem;
-`;

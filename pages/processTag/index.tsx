@@ -3,6 +3,8 @@ import TagButton from "components/process/TagButton";
 import Title from "components/process/Title";
 import { getSkillTagList } from "pages/apis/info.api";
 import { useEffect, useState } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { processState } from "store/state";
 import { SkillTagList } from "types/info.type";
 
 import { Box, CardChoice, Container, NextButton, NextButtonWrapper, StyledRoot } from "./style";
@@ -11,9 +13,10 @@ function ProcessTag() {
   const [tagList, setTagList] = useState<SkillTagList[] | null>(null);
 
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [processData, setProcessData] = useRecoilState(processState);
+  const getTagData = useRecoilValue(processState);
 
   const id = 1;
-
   const getTagList = async () => {
     const data = await getSkillTagList(id);
 
@@ -23,7 +26,10 @@ function ProcessTag() {
   useEffect(() => {
     //getTagList();
     setTagList(mockData);
-  }, [id]);
+    if (getTagData.tags) {
+      setSelectedTags(getTagData.tags);
+    }
+  }, []);
 
   const handleTagClick = (tag: string) => {
     if (selectedTags.length === 0) {
@@ -40,6 +46,13 @@ function ProcessTag() {
         setSelectedTags(selectedTags.filter((v) => v !== tag));
       }
     }
+  };
+  const handling = () => {
+    const tempProcessData = { ...processData };
+
+    tempProcessData["tags"] = selectedTags;
+    setProcessData(tempProcessData);
+    console.log(processData);
   };
 
   return (
@@ -63,7 +76,7 @@ function ProcessTag() {
           </Box>
         </CardChoice>
         <NextButtonWrapper>
-          <NextButton>다음 &gt;</NextButton>
+          <NextButton onClick={handling}>다음 &gt;</NextButton>
         </NextButtonWrapper>
       </Container>
     </StyledRoot>
