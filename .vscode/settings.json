@@ -1,0 +1,22 @@
+{
+<<<<<<< HEAD
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true
+}
+=======
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 100,
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
+  "prettier.trailingComma": "all",
+  "prettier.tabWidth": 2,
+  "prettier.bracketSpacing": true,
+  "prettier.endOfLine": "auto",
+  "prettier.useTabs": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+  },
+}
+>>>>>>> develop
