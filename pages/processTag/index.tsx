@@ -7,7 +7,14 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
 import { SkillTagList } from "types/info.type";
 
-import { Box, CardChoice, Container, NextButton, NextButtonWrapper, StyledRoot } from "./style";
+import {
+  CardChoice,
+  NextButton,
+  NextButtonWrapper,
+  ProcessBox,
+  StyledRoot,
+  TagWrapper,
+} from "./style";
 
 function ProcessTag() {
   const [tagList, setTagList] = useState<SkillTagList[] | null>(null);
@@ -57,11 +64,11 @@ function ProcessTag() {
 
   return (
     <StyledRoot>
-      <Container>
+      <ProcessBox>
         <Title></Title>
         <CardTitle></CardTitle>
         <CardChoice>
-          <Box>
+          <TagWrapper>
             <p>
               원하는 <span>강의 특성 2가지</span>를 선택하세요.
             </p>
@@ -73,12 +80,12 @@ function ProcessTag() {
                 selectedTags={selectedTags}
               ></TagButton>
             ))}
-          </Box>
+          </TagWrapper>
         </CardChoice>
         <NextButtonWrapper>
           <NextButton onClick={handling}>다음 &gt;</NextButton>
         </NextButtonWrapper>
-      </Container>
+      </ProcessBox>
     </StyledRoot>
   );
 }

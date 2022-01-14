@@ -6,7 +6,7 @@ export const StyledRoot = styled.section`
   background: linear-gradient(to right, ${colors.mainBlue}, ${colors.subPink});
 `;
 
-export const Container = styled.div`
+export const ProcessBox = styled.div`
   position: relative;
   width: 102rem;
   margin: 0 auto;
@@ -19,9 +19,10 @@ export const CardChoice = styled.section`
   height: 49.3rem;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 0 0 2.8rem 2.8rem;
+  border: 2px solid white;
 `;
 
-export const Box = styled.div`
+export const TagWrapper = styled.div`
   width: 77.4rem;
   margin: 6.5rem auto 0;
   & > p {

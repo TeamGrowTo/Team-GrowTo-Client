@@ -8,8 +8,10 @@ export const StyledRoot = styled.div`
   width: 102rem;
   height: 16.7rem;
   margin-top: 4rem;
-  background: white;
-  opacity: 0.7;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-width: 0.2rem 0.2rem 0;
+  border-color: white;
+  border-style: solid;
   border-radius: 2.8rem 2.8rem 0 0;
 `;
 
