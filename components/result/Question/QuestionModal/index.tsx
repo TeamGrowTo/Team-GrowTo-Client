@@ -1,5 +1,7 @@
+import { postLectureReport } from "pages/apis/lectures.api";
 import { DownArrowIcon, UpArrowIcon } from "public/assets/icons";
 import React, { useState } from "react";
+
 import InputForm from "./InputForm";
 import {
   Dropdown,
@@ -23,6 +25,7 @@ const QuestionModal = function () {
 
   const isBlank = (): boolean => {
     if (difference === "" || lectureName === "" || email === "") return true;
+
     return false;
   };
 
@@ -44,6 +47,15 @@ const QuestionModal = function () {
 
   const handleDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setDescription(e.target.value);
+  };
+
+  const handleReport = () => {
+    postLectureReport({
+      difference,
+      lectureName,
+      description,
+      email,
+    });
   };
 
   return (
@@ -88,7 +100,9 @@ const QuestionModal = function () {
                 {description}
               </textarea>
             </InputForm>
-            <ReportButton isBlank={isBlank()}>오류 내용 제보하기</ReportButton>
+            <ReportButton onClick={handleReport} isBlank={isBlank()}>
+              오류 내용 제보하기
+            </ReportButton>
           </TextArea>
         </InputWrapper>
       </Modal>
