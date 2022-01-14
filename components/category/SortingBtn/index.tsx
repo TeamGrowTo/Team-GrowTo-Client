@@ -1,33 +1,48 @@
-import React, { useState } from "react";
-import { StyledRoot, DropDownBox, DropDownItem } from "./style";
-import { ISorting, sortingType, IDropListName } from "../SortingBox";
+import { ArrowDown, ArrowUp } from "public/assets/icons";
+import React from "react";
+import { colors } from "styles/colors";
+
+import { IDropListName, ISelectedItemName, ISorting, sortingType } from "../SortingBox";
+import { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
 interface SortingBtnProps {
   value: sortingType;
   children: React.ReactNode;
   dropListName: IDropListName;
-  sortingCriteria: sortingType[];
+  selectedItem: ISelectedItemName;
   isOpen: ISorting;
-  // setIsOpen: React.Dispatch<React.SetStateAction<ISorting>>;
+  isSelected: ISorting;
   onClickOpenSorting: React.MouseEventHandler<HTMLButtonElement>;
+  onClickSortingItem: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 //sorting기준에 따라 dropDownList가 다르게보이도록 하자.
 function SortingBtn({
-  children,
   onClickOpenSorting,
-  // setIsOpen,
+  onClickSortingItem,
   isOpen,
-  sortingCriteria,
+  isSelected,
   dropListName,
+  selectedItem,
   value,
 }: SortingBtnProps) {
   return (
     <StyledRoot onClick={onClickOpenSorting}>
-      {value}
+      <BtnTextWrapper>
+        <CriteriaItem color={colors.gray6}>{value}</CriteriaItem>
+        {isSelected[value] && (
+          <>
+            <CriteriaItem>|</CriteriaItem>
+            <CriteriaItem color={colors.mainBlue}>{selectedItem[value]}</CriteriaItem>
+          </>
+        )}
+      </BtnTextWrapper>
+      {isOpen[value] ? <ArrowUp /> : <ArrowDown />}
       {isOpen[value] && (
         <DropDownBox>
           {dropListName[value].map((item) => (
-            <DropDownItem key={item}>{item}</DropDownItem>
+            <DropDownItem key={item} onClick={() => onClickSortingItem(value, item)}>
+              {item}
+            </DropDownItem>
           ))}
         </DropDownBox>
       )}

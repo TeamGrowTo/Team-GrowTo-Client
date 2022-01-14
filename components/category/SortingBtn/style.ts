@@ -1,7 +1,9 @@
+import styled from "styled-components";
 import { colors } from "styles/colors";
-import styled from 'styled-components';
 
 const StyledRoot = styled.button`
+  display: inline-flex;
+  align-items: center;
   background-color: white;
   position: relative;
   height: 4.8rem;
@@ -12,11 +14,21 @@ const StyledRoot = styled.button`
 
   font-family: "Pretendard-Medium";
   color: ${colors.gray6}
-  cursor: pointer;
   transition: 200ms;
+  
+  cursor: pointer;
 
-  &:active {
+  &:hover {
     background-color: ${colors.gray2};
+    transition: 200ms;
+  }
+
+  &:focus {
+    background-color: white;
+    color: ${colors.mainBlue};
+    border: 1px solid ${colors.mainBlue};
+    box-shadow: 0px 2px 12px rgba(69, 121, 255, 0.08);
+    transition: 200ms;
   }
 
   & + & {
@@ -25,43 +37,55 @@ const StyledRoot = styled.button`
 `;
 
 const DropDownBox = styled.ul`
-position: absolute;
-top: 5.4rem;
-left: 0;
+  position: absolute;
+  top: 5.4rem;
+  left: 0;
 
-width: 18rem;
-height: 10rem;
+  width: 18rem;
+  height: 10rem;
 
-background: white;
-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
-border-radius: 1.2rem;
+  background: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
+  border-radius: 1.2rem;
+  cursor: pointer;
+  & button:first-child {
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+  }
 
-& button:first-child {
-  border-top-left-radius: 1.2rem;
-  border-top-right-radius: 1.2rem;
-}
-
-& button:last-child {
-  border-bottom-left-radius: 1.2rem;
-  border-bottom-right-radius: 1.2rem;
-}
+  & button:last-child {
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+  }
 `;
 
 const DropDownItem = styled.li`
-display: flex;
-flex-direction: column;
-width: 100%;
-padding: 1.7rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.7rem 2.4rem;
 
-text-align: left;
-font-family: "Pretendard-Medium";
-font-size: 1.4rem;
-color: ${colors.gray6};
+  text-align: left;
+  font-family: "Pretendard-Medium";
+  font-size: 1.4rem;
+  color: ${colors.gray6};
 
-
-&:hover {
-  background: ${colors.gray1};
-}
+  cursor: pointer;
+  &:hover {
+    background: ${colors.gray1};
+  }
+`;
+const CriteriaItem = styled.span`
+  font-family: "Pretendard-Medium";
+  color: ${(props) => props.color || colors.gray3};
+  font-size: 1.4rem;
+  & + & {
+    margin-left: 0.8rem;
+  }
 `;
 
-export {StyledRoot, DropDownBox, DropDownItem};
+const BtnTextWrapper = styled.span`
+  margin-right: 1.2rem;
+`;
+
+export { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot };
