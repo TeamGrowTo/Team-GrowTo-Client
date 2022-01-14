@@ -1,3 +1,8 @@
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+
+// import { useRecoilState } from "recoil";
+import ResultCard from "./ResultCard";
 import {
   Description,
   LectureCount,
@@ -7,10 +12,6 @@ import {
   StyledRoot,
   Title,
 } from "./style";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-// import { useRecoilState } from "recoil";
-import ResultCard from "./ResultCard";
 
 type Answer = "fast" | "middle" | "slow";
 interface ProcessResultData {

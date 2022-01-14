@@ -1,4 +1,5 @@
 import React from "react";
+
 import { StyledRoot, SubInfoUnit } from "./style";
 type Answer = "fast" | "middle" | "slow";
 interface Props {

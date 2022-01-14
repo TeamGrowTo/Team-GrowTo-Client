@@ -1,4 +1,5 @@
 import React from "react";
+
 import { StyledRoot, Tag } from "./style";
 
 interface Props {
@@ -8,8 +9,8 @@ interface Props {
 const index = function ({ tags }: Props) {
   return (
     <StyledRoot>
-      {tags.map((name: string) => (
-        <Tag>{name}</Tag>
+      {tags.map((name: string, index: number) => (
+        <Tag key={index}>{name}</Tag>
       ))}
     </StyledRoot>
   );

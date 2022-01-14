@@ -1,10 +1,10 @@
-import { LectureTitle, MoreButton, StyledRoot } from "./style";
+import { LeftArrowIcon } from "public/assets/icons";
 import React from "react";
-import Link from "next/link";
+
 import Info from "./Info";
+import { LectureTitle, MoreButton, StyledRoot } from "./style";
 import SubInfo from "./SubInfo";
 import Tags from "./Tags";
-import { LeftArrowIcon } from "public/assets/icons";
 
 type Answer = "fast" | "middle" | "slow";
 interface ProcessResultData {
@@ -25,6 +25,7 @@ type Props = {
 
 const ResultCard = function ({ result }: Props) {
   const { lectureName, time, price, createdDate, replay, answer, tags, url } = result;
+
   return (
     <StyledRoot>
       <LectureTitle>{lectureName}</LectureTitle>

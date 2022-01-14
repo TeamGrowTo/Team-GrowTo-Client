@@ -24,4 +24,4 @@ const InfoData = styled.ul`
   font-family: "Pretendard-Bold";
 `;
 
-export { StyledRoot, InfoName, InfoData };
+export { InfoData, InfoName, StyledRoot };

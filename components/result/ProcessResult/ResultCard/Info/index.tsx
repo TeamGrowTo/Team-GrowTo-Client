@@ -1,5 +1,6 @@
 import React from "react";
-import { StyledRoot, InfoData, InfoName } from "./style";
+
+import { InfoData, InfoName, StyledRoot } from "./style";
 
 interface Props {
   time: number;

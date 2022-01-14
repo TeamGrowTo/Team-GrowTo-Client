@@ -60,11 +60,11 @@ const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
 `;
 
 export {
-  StyledRoot,
-  Title,
   Description,
   LectureCount,
   LectureSkillData,
-  ResultData,
   ResultCardWrapper,
+  ResultData,
+  StyledRoot,
+  Title,
 };

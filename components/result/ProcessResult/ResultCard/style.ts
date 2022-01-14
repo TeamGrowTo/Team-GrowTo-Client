@@ -42,4 +42,4 @@ const MoreButton = styled.a`
   }
 `;
 
-export { StyledRoot, LectureTitle, MoreButton };
+export { LectureTitle, MoreButton, StyledRoot };
