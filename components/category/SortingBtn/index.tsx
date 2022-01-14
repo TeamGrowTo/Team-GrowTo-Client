@@ -4,6 +4,7 @@ import { colors } from "styles/colors";
 
 import { IDropListName, ISelectedItemName, ISorting, sortingType } from "../SortingBox";
 import { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
+//propstype 잘받아온거 맞는지 확인부...탁...해요..
 interface SortingBtnProps {
   value: sortingType;
   children: React.ReactNode;
