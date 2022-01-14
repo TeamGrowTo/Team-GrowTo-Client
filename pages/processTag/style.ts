@@ -17,20 +17,51 @@ export const Container = styled.div`
 export const CardChoice = styled.section`
   width: 102rem;
   height: 49.3rem;
-  background: white;
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 0 0 2.8rem 2.8rem;
 `;
+
+export const Box = styled.div`
+  width: 77.4rem;
+  margin: 6.5rem auto 0;
+  & > p {
+    font-family: "Pretendard-Bold";
+    font-size: 2.4rem;
+    color: ${colors.subBlack};
+    margin-bottom: 2rem;
+  }
+  & > p > span {
+    color: ${colors.subOrange};
+  }
+`;
+
 export const NextButtonWrapper = styled.div`
   display: flex;
 `;
+
 export const NextButton = styled.button`
   margin-left: auto;
   margin-top: 2.4rem;
+  margin-bottom: 5.8rem;
   width: 22.4rem;
   height: 6rem;
   background: ${colors.gray2};
   font-size: 2.4rem;
   font-family: "Pretendard-Bold";
+  border-radius: 4.8rem;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+export const TagButton = styled.button<{ isTagClicked: boolean }>`
+  height: 4.8rem;
+  margin-right: 0.8rem;
+  margin-bottom: 1.2rem;
+  padding: 0.7rem 3.2rem;
+  background: ${({ isTagClicked }) => (isTagClicked ? `${colors.mainBlue}` : "white")};
+  opacity: 2;
+  font-family: "Pretendard-Bold";
+  color: ${({ isTagClicked }) => (isTagClicked ? "white" : `${colors.gray6}`)};
   border-radius: 4.8rem;
 `;
