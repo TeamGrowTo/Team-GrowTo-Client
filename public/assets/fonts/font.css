@@ -10,18 +10,14 @@
 @font-face {
   font-family: "Pretendard-Light";
   font-display: fallback;
-  src: 
-    local("Pretendard-Light"),
-    url("./Pretendard-Light.subset.woff2") format("woff2"),
+  src: local("Pretendard-Light"), url("./Pretendard-Light.subset.woff2") format("woff2"),
     url("./Pretendard-Light.subset.woff") format("woff"),
     url("./Pretendard-Light.ttf") format("ttf");
 }
 @font-face {
   font-family: "Pretendard-Regular";
   font-display: fallback;
-  src: 
-    local("Pretendard-Regular"),
-    url("./Pretendard-Regular.subset.woff2") format("woff2"),
+  src: local("Pretendard-Regular"), url("./Pretendard-Regular.subset.woff2") format("woff2"),
     url("./Pretendard-Regular.subset.woff") format("woff"),
     url("./Pretendard-Regular.ttf") format("ttf");
 }
@@ -61,4 +57,12 @@
     url("./Pretendard-Bold.subset.woff2") format("woff2"),
     url("./Pretendard-Bold.subset.woff") format("woff"),
     url("./Pretendard-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Pretendard-ExtraBold";
+  font-display: fallback;
+  src: local("Pretendard-ExtraBold"), url("./Pretendard-ExtraBold.subset.woff2") format("woff2"),
+    url("./Pretendard-ExtraBold.subset.woff") format("woff"),
+    url("./Pretendard-ExtraBold.ttf") format("ttf");
 }

@@ -42,13 +42,13 @@ module.exports = {
       "error",
       { blankLine: "always", prev: "*", next: "return" },
       { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
-      { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] },,
+      { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
     ],
     "@typescript-eslint/no-var-requires": 0,
   },
   settings: {
     "import/resolver": {
-      typescript: {},,
+      typescript: {},
     },
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],
