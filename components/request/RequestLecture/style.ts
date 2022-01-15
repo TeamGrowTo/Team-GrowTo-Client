@@ -45,6 +45,10 @@ const RequestCard = styled.div`
   opacity: 75%;
   position: absolute;
   top: 15.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4.2rem;
 `;
 
 const RequestButton = styled.button``;
