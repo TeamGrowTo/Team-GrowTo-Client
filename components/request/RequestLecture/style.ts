@@ -51,6 +51,17 @@ const RequestCard = styled.div`
   padding-top: 4.2rem;
 `;
 
-const RequestButton = styled.button``;
+const RequestButton = styled.button`
+  width: 63rem;
+  height: 6.8rem;
+  border-radius: 4.8rem;
+  background-color: ${colors.gray3};
+
+  p {
+    font-family: "Pretendard-Bold";
+    font-size: 2rem;
+    color: ${colors.gray4};
+  }
+`;
 
 export { RequestButton, RequestCard, StyledRoot, Title, Wrapper };
