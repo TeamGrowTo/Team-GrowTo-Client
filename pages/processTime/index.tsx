@@ -57,8 +57,8 @@ function ProcessTime() {
             {timeTypeList.map((timeType, index) => (
               <TypeButton
                 key={index}
-                onTimeClick={handleTimeClick}
-                timeType={timeType}
+                onTypeClick={handleTimeClick}
+                interestType={timeType}
                 selectedTime={selectedTime}
               />
             ))}

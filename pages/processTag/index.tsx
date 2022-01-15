@@ -54,7 +54,7 @@ function ProcessTag() {
       }
     }
   };
-  const handling = () => {
+  const handleNext = () => {
     const tempProcessData = { ...processData };
 
     tempProcessData["tags"] = selectedTags;
@@ -83,7 +83,7 @@ function ProcessTag() {
           </TagWrapper>
         </CardChoice>
         <NextButtonWrapper>
-          <NextButton onClick={handling}>다음 &gt;</NextButton>
+          <NextButton onClick={handleNext}>다음 &gt;</NextButton>
         </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>

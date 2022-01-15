@@ -2,19 +2,19 @@ import React from "react";
 
 import { StyledRoot } from "./style";
 interface IProps {
-  timeType: string;
-  onTimeClick: (timeType: string) => void;
+  interestType: string;
+  onTypeClick: (interestType: string) => void;
   selectedTime: string;
 }
-const TypeButton = ({ timeType, onTimeClick, selectedTime }: IProps) => {
-  const handleTimeClick = () => {
-    onTimeClick(timeType);
+const TypeButton = ({ interestType, onTypeClick, selectedTime }: IProps) => {
+  const handleTypeClick = () => {
+    onTypeClick(interestType);
   };
-  const isClicked = timeType === selectedTime ? true : false;
+  const isClicked = interestType === selectedTime ? true : false;
 
   return (
-    <StyledRoot onClick={handleTimeClick} isClicked={isClicked}>
-      {timeType}
+    <StyledRoot onClick={handleTypeClick} isClicked={isClicked}>
+      {interestType}
     </StyledRoot>
   );
 };
