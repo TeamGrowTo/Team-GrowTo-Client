@@ -2,11 +2,25 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(275.27deg, #caacff 8.92%, #4579ff 99.98%);
+  overflow: hidden;
+`;
+
+const SmallCompass = styled.div`
+  position: absolute;
+  left: 9.35rem;
+  bottom: 9.9rem;
+`;
+
+const LargeCompass = styled.div`
+  position: absolute;
+  right: 14.3rem;
+  top: -1.5rem;
 `;
 
 const Title = styled.div`
@@ -61,10 +75,12 @@ const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
 
 export {
   Description,
+  LargeCompass,
   LectureCount,
   LectureSkillData,
   ResultCardWrapper,
   ResultData,
+  SmallCompass,
   StyledRoot,
   Title,
 };

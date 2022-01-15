@@ -1,12 +1,17 @@
 // import { useRecoilValue } from "recoil";
 // import { lectureResultState } from "store/state";
+import Image from "next/image";
+import { Compass } from "public/assets/images";
+
 import ResultCard from "./ResultCard";
 import {
   Description,
+  LargeCompass,
   LectureCount,
   LectureSkillData,
   ResultCardWrapper,
   ResultData,
+  SmallCompass,
   StyledRoot,
   Title,
 } from "./style";
@@ -68,6 +73,12 @@ const ProcessResult = function ({ listLength }: Props) {
 
   return (
     <StyledRoot>
+      <SmallCompass>
+        <Image src={Compass} alt="compass" width="369" height="257" />
+      </SmallCompass>
+      <LargeCompass>
+        <Image src={Compass} alt="compass" width="698" height="504" />
+      </LargeCompass>
       <Title>그로투 강의 비교</Title>
       <Description>
         <LectureCount>총 11개</LectureCount>의{" "}
