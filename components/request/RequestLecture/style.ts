@@ -48,7 +48,7 @@ const RequestCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4.2rem;
+  padding-top: 4.4rem;
 `;
 
 const RequestButton = styled.button`

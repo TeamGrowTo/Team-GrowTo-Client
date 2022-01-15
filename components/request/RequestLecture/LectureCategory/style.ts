@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { colors } from "styles/color";
 
-const LectureTypeBox = styled.div`
+const LectureCategoryBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  margin-bottom: 3rem;
 
   p {
     font-family: "Pretendard-Bold";
@@ -30,4 +31,4 @@ const InputWrapper = styled.div`
   }
 `;
 
-export { InputWrapper, LectureTypeBox };
+export { InputWrapper, LectureCategoryBox };

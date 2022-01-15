@@ -1,6 +1,6 @@
 import React from "react";
 
-import { InputWrapper, LectureTypeBox } from "../LectureCategory/style";
+import { InputWrapper, LectureTypeBox } from "./style";
 
 export default function LectureType() {
   return (

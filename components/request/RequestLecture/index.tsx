@@ -4,6 +4,7 @@ import Email from "./Email";
 import LectureCategory from "./LectureCategory";
 import LectureType from "./LectureType";
 import { RequestButton, RequestCard, StyledRoot, Title, Wrapper } from "./style";
+
 export default function RequestLecture() {
   return (
     <StyledRoot>
