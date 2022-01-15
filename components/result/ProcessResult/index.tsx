@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-
-// import { useRecoilState } from "recoil";
+// import { useRecoilValue } from "recoil";
+// import { lectureResultState } from "store/state";
 import ResultCard from "./ResultCard";
 import {
   Description,
@@ -61,20 +59,22 @@ const dummy: ProcessResultData[] = [
   },
 ];
 
-const ProcessResult = function () {
-  const router = useRouter();
-  const [lectureList, setLectureList] = useState(11);
-  // const [result, setResult] = useRecoilState();
+interface Props {
+  listLength: number;
+}
+
+const ProcessResult = function ({ listLength }: Props) {
+  // const lectureResultList= useRecoilValue(lectureResultState);
 
   return (
     <StyledRoot>
       <Title>그로투 강의 비교</Title>
       <Description>
-        <LectureCount>총 {lectureList}개</LectureCount>의{" "}
+        <LectureCount>총 11개</LectureCount>의{" "}
         <LectureSkillData>
           {"디지털&퍼포먼스"} {"마케팅"} 강의 중
         </LectureSkillData>{" "}
-        나에게 <ResultData>딱 맞는 3가지</ResultData> 강의에요!
+        나에게 <ResultData>딱 맞는 {listLength}가지</ResultData> 강의에요!
       </Description>
       <ResultCardWrapper resultDataCount={dummy.length}>
         {dummy.map((data) => (
