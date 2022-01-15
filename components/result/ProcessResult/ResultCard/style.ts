@@ -11,7 +11,7 @@ const StyledRoot = styled.article`
   margin-top: 3.1rem;
   border-radius: 28px 28px 0px 0px;
   border: 0.2rem solid white;
-  backdrop-filter: blur(42rem);
+  backdrop-filter: blur(2rem);
   background: rgba(255, 255, 255, 0.7);
 `;
 
