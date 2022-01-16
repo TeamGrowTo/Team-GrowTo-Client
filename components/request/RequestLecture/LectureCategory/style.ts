@@ -22,7 +22,7 @@ const CategoryButton = styled.div<{ open: boolean }>`
   width: 63rem;
   height: 6.8rem;
   background-color: ${colors.gray2};
-  border-radius: ${({ open }) => (open == false ? "4.8rem" : "2.8rem 2.8rem 0 0")};
+  border-radius: ${({ open }) => (open ? "2.8rem 2.8rem 0 0" : "4.8rem")};
 
   display: flex;
   padding: 2.2rem 3.6rem;
@@ -37,7 +37,7 @@ const CategoryButton = styled.div<{ open: boolean }>`
 
     & > svg {
       cursor: pointer;
-      transform: rotate(${({ open }) => (open == false ? "0" : "180deg")});
+      transform: rotate(${({ open }) => (open ? "180deg" : "0")});
     }
   }
 `;
