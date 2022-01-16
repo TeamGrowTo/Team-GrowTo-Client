@@ -25,10 +25,10 @@ const Wrapper = styled.div`
 
   position: relative;
 
-  & > svg {
+  /* & > svg {
     position: absolute;
     left: 16.4rem;
-  }
+  } */
 `;
 
 // const Line = styled(RequestRankLine)`

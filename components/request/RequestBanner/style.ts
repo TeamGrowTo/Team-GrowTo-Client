@@ -5,6 +5,10 @@ const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100vw;
   height: 19.2rem;
+  background-color: #a5beff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Wrapper = styled.div`
@@ -17,6 +21,8 @@ const Wrapper = styled.div`
     font-family: "Pretendard-Bold";
     font-size: 4rem;
     color: white;
+    display: flex;
+    margin-bottom: 0.5rem;
   }
   div > p {
     color: ${colors.mainBlue};
