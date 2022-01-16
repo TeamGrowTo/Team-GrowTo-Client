@@ -1,4 +1,3 @@
-import { ReportLine } from "public/assets/icons";
 import styled from "styled-components";
 import { colors } from "styles/color";
 
@@ -25,10 +24,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 4rem;
+
+  & > svg {
+    margin-top: 1.4rem;
+  }
 `;
 
-const Line = styled(ReportLine)`
-  margin-top: 1.4rem;
-`;
-
-export { Line, StyledRoot, Wrapper };
+export { StyledRoot, Wrapper };

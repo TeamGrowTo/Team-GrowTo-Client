@@ -1,4 +1,4 @@
-import { RequestRankLine } from "public/assets/icons";
+// import { RequestRankLine } from "public/assets/icons";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
@@ -24,12 +24,17 @@ const Wrapper = styled.div`
   align-items: center;
 
   position: relative;
+
+  & > svg {
+    position: absolute;
+    left: 16.4rem;
+  }
 `;
 
-const Line = styled(RequestRankLine)`
-  position: absolute;
-  left: 16.4rem;
-`;
+// const Line = styled(RequestRankLine)`
+//   position: absolute;
+//   left: 16.4rem;
+// `;
 
 const Title = styled.div`
   h4 {
@@ -67,4 +72,4 @@ const Number = styled.div`
   }
 `;
 
-export { Id, Line, Number, RequestNumber, StyledRoot, Title, Wrapper };
+export { Id, Number, RequestNumber, StyledRoot, Title, Wrapper };
