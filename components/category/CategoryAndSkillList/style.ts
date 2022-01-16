@@ -9,12 +9,17 @@ const StyledRoot = styled.section`
 
 const CategoryAndSkillWrapper = styled.div`
   width: 128rem;
+  & > a {
+    display: flex;
+    justify-content: end;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 3.6rem;
   font-family: "Pretendard-Bold";
   color: ${colors.subBlack};
+  margin-top: 6.4rem;
   margin-bottom: 3.6rem;
 `;
 
@@ -24,6 +29,7 @@ const RedirectRequestPage = styled.a`
   font-family: "Pretendard-Regular";
   color: ${colors.gray6};
   margin-top: 0.8rem;
+  cursor: pointer;
 `;
 
 export { CategoryAndSkillWrapper, RedirectRequestPage, StyledRoot, Title };

@@ -23,7 +23,7 @@ const CategoryAndSkillList = function ({
       <CategoryAndSkillWrapper>
         <Title>강의 분야</Title>
         <CategoryList nowCategory={nowCategory} onCategoryClick={onCategoryClick} />
-        <SkillList nowSkill={nowSkill} onSkillClick={onSkillClick} />
+        <SkillList nowCategory={nowCategory} nowSkill={nowSkill} onSkillClick={onSkillClick} />
         <Link href="/request">
           <RedirectRequestPage>추가적으로 비교를 원하는 분야가 있다면?</RedirectRequestPage>
         </Link>

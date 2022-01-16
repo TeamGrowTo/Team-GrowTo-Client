@@ -5,6 +5,7 @@ const StyledRoot = styled.article`
   width: 104rem;
   height: 6.2rem;
   display: flex;
+  margin-bottom: 1.6rem;
   & > * {
     margin-right: 1.6rem;
   }
