@@ -35,8 +35,9 @@ const CategoryButton = styled.div<{ open: boolean }>`
     font-size: 2rem;
     color: ${colors.gray4};
 
-    &:nth-child(2) {
+    & > svg {
       cursor: pointer;
+      transform: rotate(${({ open }) => (open == false ? "0" : "180deg")});
     }
   }
 `;
