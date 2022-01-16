@@ -28,7 +28,7 @@ export const ProcessBox = styled.div`
 export const CardChoice = styled.section`
   width: 102rem;
   height: 49.3rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 2.8rem 2.8rem;
   border: 2px solid white;
 `;

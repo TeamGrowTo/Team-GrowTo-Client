@@ -8,7 +8,7 @@ export const StyledRoot = styled.div`
   width: 102rem;
   height: 16.7rem;
   margin-top: 4rem;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
   border-width: 0.2rem 0.2rem 0;
   border-color: white;
   border-style: solid;
