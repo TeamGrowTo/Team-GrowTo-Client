@@ -2,6 +2,7 @@ import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Router from "next/router";
+import { postProcessResult } from "pages/apis/lectures";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
@@ -41,13 +42,15 @@ function ProcessPrice() {
     setSelectedPrice(timeType);
   };
 
-  const handleResult = () => {
+  const handleResult = async () => {
     const changeType =
       selectedPrice === "높은 가격" ? false : selectedPrice === "짧은 가격" ? true : null;
     const tempProcessData = { ...processData };
 
     tempProcessData["priceAsc"] = changeType;
     setProcessData(tempProcessData);
+
+    //await postProcessResult(processData);
     Router.push("/");
   };
 
