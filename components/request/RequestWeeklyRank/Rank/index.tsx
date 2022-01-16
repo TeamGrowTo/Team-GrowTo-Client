@@ -1,4 +1,3 @@
-import { RequestRankLine } from "public/assets/icons";
 import React from "react";
 
 import { Id, Line, Number, RequestNumber, StyledRoot, Title, Wrapper } from "./style";
