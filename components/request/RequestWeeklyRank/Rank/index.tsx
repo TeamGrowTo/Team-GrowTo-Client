@@ -1,5 +1,7 @@
-import RequestRankLine from "public/assets/icons";
+import { RequestRankLine } from "public/assets/icons";
 import React from "react";
+
+import { Id, Line, Number, RequestNumber, StyledRoot, Title, Wrapper } from "./style";
 
 interface IProps {
   rank: {
@@ -21,9 +23,13 @@ export default function Rank({ rank }: IProps) {
           <h4>{name}</h4>
           <h3>{skill}</h3>
         </Title>
-        <RequestRankLine />
+        <Line />
         <RequestNumber>
-          <p>{number}/100</p>
+          <h5>비교요청 수</h5>
+          <Number>
+            <p>{number}</p>
+            /100
+          </Number>
         </RequestNumber>
       </Wrapper>
     </StyledRoot>
