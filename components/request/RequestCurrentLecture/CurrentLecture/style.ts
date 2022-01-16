@@ -5,7 +5,7 @@ const StyledRoot = styled.div`
   width: 19.6rem;
   height: 19.6rem;
   border-radius: 2.8rem;
-  background-color: #a5beff;
+  background-color: ${colors.mainBlue};
   display: flex;
   flex-direction: column;
   justify-content: center;
