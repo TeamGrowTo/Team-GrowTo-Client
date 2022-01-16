@@ -1,13 +1,7 @@
 import { Dropdown } from "public/assets/icons";
 import React, { useState } from "react";
 
-import {
-  CategoryButton,
-  CategoryList,
-  CategoryWrapper,
-  InputWrapper,
-  LectureCategoryBox,
-} from "./style";
+import { CategoryButton, CategoryList, CategoryWrapper, LectureCategoryBox } from "./style";
 
 export default function LectureCategory() {
   // 버튼 눌렀을 때 dropdown 구현
@@ -28,7 +22,7 @@ export default function LectureCategory() {
       <LectureCategoryBox>
         <p>강의 분야*</p>
         <CategoryWrapper>
-          <CategoryButton>
+          <CategoryButton open={open}>
             <span>개발, 기획, 데이터, 디자인, 마케팅, 기타</span>
             <span onClick={handleDropDown}>
               <Dropdown />

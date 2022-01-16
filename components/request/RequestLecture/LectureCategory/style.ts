@@ -14,13 +14,16 @@ const LectureCategoryBox = styled.div`
   }
 `;
 
-const CategoryWrapper = styled.div``;
+const CategoryWrapper = styled.div`
+  position: relative;
+`;
 
-const CategoryButton = styled.div`
+const CategoryButton = styled.div<{ open: boolean }>`
   width: 63rem;
   height: 6.8rem;
   background-color: ${colors.gray2};
-  border-radius: 4.8rem;
+  border-radius: ${({ open }) => (open == false ? "4.8rem" : "2.8rem 2.8rem 0 0")};
+
   display: flex;
   padding: 2.2rem 3.6rem;
   display: flex;
@@ -51,6 +54,8 @@ const CategoryList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  position: absolute;
 
   li {
     font-family: "Pretendard-Regular";
