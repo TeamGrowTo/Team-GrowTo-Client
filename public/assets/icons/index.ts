@@ -1,5 +1,6 @@
 export { default as EmailIcon } from "./emailIcon.svg";
 export { default as LogoIcon } from "./logoIcon.svg";
+export { default as ProcessLoading } from "./processLoading.svg";
 export { default as ProcessPlayIcon } from "./processPlayIcon.png";
 export { default as ProcessSquareIcon } from "./processSquareIcon.png";
 export { default as ProgressPrice } from "./progressPrice.svg";

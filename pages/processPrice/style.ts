@@ -1,3 +1,4 @@
+import { ProcessLoading } from "public/assets/icons";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 export const StyledRoot = styled.section`
@@ -65,5 +66,37 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
   color: ${({ selectedPrice }) => (selectedPrice.length > 0 ? "white" : `${colors.gray4}`)};
   :hover {
     cursor: pointer;
+  }
+`;
+
+export const LoadingStyledRoot = styled.div`
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
+`;
+export const LogoWrapper = styled.div`
+  width: 42.5rem;
+  height: 96.4rem;
+  margin: 0 auto;
+  & > p {
+    font-family: "Pretendard-Bold";
+    font-size: 4rem;
+    color: white;
+    line-height: 5.4rem;
+    text-align: center;
+  }
+  display: flex;
+  flex-direction: column;
+`;
+export const LoadingLogo = styled(ProcessLoading)`
+  margin: 27.5rem auto 4.4rem;
+  animation: logoRotate 3s;
+  @keyframes logoRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;

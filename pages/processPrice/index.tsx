@@ -11,6 +11,9 @@ import { processState } from "store/state";
 
 import {
   CardChoice,
+  LoadingLogo,
+  LoadingStyledRoot,
+  LogoWrapper,
   NextButton,
   NextButtonWrapper,
   PlayIcon,
@@ -24,6 +27,7 @@ function ProcessPrice() {
   const [processData, setProcessData] = useRecoilState(processState);
   const priceTypeList = ["높은 가격", "짧은 가격", "상관없음"];
   const getTimeData = useRecoilValue(processState);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (
@@ -55,10 +59,23 @@ function ProcessPrice() {
     setProcessData(tempProcessData);
 
     //await postProcessResult(processData);
-    Router.push("/");
+    setIsLoading(true);
+    setTimeout(() => {
+      Router.push("/");
+    }, 3000);
   };
 
-  return (
+  return isLoading ? (
+    <LoadingStyledRoot>
+      <LogoWrapper>
+        <LoadingLogo />
+        <p>
+          당신을 위한 <br />
+          맞춤 강의를 찾는 중...
+        </p>
+      </LogoWrapper>
+    </LoadingStyledRoot>
+  ) : (
     <StyledRoot>
       <PlayIcon>
         <Image src={ProcessPlayIcon} alt="processPlay" />
