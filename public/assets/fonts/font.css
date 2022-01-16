@@ -27,8 +27,6 @@
   font-display: fallback;
   src: local("Pretendard-Bold"), url("./Pretendard-Bold.subset.woff2") format("woff2"),
     url("./Pretendard-Bold.subset.woff") format("woff"), url("./Pretendard-Bold.ttf") format("ttf");
-<<<<<<< HEAD
-=======
 }
 
 @font-face {
@@ -37,5 +35,4 @@
   src: local("Pretendard-ExtraBold"), url("./Pretendard-ExtraBold.subset.woff2") format("woff2"),
     url("./Pretendard-ExtraBold.subset.woff") format("woff"),
     url("./Pretendard-ExtraBold.ttf") format("ttf");
->>>>>>> develop
 }
