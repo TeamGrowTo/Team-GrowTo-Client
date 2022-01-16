@@ -1,10 +1,8 @@
+import Banner from "components/main/Banner";
 import MainReport from "components/main/MainReport";
-import type { NextPage } from "next";
-
-import Banner from "components/main/banner";
+import MainReview from "components/main/MainReview";
 import Share from "components/main/Share";
 import type { NextPage } from "next";
-import MainReview from "components/main/MainReview";
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +12,7 @@ const Home: NextPage = () => {
       <Banner />
       <Share />
     </div>
-}
+  );
+};
 
 export default Home;
