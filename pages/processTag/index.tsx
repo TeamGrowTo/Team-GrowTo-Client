@@ -1,7 +1,9 @@
 import CardTitle from "components/process/CardTitle";
 import TagButton from "components/process/TagButton";
 import Title from "components/process/Title";
+import Image from "next/image";
 import { getSkillTagList } from "pages/apis/info.api";
+import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
@@ -11,7 +13,9 @@ import {
   CardChoice,
   NextButton,
   NextButtonWrapper,
+  PlayIcon,
   ProcessBox,
+  SquareIcon,
   StyledRoot,
   TagWrapper,
 } from "./style";
@@ -64,6 +68,12 @@ function ProcessTag() {
 
   return (
     <StyledRoot>
+      <PlayIcon>
+        <Image src={ProcessPlayIcon} alt="processPlay" />
+      </PlayIcon>
+      <SquareIcon>
+        <Image src={ProcessSquareIcon} alt="processSqaure" />
+      </SquareIcon>
       <ProcessBox>
         <Title></Title>
         <CardTitle></CardTitle>

@@ -1,8 +1,10 @@
 import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
+import Image from "next/image";
 import Router from "next/router";
 import { postProcessResult } from "pages/apis/lectures";
+import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
@@ -11,7 +13,9 @@ import {
   CardChoice,
   NextButton,
   NextButtonWrapper,
+  PlayIcon,
   ProcessBox,
+  SquareIcon,
   StyledRoot,
   TimeWrapper,
 } from "./style";
@@ -56,6 +60,12 @@ function ProcessPrice() {
 
   return (
     <StyledRoot>
+      <PlayIcon>
+        <Image src={ProcessPlayIcon} alt="processPlay" />
+      </PlayIcon>
+      <SquareIcon>
+        <Image src={ProcessSquareIcon} alt="processSqaure" />
+      </SquareIcon>
       <ProcessBox>
         <Title></Title>
         <CardTitle></CardTitle>

@@ -3,7 +3,20 @@ import { colors } from "styles/colors";
 export const StyledRoot = styled.section`
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, ${colors.mainBlue}, ${colors.subPink});
+  background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
+  position: relative;
+`;
+
+export const PlayIcon = styled.div`
+  position: absolute;
+  top: 6.45rem;
+  right: 0;
+`;
+
+export const SquareIcon = styled.div`
+  position: absolute;
+  bottom: 7rem;
+  left: 11.1rem;
 `;
 
 export const ProcessBox = styled.div`
