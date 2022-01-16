@@ -1,15 +1,11 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
-const Background = styled.section`
-  background-color: #F9F9F9;
-  width: 100%;
-  height: 100%;
-`;
-
 const ResultBox = styled.div`
   width: 128rem;
   margin: 0 auto;
+  padding-bottom: 19.2rem;
+  border-bottom: solid 1px ${colors.gray2};
 `;
 
 const ResultMessage = styled.h2`
@@ -35,4 +31,4 @@ const MessageWrapper = styled.div`
   padding-top: 6.8rem;
 `;
 
-export {Background, ResultBox, ResultCount, SelectedCategory, ResultMessage, MessageWrapper}
+export { MessageWrapper, ResultBox, ResultCount, ResultMessage, SelectedCategory };

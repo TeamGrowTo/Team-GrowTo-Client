@@ -2,14 +2,7 @@ import React from "react";
 
 import CardListContainer from "../CardListContainer";
 import SortingBox from "../SortingBox";
-import {
-  Background,
-  ResultBox,
-  ResultCount,
-  ResultMessage,
-  SelectedCategory,
-  MessageWrapper,
-} from "./style";
+import { MessageWrapper, ResultBox, ResultCount, ResultMessage, SelectedCategory } from "./style";
 
 function Result() {
   //todo(1):skill선택 후 response 받아서 강의 몇개인지 표시
@@ -19,17 +12,15 @@ function Result() {
   //cardListContainer에 여러개의 CardBox
 
   return (
-    <Background>
-      <ResultBox>
-        <MessageWrapper>
-          <ResultCount>총 100개</ResultCount>
-          <SelectedCategory> 퍼포먼스 & 디지털마케팅</SelectedCategory>
-          <ResultMessage> 강의 모두 보기</ResultMessage>
-        </MessageWrapper>
-        <SortingBox />
-        <CardListContainer />
-      </ResultBox>
-    </Background>
+    <ResultBox>
+      <MessageWrapper>
+        <ResultCount>총 100개</ResultCount>
+        <SelectedCategory> 퍼포먼스 & 디지털마케팅</SelectedCategory>
+        <ResultMessage> 강의 모두 보기</ResultMessage>
+      </MessageWrapper>
+      <SortingBox />
+      <CardListContainer />
+    </ResultBox>
   );
 }
 

@@ -1,11 +1,13 @@
 import Result from "components/category/Result";
 import React from "react";
 
+import { Background } from "./style";
+
 function category() {
   return (
-    <div>
+    <Background>
       <Result />
-    </div>
+    </Background>
   );
 }
 
