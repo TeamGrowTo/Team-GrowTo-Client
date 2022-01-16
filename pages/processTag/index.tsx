@@ -94,7 +94,13 @@ function ProcessTag() {
           </TagWrapper>
         </CardChoice>
         <NextButtonWrapper>
-          <NextButton onClick={handleNext}>다음 &gt;</NextButton>
+          <NextButton
+            onClick={handleNext}
+            selectedTags={selectedTags}
+            disabled={selectedTags.length > 1 ? false : true}
+          >
+            다음 &gt;
+          </NextButton>
         </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>

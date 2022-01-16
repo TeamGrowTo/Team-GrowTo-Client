@@ -85,7 +85,13 @@ function ProcessPrice() {
           </TimeWrapper>
         </CardChoice>
         <NextButtonWrapper>
-          <NextButton onClick={handleResult}>완료하기 &gt;</NextButton>
+          <NextButton
+            onClick={handleResult}
+            selectedPrice={selectedPrice}
+            disabled={selectedPrice.length > 0 ? false : true}
+          >
+            완료하기 &gt;
+          </NextButton>
         </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>

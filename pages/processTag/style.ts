@@ -50,16 +50,18 @@ export const NextButtonWrapper = styled.div`
   display: flex;
 `;
 
-export const NextButton = styled.button`
+export const NextButton = styled.button<{ selectedTags: string[] }>`
   margin-left: auto;
   margin-top: 2.4rem;
   margin-bottom: 5.8rem;
   width: 22.4rem;
   height: 6rem;
-  background: ${colors.gray2};
+  background: ${({ selectedTags }) =>
+    selectedTags.length > 1 ? `${colors.mainBlue}` : `${colors.gray2}`};
   font-size: 2.4rem;
   font-family: "Pretendard-Bold";
   border-radius: 4.8rem;
+  color: ${({ selectedTags }) => (selectedTags.length > 1 ? "white" : `${colors.gray4}`)};
   :hover {
     cursor: pointer;
   }
