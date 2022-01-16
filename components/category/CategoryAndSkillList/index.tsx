@@ -8,8 +8,8 @@ import { CategoryAndSkillWrapper, RedirectRequestPage, StyledRoot, Title } from 
 interface Props {
   nowCategory: number;
   nowSkill: number;
-  onCategoryClick: (id: number) => void;
-  onSkillClick: (id: number) => void;
+  onCategoryClick: (id: number | null) => void;
+  onSkillClick: (id: number | null) => void;
 }
 
 const CategoryAndSkillList = function ({

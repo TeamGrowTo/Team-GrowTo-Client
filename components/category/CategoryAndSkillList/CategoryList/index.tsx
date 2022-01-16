@@ -1,49 +1,27 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
+import { lectureCategoryState } from "store/state";
+import { LectureCategoryData } from "types/info.type";
 
 import { Category, StyledRoot } from "./style";
 
-const dummy = [
-  {
-    id: 1,
-    name: "개발",
-  },
-  {
-    id: 2,
-    name: "기획",
-  },
-  {
-    id: 3,
-    name: "데이터",
-  },
-  {
-    id: 4,
-    name: "디자인",
-  },
-  {
-    id: 5,
-    name: "마케팅",
-  },
-  {
-    id: 6,
-    name: "기타",
-  },
-];
-
 interface Props {
   nowCategory: number;
-  onCategoryClick: (id: number) => void;
+  onCategoryClick: (id: number | null) => void;
 }
 
 const CategoryList = function ({ nowCategory, onCategoryClick }: Props) {
+  const categoryList = useRecoilValue(lectureCategoryState);
+
   return (
     <StyledRoot>
-      {dummy.map((category) => (
+      {categoryList?.map((category: LectureCategoryData) => (
         <Category
           key={category.id}
           isSelected={nowCategory === category.id}
           onClick={() => onCategoryClick(category.id)}
         >
-          {category.name}
+          {category.categoryName}
         </Category>
       ))}
     </StyledRoot>
