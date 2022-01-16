@@ -2,6 +2,7 @@ import CardTitle from "components/process/CardTitle";
 import TagButton from "components/process/TagButton";
 import Title from "components/process/Title";
 import Image from "next/image";
+import Router from "next/router";
 import { getSkillTagList } from "pages/apis/info.api";
 import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
 import { useEffect, useState } from "react";
@@ -63,7 +64,7 @@ function ProcessTag() {
 
     tempProcessData["tags"] = selectedTags;
     setProcessData(tempProcessData);
-    console.log(processData);
+    Router.push("/processTime");
   };
 
   return (

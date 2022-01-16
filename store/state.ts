@@ -12,9 +12,9 @@ export const processState = atom({
   default: {
     category: "",
     skill: "",
-    tags: [""],
-    timeAsc: false,
-    priceAsc: false,
+    tags: [],
+    timeAsc: undefined,
+    priceAsc: undefined,
   },
   effects_UNSTABLE: [persistAtom],
 });
