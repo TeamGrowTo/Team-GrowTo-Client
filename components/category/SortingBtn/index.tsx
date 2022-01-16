@@ -12,8 +12,9 @@ interface SortingBtnProps {
   selectedItem: ISelectedItemName;
   isOpen: ISorting;
   isSelected: ISorting;
-  onClickOpenSorting: React.MouseEventHandler<HTMLButtonElement>;
-  onClickSortingItem: React.MouseEventHandler<HTMLButtonElement>;
+  onClickOpenSorting: (criterial: sortingType) => void;
+  onClickSortingItem: (value: sortingType, item: string) => void;
+  criteria: sortingType;
 }
 
 //sorting기준에 따라 dropDownList가 다르게보이도록 하자.
@@ -25,9 +26,10 @@ function SortingBtn({
   dropListName,
   selectedItem,
   value,
+  criteria,
 }: SortingBtnProps) {
   return (
-    <StyledRoot onClick={onClickOpenSorting}>
+    <StyledRoot onClick={() => onClickOpenSorting(criteria)}>
       <BtnTextWrapper>
         <CriteriaItem color={colors.gray6}>{value}</CriteriaItem>
         {isSelected[value] && (

@@ -115,13 +115,12 @@ function SortingBox() {
           key={criteria}
           value={criteria}
           dropListName={dropListName}
-          onClickOpenSorting={() => handleOpenSorting(criteria)}
+          onClickOpenSorting={handleOpenSorting}
           isOpen={isOpen}
-          onClickSortingItem={(value: sortingType, item: string) =>
-            handleClickSortingItem(value, item)
-          }
+          onClickSortingItem={handleClickSortingItem}
           isSelected={isSelected}
           selectedItem={selectedItem}
+          criteria={criteria}
         >
           {criteria}
         </SortingBtn>
