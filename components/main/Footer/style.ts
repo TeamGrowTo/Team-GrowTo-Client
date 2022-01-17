@@ -4,7 +4,7 @@ import { colors } from "styles/colors";
 const StyledRoot = styled.section`
   height: 38rem;
   padding: 7.6rem 2.5rem 6rem 2.5rem;
-  background-color: ${colors.gray2};
+  background-color: ${colors.gray0};
 
   display: flex;
   justify-content: center;
