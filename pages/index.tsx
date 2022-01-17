@@ -1,22 +1,17 @@
+import Footer from "components/main/Footer";
+import MainReview from "components/main/MainReview";
 import Banner from "components/main/Banner";
 import Share from "components/main/Share";
 import type { NextPage } from "next";
-<<<<<<< HEAD
-import MainReview from "components/main/MainReview";
-const Home: NextPage = () => {
-  return (
-    <div>
-      <MainReview />
-    </div>
-=======
 
 const Home: NextPage = () => {
   return (
     <>
       <Banner />
+      <MainReview />
       <Share />
+      <Footer />
     </>
->>>>>>> develop
   );
 };
 
