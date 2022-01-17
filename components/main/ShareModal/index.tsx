@@ -16,7 +16,9 @@ function ShareModal({ isModalOpen, setIsModalOpen }: IProps) {
     <>
       <BackGround isBlur={true} onClick={handleClose}></BackGround>
       <Wrapper>
-        <p>링크가 복사되었습니다!</p>
+        <p>공유 링크가 복사 되었어요 ☺️</p>
+        <p>모두가 편하게 강의를 찾을 수 있도록 주변에 알려주세요.</p>
+        <button onClick={handleClose}> 확인</button>
       </Wrapper>
     </>
   ) : (
