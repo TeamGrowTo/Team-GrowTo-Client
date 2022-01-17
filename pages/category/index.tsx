@@ -1,19 +1,20 @@
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { currentCategoryState, currentSkillState } from "store/state";
 
 const Category = function () {
   const router = useRouter();
-  const [nowCategory, setNowCategory] = useState(Number(router.query.id) || -1);
-  const [nowSkill, setNowSkill] = useState(1);
+  const [currentCategory, setCurrentCategory] = useRecoilState(currentCategoryState);
+  const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
 
-  return (
-    <div>
-      {nowCategory !== -1 && nowSkill && (
-        <RedirectProcessButton nowCategory={nowCategory} nowSkill={nowSkill} />
-      )}
-    </div>
-  );
+  useEffect(() => {
+    setCurrentCategory({ id: Number(router.query.id) || -1, categoryName: "" });
+    setCurrentSkill({ id: 1, skillName: "" });
+  }, []);
+
+  return <div>{currentCategory?.id !== -1 && currentSkill?.id && <RedirectProcessButton />}</div>;
 };
 
 export default Category;
