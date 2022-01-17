@@ -1,6 +1,6 @@
 import { atom } from "recoil";
+import { LectureResultData } from "types/lectures.type";
 
-<<<<<<< HEAD
 export const totalNumberState = atom({
   key: "totalNumberState",
   default: 250,
@@ -14,9 +14,14 @@ export const findNumberState = atom({
 export const requestNumberState = atom({
   key: "requestNumberState",
   default: 99,
-=======
+});
+
 export const lectureCategoryState = atom({
   key: "lectureCategoryState",
-  default: [],
->>>>>>> develop
+  default: null,
+});
+
+export const lectureResultState = atom<LectureResultData[] | null>({
+  key: "lectureResultState",
+  default: null,
 });
