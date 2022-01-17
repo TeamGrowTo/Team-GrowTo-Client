@@ -3,7 +3,7 @@ import { colors } from "styles/color";
 
 interface IProps {
   open: boolean;
-  selected: string;
+  categorySelected: string;
 }
 
 const LectureCategoryBox = styled.div`
@@ -23,7 +23,7 @@ const CategoryWrapper = styled.div`
   position: relative;
 `;
 
-const CategoryButton = styled.div<IProps>`
+const CategoryButton = styled.button<IProps>`
   width: 63rem;
   height: 6.8rem;
   background-color: ${colors.gray2};
@@ -38,7 +38,7 @@ const CategoryButton = styled.div<IProps>`
   span {
     font-family: "Pretendard-Regular";
     font-size: 2rem;
-    color: ${(props) => (props.selected === "" ? `${colors.gray5}` : `${colors.subBlack}`)};
+    color: ${(props) => (props.categorySelected === "" ? `${colors.gray5}` : "#000000")};
 
     & > svg {
       cursor: pointer;

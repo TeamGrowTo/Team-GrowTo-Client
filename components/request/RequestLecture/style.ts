@@ -51,7 +51,7 @@ const RequestCard = styled.div`
   padding-top: 4.4rem;
 `;
 
-const RequestButton = styled.button`
+const DisabledRequestButton = styled.button`
   width: 63rem;
   height: 6.8rem;
   border-radius: 4.8rem;
@@ -63,5 +63,18 @@ const RequestButton = styled.button`
     color: ${colors.gray4};
   }
 `;
+const ActiveRequestButton = styled.button`
+  width: 63rem;
+  height: 6.8rem;
+  border-radius: 4.8rem;
+  background-color: ${colors.mainBlue};
+  cursor: pointer;
 
-export { RequestButton, RequestCard, StyledRoot, Title, Wrapper };
+  p {
+    font-family: "Pretendard-Bold";
+    font-size: 2rem;
+    color: white;
+  }
+`;
+
+export { ActiveRequestButton, DisabledRequestButton, RequestCard, StyledRoot, Title, Wrapper };
