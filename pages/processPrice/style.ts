@@ -72,7 +72,7 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
 export const LoadingStyledRoot = styled.div`
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
+  background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
 `;
 export const LogoWrapper = styled.div`
   width: 42.5rem;

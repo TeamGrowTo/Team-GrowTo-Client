@@ -5,6 +5,7 @@ export const colors = {
   subPink: "#FFCDD6",
   subNavy: "#5E61A4",
   subSkyBlue: "#95AFF2",
+  subPurple: "#CAACFF",
   gray1: "#F5F5F5",
   gray2: "#E5E5E5",
   gray3: "#D3D3D3",
