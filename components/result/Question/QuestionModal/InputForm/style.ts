@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 
-const StyledRoot = styled.article<{ flagDropdown: boolean }>`
+const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: boolean }>`
   display: flex;
   flex-direction: column;
   & > span {
@@ -18,7 +18,7 @@ const StyledRoot = styled.article<{ flagDropdown: boolean }>`
 
   & > button {
     border: 0.1rem solid ${colors.gray3};
-    color: ${colors.gray4};
+    color: ${({ isDropdownBlank }) => (isDropdownBlank ? colors.gray4 : colors.subBlack)};
     font-size: 2rem;
     font-family: "Pretendard-Regular";
     display: flex;
@@ -54,23 +54,25 @@ const StyledRoot = styled.article<{ flagDropdown: boolean }>`
     border-radius: 4.8rem;
     padding: 1.8rem 3.2rem;
     outline: none;
-    color: ${colors.gray4};
+    color: ${colors.subBlack};
     font-size: 2rem;
     font-family: "Pretendard-Regular";
   }
 
   & > textarea {
     border: 0.1rem solid ${colors.gray3};
-    border-radius: 4.8rem;
+    border-radius: 2.8rem;
     padding: 2.4rem 3.2rem;
-    color: ${colors.gray4};
+    color: ${colors.subBlack};
     font-size: 2rem;
     font-family: "Pretendard-Regular";
     margin-bottom: 6.7rem;
     height: 18.4rem;
+    outline: none;
+    resize: none;
   }
 
-  & > input::-webkit-input-placeholder {
+  /* & > input::-webkit-input-placeholder {
     color: ${colors.gray4};
   }
   & > input:-ms-input-placeholder {
@@ -81,7 +83,7 @@ const StyledRoot = styled.article<{ flagDropdown: boolean }>`
   }
   & > textarea:-ms-input-placeholder {
     color: ${colors.gray4};
-  }
+  } */
   & > input::placeholder {
     color: ${colors.gray4};
   }

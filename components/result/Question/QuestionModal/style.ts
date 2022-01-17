@@ -1,22 +1,12 @@
 import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 
-const StyledRoot = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(126, 126, 126, 0.7);
-  width: 100%;
-  height: 100%;
-`;
-
-const Modal = styled.section`
+const StyledRoot = styled.section`
   position: fixed;
-  top: 26.9rem;
-  left: 36rem;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 120rem;
   height: 54.2rem;
   display: flex;
@@ -43,9 +33,10 @@ const Title = styled.h3`
   font-size: 2.9rem;
   font-family: "Pretendard-Bold";
   line-height: 3.8rem;
+  margin-bottom: 1rem;
 `;
 
-const InputWrapper = styled.div`
+const InputWrapper = styled.form`
   display: flex;
   justify-content: center;
 `;
@@ -59,34 +50,6 @@ const EssentialInput = styled.div`
   }
   & > *:end-child {
     margin-bottom: 0;
-  }
-`;
-
-const Dropdown = styled.ul<{ flagDropdown: boolean }>`
-  position: absolute;
-  top: 9.1rem;
-  padding: 2.2rem 3.2rem;
-  height: 16.8rem;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: 2rem;
-  font-family: "Pretendard-Regular";
-  list-style: none;
-  color: ${colors.subBlack};
-  background-color: white;
-  border: 0.1rem solid ${colors.gray3};
-  border-radius: 0 0 2.8rem 2.8rem;
-  ${({ flagDropdown }) =>
-    flagDropdown
-      ? css`
-          display: flex;
-        `
-      : css`
-          display: none;
-        `}
-
-  & > li:hover {
-    cursor: pointer;
   }
 `;
 
@@ -115,6 +78,7 @@ const ReportButton = styled.button<{ isBlank: boolean }>`
       : css`
           background-color: #666666;
           color: #f5f5f5;
+          cursor: pointer;
         `}
 `;
 
@@ -127,11 +91,9 @@ const Line = styled.div`
 `;
 
 export {
-  Dropdown,
   EssentialInput,
   InputWrapper,
   Line,
-  Modal,
   ReportButton,
   StyledRoot,
   TextArea,

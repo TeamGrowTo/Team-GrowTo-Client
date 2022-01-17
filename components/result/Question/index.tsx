@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import QuestionButton from "./QuestionButton";
 import QuestionModal from "./QuestionModal";
-import { StyledRoot } from "./style";
+import { BackGround, StyledRoot } from "./style";
 
 const Question = function () {
   const [flagModal, setFlagModal] = useState(false);
@@ -13,7 +13,14 @@ const Question = function () {
   return (
     <StyledRoot>
       <QuestionButton onClickQuestionButton={handleModal} />
-      {flagModal ? <QuestionModal /> : <></>}
+      {flagModal ? (
+        <>
+          <BackGround onClick={handleModal} flagModal={flagModal}></BackGround>
+          <QuestionModal onCloseModal={handleModal} />
+        </>
+      ) : (
+        <></>
+      )}
     </StyledRoot>
   );
 };
