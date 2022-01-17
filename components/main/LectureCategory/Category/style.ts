@@ -16,13 +16,11 @@ const Button = styled.button`
   box-shadow: 0 0.2rem 0.8rem 0.1rem rgba(69, 121, 255, 0.3);
   border-radius: 2.4rem;
   cursor: pointer;
-  & > a {
-    svg {
-      margin-right: 1.4rem;
-    }
-    display: flex;
-    align-items: center;
+  svg {
+    margin-right: 1.4rem;
   }
+  display: flex;
+  align-items: center;
 `;
 
 export { Button };

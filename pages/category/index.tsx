@@ -10,8 +10,6 @@ interface CurrentCategory {
 const Category = function () {
   const currentCategory = useRecoilValue(currentCategoryState);
 
-  console.log(currentCategory);
-
   return <div>category</div>;
 };
 
