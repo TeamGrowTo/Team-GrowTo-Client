@@ -6,25 +6,35 @@ import { CategoryButton, CategoryList, CategoryWrapper, LectureCategoryBox } fro
 export default function LectureCategory() {
   // 버튼 눌렀을 때 dropdown 구현
   // a. 버튼이 눌렸을 때, 아이콘 변화, border-radius 변화, dropdown 오픈
-  // b. dropdown 메뉴 클릭했을 때, btn 안의 값 변화, btn 닫힘
+  // b. dropdown 메뉴 클릭했을 때, btn 안의 값 변화, 글자 색 변화, dropdown 닫힘
   const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState("");
 
-  const handleDropDown = () => {
+  const handleDropdown = () => {
     // if (open === false) setOpen(true);
     // else setOpen(false);
     setOpen(!open);
   };
 
-  const handleMenu = () => {};
+  const handleMenu = (e: any) => {
+    setSelected(e.target.innerText);
+    setOpen(false);
+  };
+
+  console.log(selected);
 
   return (
     <>
       <LectureCategoryBox>
         <p>강의 분야*</p>
         <CategoryWrapper>
-          <CategoryButton open={open}>
-            <span>개발, 기획, 데이터, 디자인, 마케팅, 기타</span>
-            <span onClick={handleDropDown}>
+          <CategoryButton open={open} selected={selected}>
+            {selected !== "" ? (
+              <span>{selected}</span>
+            ) : (
+              <span>개발, 기획, 데이터, 디자인, 마케팅, 기타</span>
+            )}
+            <span onClick={handleDropdown}>
               <Dropdown />
             </span>
           </CategoryButton>

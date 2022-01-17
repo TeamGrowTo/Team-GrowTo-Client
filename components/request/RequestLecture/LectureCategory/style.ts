@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { colors } from "styles/color";
 
+interface IProps {
+  open: boolean;
+  selected: string;
+}
+
 const LectureCategoryBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,11 +23,11 @@ const CategoryWrapper = styled.div`
   position: relative;
 `;
 
-const CategoryButton = styled.div<{ open: boolean }>`
+const CategoryButton = styled.div<IProps>`
   width: 63rem;
   height: 6.8rem;
   background-color: ${colors.gray2};
-  border-radius: ${({ open }) => (open ? "2.8rem 2.8rem 0 0" : "4.8rem")};
+  border-radius: ${(props) => (props.open ? "2.8rem 2.8rem 0 0" : "4.8rem")};
 
   display: flex;
   padding: 2.2rem 3.6rem;
@@ -33,11 +38,11 @@ const CategoryButton = styled.div<{ open: boolean }>`
   span {
     font-family: "Pretendard-Regular";
     font-size: 2rem;
-    color: ${colors.gray4};
+    color: ${(props) => (props.selected === "" ? `${colors.gray5}` : `${colors.subBlack}`)};
 
     & > svg {
       cursor: pointer;
-      transform: rotate(${({ open }) => (open ? "180deg" : "0")});
+      transform: rotate(${(props) => (props.open ? "180deg" : "0")});
     }
   }
 `;
@@ -51,18 +56,15 @@ const CategoryList = styled.ul`
   width: 63rem;
   height: 32.4rem;
   padding-top: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
   position: absolute;
 
   li {
     font-family: "Pretendard-Regular";
     font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 2.2rem;
+    padding-top: 1rem;
+    padding-bottom: 2.2rem;
+    width: 100%;
+    display: flex;
   }
 `;
 

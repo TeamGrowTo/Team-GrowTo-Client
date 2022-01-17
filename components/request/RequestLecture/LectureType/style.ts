@@ -28,6 +28,7 @@ const InputWrapper = styled.div`
     font-size: 2rem;
   }
   input::placeholder {
+    color: ${colors.gray5};
   }
 `;
 
