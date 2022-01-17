@@ -5,7 +5,7 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
   display: flex;
   flex-direction: column;
   & > span {
-    color: ${colors.gray6};
+    color: ${colors.subBlack};
     font-size: 2rem;
     font-family: "Pretendard-Bold";
     line-height: 2.4rem;
@@ -72,18 +72,6 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
     resize: none;
   }
 
-  /* & > input::-webkit-input-placeholder {
-    color: ${colors.gray4};
-  }
-  & > input:-ms-input-placeholder {
-    color: ${colors.gray4};
-  }
-  & > textarea::-webkit-input-placeholder {
-    color: ${colors.gray4};
-  }
-  & > textarea:-ms-input-placeholder {
-    color: ${colors.gray4};
-  } */
   & > input::placeholder {
     color: ${colors.gray4};
   }

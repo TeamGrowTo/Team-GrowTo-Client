@@ -72,21 +72,20 @@ const ReportButton = styled.button<{ isBlank: boolean }>`
   ${({ isBlank }) =>
     isBlank
       ? css`
-          background-color: #eeeeee;
-          color: #d0d0d0;
+          background-color: ${colors.gray2};
+          color: ${colors.gray4};
         `
       : css`
-          background-color: #666666;
-          color: #f5f5f5;
+          background-color: ${colors.mainBlue};
+          color: white;
           cursor: pointer;
         `}
 `;
 
 const Line = styled.div`
-  width: 0.1rem;
+  width: 0.05rem;
   height: 36.7rem;
-  background-color: #c5c5c5;
-  //나중에 이름 지어달라고 말씀드리기
+  background-color: ${colors.gray3};
   margin: 0 3.2rem;
 `;
 
