@@ -4,7 +4,7 @@ export const StyledRoot = styled.section`
   display: flex;
   width: 100%;
   height: 80rem;
-  background: ${colors.gray4};
+  background: linear-gradient(to bottom, rgb(138, 186, 197, 0.3), rgb(209, 201, 241, 0.3));
   font-family: "Pretendard-Regular";
 `;
 
@@ -18,7 +18,8 @@ export const StoryLink = styled.div`
   margin-bottom: 1.6rem;
   margin-top: 9.1rem;
   text-align: right;
-  color: white;
+  color: ${colors.subBlack};
+  font-family: "Pretendard-Medium";
   :hover {
     cursor: pointer;
   }
@@ -31,7 +32,9 @@ export const Slogan = styled.div`
   width: 96rem;
   height: 22.7rem;
   border-radius: 2.6rem;
-  background: white;
+  background: rgb(255, 255, 255, 0.7);
+  font-family: "Pretendard-SemiBold";
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
   & > p {
     margin: auto;
     font-size: 2.6rem;
@@ -40,6 +43,7 @@ export const Slogan = styled.div`
   & > p:last-child {
     font-size: 1.6rem;
     color: ${colors.mainBlue};
+    font-family: "Pretendard-Medium";
   }
   & > p > span {
     color: ${colors.mainBlue};
@@ -51,7 +55,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   & > p {
-    color: white;
+    color: ${colors.subBlack};
     font-size: 3.6rem;
     font-weight: bold;
     margin: 3.2rem;
