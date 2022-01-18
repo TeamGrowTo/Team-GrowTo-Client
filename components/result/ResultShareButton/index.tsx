@@ -11,7 +11,7 @@ const ResultShareButton = function () {
 
   const handleClick = async () => {
     try {
-      await navigator.clipboard.writeText(router.pathname);
+      await navigator.clipboard.writeText(router.asPath);
       setFlagModal(true);
     } catch {
       throw new Error("복사 실패!");
