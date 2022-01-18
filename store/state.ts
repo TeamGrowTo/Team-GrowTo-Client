@@ -10,3 +10,23 @@ export const lectureSkillState = atom<LectureSkillData[] | null>({
   key: "lectureSkillState",
   default: null,
 });
+
+interface CurrentCategory {
+  id: number | null;
+  categoryName: string | null;
+}
+
+export const currentCategoryState = atom<CurrentCategory | null>({
+  key: "currentCategoryState",
+  default: null,
+});
+
+interface CurrentSkill {
+  id: number | null;
+  skillName: string | null;
+}
+
+export const currentSkillState = atom<CurrentSkill | null>({
+  key: "currentSkillState",
+  default: null,
+});

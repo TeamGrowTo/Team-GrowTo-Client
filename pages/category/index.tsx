@@ -1,9 +1,13 @@
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
-import { useRouter } from "next/router";
 import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
-import React, { useEffect, useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { lectureCategoryState, lectureSkillState } from "store/state";
+import React, { useEffect } from "react";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import {
+  currentCategoryState,
+  currentSkillState,
+  lectureCategoryState,
+  lectureSkillState,
+} from "store/state";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
 
 const dummyCategoryList: LectureCategoryData[] = [
@@ -86,12 +90,11 @@ const dummySkillList: LectureSkillData[] = [
 ];
 
 const Category = function () {
-  const router = useRouter();
-  const [nowCategory, setNowCategory] = useState(Number(router.query.id) || -1);
-  const [nowSkill, setNowSkill] = useState(1);
+  const setCurrentCategory = useSetRecoilState(currentCategoryState);
+  const setCurrentSkill = useSetRecoilState(currentSkillState);
 
-  const setCategoryList = useSetRecoilState(lectureCategoryState);
-  const setSkillList = useSetRecoilState(lectureSkillState);
+  const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
+  const [skillList, setSkillList] = useRecoilState(lectureSkillState);
 
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
@@ -106,30 +109,32 @@ const Category = function () {
   };
 
   const handleCategoryClick = (id: number | null) => {
-    if (typeof id === "number") {
-      setNowCategory(id);
+    if (id) {
+      const result = categoryList?.filter((category) => category.id === id)[0] || null;
+
+      setCurrentCategory(result);
       // setLectureSkill(id);
       setSkillList(dummySkillList);
     }
   };
 
   const handleSkillClick = (id: number | null) => {
-    if (typeof id === "number") setNowSkill(id);
+    if (id) {
+      const result = skillList?.filter((skill) => skill.id === id)[0] || null;
+
+      setCurrentSkill(result);
+    }
   };
 
   useEffect(() => {
     // setLectureCategory();
+    setCurrentSkill({ id: 1, skillName: "" });
     setCategoryList(dummyCategoryList);
   }, []);
 
   return (
     <div>
-      <CategoryAndSkillList
-        nowCategory={nowCategory}
-        nowSkill={nowSkill}
-        onCategoryClick={handleCategoryClick}
-        onSkillClick={handleSkillClick}
-      />
+      <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
     </div>
   );
 };

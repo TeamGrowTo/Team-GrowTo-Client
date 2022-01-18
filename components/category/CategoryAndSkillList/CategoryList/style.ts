@@ -20,24 +20,21 @@ const Category = styled.button<{ isSelected: boolean }>`
   border-radius: 1.2rem;
   text-align: center;
   font-size: 1.8rem;
-  font-family: "Pretendard-Bold";
-  //SemiBold로 변경
+  font-family: "Pretendard-SemiBold";
   line-height: 100%;
-
-  /* &:hover { */
   cursor: pointer;
-  /* } */
 
   ${({ isSelected }) =>
     isSelected
       ? css`
+          color: ${colors.mainBlue};
           box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
           border: 1px solid ${colors.mainBlue};
-          background: #fbfcff;
+          background: ${colors.blue4};
         `
       : css`
           color: ${colors.subBlack};
-          border: 0.1rem solid #bfd8ff;
+          border: 0.1rem solid ${colors.blue3}};
           background: linear-gradient(
               101.6deg,
               rgba(244, 250, 255, 0.4) 32.93%,

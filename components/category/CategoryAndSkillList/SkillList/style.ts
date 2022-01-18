@@ -37,8 +37,7 @@ const Skill = styled.button<{ isSelected: boolean }>`
     isSelected
       ? css`
           color: ${colors.mainBlue};
-          font-family: "Pretendard-Bold";
-          //Semi-Bold로 변경
+          font-family: "Pretendard-SemiBold";
         `
       : css`
           color: ${colors.subBlack};
