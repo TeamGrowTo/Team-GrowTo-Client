@@ -3,7 +3,7 @@ import {
   getLectureRequestNumber,
   getLectureTotalNumber,
 } from "pages/apis/count.api";
-import ReportIcon from "public/assets/icons/reportIcon.svg";
+import { ReportIcon } from "public/assets/icons";
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { findNumberState, requestNumberState, totalNumberState } from "store/state";
@@ -14,8 +14,8 @@ import { Line, StyledRoot, Wrapper } from "./style";
 export default function MainReport() {
   // 중복되는 부분을 어떻게하면 센스있게 api 연결 가능할까요
   const [totalNumber, setTotalNumber] = useRecoilState(totalNumberState);
-  const [findNumber, setFindNumber] = useRecoilState(findNumberState);
-  const [requestNumber, setRequestNumber] = useRecoilState(requestNumberState);
+  const [findNumber, setFindNumber] = useState("");
+  const [requestNumber, setRequestNumber] = useState("");
 
   useEffect(async () => {
     setTotalNumber(await getLectureTotalNumber);
@@ -24,19 +24,19 @@ export default function MainReport() {
   }, []);
 
   const TotalCompare = {
-    Icon: ReportIcon,
+    UniqueIcon: ReportIcon,
     title: "총 비교 강의",
     count: { totalNumber },
     unit: "개",
   };
   const CustomSearch = {
-    Icon: ReportIcon,
+    UniqueIcon: ReportIcon,
     title: "맞춤 강의 찾기",
     count: { findNumber },
     unit: "회",
   };
   const RequestCompare = {
-    Icon: ReportIcon,
+    UniqueIcon: ReportIcon,
     title: "비교 요청",
     count: { requestNumber },
     unit: "건",
