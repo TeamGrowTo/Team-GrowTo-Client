@@ -1,6 +1,13 @@
-import { ProgressPrice, ProgressTag, ProgressTime } from "public/assets/icons";
+import {
+  ProgressPrice,
+  ProgressPriceM,
+  ProgressTag,
+  ProgressTagM,
+  ProgressTime,
+  ProgressTimeM,
+} from "public/assets/icons";
 import styled from "styled-components";
-
+import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.div`
   display: flex;
   justify-content: space-between;
@@ -13,6 +20,9 @@ export const StyledRoot = styled.div`
   border-color: white;
   border-style: solid;
   border-radius: 2.8rem 2.8rem 0 0;
+  ${applyMediaQuery("mobile")} {
+    width: 36rem;
+  }
 `;
 
 export const CardText = styled.div`
@@ -24,6 +34,13 @@ export const CardText = styled.div`
   }
   & > p:last-child {
     font-family: "Pretendard-Bold";
+  }
+  ${applyMediaQuery("mobile")} {
+    margin-left: 1.6rem;
+    & > p {
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
   }
 `;
 
@@ -37,4 +54,16 @@ export const ProgressBarTime = styled(ProgressTime)`
 
 export const ProgressBarPrice = styled(ProgressPrice)`
   margin-right: 5.4rem;
+`;
+
+export const ProgressBarTagM = styled(ProgressTagM)`
+  margin-right: 1.6rem;
+`;
+
+export const ProgressBarTimeM = styled(ProgressTimeM)`
+  margin-right: 1.6rem;
+`;
+
+export const ProgressBarPriceM = styled(ProgressPriceM)`
+  margin-right: 1.6rem;
 `;

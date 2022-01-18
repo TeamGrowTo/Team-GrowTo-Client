@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   width: 100%;
   height: 100%;
@@ -22,6 +23,9 @@ export const ProcessBox = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  ${applyMediaQuery("mobile")} {
+    width: 36rem;
+  }
 `;
 
 export const CardChoice = styled.section`
@@ -30,6 +34,10 @@ export const CardChoice = styled.section`
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 2.8rem 2.8rem;
   border: 2px solid white;
+  ${applyMediaQuery("mobile")} {
+    width: 36rem;
+    height: 100%;
+  }
 `;
 
 export const TagWrapper = styled.div`
@@ -43,6 +51,13 @@ export const TagWrapper = styled.div`
   }
   & > p > span {
     color: ${colors.subOrange};
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 32.8rem;
+    margin: 3.2rem auto 0;
+    & > p {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -66,10 +81,19 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
   :hover {
     cursor: pointer;
   }
+  ${applyMediaQuery("mobile")} {
+    margin-top: 4rem;
+    width: 9.8rem;
+    height: 5.2rem;
+  }
 `;
 
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
   right: 6.5rem;
+  ${applyMediaQuery("mobile")} {
+    top: 5.7rem;
+    right: 1rem;
+  }
 `;

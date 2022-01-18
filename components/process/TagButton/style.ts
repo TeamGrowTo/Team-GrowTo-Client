@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
-
+import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.button<{ isClicked: boolean }>`
   height: 4.8rem;
   margin-right: 0.8rem;
@@ -11,4 +11,8 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   font-family: "Pretendard-Bold";
   color: ${({ isClicked }) => (isClicked ? "white" : `${colors.gray6}`)};
   border-radius: 4.8rem;
+  ${applyMediaQuery("mobile")} {
+    padding: 1.3rem 2rem;
+    height: 4rem;
+  }
 `;

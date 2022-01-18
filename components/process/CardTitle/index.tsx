@@ -1,7 +1,17 @@
 import { useRouter } from "next/router";
 import React from "react";
+import Screen from "styles/Screen";
 
-import { CardText, ProgressBarPrice, ProgressBarTag, ProgressBarTime, StyledRoot } from "./style";
+import {
+  CardText,
+  ProgressBarPrice,
+  ProgressBarPriceM,
+  ProgressBarTag,
+  ProgressBarTagM,
+  ProgressBarTime,
+  ProgressBarTimeM,
+  StyledRoot,
+} from "./style";
 function CardTitle() {
   const router = useRouter();
   const PATH_NAME = router.pathname;
@@ -14,13 +24,24 @@ function CardTitle() {
         <p>{te} 실력 성장을 위한</p>
         <p>{te} 강의 찾기</p>
       </CardText>
-      {PATH_NAME === "/processTag" ? (
-        <ProgressBarTag />
-      ) : PATH_NAME === "/processTime" ? (
-        <ProgressBarTime />
-      ) : (
-        <ProgressBarPrice />
-      )}
+      <Screen desktop>
+        {PATH_NAME === "/processTag" ? (
+          <ProgressBarTag />
+        ) : PATH_NAME === "/processTime" ? (
+          <ProgressBarTime />
+        ) : (
+          <ProgressBarPrice />
+        )}
+      </Screen>
+      <Screen mobile>
+        {PATH_NAME === "/processTag" ? (
+          <ProgressBarTagM />
+        ) : PATH_NAME === "/processTime" ? (
+          <ProgressBarTimeM />
+        ) : (
+          <ProgressBarPriceM />
+        )}
+      </Screen>
     </StyledRoot>
   );
 }
