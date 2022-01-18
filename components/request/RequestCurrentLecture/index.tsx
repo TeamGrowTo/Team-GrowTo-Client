@@ -1,4 +1,5 @@
-import React from "react";
+import { getCurrentCompareLecture } from "pages/apis/lectures.api";
+import React, { useEffect, useState } from "react";
 
 import CurrentLecture from "./CurrentLecture";
 import { CurrentList, StyledRoot, Title, Wrapper } from "./style";
@@ -12,6 +13,12 @@ export default function RequestCurrentLecture() {
     { name: "데이터", skill: "데이터" },
     { name: "그로투", skill: "짱짱짱" },
   ];
+
+  // const [compareLecture, setCompareLecture] = useState([]);
+
+  // useEffect(async () => {
+  //   setCompareLecture(await getCurrentCompareLecture);
+  // }, []);
 
   return (
     <StyledRoot>
