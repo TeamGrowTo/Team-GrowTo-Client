@@ -35,7 +35,6 @@ function ProcessPrice() {
       getTimeData.priceAsc === false ||
       getTimeData.priceAsc === null
     ) {
-      console.log(getTimeData.priceAsc);
       const changeType =
         getTimeData.priceAsc === false
           ? "높은 가격"
