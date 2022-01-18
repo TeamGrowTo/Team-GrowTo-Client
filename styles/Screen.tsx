@@ -8,8 +8,8 @@ export const deviceQuery: IdeviceQuery = {
 };
 interface Props {
   children: JSX.Element;
-  mobile: string;
-  desktop: string;
+  mobile?: boolean;
+  desktop?: boolean;
 }
 function Screen({ children, mobile, desktop }: Props) {
   let renderFlag = false;
