@@ -58,7 +58,7 @@ export default function MainReview() {
           <p>*그로투 이메일 & DM 으로 보내주신 메시지 기반</p>
         </Title>
         <ReviewList>
-          {reviewInfo.map((review: IReviewInfo) => (
+          {reviewInfo.map((review) => (
             <Review review={review} key={review.id} />
           ))}
         </ReviewList>
