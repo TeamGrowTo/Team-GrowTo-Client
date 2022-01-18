@@ -1,4 +1,5 @@
 import ProcessResult from "components/result/ProcessResult";
+import ResultShareButton from "components/result/ResultShareButton";
 import { useRouter } from "next/router";
 import { getLectureResultData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
@@ -34,6 +35,7 @@ const Category = () => {
   return (
     <StyledRoot>
       <ProcessResult listLength={listLength} />
+      <ResultShareButton />
     </StyledRoot>
   );
 };
