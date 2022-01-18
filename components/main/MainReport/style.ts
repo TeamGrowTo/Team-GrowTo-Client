@@ -17,8 +17,6 @@ const Wrapper = styled.div`
   width: 98rem;
   height: 40rem;
   background: rgb(255, 255, 255, 0.8);
-  /* backdrop-filter: blur(10rem); */
-  /*블러처리 어떻게 해*/
   border: 0.2rem solid #ffffff;
   border-radius: 3rem;
   display: flex;
