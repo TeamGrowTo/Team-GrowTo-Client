@@ -1,4 +1,4 @@
-import ShareModal from "components/main/ShareModal";
+import Modal from "components/common/Modal";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -37,7 +37,12 @@ function Share() {
           <ShareButton onClick={shareUrl}>공유하기</ShareButton>
         </ButtonWrapper>
       </ShareBox>
-      <ShareModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <Modal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        mainText="공유 링크가 복사 되었어요 ☺️"
+        subText="모두가 편하게 강의를 찾을 수 있도록 주변에 알려주세요."
+      />
     </StyledRoot>
   );
 }
