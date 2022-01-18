@@ -4,7 +4,7 @@ import QuestionButton from "./QuestionButton";
 import QuestionModal from "./QuestionModal";
 import { BackGround, StyledRoot } from "./style";
 
-const Question = function () {
+function Question() {
   const [flagModal, setFlagModal] = useState(false);
   const handleModal = () => {
     setFlagModal(!flagModal);
@@ -23,6 +23,6 @@ const Question = function () {
       )}
     </StyledRoot>
   );
-};
+}
 
 export default Question;

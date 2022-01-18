@@ -13,6 +13,7 @@ const StyledRoot = styled.button`
   justify-content: center;
   width: 20.9rem;
   height: 4.8rem;
+  box-shadow: 0 0.6rem 1.8rem rgba(0, 0, 0, 0.22);
 
   &:hover {
     cursor: pointer;

@@ -7,7 +7,7 @@ interface Props {
   description: string;
 }
 
-const DescriptionInput = function ({ onDescriptionInputClick, description }: Props) {
+function DescriptionInput({ onDescriptionInputClick, description }: Props) {
   return (
     <InputForm title="상세 설명">
       <textarea
@@ -17,6 +17,6 @@ const DescriptionInput = function ({ onDescriptionInputClick, description }: Pro
       />
     </InputForm>
   );
-};
+}
 
 export default DescriptionInput;

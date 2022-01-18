@@ -1,12 +1,12 @@
 import Question from "components/result/Question";
 import React from "react";
 
-const index = () => {
+function Result() {
   return (
     <div>
       <Question />
     </div>
   );
-};
+}
 
-export default index;
+export default Result;

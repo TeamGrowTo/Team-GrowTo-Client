@@ -7,7 +7,7 @@ interface Props {
   onEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const EmailInput = function ({ email, onEmailChange }: Props) {
+function EmailInput({ email, onEmailChange }: Props) {
   return (
     // <form name="reportForm">
     <InputForm title="이메일*">
@@ -21,6 +21,6 @@ const EmailInput = function ({ email, onEmailChange }: Props) {
     </InputForm>
     // </form>
   );
-};
+}
 
 export default EmailInput;

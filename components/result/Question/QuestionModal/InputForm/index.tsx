@@ -9,18 +9,13 @@ interface Props {
   isDropdownBlank?: boolean;
 }
 
-const InputForm = function ({
-  children,
-  title,
-  flagDropdown = false,
-  isDropdownBlank = true,
-}: Props) {
+function InputForm({ children, title, flagDropdown = false, isDropdownBlank = true }: Props) {
   return (
     <StyledRoot flagDropdown={flagDropdown} isDropdownBlank={isDropdownBlank}>
       <span>{title}</span>
       {children}
     </StyledRoot>
   );
-};
+}
 
 export default InputForm;

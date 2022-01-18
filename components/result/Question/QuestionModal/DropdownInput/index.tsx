@@ -12,7 +12,7 @@ interface Props {
   onDifferenceChange: (index: number) => void;
 }
 
-const DropdownInput = function ({
+function DropdownInput({
   dropdownList,
   flagDropdown,
   onFlagDropdownClick,
@@ -38,6 +38,6 @@ const DropdownInput = function ({
       </Dropdown>
     </InputForm>
   );
-};
+}
 
 export default DropdownInput;

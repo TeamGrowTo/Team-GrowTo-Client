@@ -7,7 +7,7 @@ interface Props {
   onLectureNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const LectureNameInput = ({ lectureName, onLectureNameChange }: Props) => {
+function LectureNameInput({ lectureName, onLectureNameChange }: Props) {
   return (
     <InputForm title="강의 이름*">
       <input
@@ -17,6 +17,6 @@ const LectureNameInput = ({ lectureName, onLectureNameChange }: Props) => {
       />
     </InputForm>
   );
-};
+}
 
 export default LectureNameInput;
