@@ -50,6 +50,7 @@ export const TimeWrapper = styled.div`
 
 export const NextButtonWrapper = styled.div`
   display: flex;
+  position: relative;
 `;
 
 export const NextButton = styled.button<{ selectedPrice: string }>`
@@ -67,6 +68,12 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
   :hover {
     cursor: pointer;
   }
+`;
+
+export const NextArrowWrapper = styled.div`
+  position: absolute;
+  top: 4.5rem;
+  right: 4.5rem;
 `;
 
 export const LoadingStyledRoot = styled.div`

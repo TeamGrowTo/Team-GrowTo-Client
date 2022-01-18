@@ -1,5 +1,7 @@
 export { default as EmailIcon } from "./emailIcon.svg";
 export { default as LogoIcon } from "./logoIcon.svg";
+export { default as NextArrowAble } from "./nextArrowAble.svg";
+export { default as NextArrowDisabled } from "./nextArrowDisabled.svg";
 export { default as ProcessLoading } from "./processLoading.svg";
 export { default as ProcessPlayIcon } from "./processPlayIcon.png";
 export { default as ProcessSquareIcon } from "./processSquareIcon.png";

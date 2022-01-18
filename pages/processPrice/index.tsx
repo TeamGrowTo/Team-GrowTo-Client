@@ -4,7 +4,12 @@ import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
 import Router from "next/router";
 import { postProcessResult } from "pages/apis/lectures.api";
-import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
+import {
+  NextArrowAble,
+  NextArrowDisabled,
+  ProcessPlayIcon,
+  ProcessSquareIcon,
+} from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
@@ -14,6 +19,7 @@ import {
   LoadingLogo,
   LoadingStyledRoot,
   LogoWrapper,
+  NextArrowWrapper,
   NextButton,
   NextButtonWrapper,
   PlayIcon,
@@ -106,8 +112,11 @@ function ProcessPrice() {
             selectedPrice={selectedPrice}
             disabled={selectedPrice.length > 0 ? false : true}
           >
-            완료하기 &gt;
+            완료하기
           </NextButton>
+          <NextArrowWrapper>
+            {selectedPrice.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />}
+          </NextArrowWrapper>
         </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>

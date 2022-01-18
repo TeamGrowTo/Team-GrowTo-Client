@@ -48,6 +48,7 @@ export const TagWrapper = styled.div`
 
 export const NextButtonWrapper = styled.div`
   display: flex;
+  position: relative;
 `;
 
 export const NextButton = styled.button<{ selectedTags: string[] }>`
@@ -65,4 +66,10 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
   :hover {
     cursor: pointer;
   }
+`;
+
+export const NextArrowWrapper = styled.div`
+  position: absolute;
+  top: 4.5rem;
+  right: 6.5rem;
 `;

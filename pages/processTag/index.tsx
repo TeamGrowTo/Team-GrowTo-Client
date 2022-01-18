@@ -4,7 +4,12 @@ import Title from "components/process/Title";
 import Image from "next/image";
 import Router from "next/router";
 import { getSkillTagList } from "pages/apis/info.api";
-import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
+import {
+  NextArrowAble,
+  NextArrowDisabled,
+  ProcessPlayIcon,
+  ProcessSquareIcon,
+} from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
@@ -12,6 +17,7 @@ import { SkillTagList } from "types/info.type";
 
 import {
   CardChoice,
+  NextArrowWrapper,
   NextButton,
   NextButtonWrapper,
   PlayIcon,
@@ -99,8 +105,11 @@ function ProcessTag() {
             selectedTags={selectedTags}
             disabled={selectedTags.length > 1 ? false : true}
           >
-            다음 &gt;
+            다음
           </NextButton>
+          <NextArrowWrapper>
+            {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
+          </NextArrowWrapper>
         </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>
