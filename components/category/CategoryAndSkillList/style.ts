@@ -30,6 +30,9 @@ const RedirectRequestPage = styled.a`
   color: ${colors.gray6};
   margin-top: 0.8rem;
   cursor: pointer;
+  & > svg {
+    margin-left: 1rem;
+  }
 `;
 
 export { CategoryAndSkillWrapper, RedirectRequestPage, StyledRoot, Title };

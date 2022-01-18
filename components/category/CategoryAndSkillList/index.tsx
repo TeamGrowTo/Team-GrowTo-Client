@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CategoryRightArrowIcon } from "public/assets/icons";
 import React from "react";
 
 import CategoryList from "./CategoryList";
@@ -18,7 +19,10 @@ const CategoryAndSkillList = function ({ onCategoryClick, onSkillClick }: Props)
         <CategoryList onCategoryClick={onCategoryClick} />
         <SkillList onSkillClick={onSkillClick} />
         <Link href="/request" passHref>
-          <RedirectRequestPage>추가적으로 비교를 원하는 분야가 있다면?</RedirectRequestPage>
+          <RedirectRequestPage>
+            추가적으로 비교를 원하는 분야가 있다면?
+            <CategoryRightArrowIcon />
+          </RedirectRequestPage>
         </Link>
       </CategoryAndSkillWrapper>
     </StyledRoot>

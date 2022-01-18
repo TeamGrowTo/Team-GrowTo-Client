@@ -129,6 +129,7 @@ const Category = function () {
   useEffect(() => {
     // setLectureCategory();
     setCurrentSkill({ id: 1, skillName: "" });
+    setCurrentCategory({ id: -1, categoryName: "" });
     setCategoryList(dummyCategoryList);
   }, []);
 
