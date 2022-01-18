@@ -9,7 +9,6 @@ const Home: NextPage = () => {
       <Banner />
       <MainReview />
       <Share />
-      <MainReview />
     </>
   );
 };
