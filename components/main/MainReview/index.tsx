@@ -19,6 +19,7 @@ export default function MainReview() {
       Profile: MainReviewProfile1,
       nickname: "사회초년생 개발자",
       id: "jay2kxxx",
+      isTransparent: true,
     },
     {
       comment:
@@ -26,6 +27,7 @@ export default function MainReview() {
       Profile: MainReviewProfile2,
       nickname: "2년차 디자이너",
       id: "yoonsxxx",
+      isTransparent: false,
     },
     {
       comment:
@@ -33,6 +35,7 @@ export default function MainReview() {
       Profile: MainReviewProfile3,
       nickname: "3년차 개발자",
       id: "ryu19xxx",
+      isTransparent: true,
     },
     {
       comment:
@@ -40,6 +43,7 @@ export default function MainReview() {
       Profile: MainReviewProfile4,
       nickname: "취업준비생 데이터사이언티스트",
       id: "v2tmexxx",
+      isTransparent: false,
     },
     {
       comment:
@@ -47,6 +51,7 @@ export default function MainReview() {
       Profile: MainReviewProfile5,
       nickname: "6년차 마케터",
       id: "alphaxxx",
+      isTransparent: true,
     },
     {
       comment:
@@ -54,6 +59,7 @@ export default function MainReview() {
       Profile: MainReviewProfile6,
       nickname: "취업준비생 기획자",
       id: "re_recxxx",
+      isTransparent: false,
     },
   ];
 
