@@ -8,7 +8,7 @@ interface Props {
   onSkillClick: (id: number | null) => void;
 }
 
-const SkillList = function ({ onSkillClick }: Props) {
+function SkillList({ onSkillClick }: Props) {
   const skillList = useRecoilValue(lectureSkillState);
   const currentCategory = useRecoilValue(currentCategoryState);
   const currentSkill = useRecoilValue(currentSkillState);
@@ -32,6 +32,6 @@ const SkillList = function ({ onSkillClick }: Props) {
       )}
     </StyledRoot>
   );
-};
+}
 
 export default SkillList;

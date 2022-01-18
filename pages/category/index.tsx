@@ -92,7 +92,7 @@ const dummySkillList: LectureSkillData[] = [
   },
 ];
 
-const Category = function () {
+function Category() {
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
   const setCurrentSkill = useSetRecoilState(currentSkillState);
 
@@ -144,6 +144,6 @@ const Category = function () {
       </Background>
     </div>
   );
-};
+}
 
 export default Category;

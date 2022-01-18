@@ -9,7 +9,7 @@ interface Props {
   onCategoryClick: (id: number | null) => void;
 }
 
-const CategoryList = function ({ onCategoryClick }: Props) {
+function CategoryList({ onCategoryClick }: Props) {
   const categoryList = useRecoilValue(lectureCategoryState);
   const currentCategory = useRecoilValue(currentCategoryState);
 
@@ -26,6 +26,6 @@ const CategoryList = function ({ onCategoryClick }: Props) {
       ))}
     </StyledRoot>
   );
-};
+}
 
 export default CategoryList;

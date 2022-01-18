@@ -11,7 +11,7 @@ interface Props {
   onSkillClick: (id: number | null) => void;
 }
 
-const CategoryAndSkillList = function ({ onCategoryClick, onSkillClick }: Props) {
+function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
   return (
     <StyledRoot>
       <CategoryAndSkillWrapper>
@@ -27,6 +27,6 @@ const CategoryAndSkillList = function ({ onCategoryClick, onSkillClick }: Props)
       </CategoryAndSkillWrapper>
     </StyledRoot>
   );
-};
+}
 
 export default CategoryAndSkillList;
