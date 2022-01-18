@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "styles/color";
+import { colors } from "styles/colors";
 // 어떡하면 같은 css가 들어가는 걸 훅으로 묶을 수 있을지 생각해봅시다
 
 const EmailBox = styled.div`
@@ -18,7 +18,7 @@ const EmailBox = styled.div`
 const InputWrapper = styled.div`
   width: 63rem;
   height: 6.8rem;
-  background-color: ${colors.gray2};
+  background-color: rgb(255, 255, 255, 0.7);
   border-radius: 4.8rem;
   display: flex;
   padding: 2.2rem 3.6rem;
@@ -29,7 +29,7 @@ const InputWrapper = styled.div`
     font-size: 2rem;
   }
   input::placeholder {
-    color: ${colors.gray5};
+    color: ${colors.gray4};
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "styles/color";
+import { colors } from "styles/colors";
 
 interface IProps {
   open: boolean;
@@ -26,7 +26,7 @@ const CategoryWrapper = styled.div`
 const CategoryButton = styled.button<IProps>`
   width: 63rem;
   height: 6.8rem;
-  background-color: ${colors.gray2};
+  background-color: rgb(255, 255, 255, 0.7);
   border-radius: ${(props) => (props.open ? "2.8rem 2.8rem 0 0" : "4.8rem")};
 
   display: flex;
@@ -38,7 +38,7 @@ const CategoryButton = styled.button<IProps>`
   span {
     font-family: "Pretendard-Regular";
     font-size: 2rem;
-    color: ${(props) => (props.categorySelected === "" ? `${colors.gray5}` : "#000000")};
+    color: ${(props) => (props.categorySelected === "" ? `${colors.gray4}` : "#000000")};
 
     & > svg {
       cursor: pointer;
