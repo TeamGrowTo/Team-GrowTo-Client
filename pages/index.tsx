@@ -8,8 +8,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Banner />
-      <MainReview />
       <MainReport />
+      <MainReview />
       <Share />
     </>
   );
