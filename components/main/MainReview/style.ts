@@ -6,6 +6,7 @@ const StyledRoot = styled.div`
   height: 95.8rem;
   display: flex;
   justify-content: center;
+  background-image: url("/assets/images/mainReviewBackground.png");
 `;
 
 const Wrapper = styled.div`
