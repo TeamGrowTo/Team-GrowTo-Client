@@ -3,7 +3,7 @@ import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
 import Router from "next/router";
-import { postProcessResult } from "pages/apis/lectures";
+import { postProcessResult } from "pages/apis/lectures.api";
 import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
