@@ -9,6 +9,7 @@ const StyledRoot = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0.8rem;
 `;
 
 const NotSelectedCategory = styled.span`

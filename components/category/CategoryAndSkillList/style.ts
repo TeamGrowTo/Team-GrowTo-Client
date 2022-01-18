@@ -28,7 +28,7 @@ const RedirectRequestPage = styled.a`
   font-size: 1.4rem;
   font-family: "Pretendard-Regular";
   color: ${colors.gray6};
-  margin-top: 0.8rem;
+  margin-bottom: 4.3rem;
   cursor: pointer;
   & > svg {
     margin-left: 1rem;
