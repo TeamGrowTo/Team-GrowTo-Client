@@ -1,5 +1,6 @@
 import { atom } from "recoil";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
+import { LectureResultData } from "types/lectures.type";
 
 export const lectureCategoryState = atom<LectureCategoryData[] | null>({
   key: "lectureCategoryState",
@@ -28,5 +29,10 @@ interface CurrentSkill {
 
 export const currentSkillState = atom<CurrentSkill | null>({
   key: "currentSkillState",
+  default: null,
+});
+
+export const lectureResultState = atom<LectureResultData[] | null>({
+  key: "lectureResultState",
   default: null,
 });

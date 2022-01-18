@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "editor.formatOnSave": true
-}
-=======
   "editor.formatOnSave": true,
   "prettier.printWidth": 100,
   "prettier.semi": true,
@@ -19,4 +12,3 @@
     "source.fixAll": true,
   },
 }
->>>>>>> develop

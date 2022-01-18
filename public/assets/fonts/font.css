@@ -21,12 +21,51 @@
     url("./Pretendard-Regular.subset.woff") format("woff"),
     url("./Pretendard-Regular.ttf") format("ttf");
 }
+@font-face {
+  font-family: "Pretendard-Regular";
+  font-display: fallback;
+  src: 
+    local("Pretendard-Regular"),
+    url("./Pretendard-Regular.subset.woff2") format("woff2"),
+    url("./Pretendard-Regular.subset.woff") format("woff"),
+    url("./Pretendard-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Pretendard-Medium";
+  font-display: fallback;
+  src: 
+    local("Pretendard-Medium"),
+    url("./Pretendard-Medium.subset.woff2") format("woff2"),
+    url("./Pretendard-Medium.subset.woff") format("woff"),
+    url("./Pretendard-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Pretendard-Medium";
+  font-display: fallback;
+  src: local("Pretendard-Medium"), url("./Pretendard-Medium.subset.woff2") format("woff2"),
+    url("./Pretendard-Medium.subset.woff") format("woff"),
+    url("./Pretendard-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  font-display: fallback;
+  src: 
+    local("Pretendard-SemiBold"),
+    url("./Pretendard-SemiBold.subset.woff2") format("woff2"),
+    url("./Pretendard-SemiBold.subset.woff") format("woff"),
+    url("./Pretendard-SemiBold.ttf") format("ttf");
+}
 
 @font-face {
   font-family: "Pretendard-Bold";
   font-display: fallback;
-  src: local("Pretendard-Bold"), url("./Pretendard-Bold.subset.woff2") format("woff2"),
-    url("./Pretendard-Bold.subset.woff") format("woff"), url("./Pretendard-Bold.ttf") format("ttf");
+  src: 
+    local("Pretendard-Bold"),
+    url("./Pretendard-Bold.subset.woff2") format("woff2"),
+    url("./Pretendard-Bold.subset.woff") format("woff"),
+    url("./Pretendard-Bold.ttf") format("ttf");
 }
 
 @font-face {

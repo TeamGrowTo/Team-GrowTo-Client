@@ -1,4 +1,5 @@
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
+import Result from "components/category/Result";
 import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
 import React, { useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
@@ -9,6 +10,8 @@ import {
   lectureSkillState,
 } from "store/state";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
+
+import { Background } from "./style";
 
 const dummyCategoryList: LectureCategoryData[] = [
   {
@@ -136,6 +139,9 @@ const Category = function () {
   return (
     <div>
       <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
+      <Background>
+        <Result />
+      </Background>
     </div>
   );
 };

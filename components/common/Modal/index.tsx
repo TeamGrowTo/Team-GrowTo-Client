@@ -5,8 +5,10 @@ import { BackGround, Wrapper } from "./style";
 interface IProps {
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
+  mainText: string;
+  subText: string;
 }
-function ShareModal({ isModalOpen, setIsModalOpen }: IProps) {
+function Modal({ isModalOpen, setIsModalOpen, mainText, subText }: IProps) {
   const handleClose = (): void => {
     setIsModalOpen(false);
     document.body.style.overflow = "unset";
@@ -16,7 +18,9 @@ function ShareModal({ isModalOpen, setIsModalOpen }: IProps) {
     <>
       <BackGround isBlur={true} onClick={handleClose}></BackGround>
       <Wrapper>
-        <p>링크가 복사되었습니다!</p>
+        <p>{mainText}</p>
+        <p>{subText}</p>
+        <button onClick={handleClose}> 확인</button>
       </Wrapper>
     </>
   ) : (
@@ -24,4 +28,4 @@ function ShareModal({ isModalOpen, setIsModalOpen }: IProps) {
   );
 }
 
-export default ShareModal;
+export default Modal;
