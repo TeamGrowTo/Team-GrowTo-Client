@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
   }
   body{
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: "Pretendard-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   a {
     color: inherit;

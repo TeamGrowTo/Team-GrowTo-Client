@@ -1,4 +1,3 @@
-import { NONAME } from 'dns';
 import styled from 'styled-components';
 import { colors } from 'styles/colors';
 
@@ -14,7 +13,7 @@ const StyledRoot = styled.nav`
   z-index: 1000;
 
   background-color: white;
-  `;
+`;
 
 const NavItemBox = styled.div`
   width: 100%;
@@ -40,18 +39,11 @@ const NavItem = styled.a<{pathName: string; href: string}>`
   letter-spacing: -0.05em;
   color: #606060;
   border-bottom: ${(props) => props.pathName === props.href ? `solid 3px ${colors.gray5}`: "none"};
-  
-  `;
+`;
 
 const LogoWrapper = styled.a`
   margin-right: 10.4rem;
   cursor: pointer;
 `;
 
-export {
-  StyledRoot,
-  NavItemBox,
-  NavItemWrapper,
-  NavItem,
-  LogoWrapper,
-}
+export { LogoWrapper, NavItem, NavItemBox, NavItemWrapper, StyledRoot };
