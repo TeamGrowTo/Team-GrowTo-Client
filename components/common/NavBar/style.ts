@@ -1,4 +1,6 @@
+import { NONAME } from 'dns';
 import styled from 'styled-components';
+import { colors } from 'styles/colors';
 
 const StyledRoot = styled.nav`
   width: 100%;
@@ -19,6 +21,7 @@ const NavItemBox = styled.div`
   max-width: 128rem;
   min-width: 54rem;
   display: flex;
+  align-items: center;
 `;
 
 const NavItemWrapper = styled.div`
@@ -27,12 +30,17 @@ const NavItemWrapper = styled.div`
   min-width: 33rem;
 `;
 
-const NavItem = styled.a`
-  margin: 0 22px;
+const NavItem = styled.a<{pathName: string; href: string}>`
+  margin: 0 0.2rem;
+  padding: 0 2.2rem;
+  height: 11.6rem;
+  line-height: 11.6rem;
   font-family: 'Pretendard-Bold';
   font-size: 2rem;
   letter-spacing: -0.05em;
   color: #606060;
+  border-bottom: ${(props) => props.pathName === props.href ? `solid 3px ${colors.gray5}`: "none"};
+  
   `;
 
 const LogoWrapper = styled.a`

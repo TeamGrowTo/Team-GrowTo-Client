@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { LogoIcon } from "public/assets/icons";
 import React from "react";
 
 import { LogoWrapper, NavItem, NavItemBox, NavItemWrapper, StyledRoot } from "./style";
 
 function NavBar() {
+  const router = useRouter();
+  
   return (
     <StyledRoot>
       <NavItemBox>
@@ -15,13 +18,13 @@ function NavBar() {
         </Link>
         <NavItemWrapper>
           <Link href="/category" passHref>
-            <NavItem>전체강의</NavItem>
+            <NavItem pathName={router.pathname}>전체강의</NavItem>
           </Link>
           <Link href="/choiceRequest" passHref>
-            <NavItem>비교요청</NavItem>
+            <NavItem pathName={router.pathname}>비교요청</NavItem>
           </Link>
           <Link href="/about" passHref>
-            <NavItem>ABOUT</NavItem>
+            <NavItem pathName={router.pathname}>ABOUT</NavItem>
           </Link>
         </NavItemWrapper>
       </NavItemBox>
