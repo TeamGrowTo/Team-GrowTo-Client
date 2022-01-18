@@ -1,17 +1,10 @@
-import {
-  LectureFindNumber,
-  LectureRequestNumber,
-  LectureTotalNumber,
-  ResponseFindNumber,
-  ResponseRequestNumber,
-  ResponseTotalNumber,
-} from "types/count.type";
+import { ResponseFindNumber, ResponseRequestNumber, ResponseTotalNumber } from "types/count.type";
 
 import { serverAxios } from ".";
 
 const PREFIX_URL = "/count";
 
-export const getLectureTotalNumber = async (): Promise<LectureTotalNumber | null> => {
+export const getLectureTotalNumber = async (): Promise<number | null> => {
   try {
     const { data } = await serverAxios.get(`${PREFIX_URL}/total`);
 
@@ -23,7 +16,7 @@ export const getLectureTotalNumber = async (): Promise<LectureTotalNumber | null
   }
 };
 
-export const getLectureFindNumber = async (): Promise<LectureFindNumber | null> => {
+export const getLectureFindNumber = async (): Promise<number | null> => {
   try {
     const { data } = await serverAxios.get(`${PREFIX_URL}/find`);
 
@@ -35,7 +28,7 @@ export const getLectureFindNumber = async (): Promise<LectureFindNumber | null> 
   }
 };
 
-export const getLectureRequestNumber = async (): Promise<LectureRequestNumber | null> => {
+export const getLectureRequestNumber = async (): Promise<number | null> => {
   try {
     const { data } = await serverAxios.get(`${PREFIX_URL}/request`);
 
