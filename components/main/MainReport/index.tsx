@@ -4,7 +4,7 @@ import {
   getLectureRequestNumber,
   getLectureTotalNumber,
 } from "pages/apis/count.api";
-import { ReportIcon } from "public/assets/icons";
+import { FindIcon, RequestIcon, TotalIcon } from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 
 import { Line, StyledRoot, Wrapper } from "./style";
@@ -29,19 +29,19 @@ export default function MainReport() {
   // }, []);
 
   const TotalCompare = {
-    UniqueIcon: ReportIcon,
+    UniqueIcon: TotalIcon,
     title: "총 비교 강의",
     count: totalNumber,
     unit: "개",
   };
   const CustomSearch = {
-    UniqueIcon: ReportIcon,
+    UniqueIcon: FindIcon,
     title: "맞춤 강의 찾기",
     count: findNumber,
     unit: "회",
   };
   const RequestCompare = {
-    UniqueIcon: ReportIcon,
+    UniqueIcon: RequestIcon,
     title: "비교 요청",
     count: requestNumber,
     unit: "건",
