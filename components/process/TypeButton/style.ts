@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
-
+import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.button<{ isClicked: boolean }>`
   width: 22rem;
   height: 18rem;
@@ -12,4 +12,9 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   margin: 6.8rem 1.8rem 0;
   color: ${({ isClicked }) => (isClicked ? "white" : `${colors.gray6}`)};
   background: ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "white")};
+  ${applyMediaQuery("mobile")} {
+    width: 22rem;
+    height: 7.2rem;
+    margin: 2.4rem 6rem;
+  }
 `;

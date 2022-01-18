@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   width: 100%;
   height: 100%;
@@ -25,6 +26,9 @@ export const ProcessBox = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  ${applyMediaQuery("mobile")} {
+    width: 36rem;
+  }
 `;
 
 export const CardChoice = styled.section`
@@ -34,6 +38,10 @@ export const CardChoice = styled.section`
   border-radius: 0 0 2.8rem 2.8rem;
   border: 2px solid white;
   margin-bottom: 14.2rem;
+  ${applyMediaQuery("mobile")} {
+    width: 36rem;
+    height: 100%;
+  }
 `;
 
 export const TimeWrapper = styled.div`
@@ -47,5 +55,12 @@ export const TimeWrapper = styled.div`
   }
   & > p > span {
     color: ${colors.subOrange};
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 32.8rem;
+    margin: 3.2rem auto 5rem;
+    & > p {
+      font-size: 2rem;
+    }
   }
 `;
