@@ -4,6 +4,8 @@ import { colors } from "styles/colors";
 const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 5.6rem;
+  flex-wrap: wrap;
 `;
 
 const NotiBox = styled.div`
@@ -24,19 +26,22 @@ const NotiBox = styled.div`
 const NotiWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${colors.gray6};
+  font-size: 1.6rem;
+  font-family: "Pretendard-Bold";
 `;
 
 const NotiTitle = styled.span`
-  font-size: 1.6rem;
-  font-family: "Pretendard-Bold";
-  color: ${colors.gray5};
   margin-bottom: 0.8rem;
+  & > span {
+    color: ${colors.subOrange};
+  }
 `;
 
 const Content = styled.p`
-  font-size: 1.6rem;
-  font-family: "Pretendard-Bold";
-  color: ${colors.subBlack};
+  & > span {
+    color: ${colors.subOrange};
+  }
 `;
 
 export { Content, NotiBox, NotiTitle, NotiWrapper, StyledRoot };

@@ -1,3 +1,4 @@
+import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
 import { useRouter } from "next/router";
 import { getLectureResultData } from "pages/apis/lectures.api";
@@ -34,6 +35,7 @@ const Category = () => {
   return (
     <StyledRoot>
       <ProcessResult listLength={listLength} />
+      <MiddleNotification />
     </StyledRoot>
   );
 };

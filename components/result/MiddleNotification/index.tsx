@@ -9,8 +9,13 @@ const MiddleNotification = function () {
       <NotiBox>
         <NotiIcon />
         <NotiWrapper>
-          <NotiTitle>해당 추천 내용에 광고가 포함되어 있나요?</NotiTitle>
-          <Content>그로투 강의비교는 광고를 일체 받고 있지 않습니다. 그로투는 개인의 성장</Content>
+          <NotiTitle>
+            <span>Q</span> 해당 추천 내용에 광고가 포함되어 있나요?
+          </NotiTitle>
+          <Content>
+            <span>A</span> 그로투 강의비교는 광고를 일체 받고 있지 않습니다. 그로투는 오로지
+            여러분의 성장만을 생각하는 서비스입니다.
+          </Content>
         </NotiWrapper>
       </NotiBox>
     </StyledRoot>
