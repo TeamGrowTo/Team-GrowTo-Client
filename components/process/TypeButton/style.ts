@@ -13,6 +13,7 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   color: ${({ isClicked }) => (isClicked ? "white" : `${colors.gray6}`)};
   background: ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "white")};
   ${applyMediaQuery("mobile")} {
+    font-size: 1.6rem;
     width: 22rem;
     height: 7.2rem;
     margin: 2.4rem 6rem;

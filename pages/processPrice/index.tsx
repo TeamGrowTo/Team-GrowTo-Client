@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
+import Screen from "styles/Screen";
 
 import {
   CardChoice,
@@ -82,12 +83,16 @@ function ProcessPrice() {
     </LoadingStyledRoot>
   ) : (
     <StyledRoot>
-      <PlayIcon>
-        <Image src={ProcessPlayIcon} alt="processPlay" />
-      </PlayIcon>
-      <SquareIcon>
-        <Image src={ProcessSquareIcon} alt="processSqaure" />
-      </SquareIcon>
+      <Screen desktop>
+        <>
+          <PlayIcon>
+            <Image src={ProcessPlayIcon} alt="processPlay" />
+          </PlayIcon>
+          <SquareIcon>
+            <Image src={ProcessSquareIcon} alt="processSqaure" />
+          </SquareIcon>
+        </>
+      </Screen>
       <ProcessBox>
         <Title></Title>
         <CardTitle></CardTitle>
