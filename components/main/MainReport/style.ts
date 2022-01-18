@@ -6,7 +6,8 @@ const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 58rem;
-  background-color: ${colors.mainBlue};
+  background-color: ${colors.skyBlue};
+  background-image: url("/assets/images/mainReportBackground.png");
   display: flex;
   justify-content: center;
   align-items: center;
