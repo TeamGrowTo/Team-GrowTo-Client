@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
   box-sizing: border-box;
@@ -17,16 +18,17 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  margin-bottom: 7.3rem;
+  margin-bottom: 7rem;
   h2 {
-    font-family: "Pretendard-Bold";
+    font-family: "Pretendard-ExtraBold";
     font-size: 4rem;
     margin-bottom: 1.4rem;
+    color: ${colors.white};
   }
   p {
     font-family: "Pretendard-Regular";
-    font-size: 1.4rem;
-    color: #a4a4a4;
+    font-size: 1.8rem;
+    color: ${colors.gray2};
   }
 `;
 

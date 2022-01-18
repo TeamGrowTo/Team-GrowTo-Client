@@ -33,7 +33,7 @@ const Bottom = styled.div`
   bottom: 2.5rem;
 `;
 
-const Id = styled.div`
+const Introduce = styled.div`
   font-family: "Pretendard-Regular";
   font-size: 1.2rem;
   width: 6.3rem;
@@ -42,4 +42,4 @@ const Id = styled.div`
   line-height: 1.8rem;
 `;
 
-export { Bottom, Comment, Id, StyledRoot };
+export { Bottom, Comment, Introduce, StyledRoot };
