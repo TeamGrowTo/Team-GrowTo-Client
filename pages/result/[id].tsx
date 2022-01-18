@@ -34,15 +34,15 @@ const Category = () => {
   }, []);
 
   //categoryId, skillId로 api보내서 받은 response를 cardList 컴포넌트에 넣어주자
-  const handleMoveToProcess = () => {
-    router.push("/process");
+  const handleMoveToCategory = () => {
+    router.push("/category");
   };
 
   return (
     <StyledRoot>
       <ProcessResult listLength={listLength} />
       <Result />
-      <BlueButton onClick={handleMoveToProcess} width="84.5rem">
+      <BlueButton onClick={handleMoveToCategory} width="84.5rem">
         다른 강의 비교하기
       </BlueButton>
     </StyledRoot>
