@@ -85,7 +85,7 @@ function ProcessPrice() {
       <Screen desktop>
         <>
           <PlayIcon>
-            <Image src={ProcessPlayIcon} alt="processPlay" />
+            <Image src={ProcessPlayIcon} priority alt="processPlay" />
           </PlayIcon>
           <SquareIcon>
             <Image src={ProcessSquareIcon} alt="processSqaure" />
