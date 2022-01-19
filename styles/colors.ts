@@ -1,8 +1,13 @@
 export const colors = {
   mainBlue: "#4579FF",
+  blue1: "#F4F9FF",
+  blue2: "#E9EFFF",
+  blue3: "#BFD8FF",
+  blue4: "#FBFCFF",
   lightBlue: "#E9EFFF",
   subOrange: "#FF8C21",
   subBlack: "#353535",
+  skyBlue: "#D8E6FF",
   white: "#ffffff",
   gray0: "#F9F9F9",
   subPink: "#FFCDD6",
