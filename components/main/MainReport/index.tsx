@@ -4,10 +4,10 @@ import {
   getLectureRequestNumber,
   getLectureTotalNumber,
 } from "pages/apis/count.api";
-import { FindIcon, RequestIcon, TotalIcon } from "public/assets/icons";
+import { FindIcon, ReportLine, RequestIcon, TotalIcon } from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 
-import { Line, StyledRoot, Wrapper } from "./style";
+import { LineWrapper, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
   const [totalNumber, setTotalNumber] = useState(250);
@@ -51,9 +51,13 @@ export default function MainReport() {
     <StyledRoot>
       <Wrapper>
         <ReportSection reportInfo={TotalCompare} />
-        <Line />
+        <LineWrapper>
+          <ReportLine />
+        </LineWrapper>
         <ReportSection reportInfo={CustomSearch} />
-        <Line />
+        <LineWrapper>
+          <ReportLine />
+        </LineWrapper>
         <ReportSection reportInfo={RequestCompare} />
       </Wrapper>
     </StyledRoot>

@@ -1,11 +1,11 @@
-import { ReportLine } from "public/assets/icons";
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.div`
   box-sizing: border-box;
-  width: 100%;
-  height: 58rem;
+  width: 100vw;
+  height: 60.3rem;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
   display: flex;
@@ -14,9 +14,10 @@ const StyledRoot = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 98rem;
+  width: 96rem;
   height: 40rem;
-  background: rgb(255, 255, 255, 0.8);
+  background: linear-gradient(rgb(255, 255, 255, 0.8), 80%, transparent);
+  backdrop-filter: blur(4rem);
   border: 0.2rem solid #ffffff;
   border-radius: 3rem;
   display: flex;
@@ -24,10 +25,15 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 0 4rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  ${applyMediaQuery("mobile")} {
+    width: 32.8rem;
+    height: 14.6rem;
+  }
 `;
 
-const Line = styled(ReportLine)`
+const LineWrapper = styled.div`
+  z-index: 999;
   margin-top: 1.4rem;
 `;
 
-export { Line, StyledRoot, Wrapper };
+export { LineWrapper, StyledRoot, Wrapper };
