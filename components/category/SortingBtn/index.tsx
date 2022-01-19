@@ -1,6 +1,7 @@
-import { ArrowDown, ArrowUp } from "public/assets/icons";
+import { ArrowDown, ArrowUp, SmallArrowDown, SmallArrowUp } from "public/assets/icons";
 import React from "react";
 import { colors } from "styles/colors";
+import Screen from "styles/Screen";
 
 import { IDropListName, ISelectedItemName, ISorting, sortingType } from "../SortingBox";
 import { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
@@ -39,7 +40,8 @@ function SortingBtn({
           </>
         )}
       </BtnTextWrapper>
-      {isOpen[value] ? <ArrowUp /> : <ArrowDown />}
+      <Screen mobile>{isOpen[value] ? <SmallArrowUp /> : <SmallArrowDown />}</Screen>
+      <Screen desktop>{isOpen[value] ? <ArrowUp /> : <ArrowDown />}</Screen>
       {isOpen[value] && (
         <DropDownBox>
           {dropListName[value].map((item) => (
