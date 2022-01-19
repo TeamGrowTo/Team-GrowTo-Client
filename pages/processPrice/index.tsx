@@ -12,7 +12,7 @@ import {
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { processState } from "store/state";
+import { currentCategoryState, currentSkillState, processState } from "store/state";
 import Screen from "styles/Screen";
 
 import {
@@ -35,6 +35,8 @@ function ProcessPrice() {
   const priceTypeList = ["높은 가격", "짧은 가격", "상관없음"];
   const getTimeData = useRecoilValue(processState);
   const [isLoading, setIsLoading] = useState(false);
+  const categoryState = useRecoilValue(currentCategoryState);
+  const skillState = useRecoilValue(currentSkillState);
 
   useEffect(() => {
     if (
@@ -50,6 +52,19 @@ function ProcessPrice() {
           : "상관없음";
 
       setSelectedPrice(changeType);
+      console.log(categoryState);
+      if (categoryState?.categoryName) {
+        const tempProcessData = { ...processData };
+
+        tempProcessData["category"] = categoryState?.categoryName;
+        setProcessData(tempProcessData);
+      }
+      if (skillState?.skillName) {
+        const tempProcessData = { ...processData };
+
+        tempProcessData["skill"] = skillState?.skillName;
+        setProcessData(tempProcessData);
+      }
     }
   }, []);
   const handlePriceClick = (timeType: string) => {
