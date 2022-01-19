@@ -1,9 +1,20 @@
 type Answer = "Fast" | "Middle" | "Slow";
 
+export interface PostLectureReportData {
+  difference: string;
+  lectureName: string;
+  description: string;
+  email: string;
+}
+
+interface ItemObj {
+  id: number;
+  name: string;
+}
 export interface ResponseResultProperty {
   lectures: ResponseResultData[];
-  categoryId: number;
-  skillId: number;
+  category: ItemObj;
+  skill: ItemObj;
 }
 
 export interface ResponseResultData {
@@ -30,10 +41,15 @@ export interface LectureResultData {
 
 export interface LecturesResultAllData {
   result: LectureResultData[];
-  categoryId: number;
-  skillId: number;
+  category: ItemObj;
+  skill: ItemObj;
 }
 
+export interface LectureCompareRequest {
+  categoryId: string | null;
+  skill: string | null;
+  email: string | null;
+}
 export interface IProcessData {
   category: string;
   skill: string;
