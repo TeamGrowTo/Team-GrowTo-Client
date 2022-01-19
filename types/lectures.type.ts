@@ -1,5 +1,12 @@
 type Answer = "Fast" | "Middle" | "Slow";
 
+export interface PostLectureReportData {
+  difference: string;
+  lectureName: string;
+  description: string;
+  email: string;
+}
+
 interface ItemObj {
   id: number;
   name: string;

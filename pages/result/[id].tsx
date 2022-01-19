@@ -2,6 +2,7 @@ import Result from "components/category/Result";
 import BlueButton from "components/common/BlueButton";
 import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
+import Question from "components/result/Question";
 import { useRouter } from "next/router";
 import { getLectureResultData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
@@ -99,6 +100,7 @@ function Category() {
       <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem">
         다른 강의 비교하기
       </BlueButton>
+      <Question />
     </StyledRoot>
   );
 }
