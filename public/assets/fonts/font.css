@@ -61,3 +61,11 @@
     url("./Pretendard-ExtraBold.subset.woff") format("woff"),
     url("./Pretendard-ExtraBold.ttf") format("ttf");
 }
+
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  font-display: fallback;
+  src: local("Pretendard-SemiBold"), url("./Pretendard-SemiBold.subset.woff2") format("woff2"),
+    url("./Pretendard-SemiBold.subset.woff") format("woff"),
+    url("./Pretendard-SemiBold.ttf") format("ttf");
+}
