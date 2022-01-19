@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "styles/color";
+import { colors } from "styles/colors";
 
 const StyledRoot = styled.section`
   display: flex;
@@ -11,10 +11,10 @@ const StyledRoot = styled.section`
 const TitleWrapper = styled.div`
   width: 17rem;
   height: 5.2rem;
-  border: 0.1rem solid ${colors.gray4};
-  border-radius: 3.9rem;
-  margin-top: 1.9rem;
+  border-radius: 4rem;
+  margin-top: 1.8rem;
   margin-bottom: 2.4rem;
+  background-color: ${colors.white};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,11 +22,12 @@ const TitleWrapper = styled.div`
 
 const Title = styled.p`
   font-size: 2rem;
-  font-family: "Pretendard-Light";
+  /* 글씨체 세미볼드로 바꿔야 합니다 */
+  font-family: "Pretendard-Bold";
 `;
 
 const Data = styled.div`
-  color: ${colors.mainBlue};
+  color: ${colors.subBlack};
   display: flex;
   align-items: center;
 `;

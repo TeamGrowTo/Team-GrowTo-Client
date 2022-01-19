@@ -1,38 +1,49 @@
-import { ReportLine } from "public/assets/icons";
-import ReportIcon from "public/assets/icons/reportIcon.svg";
-import React from "react";
+import ReportSection from "components/main/MainReport/ReportSection";
+import {
+  getLectureFindNumber,
+  getLectureRequestNumber,
+  getLectureTotalNumber,
+} from "pages/apis/count.api";
+import { FindIcon, ReportLine, RequestIcon, TotalIcon } from "public/assets/icons";
+import React, { useEffect, useState } from "react";
 
-import ReportSection from "./ReportSection";
-import { StyledRoot, Wrapper } from "./style";
+import { LineWrapper, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
-  // 중복되는 부분을 어떻게하면 센스있게 api 연결 가능할까요
-  // const [totalNumber, setTotalNumber] = useState(0);
-  // const [findNumber, setFindNumber] = useState(1);
-  // const [requestNumber, setRequestNumber] = useState(2);
+  const [totalNumber, setTotalNumber] = useState(250);
+  const [findNumber, setFindNumber] = useState(3500);
+  const [requestNumber, setRequestNumber] = useState(99);
 
-  // useEffect(async () => {
-  //   setTotalNumber(await getLectureTotalNumber);
-  //   setFindNumber(await getLectureFindNumber);
-  //   setRequestNumber(await getLectureRequestNumber);
+  const ReportNumber = async () => {
+    const nowTotalNumber = await getLectureTotalNumber();
+    const nowFindNumber = await getLectureFindNumber();
+    const nowRequestNumber = await getLectureRequestNumber();
+
+    nowTotalNumber && setTotalNumber(nowTotalNumber);
+    nowFindNumber && setFindNumber(nowFindNumber);
+    nowRequestNumber && setRequestNumber(nowRequestNumber);
+  };
+
+  // useEffect(() => {
+  //   ReportNumber();
   // }, []);
 
   const TotalCompare = {
-    Icon: ReportIcon,
+    UniqueIcon: TotalIcon,
     title: "총 비교 강의",
-    count: 99,
+    count: totalNumber,
     unit: "개",
   };
   const CustomSearch = {
-    Icon: ReportIcon,
+    UniqueIcon: FindIcon,
     title: "맞춤 강의 찾기",
-    count: 55,
+    count: findNumber,
     unit: "회",
   };
   const RequestCompare = {
-    Icon: ReportIcon,
+    UniqueIcon: RequestIcon,
     title: "비교 요청",
-    count: 44,
+    count: requestNumber,
     unit: "건",
   };
 
@@ -40,9 +51,13 @@ export default function MainReport() {
     <StyledRoot>
       <Wrapper>
         <ReportSection reportInfo={TotalCompare} />
-        <ReportLine />
+        <LineWrapper>
+          <ReportLine />
+        </LineWrapper>
         <ReportSection reportInfo={CustomSearch} />
-        <ReportLine />
+        <LineWrapper>
+          <ReportLine />
+        </LineWrapper>
         <ReportSection reportInfo={RequestCompare} />
       </Wrapper>
     </StyledRoot>
