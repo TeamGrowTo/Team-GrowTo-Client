@@ -14,7 +14,8 @@ export const getCurrentLectureData = async (): Promise<CurrentLectureData | null
         lectureSkill: response.skill,
       };
     });
-    });
+
+    // return data;
   } catch (err) {
     throw new Error("Failed to load current compare lecture");
   }
