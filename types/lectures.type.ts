@@ -1,9 +1,13 @@
 type Answer = "Fast" | "Middle" | "Slow";
 
+interface ItemObj {
+  id: number;
+  name: string;
+}
 export interface ResponseResultProperty {
   lectures: ResponseResultData[];
-  categoryId: number;
-  skillId: number;
+  category: ItemObj;
+  skill: ItemObj;
 }
 
 export interface ResponseResultData {
@@ -30,8 +34,8 @@ export interface LectureResultData {
 
 export interface LecturesResultAllData {
   result: LectureResultData[];
-  categoryId: number;
-  skillId: number;
+  category: ItemObj;
+  skill: ItemObj;
 }
 
 export interface LectureCompareRequest {
