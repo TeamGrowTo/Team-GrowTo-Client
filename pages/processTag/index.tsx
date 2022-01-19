@@ -37,16 +37,20 @@ function ProcessTag() {
   const skillState = useRecoilValue(currentSkillState);
 
   const getTagList = async () => {
-    if (skillState?.id) {
-      const data = await getSkillTagList(skillState?.id);
+    // if (skillState?.id) {
+    //   const data = await getSkillTagList(skillState?.id);
 
-      setTagList(data);
-    }
+    //   setTagList(data);
+    // }
+    const data = await getSkillTagList(402);
+
+    data && setTagList(data);
+    console.log(tagList);
   };
 
   useEffect(() => {
-    //getTagList();
-    setTagList(mockData);
+    getTagList();
+    // setTagList(mockData);
 
     if (getTagData.tags.length !== 1) {
       setSelectedTags(getTagData.tags);
@@ -71,6 +75,7 @@ function ProcessTag() {
   };
 
   const handleNext = () => {
+    console.log(selectedTags);
     const tempProcessData = { ...processData };
 
     tempProcessData["tags"] = selectedTags;
