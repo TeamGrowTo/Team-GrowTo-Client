@@ -21,7 +21,7 @@ interface Props {
   skillName: string;
 }
 
-const ProcessResult = function ({ listLength, categoryName, skillName }: Props) {
+function ProcessResult({ listLength, categoryName, skillName }: Props) {
   const lectureResultList = useRecoilValue(lectureResultState);
 
   return (
@@ -44,6 +44,6 @@ const ProcessResult = function ({ listLength, categoryName, skillName }: Props) 
       </ResultCardWrapper>
     </StyledRoot>
   );
-};
+}
 
 export default ProcessResult;

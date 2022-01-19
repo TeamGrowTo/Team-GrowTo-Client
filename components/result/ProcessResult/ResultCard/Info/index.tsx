@@ -8,7 +8,7 @@ interface Props {
   createdDate: string;
 }
 
-const Info = function ({ time, price, createdDate }: Props) {
+function Info({ time, price, createdDate }: Props) {
   return (
     <StyledRoot>
       <InfoName>
@@ -23,6 +23,6 @@ const Info = function ({ time, price, createdDate }: Props) {
       </InfoData>
     </StyledRoot>
   );
-};
+}
 
 export default Info;

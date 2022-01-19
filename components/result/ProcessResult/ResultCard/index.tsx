@@ -24,7 +24,7 @@ type Props = {
   result: LectureResultData;
 };
 
-const ResultCard = function ({ result }: Props) {
+function ResultCard({ result }: Props) {
   const { name, time, price, createdDate, replay, answer, tags, url } = result;
 
   return (
@@ -39,6 +39,6 @@ const ResultCard = function ({ result }: Props) {
       </MoreButton>
     </StyledRoot>
   );
-};
+}
 
 export default ResultCard;

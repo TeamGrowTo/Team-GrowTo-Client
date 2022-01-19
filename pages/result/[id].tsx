@@ -57,7 +57,7 @@ const dummy: LectureResultData[] = [
 
 type Result = LecturesResultAllData | null;
 
-const Category = () => {
+function Category() {
   const router = useRouter();
 
   const setLectureResultList = useSetRecoilState(lectureResultState);
@@ -99,6 +99,6 @@ const Category = () => {
       </BlueButton>
     </StyledRoot>
   );
-};
+}
 
 export default Category;

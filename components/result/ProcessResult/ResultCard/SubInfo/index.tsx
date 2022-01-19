@@ -7,7 +7,7 @@ interface Props {
   answer: Answer;
 }
 
-const SubInfo = function ({ replay, answer }: Props) {
+function SubInfo({ replay, answer }: Props) {
   return (
     <StyledRoot>
       <SubInfoUnit>
@@ -19,6 +19,6 @@ const SubInfo = function ({ replay, answer }: Props) {
       </SubInfoUnit>
     </StyledRoot>
   );
-};
+}
 
 export default SubInfo;
