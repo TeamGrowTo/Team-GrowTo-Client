@@ -47,6 +47,8 @@ const CategoryButton = styled.button<IProps>`
   }
 `;
 
+const DropdownWrapper = styled.span``;
+
 const CategoryList = styled.ul`
   border-bottom-left-radius: 2.8rem;
   border-bottom-right-radius: 2.8rem;
@@ -69,4 +71,4 @@ const CategoryList = styled.ul`
   }
 `;
 
-export { CategoryButton, CategoryList, CategoryWrapper, LectureCategoryBox };
+export { CategoryButton, CategoryList, CategoryWrapper, DropdownWrapper, LectureCategoryBox };

@@ -24,5 +24,6 @@ export { default as ProgressTag } from "./progressTag.svg";
 export { default as ProgressTagM } from "./progressTagM.svg";
 export { default as ProgressTime } from "./progressTime.svg";
 export { default as ProgressTimeM } from "./progressTimeM.svg";
+export { default as RequestRankLine } from "./requestRankLine.svg";
 export { default as SmallArrowDown } from "./smallArrowDown.svg";
 export { default as SmallArrowUp } from "./smallArrowUp.svg";
