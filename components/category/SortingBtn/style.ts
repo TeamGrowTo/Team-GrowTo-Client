@@ -42,7 +42,6 @@ const DropDownBox = styled.ul`
   left: 0;
 
   width: 18rem;
-  height: 10rem;
 
   background: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
@@ -72,7 +71,7 @@ const DropDownItem = styled.li`
 
   cursor: pointer;
   &:hover {
-    background: ${colors.gray1};
+    background: ${colors.lightBlue};
   }
 `;
 const CriteriaItem = styled.span`
