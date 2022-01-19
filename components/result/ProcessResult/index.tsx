@@ -1,17 +1,16 @@
 import Image from "next/image";
-import { Compass } from "public/assets/images";
+import { ComparisonImg } from "public/assets/images";
 import { useRecoilValue } from "recoil";
 import { lectureResultState } from "store/state";
 
 import ResultCard from "./ResultCard";
 import {
+  ComparisonImgWrapper,
   Description,
-  LargeCompass,
   LectureCount,
   LectureSkillData,
   ResultCardWrapper,
   ResultData,
-  SmallCompass,
   StyledRoot,
   Title,
 } from "./style";
@@ -27,12 +26,9 @@ const ProcessResult = function ({ listLength, categoryName, skillName }: Props) 
 
   return (
     <StyledRoot>
-      <SmallCompass>
-        <Image src={Compass} alt="compass" width="369" height="257" />
-      </SmallCompass>
-      <LargeCompass>
-        <Image src={Compass} alt="compass" width="698" height="504" />
-      </LargeCompass>
+      <ComparisonImgWrapper>
+        <Image src={ComparisonImg} alt="comparison" width="428" height="497" />
+      </ComparisonImgWrapper>
       <Title>그로투 강의 비교</Title>
       <Description>
         <LectureCount>총 11개</LectureCount>의{" "}
