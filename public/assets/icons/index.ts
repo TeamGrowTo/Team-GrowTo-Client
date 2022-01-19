@@ -8,9 +8,6 @@ export { default as EmailIcon } from "./emailIcon.svg";
 export { default as InstagramLogo } from "./InstagramLogo.svg";
 export { default as LeftArrowIcon } from "./leftArrowIcon.svg";
 export { default as LogoIcon } from "./logoIcon.svg";
-<<<<<<< HEAD
-export { default as ResultShareIcon } from "./resultShareIcon.svg";
-=======
 export { default as FindIcon } from "./mainReportFindIcon.svg";
 export { default as ReportLine } from "./mainReportLine.svg";
 export { default as ReportLine_mobile } from "./mainReportLine_mobile.svg";
@@ -30,7 +27,7 @@ export { default as ProgressTagM } from "./progressTagM.svg";
 export { default as ProgressTime } from "./progressTime.svg";
 export { default as ProgressTimeM } from "./progressTimeM.svg";
 export { default as QuestionIcon } from "./questionIcon.svg";
+export { default as ResultShareIcon } from "./resultShareIcon.svg";
 export { default as SmallArrowDown } from "./smallArrowDown.svg";
 export { default as SmallArrowUp } from "./smallArrowUp.svg";
 export { default as UpArrowIcon } from "./UpArrowIcon.svg";
->>>>>>> develop
