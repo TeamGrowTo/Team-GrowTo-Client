@@ -4,7 +4,7 @@ interface IdeviceQuery {
 }
 export const deviceQuery: IdeviceQuery = {
   mobile: "(max-width: 550px)",
-  desktop: "(min-width: 896px)",
+  desktop: "(min-width: 551px)",
 };
 interface Props {
   children: JSX.Element;
