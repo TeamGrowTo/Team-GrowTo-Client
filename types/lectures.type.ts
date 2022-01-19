@@ -33,3 +33,9 @@ export interface LecturesResultAllData {
   categoryId: number;
   skillId: number;
 }
+
+export interface LectureCompareRequest {
+  categoryId: string | null;
+  skill: string | null;
+  email: string | null;
+}
