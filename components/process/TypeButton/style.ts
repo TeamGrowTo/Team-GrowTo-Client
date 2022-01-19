@@ -11,7 +11,8 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   background-color: rgba(255, 255, 255, 0.7);
   margin: 6.8rem 1.8rem 0;
   color: ${({ isClicked }) => (isClicked ? "white" : `${colors.gray6}`)};
-  background: ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "white")};
+  background: ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "rgb(255, 255, 255, 0.7)")};
+  border: 1px solid ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "white")};
   ${applyMediaQuery("mobile")} {
     font-size: 1.6rem;
     width: 22rem;
