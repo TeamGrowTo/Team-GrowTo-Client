@@ -102,7 +102,7 @@ function Category() {
   const setCurrentSkill = useSetRecoilState(currentSkillState);
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
-  const [LecutreDataList, setLectureDataList] = useRecoilState(lectureDataList);
+  const setLectureDataList = useSetRecoilState(lectureDataList);
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "public/assets/icons";
 import React from "react";
-import { LectureDataType, ResponseLectureDataType } from "types/info.type";
+import { LectureDataType } from "types/info.type";
 
 import {
   LectureDateBox,

@@ -48,13 +48,17 @@ export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null
 export const getLectureDataList = async (
   categoryId: number | null,
   skillId: number | null,
+  ordering = "",
 ): Promise<LectureDataListType | null> => {
   try {
-    const apiResponse = await serverAxios.get(`${PREFIX_URL}/lectures/${categoryId}/${skillId}`, {
-      headers: {
-        "Content-Type": "application/json",
+    const apiResponse = await serverAxios.get(
+      `${PREFIX_URL}/lectures/${categoryId}/${skillId}?ordering=${ordering}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
 
     if (apiResponse.status === 200) {
       const { data } = apiResponse;
@@ -78,5 +82,3 @@ export const getLectureDataList = async (
     throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
   }
 };
-
-//sorting api연결하기
