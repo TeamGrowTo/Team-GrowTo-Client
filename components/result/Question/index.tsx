@@ -6,17 +6,23 @@ import { BackGround, StyledRoot } from "./style";
 
 function Question() {
   const [flagModal, setFlagModal] = useState(false);
-  const handleModal = () => {
-    setFlagModal(!flagModal);
+  const openModal = () => {
+    setFlagModal(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setFlagModal(false);
+    document.body.style.overflow = "visible";
   };
 
   return (
     <StyledRoot>
-      <QuestionButton onClickQuestionButton={handleModal} />
+      <QuestionButton onClickQuestionButton={openModal} />
       {flagModal ? (
         <>
-          <BackGround onClick={handleModal} flagModal={flagModal}></BackGround>
-          <QuestionModal onCloseModal={handleModal} />
+          <BackGround onClick={closeModal}></BackGround>
+          <QuestionModal onCloseModal={closeModal} />
         </>
       ) : (
         <></>
