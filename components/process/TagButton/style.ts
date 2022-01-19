@@ -6,11 +6,12 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   margin-right: 0.8rem;
   margin-bottom: 1.2rem;
   padding: 0.7rem 3.2rem;
-  background: ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "white")};
+  background: ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "rgb(255, 255, 255, 0.7)")};
   opacity: 2;
   font-family: "Pretendard-Bold";
   color: ${({ isClicked }) => (isClicked ? "white" : `${colors.gray6}`)};
   border-radius: 4.8rem;
+  border: 1px solid ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "white")};
   ${applyMediaQuery("mobile")} {
     padding: 1.3rem 2rem;
     height: 4rem;
