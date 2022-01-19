@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InstagramLogo, LogoIcon } from "public/assets/icons";
 import React from "react";
+import Screen from "styles/Screen";
 
 import {
   CopyRight,
@@ -28,13 +29,17 @@ function Footer() {
           </ServiceIntroWrapper>
           <ServiceMenuBox>
             <ServiceMenuList>
-              <ServiceMenuTitle>Service</ServiceMenuTitle>
+              <Screen desktop>
+                <ServiceMenuTitle>Service</ServiceMenuTitle>
+              </Screen>
               <ServiceMenuListItem>
                 <Link href="/about">서비스 소개</Link>
               </ServiceMenuListItem>
             </ServiceMenuList>
             <ServiceMenuList>
-              <ServiceMenuTitle>Contact Us</ServiceMenuTitle>
+              <Screen desktop>
+                <ServiceMenuTitle>Contact Us</ServiceMenuTitle>
+              </Screen>
               <ServiceMenuListItem>
                 <Link href="mailto:help.growto@gmail.com">기업 참여</Link>
               </ServiceMenuListItem>
@@ -43,7 +48,9 @@ function Footer() {
               </ServiceMenuListItem>
             </ServiceMenuList>
             <ServiceMenuList>
-              <ServiceMenuTitle>Social</ServiceMenuTitle>
+              <Screen desktop>
+                <ServiceMenuTitle>Social</ServiceMenuTitle>
+              </Screen>
               <ServiceMenuListItem>
                 <a href="https://www.instagram.com/grow._.eleven/">
                   <InstagramLogo />
