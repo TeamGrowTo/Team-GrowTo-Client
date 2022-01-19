@@ -9,6 +9,6 @@
   "prettier.endOfLine": "auto",
   "prettier.useTabs": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-  },
+    "source.fixAll": true
+  }
 }
