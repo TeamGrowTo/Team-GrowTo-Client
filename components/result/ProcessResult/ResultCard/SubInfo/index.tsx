@@ -1,7 +1,7 @@
 import React from "react";
 
 import { StyledRoot, SubInfoUnit } from "./style";
-type Answer = "fast" | "middle" | "slow";
+type Answer = "Fast" | "Middle" | "Slow";
 interface Props {
   replay: boolean;
   answer: Answer;

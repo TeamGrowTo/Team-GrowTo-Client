@@ -5,7 +5,7 @@ import { InfoData, InfoName, StyledRoot } from "./style";
 interface Props {
   time: number;
   price: number;
-  createdDate: number;
+  createdDate: string;
 }
 
 const Info = function ({ time, price, createdDate }: Props) {

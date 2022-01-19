@@ -37,14 +37,14 @@ const ProcessResult = function ({ listLength, categoryName, skillName }: Props) 
       <Description>
         <LectureCount>총 11개</LectureCount>의{" "}
         <LectureSkillData>
-          {"디지털&퍼포먼스"} {"마케팅"} 강의 중
+          {categoryName} {skillName} 강의 중
         </LectureSkillData>{" "}
         나에게 <ResultData>딱 맞는 {listLength}가지</ResultData> 강의에요!
       </Description>
       <ResultCardWrapper resultDataCount={lectureResultList?.length || 0}>
-        {/* {lectureResultList?.map((data, index) => (
-          <ResultCard key={index} result={data}/>
-        ))} */}
+        {lectureResultList?.map((data, index) => (
+          <ResultCard key={index} result={data} />
+        ))}
       </ResultCardWrapper>
     </StyledRoot>
   );
