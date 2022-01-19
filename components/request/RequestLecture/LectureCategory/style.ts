@@ -65,6 +65,7 @@ const CategoryList = styled.ul`
     padding-bottom: 2.2rem;
     width: 100%;
     display: flex;
+    cursor: pointer;
   }
 `;
 

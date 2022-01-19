@@ -47,6 +47,6 @@ export const postLectureRequest = async (): Promise<LectureCompareRequest | null
       };
     });
   } catch (err) {
-    throw new Error("Failed to send lecture compare request");
+    throw new Error("Failed to submit lecture compare request");
   }
 };

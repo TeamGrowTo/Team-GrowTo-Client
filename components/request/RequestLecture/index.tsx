@@ -1,3 +1,5 @@
+import Modal from "components/common/Modal";
+import { postLectureRequest } from "pages/apis/lectures.api";
 import React, { useState } from "react";
 
 import Email from "./Email";
@@ -17,6 +19,17 @@ export default function RequestLecture() {
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const submitRequest = async () => {
+    try {
+      await postLectureRequest();
+      setIsModalOpen(true);
+      document.body.style.overflow = "hidden";
+    } catch {
+      alert("요청 실패!");
+    }
+  };
+
   return (
     <StyledRoot>
       <Wrapper>
@@ -33,7 +46,7 @@ export default function RequestLecture() {
             <LectureType setTypeFilled={setTypeFilled} />
             <Email setEmailFilled={setEmailFilled} />
             {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
-              <ActiveRequestButton>
+              <ActiveRequestButton onClick={submitRequest}>
                 <p>강의비교 요청하기</p>
               </ActiveRequestButton>
             ) : (
@@ -43,6 +56,12 @@ export default function RequestLecture() {
             )}
           </form>
         </RequestCard>
+        <Modal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          mainText="비교요청이 완료되었어요."
+          subText="100명의 요청이 모이면 메일로 비교 정보를 보내드릴게요."
+        />
       </Wrapper>
     </StyledRoot>
   );
