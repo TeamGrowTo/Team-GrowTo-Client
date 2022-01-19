@@ -93,7 +93,7 @@ const Category = () => {
   return (
     <StyledRoot>
       <ProcessResult listLength={listLength} categoryName={category.name} skillName={skill.name} />
-      {/* <Result /> */}
+      <Result />
       <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem">
         다른 강의 비교하기
       </BlueButton>
