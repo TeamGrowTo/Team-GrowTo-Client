@@ -1,4 +1,4 @@
-import { getCurrentCompareLecture } from "pages/apis/lectures.api";
+import { getCurrentLectureData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 
 import CurrentLecture from "./CurrentLecture";
@@ -17,7 +17,7 @@ export default function RequestCurrentLecture() {
   // const [compareLecture, setCompareLecture] = useState([]);
 
   // useEffect(async () => {
-  //   setCompareLecture(await getCurrentCompareLecture);
+  //   setCompareLecture(await getCurrentLectureData);
   // }, []);
 
   return (

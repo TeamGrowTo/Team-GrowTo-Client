@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
   box-sizing: border-box;
