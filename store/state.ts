@@ -1,6 +1,8 @@
 import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
-import { LectureResultData } from "types/lectures.type";
+import { LectureResultData, ProcessDataState } from "types/lectures.type";
+const { persistAtom } = recoilPersist();
 
 export const lectureCategoryState = atom<LectureCategoryData[] | null>({
   key: "lectureCategoryState",
@@ -35,4 +37,16 @@ export const currentSkillState = atom<CurrentSkill | null>({
 export const lectureResultState = atom<LectureResultData[] | null>({
   key: "lectureResultState",
   default: null,
+});
+
+export const processState = atom<ProcessDataState>({
+  key: "processState",
+  default: {
+    category: "",
+    skill: "",
+    tags: [""],
+    timeAsc: undefined,
+    priceAsc: undefined,
+  },
+  effects_UNSTABLE: [persistAtom],
 });

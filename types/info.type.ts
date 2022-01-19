@@ -17,3 +17,7 @@ export interface LectureSkillData {
   id: number | null;
   skillName: string | null;
 }
+export interface SkillTagList {
+  id: number;
+  name: string;
+}

@@ -1,11 +1,11 @@
+import { serverAxios } from "libs/axios";
 import {
   LectureCategoryData,
   LectureSkillData,
   ResponseCategoryData,
   ResponseSkillData,
+  SkillTagList,
 } from "types/info.type";
-
-import { serverAxios } from "./index";
 
 const PREFIX_URL = "/info";
 
@@ -30,5 +30,15 @@ export const getLectureSkillData = async (id: number): Promise<LectureSkillData[
     });
   } catch (err) {
     throw new Error("Failed to load lecture skill");
+  }
+};
+
+export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null> => {
+  try {
+    const { data } = await serverAxios.get(`${PREFIX_URL}/${id}/tags`);
+
+    return data.data;
+  } catch (err) {
+    return null;
   }
 };
