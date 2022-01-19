@@ -11,36 +11,34 @@ const StyledRoot = styled.div<{ order: number }>`
   justify-content: center;
   align-items: center;
   margin-right: 2rem;
-  background-image: url("/assets/images/requestLectureBackground.png");
-
 
   ${(props) =>
     props.order === 1
       ? css`
-          transform: rotate(0deg);
+          background-image: url("/assets/images/requestLectureBackground1.png");
         `
       : props.order === 2
       ? css`
-          transform: rotate(-90deg);
+          background-image: url("/assets/images/requestLectureBackground2.png");
         `
       : props.order === 3
       ? css`
-          transform: rotate(-180deg);
+          background-image: url("/assets/images/requestLectureBackground3.png");
         `
       : props.order === 4
       ? css`
-          transform: rotate(90deg);
+          background-image: url("/assets/images/requestLectureBackground4.png");
         `
       : props.order === 5
       ? css`
-          transform: rotate(0deg);
+          background-image: url("/assets/images/requestLectureBackground1.png");
         `
       : props.order === 6
       ? css`
-          transform: rotate(-90deg);
+          background-image: url("/assets/images/requestLectureBackground2.png");
         `
       : css`
-          transform: rotate(-180deg);
+          background-image: url("/assets/images/requestLectureBackground3.png");
         `}};
 
 
