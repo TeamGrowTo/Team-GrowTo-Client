@@ -1,3 +1,4 @@
+export { default as Compass } from "./compass.png";
 export { default as MainBannerCompass } from "./mainBannerCompass.png";
 export { default as MainReviewBackground } from "./mainReviewBackground.png";
 export { default as MainReviewProfile1 } from "./mainReviewProfile1.svg";
