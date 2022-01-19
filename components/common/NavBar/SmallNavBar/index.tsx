@@ -14,23 +14,31 @@ function SmallNavBar() {
   return (
     <StyledRoot>
       <Link href="/" passHref>
-        <SmallLogoIcon />
+        <ButtonWrapper>
+          <SmallLogoIcon />
+        </ButtonWrapper>
       </Link>
       {isOpen ? (
         <ButtonWrapper onClick={handleOpenMenu}>
-          <HamburgerIcon />
+          <CloseButton />
+          {isOpen && (
+            <NavMenuList>
+              <NavMenuListItem>
+                <Link href="/category">전체강의</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link href="/choiceRequest">비교요청</Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link href="/about">ABOUT</Link>
+              </NavMenuListItem>
+            </NavMenuList>
+          )}
         </ButtonWrapper>
       ) : (
         <ButtonWrapper onClick={handleOpenMenu}>
-          <CloseButton />
+          <HamburgerIcon />
         </ButtonWrapper>
-      )}
-      {isOpen && (
-        <NavMenuList>
-          <NavMenuListItem>전체강의</NavMenuListItem>
-          <NavMenuListItem>비교요청</NavMenuListItem>
-          <NavMenuListItem>ABOUT</NavMenuListItem>
-        </NavMenuList>
       )}
     </StyledRoot>
   );

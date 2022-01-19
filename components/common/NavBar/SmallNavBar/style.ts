@@ -10,7 +10,10 @@ const StyledRoot = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   position: fixed;
+  top: 0;
+  z-index: 90;
 `;
 
 const ButtonWrapper = styled.button`
@@ -28,20 +31,24 @@ const NavMenuList = styled.ul`
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
+  align-items: center;
+  z-index: 1000;
 `;
 
 const NavMenuListItem = styled.li`
-  width: 100%;
-
+  width: 90%;
+  height: 5.1rem;
   font-family: "Pretendard-SemiBold";
   font-size: 1.6rem;
-  line-height: 1.9rem;
+  line-height: 5.1rem;
   letter-spacing: -0.05em;
 
   color: #606060;
-
+  & > a {
+    display: inline-block;
+  }
   &:hover {
-    background-color: "##f4f9ff";
+    background-color: #f4f9ff;
   }
 `;
 
