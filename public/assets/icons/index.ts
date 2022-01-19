@@ -6,7 +6,6 @@ export { default as CategoryRightArrowIcon } from "./categoryRightArrowIcon.svg"
 export { default as DownArrowIcon } from "./DownArrowIcon.svg";
 export { default as Dropdown } from "./dropdown.svg";
 export { default as EmailIcon } from "./emailIcon.svg";
-export { default as EmailIcon } from "./emailIcon.svg";
 export { default as ICRightIcon } from "./icRight.svg";
 export { default as InstagramLogo } from "./InstagramLogo.svg";
 export { default as LeftArrowIcon } from "./leftArrowIcon.svg";

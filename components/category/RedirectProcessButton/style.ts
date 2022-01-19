@@ -11,6 +11,7 @@ const StyledRoot = styled.div`
   padding-left: 36.8rem;
   padding-right: 46.2rem;
   background: linear-gradient(90deg, #a484fe 30.96%, #5c00f1 97.53%);
+  z-index: 3;
 `;
 
 const Description = styled.h3`
