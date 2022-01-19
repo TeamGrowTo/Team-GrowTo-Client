@@ -12,7 +12,7 @@ const Banner = function () {
         <p>광고 없는 정직한 IT강의 비교 서비스, 그로투</p>
       </TitleWrapper>
       <ImageWrapper>
-        <Image src={MainBannerCompass} alt="bannerImg" width={580} height={297} />
+        <Image src={MainBannerCompass} alt="bannerImg" width={580} height={297} quality={100} />
       </ImageWrapper>
     </StyledRoot>
   );

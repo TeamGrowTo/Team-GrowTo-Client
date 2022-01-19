@@ -57,6 +57,10 @@ const MainLectureCategory = function () {
     }
   };
 
+  useEffect(() => {
+    setLectureCategory();
+  }, []);
+
   return (
     <StyledRoot>
       <h3>내가 찾고 싶은 강의 분야는?</h3>
