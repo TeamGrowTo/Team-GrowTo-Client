@@ -85,7 +85,7 @@ function Category() {
 
   //category id와 skill id로 강의리스트들 불러오는 함수
   const GetLecturefromSkillId = async (skillId: number, categoryId: number) => {
-    const data = await getLectureDataList(skillId, skillId);
+    const data = await getLectureDataList(categoryId, skillId);
 
     setLectureDataList(data);
   };
