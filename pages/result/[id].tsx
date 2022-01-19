@@ -2,7 +2,11 @@ import Result from "components/category/Result";
 import BlueButton from "components/common/BlueButton";
 import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
+<<<<<<< HEAD
+import ResultShareButton from "components/result/ResultShareButton";
+=======
 import Question from "components/result/Question";
+>>>>>>> develop
 import { useRouter } from "next/router";
 import { getLectureResultData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
@@ -94,6 +98,10 @@ function Category() {
 
   return (
     <StyledRoot>
+<<<<<<< HEAD
+      <ProcessResult listLength={listLength} />
+      <ResultShareButton />
+=======
       <ProcessResult listLength={listLength} categoryName={category.name} skillName={skill.name} />
       <MiddleNotification />
       <Result />
@@ -101,6 +109,7 @@ function Category() {
         다른 강의 비교하기
       </BlueButton>
       <Question />
+>>>>>>> develop
     </StyledRoot>
   );
 }
