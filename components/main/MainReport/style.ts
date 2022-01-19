@@ -32,7 +32,6 @@ const Wrapper = styled.div`
 `;
 
 const LineWrapper = styled.div`
-  z-index: 999;
   margin-top: 1.4rem;
 `;
 
