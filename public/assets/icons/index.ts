@@ -14,6 +14,7 @@ export { default as RequestIcon } from "./mainReportRequestIcon.svg";
 export { default as TotalIcon } from "./mainReportTotalIcon.svg";
 export { default as NextArrowAble } from "./nextArrowAble.svg";
 export { default as NextArrowDisabled } from "./nextArrowDisabled.svg";
+export { default as NotiIcon } from "./notiIcon.svg";
 export { default as PrevArrow } from "./prevArrow.svg";
 export { default as ProcessLoading } from "./processLoading.svg";
 export { default as ProcessPlayIcon } from "./processPlayIcon.png";
