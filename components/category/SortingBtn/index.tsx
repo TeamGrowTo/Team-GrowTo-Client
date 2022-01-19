@@ -4,7 +4,13 @@ import { useRecoilState } from "recoil";
 import { colors } from "styles/colors";
 import Screen from "styles/Screen";
 
-import { IDropListName, ISelectedItemName, ISorting, SortingType } from "../SortingBox";
+import {
+  IDropListName,
+  ISelectedItemName,
+  ISorting,
+  SortingItemType,
+  SortingType,
+} from "../SortingBox";
 import { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
 //propstype 잘받아온거 맞는지 확인부...탁...해요..
 interface SortingBtnProps {
@@ -15,7 +21,7 @@ interface SortingBtnProps {
   isOpen: ISorting;
   isSelected: ISorting;
   onClickOpenSorting: (criterial: SortingType) => void;
-  onClickSortingItem: (value: SortingType, item: string) => void;
+  onClickSortingItem: (value: SortingType, item: SortingItemType) => void;
   criteria: SortingType;
 }
 

@@ -17,14 +17,63 @@ export interface ISorting {
 }
 //dropdown 내리면 나오는 선택 목록들 type정의
 export type SortingType = "총 소요시간" | "가격" | "개설일" | "반복시청 기간" | "질의응답 시간";
+export type SortingItemType =
+  | "긴 순"
+  | "짧은 순"
+  | "최근 순"
+  | "높은 순"
+  | "낮은 순"
+  | "빠름"
+  | "긴 순서"
+  | "짧은 순서";
 
 export type IDropListName = {
-  [key in SortingType]: string[];
+  [key in SortingType]: SortingItemType[];
 };
 //dropdown에서 선택한 것 저장할 객체의 type정의
 export type ISelectedItemName = {
   [key: string]: string;
 };
+
+enum SortingText {
+  //총 소요시간
+  "긴 순" = "slow",
+  "짧은 순" = "fast",
+  //개설일
+  "최근 순" = "date",
+  //가격
+  "높은 순" = "price",
+  "낮은 순" = "-price",
+  //반복시청 기간
+  "긴 순서" = "repeat",
+  "짧은 순서" = "-repeat",
+  //질의 응답시간
+  "빠름" = "answer",
+}
+// const sortingTextObj: ISortingText = {
+//   0: {
+//     "긴 순": "slow",
+//     "짧은 순": "fast",
+//   },
+//   1: {
+//     "높은 순": "price",
+//     "낮은 순": "-price",
+//   },
+//   2: {
+//     "최근 순": "date",
+//   },
+//   3: {
+//     "긴 순서": "startYear",
+//     "짧은 순서": "-startYear",
+//   },
+//   4: {
+//     빠름: "answer",
+//   },
+// };
+
+// type ISortingText = {
+//   [key in SortingType]: { [key in SortingItemType]: string };
+// };
 
 function SortingBox() {
   const category = useRecoilValue(currentCategoryState);
@@ -33,11 +82,11 @@ function SortingBox() {
   //가격과 개설일은 eslint자동수정으로 따옴표가 자꾸 빠지는데 문제없이 돌아갑니다
   //dropListName은 드랍다운 클릭했을 때 나오는 목록 리스트들을 기준별로 저장한 것
   const dropListName: IDropListName = {
-    "총 소요시간": ["slow", "fast"],
-    가격: ["price", "-price"],
-    개설일: ["date"],
-    "반복시청 기간": ["repeat", "-repeat"],
-    "질의응답 시간": ["answer"],
+    "총 소요시간": ["긴 순", "짧은 순"],
+    가격: ["높은 순", "낮은 순"],
+    개설일: ["최근 순"],
+    "반복시청 기간": ["긴 순서", "짧은 순서"],
+    "질의응답 시간": ["빠름"],
   };
   //정렬하는 select형식의 button들을 만들기 위해 기준을 배열로 만들어서 map해주었다.
   const sortingCriteria: SortingType[] = [
@@ -100,7 +149,7 @@ function SortingBox() {
   //어떤 item이 선택되었는지 selectedItemd에 저장하고, 나머지는 빈 문자열로 초기화
   //어떤 기준(value)이 선택되었는지 true로 바꾸고 나머진 fale로 초기화
   //나중에 api연결도 추가해야함
-  const handleClickSortingItem = async (value: SortingType, item: string) => {
+  const handleClickSortingItem = async (value: SortingType, item: SortingItemType) => {
     switch (item) {
       case item:
         setSelectedItem({
@@ -114,7 +163,9 @@ function SortingBox() {
         break;
     }
     if (category && skill) {
-      await getLectureDataList(category.id, skill.id, item);
+      const ordering: string = SortingText[item];
+
+      await getLectureDataList(category.id, skill.id, ordering);
     }
   };
 
