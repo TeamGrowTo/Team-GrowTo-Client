@@ -1,6 +1,7 @@
 import {
   IProcessData,
   LectureCompareRequest,
+  LectureRankData,
   LecturesResultAllData,
   ResponseResultData,
   ResponseResultProperty,
@@ -63,5 +64,14 @@ export const postProcessResult = async (processData: IProcessData) => {
     return data.data;
   } catch (err) {
     return null;
+  }
+};
+export const getLectureWeeklyRank = async (): Promise<LectureRankData[] | null> => {
+  try {
+    const { data } = await serverAxios.get(`${PREFIX_URL}/rank`);
+
+    return data.data;
+  } catch (err) {
+    throw new Error("Failed to load lecture category");
   }
 };

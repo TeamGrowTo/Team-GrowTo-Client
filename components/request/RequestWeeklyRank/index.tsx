@@ -34,8 +34,12 @@ export default function RequestWeeklyRank() {
 
   // const [weeklyRank, setweeklyRank] = useState([]);
 
-  // useEffect(async () => {
-  //   setweeklyRank(await getLectureWeeklyRank);
+  // const test = async ()=>{
+  //   const data = await getLectureWeeklyRank();
+  //   data && setweeklyRank(data);
+  // }
+  // useEffect(() => {
+  //   test();
   // }, []);
 
   return (
