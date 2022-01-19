@@ -2,7 +2,7 @@ import CardTitle from "components/process/CardTitle";
 import TagButton from "components/process/TagButton";
 import Title from "components/process/Title";
 import Image from "next/image";
-import Router from "next/router";
+import Link from "next/link";
 import { getSkillTagList } from "pages/apis/info.api";
 import {
   NextArrowAble,
@@ -73,7 +73,6 @@ function ProcessTag() {
 
     tempProcessData["tags"] = selectedTags;
     setProcessData(tempProcessData);
-    Router.push("/processTime");
   };
 
   return (
@@ -106,18 +105,20 @@ function ProcessTag() {
             ))}
           </TagWrapper>
         </CardChoice>
-        <NextButtonWrapper>
-          <NextButton
-            onClick={handleNext}
-            selectedTags={selectedTags}
-            disabled={selectedTags.length > 1 ? false : true}
-          >
-            다음
-          </NextButton>
-          <NextArrowWrapper>
-            {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
-          </NextArrowWrapper>
-        </NextButtonWrapper>
+        <Link href="/processTime" passHref>
+          <NextButtonWrapper>
+            <NextButton
+              onClick={handleNext}
+              selectedTags={selectedTags}
+              disabled={selectedTags.length > 1 ? false : true}
+            >
+              다음
+            </NextButton>
+            <NextArrowWrapper>
+              {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
+            </NextArrowWrapper>
+          </NextButtonWrapper>
+        </Link>
       </ProcessBox>
     </StyledRoot>
   );
