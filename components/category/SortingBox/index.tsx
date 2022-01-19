@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import SortingBtn from "../SortingBtn";
-
+import { StyledRoot } from "./style";
 //todo(1) : 선택한 기준이 criteria 옆에 들어가게 O
 //todo(2) : active 효과 O
 //todo(3) : dropdown arrow icon isOpen에 따라서 위 아래 바꾸기 O
@@ -109,7 +109,7 @@ function SortingBox() {
   };
 
   return (
-    <div>
+    <StyledRoot>
       {sortingCriteria.map((criteria) => (
         <SortingBtn
           key={criteria}
@@ -125,7 +125,7 @@ function SortingBox() {
           {criteria}
         </SortingBtn>
       ))}
-    </div>
+    </StyledRoot>
   );
 }
 

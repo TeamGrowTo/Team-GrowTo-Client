@@ -42,7 +42,7 @@ const Category = () => {
     <StyledRoot>
       <ProcessResult listLength={listLength} />
       <Result />
-      <BlueButton onClick={handleMoveToCategory} width="84.5rem">
+      <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem">
         다른 강의 비교하기
       </BlueButton>
     </StyledRoot>
