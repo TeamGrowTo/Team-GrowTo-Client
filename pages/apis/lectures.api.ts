@@ -1,12 +1,14 @@
 import {
+  IProcessData,
   LecturesResultAllData,
   ResponseResultData,
   ResponseResultProperty,
 } from "types/lectures.type";
-import { IProcessData } from "types/lecture.type";
+
 import { serverAxios } from "./index";
 
 const PREFIX_URL = "/lectures";
+
 export const getLectureResultData = async (
   id: string | string[] | undefined,
 ): Promise<LecturesResultAllData | null> => {

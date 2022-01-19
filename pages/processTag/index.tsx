@@ -45,7 +45,8 @@ function ProcessTag() {
   useEffect(() => {
     //getTagList();
     setTagList(mockData);
-    if (getTagData.tags) {
+
+    if (getTagData.tags.length !== 1) {
       setSelectedTags(getTagData.tags);
     }
   }, []);
@@ -66,6 +67,7 @@ function ProcessTag() {
       }
     }
   };
+
   const handleNext = () => {
     const tempProcessData = { ...processData };
 

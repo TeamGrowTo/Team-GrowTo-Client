@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
-import { LectureResultData } from "types/lectures.type";
+import { LectureResultData, ProcessDataState } from "types/lectures.type";
 const { persistAtom } = recoilPersist();
 
 export const lectureCategoryState = atom({
@@ -13,12 +13,12 @@ export const lectureResultState = atom<LectureResultData[] | null>({
   default: null,
 });
 
-export const processState = atom({
+export const processState = atom<ProcessDataState>({
   key: "processState",
   default: {
     category: "",
     skill: "",
-    tags: [],
+    tags: [""],
     timeAsc: undefined,
     priceAsc: undefined,
   },

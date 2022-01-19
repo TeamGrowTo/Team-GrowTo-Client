@@ -63,7 +63,6 @@ function ProcessPrice() {
 
     tempProcessData["priceAsc"] = changeType;
     setProcessData(tempProcessData);
-
     //await postProcessResult(processData);
     setIsLoading(true);
     setTimeout(() => {
