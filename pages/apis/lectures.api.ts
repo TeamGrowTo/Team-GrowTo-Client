@@ -13,7 +13,7 @@ export const getLectureResultData = async (
 ): Promise<LecturesResultAllData | null> => {
   try {
     const { data } = await serverAxios.get(`${PREFIX_URL}/result/${id}`);
-    const { lectures, categoryId, skillId }: ResponseResultProperty = data;
+    const { lectures, category, skill }: ResponseResultProperty = data;
 
     const result = lectures.map((response: ResponseResultData) => {
       return {
@@ -28,7 +28,11 @@ export const getLectureResultData = async (
       };
     });
 
-    return { result, categoryId, skillId };
+    return {
+      result,
+      category: { id: category.id, name: category.name },
+      skill: { id: skill.id, name: skill.name },
+    };
   } catch (err) {
     throw new Error("Failed to load lecture best result");
   }
