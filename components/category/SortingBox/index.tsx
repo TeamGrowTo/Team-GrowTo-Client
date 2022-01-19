@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import SortingBtn from "../SortingBtn";
-
+import { StyledRoot } from "./style";
 //todo(1) : 선택한 기준이 criteria 옆에 들어가게 O
 //todo(2) : active 효과 O
 //todo(3) : dropdown arrow icon isOpen에 따라서 위 아래 바꾸기 O
@@ -26,11 +26,11 @@ function SortingBox() {
   //가격과 개설일은 eslint자동수정으로 따옴표가 자꾸 빠지는데 문제없이 돌아갑니다
   //dropListName은 드랍다운 클릭했을 때 나오는 목록 리스트들을 기준별로 저장한 것
   const dropListName: IDropListName = {
-    "총 소요시간": ["긴 순서", "짧은 순서"],
+    "총 소요시간": ["긴 순", "짧은 순"],
     가격: ["높은 순", "낮은 순"],
-    개설일: ["빠른 순", "늦은 순"],
-    "반복시청 기간": ["긴 순서", "짧은 순서"],
-    "질의응답 시간": ["빠름", "늦음"],
+    개설일: ["최근 순"],
+    "반복시청 기간": ["긴 순", "짧은 순"],
+    "질의응답 시간": ["빠름"],
   };
   //정렬하는 select형식의 button들을 만들기 위해 기준을 배열로 만들어서 map해주었다.
   const sortingCriteria: sortingType[] = [
@@ -109,7 +109,7 @@ function SortingBox() {
   };
 
   return (
-    <div>
+    <StyledRoot>
       {sortingCriteria.map((criteria) => (
         <SortingBtn
           key={criteria}
@@ -125,7 +125,7 @@ function SortingBox() {
           {criteria}
         </SortingBtn>
       ))}
-    </div>
+    </StyledRoot>
   );
 }
 

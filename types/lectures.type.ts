@@ -37,3 +37,18 @@ export interface LecturesResultAllData {
   category: ItemObj;
   skill: ItemObj;
 }
+
+export interface IProcessData {
+  category: string;
+  skill: string;
+  tags: string[];
+  timeAsc: boolean | null;
+  priceAsc: boolean | null;
+}
+export interface ProcessDataState {
+  category: string;
+  skill: string;
+  tags: string[];
+  timeAsc: boolean | null | undefined;
+  priceAsc: boolean | null | undefined;
+}

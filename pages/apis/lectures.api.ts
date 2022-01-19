@@ -1,4 +1,5 @@
 import {
+  IProcessData,
   LecturesResultAllData,
   ResponseResultData,
   ResponseResultProperty,
@@ -6,7 +7,7 @@ import {
 
 import { serverAxios } from "./index";
 
-const PREFIX_URL = "/info";
+const PREFIX_URL = "/lectures";
 
 export const getLectureResultData = async (
   id: string | string[] | undefined,
@@ -35,5 +36,19 @@ export const getLectureResultData = async (
     };
   } catch (err) {
     throw new Error("Failed to load lecture best result");
+  }
+};
+
+export const postProcessResult = async (processData: IProcessData) => {
+  try {
+    const { data } = await serverAxios.post(`${PREFIX_URL}/search`, processData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    return data.data;
+  } catch (err) {
+    return null;
   }
 };
