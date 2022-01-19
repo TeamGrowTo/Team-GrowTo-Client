@@ -41,9 +41,9 @@ export const postLectureRequest = async (): Promise<LectureCompareRequest | null
 
     return data((response: LectureCompareRequest) => {
       return {
-        requestCategoryId: response.categoryId,
-        requestSkill: response.skill,
-        requestEmail: response.email,
+        categoryId: response.categoryId,
+        skill: response.skill,
+        email: response.email,
       };
     });
   } catch (err) {
