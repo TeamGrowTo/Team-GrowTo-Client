@@ -22,6 +22,7 @@ interface CurrentCategory {
 export const currentCategoryState = atom<CurrentCategory | null>({
   key: "currentCategoryState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 interface CurrentSkill {
@@ -32,6 +33,7 @@ interface CurrentSkill {
 export const currentSkillState = atom<CurrentSkill | null>({
   key: "currentSkillState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const lectureResultState = atom<LectureResultData[] | null>({

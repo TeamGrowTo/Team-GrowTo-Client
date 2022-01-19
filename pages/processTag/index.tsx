@@ -12,7 +12,7 @@ import {
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { processState } from "store/state";
+import { currentCategoryState, currentSkillState, processState } from "store/state";
 import Screen from "styles/Screen";
 import { SkillTagList } from "types/info.type";
 
