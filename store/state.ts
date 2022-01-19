@@ -1,6 +1,6 @@
 import { atom } from "recoil";
-import { LectureResultData } from "types/lectures.type";
 import { recoilPersist } from "recoil-persist";
+import { LectureResultData } from "types/lectures.type";
 const { persistAtom } = recoilPersist();
 
 export const lectureCategoryState = atom({
