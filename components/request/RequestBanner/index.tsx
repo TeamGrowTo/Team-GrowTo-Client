@@ -13,7 +13,7 @@ export default function RequestBanner() {
   };
 
   useEffect(() => {
-    TotalNumber();
+    TotalNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }, []);
 
   return (
