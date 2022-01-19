@@ -58,7 +58,7 @@ const MainLectureCategory = function () {
   };
 
   useEffect(() => {
-    setLectureCategory();
+    // setLectureCategory();
   }, []);
 
   return (
