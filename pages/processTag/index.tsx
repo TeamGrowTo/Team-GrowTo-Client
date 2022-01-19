@@ -12,7 +12,7 @@ import {
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { currentCategoryState, currentSkillState, processState } from "store/state";
+import { currentSkillState, processState } from "store/state";
 import Screen from "styles/Screen";
 import { SkillTagList } from "types/info.type";
 
@@ -34,12 +34,14 @@ function ProcessTag() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [processData, setProcessData] = useRecoilState(processState);
   const getTagData = useRecoilValue(processState);
+  const skillState = useRecoilValue(currentSkillState);
 
-  const id = 1;
   const getTagList = async () => {
-    const data = await getSkillTagList(id);
+    if (skillState?.id) {
+      const data = await getSkillTagList(skillState?.id);
 
-    setTagList(data);
+      setTagList(data);
+    }
   };
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { currentCategoryState, currentSkillState } from "store/state";
 import Screen from "styles/Screen";
 
