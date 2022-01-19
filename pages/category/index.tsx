@@ -1,8 +1,9 @@
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
+import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
 import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
 import React, { useEffect } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
@@ -93,8 +94,8 @@ const dummySkillList: LectureSkillData[] = [
 ];
 
 function Category() {
-  const setCurrentCategory = useSetRecoilState(currentCategoryState);
-  const setCurrentSkill = useSetRecoilState(currentSkillState);
+  const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
+  const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
 
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
@@ -138,6 +139,7 @@ function Category() {
 
   return (
     <div>
+      {category?.id !== -1 && currentSkill?.id && <RedirectProcessButton />}
       <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
       <Background>
         <Result />
