@@ -1,21 +1,28 @@
 import { ArrowDown, ArrowUp, SmallArrowDown, SmallArrowUp } from "public/assets/icons";
 import React from "react";
+import { useRecoilState } from "recoil";
 import { colors } from "styles/colors";
 import Screen from "styles/Screen";
 
-import { IDropListName, ISelectedItemName, ISorting, sortingType } from "../SortingBox";
+import {
+  IDropListName,
+  ISelectedItemName,
+  ISorting,
+  SortingItemType,
+  SortingType,
+} from "../SortingBox";
 import { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
 //propstype 잘받아온거 맞는지 확인부...탁...해요..
 interface SortingBtnProps {
-  value: sortingType;
+  value: SortingType;
   children: React.ReactNode;
   dropListName: IDropListName;
   selectedItem: ISelectedItemName;
   isOpen: ISorting;
   isSelected: ISorting;
-  onClickOpenSorting: (criterial: sortingType) => void;
-  onClickSortingItem: (value: sortingType, item: string) => void;
-  criteria: sortingType;
+  onClickOpenSorting: (criterial: SortingType) => void;
+  onClickSortingItem: (value: SortingType, item: SortingItemType) => void;
+  criteria: SortingType;
 }
 
 //sorting기준에 따라 dropDownList가 다르게보이도록 하자.

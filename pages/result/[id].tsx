@@ -1,14 +1,16 @@
 import Result from "components/category/Result";
 import BlueButton from "components/common/BlueButton";
+import { Data } from "components/main/MainReport/ReportSection/style";
 import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
 import Question from "components/result/Question";
 import ResultShareButton from "components/result/ResultShareButton";
 import { useRouter } from "next/router";
+import { getLectureDataList } from "pages/apis/info.api";
 import { getLectureResultData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
-import { lectureResultState } from "store/state";
+import { lectureDataList, lectureResultState } from "store/state";
 import { LectureResultData, LecturesResultAllData } from "types/lectures.type";
 
 import { StyledRoot } from "./style";
@@ -67,7 +69,7 @@ function Category() {
   const [listLength, setListLength] = useState(0);
   const [category, setCategory] = useState({ id: -1, name: "" });
   const [skill, setSkill] = useState({ id: -1, name: "" });
-
+  const setLectureDataList = useSetRecoilState(lectureDataList);
   const getLectureResult = async (): Promise<void> => {
     const id = router.query.id || "";
     const data: Result = await getLectureResultData(id);
@@ -81,6 +83,19 @@ function Category() {
     }
   };
 
+  //category id와 skill id로 강의리스트들 불러오는 함수
+  const GetLecturefromSkillId = async (skillId: number, categoryId: number) => {
+    const data = await getLectureDataList(categoryId, skillId);
+
+    setLectureDataList(data);
+  };
+
+  useEffect(() => {
+    //api불러오는 함수
+    if (category.id >= 0 && skill.id >= 0) {
+      GetLecturefromSkillId(skill.id, category.id);
+    }
+  }, [skill.id, category.id]);
   useEffect(() => {
     // getLectureResult();
     setLectureResultList(dummy);

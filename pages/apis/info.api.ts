@@ -1,8 +1,10 @@
 import { serverAxios } from "libs/axios";
 import {
   LectureCategoryData,
+  LectureDataListType,
   LectureSkillData,
   ResponseCategoryData,
+  ResponseLectureDataType,
   ResponseSkillData,
   SkillTagList,
 } from "types/info.type";
@@ -40,5 +42,43 @@ export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null
     return data.data;
   } catch (err) {
     return null;
+  }
+};
+
+export const getLectureDataList = async (
+  categoryId: number | null,
+  skillId: number | null,
+  ordering = "",
+): Promise<LectureDataListType | null> => {
+  try {
+    const apiResponse = await serverAxios.get(
+      `${PREFIX_URL}/lectures/${categoryId}/${skillId}?ordering=${ordering}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
+
+    if (apiResponse.status === 200) {
+      const { data } = apiResponse;
+
+      return data.map((data: ResponseLectureDataType) => {
+        return {
+          LectureTitle: data.name,
+          time: data.time,
+          price: data.price,
+          reviewTime: data.reviewTime,
+          duration: data.duration,
+          startYear: data.startYear,
+          tags: data.tags,
+          url: data.url,
+        };
+      });
+    } else {
+      throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
+    }
+  } catch (err) {
+    throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
   }
 };

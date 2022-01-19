@@ -3,7 +3,8 @@ import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
   display: flex;
-  width: 126.2rem;
+  max-width: 126.2rem;
+  width: 100%;
   height: 14rem;
   background-color: white;
   border-radius: 2.4rem;
@@ -48,7 +49,7 @@ const LectureTagBox = styled(LectureInfoBox)`
   border: none;
 `;
 
-const LectureTitle = styled.h3`
+const LectureTitleName = styled.h3`
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -127,8 +128,8 @@ export {
   LectureLinkBtn,
   LectureTag,
   LectureTagBox,
-  LectureTitle,
   LectureTitleBox,
+  LectureTitleName,
   StyledRoot,
   TagWrapper,
 };
