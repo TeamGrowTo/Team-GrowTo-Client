@@ -1,24 +1,31 @@
 import React from "react";
 
-import { Bottom, Comment, Id, StyledRoot } from "./style";
+import { Bottom, Comment, ImgWrapper, Introduce, StyledRoot } from "./style";
 
 interface IProps {
   review: {
     comment: string;
     Profile: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    nickname: string;
     id: string;
+    isTransparent: boolean;
   };
 }
 
 export default function Review({ review }: IProps) {
-  const { comment, Profile, id } = review;
+  const { comment, Profile, id, nickname, isTransparent } = review;
 
   return (
-    <StyledRoot>
+    <StyledRoot isTransparent={isTransparent}>
       <Comment>{comment}</Comment>
       <Bottom>
-        <Profile />
-        <Id>{id}</Id>
+        <ImgWrapper>
+          <Profile />
+        </ImgWrapper>
+        <Introduce>
+          <div>{nickname}</div>
+          <div>{id}</div>
+        </Introduce>
       </Bottom>
     </StyledRoot>
   );

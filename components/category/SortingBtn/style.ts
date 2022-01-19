@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.button`
   display: inline-flex;
@@ -13,11 +14,13 @@ const StyledRoot = styled.button`
   border-radius: 4.8rem;
 
   font-family: "Pretendard-Medium";
+  line-height: 4.8rem;
   color: ${colors.gray6}
   transition: 200ms;
-  
-  cursor: pointer;
+  box-shadow: 0 0.2rem 0.6rem 0 #5858580A;
 
+  cursor: pointer;
+  
   &:hover {
     background-color: ${colors.gray2};
     transition: 200ms;
@@ -25,14 +28,29 @@ const StyledRoot = styled.button`
 
   &:focus {
     background-color: white;
-    color: ${colors.mainBlue};
     border: 1px solid ${colors.mainBlue};
     box-shadow: 0px 2px 12px rgba(69, 121, 255, 0.08);
     transition: 200ms;
+    span {
+      color: ${colors.mainBlue};
+    }
+    path {
+      stroke: ${colors.mainBlue};
+    }
   }
 
   & + & {
     margin-left: 1.2rem;
+  }
+
+  ${applyMediaQuery("mobile")} {
+    height: 3.4rem;
+    line-height: 3.4rem;
+    padding: 1rem 1.2rem;
+    & + & {
+      margin-left: 0.6rem;
+      
+    }
   }
 `;
 
@@ -42,7 +60,6 @@ const DropDownBox = styled.ul`
   left: 0;
 
   width: 18rem;
-  height: 10rem;
 
   background: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
@@ -68,11 +85,12 @@ const DropDownItem = styled.li`
   text-align: left;
   font-family: "Pretendard-Medium";
   font-size: 1.4rem;
+  line-height: 1.4rem;
   color: ${colors.gray6};
 
   cursor: pointer;
   &:hover {
-    background: ${colors.gray1};
+    background: ${colors.lightBlue};
   }
 `;
 const CriteriaItem = styled.span`
@@ -80,6 +98,12 @@ const CriteriaItem = styled.span`
   color: ${(props) => props.color || colors.gray3};
   font-size: 1.4rem;
   & + & {
+    margin-left: 0.8rem;
+  }
+
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
     margin-left: 0.8rem;
   }
 `;

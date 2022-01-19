@@ -1,3 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { applyMediaQuery } from "styles/mediaQuery";
 
-export { }
+const StyledRoot = styled.div`
+  min-width: 128rem;
+
+  ${applyMediaQuery("mobile")} {
+    max-width: 55rem;
+  }
+`;
+
+export { StyledRoot };

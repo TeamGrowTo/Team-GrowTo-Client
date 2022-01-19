@@ -2,7 +2,7 @@ import React from "react";
 
 import CardListContainer from "../CardListContainer";
 import SortingBox from "../SortingBox";
-import { MessageWrapper, ResultBox, ResultCount, ResultMessage, SelectedCategory } from "./style";
+import { MessageWrapper, ResultBlueMessage, ResultBox, ResultMessage } from "./style";
 
 function Result() {
   //todo(1):skill선택 후 response 받아서 강의 몇개인지 표시
@@ -14,8 +14,8 @@ function Result() {
   return (
     <ResultBox>
       <MessageWrapper>
-        <ResultCount>총 100개</ResultCount>
-        <SelectedCategory> 퍼포먼스 & 디지털마케팅</SelectedCategory>
+        <ResultBlueMessage>총 100개</ResultBlueMessage>
+        <ResultBlueMessage> 퍼포먼스 & 디지털마케팅</ResultBlueMessage>
         <ResultMessage> 강의 모두 보기</ResultMessage>
       </MessageWrapper>
       <SortingBox />
