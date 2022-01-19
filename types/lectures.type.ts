@@ -1,11 +1,5 @@
 export interface CurrentLectureData {
+  id: number;
   name: string;
   skill: string;
 }
-
-// export interface CurrentLectureData[] {
-//   data{
-//     name: string;
-//     skill: string;
-//   }
-// }

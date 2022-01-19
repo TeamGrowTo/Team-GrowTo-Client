@@ -4,13 +4,14 @@ import { StyledRoot } from "./style";
 
 interface IProps {
   currentLecture: {
+    id: number;
     name: string;
     skill: string;
   };
 }
 
 export default function CurrentLecture({ currentLecture }: IProps) {
-  const { name, skill } = currentLecture;
+  const { id, name, skill } = currentLecture;
 
   return (
     <StyledRoot>

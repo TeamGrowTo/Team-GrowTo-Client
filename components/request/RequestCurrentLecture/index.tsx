@@ -6,12 +6,12 @@ import { CurrentList, StyledRoot, Title, Wrapper } from "./style";
 
 export default function RequestCurrentLecture() {
   const currentLectureInfo = [
-    { name: "개발", skill: "파이썬" },
-    { name: "디자인", skill: "피그마" },
-    { name: "개발", skill: "자바스크립트" },
-    { name: "개발", skill: "html & css" },
-    { name: "데이터", skill: "데이터" },
-    { name: "그로투", skill: "짱짱짱" },
+    { id: 1, name: "개발", skill: "파이썬" },
+    { id: 2, name: "디자인", skill: "피그마" },
+    { id: 3, name: "개발", skill: "자바스크립트" },
+    { id: 4, name: "개발", skill: "html & css" },
+    { id: 5, name: "데이터", skill: "데이터" },
+    { id: 6, name: "그로투", skill: "짱짱짱" },
   ];
 
   // const [compareLecture, setCompareLecture] = useState([]);
@@ -29,7 +29,7 @@ export default function RequestCurrentLecture() {
         </Title>
         <CurrentList>
           {currentLectureInfo.map((currentLecture) => (
-            <CurrentLecture currentLecture={currentLecture} key={currentLecture.skill} />
+            <CurrentLecture currentLecture={currentLecture} key={currentLecture.id} />
           ))}
         </CurrentList>
       </Wrapper>
