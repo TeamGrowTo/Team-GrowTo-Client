@@ -34,6 +34,11 @@ export interface LecturesResultAllData {
   skillId: number;
 }
 
+export interface LectureCompareRequest {
+  categoryId: string | null;
+  skill: string | null;
+  email: string | null;
+}
 export interface IProcessData {
   category: string;
   skill: string;
