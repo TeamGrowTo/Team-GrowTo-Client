@@ -4,12 +4,12 @@ interface IdeviceQuery {
 }
 export const deviceQuery: IdeviceQuery = {
   mobile: "(max-width: 550px)",
-  desktop: "(min-width: 896px)",
+  desktop: "(min-width: 551px)",
 };
 interface Props {
   children: JSX.Element;
-  mobile: string;
-  desktop: string;
+  mobile?: boolean;
+  desktop?: boolean;
 }
 function Screen({ children, mobile, desktop }: Props) {
   let renderFlag = false;
