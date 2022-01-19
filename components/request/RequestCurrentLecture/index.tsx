@@ -1,4 +1,4 @@
-import { getCurrentLectureData } from "pages/apis/lectures.api";
+// import { getCurrentLectureData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 
 import CurrentLecture from "./CurrentLecture";

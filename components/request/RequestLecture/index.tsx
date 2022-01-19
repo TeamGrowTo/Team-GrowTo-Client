@@ -1,5 +1,5 @@
 import Modal from "components/common/Modal";
-import { postLectureRequest } from "pages/apis/lectures.api";
+// import { postLectureRequest } from "pages/apis/lectures.api";
 import React, { useState } from "react";
 
 import Email from "./Email";
@@ -22,7 +22,7 @@ export default function RequestLecture() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const submitRequest = async () => {
     try {
-      await postLectureRequest();
+      // await postLectureRequest();
       setIsModalOpen(true);
       document.body.style.overflow = "hidden";
     } catch {

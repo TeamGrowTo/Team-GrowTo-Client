@@ -4,6 +4,7 @@ import { Data } from "components/main/MainReport/ReportSection/style";
 import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
 import Question from "components/result/Question";
+import ResultShareButton from "components/result/ResultShareButton";
 import { useRouter } from "next/router";
 import { getLectureDataList } from "pages/apis/info.api";
 import { getLectureResultData } from "pages/apis/lectures.api";
@@ -110,6 +111,7 @@ function Category() {
   return (
     <StyledRoot>
       <ProcessResult listLength={listLength} categoryName={category.name} skillName={skill.name} />
+      <ResultShareButton />
       <MiddleNotification />
       <Result />
       <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem">
