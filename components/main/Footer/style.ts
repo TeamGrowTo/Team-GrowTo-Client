@@ -5,7 +5,7 @@ const StyledRoot = styled.section`
   height: 38rem;
   padding: 7.6rem 2.5rem 6rem 2.5rem;
   background-color: ${colors.gray0};
-
+  border-top: solid 1px ${colors.gray2};
   display: flex;
   justify-content: center;
 `;
