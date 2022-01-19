@@ -5,7 +5,6 @@ const ResultBox = styled.div`
   width: 128rem;
   margin: 0 auto;
   padding-bottom: 19.2rem;
-  border-bottom: solid 1px ${colors.gray2};
 `;
 
 const ResultMessage = styled.h2`
