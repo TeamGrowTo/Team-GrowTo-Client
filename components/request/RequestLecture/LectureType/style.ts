@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "styles/color";
+import { colors } from "styles/colors";
 
 const LectureTypeBox = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const LectureTypeBox = styled.div`
 const InputWrapper = styled.div`
   width: 63rem;
   height: 6.8rem;
-  background-color: ${colors.gray2};
+  background-color: rgb(255, 255, 255, 0.7);
   border-radius: 4.8rem;
   display: flex;
   padding: 2.2rem 3.6rem;
@@ -28,6 +28,7 @@ const InputWrapper = styled.div`
     font-size: 2rem;
   }
   input::placeholder {
+    color: ${colors.gray4};
   }
 `;
 

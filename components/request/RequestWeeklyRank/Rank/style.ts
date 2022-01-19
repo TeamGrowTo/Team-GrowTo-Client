@@ -16,7 +16,7 @@ const Id = styled.div`
 const Wrapper = styled.div`
   width: 30.5rem;
   height: 10.8rem;
-  background-color: ${colors.gray1};
+  background-color: ${colors.gray0};
   border-radius: 2.8rem;
 
   display: flex;

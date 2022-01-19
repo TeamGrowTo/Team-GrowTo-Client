@@ -1,6 +1,6 @@
 import { ResponseFindNumber, ResponseRequestNumber, ResponseTotalNumber } from "types/count.type";
 
-import { serverAxios } from ".";
+import { serverAxios } from "./index";
 
 const PREFIX_URL = "/count";
 
@@ -12,7 +12,7 @@ export const getLectureTotalNumber = async (): Promise<number | null> => {
       return { lectureTotalNumber: response.totalNumber };
     });
   } catch (err) {
-    throw new Error("서버 내 오류");
+    throw new Error("Failed to load lecture total number");
   }
 };
 
@@ -24,7 +24,7 @@ export const getLectureFindNumber = async (): Promise<number | null> => {
       return { lectureFindNumber: response.findNumber };
     });
   } catch (err) {
-    throw new Error("서버 내 오류");
+    throw new Error("Failed to load lecture find number");
   }
 };
 
@@ -36,6 +36,6 @@ export const getLectureRequestNumber = async (): Promise<number | null> => {
       return { lectureRequestNumber: response.requestNumber };
     });
   } catch (err) {
-    throw new Error("서버 내 오류");
+    throw new Error("Failed to load lecture request number");
   }
 };
