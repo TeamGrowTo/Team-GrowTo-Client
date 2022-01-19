@@ -1,6 +1,6 @@
 import Modal from "components/common/Modal";
 // import { postLectureRequest } from "pages/apis/lectures.api";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Email from "./Email";
 import LectureCategory from "./LectureCategory";
@@ -13,8 +13,13 @@ import {
   Title,
   Wrapper,
 } from "./style";
-
+export interface IPostRequest {
+  categoryId?: string;
+  skill?: string;
+  email?: string;
+}
 export default function RequestLecture() {
+  const [postData, setPostData] = useState<IPostRequest | null>(null);
   const [categorySelected, setCategorySelected] = useState("");
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
@@ -23,6 +28,13 @@ export default function RequestLecture() {
   const submitRequest = async () => {
     try {
       // await postLectureRequest();
+      if (categorySelected) {
+        const temp = { ...postData };
+
+        temp["categoryId"] = categorySelected;
+        setPostData(temp);
+      }
+
       setIsModalOpen(true);
       document.body.style.overflow = "hidden";
     } catch {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { InputWrapper, LectureTypeBox } from "./style";
 
@@ -7,8 +7,10 @@ interface TypeFilledProps {
 }
 
 export default function LectureType({ setTypeFilled }: TypeFilledProps) {
-  const handleInputValue = () => {
+  const [lecture, setLecture] = useState("");
+  const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTypeFilled(true);
+    setLecture(e.target.value);
   };
 
   return (
