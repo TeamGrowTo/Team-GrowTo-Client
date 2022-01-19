@@ -45,11 +45,9 @@ function Footer() {
             <ServiceMenuList>
               <ServiceMenuTitle>Social</ServiceMenuTitle>
               <ServiceMenuListItem>
-                <Link href="https://www.instagram.com/grow._.eleven/" passHref>
-                  <a>
-                    <InstagramLogo />
-                  </a>
-                </Link>
+                <a href="https://www.instagram.com/grow._.eleven/">
+                  <InstagramLogo />
+                </a>
               </ServiceMenuListItem>
             </ServiceMenuList>
           </ServiceMenuBox>
