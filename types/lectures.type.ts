@@ -53,3 +53,9 @@ export interface ProcessDataState {
   timeAsc: boolean | null | undefined;
   priceAsc: boolean | null | undefined;
 }
+
+export interface CurrentCompareData {
+  id: number;
+  name: string;
+  skill: string;
+}

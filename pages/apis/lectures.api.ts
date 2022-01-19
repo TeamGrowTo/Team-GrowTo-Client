@@ -65,3 +65,13 @@ export const postProcessResult = async (processData: IProcessData) => {
     return null;
   }
 };
+
+export const getCurrentLectureData = async (): Promise<CurrentCompareData[] | null> => {
+  try {
+    const { data } = await serverAxios.get(`${PREFIX_URL}/compare`);
+
+    return data.data;
+  } catch (err) {
+    throw new Error("Failed to load current compare lecture");
+  }
+};
