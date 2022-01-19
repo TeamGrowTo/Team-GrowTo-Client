@@ -48,7 +48,7 @@ const LectureTagBox = styled(LectureInfoBox)`
   border: none;
 `;
 
-const LectureTitle = styled.h3`
+const LectureTitleName = styled.h3`
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -127,8 +127,8 @@ export {
   LectureLinkBtn,
   LectureTag,
   LectureTagBox,
-  LectureTitle,
   LectureTitleBox,
+  LectureTitleName,
   StyledRoot,
   TagWrapper,
 };

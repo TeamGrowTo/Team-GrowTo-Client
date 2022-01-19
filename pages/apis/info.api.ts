@@ -46,13 +46,12 @@ export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null
 };
 
 export const getLectureDataList = async (
-  categoryId: number,
-  skillId: number,
-): Promise<LectureDataListType[] | null> => {
+  categoryId: number | null,
+  skillId: number | null,
+): Promise<LectureDataListType | null> => {
   try {
     const apiResponse = await serverAxios.get(`${PREFIX_URL}/lectures/${categoryId}/${skillId}`, {
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
     });
@@ -66,6 +65,7 @@ export const getLectureDataList = async (
           time: data.time,
           price: data.price,
           reviewTime: data.reviewTime,
+          duration: data.duration,
           startYear: data.startYear,
           tags: data.tags,
           url: data.url,

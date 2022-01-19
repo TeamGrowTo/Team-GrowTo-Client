@@ -1,6 +1,11 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
-import { LectureCategoryData, LectureSkillData } from "types/info.type";
+import {
+  LectureCategoryData,
+  LectureDataListType,
+  LectureSkillData,
+  ResponseLectureDataType,
+} from "types/info.type";
 import { LectureResultData, ProcessDataState } from "types/lectures.type";
 const { persistAtom } = recoilPersist();
 
@@ -31,6 +36,11 @@ interface CurrentSkill {
 
 export const currentSkillState = atom<CurrentSkill | null>({
   key: "currentSkillState",
+  default: null,
+});
+
+export const lectureDataList = atom<LectureDataListType | null>({
+  key: "lectureDataState",
   default: null,
 });
 

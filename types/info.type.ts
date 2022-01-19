@@ -27,11 +27,22 @@ export interface ResponseLectureDataType {
   time: number;
   price: number;
   reviewTime: string;
+  duration: string;
+  startYear: string;
+  tags: string[];
+  url: string;
+}
+export interface LectureDataType {
+  LectureTitle: string;
+  time: number;
+  price: number;
+  reviewTime: string;
+  duration: string;
   startYear: string;
   tags: string[];
   url: string;
 }
 
 export interface LectureDataListType {
-  data: ResponseLectureDataType[];
+  data: LectureDataType[];
 }

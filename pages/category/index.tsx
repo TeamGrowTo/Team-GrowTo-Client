@@ -1,12 +1,17 @@
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
 import Result from "components/category/Result";
-import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
-import React, { useEffect } from "react";
+import {
+  getLectureCategoryData,
+  getLectureDataList,
+  getLectureSkillData,
+} from "pages/apis/info.api";
+import React, { useEffect, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
   lectureCategoryState,
+  lectureDataList,
   lectureSkillState,
 } from "store/state";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
@@ -93,12 +98,11 @@ const dummySkillList: LectureSkillData[] = [
 ];
 
 function Category() {
-  const setCurrentCategory = useSetRecoilState(currentCategoryState);
+  const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
   const setCurrentSkill = useSetRecoilState(currentSkillState);
-
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
-
+  const [LecutreDataList, setLectureDataList] = useRecoilState(lectureDataList);
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
 
@@ -121,11 +125,19 @@ function Category() {
     }
   };
 
-  const handleSkillClick = (id: number | null) => {
-    if (id) {
-      const result = skillList?.filter((skill) => skill.id === id)[0] || null;
+  const handleSkillClick = async (SkillId: number | null) => {
+    if (SkillId) {
+      const result = skillList?.filter((skill) => skill.id === SkillId)[0] || null;
+      const categoryId = category?.id;
 
-      setCurrentSkill(result);
+      if (categoryId) {
+        const data = await getLectureDataList(categoryId, SkillId);
+
+        console.log(data?.data[0].LectureTitle);
+
+        setLectureDataList(data); //확인필요
+        setCurrentSkill(result); //비동기라서 변경이 늦게된다. , skillId사용하기위함.
+      }
     }
   };
 
