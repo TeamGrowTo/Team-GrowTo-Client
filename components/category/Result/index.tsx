@@ -21,7 +21,7 @@ function Result() {
     <ResultBox>
       <MessageWrapper>
         <ResultBlueMessage>총 {LectureDataList?.data.length}개</ResultBlueMessage>
-        <ResultBlueMessage>{skill}</ResultBlueMessage>
+        <ResultBlueMessage>{skill?.skillName}</ResultBlueMessage>
         <ResultMessage> 강의 모두 보기</ResultMessage>
       </MessageWrapper>
       <SortingBox />
