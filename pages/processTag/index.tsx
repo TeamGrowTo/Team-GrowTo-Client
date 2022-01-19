@@ -79,8 +79,9 @@ function ProcessTag() {
     <StyledRoot>
       <Screen desktop>
         <>
+          <div></div>
           <PlayIcon>
-            <Image src={ProcessPlayIcon} priority alt="processPlay" />
+            <Image src={ProcessPlayIcon} alt="processPlay" />
           </PlayIcon>
           <SquareIcon>
             <Image src={ProcessSquareIcon} alt="processSqaure" />
