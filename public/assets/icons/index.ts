@@ -5,6 +5,8 @@ export { default as EmailIcon } from "./emailIcon.svg";
 export { default as InstagramLogo } from "./InstagramLogo.svg";
 export { default as LeftArrowIcon } from "./leftArrowIcon.svg";
 export { default as LogoIcon } from "./logoIcon.svg";
+export { default as SmallArrowDown } from "./smallArrowDown.svg";
+export { default as SmallArrowUp } from "./smallArrowUp.svg";
 export { default as NextArrowAble } from "./nextArrowAble.svg";
 export { default as NextArrowDisabled } from "./nextArrowDisabled.svg";
 export { default as PrevArrow } from "./prevArrow.svg";

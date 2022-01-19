@@ -9,6 +9,7 @@ interface BlueButtonProps {
   fontSize?: string;
   type?: "submit" | "reset" | "button";
   margin?: string;
+  maxWidth?: string | undefined;
   onClick: () => void;
 }
 
@@ -20,6 +21,7 @@ function BlueButton({
   onClick,
   type = "submit",
   margin = "auto auto",
+  maxWidth,
 }: BlueButtonProps) {
   return (
     <StyledRoot
@@ -29,6 +31,7 @@ function BlueButton({
       margin={margin}
       type={type}
       onClick={onClick}
+      maxWidth={maxWidth}
     >
       {children}
     </StyledRoot>
