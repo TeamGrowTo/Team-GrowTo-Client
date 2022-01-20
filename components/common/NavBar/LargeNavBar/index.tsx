@@ -32,7 +32,11 @@ function LargeNavBar() {
             href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
             passHref
           >
-            <NavItem target="_blank" pathName={router.pathname}>
+            <NavItem
+              target="_blank"
+              pathName={router.pathname}
+              href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+            >
               ABOUT
             </NavItem>
           </Link>

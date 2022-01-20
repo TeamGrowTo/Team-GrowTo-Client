@@ -31,7 +31,7 @@ function SmallNavBar() {
               </NavMenuListItem>
               <NavMenuListItem>
                 <Link href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161">
-                  ABOUT
+                  <a target="_blank">ABOUT</a>
                 </Link>
               </NavMenuListItem>
             </NavMenuList>
