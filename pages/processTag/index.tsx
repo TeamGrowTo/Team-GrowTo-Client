@@ -12,7 +12,7 @@ import {
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { processState } from "store/state";
+import { currentCategoryState, currentSkillState, processState } from "store/state";
 import Screen from "styles/Screen";
 import { SkillTagList } from "types/info.type";
 
@@ -34,17 +34,33 @@ function ProcessTag() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [processData, setProcessData] = useRecoilState(processState);
   const getTagData = useRecoilValue(processState);
-
-  const id = 1;
+  const skillState = useRecoilValue(currentSkillState);
+  const categoryState = useRecoilValue(currentCategoryState);
   const getTagList = async () => {
-    const data = await getSkillTagList(id);
+    if (skillState?.id) {
+      const data = await getSkillTagList(skillState?.id);
 
-    setTagList(data);
+      data && setTagList(data);
+      setTagList(data);
+    }
+    // const data = await getSkillTagList(402);
+
+    // data && setTagList(data);
   };
 
   useEffect(() => {
-    //getTagList();
-    setTagList(mockData);
+    getTagList();
+    // setTagList(mockData);
+    console.log(categoryState?.categoryName);
+    const tempProcessData = { ...processData };
+
+    if (skillState?.skillName) {
+      tempProcessData["skill"] = skillState?.skillName;
+    }
+    if (categoryState?.categoryName) {
+      tempProcessData["category"] = categoryState?.categoryName;
+    }
+    setProcessData(tempProcessData);
 
     if (getTagData.tags.length !== 1) {
       setSelectedTags(getTagData.tags);

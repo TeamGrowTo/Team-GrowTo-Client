@@ -21,3 +21,28 @@ export interface SkillTagList {
   id: number;
   name: string;
 }
+
+export interface ResponseLectureDataType {
+  name: string;
+  time: number;
+  price: number;
+  reviewTime: string;
+  duration: string;
+  startYear: string;
+  tags: string[];
+  url: string;
+}
+export interface LectureDataType {
+  LectureTitle: string;
+  time: number;
+  price: number;
+  reviewTime: string;
+  duration: number;
+  startYear: number;
+  tags: string[];
+  url: string;
+}
+
+export interface LectureDataListType {
+  data: LectureDataType[];
+}

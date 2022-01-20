@@ -15,11 +15,13 @@ const CategoryAndSkillWrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled.h1<{ currentCategoryId: number | null | undefined }>`
   font-size: 3.6rem;
   font-family: "Pretendard-Bold";
   color: ${colors.subBlack};
-  margin-top: 6.4rem;
+  margin-top: ${({ currentCategoryId }) =>
+    currentCategoryId && currentCategoryId !== -1 ? "18.6rem" : "18rem"};
+
   margin-bottom: 3.6rem;
 `;
 

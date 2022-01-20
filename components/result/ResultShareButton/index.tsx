@@ -11,7 +11,8 @@ const ResultShareButton = function () {
 
   const handleClick = async () => {
     try {
-      await navigator.clipboard.writeText(router.asPath);
+      //배포시 배포 주소로 문자열 변경
+      await navigator.clipboard.writeText("localhost:3000" + router.asPath);
       setFlagModal(true);
     } catch {
       throw new Error("복사 실패!");
