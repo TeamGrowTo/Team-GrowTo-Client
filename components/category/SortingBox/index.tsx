@@ -1,7 +1,7 @@
 import { getLectureDataList } from "pages/apis/info.api";
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
-import { currentCategoryState, currentSkillState } from "store/state";
+import { currentCategoryState, currentSkillState, isDisableState } from "store/state";
 
 import SortingBtn from "../SortingBtn";
 import { StyledRoot } from "./style";
@@ -78,6 +78,7 @@ enum SortingText {
 function SortingBox() {
   const category = useRecoilValue(currentCategoryState);
   const skill = useRecoilValue(currentSkillState);
+  const isDisable = useRecoilValue(isDisableState);
 
   //가격과 개설일은 eslint자동수정으로 따옴표가 자꾸 빠지는데 문제없이 돌아갑니다
   //dropListName은 드랍다운 클릭했을 때 나오는 목록 리스트들을 기준별로 저장한 것
@@ -182,6 +183,7 @@ function SortingBox() {
           isSelected={isSelected}
           selectedItem={selectedItem}
           criteria={criteria}
+          isDisable={isDisable}
         >
           {criteria}
         </SortingBtn>

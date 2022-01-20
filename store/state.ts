@@ -19,6 +19,11 @@ export const lectureSkillState = atom<LectureSkillData[] | null>({
   default: null,
 });
 
+export const isDisableState = atom({
+  key: "isDisableState",
+  default: true,
+});
+
 interface CurrentCategory {
   id: number | null;
   categoryName: string | null;

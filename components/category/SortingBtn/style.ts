@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.button`
+const StyledRoot = styled.button<{ isDisable: boolean }>`
   display: inline-flex;
   align-items: center;
   background-color: white;
@@ -10,19 +10,22 @@ const StyledRoot = styled.button`
   height: 4.8rem;
   padding: 1.6rem 2.7rem;
 
-  border: 1px solid #E3E3E3;
+  border: 1px solid #e3e3e3;
   border-radius: 4.8rem;
 
   font-family: "Pretendard-Medium";
   line-height: 4.8rem;
-  color: ${colors.gray6}
+  & span {
+    color: ${(props) => (props.isDisable ? colors.gray4 : colors.gray6)};
+  }
   transition: 200ms;
-  box-shadow: 0 0.2rem 0.6rem 0 #5858580A;
-
-  cursor: pointer;
-  
+  box-shadow: 0 0.2rem 0.6rem 0 #5858580a;
+  cursor: ${(props) => (props.isDisable ? "unset" : "pointer")};
+  path {
+    stroke: ${(props) => props.isDisable && colors.gray3};
+  }
   &:hover {
-    background-color: ${colors.gray2};
+    background-color: ${(props) => (props.isDisable ? "none" : colors.gray2)};
     transition: 200ms;
   }
 
@@ -49,7 +52,6 @@ const StyledRoot = styled.button`
     padding: 1rem 1.2rem;
     & + & {
       margin-left: 0.6rem;
-      
     }
   }
 `;

@@ -19,6 +19,7 @@ interface SortingBtnProps {
   dropListName: IDropListName;
   selectedItem: ISelectedItemName;
   isOpen: ISorting;
+  isDisable: boolean;
   isSelected: ISorting;
   onClickOpenSorting: (criterial: SortingType) => void;
   onClickSortingItem: (value: SortingType, item: SortingItemType) => void;
@@ -31,13 +32,18 @@ function SortingBtn({
   onClickSortingItem,
   isOpen,
   isSelected,
+  isDisable,
   dropListName,
   selectedItem,
   value,
   criteria,
 }: SortingBtnProps) {
   return (
-    <StyledRoot onClick={() => onClickOpenSorting(criteria)}>
+    <StyledRoot
+      onClick={() => onClickOpenSorting(criteria)}
+      disabled={isDisable}
+      isDisable={isDisable}
+    >
       <BtnTextWrapper>
         <CriteriaItem color={colors.gray6}>{value}</CriteriaItem>
         {isSelected[value] && (
