@@ -1,5 +1,6 @@
 import { LectureDataListType, ResponseLectureDataType } from "types/info.type";
 import {
+  IProcessData,
   LectureCompareRequest,
   LecturesResultAllData,
   PostLectureReportData,
@@ -73,7 +74,7 @@ export const postLectureRequest = async (): Promise<LectureCompareRequest | null
   }
 };
 
-export const postProcessResult = async (processData: ProcessDataState) => {
+export const postProcessResult = async (processData: IProcessData) => {
   try {
     const { data } = await serverAxios.post(`${PREFIX_URL}/search`, processData, {
       headers: {
