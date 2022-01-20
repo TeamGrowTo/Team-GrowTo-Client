@@ -34,11 +34,6 @@ export default function RequestLecture() {
   const [emailFilled, setEmailFilled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const getData = useRecoilValue(lectureCategoryState);
-  const isBlank = (): boolean => {
-    if (categorySelected === "" || lecture === "" || email === "") return true;
-
-    return false;
-  };
 
   useEffect(() => {
     const temp = { ...postData };
@@ -61,12 +56,6 @@ export default function RequestLecture() {
     setPostData(temp);
   }, [lecture, email]);
   const submitRequest = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (isBlank()) {
-      e.preventDefault();
-
-      return;
-    }
-    console.log(postData);
     await postLectureRequest(postData);
     setCategorySelected("");
     setLecture("");
