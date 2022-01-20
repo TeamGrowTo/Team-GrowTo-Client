@@ -44,6 +44,7 @@ interface CurrentSkill {
 export const currentSkillState = atom<CurrentSkill | null>({
   key: "currentSkillState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const lectureDataList = atom<LectureDataListType | null>({
