@@ -61,6 +61,13 @@ function ProcessPrice() {
     const resultData = await postProcessResult(processData);
 
     setIsLoading(true);
+    setProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
     setTimeout(() => {
       Router.push(`/result/${resultData.id}`);
     }, 3000);
