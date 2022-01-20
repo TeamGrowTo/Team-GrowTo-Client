@@ -25,8 +25,6 @@ interface Props {
 function LargeCardBox({ lecture }: Props) {
   const { LectureTitle, time, price, duration, reviewTime, startYear, tags, url } = lecture;
 
-  console.log(duration, typeof duration);
-
   //총 소요시간 -1 : 미표기
   // 개설연도 -1 : 미표기
   // 반복시청 가능 기간 : 100,000,000 : 무제한
