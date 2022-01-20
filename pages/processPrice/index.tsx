@@ -32,7 +32,7 @@ import {
 function ProcessPrice() {
   const [selectedPrice, setSelectedPrice] = useState("");
   const [processData, setProcessData] = useRecoilState(processState);
-  const priceTypeList = ["높은 가격", "짧은 가격", "상관없음"];
+  const priceTypeList = ["높은 가격", "낮은 가격", "상관없음"];
   const getTimeData = useRecoilValue(processState);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -46,7 +46,7 @@ function ProcessPrice() {
         getTimeData.priceAsc === false
           ? "높은 가격"
           : getTimeData.priceAsc === true
-          ? "짧은 가격"
+          ? "낮은 가격"
           : "상관없음";
 
       setSelectedPrice(changeType);
@@ -57,18 +57,37 @@ function ProcessPrice() {
   };
 
   const handleResult = async () => {
+    console.log(processData);
+    const resultData = await postProcessResult(processData);
+
+    setIsLoading(true);
+    setProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
+    setTimeout(() => {
+      Router.push(`/result/${resultData.id}`);
+    }, 3000);
+  };
+
+  useEffect(() => {
     const changeType =
-      selectedPrice === "높은 가격" ? false : selectedPrice === "짧은 가격" ? true : null;
+      selectedPrice === "높은 가격"
+        ? false
+        : selectedPrice === "낮은 가격"
+        ? true
+        : selectedPrice === "상관없음"
+        ? null
+        : undefined;
+
     const tempProcessData = { ...processData };
 
     tempProcessData["priceAsc"] = changeType;
     setProcessData(tempProcessData);
-    //await postProcessResult(processData);
-    setIsLoading(true);
-    setTimeout(() => {
-      Router.push("/");
-    }, 3000);
-  };
+  }, [selectedPrice]);
 
   return isLoading ? (
     <LoadingStyledRoot>

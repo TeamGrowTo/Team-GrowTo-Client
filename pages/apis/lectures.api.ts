@@ -4,6 +4,7 @@ import {
   LectureCompareRequest,
   LecturesResultAllData,
   PostLectureReportData,
+  ProcessDataState,
   ResponseResultData,
   ResponseResultProperty,
 } from "types/lectures.type";
@@ -12,16 +13,24 @@ import { serverAxios } from "./index";
 
 const PREFIX_URL = "/lectures";
 
-export const postLectureReport = async (data: PostLectureReportData): Promise<void | null> => {
+export const postLectureReport = async (
+  requestData: PostLectureReportData,
+): Promise<void | null> => {
   try {
-    await serverAxios.post(`${PREFIX_URL}/report`, {
-      information: data.difference,
-      name: data.lectureName,
-      explanation: data.description,
-      email: data.email,
-    });
-
-    // return message;
+    const { data } = await serverAxios.post(
+      `${PREFIX_URL}/report`,
+      {
+        reasonId: requestData.difference + 1,
+        lecture: requestData.lectureName,
+        explanation: requestData.description,
+        email: requestData.email,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
   } catch (err) {
     throw new Error("서버 내 오류");
   }
@@ -73,7 +82,7 @@ export const postLectureRequest = async (): Promise<LectureCompareRequest | null
   }
 };
 
-export const postProcessResult = async (processData: IProcessData) => {
+export const postProcessResult = async (processData: ProcessDataState) => {
   try {
     const { data } = await serverAxios.post(`${PREFIX_URL}/search`, processData, {
       headers: {
@@ -81,66 +90,69 @@ export const postProcessResult = async (processData: IProcessData) => {
       },
     });
 
+    console.log(data.data);
+
     return data.data;
   } catch (err) {
     return null;
   }
 };
 
-export const getLectureDataList = async (
-  categoryId: number | null,
-  skillId: number | null,
-  ordering = "",
-): Promise<LectureDataListType | null> => {
+export const getLectureDataList = async (categoryId: number | null, skillId: number | null) => {
   try {
-    if (ordering === "") {
-      const apiResponse = await serverAxios.get(`${PREFIX_URL}/${categoryId}/${skillId}/`);
+    const apiResponse = await serverAxios.get(`${PREFIX_URL}/${categoryId}/${skillId}/`);
 
-      if (apiResponse.status === 200) {
-        const { data } = apiResponse;
+    if (apiResponse.status === 200) {
+      const { data } = apiResponse;
 
-        console.log(data);
-
-        return data.data.map((data: ResponseLectureDataType) => {
-          return {
-            LectureTitle: data.name,
-            time: data.time,
-            price: data.price,
-            reviewTime: data.reviewTime,
-            duration: data.duration,
-            startYear: data.startYear,
-            tags: data.tags,
-            url: data.url,
-          };
-        });
-      } else {
-        throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
-      }
+      return data.data.map((data: ResponseLectureDataType) => {
+        return {
+          LectureTitle: data.name,
+          time: data.time,
+          price: data.price,
+          reviewTime: data.reviewTime,
+          duration: data.duration,
+          startYear: data.startYear,
+          tags: data.tags,
+          url: data.url,
+        };
+      });
     } else {
-      const apiResponse = await serverAxios.get(
-        `${PREFIX_URL}/${categoryId}/${skillId}/?ordering=${ordering}`,
-      );
-
-      if (apiResponse.status === 200) {
-        const { data } = apiResponse;
-
-        return data.map((data: ResponseLectureDataType) => {
-          return {
-            LectureTitle: data.name,
-            time: data.time,
-            price: data.price,
-            reviewTime: data.reviewTime,
-            duration: data.duration,
-            startYear: data.startYear,
-            tags: data.tags,
-            url: data.url,
-          };
-        });
-      } else {
-        throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
-      }
+      throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
     }
   } catch (err) {
-    return null;
+    console.log(err);
+  }
+};
+
+export const getSortingLectureDataList = async (
+  categoryId: number | null,
+  skillId: number | null,
+  ordering: string,
+) => {
+  const apiResponse = await serverAxios.get(
+    `${PREFIX_URL}/${categoryId}/${skillId}/?ordering=${ordering}`,
+  );
+
+  if (apiResponse.status === 200) {
+    console.log(apiResponse);
+    const { data } = apiResponse.data;
+
+    console.log(data);
+
+    return data.map((data: ResponseLectureDataType) => {
+      return {
+        LectureTitle: data.name,
+        time: data.time,
+        price: data.price,
+        reviewTime: data.reviewTime,
+        duration: data.duration,
+        startYear: data.startYear,
+        tags: data.tags,
+        url: data.url,
+      };
+    });
+  } else {
+    throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
   }
 };

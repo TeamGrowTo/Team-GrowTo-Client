@@ -6,6 +6,7 @@ const StyledRoot = styled.div`
   justify-content: center;
   margin-bottom: 5.6rem;
   flex-wrap: wrap;
+  background-color: white;
 `;
 
 const NotiBox = styled.div`
@@ -15,6 +16,7 @@ const NotiBox = styled.div`
   min-height: 10.4rem;
   border: 0.1rem solid ${colors.gray3};
   border-radius: 2.8rem;
+  margin-bottom: 5.6rem;
 
   & > svg {
     width: 4rem;
