@@ -37,14 +37,14 @@ function ProcessTag() {
 
   const id = 1;
   const getTagList = async () => {
-    const data = await getSkillTagList(id);
+    const data = await getSkillTagList(402);
 
     setTagList(data);
   };
 
   useEffect(() => {
-    //getTagList();
-    setTagList(mockData);
+    getTagList();
+    // setTagList(mockData);
 
     if (getTagData.tags.length !== 1) {
       setSelectedTags(getTagData.tags);
