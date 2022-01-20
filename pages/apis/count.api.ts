@@ -1,4 +1,4 @@
-import { ResponseFindNumber, ResponseRequestNumber, ResponseTotalNumber } from "types/count.type";
+// import { ResponseFindNumber, ResponseRequestNumber, ResponseTotalNumber } from "types/count.type";
 
 import { serverAxios } from "./index";
 
@@ -12,7 +12,7 @@ export const getLectureTotalNumber = async (): Promise<number | null> => {
       },
     });
 
-    return data.data;
+    return data.data.totalNumber;
   } catch (err) {
     throw new Error("Failed to load lecture total number");
   }
