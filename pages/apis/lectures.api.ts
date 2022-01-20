@@ -18,7 +18,9 @@ interface IPostRequest {
   skill: string;
   email: string;
 }
-export const postLectureReport = async (data: PostLectureReportData): Promise<void | null> => {
+export const postLectureReport = async (
+  requestData: PostLectureReportData,
+): Promise<void | null> => {
   try {
     const { data } = await serverAxios.post(
       `${PREFIX_URL}/report`,
