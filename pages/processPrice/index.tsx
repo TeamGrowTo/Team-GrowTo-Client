@@ -57,18 +57,12 @@ function ProcessPrice() {
   };
 
   const handleResult = async () => {
-    // const changeType =
-    //   selectedPrice === "높은 가격" ? false : selectedPrice === "낮은 가격" ? true : null;
-    // const tempProcessData = { ...processData };
-
-    // tempProcessData["priceAsc"] = changeType;
-
     console.log(processData);
     const resultData = await postProcessResult(processData);
 
     setIsLoading(true);
     setTimeout(() => {
-      Router.push("/");
+      Router.push(`/result/${resultData.id}`);
     }, 3000);
   };
 
