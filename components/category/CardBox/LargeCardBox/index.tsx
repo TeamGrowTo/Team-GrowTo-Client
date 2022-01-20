@@ -64,7 +64,7 @@ function LargeCardBox({ lecture }: Props) {
         </TagWrapper>
       </LectureTagBox>
       <Link href={url} passHref>
-        <LectureLinkBtn>
+        <LectureLinkBtn target="_blank">
           <ArrowRight />
         </LectureLinkBtn>
       </Link>

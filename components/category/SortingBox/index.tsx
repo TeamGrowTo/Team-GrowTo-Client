@@ -42,8 +42,8 @@ export type ISelectedItemName = {
 
 enum SortingText {
   //총 소요시간
-  "긴 순" = "fast",
-  "짧은 순" = "slow",
+  "긴 순" = "slow",
+  "짧은 순" = "fast",
   //개설일
   "최근 순" = "date",
   //가격

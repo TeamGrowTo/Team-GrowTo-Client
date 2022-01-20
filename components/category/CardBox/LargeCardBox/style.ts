@@ -9,8 +9,11 @@ const StyledRoot = styled.div`
   background-color: white;
   border-radius: 2.4rem;
   margin-bottom: 1.8rem;
-
+  transition: all 0.15s;
   box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.1);
+  &:hover {
+    box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.15);
+  }
 `;
 
 const LectureTitleBox = styled.div`
