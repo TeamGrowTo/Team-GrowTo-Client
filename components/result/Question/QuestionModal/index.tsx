@@ -1,4 +1,4 @@
-// import { postLectureReport } from "pages/apis/lectures.api";
+import { postLectureReport } from "pages/apis/lectures.api";
 import React, { useState } from "react";
 
 import DescriptionInput from "./DescriptionInput";
@@ -16,15 +16,12 @@ import {
   Title,
   TitleWrapper,
 } from "./style";
-
-const dropdownList = ["강의 가격", "강의 정보", "사라진 강의"];
-
 interface Props {
   onCloseModal: () => void;
 }
 
 function QuestionModal({ onCloseModal }: Props) {
-  const [difference, setDifference] = useState("");
+  const [difference, setDifference] = useState(-1);
   const [lectureName, setLectureName] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
@@ -32,7 +29,7 @@ function QuestionModal({ onCloseModal }: Props) {
   const [flagReport, setFlagReport] = useState(false);
 
   const isBlank = (): boolean => {
-    if (difference === "" || lectureName === "" || email === "") return true;
+    if (difference === -1 || lectureName === "" || email === "") return true;
 
     return false;
   };
@@ -42,7 +39,7 @@ function QuestionModal({ onCloseModal }: Props) {
   };
 
   const handleDifference = (index: number) => {
-    setDifference(dropdownList[index]);
+    setDifference(index);
     setFlagDropdown(false);
   };
 
@@ -58,24 +55,28 @@ function QuestionModal({ onCloseModal }: Props) {
     setDescription(e.target.value);
   };
 
-  const handleReport = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleReport = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (isBlank()) {
       e.preventDefault();
 
       return;
     }
-    // await postLectureReport({
-    //   difference,
-    //   lectureName,
-    //   description,
-    //   email,
-    // });
-    setDifference("");
+    postReport();
+    setDifference(-1);
     setLectureName("");
     setEmail("");
     setDescription("");
     setFlagReport(!flagReport);
     e.preventDefault();
+  };
+
+  const postReport = async () => {
+    await postLectureReport({
+      difference,
+      lectureName,
+      description,
+      email,
+    });
   };
 
   return (
@@ -91,7 +92,6 @@ function QuestionModal({ onCloseModal }: Props) {
           <InputWrapper>
             <EssentialInput>
               <DropdownInput
-                dropdownList={dropdownList}
                 flagDropdown={flagDropdown}
                 onFlagDropdownClick={handleFlagDropdown}
                 onDifferenceChange={handleDifference}
