@@ -37,10 +37,10 @@ function ProcessTag() {
   const skillState = useRecoilValue(currentSkillState);
 
   const getTagList = async () => {
-    const data = await getSkillTagList(402);
     // if (skillState?.id) {
     //   const data = await getSkillTagList(skillState?.id);
 
+    //   data && setTagList(data);
     //   setTagList(data);
     // }
     const data = await getSkillTagList(402);

@@ -19,13 +19,19 @@ function LargeNavBar() {
         </Link>
         <NavItemWrapper>
           <Link href="/category" passHref>
-            <NavItem pathName={router.pathname}>전체강의</NavItem>
+            <NavItem pathName={router.pathname} href="/category">
+              전체강의
+            </NavItem>
           </Link>
-          <Link href="/choiceRequest" passHref>
-            <NavItem pathName={router.pathname}>비교요청</NavItem>
+          <Link href="/request" passHref>
+            <NavItem pathName={router.pathname} href="/request">
+              비교요청
+            </NavItem>
           </Link>
           <Link href="/about" passHref>
-            <NavItem pathName={router.pathname}>ABOUT</NavItem>
+            <NavItem pathName={router.pathname} href="/about">
+              ABOUT
+            </NavItem>
           </Link>
         </NavItemWrapper>
       </NavItemBox>

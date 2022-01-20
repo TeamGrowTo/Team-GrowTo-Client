@@ -78,10 +78,12 @@ function ProcessPrice() {
 
     tempProcessData["priceAsc"] = changeType;
     setProcessData(tempProcessData);
-    //const resultData = await postProcessResult(processData);
+    const resultData = await postProcessResult(processData);
+
+    console.log(resultData);
     setIsLoading(true);
     setTimeout(() => {
-      Router.push(`/lectures/result/${1}`);
+      Router.push(`/lectures/result/${resultData}`);
     }, 3000);
   };
 
