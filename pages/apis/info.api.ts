@@ -1,4 +1,3 @@
-import { serverAxios } from "libs/axios";
 import {
   LectureCategoryData,
   LectureSkillData,
@@ -6,6 +5,8 @@ import {
   ResponseSkillData,
   SkillTagList,
 } from "types/info.type";
+
+import { serverAxios } from "./index";
 
 const PREFIX_URL = "/info";
 

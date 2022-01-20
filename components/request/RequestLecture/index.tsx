@@ -14,13 +14,13 @@ import {
   Wrapper,
 } from "./style";
 export interface IPostRequest {
-  categoryId: string;
+  categoryId: number;
   skill: string;
   email: string;
 }
 export default function RequestLecture() {
   const [postData, setPostData] = useState<IPostRequest>({
-    categoryId: "",
+    categoryId: 0,
     skill: "",
     email: "",
   });
@@ -33,12 +33,16 @@ export default function RequestLecture() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const submitRequest = async () => {
     try {
-      if (categorySelected) {
-        const temp = { ...postData };
+      // if (categorySelected) {
+      //   const temp = { ...postData };
 
-        temp["categoryId"] = categorySelected;
-        setPostData(temp);
-      }
+      //   temp["categoryId"] = categorySelected;
+      //   setPostData(temp);
+      // }
+      const temp = { ...postData };
+
+      temp["categoryId"] = 1;
+      setPostData(temp);
       if (lecture) {
         const tempLecture = { ...postData };
 
@@ -52,8 +56,8 @@ export default function RequestLecture() {
         setPostData(tempEmail);
       }
       await postLectureRequest(postData);
-      setIsModalOpen(true);
-      document.body.style.overflow = "hidden";
+      // setIsModalOpen(true);
+      // document.body.style.overflow = "hidden";
     } catch {
       alert("요청 실패!");
     }

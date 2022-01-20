@@ -12,7 +12,7 @@ import { serverAxios } from "./index";
 const PREFIX_URL = "/lectures";
 
 interface IPostRequest {
-  categoryId: string;
+  categoryId: number;
   skill: string;
   email: string;
 }
@@ -69,7 +69,11 @@ export const postLectureRequest = async (postData: IPostRequest) => {
       },
     });
 
-    return data;
+    if (data.status === 200) {
+      console.log(data.data);
+
+      return data.data;
+    }
   } catch (err) {
     throw new Error("Failed to submit lecture compare request");
   }
