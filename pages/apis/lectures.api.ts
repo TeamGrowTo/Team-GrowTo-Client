@@ -1,7 +1,9 @@
 import { LectureDataListType, ResponseLectureDataType } from "types/info.type";
 import {
+  CurrentCompareData,
   IProcessData,
   LectureCompareRequest,
+  LectureRankData,
   LecturesResultAllData,
   PostLectureReportData,
   ProcessDataState,
@@ -159,5 +161,33 @@ export const getSortingLectureDataList = async (
     });
   } else {
     throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
+  }
+};
+
+export const getLectureWeeklyRank = async (): Promise<LectureRankData[] | null> => {
+  try {
+    const { data } = await serverAxios.get(`${PREFIX_URL}/rank`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    return data.data;
+  } catch (err) {
+    throw new Error("Failed to load lecture weekly rank");
+  }
+};
+
+export const getCurrentLectureData = async (): Promise<CurrentCompareData[] | null> => {
+  try {
+    const { data } = await serverAxios.get(`${PREFIX_URL}/compare`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    return data.data;
+  } catch (err) {
+    throw new Error("Failed to load current compare lecture");
   }
 };
