@@ -82,6 +82,8 @@ export const postProcessResult = async (processData: ProcessDataState) => {
       },
     });
 
+    console.log(data.data);
+
     return data.data;
   } catch (err) {
     return null;
