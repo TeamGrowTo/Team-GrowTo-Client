@@ -1,12 +1,19 @@
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
+import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
-import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
-import React, { useEffect } from "react";
+import {
+  getLectureCategoryData,
+  getLectureDataList,
+  getLectureSkillData,
+} from "pages/apis/info.api";
+import React, { useEffect, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  isDisableState,
   lectureCategoryState,
+  lectureDataList,
   lectureSkillState,
 } from "store/state";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
@@ -93,12 +100,13 @@ const dummySkillList: LectureSkillData[] = [
 ];
 
 function Category() {
-  const setCurrentCategory = useSetRecoilState(currentCategoryState);
-  const setCurrentSkill = useSetRecoilState(currentSkillState);
-
+  const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
+  const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
+  const setIsDisable = useSetRecoilState(isDisableState);
 
+  const setLectureDataList = useSetRecoilState(lectureDataList);
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
 
@@ -116,28 +124,36 @@ function Category() {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
 
       setCurrentCategory(result);
-      // setLectureSkill(id);
-      setSkillList(dummySkillList);
+      setLectureSkill(id);
+      // setSkillList(dummySkillList);
     }
   };
 
-  const handleSkillClick = (id: number | null) => {
-    if (id) {
-      const result = skillList?.filter((skill) => skill.id === id)[0] || null;
+  const handleSkillClick = async (SkillId: number | null) => {
+    if (SkillId) {
+      const result = skillList?.filter((skill) => skill.id === SkillId)[0] || null;
+      const categoryId = category?.id;
 
-      setCurrentSkill(result);
+      if (categoryId) {
+        const data = await getLectureDataList(categoryId, SkillId);
+
+        setIsDisable(false);
+        setLectureDataList(data); //확인필요
+        setCurrentSkill(result); //비동기라서 변경이 늦게된다. , skillId사용하기위함.
+      }
     }
   };
 
   useEffect(() => {
-    // setLectureCategory();
+    setLectureCategory();
     setCurrentSkill({ id: 1, skillName: "" });
     setCurrentCategory({ id: -1, categoryName: "" });
-    setCategoryList(dummyCategoryList);
+    // setCategoryList(dummyCategoryList);
   }, []);
 
   return (
     <div>
+      {category?.id !== -1 && currentSkill?.id && <RedirectProcessButton />}
       <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
       <Background>
         <Result />
