@@ -1,5 +1,6 @@
-// import { getLectureWeeklyRank } from "pages/apis/lectures.api";
-import React, { useState } from "react";
+import { getLectureWeeklyRank } from "pages/apis/lectures.api";
+import React, { useEffect, useState } from "react";
+import { LectureRankData } from "types/lectures.type";
 
 import Rank from "./Rank";
 import { RankList, StyledRoot, Title, Wrapper } from "./style";
@@ -32,11 +33,18 @@ export default function RequestWeeklyRank() {
     },
   ];
 
-  // const [weeklyRank, setweeklyRank] = useState([]);
+  const [weeklyRank, setweeklyRank] = useState<LectureRankData[] | null>([]);
 
-  // useEffect(async () => {
-  //   setweeklyRank(await getLectureWeeklyRank);
-  // }, []);
+  console.log(weeklyRank);
+  const test = async () => {
+    const data = await getLectureWeeklyRank();
+
+    data && setweeklyRank(data);
+  };
+
+  useEffect(() => {
+    test();
+  }, []);
 
   return (
     <StyledRoot>

@@ -64,3 +64,10 @@ export interface ProcessDataState {
   timeAsc: boolean | null | undefined;
   priceAsc: boolean | null | undefined;
 }
+
+export interface LectureRankData {
+  id: number;
+  name: string;
+  skill: string;
+  number: number;
+}
