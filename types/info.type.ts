@@ -44,5 +44,6 @@ export interface LectureDataType {
 }
 
 export interface LectureDataListType {
+  // map: (lecture: LectureDataType) => JSX.Element[];
   data: LectureDataType[];
 }
