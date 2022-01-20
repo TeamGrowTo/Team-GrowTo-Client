@@ -1,6 +1,9 @@
 import Modal from "components/common/Modal";
-// import { postLectureRequest } from "pages/apis/lectures.api";
-import React, { useState } from "react";
+import { postLectureRequest } from "pages/apis/lectures.api";
+import React, { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
+import { lectureCategoryState } from "store/state";
+import { LectureCategoryData } from "types/info.type";
 
 import Email from "./Email";
 import LectureCategory from "./LectureCategory";
@@ -13,21 +16,63 @@ import {
   Title,
   Wrapper,
 } from "./style";
-
+export interface IPostRequest {
+  categoryId: number;
+  skill: string;
+  email: string;
+}
 export default function RequestLecture() {
+  const [postData, setPostData] = useState<IPostRequest>({
+    categoryId: 0,
+    skill: "",
+    email: "",
+  });
+  const [lecture, setLecture] = useState("");
+  const [email, setEmail] = useState("");
   const [categorySelected, setCategorySelected] = useState("");
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const submitRequest = async () => {
-    try {
-      // await postLectureRequest();
-      setIsModalOpen(true);
-      document.body.style.overflow = "hidden";
-    } catch {
-      alert("요청 실패!");
+  const getData = useRecoilValue(lectureCategoryState);
+  const isBlank = (): boolean => {
+    if (categorySelected === "" || lecture === "" || email === "") return true;
+
+    return false;
+  };
+
+  useEffect(() => {
+    const temp = { ...postData };
+
+    if (categorySelected) {
+      getData?.map((data: LectureCategoryData) => {
+        if (data.categoryName?.includes(categorySelected) === true) {
+          if (data.id) {
+            temp["categoryId"] = data.id;
+          }
+        }
+      });
     }
+    if (lecture) {
+      temp["skill"] = lecture;
+    }
+    if (email) {
+      temp["email"] = email;
+    }
+    setPostData(temp);
+  }, [lecture, email]);
+  const submitRequest = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isBlank()) {
+      e.preventDefault();
+
+      return;
+    }
+    console.log(postData);
+    await postLectureRequest(postData);
+    setCategorySelected("");
+    setLecture("");
+    setEmail("");
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   return (
@@ -43,10 +88,10 @@ export default function RequestLecture() {
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
-            <LectureType setTypeFilled={setTypeFilled} />
-            <Email setEmailFilled={setEmailFilled} />
+            <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} lecture={lecture} />
+            <Email setEmailFilled={setEmailFilled} setEmail={setEmail} email={email} />
             {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
-              <ActiveRequestButton onClick={submitRequest}>
+              <ActiveRequestButton type="button" onClick={submitRequest}>
                 <p>강의비교 요청하기</p>
               </ActiveRequestButton>
             ) : (

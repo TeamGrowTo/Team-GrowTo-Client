@@ -21,7 +21,7 @@ export const ShareBox = styled.div`
     width: 32.8rem;
   }
 `;
-export const StoryLink = styled.div`
+export const StoryLink = styled.a`
   margin-bottom: 1.6rem;
   margin-top: 9.1rem;
   text-align: right;

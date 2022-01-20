@@ -4,8 +4,9 @@ import { colors } from "styles/colors";
 const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 2.2rem;
-  margin-bottom: 4rem;
+  padding-top: 2.2rem;
+  padding-bottom: 4rem;
+  background-color: white;
 `;
 
 const ShareButton = styled.button`
@@ -13,7 +14,6 @@ const ShareButton = styled.button`
   align-items: center;
   justify-content: center;
   background-color: ${colors.mainBlue};
-  //상세한 css가 나올 시 변경 필요
   border-radius: 4.8rem;
   min-width: 63rem;
   min-height: 6.8rem;

@@ -13,6 +13,11 @@ import { serverAxios } from "./index";
 
 const PREFIX_URL = "/lectures";
 
+interface IPostRequest {
+  categoryId: number;
+  skill: string;
+  email: string;
+}
 export const postLectureReport = async (
   requestData: PostLectureReportData,
 ): Promise<void | null> => {
@@ -68,17 +73,17 @@ export const getLectureResultData = async (
   }
 };
 
-export const postLectureRequest = async (): Promise<LectureCompareRequest | null> => {
+export const postLectureRequest = async (postData: IPostRequest) => {
   try {
-    const { data } = await serverAxios.post(`${PREFIX_URL}/request`);
-
-    return data((response: LectureCompareRequest) => {
-      return {
-        categoryId: response.categoryId,
-        skill: response.skill,
-        email: response.email,
-      };
+    const { data } = await serverAxios.post(`${PREFIX_URL}/request`, postData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
+
+    if (data.status === 200) {
+      return data.data;
+    }
   } catch (err) {
     throw new Error("Failed to submit lecture compare request");
   }
