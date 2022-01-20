@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
+import { applyMediaQuery } from "./mediaQuery";
+
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   * {
@@ -12,6 +14,9 @@ export const GlobalStyle = createGlobalStyle`
   body{
     font-family: "Pretendard-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin-top: 11.6rem;
+    ${applyMediaQuery("mobile")} {
+      margin-top: 4.8rem;
+    } 
   }
 
   a {

@@ -28,8 +28,11 @@ function LargeNavBar() {
               비교요청
             </NavItem>
           </Link>
-          <Link href="/about" passHref>
-            <NavItem pathName={router.pathname} href="/about">
+          <Link
+            href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+            passHref
+          >
+            <NavItem target="_blank" pathName={router.pathname}>
               ABOUT
             </NavItem>
           </Link>
