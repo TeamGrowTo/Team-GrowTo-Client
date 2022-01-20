@@ -8,7 +8,12 @@ import { useRouter } from "next/router";
 import { getLectureDataList, getLectureResultData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
-import { lectureDataList, lectureResultState } from "store/state";
+import {
+  currentCategoryState,
+  currentSkillState,
+  lectureDataList,
+  lectureResultState,
+} from "store/state";
 import { LectureResultData, LecturesResultAllData } from "types/lectures.type";
 
 import { StyledRoot } from "./style";
@@ -64,10 +69,12 @@ function Category() {
   const router = useRouter();
 
   const setLectureResultList = useSetRecoilState(lectureResultState);
+  const setLectureDataList = useSetRecoilState(lectureDataList);
+  const setCurrentCategory = useSetRecoilState(currentCategoryState);
+  const setCurrentSkill = useSetRecoilState(currentSkillState);
   const [listLength, setListLength] = useState(0);
   const [category, setCategory] = useState({ id: -1, name: "" });
   const [skill, setSkill] = useState({ id: -1, name: "" });
-  const setLectureDataList = useSetRecoilState(lectureDataList);
   const { id } = router.query;
 
   const getLectureResult = async (): Promise<void> => {
@@ -78,7 +85,9 @@ function Category() {
       setLectureResultList(data.result.slice(0, 3));
       setListLength(data.result.length < 3 ? data.result.length : 3);
       setCategory(data.category);
+      setCurrentCategory({ id: data.category.id, categoryName: data.category.name });
       setSkill(data.skill);
+      setCurrentSkill({ id: data.skill.id, skillName: data.skill.name });
     }
   };
 

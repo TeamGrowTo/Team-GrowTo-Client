@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ComparisonImg } from "public/assets/images";
 import { useRecoilValue } from "recoil";
-import { lectureResultState } from "store/state";
+import { lectureDataList, lectureResultState } from "store/state";
 
 import ResultCard from "./ResultCard";
 import {
@@ -21,11 +21,9 @@ interface Props {
   skillName: string;
 }
 
-const lectureDataList = [];
-
 function ProcessResult({ listLength, categoryName, skillName }: Props) {
   const lectureResultList = useRecoilValue(lectureResultState);
-  // const lectureDataList = useRecoilValue(lectureDataListState);
+  const LectureDataList = useRecoilValue(lectureDataList);
 
   return (
     <StyledRoot>
@@ -34,7 +32,7 @@ function ProcessResult({ listLength, categoryName, skillName }: Props) {
       </ComparisonImgWrapper>
       <Title>그로투 강의 비교</Title>
       <Description>
-        <LectureCount>총 {lectureDataList?.length}개</LectureCount>의{" "}
+        <LectureCount>총 {LectureDataList?.length}개</LectureCount>의{" "}
         <LectureSkillData>
           {categoryName} {skillName} 강의 중
         </LectureSkillData>{" "}
