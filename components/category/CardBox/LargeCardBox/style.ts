@@ -17,6 +17,7 @@ const LectureTitleBox = styled.div`
   padding: 0 3.2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-right: 1px solid #bfd8ff;
   width: 25.9rem;
   margin: 2.9rem 0;
@@ -33,7 +34,7 @@ const LectureInfoBox = styled(LectureTitleBox)`
 
 const LectureDateBox = styled(LectureTitleBox)`
   width: 10.3rem;
-  padding: 0 3.2rem;
+  padding: 0;
   justify-content: center;
   flex-direction: column;
 

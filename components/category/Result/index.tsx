@@ -17,7 +17,7 @@ function Result() {
   const LectureDataList = useRecoilValue(lectureDataList);
   const skill = useRecoilValue(currentSkillState);
 
-  console.log(LectureDataList);
+  console.log(LectureDataList, "LectureDataList");
 
   return (
     <ResultBox>
