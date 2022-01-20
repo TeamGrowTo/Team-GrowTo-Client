@@ -44,8 +44,8 @@ const MainLectureCategory = function () {
   };
 
   useEffect(() => {
-    // setLectureCategory();
-    setCategoryList(dummy);
+    setLectureCategory();
+    // setCategoryList(dummy);
     setCurrentCategory({ id: -1, categoryName: "" });
   }, []);
 
@@ -56,10 +56,6 @@ const MainLectureCategory = function () {
       setCurrentCategory(result);
     }
   };
-
-  useEffect(() => {
-    // setLectureCategory();
-  }, []);
 
   return (
     <StyledRoot>
