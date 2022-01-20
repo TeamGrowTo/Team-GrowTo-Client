@@ -39,7 +39,13 @@ function ProcessTime() {
 
   useEffect(() => {
     const changeType =
-      selectedTime === "긴 강의" ? false : selectedTime === "짧은 강의" ? true : null;
+      selectedTime === "긴 강의"
+        ? false
+        : selectedTime === "짧은 강의"
+        ? true
+        : selectedTime === "상관없음"
+        ? null
+        : undefined;
     const tempProcessData = { ...processData };
 
     tempProcessData["timeAsc"] = changeType;

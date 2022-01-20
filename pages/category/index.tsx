@@ -115,7 +115,6 @@ function Category() {
 
     setSkillList(result);
   };
-
   const handleCategoryClick = (id: number | null) => {
     if (id) {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
@@ -143,6 +142,7 @@ function Category() {
 
   useEffect(() => {
     setLectureCategory();
+    if (category?.id && category?.id !== -1) setLectureSkill(category.id);
     setCurrentSkill({ id: 1, skillName: "" });
     // setCategoryList(dummyCategoryList);
   }, []);
