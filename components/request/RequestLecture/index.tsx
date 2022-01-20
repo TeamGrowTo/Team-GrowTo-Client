@@ -29,7 +29,6 @@ export default function RequestLecture() {
   const [categorySelected, setCategorySelected] = useState("");
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -45,10 +44,9 @@ export default function RequestLecture() {
     setPostData(temp);
   }, [lecture, email]);
   const submitRequest = async () => {
-    console.log(postData);
     await postLectureRequest(postData);
-    // setIsModalOpen(true);
-    // document.body.style.overflow = "hidden";
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   return (
