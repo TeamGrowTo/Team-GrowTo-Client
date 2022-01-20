@@ -52,19 +52,6 @@ function ProcessPrice() {
           : "상관없음";
 
       setSelectedPrice(changeType);
-      console.log(categoryState);
-      if (categoryState?.categoryName) {
-        const tempProcessData = { ...processData };
-
-        tempProcessData["category"] = categoryState?.categoryName;
-        setProcessData(tempProcessData);
-      }
-      if (skillState?.skillName) {
-        const tempProcessData = { ...processData };
-
-        tempProcessData["skill"] = skillState?.skillName;
-        setProcessData(tempProcessData);
-      }
     }
   }, []);
   const handlePriceClick = (timeType: string) => {
