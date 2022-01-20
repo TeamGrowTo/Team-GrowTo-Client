@@ -39,19 +39,17 @@ const StyledRoot = styled.div<{ order: number }>`
         `
       : css`
           background-image: url("/assets/images/requestLectureBackground3.png");
-        `}};
-
+        `};
 
   h3 {
     font-family: "Pretendard-Bold";
     font-size: 1.6rem;
     color: ${colors.gray5};
-  
   }
+
   h2 {
     font-family: "Pretendard-Bold";
     font-size: 2rem;
-    
   }
 `;
 
