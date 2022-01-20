@@ -59,6 +59,11 @@ function QuestionModal({ onCloseModal }: Props) {
   };
 
   const handleReport = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isBlank()) {
+      e.preventDefault();
+
+      return;
+    }
     // await postLectureReport({
     //   difference,
     //   lectureName,
@@ -101,13 +106,9 @@ function QuestionModal({ onCloseModal }: Props) {
                 onDescriptionInputClick={handleDescription}
                 description={description}
               />
-              {isBlank() ? (
-                <ReportButton onClick={handleReport} isBlank={isBlank()}>
-                  오류 내용 제보하기
-                </ReportButton>
-              ) : (
-                <ReportButton isBlank={isBlank()}>오류 내용 제보하기</ReportButton>
-              )}
+              <ReportButton onClick={handleReport} isBlank={isBlank()}>
+                오류 내용 제보하기
+              </ReportButton>
             </TextArea>
           </InputWrapper>
         </>
