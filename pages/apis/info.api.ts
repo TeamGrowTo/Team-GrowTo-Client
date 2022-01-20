@@ -36,8 +36,6 @@ export const getLectureSkillData = async (id: number): Promise<LectureSkillData[
       },
     });
 
-    console.log(data);
-
     return data.data.map((response: ResponseSkillData) => {
       return { id: response.id, skillName: response.name };
     });
@@ -49,8 +47,6 @@ export const getLectureSkillData = async (id: number): Promise<LectureSkillData[
 export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null> => {
   try {
     const { data } = await serverAxios.get(`${PREFIX_URL}/${id}/tags`);
-
-    console.log(data);
 
     return data.data;
   } catch (err) {

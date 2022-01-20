@@ -16,7 +16,6 @@ export const postLectureReport = async (
   requestData: PostLectureReportData,
 ): Promise<void | null> => {
   try {
-    console.log(requestData);
     const { data } = await serverAxios.post(
       `${PREFIX_URL}/report`,
       {
@@ -31,8 +30,6 @@ export const postLectureReport = async (
         },
       },
     );
-
-    console.log(data.message);
   } catch (err) {
     throw new Error("서버 내 오류");
   }
@@ -109,8 +106,6 @@ export const getLectureDataList = async (
 
       if (apiResponse.status === 200) {
         const { data } = apiResponse;
-
-        console.log(data);
 
         return data.data.map((data: ResponseLectureDataType) => {
           return {
