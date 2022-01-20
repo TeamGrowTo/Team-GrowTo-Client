@@ -12,6 +12,7 @@ const StyledRoot = styled.nav`
   justify-content: center;
   z-index: 90;
   position: fixed;
+  top: 0;
 
   background-color: white;
 `;
