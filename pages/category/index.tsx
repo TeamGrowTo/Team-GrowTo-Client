@@ -121,8 +121,8 @@ function Category() {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
 
       setCurrentCategory(result);
-      // setLectureSkill(id);
-      setSkillList(dummySkillList);
+      setLectureSkill(id);
+      // setSkillList(dummySkillList);
     }
   };
 
@@ -143,9 +143,10 @@ function Category() {
   };
 
   useEffect(() => {
-    // setLectureCategory();
+    setLectureCategory();
     setCurrentSkill({ id: 1, skillName: "" });
-    setCategoryList(dummyCategoryList);
+    setCurrentCategory({ id: -1, categoryName: "" });
+    // setCategoryList(dummyCategoryList);
   }, []);
 
   return (
