@@ -14,6 +14,10 @@ import { LogoWrapper, NavItem, NavItemBox, NavItemWrapper, StyledRoot } from "./
 
 function LargeNavBar() {
   const router = useRouter();
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+  const resetLectureSkillData = useResetRecoilState(lectureSkillState);
+  const resetCategoryData = useResetRecoilState(currentCategoryState);
 
   const handleResetLectureData = () => {
     resetLectureListData();
@@ -21,10 +25,6 @@ function LargeNavBar() {
     resetCategoryData();
     resetLectureSkillData();
   };
-  const resetLectureListData = useResetRecoilState(lectureDataList);
-  const resetSkillData = useResetRecoilState(currentSkillState);
-  const resetLectureSkillData = useResetRecoilState(lectureSkillState);
-  const resetCategoryData = useResetRecoilState(currentCategoryState);
 
   return (
     <StyledRoot>
