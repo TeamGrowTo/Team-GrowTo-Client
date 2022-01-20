@@ -1,5 +1,5 @@
-import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -11,7 +11,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   body{
     font-family: "Pretendard-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin-top: 11.6rem;
   }
+
   a {
     color: inherit;
     text-decoration: none;

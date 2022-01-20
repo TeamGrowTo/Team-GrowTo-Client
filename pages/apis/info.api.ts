@@ -46,9 +46,17 @@ export const getLectureSkillData = async (id: number): Promise<LectureSkillData[
 
 export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null> => {
   try {
-    const { data } = await serverAxios.get(`${PREFIX_URL}/${id}/tags`);
+    const { data } = await serverAxios.get(`${PREFIX_URL}/${id}/tags`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-    return data.data;
+    if (data.status === 200) {
+      return data.data;
+    } else {
+      return null;
+    }
   } catch (err) {
     return null;
   }
