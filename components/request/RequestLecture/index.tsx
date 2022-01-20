@@ -31,36 +31,24 @@ export default function RequestLecture() {
   const [emailFilled, setEmailFilled] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const submitRequest = async () => {
-    try {
-      // if (categorySelected) {
-      //   const temp = { ...postData };
 
-      //   temp["categoryId"] = categorySelected;
-      //   setPostData(temp);
-      // }
-      const temp = { ...postData };
+  useEffect(() => {
+    const temp = { ...postData };
 
-      temp["categoryId"] = 1;
-      setPostData(temp);
-      if (lecture) {
-        const tempLecture = { ...postData };
-
-        tempLecture["skill"] = lecture;
-        setPostData(tempLecture);
-      }
-      if (email) {
-        const tempEmail = { ...postData };
-
-        tempEmail["email"] = email;
-        setPostData(tempEmail);
-      }
-      await postLectureRequest(postData);
-      // setIsModalOpen(true);
-      // document.body.style.overflow = "hidden";
-    } catch {
-      alert("요청 실패!");
+    temp["categoryId"] = 1;
+    if (lecture) {
+      temp["skill"] = lecture;
     }
+    if (email) {
+      temp["email"] = email;
+    }
+    setPostData(temp);
+  }, [lecture, email]);
+  const submitRequest = async () => {
+    console.log(postData);
+    await postLectureRequest(postData);
+    // setIsModalOpen(true);
+    // document.body.style.overflow = "hidden";
   };
 
   return (
@@ -79,7 +67,7 @@ export default function RequestLecture() {
             <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} />
             <Email setEmailFilled={setEmailFilled} setEmail={setEmail} />
             {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
-              <ActiveRequestButton onClick={submitRequest}>
+              <ActiveRequestButton type="button" onClick={submitRequest}>
                 <p>강의비교 요청하기</p>
               </ActiveRequestButton>
             ) : (
