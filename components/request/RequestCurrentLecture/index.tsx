@@ -17,15 +17,14 @@ export default function RequestCurrentLecture() {
 
   const [compareLecture, setCompareLecture] = useState<CurrentCompareData[] | null>([]);
 
-  console.log(compareLecture);
-  const test = async () => {
+  const currentCompareLecture = async () => {
     const data = await getCurrentLectureData();
 
     data && setCompareLecture(data);
   };
 
   useEffect(() => {
-    test();
+    currentCompareLecture();
   }, []);
 
   return (
