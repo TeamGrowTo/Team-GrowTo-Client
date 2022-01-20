@@ -33,7 +33,15 @@ function Footer() {
                 <ServiceMenuTitle>Service</ServiceMenuTitle>
               </Screen>
               <ServiceMenuListItem>
-                <Link href="/about">서비스 소개</Link>
+                <Link href="https://www.notion.so/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161">
+                  <a
+                    href="https://www.notion.so/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    서비스 소개
+                  </a>
+                </Link>
               </ServiceMenuListItem>
             </ServiceMenuList>
             <ServiceMenuList>
@@ -41,10 +49,10 @@ function Footer() {
                 <ServiceMenuTitle>Contact Us</ServiceMenuTitle>
               </Screen>
               <ServiceMenuListItem>
-                <Link href="mailto:help.growto@gmail.com">기업 참여</Link>
+                <Link href="mailto:go.growto@gmail.com">기업 참여</Link>
               </ServiceMenuListItem>
               <ServiceMenuListItem>
-                <Link href="mailto:help.growto@gmail.com">문의하기</Link>
+                <Link href="mailto:go.growto@gmail.com">문의하기</Link>
               </ServiceMenuListItem>
             </ServiceMenuList>
             <ServiceMenuList>
@@ -52,7 +60,11 @@ function Footer() {
                 <ServiceMenuTitle>Social</ServiceMenuTitle>
               </Screen>
               <ServiceMenuListItem>
-                <a href="https://www.instagram.com/grow._.eleven/">
+                <a
+                  href="https://www.instagram.com/growto.official/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <InstagramLogo />
                 </a>
               </ServiceMenuListItem>

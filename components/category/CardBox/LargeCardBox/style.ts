@@ -3,19 +3,24 @@ import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
   display: flex;
-  width: 126.2rem;
+  max-width: 126.2rem;
+  width: 100%;
   height: 14rem;
   background-color: white;
   border-radius: 2.4rem;
   margin-bottom: 1.8rem;
-
+  transition: all 0.15s;
   box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.1);
+  &:hover {
+    box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.15);
+  }
 `;
 
 const LectureTitleBox = styled.div`
   padding: 0 3.2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-right: 1px solid #bfd8ff;
   width: 25.9rem;
   margin: 2.9rem 0;
@@ -32,7 +37,7 @@ const LectureInfoBox = styled(LectureTitleBox)`
 
 const LectureDateBox = styled(LectureTitleBox)`
   width: 10.3rem;
-  padding: 0 3.2rem;
+  padding: 0;
   justify-content: center;
   flex-direction: column;
 
@@ -48,7 +53,7 @@ const LectureTagBox = styled(LectureInfoBox)`
   border: none;
 `;
 
-const LectureTitle = styled.h3`
+const LectureTitleName = styled.h3`
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -127,8 +132,8 @@ export {
   LectureLinkBtn,
   LectureTag,
   LectureTagBox,
-  LectureTitle,
   LectureTitleBox,
+  LectureTitleName,
   StyledRoot,
   TagWrapper,
 };

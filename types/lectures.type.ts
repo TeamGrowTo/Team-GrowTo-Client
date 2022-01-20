@@ -1,7 +1,7 @@
 type Answer = "Fast" | "Middle" | "Slow";
 
 export interface PostLectureReportData {
-  difference: string;
+  difference: number;
   lectureName: string;
   description: string;
   email: string;
@@ -63,4 +63,17 @@ export interface ProcessDataState {
   tags: string[];
   timeAsc: boolean | null | undefined;
   priceAsc: boolean | null | undefined;
+}
+
+export interface LectureRankData {
+  id: number;
+  name: string;
+  skill: string;
+  number: number;
+}
+
+export interface CurrentCompareData {
+  id: number;
+  name: string;
+  skill: string;
 }

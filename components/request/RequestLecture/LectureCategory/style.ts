@@ -49,7 +49,7 @@ const CategoryButton = styled.button<IProps>`
 
 const DropdownWrapper = styled.span``;
 
-const CategoryList = styled.ul`
+const CategoryList = styled.div`
   border-bottom-left-radius: 2.8rem;
   border-bottom-right-radius: 2.8rem;
   background-color: white;
@@ -71,4 +71,13 @@ const CategoryList = styled.ul`
   }
 `;
 
+export const CategoryListItem = styled.div`
+  font-family: "Pretendard-Regular";
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2.2rem;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+`;
 export { CategoryButton, CategoryList, CategoryWrapper, DropdownWrapper, LectureCategoryBox };

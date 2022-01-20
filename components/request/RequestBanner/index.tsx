@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import { StyledRoot, Wrapper } from "./style";
 
 export default function RequestBanner() {
-  const [totalNumber, setTotalNumber] = useState(2115);
+  const [totalNumber, setTotalNumber] = useState(0);
+
   //어떻게하면 단위에 2,115라고 붙여줄 수 있을까
   const TotalNumber = async () => {
     const nowTotalNumber = await getLectureTotalNumber();
@@ -13,7 +14,7 @@ export default function RequestBanner() {
   };
 
   useEffect(() => {
-    TotalNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    TotalNumber();
   }, []);
 
   return (

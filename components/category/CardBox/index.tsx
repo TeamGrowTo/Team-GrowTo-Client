@@ -1,17 +1,20 @@
 import React from "react";
 import Screen from "styles/Screen";
+import { LectureDataType } from "types/info.type";
 
 import LargeCardBox from "./LargeCardBox";
 import SmallCardBox from "./SmallCardBox";
-
-function CardBox() {
+interface Props {
+  lecture: LectureDataType;
+}
+function CardBox({ lecture }: Props) {
   return (
     <>
       <Screen desktop>
-        <LargeCardBox />
+        <LargeCardBox lecture={lecture} />
       </Screen>
       <Screen mobile>
-        <SmallCardBox />
+        <SmallCardBox lecture={lecture} />
       </Screen>
     </>
   );

@@ -1,5 +1,5 @@
 import axios from "axios";
-//임시 url
+
 export const serverAxios = axios.create({
-  baseURL: "http://localhost:5005/",
+  baseURL: `${process.env.NEXT_PUBLIC_SERVER_URL}`,
 });

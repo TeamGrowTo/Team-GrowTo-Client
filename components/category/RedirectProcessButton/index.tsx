@@ -11,7 +11,7 @@ const RedirectProcessButton = function () {
         <TenSecondIcon />
         <span>단 10초면, 나에게 꼭 맞는 강의를 찾을 수 있어요.</span>
       </Description>
-      <Link href="/process">
+      <Link href="/processTag">
         <RedirectButton>
           맞춤 강의 찾기
           <ICRightIcon />
