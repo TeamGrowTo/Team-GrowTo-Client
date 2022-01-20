@@ -28,9 +28,19 @@ const StyledRoot = styled.div`
 const CategoryWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 71.2rem;
+  width: 75rem;
   flex-wrap: wrap;
   /* font-family: "Pretendard-Medium"; */
+  & > * {
+    margin-right: 2rem;
+    margin-bottom: 2.2rem;
+  }
+  & > *:nth-child(3n) {
+    margin-right: 0;
+  }
+  & > *:last-child {
+    margin: 0;
+  }
 `;
 
 export { CategoryWrapper, StyledRoot };
