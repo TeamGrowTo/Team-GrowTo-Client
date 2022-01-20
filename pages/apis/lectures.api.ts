@@ -1,3 +1,4 @@
+import { LectureDataListType, ResponseLectureDataType } from "types/info.type";
 import {
   LectureCompareRequest,
   LecturesResultAllData,
@@ -81,6 +82,64 @@ export const postProcessResult = async (processData: ProcessDataState) => {
     });
 
     return data.data;
+  } catch (err) {
+    return null;
+  }
+};
+
+export const getLectureDataList = async (
+  categoryId: number | null,
+  skillId: number | null,
+  ordering = "",
+): Promise<LectureDataListType | null> => {
+  try {
+    if (ordering === "") {
+      const apiResponse = await serverAxios.get(`${PREFIX_URL}/${categoryId}/${skillId}/`);
+
+      if (apiResponse.status === 200) {
+        const { data } = apiResponse;
+
+        console.log(data);
+
+        return data.data.map((data: ResponseLectureDataType) => {
+          return {
+            LectureTitle: data.name,
+            time: data.time,
+            price: data.price,
+            reviewTime: data.reviewTime,
+            duration: data.duration,
+            startYear: data.startYear,
+            tags: data.tags,
+            url: data.url,
+          };
+        });
+      } else {
+        throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
+      }
+    } else {
+      const apiResponse = await serverAxios.get(
+        `${PREFIX_URL}/${categoryId}/${skillId}/?ordering=${ordering}`,
+      );
+
+      if (apiResponse.status === 200) {
+        const { data } = apiResponse;
+
+        return data.map((data: ResponseLectureDataType) => {
+          return {
+            LectureTitle: data.name,
+            time: data.time,
+            price: data.price,
+            reviewTime: data.reviewTime,
+            duration: data.duration,
+            startYear: data.startYear,
+            tags: data.tags,
+            url: data.url,
+          };
+        });
+      } else {
+        throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
+      }
+    }
   } catch (err) {
     return null;
   }

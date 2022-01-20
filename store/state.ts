@@ -12,6 +12,7 @@ const { persistAtom } = recoilPersist();
 export const lectureCategoryState = atom<LectureCategoryData[] | null>({
   key: "lectureCategoryState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const lectureSkillState = atom<LectureSkillData[] | null>({
