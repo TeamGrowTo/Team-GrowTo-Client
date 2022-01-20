@@ -5,13 +5,14 @@ const StyledRoot = styled.nav`
   width: 100%;
   height: 11.6rem;
   padding: 0 2.5rem;
-  min-width: 55rem;
+  margin-bottom: 11.6rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 90;
   position: fixed;
+  top: 0;
 
   background-color: white;
 `;
