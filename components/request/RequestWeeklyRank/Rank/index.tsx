@@ -10,14 +10,15 @@ interface IProps {
     skill: string;
     number: number;
   };
+  rankNumber: number;
 }
 
-export default function Rank({ rank }: IProps) {
-  const { id, name, skill, number } = rank;
+export default function Rank({ rank, rankNumber }: IProps) {
+  const { name, skill, number } = rank;
 
   return (
     <StyledRoot>
-      <Id>{id}</Id>
+      <Id>{rankNumber + 1}</Id>
       <Wrapper>
         <Title>
           <h4>{name}</h4>
