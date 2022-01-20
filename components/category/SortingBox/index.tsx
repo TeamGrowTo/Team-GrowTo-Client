@@ -1,7 +1,12 @@
-import { getLectureDataList } from "pages/apis/lectures.api";
+import { getSortingLectureDataList } from "pages/apis/lectures.api";
 import React, { useState } from "react";
-import { useRecoilValue } from "recoil";
-import { currentCategoryState, currentSkillState, isDisableState } from "store/state";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import {
+  currentCategoryState,
+  currentSkillState,
+  isDisableState,
+  lectureDataList,
+} from "store/state";
 
 import SortingBtn from "../SortingBtn";
 import { StyledRoot } from "./style";
@@ -50,36 +55,12 @@ enum SortingText {
   //질의 응답시간
   "빠름" = "answer",
 }
-// const sortingTextObj: ISortingText = {
-//   0: {
-//     "긴 순": "slow",
-//     "짧은 순": "fast",
-//   },
-//   1: {
-//     "높은 순": "price",
-//     "낮은 순": "-price",
-//   },
-//   2: {
-//     "최근 순": "date",
-//   },
-//   3: {
-//     "긴 순서": "startYear",
-//     "짧은 순서": "-startYear",
-//   },
-//   4: {
-//     빠름: "answer",
-//   },
-// };
-
-// type ISortingText = {
-//   [key in SortingType]: { [key in SortingItemType]: string };
-// };
 
 function SortingBox() {
   const category = useRecoilValue(currentCategoryState);
   const skill = useRecoilValue(currentSkillState);
   const isDisable = useRecoilValue(isDisableState);
-
+  const setLectureDataList = useSetRecoilState(lectureDataList);
   //가격과 개설일은 eslint자동수정으로 따옴표가 자꾸 빠지는데 문제없이 돌아갑니다
   //dropListName은 드랍다운 클릭했을 때 나오는 목록 리스트들을 기준별로 저장한 것
   const dropListName: IDropListName = {
@@ -166,7 +147,12 @@ function SortingBox() {
     if (category && skill) {
       const ordering: string = SortingText[item];
 
-      await getLectureDataList(category.id, skill.id, ordering);
+      const data = await getSortingLectureDataList(category.id, skill.id, ordering);
+
+      if (data) {
+        console.log(data);
+        setLectureDataList(data); //확인필요
+      }
     }
   };
 

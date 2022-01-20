@@ -25,6 +25,10 @@ interface Props {
 function LargeCardBox({ lecture }: Props) {
   const { LectureTitle, time, price, duration, reviewTime, startYear, tags, url } = lecture;
 
+  //총 소요시간 -1 : 미표기
+  // 개설연도 -1 : 미표기
+  // 반복시청 가능 기간 : 100,000,000 : 무제한
+  // 가격단위 : 만원으로 변환 ex 19000원 => 1.9만원
   return (
     <StyledRoot>
       <LectureTitleBox>
@@ -33,7 +37,7 @@ function LargeCardBox({ lecture }: Props) {
       <LectureInfoBox>
         <LectureInfoWrapper>
           <LectureInfoName>총 소요시간</LectureInfoName>
-          <LectureInfoData>{time}</LectureInfoData>
+          <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
           <LectureInfoName>질문 응답시간</LectureInfoName>
@@ -41,16 +45,16 @@ function LargeCardBox({ lecture }: Props) {
         </LectureInfoWrapper>
         <LectureInfoWrapper>
           <LectureInfoName>가격</LectureInfoName>
-          <LectureInfoData>{price}</LectureInfoData>
+          <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
           <LectureInfoName>반복 시청 기간</LectureInfoName>
-          <LectureInfoData>{duration}</LectureInfoData>
+          <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
         </LectureInfoWrapper>
       </LectureInfoBox>
       <LectureDateBox>
         <LectureInfoName>개설일</LectureInfoName>
-        <LectureInfoData>{startYear}</LectureInfoData>
+        <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
       </LectureDateBox>
       <LectureTagBox>
         <TagWrapper>
@@ -60,7 +64,7 @@ function LargeCardBox({ lecture }: Props) {
         </TagWrapper>
       </LectureTagBox>
       <Link href={url} passHref>
-        <LectureLinkBtn>
+        <LectureLinkBtn target="_blank">
           <ArrowRight />
         </LectureLinkBtn>
       </Link>
