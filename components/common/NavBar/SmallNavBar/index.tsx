@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { CloseButton, HamburgerIcon, SmallLogoIcon } from "public/assets/icons";
 import React, { useState } from "react";
+import { useResetRecoilState } from "recoil";
+import {
+  currentCategoryState,
+  currentSkillState,
+  lectureDataList,
+  lectureSkillState,
+} from "store/state";
 
 import { ButtonWrapper, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
 
@@ -9,6 +16,18 @@ function SmallNavBar() {
 
   const handleOpenMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+  const resetLectureSkillData = useResetRecoilState(lectureSkillState);
+  const resetCategoryData = useResetRecoilState(currentCategoryState);
+
+  const handleResetLectureData = () => {
+    resetLectureListData();
+    resetSkillData();
+    resetCategoryData();
+    resetLectureSkillData();
   };
 
   return (
@@ -24,7 +43,9 @@ function SmallNavBar() {
           {isOpen && (
             <NavMenuList>
               <NavMenuListItem>
-                <Link href="/category">전체강의</Link>
+                <Link href="/category" passHref>
+                  <button onClick={handleResetLectureData}>전체강의</button>
+                </Link>
               </NavMenuListItem>
               <NavMenuListItem>
                 <Link href="/request">비교요청</Link>
