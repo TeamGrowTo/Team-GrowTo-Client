@@ -12,11 +12,17 @@ const { persistAtom } = recoilPersist();
 export const lectureCategoryState = atom<LectureCategoryData[] | null>({
   key: "lectureCategoryState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const lectureSkillState = atom<LectureSkillData[] | null>({
   key: "lectureSkillState",
   default: null,
+});
+
+export const isDisableState = atom({
+  key: "isDisableState",
+  default: true,
 });
 
 interface CurrentCategory {
@@ -27,6 +33,7 @@ interface CurrentCategory {
 export const currentCategoryState = atom<CurrentCategory | null>({
   key: "currentCategoryState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 interface CurrentSkill {

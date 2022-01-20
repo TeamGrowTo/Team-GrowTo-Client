@@ -11,6 +11,7 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  isDisableState,
   lectureCategoryState,
   lectureDataList,
   lectureSkillState,
@@ -103,6 +104,8 @@ function Category() {
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
+  const setIsDisable = useSetRecoilState(isDisableState);
+
   const setLectureDataList = useSetRecoilState(lectureDataList);
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
@@ -121,8 +124,8 @@ function Category() {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
 
       setCurrentCategory(result);
-      // setLectureSkill(id);
-      setSkillList(dummySkillList);
+      setLectureSkill(id);
+      // setSkillList(dummySkillList);
     }
   };
 
@@ -134,8 +137,7 @@ function Category() {
       if (categoryId) {
         const data = await getLectureDataList(categoryId, SkillId);
 
-        console.log(data?.data[0].LectureTitle);
-
+        setIsDisable(false);
         setLectureDataList(data); //확인필요
         setCurrentSkill(result); //비동기라서 변경이 늦게된다. , skillId사용하기위함.
       }
@@ -143,10 +145,9 @@ function Category() {
   };
 
   useEffect(() => {
-    // setLectureCategory();
+    setLectureCategory();
     setCurrentSkill({ id: 1, skillName: "" });
-    setCurrentCategory({ id: -1, categoryName: "" });
-    setCategoryList(dummyCategoryList);
+    // setCategoryList(dummyCategoryList);
   }, []);
 
   return (
