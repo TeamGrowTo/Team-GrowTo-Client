@@ -26,7 +26,7 @@ export const getLectureFindNumber = async (): Promise<number | null> => {
       },
     });
 
-    return data.data;
+    return data.data.findNumber;
   } catch (err) {
     throw new Error("Failed to load lecture find number");
   }
@@ -40,7 +40,7 @@ export const getLectureRequestNumber = async (): Promise<number | null> => {
       },
     });
 
-    return data.data;
+    return data.data.requestNumber;
   } catch (err) {
     throw new Error("Failed to load lecture request number");
   }
