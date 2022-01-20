@@ -1,6 +1,9 @@
 import Modal from "components/common/Modal";
 import { postLectureRequest } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
+import { lectureCategoryState } from "store/state";
+import { LectureCategoryData } from "types/info.type";
 
 import Email from "./Email";
 import LectureCategory from "./LectureCategory";
@@ -30,6 +33,7 @@ export default function RequestLecture() {
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const getData = useRecoilValue(lectureCategoryState);
   const isBlank = (): boolean => {
     if (categorySelected === "" || lecture === "" || email === "") return true;
 
@@ -39,7 +43,15 @@ export default function RequestLecture() {
   useEffect(() => {
     const temp = { ...postData };
 
-    temp["categoryId"] = 1;
+    if (categorySelected) {
+      getData?.map((data: LectureCategoryData) => {
+        if (data.categoryName?.includes(categorySelected) === true) {
+          if (data.id) {
+            temp["categoryId"] = data.id;
+          }
+        }
+      });
+    }
     if (lecture) {
       temp["skill"] = lecture;
     }
@@ -54,6 +66,7 @@ export default function RequestLecture() {
 
       return;
     }
+    console.log(postData);
     await postLectureRequest(postData);
     setCategorySelected("");
     setLecture("");
