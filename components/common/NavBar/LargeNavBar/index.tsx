@@ -2,12 +2,29 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { LogoIcon } from "public/assets/icons";
 import React from "react";
-import Screen from "styles/Screen";
+import { useResetRecoilState } from "recoil";
+import {
+  currentCategoryState,
+  currentSkillState,
+  lectureDataList,
+  lectureSkillState,
+} from "store/state";
 
 import { LogoWrapper, NavItem, NavItemBox, NavItemWrapper, StyledRoot } from "./style";
 
 function LargeNavBar() {
   const router = useRouter();
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+  const resetLectureSkillData = useResetRecoilState(lectureSkillState);
+  const resetCategoryData = useResetRecoilState(currentCategoryState);
+
+  const handleResetLectureData = () => {
+    resetLectureListData();
+    resetSkillData();
+    resetCategoryData();
+    resetLectureSkillData();
+  };
 
   return (
     <StyledRoot>
@@ -19,7 +36,7 @@ function LargeNavBar() {
         </Link>
         <NavItemWrapper>
           <Link href="/category" passHref>
-            <NavItem pathName={router.pathname} href="/category">
+            <NavItem onClick={handleResetLectureData} pathName={router.pathname} href="/category">
               전체강의
             </NavItem>
           </Link>

@@ -46,6 +46,11 @@ const NavMenuListItem = styled.li`
   color: #606060;
   & > a {
     display: inline-block;
+    width: 100%;
+  }
+  & button {
+    width: 100%;
+    cursor: pointer;
   }
   &:hover {
     background-color: #f4f9ff;
