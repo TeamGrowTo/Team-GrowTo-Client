@@ -1,7 +1,13 @@
 import { Dropdown } from "public/assets/icons";
 import React, { useState } from "react";
 
-import { CategoryButton, CategoryList, CategoryWrapper, LectureCategoryBox } from "./style";
+import {
+  CategoryButton,
+  CategoryList,
+  CategoryWrapper,
+  DropdownWrapper,
+  LectureCategoryBox,
+} from "./style";
 
 interface SelectedProps {
   categorySelected: string;
@@ -34,9 +40,9 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
             ) : (
               <span>{categorySelected}</span>
             )}
-            <span onClick={handleDropdown}>
+            <DropdownWrapper onClick={handleDropdown}>
               <Dropdown />
-            </span>
+            </DropdownWrapper>
           </CategoryButton>
           {open ? (
             <CategoryList onClick={handleMenu}>
