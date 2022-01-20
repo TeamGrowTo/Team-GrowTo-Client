@@ -1,11 +1,8 @@
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
-import {
-  getLectureCategoryData,
-  getLectureDataList,
-  getLectureSkillData,
-} from "pages/apis/info.api";
+import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
+import { getLectureDataList } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {

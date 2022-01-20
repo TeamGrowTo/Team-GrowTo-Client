@@ -17,10 +17,12 @@ function Result() {
   const LectureDataList = useRecoilValue(lectureDataList);
   const skill = useRecoilValue(currentSkillState);
 
+  console.log(LectureDataList);
+
   return (
     <ResultBox>
       <MessageWrapper>
-        <ResultBlueMessage>총 {LectureDataList?.data.length}개의</ResultBlueMessage>
+        <ResultBlueMessage>총 개의</ResultBlueMessage>
         <ResultBlueMessage>{skill?.skillName}</ResultBlueMessage>
         <ResultMessage> 강의 모두 보기</ResultMessage>
       </MessageWrapper>

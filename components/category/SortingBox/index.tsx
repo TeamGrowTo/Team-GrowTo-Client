@@ -1,4 +1,4 @@
-import { getLectureDataList } from "pages/apis/info.api";
+import { getLectureDataList } from "pages/apis/lectures.api";
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
 import { currentCategoryState, currentSkillState, isDisableState } from "store/state";
