@@ -1,4 +1,4 @@
-type Answer = "Fast" | "Middle" | "Slow";
+// type Answer = "Fast" | "Middle" | "Slow";
 
 export interface PostLectureReportData {
   difference: number;
@@ -21,9 +21,10 @@ export interface ResponseResultData {
   name: string;
   time: number;
   price: number;
-  replay: boolean;
-  reviewTime: Answer;
-  startYear: string;
+  hasPreview?: string;
+  reviewTime: string;
+  startYear: number;
+  duration: number;
   tags: string[];
   url: string;
 }
@@ -32,9 +33,9 @@ export interface LectureResultData {
   name: string;
   time: number;
   price: number;
-  replay: boolean;
-  answer: Answer;
-  createdDate: string;
+  replay: number;
+  answer: string;
+  createdDate: number;
   tags: string[];
   url: string;
 }

@@ -31,8 +31,8 @@ const dummy: LectureResultData[] = [
     name: "퍼포먼스 마케팅, 데이터로 완전 정복",
     time: 55,
     price: 22,
-    createdDate: "2022",
-    replay: true,
+    createdDate: -1,
+    replay: 180,
     answer: "Slow",
     tags: ["실습 프로젝트20종", "광고집행률", "데이터수집추적분석툴", "앱마케팅", "웹최적화"],
     url: "https://www.naver.com/",
@@ -41,8 +41,8 @@ const dummy: LectureResultData[] = [
     name: "초보도 퍼포먼스 내는 디지털 마스터 패키지",
     time: 55,
     price: 22,
-    createdDate: "2022",
-    replay: true,
+    createdDate: 2022,
+    replay: 200,
     answer: "Slow",
     tags: ["실습 프로젝트20종", "광고집행률", "데이터수집추적분석툴", "앱마케팅", "웹최적화"],
     url: "",
@@ -51,8 +51,8 @@ const dummy: LectureResultData[] = [
     name: "업무성과를 내는 퍼포먼스 마케팅 실전",
     time: 55,
     price: 22,
-    createdDate: "2022",
-    replay: true,
+    createdDate: 2022,
+    replay: 100000000,
     answer: "Slow",
     tags: ["실습 프로젝트20종", "광고집행률", "데이터수집추적분석툴", "앱마케팅", "웹최적화"],
     url: "",
@@ -69,14 +69,15 @@ function Category() {
   const [category, setCategory] = useState({ id: -1, name: "" });
   const [skill, setSkill] = useState({ id: -1, name: "" });
   const setLectureDataList = useSetRecoilState(lectureDataList);
-  const getLectureResult = async (): Promise<void> => {
-    const id = router.query.id || "";
-    const data: Result = await getLectureResultData(id);
-    // data에는 category, skill가 들어있답니다. LecturesResultAllData type 을 참고해보세요.
+  const { id } = router.query;
 
+  const getLectureResult = async (): Promise<void> => {
+    const data: Result = await getLectureResultData(id);
+
+    // data에는 category, skill가 들어있답니다. LecturesResultAllData type 을 참고해보세요.
     if (data) {
-      setLectureResultList(data.result);
-      setListLength(data.result.length);
+      setLectureResultList(data.result.slice(0, 3));
+      setListLength(data.result.length < 3 ? data.result.length : 3);
       setCategory(data.category);
       setSkill(data.skill);
     }
@@ -95,12 +96,17 @@ function Category() {
       GetLecturefromSkillId(skill.id, category.id);
     }
   }, [skill.id, category.id]);
+
   useEffect(() => {
-    // getLectureResult();
-    setLectureResultList(dummy);
-    setCategory({ id: 1, name: "마케팅" });
-    setSkill({ id: 3, name: "디지털&퍼포먼스" });
-  }, []);
+    if (!id) {
+      return;
+    } else {
+      getLectureResult();
+      // setLectureResultList(dummy);
+      // setCategory({ id: 1, name: "마케팅" });
+      // setSkill({ id: 3, name: "디지털&퍼포먼스" });
+    }
+  }, [id]);
 
   //categoryId, skillId로 api보내서 받은 response를 cardList 컴포넌트에 넣어주자
   const handleMoveToCategory = () => {
