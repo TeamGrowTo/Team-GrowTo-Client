@@ -11,6 +11,7 @@ import { useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  isDisableState,
   lectureDataList,
   lectureResultState,
 } from "store/state";
@@ -72,6 +73,7 @@ function Category() {
   const setLectureDataList = useSetRecoilState(lectureDataList);
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
   const setCurrentSkill = useSetRecoilState(currentSkillState);
+  const setIsDisable = useSetRecoilState(isDisableState);
   const [listLength, setListLength] = useState(0);
   const [category, setCategory] = useState({ id: -1, name: "" });
   const [skill, setSkill] = useState({ id: -1, name: "" });
@@ -88,6 +90,7 @@ function Category() {
       setCurrentCategory({ id: data.category.id, categoryName: data.category.name });
       setSkill(data.skill);
       setCurrentSkill({ id: data.skill.id, skillName: data.skill.name });
+      setIsDisable(false);
     }
   };
 
