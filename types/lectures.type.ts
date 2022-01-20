@@ -71,3 +71,9 @@ export interface LectureRankData {
   skill: string;
   number: number;
 }
+
+export interface CurrentCompareData {
+  id: number;
+  name: string;
+  skill: string;
+}

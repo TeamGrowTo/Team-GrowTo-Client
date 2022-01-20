@@ -7,7 +7,6 @@ export default function RequestBanner() {
   const [totalNumber, setTotalNumber] = useState(0);
 
   //어떻게하면 단위에 2,115라고 붙여줄 수 있을까
-  console.log(totalNumber);
   const TotalNumber = async () => {
     const nowTotalNumber = await getLectureTotalNumber();
 
