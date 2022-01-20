@@ -1,6 +1,5 @@
 import Result from "components/category/Result";
 import BlueButton from "components/common/BlueButton";
-import { Data } from "components/main/MainReport/ReportSection/style";
 import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
 import Question from "components/result/Question";
