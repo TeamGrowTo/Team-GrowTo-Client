@@ -13,7 +13,7 @@ function Title() {
       ? "/processTime"
       : PATH_NAME === "/processTime"
       ? "/processTag"
-      : "/";
+      : "/category";
 
   return (
     <StyledRoot>
