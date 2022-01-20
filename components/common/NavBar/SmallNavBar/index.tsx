@@ -27,10 +27,12 @@ function SmallNavBar() {
                 <Link href="/category">전체강의</Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/choiceRequest">비교요청</Link>
+                <Link href="/request">비교요청</Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/about">ABOUT</Link>
+                <Link href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161">
+                  <a target="_blank">ABOUT</a>
+                </Link>
               </NavMenuListItem>
             </NavMenuList>
           )}

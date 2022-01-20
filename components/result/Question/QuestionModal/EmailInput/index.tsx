@@ -14,7 +14,6 @@ function EmailInput({ email, onEmailChange }: Props) {
       <input
         type="email"
         placeholder="수정된 강의 정보를 메일로 보내드려요"
-        value={email}
         onChange={onEmailChange}
         required
       />

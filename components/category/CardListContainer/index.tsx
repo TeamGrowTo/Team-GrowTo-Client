@@ -14,11 +14,6 @@ function CardListContainer() {
       {LectureDataList?.map((lecture: ResponseLectureDataType) => (
         <CardBox key={lecture.LectureTitle} lecture={lecture} />
       ))}
-      {/* <CardBox />
-      <CardBox />
-      <CardBox />
-      <CardBox />
-      <CardBox /> */}
     </StyledRoot>
   );
 }
