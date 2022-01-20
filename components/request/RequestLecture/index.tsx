@@ -30,6 +30,11 @@ export default function RequestLecture() {
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isBlank = (): boolean => {
+    if (categorySelected === "" || lecture === "" || email === "") return true;
+
+    return false;
+  };
 
   useEffect(() => {
     const temp = { ...postData };
@@ -43,8 +48,16 @@ export default function RequestLecture() {
     }
     setPostData(temp);
   }, [lecture, email]);
-  const submitRequest = async () => {
+  const submitRequest = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isBlank()) {
+      e.preventDefault();
+
+      return;
+    }
     await postLectureRequest(postData);
+    setCategorySelected("");
+    setLecture("");
+    setEmail("");
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
   };
@@ -62,8 +75,8 @@ export default function RequestLecture() {
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
-            <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} />
-            <Email setEmailFilled={setEmailFilled} setEmail={setEmail} />
+            <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} lecture={lecture} />
+            <Email setEmailFilled={setEmailFilled} setEmail={setEmail} email={email} />
             {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
               <ActiveRequestButton type="button" onClick={submitRequest}>
                 <p>강의비교 요청하기</p>
