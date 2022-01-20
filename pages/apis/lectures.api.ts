@@ -13,16 +13,24 @@ import { serverAxios } from "./index";
 
 const PREFIX_URL = "/lectures";
 
-export const postLectureReport = async (data: PostLectureReportData): Promise<void | null> => {
+export const postLectureReport = async (
+  requestData: PostLectureReportData,
+): Promise<void | null> => {
   try {
-    await serverAxios.post(`${PREFIX_URL}/report`, {
-      information: data.difference,
-      name: data.lectureName,
-      explanation: data.description,
-      email: data.email,
-    });
-
-    // return message;
+    const { data } = await serverAxios.post(
+      `${PREFIX_URL}/report`,
+      {
+        reasonId: requestData.difference + 1,
+        lecture: requestData.lectureName,
+        explanation: requestData.description,
+        email: requestData.email,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
   } catch (err) {
     throw new Error("서버 내 오류");
   }

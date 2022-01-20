@@ -36,8 +36,6 @@ export const getLectureSkillData = async (id: number): Promise<LectureSkillData[
       },
     });
 
-    console.log(data);
-
     return data.data.map((response: ResponseSkillData) => {
       return { id: response.id, skillName: response.name };
     });

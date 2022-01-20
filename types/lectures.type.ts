@@ -1,7 +1,7 @@
 type Answer = "Fast" | "Middle" | "Slow";
 
 export interface PostLectureReportData {
-  difference: string;
+  difference: number;
   lectureName: string;
   description: string;
   email: string;
