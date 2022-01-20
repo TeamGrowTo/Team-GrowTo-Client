@@ -32,7 +32,7 @@ import {
 function ProcessPrice() {
   const [selectedPrice, setSelectedPrice] = useState("");
   const [processData, setProcessData] = useRecoilState(processState);
-  const priceTypeList = ["높은 가격", "짧은 가격", "상관없음"];
+  const priceTypeList = ["높은 가격", "낮은 가격", "상관없음"];
   const getTimeData = useRecoilValue(processState);
   const [isLoading, setIsLoading] = useState(false);
   const categoryState = useRecoilValue(currentCategoryState);
@@ -48,7 +48,7 @@ function ProcessPrice() {
         getTimeData.priceAsc === false
           ? "높은 가격"
           : getTimeData.priceAsc === true
-          ? "짧은 가격"
+          ? "낮은 가격"
           : "상관없음";
 
       setSelectedPrice(changeType);
@@ -73,7 +73,7 @@ function ProcessPrice() {
 
   const handleResult = async () => {
     const changeType =
-      selectedPrice === "높은 가격" ? false : selectedPrice === "짧은 가격" ? true : null;
+      selectedPrice === "높은 가격" ? false : selectedPrice === "낮은 가격" ? true : null;
     const tempProcessData = { ...processData };
 
     tempProcessData["priceAsc"] = changeType;
