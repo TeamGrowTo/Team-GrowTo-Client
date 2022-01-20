@@ -1,5 +1,5 @@
 import Modal from "components/common/Modal";
-// import { postLectureRequest } from "pages/apis/lectures.api";
+import { postLectureRequest } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 
 import Email from "./Email";
@@ -14,12 +14,18 @@ import {
   Wrapper,
 } from "./style";
 export interface IPostRequest {
-  categoryId?: string;
-  skill?: string;
-  email?: string;
+  categoryId: string;
+  skill: string;
+  email: string;
 }
 export default function RequestLecture() {
-  const [postData, setPostData] = useState<IPostRequest | null>(null);
+  const [postData, setPostData] = useState<IPostRequest>({
+    categoryId: "",
+    skill: "",
+    email: "",
+  });
+  const [lecture, setLecture] = useState("");
+  const [email, setEmail] = useState("");
   const [categorySelected, setCategorySelected] = useState("");
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
@@ -27,14 +33,25 @@ export default function RequestLecture() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const submitRequest = async () => {
     try {
-      // await postLectureRequest();
       if (categorySelected) {
         const temp = { ...postData };
 
         temp["categoryId"] = categorySelected;
         setPostData(temp);
       }
+      if (lecture) {
+        const tempLecture = { ...postData };
 
+        tempLecture["skill"] = lecture;
+        setPostData(tempLecture);
+      }
+      if (email) {
+        const tempEmail = { ...postData };
+
+        tempEmail["email"] = email;
+        setPostData(tempEmail);
+      }
+      await postLectureRequest(postData);
       setIsModalOpen(true);
       document.body.style.overflow = "hidden";
     } catch {
@@ -55,8 +72,8 @@ export default function RequestLecture() {
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
-            <LectureType setTypeFilled={setTypeFilled} />
-            <Email setEmailFilled={setEmailFilled} />
+            <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} />
+            <Email setEmailFilled={setEmailFilled} setEmail={setEmail} />
             {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
               <ActiveRequestButton onClick={submitRequest}>
                 <p>강의비교 요청하기</p>

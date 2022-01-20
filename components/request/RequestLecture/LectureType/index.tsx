@@ -4,10 +4,10 @@ import { InputWrapper, LectureTypeBox } from "./style";
 
 interface TypeFilledProps {
   setTypeFilled: React.Dispatch<React.SetStateAction<boolean>>;
+  setLecture: (lecture: string) => void;
 }
 
-export default function LectureType({ setTypeFilled }: TypeFilledProps) {
-  const [lecture, setLecture] = useState("");
+export default function LectureType({ setTypeFilled, setLecture }: TypeFilledProps) {
   const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTypeFilled(true);
     setLecture(e.target.value);

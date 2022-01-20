@@ -3,11 +3,13 @@ import React from "react";
 import { EmailBox, InputWrapper } from "./style";
 interface EmailFilledProps {
   setEmailFilled: React.Dispatch<React.SetStateAction<boolean>>;
+  setEmail: (email: string) => void;
 }
 
-export default function Email({ setEmailFilled }: EmailFilledProps) {
-  const handleInputValue = () => {
+export default function Email({ setEmailFilled, setEmail }: EmailFilledProps) {
+  const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmailFilled(true);
+    setEmail(e.target.value);
   };
 
   return (
