@@ -1,6 +1,9 @@
 import Modal from "components/common/Modal";
 import { postLectureRequest } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
+import { lectureCategoryState } from "store/state";
+import { LectureCategoryData } from "types/info.type";
 
 import Email from "./Email";
 import LectureCategory from "./LectureCategory";
@@ -29,13 +32,26 @@ export default function RequestLecture() {
   const [categorySelected, setCategorySelected] = useState("");
   const [typeFilled, setTypeFilled] = useState(false);
   const [emailFilled, setEmailFilled] = useState(false);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const getData = useRecoilValue(lectureCategoryState);
+  const isBlank = (): boolean => {
+    if (categorySelected === "" || lecture === "" || email === "") return true;
+
+    return false;
+  };
 
   useEffect(() => {
     const temp = { ...postData };
 
-    temp["categoryId"] = 1;
+    if (categorySelected) {
+      getData?.map((data: LectureCategoryData) => {
+        if (data.categoryName?.includes(categorySelected) === true) {
+          if (data.id) {
+            temp["categoryId"] = data.id;
+          }
+        }
+      });
+    }
     if (lecture) {
       temp["skill"] = lecture;
     }
@@ -44,11 +60,19 @@ export default function RequestLecture() {
     }
     setPostData(temp);
   }, [lecture, email]);
-  const submitRequest = async () => {
+  const submitRequest = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isBlank()) {
+      e.preventDefault();
+
+      return;
+    }
     console.log(postData);
     await postLectureRequest(postData);
-    // setIsModalOpen(true);
-    // document.body.style.overflow = "hidden";
+    setCategorySelected("");
+    setLecture("");
+    setEmail("");
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   return (
@@ -64,8 +88,8 @@ export default function RequestLecture() {
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
-            <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} />
-            <Email setEmailFilled={setEmailFilled} setEmail={setEmail} />
+            <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} lecture={lecture} />
+            <Email setEmailFilled={setEmailFilled} setEmail={setEmail} email={email} />
             {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
               <ActiveRequestButton type="button" onClick={submitRequest}>
                 <p>강의비교 요청하기</p>

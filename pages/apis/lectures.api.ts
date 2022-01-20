@@ -18,7 +18,6 @@ interface IPostRequest {
   skill: string;
   email: string;
 }
-
 export const postLectureReport = async (
   requestData: PostLectureReportData,
 ): Promise<void | null> => {
@@ -81,8 +80,6 @@ export const postLectureRequest = async (postData: IPostRequest) => {
     });
 
     if (data.status === 200) {
-      console.log(data.data);
-
       return data.data;
     }
   } catch (err) {
