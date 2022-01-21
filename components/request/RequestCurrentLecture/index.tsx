@@ -1,4 +1,4 @@
-import { getCurrentLectureData } from "pages/apis/lectures.api";
+import { getCurrentLectureData } from "apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { CurrentCompareData } from "types/lectures.type";
 

@@ -1,3 +1,4 @@
+import { getLectureDataList, getLectureResultData } from "apis/lectures.api";
 import Result from "components/category/Result";
 import BlueButton from "components/common/BlueButton";
 import MiddleNotification from "components/result/MiddleNotification";
@@ -5,7 +6,6 @@ import ProcessResult from "components/result/ProcessResult";
 import Question from "components/result/Question";
 import ResultShareButton from "components/result/ResultShareButton";
 import { useRouter } from "next/router";
-import { getLectureDataList, getLectureResultData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { useResetRecoilState, useSetRecoilState } from "recoil";
 import {
@@ -18,9 +18,9 @@ import {
   lectureResultState,
   lectureSkillState,
 } from "store/state";
+import styled from "styled-components";
+import { colors } from "styles/colors";
 import { LectureResultData, LecturesResultAllData } from "types/lectures.type";
-
-import { StyledRoot } from "./style";
 
 // type Answer = "fast" | "middle" | "slow";
 // interface ProcessResultData {
@@ -157,3 +157,9 @@ function Category() {
 }
 
 export default Category;
+
+const StyledRoot = styled.div`
+  background-color: ${colors.gray0};
+  height: 100%;
+  padding-bottom: 20.5rem;
+`;
