@@ -11,11 +11,13 @@ import { ImgWrapper, StyledRoot } from "./style";
 function CardListContainer() {
   const lectureDataListState = useRecoilValue(lectureDataList);
 
+  console.log(lectureDataListState);
+
   return (
     <StyledRoot>
       {lectureDataListState ? (
-        lectureDataListState?.map((lecture: LectureDataType) => (
-          <CardBox key={lecture.LectureTitle} lecture={lecture} />
+        lectureDataListState?.map((lecture: LectureDataType, idx: number) => (
+          <CardBox key={idx} lecture={lecture} />
         ))
       ) : (
         <ImgWrapper>
