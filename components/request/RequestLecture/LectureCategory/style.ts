@@ -21,6 +21,7 @@ const LectureCategoryBox = styled.div`
 
 const CategoryWrapper = styled.div`
   position: relative;
+  cursor: pointer;
 `;
 
 const CategoryButton = styled.button<IProps>`
@@ -41,7 +42,6 @@ const CategoryButton = styled.button<IProps>`
     color: ${(props) => (props.categorySelected === "" ? `${colors.gray4}` : "#000000")};
 
     & > svg {
-      cursor: pointer;
       transform: rotate(${(props) => (props.open ? "180deg" : "0")});
     }
   }
