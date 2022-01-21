@@ -6,8 +6,11 @@ const StyledRoot = styled.button<{
   height: string;
   fontSize: string;
   margin: string;
+  maxWidth: string | undefined;
 }>`
   display: block;
+  width: ${(props) => props.width};
+  max-width: ${(props) => props.maxWidth};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   margin: ${(props) => props.margin};
