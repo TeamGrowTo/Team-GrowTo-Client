@@ -1,4 +1,4 @@
-import { postLectureReport } from "pages/apis/lectures.api";
+import { postLectureReport } from "apis/lectures.api";
 import React, { useState } from "react";
 
 import DescriptionInput from "./DescriptionInput";

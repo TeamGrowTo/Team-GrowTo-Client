@@ -1,8 +1,8 @@
+import { getLectureCategoryData, getLectureSkillData } from "apis/info.api";
+import { getLectureDataList } from "apis/lectures.api";
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
-import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
-import { getLectureDataList } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
@@ -13,9 +13,9 @@ import {
   lectureDataList,
   lectureSkillState,
 } from "store/state";
+import styled from "styled-components";
+import { colors } from "styles/colors";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
-
-import { Background } from "./style";
 
 const dummyCategoryList: LectureCategoryData[] = [
   {
@@ -143,13 +143,15 @@ function Category() {
   useEffect(() => {
     setLectureCategory();
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
-    setCurrentSkill({ id: 1, skillName: "" });
+    setCurrentSkill({ id: -1, skillName: "" });
     // setCategoryList(dummyCategoryList);
   }, []);
 
   return (
     <div>
-      {category?.id !== -1 && currentSkill?.id && <RedirectProcessButton />}
+      {category && category?.id !== -1 && currentSkill && currentSkill?.id !== -1 && (
+        <RedirectProcessButton />
+      )}
       <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
       <Background>
         <Result />
@@ -159,3 +161,8 @@ function Category() {
 }
 
 export default Category;
+
+const Background = styled.section`
+  background-color: ${colors.gray0};
+  width: 100%;
+`;

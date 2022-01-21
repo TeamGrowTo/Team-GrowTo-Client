@@ -1,4 +1,4 @@
-import { getLectureCategoryData } from "pages/apis/info.api";
+import { getLectureCategoryData } from "apis/info.api";
 import {
   MainLectureDataIcon,
   MainLectureDesignIcon,

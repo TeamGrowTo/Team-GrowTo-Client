@@ -14,7 +14,7 @@ module.exports = {
       types: path.resolve(__dirname, "types"),
       pages: path.resolve(__dirname, "pages"),
       assets: path.resolve(__dirname, "public/assets"),
-      apis: path.resolve(__dirname, "pages/apis"),
+      apis: path.resolve(__dirname, "apis"),
     };
     config.module.rules.push({
       test: /\.svg$/,

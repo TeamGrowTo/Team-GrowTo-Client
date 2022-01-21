@@ -9,7 +9,7 @@ import {
   lectureSkillState,
 } from "store/state";
 
-import { ButtonWrapper, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
+import { ButtonWrapper, LinkA, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
 
 function SmallNavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,15 +44,18 @@ function SmallNavBar() {
             <NavMenuList>
               <NavMenuListItem>
                 <Link href="/category" passHref>
-                  <button onClick={handleResetLectureData}>전체강의</button>
+                  <LinkA onClick={handleResetLectureData}>전체강의</LinkA>
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
                 <Link href="/request">비교요청</Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161">
-                  <a target="_blank">ABOUT</a>
+                <Link
+                  href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+                  passHref
+                >
+                  <LinkA target="_blank">ABOUT</LinkA>
                 </Link>
               </NavMenuListItem>
             </NavMenuList>

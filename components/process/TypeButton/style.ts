@@ -19,4 +19,7 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
     height: 7.2rem;
     margin: 2.4rem 6rem;
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
