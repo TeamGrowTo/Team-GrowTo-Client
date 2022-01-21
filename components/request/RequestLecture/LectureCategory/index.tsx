@@ -27,7 +27,6 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
   };
 
   const handleMenu = (list: string) => {
-    // console.log(e.currentTarget.innerText);
     // if (!(e.target instanceof HTMLUListElement)) return;
     setCategorySelected(list);
     setOpen(false);
