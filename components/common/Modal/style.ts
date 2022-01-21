@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 3;
   & > p:first-child {
     font-family: "Pretendard-Bold";
     font-size: 3.2rem;
