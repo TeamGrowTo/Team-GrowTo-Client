@@ -9,6 +9,7 @@ export { default as Dropdown } from "./dropdown.svg";
 export { default as EmailIcon } from "./emailIcon.svg";
 export { default as HamburgerIcon } from "./hamburgerIcon.svg";
 export { default as ICRightIcon } from "./icRight.svg";
+export { default as ICRightSmallIcon } from "./icRightSmall.svg";
 export { default as InstagramLogo } from "./InstagramLogo.svg";
 export { default as LeftArrowIcon } from "./leftArrowIcon.svg";
 export { default as LogoIcon } from "./logoIcon.svg";
