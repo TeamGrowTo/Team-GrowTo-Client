@@ -142,6 +142,9 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
+  ${applyMediaQuery("mobile")} {
+    width: 50rem;
+  }
 `;
 export const PlayIcon = styled.div`
   position: absolute;
@@ -243,6 +246,9 @@ export const LoadingStyledRoot = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
+  ${applyMediaQuery("mobile")} {
+    width: 50rem;
+  }
 `;
 export const LogoWrapper = styled.div`
   width: 42.5rem;

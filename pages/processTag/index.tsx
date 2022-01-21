@@ -219,6 +219,9 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
+  ${applyMediaQuery("mobile")} {
+    width: 50rem;
+  }
 `;
 export const PlayIcon = styled.div`
   position: absolute;
