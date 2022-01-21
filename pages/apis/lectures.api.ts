@@ -84,6 +84,8 @@ export const postLectureRequest = async (postData: IPostRequest) => {
     });
 
     if (data.status === 200) {
+      console.log(data);
+
       return data.data;
     }
   } catch (err) {

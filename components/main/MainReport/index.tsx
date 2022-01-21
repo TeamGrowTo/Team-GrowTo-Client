@@ -10,9 +10,9 @@ import React, { useEffect, useState } from "react";
 import { LineWrapper, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
-  const [totalNumber, setTotalNumber] = useState(250);
-  const [findNumber, setFindNumber] = useState(3500);
-  const [requestNumber, setRequestNumber] = useState(99);
+  const [totalNumber, setTotalNumber] = useState(0);
+  const [findNumber, setFindNumber] = useState(0);
+  const [requestNumber, setRequestNumber] = useState(0);
 
   const ReportNumber = async () => {
     const nowTotalNumber = await getLectureTotalNumber();
@@ -24,9 +24,9 @@ export default function MainReport() {
     nowRequestNumber && setRequestNumber(nowRequestNumber);
   };
 
-  // useEffect(() => {
-  //   ReportNumber();
-  // }, []);
+  useEffect(() => {
+    ReportNumber();
+  }, []);
 
   const TotalCompare = {
     UniqueIcon: TotalIcon,

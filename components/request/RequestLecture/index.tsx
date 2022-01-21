@@ -66,7 +66,6 @@ export default function RequestLecture() {
 
       return;
     }
-    console.log(postData);
     await postLectureRequest(postData);
     setCategorySelected("");
     setLecture("");

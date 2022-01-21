@@ -16,4 +16,7 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
     padding: 1.3rem 2rem;
     height: 4rem;
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
