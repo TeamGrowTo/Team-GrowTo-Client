@@ -6,6 +6,9 @@ import { useResetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  currentSortingState,
+  isDisableState,
+  isOpenState,
   lectureDataList,
   lectureSkillState,
 } from "store/state";
@@ -18,12 +21,18 @@ function LargeNavBar() {
   const resetSkillData = useResetRecoilState(currentSkillState);
   const resetLectureSkillData = useResetRecoilState(lectureSkillState);
   const resetCategoryData = useResetRecoilState(currentCategoryState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
 
   const handleResetLectureData = () => {
     resetLectureListData();
     resetSkillData();
     resetCategoryData();
     resetLectureSkillData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
   };
 
   return (
