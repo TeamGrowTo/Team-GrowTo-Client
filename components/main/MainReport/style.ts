@@ -11,6 +11,9 @@ const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${applyMediaQuery("mobile")} {
+    height: 22.6rem;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -28,11 +31,15 @@ const Wrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     height: 14.6rem;
+    border-radius: 1.8rem;
   }
 `;
 
 const LineWrapper = styled.div`
   margin-top: 1.4rem;
+  ${applyMediaQuery("mobile")} {
+    margin-top: 0;
+  }
 `;
 
 export { LineWrapper, StyledRoot, Wrapper };

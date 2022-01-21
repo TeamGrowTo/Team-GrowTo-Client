@@ -1,7 +1,7 @@
-import { RequestRankLine } from "public/assets/icons";
+// import { RequestRankLine } from "public/assets/icons";
 import React from "react";
 
-import { Id, Number, RequestNumber, StyledRoot, Title, Wrapper } from "./style";
+import { Id, Line, Number, RequestNumber, StyledRoot, Title, Wrapper } from "./style";
 
 interface IProps {
   rank: {
@@ -10,20 +10,21 @@ interface IProps {
     skill: string;
     number: number;
   };
+  rankNumber: number;
 }
 
-export default function Rank({ rank }: IProps) {
-  const { id, name, skill, number } = rank;
+export default function Rank({ rank, rankNumber }: IProps) {
+  const { name, skill, number } = rank;
 
   return (
     <StyledRoot>
-      <Id>{id}</Id>
+      <Id>{rankNumber + 1}</Id>
       <Wrapper>
         <Title>
           <h4>{name}</h4>
           <h3>{skill}</h3>
         </Title>
-        <RequestRankLine />
+        <Line />
         <RequestNumber>
           <h5>비교요청 수</h5>
           <Number>

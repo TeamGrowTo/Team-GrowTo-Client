@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CategoryRightArrowIcon } from "public/assets/icons";
 import React from "react";
+import { useRecoilValue } from "recoil";
+import { currentSkillState } from "store/state";
 
 import CategoryList from "./CategoryList";
 import SkillList from "./SkillList";
@@ -12,10 +14,12 @@ interface Props {
 }
 
 function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
+  const currentSkill = useRecoilValue(currentSkillState);
+
   return (
     <StyledRoot>
       <CategoryAndSkillWrapper>
-        <Title>강의 분야</Title>
+        <Title currentSkillId={currentSkill?.id || -1}>강의 분야</Title>
         <CategoryList onCategoryClick={onCategoryClick} />
         <SkillList onSkillClick={onSkillClick} />
         <Link href="/request" passHref>

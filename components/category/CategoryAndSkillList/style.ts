@@ -15,11 +15,13 @@ const CategoryAndSkillWrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled.h1<{ currentSkillId: number | null | undefined }>`
   font-size: 3.6rem;
   font-family: "Pretendard-Bold";
   color: ${colors.subBlack};
-  margin-top: 6.4rem;
+  margin-top: ${({ currentSkillId }) =>
+    currentSkillId && currentSkillId !== -1 ? "12.4rem" : "6.4rem"};
+
   margin-bottom: 3.6rem;
 `;
 

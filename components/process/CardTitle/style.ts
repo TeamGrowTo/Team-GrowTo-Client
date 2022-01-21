@@ -7,6 +7,7 @@ import {
   ProgressTimeM,
 } from "public/assets/icons";
 import styled from "styled-components";
+import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ export const CardText = styled.div`
   margin-left: 6.4rem;
   font-size: 2rem;
   line-height: 3rem;
+  color: ${colors.gray6};
   & > p:first-child {
     font-family: "Pretendard-Regular";
   }
