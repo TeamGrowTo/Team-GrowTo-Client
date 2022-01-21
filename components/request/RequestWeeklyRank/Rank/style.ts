@@ -24,6 +24,12 @@ const Wrapper = styled.div`
   align-items: center;
 
   position: relative;
+  z-index: -1;
+
+  /* & > svg {
+    position: absolute;
+    left: 16.4rem;
+  } */
 `;
 
 const Line = styled(RequestRankLine)`

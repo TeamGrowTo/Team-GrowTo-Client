@@ -15,7 +15,7 @@ function SkillList({ onSkillClick }: Props) {
 
   return (
     <StyledRoot>
-      {currentCategory?.id === -1 ? (
+      {!currentCategory || currentCategory?.id === -1 ? (
         <NotSelectedCategory>강의 분야 {">"} 세부 분야를 선택해주세요</NotSelectedCategory>
       ) : (
         <SkillWrapper>
