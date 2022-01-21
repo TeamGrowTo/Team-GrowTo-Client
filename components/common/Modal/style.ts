@@ -44,5 +44,6 @@ export const Wrapper = styled.div`
     font-family: "Pretendard-Bold";
     margin-top: 7.9rem;
     border-radius: 4.8rem;
+    cursor: pointer;
   }
 `;
