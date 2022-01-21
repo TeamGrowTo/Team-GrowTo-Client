@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   position: relative;
+  z-index: -1;
 
   /* & > svg {
     position: absolute;
