@@ -143,13 +143,13 @@ function Category() {
   useEffect(() => {
     setLectureCategory();
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
-    setCurrentSkill({ id: 1, skillName: "" });
+    setCurrentSkill({ id: -1, skillName: "" });
     // setCategoryList(dummyCategoryList);
   }, []);
 
   return (
     <div>
-      {category?.id !== -1 && currentSkill?.id && <RedirectProcessButton />}
+      {category?.id !== -1 && currentSkill?.id !== -1 && <RedirectProcessButton />}
       <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
       <Background>
         <Result />

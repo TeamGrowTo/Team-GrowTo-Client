@@ -2,9 +2,8 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 
 const StyledRoot = styled.article`
-  width: 104rem;
-  height: 6.2rem;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 1.6rem;
   & > * {
     margin-right: 1.6rem;
@@ -15,8 +14,8 @@ const StyledRoot = styled.article`
 `;
 
 const Category = styled.button<{ isSelected: boolean }>`
-  width: 100%;
-  height: 100%;
+  width: 16rem;
+  height: 6.2rem;
   border-radius: 1.2rem;
   text-align: center;
   font-size: 1.8rem;
