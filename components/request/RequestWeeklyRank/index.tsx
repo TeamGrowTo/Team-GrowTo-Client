@@ -1,4 +1,4 @@
-import { getLectureWeeklyRank } from "pages/apis/lectures.api";
+import { getLectureWeeklyRank } from "apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { LectureRankData } from "types/lectures.type";
 

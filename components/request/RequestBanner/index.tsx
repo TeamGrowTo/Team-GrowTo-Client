@@ -1,4 +1,4 @@
-import { getLectureTotalNumber } from "pages/apis/count.api";
+import { getLectureTotalNumber } from "apis/count.api";
 import React, { useEffect, useState } from "react";
 
 import { StyledRoot, Wrapper } from "./style";
