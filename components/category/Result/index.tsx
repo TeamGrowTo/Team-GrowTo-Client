@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { currentCategoryState, currentSkillState, lectureDataList } from "store/state";
+import { currentSkillState, lectureDataList } from "store/state";
 
 import CardListContainer from "../CardListContainer";
 import SortingBox from "../SortingBox";

@@ -3,7 +3,11 @@ import { colors } from "styles/colors";
 
 const StyledRoot = styled.main`
   margin-top: 4.8rem;
-  width: 128rem;
+  /* width: 128rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ImgWrapper = styled.div`

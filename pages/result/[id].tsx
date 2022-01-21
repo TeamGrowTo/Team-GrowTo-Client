@@ -20,6 +20,7 @@ import {
 } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import Screen from "styles/Screen";
 import { LectureResultData, LecturesResultAllData } from "types/lectures.type";
 
 // type Answer = "fast" | "middle" | "slow";
@@ -148,14 +149,26 @@ function Category() {
       <ResultShareButton />
       <MiddleNotification />
       <Result />
-      <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem">
-        다른 강의 비교하기
-      </BlueButton>
+      <Screen desktop>
+        <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem" fontSize="1.6rem">
+          다른 강의 비교하기
+        </BlueButton>
+      </Screen>
+      <Screen mobile>
+        <BlueButton
+          onClick={handleMoveToCategory}
+          width="96%"
+          fontSize="1.6rem"
+          height="4rem"
+          maxWidth="32.8rem"
+        >
+          다른 강의 비교하기
+        </BlueButton>
+      </Screen>
       <Question />
     </StyledRoot>
   );
 }
-
 export default Category;
 
 const StyledRoot = styled.div`

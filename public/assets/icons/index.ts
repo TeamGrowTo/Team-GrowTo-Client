@@ -41,5 +41,6 @@ export { default as RequestRankLine } from "./requestRankLine.svg";
 export { default as ResultShareIcon } from "./resultShareIcon.svg";
 export { default as SmallArrowDown } from "./smallArrowDown.svg";
 export { default as SmallArrowUp } from "./smallArrowUp.svg";
+export { default as SmallArrowBlue } from "./smallBlueArrowRight.svg";
 export { default as SmallLogoIcon } from "./smallLogoIcon.svg";
 export { default as UpArrowIcon } from "./UpArrowIcon.svg";

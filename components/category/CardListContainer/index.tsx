@@ -16,8 +16,8 @@ function CardListContainer() {
   return (
     <StyledRoot>
       {lectureDataListState ? (
-        lectureDataListState?.map((lecture: LectureDataType, idx: number) => (
-          <CardBox key={idx} lecture={lecture} />
+        lectureDataListState?.map((lecture: LectureDataType) => (
+          <CardBox key={lecture.id} lecture={lecture} />
         ))
       ) : (
         <ImgWrapper>
