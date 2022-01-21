@@ -143,7 +143,7 @@ function Category() {
   useEffect(() => {
     setLectureCategory();
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
-    setCurrentSkill({ id: 1, skillName: "" });
+    setCurrentSkill({ id: -1, skillName: "" });
     // setCategoryList(dummyCategoryList);
   }, []);
 
