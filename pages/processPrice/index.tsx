@@ -258,13 +258,4 @@ export const LogoWrapper = styled.div`
 `;
 export const LoadingLogo = styled(ProcessLoading)`
   margin: 27.5rem auto 4.4rem;
-  animation: logoRotate 3s;
-  @keyframes logoRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 `;
