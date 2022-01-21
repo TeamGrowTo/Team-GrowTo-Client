@@ -7,13 +7,16 @@ import ResultShareButton from "components/result/ResultShareButton";
 import { useRouter } from "next/router";
 import { getLectureDataList, getLectureResultData } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
-import { useSetRecoilState } from "recoil";
+import { useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  currentSortingState,
   isDisableState,
+  isOpenState,
   lectureDataList,
   lectureResultState,
+  lectureSkillState,
 } from "store/state";
 import { LectureResultData, LecturesResultAllData } from "types/lectures.type";
 
@@ -69,6 +72,14 @@ type Result = LecturesResultAllData | null;
 function Category() {
   const router = useRouter();
 
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+  const resetLectureSkillData = useResetRecoilState(lectureSkillState);
+  const resetCategoryData = useResetRecoilState(currentCategoryState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+
   const setLectureResultList = useSetRecoilState(lectureResultState);
   const setLectureDataList = useSetRecoilState(lectureDataList);
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
@@ -121,6 +132,13 @@ function Category() {
 
   //categoryId, skillId로 api보내서 받은 response를 cardList 컴포넌트에 넣어주자
   const handleMoveToCategory = () => {
+    resetLectureListData();
+    resetSkillData();
+    resetCategoryData();
+    resetLectureSkillData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
     router.push("/category");
   };
 
