@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LeftArrowIcon } from "public/assets/icons";
 import React from "react";
 import { LectureResultData } from "types/lectures.type";
@@ -33,10 +34,12 @@ function ResultCard({ result }: Props) {
       <Info time={time} price={price} createdDate={createdDate} />
       <SubInfo replay={replay} answer={answer} />
       <Tags tags={tags} />
-      <MoreButton href={url}>
-        더보기
-        <LeftArrowIcon />
-      </MoreButton>
+      <Link href={url} passHref>
+        <MoreButton target="_blank">
+          더보기
+          <LeftArrowIcon />
+        </MoreButton>
+      </Link>
     </StyledRoot>
   );
 }
