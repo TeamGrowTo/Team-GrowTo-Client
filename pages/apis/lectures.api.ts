@@ -47,15 +47,17 @@ export const getLectureResultData = async (
   id: string | string[] | undefined,
 ): Promise<LecturesResultAllData | null> => {
   try {
+    console.log(id);
     const { data } = await serverAxios.get(`${PREFIX_URL}/result/${id}`);
-    const { lectures, category, skill }: ResponseResultProperty = data;
+    const { lectures, category, skill }: ResponseResultProperty = data.data;
 
+    console.log(lectures);
     const result = lectures.map((response: ResponseResultData) => {
       return {
         name: response.name,
         time: response.time,
         price: response.price,
-        replay: response.replay,
+        replay: response.duration,
         answer: response.reviewTime,
         createdDate: response.startYear,
         tags: response.tags,
@@ -69,7 +71,7 @@ export const getLectureResultData = async (
       skill: { id: skill.id, name: skill.name },
     };
   } catch (err) {
-    throw new Error("Failed to load lecture best result");
+    throw new Error("Failed to load custom process result");
   }
 };
 
