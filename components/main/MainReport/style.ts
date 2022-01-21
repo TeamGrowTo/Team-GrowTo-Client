@@ -11,6 +11,9 @@ const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${applyMediaQuery("mobile")} {
+    height: 22.6rem;
+  }
 `;
 
 const Wrapper = styled.div`
