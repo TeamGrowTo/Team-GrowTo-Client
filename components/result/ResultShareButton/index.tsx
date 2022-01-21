@@ -12,7 +12,7 @@ const ResultShareButton = function () {
   const handleClick = async () => {
     try {
       //배포시 배포 주소로 문자열 변경
-      await navigator.clipboard.writeText("localhost:3000" + router.asPath);
+      await navigator.clipboard.writeText("https://growto.vercel.app" + router.asPath);
       setFlagModal(true);
       document.body.style.overflow = "hidden";
     } catch {
