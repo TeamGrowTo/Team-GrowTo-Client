@@ -215,6 +215,7 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
   font-size: 2.4rem;
   font-family: "Pretendard-Bold";
   border-radius: 4.8rem;
+  padding-right: 1.7rem;
   color: ${({ selectedPrice }) => (selectedPrice.length > 0 ? "white" : `${colors.gray4}`)};
   :hover {
     cursor: pointer;
@@ -231,6 +232,7 @@ export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
   right: 4.5rem;
+  margin-right: 1.1rem;
   ${applyMediaQuery("mobile")} {
     top: 5.7rem;
     right: 1rem;
