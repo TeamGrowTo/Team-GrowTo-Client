@@ -63,7 +63,6 @@ export default function MainReport() {
     <StyledRoot>
       <Wrapper>
         <ReportSection reportInfo={TotalCompare} />
-
         <LineWrapper>
           <Screen desktop>
             <ReportLine />
@@ -72,9 +71,7 @@ export default function MainReport() {
             <ReportLine_mobile />
           </Screen>
         </LineWrapper>
-
         <ReportSection reportInfo={CustomSearch} />
-
         <LineWrapper>
           <Screen desktop>
             <ReportLine />
@@ -83,7 +80,6 @@ export default function MainReport() {
             <ReportLine_mobile />
           </Screen>
         </LineWrapper>
-
         <ReportSection reportInfo={RequestCompare} />
       </Wrapper>
     </StyledRoot>
