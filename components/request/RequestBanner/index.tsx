@@ -23,7 +23,10 @@ export default function RequestBanner() {
           여러분의 <p>&nbsp;비교요청으로</p>
         </div>
         <div>
-          그로투는 <p>&nbsp;총 {totalNumber}개</p>의 강의를 비교해왔어요!
+          <span>
+            그로투는 <p>&nbsp;총 {totalNumber}개</p>의
+          </span>
+          <span>강의를 비교해왔어요!</span>
         </div>
       </Wrapper>
     </StyledRoot>
