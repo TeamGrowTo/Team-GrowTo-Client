@@ -11,7 +11,6 @@ const StyledRoot = styled.section`
     margin: 1.6rem 1.4rem 2.5rem;
   }
 `;
-
 const TitleWrapper = styled.div`
   width: 17rem;
   height: 5.2rem;
