@@ -8,8 +8,10 @@ export const BackGround = styled.div<{ isBlur: boolean }>`
   height: 100vh;
   opacity: ${(props) => (props.isBlur ? 0.7 : undefined)};
   background-color: ${(props) => (props.isBlur ? "rgba(0,0,0,0.7)" : undefined)};
+  z-index: 99;
 `;
 export const Wrapper = styled.div`
+  z-index: 100;
   position: fixed;
   top: 0;
   right: 0;
@@ -23,6 +25,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   & > p:first-child {
     font-family: "Pretendard-Bold";
     font-size: 3.2rem;
@@ -44,5 +47,6 @@ export const Wrapper = styled.div`
     font-family: "Pretendard-Bold";
     margin-top: 7.9rem;
     border-radius: 4.8rem;
+    cursor: pointer;
   }
 `;

@@ -10,13 +10,18 @@ const ResultBox = styled.div`
 const ResultMessage = styled.h2`
   font-family: "Pretendard-SemiBold";
   display: inline;
-  font-size: 2.8rem;
+  font-size: 3rem;
   line-height: 6rem;
-  color: ${colors.subBlack};
+  color: colors.subBlack;
 `;
 
 const ResultBlueMessage = styled(ResultMessage)`
   color: ${colors.mainBlue};
+`;
+
+const NoResultMessage = styled(ResultMessage)`
+  font-family: "Pretendard-regular";
+  color: #b6b6b6;
 `;
 
 const MessageWrapper = styled.div`
@@ -26,4 +31,4 @@ const MessageWrapper = styled.div`
   padding-top: 6.8rem;
 `;
 
-export { MessageWrapper, ResultBlueMessage, ResultBox, ResultMessage };
+export { MessageWrapper, NoResultMessage, ResultBlueMessage, ResultBox, ResultMessage };

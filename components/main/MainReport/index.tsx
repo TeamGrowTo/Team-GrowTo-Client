@@ -1,18 +1,18 @@
-import ReportSection from "components/main/MainReport/ReportSection";
 import {
   getLectureFindNumber,
   getLectureRequestNumber,
   getLectureTotalNumber,
-} from "pages/apis/count.api";
+} from "apis/count.api";
+import ReportSection from "components/main/MainReport/ReportSection";
 import { FindIcon, ReportLine, RequestIcon, TotalIcon } from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 
 import { LineWrapper, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
-  const [totalNumber, setTotalNumber] = useState(250);
-  const [findNumber, setFindNumber] = useState(3500);
-  const [requestNumber, setRequestNumber] = useState(99);
+  const [totalNumber, setTotalNumber] = useState(82);
+  const [findNumber, setFindNumber] = useState(77);
+  const [requestNumber, setRequestNumber] = useState(74);
 
   const ReportNumber = async () => {
     const nowTotalNumber = await getLectureTotalNumber();
@@ -24,9 +24,9 @@ export default function MainReport() {
     nowRequestNumber && setRequestNumber(nowRequestNumber);
   };
 
-  // useEffect(() => {
-  //   ReportNumber();
-  // }, []);
+  useEffect(() => {
+    ReportNumber();
+  }, []);
 
   const TotalCompare = {
     UniqueIcon: TotalIcon,

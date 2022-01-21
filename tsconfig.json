@@ -24,7 +24,7 @@
       "types": ["types"],
       "pages/*": ["pages/*"],
       "assets/*": ["public/assets/*"],
-      "apis/*": ["pages/apis/*"],
+      "apis/*": ["apis/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
