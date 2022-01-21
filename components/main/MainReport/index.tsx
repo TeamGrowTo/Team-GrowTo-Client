@@ -4,7 +4,7 @@ import {
   getLectureTotalNumber,
 } from "apis/count.api";
 import ReportSection from "components/main/MainReport/ReportSection";
-import { FindIcon, ReportLine, RequestIcon, TotalIcon } from "public/assets/icons";
+import { ReportLine } from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 
 import { LineWrapper, StyledRoot, Wrapper } from "./style";
