@@ -28,6 +28,7 @@ const Wrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     height: 14.6rem;
+    border-radius: 1.8rem;
   }
 `;
 
