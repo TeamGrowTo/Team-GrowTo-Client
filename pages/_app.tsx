@@ -1,3 +1,5 @@
+import "public/assets/fonts/font.css";
+
 import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "styled-components";

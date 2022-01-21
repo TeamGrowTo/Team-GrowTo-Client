@@ -1,5 +1,7 @@
-import reset from "styled-reset";
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+
+import { applyMediaQuery } from "./mediaQuery";
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -10,8 +12,13 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
   }
   body{
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: "Pretendard-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin-top: 11.6rem;
+    ${applyMediaQuery("mobile")} {
+      margin-top: 4.8rem;
+    } 
   }
+
   a {
     color: inherit;
     text-decoration: none;
