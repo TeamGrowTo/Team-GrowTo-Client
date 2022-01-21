@@ -34,7 +34,9 @@ function ProcessTime() {
   }, []);
   const handleTimeClick = (timeType: string) => {
     setSelectedTime(timeType);
-    Router.replace("/processPrice");
+    setTimeout(() => {
+      Router.replace("/processPrice");
+    }, 1000);
   };
 
   useEffect(() => {

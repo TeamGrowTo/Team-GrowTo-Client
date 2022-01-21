@@ -149,7 +149,9 @@ function Category() {
 
   return (
     <div>
-      {category?.id !== -1 && currentSkill?.id !== -1 && <RedirectProcessButton />}
+      {category && category?.id !== -1 && currentSkill && currentSkill?.id !== -1 && (
+        <RedirectProcessButton />
+      )}
       <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
       <Background>
         <Result />

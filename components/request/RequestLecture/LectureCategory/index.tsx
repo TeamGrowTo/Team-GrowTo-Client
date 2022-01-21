@@ -38,13 +38,18 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
       <LectureCategoryBox>
         <p>강의 분야*</p>
         <CategoryWrapper>
-          <CategoryButton type="button" open={open} categorySelected={categorySelected}>
+          <CategoryButton
+            type="button"
+            open={open}
+            categorySelected={categorySelected}
+            onClick={handleDropdown}
+          >
             {categorySelected == "" ? (
               <span>개발, 기획, 데이터, 디자인, 마케팅, 기타</span>
             ) : (
               <span>{categorySelected}</span>
             )}
-            <DropdownWrapper onClick={handleDropdown}>
+            <DropdownWrapper>
               <Dropdown />
             </DropdownWrapper>
           </CategoryButton>
