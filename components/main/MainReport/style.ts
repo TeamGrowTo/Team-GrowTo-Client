@@ -34,6 +34,9 @@ const Wrapper = styled.div`
 
 const LineWrapper = styled.div`
   margin-top: 1.4rem;
+  ${applyMediaQuery("mobile")} {
+    margin-top: 0;
+  }
 `;
 
 export { LineWrapper, StyledRoot, Wrapper };

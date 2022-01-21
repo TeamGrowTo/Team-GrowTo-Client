@@ -4,7 +4,7 @@ import {
   getLectureTotalNumber,
 } from "apis/count.api";
 import ReportSection from "components/main/MainReport/ReportSection";
-import { ReportLine } from "public/assets/icons";
+import { ReportLine, ReportLine_mobile } from "public/assets/icons";
 import {
   FindIcon,
   FindIcon_mobile,
@@ -14,6 +14,7 @@ import {
   TotalIcon_mobile,
 } from "public/assets/images";
 import React, { useEffect, useState } from "react";
+import Screen from "styles/Screen";
 
 import { LineWrapper, StyledRoot, Wrapper } from "./style";
 
@@ -62,13 +63,27 @@ export default function MainReport() {
     <StyledRoot>
       <Wrapper>
         <ReportSection reportInfo={TotalCompare} />
+
         <LineWrapper>
-          <ReportLine />
+          <Screen desktop>
+            <ReportLine />
+          </Screen>
+          <Screen mobile>
+            <ReportLine_mobile />
+          </Screen>
         </LineWrapper>
+
         <ReportSection reportInfo={CustomSearch} />
+
         <LineWrapper>
-          <ReportLine />
+          <Screen desktop>
+            <ReportLine />
+          </Screen>
+          <Screen mobile>
+            <ReportLine_mobile />
+          </Screen>
         </LineWrapper>
+
         <ReportSection reportInfo={RequestCompare} />
       </Wrapper>
     </StyledRoot>
