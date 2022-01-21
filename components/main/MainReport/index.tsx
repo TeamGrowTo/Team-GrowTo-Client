@@ -1,9 +1,9 @@
-import ReportSection from "components/main/MainReport/ReportSection";
 import {
   getLectureFindNumber,
   getLectureRequestNumber,
   getLectureTotalNumber,
-} from "pages/apis/count.api";
+} from "apis/count.api";
+import ReportSection from "components/main/MainReport/ReportSection";
 import { FindIcon, ReportLine, RequestIcon, TotalIcon } from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 

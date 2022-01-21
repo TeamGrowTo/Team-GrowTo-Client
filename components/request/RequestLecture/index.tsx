@@ -1,5 +1,5 @@
+import { postLectureRequest } from "apis/lectures.api";
 import Modal from "components/common/Modal";
-import { postLectureRequest } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { lectureCategoryState } from "store/state";
