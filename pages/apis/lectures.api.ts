@@ -47,11 +47,9 @@ export const getLectureResultData = async (
   id: string | string[] | undefined,
 ): Promise<LecturesResultAllData | null> => {
   try {
-    console.log(id);
     const { data } = await serverAxios.get(`${PREFIX_URL}/result/${id}`);
     const { lectures, category, skill }: ResponseResultProperty = data.data;
 
-    console.log(lectures);
     const result = lectures.map((response: ResponseResultData) => {
       return {
         name: response.name,
@@ -84,8 +82,6 @@ export const postLectureRequest = async (postData: IPostRequest) => {
     });
 
     if (data.status === 200) {
-      console.log(data);
-
       return data.data;
     }
   } catch (err) {
@@ -100,8 +96,6 @@ export const postProcessResult = async (processData: ProcessDataState) => {
         "Content-Type": "application/json",
       },
     });
-
-    console.log(data.data);
 
     return data.data;
   } catch (err) {
@@ -146,10 +140,7 @@ export const getSortingLectureDataList = async (
   );
 
   if (apiResponse.status === 200) {
-    console.log(apiResponse);
     const { data } = apiResponse.data;
-
-    console.log(data);
 
     return data.map((data: ResponseLectureDataType) => {
       return {
