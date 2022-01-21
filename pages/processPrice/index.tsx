@@ -57,7 +57,6 @@ function ProcessPrice() {
   };
 
   const handleResult = async () => {
-    console.log(processData);
     const resultData = await postProcessResult(processData);
 
     setIsLoading(true);
