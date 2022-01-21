@@ -8,8 +8,7 @@ function Share() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const shareUrl = async () => {
     try {
-      //임시 url, 나중에 도메인 링크로 변경 예정
-      await navigator.clipboard.writeText("http://localhost:3000/");
+      await navigator.clipboard.writeText("https://growto.vercel.app/");
       setIsModalOpen(true);
       document.body.style.overflow = "hidden";
     } catch {
