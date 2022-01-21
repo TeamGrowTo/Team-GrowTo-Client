@@ -34,7 +34,7 @@ function ProcessTime() {
   }, []);
   const handleTimeClick = (timeType: string) => {
     setSelectedTime(timeType);
-    Router.push("/processPrice");
+    Router.replace("/processPrice");
   };
 
   useEffect(() => {

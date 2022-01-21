@@ -43,15 +43,10 @@ function ProcessTag() {
       data && setTagList(data);
       setTagList(data);
     }
-    // const data = await getSkillTagList(402);
-
-    // data && setTagList(data);
   };
 
   useEffect(() => {
     getTagList();
-    // setTagList(mockData);
-    console.log(categoryState?.categoryName);
     const tempProcessData = { ...processData };
 
     if (skillState?.skillName) {
@@ -122,7 +117,7 @@ function ProcessTag() {
             ))}
           </TagWrapper>
         </CardChoice>
-        <Link href="/processTime" passHref>
+        <Link href="/processTime" replace passHref>
           <NextButtonWrapper>
             <NextButton
               onClick={handleNext}

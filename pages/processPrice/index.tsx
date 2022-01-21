@@ -69,7 +69,7 @@ function ProcessPrice() {
       priceAsc: undefined,
     });
     setTimeout(() => {
-      Router.push(`/result/${resultData.id}`);
+      Router.replace(`/result/${resultData.id}`);
     }, 3000);
   };
 
