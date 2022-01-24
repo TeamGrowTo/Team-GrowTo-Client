@@ -21,6 +21,7 @@ export { default as MainLectureMarketingIcon } from "./mainLectureMarketingIcon.
 export { default as MainLecturePlanIcon } from "./mainLecturePlanIcon.svg";
 export { default as ReportLine } from "./mainReportLine.svg";
 export { default as ReportLine_mobile } from "./mainReportLine-mobile.svg";
+export { default as MobileResultShareIcon } from "./mobileResultShareIcon.svg";
 export { default as NextArrowAble } from "./nextArrowAble.svg";
 export { default as NextArrowDisabled } from "./nextArrowDisabled.svg";
 export { default as NotiIcon } from "./notiIcon.svg";
