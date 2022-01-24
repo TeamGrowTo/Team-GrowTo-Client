@@ -44,11 +44,9 @@ const NavMenuListItem = styled.li`
   letter-spacing: -0.05em;
 
   color: #606060;
-  & > a {
-    display: inline-block;
-    width: 100%;
-  }
+
   & button {
+    font-family: "Pretendard-SemiBold";
     width: 100%;
     cursor: pointer;
   }
@@ -57,4 +55,9 @@ const NavMenuListItem = styled.li`
   }
 `;
 
-export { ButtonWrapper, NavMenuList, NavMenuListItem, StyledRoot };
+const LinkA = styled.a`
+  display: inline-block;
+  width: 100%;
+`;
+
+export { ButtonWrapper, LinkA, NavMenuList, NavMenuListItem, StyledRoot };

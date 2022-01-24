@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { LogoIcon } from "public/assets/icons";
 import React from "react";
-import { useResetRecoilState } from "recoil";
+import { useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
@@ -11,6 +11,7 @@ import {
   isOpenState,
   lectureDataList,
   lectureSkillState,
+  processState,
 } from "store/state";
 
 import { LogoWrapper, NavItem, NavItemBox, NavItemWrapper, StyledRoot } from "./style";
@@ -24,6 +25,7 @@ function LargeNavBar() {
   const resetIsDisable = useResetRecoilState(isDisableState);
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetProcessData = useSetRecoilState(processState);
 
   const handleResetLectureData = () => {
     resetLectureListData();
@@ -33,13 +35,20 @@ function LargeNavBar() {
     resetIsDisable();
     resetIsOpen();
     resetCurrentSorting();
+    resetProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
   };
 
   return (
     <StyledRoot>
       <NavItemBox>
         <Link href="/" passHref>
-          <LogoWrapper>
+          <LogoWrapper onClick={handleResetLectureData}>
             <LogoIcon />
           </LogoWrapper>
         </Link>
