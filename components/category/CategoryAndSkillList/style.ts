@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
   width: 100%;
@@ -9,10 +10,6 @@ const StyledRoot = styled.section`
 
 const CategoryAndSkillWrapper = styled.div`
   width: 128rem;
-  & > a {
-    display: flex;
-    justify-content: end;
-  }
 `;
 
 const Title = styled.h1<{ currentSkillId: number | null | undefined }>`
@@ -25,16 +22,25 @@ const Title = styled.h1<{ currentSkillId: number | null | undefined }>`
   margin-bottom: 3.6rem;
 `;
 
-const RedirectRequestPage = styled.a`
-  border: 0;
-  font-size: 1.4rem;
-  font-family: "Pretendard-Regular";
-  color: ${colors.gray6};
-  margin-bottom: 4.3rem;
-  cursor: pointer;
-  & > svg {
-    margin-left: 1rem;
+const LinkWrapper = styled.div`
+  display: flex;
+  ${applyMediaQuery("desktop")} {
+    justify-content: end;
   }
 `;
 
-export { CategoryAndSkillWrapper, RedirectRequestPage, StyledRoot, Title };
+const RedirectRequestPage = styled.a`
+  ${applyMediaQuery("desktop")} {
+    border: 0;
+    font-size: 1.4rem;
+    font-family: "Pretendard-Regular";
+    color: ${colors.gray6};
+    margin-bottom: 4.3rem;
+    cursor: pointer;
+    & > svg {
+      margin-left: 1rem;
+    }
+  }
+`;
+
+export { CategoryAndSkillWrapper, LinkWrapper, RedirectRequestPage, StyledRoot, Title };

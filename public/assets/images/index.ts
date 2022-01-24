@@ -15,3 +15,5 @@ export { default as MainReviewProfile3 } from "./mainReviewProfile3.svg";
 export { default as MainReviewProfile4 } from "./mainReviewProfile4.svg";
 export { default as MainReviewProfile5 } from "./mainReviewProfile5.svg";
 export { default as MainReviewProfile6 } from "./mainReviewProfile6.svg";
+export { default as MobileCategory } from "./mobileCategory.svg";
+export { default as MobileCategoryTab } from "./mobileCategoryTab.png";
