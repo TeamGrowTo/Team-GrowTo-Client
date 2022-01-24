@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { MobileCategory, MobileCategoryTab } from "public/assets/images";
+import { MobileCategoryTab } from "public/assets/images";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentCategoryState, currentSkillState } from "store/state";
@@ -21,7 +20,7 @@ function MobileCategoryAndSkill({ onClick }: Props) {
       }}
     >
       <Category>
-        <MobileCategory />
+        <MobileCategoryTab />
         <div></div>
         <text>
           {currentCategory && currentCategory?.categoryName !== ""
