@@ -10,6 +10,7 @@ const StyledRoot = styled.section`
   justify-content: center;
   ${applyMediaQuery("mobile")} {
     padding-top: 0rem;
+    width: 50rem;
   }
 `;
 

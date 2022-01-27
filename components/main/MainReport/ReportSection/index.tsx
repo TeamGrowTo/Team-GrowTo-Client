@@ -5,8 +5,8 @@ import { Count, Data, StyledRoot, Title, TitleWrapper, Unit } from "./style";
 //props의 타입 정의
 interface IProps {
   reportInfo: {
-    Icon: string;
-    mobileIcon: string;
+    Icon: StaticImageData;
+    mobileIcon: StaticImageData;
     title: string;
     count: number;
     unit: string;
