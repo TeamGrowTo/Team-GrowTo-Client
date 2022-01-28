@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.button`
   position: fixed;
@@ -24,6 +25,13 @@ const StyledRoot = styled.button`
     line-height: 1.9rem;
     font-size: 1.6rem;
     font-family: "Pretendard-Bold";
+  }
+
+  ${applyMediaQuery("mobile")} {
+    width: 4rem;
+    height: 4rem;
+    bottom: 1.6rem;
+    right: 2.6rem;
   }
 `;
 
