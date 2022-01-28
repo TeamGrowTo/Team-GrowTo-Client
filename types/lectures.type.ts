@@ -1,18 +1,30 @@
-type Answer = "Fast" | "Middle" | "Slow";
+// type Answer = "Fast" | "Middle" | "Slow";
 
+export interface PostLectureReportData {
+  difference: number;
+  lectureName: string;
+  description: string;
+  email: string;
+}
+
+interface ItemObj {
+  id: number;
+  name: string;
+}
 export interface ResponseResultProperty {
   lectures: ResponseResultData[];
-  categoryId: number;
-  skillId: number;
+  category: ItemObj;
+  skill: ItemObj;
 }
 
 export interface ResponseResultData {
   name: string;
   time: number;
   price: number;
-  replay: boolean;
-  reviewTime: Answer;
-  startYear: string;
+  hasPreview?: string;
+  reviewTime: string;
+  startYear: number;
+  duration: number;
   tags: string[];
   url: string;
 }
@@ -21,17 +33,17 @@ export interface LectureResultData {
   name: string;
   time: number;
   price: number;
-  replay: boolean;
-  answer: Answer;
-  createdDate: string;
+  replay: number;
+  answer: string;
+  createdDate: number;
   tags: string[];
   url: string;
 }
 
 export interface LecturesResultAllData {
   result: LectureResultData[];
-  categoryId: number;
-  skillId: number;
+  category: ItemObj;
+  skill: ItemObj;
 }
 
 export interface LectureCompareRequest {
@@ -52,6 +64,13 @@ export interface ProcessDataState {
   tags: string[];
   timeAsc: boolean | null | undefined;
   priceAsc: boolean | null | undefined;
+}
+
+export interface LectureRankData {
+  id: number;
+  name: string;
+  skill: string;
+  number: number;
 }
 
 export interface CurrentCompareData {
