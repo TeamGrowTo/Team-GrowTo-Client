@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
   position: fixed;
@@ -13,6 +14,21 @@ const StyledRoot = styled.section`
   flex-direction: column;
   background-color: white;
   border-radius: 2.8rem;
+  ${applyMediaQuery("mobile")} {
+    /* top: 21rem; */
+    /* margin: 10.4rem 0 5.6rem 0; */
+    margin-top: 4.8rem;
+    padding: 1.6rem;
+    padding-top: 2.4rem;
+    width: 32.8rem;
+    height: 53rem;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -22,9 +38,21 @@ const TitleWrapper = styled.div`
   & > p {
     font-size: 2.9rem;
     font-family: "Pretendard-Bold";
-    color: #5262ff;
-    //색 이름 정해달라고 말씀드리기
+    color: ${colors.mainBlue};
     margin-bottom: 3.2rem;
+  }
+  ${applyMediaQuery("mobile")} {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.9rem;
+    margin: 0;
+    margin-bottom: 2.4rem;
+    & > p {
+      font-size: 2rem;
+      margin: 0;
+    }
   }
 `;
 
@@ -32,21 +60,37 @@ const Title = styled.h3`
   color: ${colors.gray5};
   font-size: 2.9rem;
   font-family: "Pretendard-Bold";
-  line-height: 3.8rem;
   margin-bottom: 1rem;
+  ${applyMediaQuery("mobile")} {
+    width: 15rem;
+    font-size: 1.6rem;
+    margin: 0;
+    text-align: center;
+  }
 `;
 
 const InputWrapper = styled.form`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const EssentialInput = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+  }
   & > * {
     margin-bottom: 3.2rem;
+    ${applyMediaQuery("mobile")} {
+      margin-bottom: 2rem;
+    }
   }
   & > *:end-child {
     margin-bottom: 0;
@@ -58,6 +102,9 @@ const TextArea = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+  }
 `;
 
 const ReportButton = styled.button<{ isBlank: boolean }>`
@@ -80,6 +127,13 @@ const ReportButton = styled.button<{ isBlank: boolean }>`
           color: white;
           cursor: pointer;
         `}
+
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.6rem;
+    width: 100%;
+    height: 4.8rem;
+    margin-bottom: 1.6rem;
+  }
 `;
 
 const Line = styled.div`
