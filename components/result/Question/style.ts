@@ -9,6 +9,8 @@ const BackGround = styled.div`
   opacity: 0.7;
   width: 100vw;
   height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 export { BackGround };

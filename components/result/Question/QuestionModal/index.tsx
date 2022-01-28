@@ -1,5 +1,6 @@
 import { postLectureReport } from "apis/lectures.api";
 import React, { useState } from "react";
+import Screen from "styles/Screen";
 
 import DescriptionInput from "./DescriptionInput";
 import DropdownInput from "./DropdownInput";
@@ -100,7 +101,9 @@ function QuestionModal({ onCloseModal }: Props) {
               <LectureNameInput onLectureNameChange={handleLectureName} lectureName={lectureName} />
               <EmailInput onEmailChange={handleEmail} email={email} />
             </EssentialInput>
-            <Line />
+            <Screen desktop>
+              <Line />
+            </Screen>
             <TextArea>
               <DescriptionInput
                 onDescriptionInputClick={handleDescription}
