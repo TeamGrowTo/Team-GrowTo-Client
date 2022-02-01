@@ -1,12 +1,13 @@
+import Image from "next/image";
 import { getLectureCategoryData } from "pages/apis/info.api";
 import {
   MainLectureDataIcon,
   MainLectureDesignIcon,
-  MainLectureDeveloperIcon,
+  MainLectureDevelopIcon,
   MainLectureEtcIcon,
   MainLectureMarketingIcon,
   MainLecturePlanIcon,
-} from "public/assets/icons";
+} from "public/assets/images";
 import React, { useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { currentCategoryState, lectureCategoryState } from "store/state";
@@ -24,8 +25,8 @@ const dummy: LectureCategoryData[] = [
   { id: 6, categoryName: "기타" },
 ];
 
-const svgList: React.FunctionComponent<React.SVGProps<SVGSVGElement>>[] = [
-  MainLectureDeveloperIcon,
+const iconList: StaticImageData[] = [
+  MainLectureDevelopIcon,
   MainLecturePlanIcon,
   MainLectureDataIcon,
   MainLectureDesignIcon,
@@ -62,9 +63,9 @@ const MainLectureCategory = function () {
       <h3>내가 찾고 싶은 강의 분야는?</h3>
       <small>10초면 내게 맞는 강의를 찾을 수 있어요.</small>
       <CategoryWrapper>
-        {categoryList?.map((category) => (
+        {categoryList?.map((category, index) => (
           <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
-            <MainLectureDeveloperIcon />
+            <Image src={iconList[index]} alt="categoryIcon" />
             <span>{category.categoryName}</span>
           </Category>
         ))}

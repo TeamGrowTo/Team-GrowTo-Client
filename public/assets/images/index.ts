@@ -1,5 +1,11 @@
 export { default as ComparisonImg } from "./comparisonImg.png";
 export { default as MainBannerCompass } from "./mainBannerCompass.png";
+export { default as MainLectureDataIcon } from "./mainLectureCategoryDataIcon.png";
+export { default as MainLectureDesignIcon } from "./mainLectureCategoryDesignIcon.png";
+export { default as MainLectureDevelopIcon } from "./mainLectureCategoryDevelopIcon.png";
+export { default as MainLectureEtcIcon } from "./mainLectureCategoryEtcIcon.png";
+export { default as MainLectureMarketingIcon } from "./mainLectureCategoryMarketingIcon.png";
+export { default as MainLecturePlanIcon } from "./mainLectureCategoryPlanIcon.png";
 export { default as MainReportBackground } from "./mainReportBackground.png";
 export { default as MainReviewBackground } from "./mainReviewBackground.png";
 export { default as MainReviewProfile1 } from "./mainReviewProfile1.svg";
