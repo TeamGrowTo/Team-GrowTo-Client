@@ -1,5 +1,5 @@
+import { getLectureCategoryData } from "apis/info.api";
 import Image from "next/image";
-import { getLectureCategoryData } from "pages/apis/info.api";
 import {
   MainLectureDataIcon,
   MainLectureDesignIcon,

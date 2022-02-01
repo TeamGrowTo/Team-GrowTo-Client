@@ -36,8 +36,6 @@ export const getLectureSkillData = async (id: number): Promise<LectureSkillData[
       },
     });
 
-    console.log(data);
-
     return data.data.map((response: ResponseSkillData) => {
       return { id: response.id, skillName: response.name };
     });
@@ -48,50 +46,18 @@ export const getLectureSkillData = async (id: number): Promise<LectureSkillData[
 
 export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null> => {
   try {
-    const { data } = await serverAxios.get(`${PREFIX_URL}/${id}/tags`);
-
-    console.log(data);
-
-    return data.data;
-  } catch (err) {
-    return null;
-  }
-};
-
-export const getLectureDataList = async (
-  categoryId: number | null,
-  skillId: number | null,
-  ordering = "",
-): Promise<LectureDataListType | null> => {
-  try {
-    const apiResponse = await serverAxios.get(
-      `${PREFIX_URL}/lectures/${categoryId}/${skillId}?ordering=${ordering}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
+    const { data } = await serverAxios.get(`${PREFIX_URL}/${id}/tags`, {
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+    });
 
-    if (apiResponse.status === 200) {
-      const { data } = apiResponse;
-
-      return data.map((data: ResponseLectureDataType) => {
-        return {
-          LectureTitle: data.name,
-          time: data.time,
-          price: data.price,
-          reviewTime: data.reviewTime,
-          duration: data.duration,
-          startYear: data.startYear,
-          tags: data.tags,
-          url: data.url,
-        };
-      });
+    if (data.status === 200) {
+      return data.data;
     } else {
-      throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
+      return null;
     }
   } catch (err) {
-    throw new Error("강의 정보를 불러오는데 문제가 발생했습니다.");
+    return null;
   }
 };

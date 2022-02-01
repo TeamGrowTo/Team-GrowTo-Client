@@ -37,12 +37,13 @@ export interface LectureDataType {
   time: number;
   price: number;
   reviewTime: string;
-  duration: string;
-  startYear: string;
+  duration: number;
+  startYear: number;
   tags: string[];
   url: string;
 }
 
 export interface LectureDataListType {
+  // map: (lecture: LectureDataType) => JSX.Element[];
   data: LectureDataType[];
 }

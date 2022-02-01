@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
-
+import { applyMediaQuery } from "styles/mediaQuery";
 const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,6 +23,18 @@ const StyledRoot = styled.div`
     line-height: 2.2rem;
     font-family: "Pretendard-Regular";
   }
+  ${applyMediaQuery("mobile")} {
+    margin-top: 4rem;
+    margin-bottom: 5.6rem;
+    & > h3 {
+      font-size: 1.8rem;
+      line-height: 1rem;
+    }
+    & > small {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
 `;
 
 const CategoryWrapper = styled.div`
@@ -40,6 +52,9 @@ const CategoryWrapper = styled.div`
   }
   & > *:last-child {
     margin: 0;
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 30.2rem;
   }
 `;
 

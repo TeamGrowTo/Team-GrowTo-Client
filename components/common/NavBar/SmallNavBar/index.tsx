@@ -1,14 +1,33 @@
 import Link from "next/link";
 import { CloseButton, HamburgerIcon, SmallLogoIcon } from "public/assets/icons";
 import React, { useState } from "react";
+import { useResetRecoilState } from "recoil";
+import {
+  currentCategoryState,
+  currentSkillState,
+  lectureDataList,
+  lectureSkillState,
+} from "store/state";
 
-import { ButtonWrapper, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
+import { ButtonWrapper, LinkA, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
 
 function SmallNavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+  const resetLectureSkillData = useResetRecoilState(lectureSkillState);
+  const resetCategoryData = useResetRecoilState(currentCategoryState);
+
+  const handleResetLectureData = () => {
+    resetLectureListData();
+    resetSkillData();
+    resetCategoryData();
+    resetLectureSkillData();
   };
 
   return (
@@ -24,13 +43,20 @@ function SmallNavBar() {
           {isOpen && (
             <NavMenuList>
               <NavMenuListItem>
-                <Link href="/category">전체강의</Link>
+                <Link href="/category" passHref>
+                  <LinkA onClick={handleResetLectureData}>전체강의</LinkA>
+                </Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/choiceRequest">비교요청</Link>
+                <Link href="/request">비교요청</Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/about">ABOUT</Link>
+                <Link
+                  href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+                  passHref
+                >
+                  <LinkA target="_blank">ABOUT</LinkA>
+                </Link>
               </NavMenuListItem>
             </NavMenuList>
           )}

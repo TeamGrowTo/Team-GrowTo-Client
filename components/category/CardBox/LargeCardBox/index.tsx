@@ -25,47 +25,46 @@ interface Props {
 function LargeCardBox({ lecture }: Props) {
   const { LectureTitle, time, price, duration, reviewTime, startYear, tags, url } = lecture;
 
+  //총 소요시간 -1 : 미표기
+  // 개설연도 -1 : 미표기
+  // 반복시청 가능 기간 : 100,000,000 : 무제한
+  // 가격단위 : 만원으로 변환 ex 19000원 => 1.9만원
   return (
     <StyledRoot>
       <LectureTitleBox>
-        <LectureTitleName>퍼포먼스 마케팅 데이터로 완전 정복, {LectureTitle}</LectureTitleName>
+        <LectureTitleName>{LectureTitle}</LectureTitleName>
       </LectureTitleBox>
       <LectureInfoBox>
         <LectureInfoWrapper>
           <LectureInfoName>총 소요시간</LectureInfoName>
-          <LectureInfoData>55시간 {time}</LectureInfoData>
+          <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
           <LectureInfoName>질문 응답시간</LectureInfoName>
-          <LectureInfoData>빠름{reviewTime}</LectureInfoData>
+          <LectureInfoData>{reviewTime}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
           <LectureInfoName>가격</LectureInfoName>
-          <LectureInfoData>20만원 {price}</LectureInfoData>
+          <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
           <LectureInfoName>반복 시청 기간</LectureInfoName>
-          <LectureInfoData>무제한{duration}</LectureInfoData>
+          <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
         </LectureInfoWrapper>
       </LectureInfoBox>
       <LectureDateBox>
         <LectureInfoName>개설일</LectureInfoName>
-        <LectureInfoData>2022{startYear}</LectureInfoData>
+        <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
       </LectureDateBox>
       <LectureTagBox>
         <TagWrapper>
           {tags.map((tag) => (
             <LectureTag key={tag}>{tag}</LectureTag>
           ))}
-          <LectureTag>실습프로젝트20종</LectureTag>
-          <LectureTag>광고집행툴</LectureTag>
-          <LectureTag>앱 마케팅</LectureTag>
-          <LectureTag>데이터수집추적분석툴</LectureTag>
-          <LectureTag>웹 최적화</LectureTag>
         </TagWrapper>
       </LectureTagBox>
       <Link href={url} passHref>
-        <LectureLinkBtn>
+        <LectureLinkBtn target="_blank">
           <ArrowRight />
         </LectureLinkBtn>
       </Link>

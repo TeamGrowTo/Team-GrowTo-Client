@@ -1,19 +1,25 @@
-import { DownArrowIcon, UpArrowIcon } from "public/assets/icons";
+import {
+  DownArrowIcon,
+  MobileResultDropdownIcon,
+  MobileResultDropupIcon,
+  UpArrowIcon,
+} from "public/assets/icons";
 import React from "react";
+import Screen from "styles/Screen";
 
 import InputForm from "../InputForm";
 import { Dropdown } from "./style";
 
 interface Props {
-  dropdownList: string[];
   flagDropdown: boolean;
+  difference: number;
   onFlagDropdownClick: () => void;
-  difference: string;
   onDifferenceChange: (index: number) => void;
 }
 
+const dropdownList = ["강의 가격", "강의 정보", "사라진 강의"];
+
 function DropdownInput({
-  dropdownList,
   flagDropdown,
   onFlagDropdownClick,
   difference,
@@ -23,11 +29,20 @@ function DropdownInput({
     <InputForm
       title="어떤 내용이 달랐나요?*"
       flagDropdown={flagDropdown}
-      isDropdownBlank={difference === ""}
+      isDropdownBlank={difference === -1}
     >
       <button type="button" onClick={onFlagDropdownClick}>
-        {difference === "" ? <span>달랐던 내용을 선택해주세요</span> : <span>{difference}</span>}
-        {flagDropdown ? <UpArrowIcon /> : <DownArrowIcon />}
+        {difference === -1 ? (
+          <span>달랐던 내용을 선택해주세요</span>
+        ) : (
+          <span>{dropdownList[difference]}</span>
+        )}
+        <Screen desktop>
+          <>{flagDropdown ? <UpArrowIcon /> : <DownArrowIcon />}</>
+        </Screen>
+        <Screen mobile>
+          <>{flagDropdown ? <MobileResultDropupIcon /> : <MobileResultDropdownIcon />}</>
+        </Screen>
       </button>
       <Dropdown flagDropdown={flagDropdown}>
         {dropdownList.map((item, index) => (

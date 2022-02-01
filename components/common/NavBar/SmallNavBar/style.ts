@@ -44,12 +44,20 @@ const NavMenuListItem = styled.li`
   letter-spacing: -0.05em;
 
   color: #606060;
-  & > a {
-    display: inline-block;
+
+  & button {
+    font-family: "Pretendard-SemiBold";
+    width: 100%;
+    cursor: pointer;
   }
   &:hover {
     background-color: #f4f9ff;
   }
 `;
 
-export { ButtonWrapper, NavMenuList, NavMenuListItem, StyledRoot };
+const LinkA = styled.a`
+  display: inline-block;
+  width: 100%;
+`;
+
+export { ButtonWrapper, LinkA, NavMenuList, NavMenuListItem, StyledRoot };

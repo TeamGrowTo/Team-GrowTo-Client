@@ -1,9 +1,9 @@
+import { getSkillTagList } from "apis/info.api";
 import CardTitle from "components/process/CardTitle";
 import TagButton from "components/process/TagButton";
 import Title from "components/process/Title";
 import Image from "next/image";
 import Link from "next/link";
-import { getSkillTagList } from "pages/apis/info.api";
 import {
   NextArrowAble,
   NextArrowDisabled,
@@ -12,39 +12,40 @@ import {
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { processState } from "store/state";
+import { currentCategoryState, currentSkillState, processState } from "store/state";
+import styled from "styled-components";
+import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 import Screen from "styles/Screen";
 import { SkillTagList } from "types/info.type";
-
-import {
-  CardChoice,
-  NextArrowWrapper,
-  NextButton,
-  NextButtonWrapper,
-  PlayIcon,
-  ProcessBox,
-  SquareIcon,
-  StyledRoot,
-  TagWrapper,
-} from "./style";
-
 function ProcessTag() {
   const [tagList, setTagList] = useState<SkillTagList[] | null>(null);
 
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [processData, setProcessData] = useRecoilState(processState);
   const getTagData = useRecoilValue(processState);
-
-  const id = 1;
+  const skillState = useRecoilValue(currentSkillState);
+  const categoryState = useRecoilValue(currentCategoryState);
   const getTagList = async () => {
-    const data = await getSkillTagList(402);
+    if (skillState?.id) {
+      const data = await getSkillTagList(skillState?.id);
 
-    setTagList(data);
+      data && setTagList(data);
+      setTagList(data);
+    }
   };
 
   useEffect(() => {
     getTagList();
-    // setTagList(mockData);
+    const tempProcessData = { ...processData };
+
+    if (skillState?.skillName) {
+      tempProcessData["skill"] = skillState?.skillName;
+    }
+    if (categoryState?.categoryName) {
+      tempProcessData["category"] = categoryState?.categoryName;
+    }
+    setProcessData(tempProcessData);
 
     if (getTagData.tags.length !== 1) {
       setSelectedTags(getTagData.tags);
@@ -106,7 +107,7 @@ function ProcessTag() {
             ))}
           </TagWrapper>
         </CardChoice>
-        <Link href="/processTime" passHref>
+        <Link href="/processTime" replace passHref>
           <NextButtonWrapper>
             <NextButton
               onClick={handleNext}
@@ -212,3 +213,106 @@ const mockData = [
     name: "웹이 짱이야 마케팅",
   },
 ];
+
+export const StyledRoot = styled.section`
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
+  position: relative;
+  ${applyMediaQuery("mobile")} {
+    width: 50rem;
+  }
+`;
+export const PlayIcon = styled.div`
+  position: absolute;
+  top: 6.45rem;
+  right: 0;
+`;
+export const SquareIcon = styled.div`
+  position: absolute;
+  bottom: 7rem;
+  left: 11.1rem;
+`;
+export const ProcessBox = styled.div`
+  position: relative;
+  width: 102rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  ${applyMediaQuery("mobile")} {
+    width: 36rem;
+  }
+`;
+
+export const CardChoice = styled.section`
+  width: 102rem;
+  height: 49.3rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0 0 2.8rem 2.8rem;
+  backdrop-filter: blur(2rem);
+  border: 2px solid white;
+  ${applyMediaQuery("mobile")} {
+    width: 36rem;
+    height: 100%;
+  }
+`;
+
+export const TagWrapper = styled.div`
+  width: 77.4rem;
+  margin: 6.5rem auto 0;
+  & > p {
+    font-family: "Pretendard-Bold";
+    font-size: 2.4rem;
+    color: ${colors.subBlack};
+    margin-bottom: 2rem;
+  }
+  & > p > span {
+    color: ${colors.subOrange};
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 32.8rem;
+    margin: 3.2rem auto 0;
+    & > p {
+      font-size: 2rem;
+    }
+  }
+`;
+
+export const NextButtonWrapper = styled.div`
+  display: flex;
+  position: relative;
+`;
+
+export const NextButton = styled.button<{ selectedTags: string[] }>`
+  margin-left: auto;
+  margin-top: 2.4rem;
+  margin-bottom: 5.8rem;
+  width: 22.4rem;
+  height: 6rem;
+  background: ${({ selectedTags }) =>
+    selectedTags.length > 1 ? `${colors.mainBlue}` : `${colors.gray2}`};
+  font-size: 2.4rem;
+  font-family: "Pretendard-Bold";
+  border-radius: 4.8rem;
+  padding-right: 1.5rem;
+  color: ${({ selectedTags }) => (selectedTags.length > 1 ? "white" : `${colors.gray4}`)};
+  :hover {
+    cursor: pointer;
+  }
+  ${applyMediaQuery("mobile")} {
+    margin-top: 4rem;
+    width: 9.8rem;
+    height: 5.2rem;
+  }
+`;
+
+export const NextArrowWrapper = styled.div`
+  position: absolute;
+  top: 4.5rem;
+  right: 7rem;
+  margin-right: 0.9rem;
+  ${applyMediaQuery("mobile")} {
+    top: 5.7rem;
+    right: 1rem;
+  }
+`;

@@ -8,8 +8,7 @@ function Share() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const shareUrl = async () => {
     try {
-      //임시 url, 나중에 도메인 링크로 변경 예정
-      await navigator.clipboard.writeText("http://localhost:3000/");
+      await navigator.clipboard.writeText("https://growto.vercel.app/");
       setIsModalOpen(true);
       document.body.style.overflow = "hidden";
     } catch {
@@ -20,8 +19,11 @@ function Share() {
   return (
     <StyledRoot>
       <ShareBox>
-        <Link href="/" passHref>
-          <StoryLink>Growto 스토리 보러가기 &gt; </StoryLink>
+        <Link
+          href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+          passHref
+        >
+          <StoryLink target="_blank">Growto 스토리 보러가기 &gt; </StoryLink>
         </Link>
         <Slogan>
           <p>

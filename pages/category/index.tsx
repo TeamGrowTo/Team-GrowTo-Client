@@ -1,23 +1,21 @@
+import { getLectureCategoryData, getLectureSkillData } from "apis/info.api";
+import { getLectureDataList } from "apis/lectures.api";
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
-import {
-  getLectureCategoryData,
-  getLectureDataList,
-  getLectureSkillData,
-} from "pages/apis/info.api";
 import React, { useEffect, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  isDisableState,
   lectureCategoryState,
   lectureDataList,
   lectureSkillState,
 } from "store/state";
+import styled from "styled-components";
+import { colors } from "styles/colors";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
-
-import { Background } from "./style";
 
 const dummyCategoryList: LectureCategoryData[] = [
   {
@@ -103,6 +101,8 @@ function Category() {
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
+  const setIsDisable = useSetRecoilState(isDisableState);
+
   const setLectureDataList = useSetRecoilState(lectureDataList);
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
@@ -115,7 +115,6 @@ function Category() {
 
     setSkillList(result);
   };
-
   const handleCategoryClick = (id: number | null) => {
     if (id) {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
@@ -134,8 +133,7 @@ function Category() {
       if (categoryId) {
         const data = await getLectureDataList(categoryId, SkillId);
 
-        console.log(data?.data[0].LectureTitle);
-
+        setIsDisable(false);
         setLectureDataList(data); //확인필요
         setCurrentSkill(result); //비동기라서 변경이 늦게된다. , skillId사용하기위함.
       }
@@ -144,13 +142,16 @@ function Category() {
 
   useEffect(() => {
     setLectureCategory();
-    setCurrentSkill({ id: 1, skillName: "" });
+    if (category?.id && category?.id !== -1) setLectureSkill(category.id);
+    setCurrentSkill({ id: -1, skillName: "" });
     // setCategoryList(dummyCategoryList);
   }, []);
 
   return (
     <div>
-      {category?.id !== -1 && currentSkill?.id && <RedirectProcessButton />}
+      {category && category?.id !== -1 && currentSkill && currentSkill?.id !== -1 && (
+        <RedirectProcessButton />
+      )}
       <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
       <Background>
         <Result />
@@ -160,3 +161,8 @@ function Category() {
 }
 
 export default Category;
+
+const Background = styled.section`
+  background-color: ${colors.gray0};
+  width: 100%;
+`;
