@@ -34,21 +34,11 @@ export default function RequestLecture() {
   const [emailFilled, setEmailFilled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const getData = useRecoilValue(lectureCategoryState);
+  const isBlank = (): boolean => {
+    if (categorySelected === "" || lecture === "" || email === "") return true;
 
-  // const emailCheck = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-  // const [isActivated, setIsActivated] = useState(false);
-
-  // useEffect(() => {
-  //   if (categorySelected && lecture && email && emailCheck.test(email)) {
-  //     setIsActivated(true);
-  //   }
-  // }, [categorySelected, lecture, email]);
-
-  // const isBlank = (): boolean => {
-  //   if (categorySelected === "" || lecture === "" || email === "") return true;
-
-  //   return false;
-  // };
+    return false;
+  };
 
   useEffect(() => {
     const temp = { ...postData };
@@ -70,13 +60,12 @@ export default function RequestLecture() {
     }
     setPostData(temp);
   }, [lecture, email]);
-  const submitRequest = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // if (isBlank()) {
-    //   e.preventDefault();
+  const submitRequest = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isBlank()) {
+      e.preventDefault();
 
-    //   return;
-    // }
+      return;
+    }
     await postLectureRequest(postData);
     setCategorySelected("");
     setLecture("");
@@ -93,15 +82,15 @@ export default function RequestLecture() {
           <p>이런 강의도 비교해주세요!</p>
         </Title>
         <RequestCard>
-          <form onSubmit={(e) => submitRequest(e)}>
+          <form>
             <LectureCategory
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
             <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} lecture={lecture} />
             <Email setEmailFilled={setEmailFilled} setEmail={setEmail} email={email} />
-            {isActivated ? (
-              <ActiveRequestButton type="submit">
+            {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
+              <ActiveRequestButton type="button" onClick={submitRequest}>
                 <p>강의비교 요청하기</p>
               </ActiveRequestButton>
             ) : (
