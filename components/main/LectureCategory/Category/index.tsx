@@ -10,7 +10,7 @@ interface Prop {
 
 const Category = function ({ onCategoryClick, children }: Prop) {
   return (
-    <Link href="/category">
+    <Link href="/category" passHref>
       <Button onClick={onCategoryClick}>{children}</Button>
     </Link>
   );
