@@ -8,10 +8,10 @@ const StyledRoot = styled.div`
   width: 100%;
   margin: 0;
   margin-top: 10.4rem;
-  margin-bottom: 13.9rem;
+  margin-bottom: 11.4rem;
   ${applyMediaQuery("mobile")} {
     margin-top: 4rem;
-    margin-bottom: 5.6rem;
+    margin-bottom: 5.2rem;
   }
 
   & > h3 {
@@ -52,6 +52,10 @@ const CategoryWrapper = styled.div`
   & > * {
     margin-right: 2rem;
     margin-bottom: 2.2rem;
+    ${applyMediaQuery("mobile")} {
+      margin-right: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
   }
   & > *:nth-child(3n) {
     margin-right: 0;
