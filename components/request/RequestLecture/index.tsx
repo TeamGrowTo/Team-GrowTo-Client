@@ -35,14 +35,14 @@ export default function RequestLecture() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const getData = useRecoilValue(lectureCategoryState);
 
-  const emailCheck = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-  const [isActivated, setIsActivated] = useState(false);
+  // const emailCheck = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+  // const [isActivated, setIsActivated] = useState(false);
 
-  useEffect(() => {
-    if (categorySelected && lecture && email && emailCheck.test(email)) {
-      setIsActivated(true);
-    }
-  }, [categorySelected, lecture, email]);
+  // useEffect(() => {
+  //   if (categorySelected && lecture && email && emailCheck.test(email)) {
+  //     setIsActivated(true);
+  //   }
+  // }, [categorySelected, lecture, email]);
 
   // const isBlank = (): boolean => {
   //   if (categorySelected === "" || lecture === "" || email === "") return true;
