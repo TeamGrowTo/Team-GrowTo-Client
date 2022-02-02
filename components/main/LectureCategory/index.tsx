@@ -11,6 +11,7 @@ import {
 import React, { useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { currentCategoryState, lectureCategoryState } from "store/state";
+import Screen from "styles/Screen";
 import { LectureCategoryData } from "types/info.type";
 
 import Category from "./Category";
@@ -65,8 +66,15 @@ const MainLectureCategory = function () {
       <CategoryWrapper>
         {categoryList?.map((category, index) => (
           <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
-            <Image src={iconList[index]} alt="categoryIcon" />
-            <span>{category.categoryName}</span>
+            <>
+              <Screen desktop>
+                <Image src={iconList[index]} alt="categoryIcon" width="30" height="32" />
+              </Screen>
+              <Screen mobile>
+                <Image src={iconList[index]} alt="categoryIcon" width="18" height="18" />
+              </Screen>
+              <span>{category.categoryName}</span>
+            </>
           </Category>
         ))}
       </CategoryWrapper>

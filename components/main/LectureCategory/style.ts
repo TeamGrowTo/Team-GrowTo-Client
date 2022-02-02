@@ -42,7 +42,7 @@ const CategoryWrapper = styled.div`
   justify-content: center;
   width: 75rem;
   flex-wrap: wrap;
-  /* font-family: "Pretendard-Medium"; */
+  font-family: "Pretendard-SemiBold";
   & > * {
     margin-right: 2rem;
     margin-bottom: 2.2rem;
