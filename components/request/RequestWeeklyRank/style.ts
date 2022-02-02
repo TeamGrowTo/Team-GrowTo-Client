@@ -6,7 +6,6 @@ const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 40.3rem;
-
   padding-top: 6.4rem;
   padding-bottom: 10.8rem;
 
@@ -14,7 +13,6 @@ const StyledRoot = styled.div`
   justify-content: center;
   ${applyMediaQuery("mobile")} {
     height: 41.1rem;
-
     padding-top: 3.2rem;
     padding-bottom: 3rem;
   }
