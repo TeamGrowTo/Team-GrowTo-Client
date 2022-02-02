@@ -19,15 +19,16 @@ const Button = styled.button`
     width: 9.2rem;
     height: 5.6rem;
     font-size: 1.4rem;
-    font-family: "Pretendard-Medium";
     border-radius: 1rem;
     margin-right: 1rem;
   }
 
   & > span {
     margin-left: 1.4rem;
+    font-family: "Pretendard-SemiBold";
     ${applyMediaQuery("mobile")} {
       margin-left: 0.6rem;
+      font-family: "Pretendard-Medium";
     }
   }
 `;
