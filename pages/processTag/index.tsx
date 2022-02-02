@@ -219,6 +219,9 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
+  ${applyMediaQuery("mobile")} {
+    width: 50rem;
+  }
 `;
 export const PlayIcon = styled.div`
   position: absolute;
@@ -291,6 +294,7 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
   font-size: 2.4rem;
   font-family: "Pretendard-Bold";
   border-radius: 4.8rem;
+  padding-right: 1.5rem;
   color: ${({ selectedTags }) => (selectedTags.length > 1 ? "white" : `${colors.gray4}`)};
   :hover {
     cursor: pointer;
@@ -305,7 +309,8 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
-  right: 6.5rem;
+  right: 7rem;
+  margin-right: 0.9rem;
   ${applyMediaQuery("mobile")} {
     top: 5.7rem;
     right: 1rem;

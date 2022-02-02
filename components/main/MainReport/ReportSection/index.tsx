@@ -1,8 +1,12 @@
+import Image from "next/image";
+import Screen from "styles/Screen";
+
 import { Count, Data, StyledRoot, Title, TitleWrapper, Unit } from "./style";
 //props의 타입 정의
 interface IProps {
   reportInfo: {
-    UniqueIcon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    Icon: StaticImageData;
+    mobileIcon: StaticImageData;
     title: string;
     count: number;
     unit: string;
@@ -10,11 +14,16 @@ interface IProps {
 }
 
 export default function ReportSection({ reportInfo }: IProps) {
-  const { UniqueIcon, title, count, unit } = reportInfo;
+  const { Icon, mobileIcon, title, count, unit } = reportInfo;
 
   return (
     <StyledRoot>
-      <UniqueIcon />
+      <Screen desktop>
+        <Image src={Icon} alt="아이콘" />
+      </Screen>
+      <Screen mobile>
+        <Image src={mobileIcon} alt="" />
+      </Screen>
       <TitleWrapper>
         <Title>{title}</Title>
       </TitleWrapper>
