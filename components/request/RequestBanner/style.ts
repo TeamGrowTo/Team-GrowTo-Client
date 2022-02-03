@@ -1,15 +1,21 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.div`
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   height: 19.2rem;
   background-color: ${colors.subOrange};
   background-image: url("/assets/images/requestBannerBackground.png");
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${applyMediaQuery("mobile")} {
+    height: 13.6rem;
+    background-image: url("/assets/images/requestBannerBackground-mobile.png");
+  }
 `;
 
 const Wrapper = styled.div`
@@ -17,17 +23,31 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  ${applyMediaQuery("mobile")} {
+    width: 29.4rem;
+  }
 
   div {
     font-family: "Pretendard-Bold";
     font-size: 4rem;
     line-height: 5rem;
-    color: white;
+    color: ${colors.white};
     display: flex;
-    /* margin-bottom: 0.5rem; */
-  }
-  div > p {
-    color: ${colors.mainBlue};
+    ${applyMediaQuery("mobile")} {
+      font-size: 2.2rem;
+      line-height: 2.8rem;
+    }
+
+    span {
+      ${applyMediaQuery("mobile")} {
+        display: flex;
+        flex-direction: column;
+      }
+
+      p {
+        color: ${colors.mainBlue};
+      }
+    }
   }
 `;
 
