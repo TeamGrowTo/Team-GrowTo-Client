@@ -4,7 +4,6 @@ import { colors } from "styles/colors";
 
 const StyledRoot = styled.div`
   width: 100%;
-  /* height: 19rem; */
   display: flex;
   flex-direction: column;
   padding: 1.8rem 1.4rem;
