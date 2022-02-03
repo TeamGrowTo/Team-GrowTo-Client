@@ -8,7 +8,7 @@ function Share() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const shareUrl = async () => {
     try {
-      await navigator.clipboard.writeText("https://growto.vercel.app/");
+      await navigator.clipboard.writeText(location.href);
       setIsModalOpen(true);
       document.body.style.overflow = "hidden";
     } catch {
