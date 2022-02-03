@@ -10,7 +10,7 @@ const StyledRoot = styled.section`
   justify-content: center;
   ${applyMediaQuery("mobile")} {
     padding-top: 0rem;
-    width: 50rem;
+    width: 100%;
   }
 `;
 
@@ -75,6 +75,9 @@ const ServiceMenuBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+  }
 `;
 
 const ServiceMenuList = styled.ul`
@@ -109,7 +112,7 @@ const ServiceMenuListItem = styled.li`
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
     & + & {
-      margin-left: 7rem;
+      margin-left: 3.2rem;
     }
   }
 `;
