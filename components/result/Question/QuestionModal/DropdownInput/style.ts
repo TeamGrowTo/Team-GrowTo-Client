@@ -18,6 +18,23 @@ const Dropdown = styled.article<{ flagDropdown: boolean }>`
   ${applyMediaQuery("mobile")} {
     padding: 1.8rem 2.4rem;
     top: 7rem;
+    height: 13.1rem;
+  }
+
+  & > button {
+    width: 100%;
+    font-family: "Pretendard-Regular";
+    font-size: 2rem;
+    text-align: start;
+    ${applyMediaQuery("mobile")} {
+      font-size: 1.4rem;
+    }
+    svg {
+      width: 1.4rem;
+    }
+  }
+  & > button:hover {
+    cursor: pointer;
   }
 
   ${({ flagDropdown }) =>
@@ -28,20 +45,6 @@ const Dropdown = styled.article<{ flagDropdown: boolean }>`
       : css`
           display: none;
         `}
-
-  & > button {
-    width: 100%;
-    /* height: 100%; */
-    font-family: "Pretendard-Regular";
-    font-size: 2rem;
-    text-align: start;
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.4rem;
-    }
-  }
-  & > button:hover {
-    cursor: pointer;
-  }
 `;
 
 export { Dropdown };

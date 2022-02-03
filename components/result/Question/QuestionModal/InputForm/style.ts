@@ -42,13 +42,6 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
         : css`
             border-radius: 4.8rem;
           `}
-    svg {
-      width: 1.8rem;
-      height: 1rem;
-      ${applyMediaQuery("mobile")} {
-        margin: 0;
-      }
-    }
   }
 
   & > input {
@@ -59,11 +52,15 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
     color: ${colors.subBlack};
     font-size: 2rem;
     font-family: "Pretendard-Regular";
+    height: 6rem;
     ${applyMediaQuery("mobile")} {
       height: 4rem;
       padding: 1.1rem 2.4rem;
       font-size: 1.4rem;
     }
+  }
+  & > input::placeholder {
+    color: ${colors.gray4};
   }
 
   & > textarea {
@@ -84,10 +81,6 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
       font-size: 1.4rem;
       margin-bottom: 6.4rem;
     }
-  }
-
-  & > input::placeholder {
-    color: ${colors.gray4};
   }
   & > textarea::placeholder {
     color: ${colors.gray4};

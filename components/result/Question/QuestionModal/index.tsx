@@ -71,6 +71,10 @@ function QuestionModal({ onCloseModal }: Props) {
     setDescription(e.target.value);
   };
 
+  //이 함수는 오류 내용 제보하기를 눌렀을 때 실행됩니다.
+  //강의 가격, 이름, 이메일이 비었는지 확인
+  //이메일 형식이 맞는지 확인
+  //후에 맞다면 post요청 보내고 state 초기화 합니다.
   const handleReport = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (isBlank()) return;
     if (flagEmailRegExp) return;
@@ -92,6 +96,11 @@ function QuestionModal({ onCloseModal }: Props) {
     else setFlagEmailRegExp(true);
   }, [email]);
 
+  //전체적으로 title과 input 즉, 입력을 받는 부분으로 나눴습니다.
+  //input또한 필수 입력과 오른쪽의 textarea와 버튼 부분으로 나눴습니다.
+  //각 입력 부분들은 따로 컴포넌트화 되어있습니다. 모두 돌아가는 로직은 현재 컴포넌트에 두고 인자를 받아 함수를 실행합니다.
+  //컴포넌트 안에 들어가보면 모두 inputForm 컴포넌트로 감싸여져 있는데 이는 동일한 스타일을 적용하기 위함입니다
+  //자세한 설명은 inputForm 컴포넌트 참고
   return (
     <StyledRoot>
       {flagReport ? (
