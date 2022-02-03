@@ -23,6 +23,16 @@ const Button = styled.button`
     margin-right: 1rem;
   }
 
+  &:hover {
+    background: linear-gradient(0deg, rgba(205, 212, 229, 0.2), rgba(205, 212, 229, 0.2)),
+      linear-gradient(180deg, #ffffff 0%, #f0f8ff 11.58%, #f6fbff 71%);
+  }
+
+  &:active {
+    background: linear-gradient(0deg, rgba(165, 168, 202, 0.2), rgba(165, 168, 202, 0.2)),
+      linear-gradient(180deg, #ffffff 0%, #f0f8ff 11.58%, #f6fbff 71%);
+  }
+
   & > span {
     margin-left: 1.4rem;
     font-family: "Pretendard-SemiBold";
