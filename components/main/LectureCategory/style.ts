@@ -24,6 +24,7 @@ const StyledRoot = styled.div`
     font-family: "Pretendard-Regular";
   }
   ${applyMediaQuery("mobile")} {
+    width: 50rem;
     margin-top: 4rem;
     margin-bottom: 5.6rem;
     & > h3 {

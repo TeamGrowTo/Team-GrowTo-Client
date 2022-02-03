@@ -8,6 +8,7 @@ const StyledRoot = styled.div`
   background: linear-gradient(108.46deg, #7000ff 31.64%, #8e0ef3 83.2%);
   /* flex-wrap: wrap; */
   ${applyMediaQuery("mobile")} {
+    width: 50rem;
     flex-direction: column;
     padding-top: 3.2rem;
   }

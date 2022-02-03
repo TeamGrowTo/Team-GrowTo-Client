@@ -8,6 +8,7 @@ export const StyledRoot = styled.section`
   background: linear-gradient(to bottom, rgb(138, 186, 197, 0.3), rgb(209, 201, 241, 0.3));
   font-family: "Pretendard-Regular";
   ${applyMediaQuery("mobile")} {
+    width: 50rem;
     height: 34.6rem;
   }
 `;
