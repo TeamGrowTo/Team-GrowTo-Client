@@ -185,7 +185,7 @@ export const TagWrapper = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    margin: 3.2rem auto 0;
+    margin: 3.2rem auto 4rem;
     & > p {
       font-size: 2rem;
     }
