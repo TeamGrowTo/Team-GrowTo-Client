@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.div`
   display: flex;
@@ -20,6 +21,10 @@ const Tag = styled.div`
   font-size: 1.8rem;
   font-family: "Pretendard-Bold";
   border-radius: 3.5rem;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.8rem;
+  }
 `;
 
 export { StyledRoot, Tag };
