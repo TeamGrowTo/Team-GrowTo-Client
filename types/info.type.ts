@@ -23,6 +23,7 @@ export interface SkillTagList {
 }
 
 export interface ResponseLectureDataType {
+  id: number;
   name: string;
   time: number;
   price: number;
@@ -33,6 +34,7 @@ export interface ResponseLectureDataType {
   url: string;
 }
 export interface LectureDataType {
+  id: number;
   LectureTitle: string;
   time: number;
   price: number;
