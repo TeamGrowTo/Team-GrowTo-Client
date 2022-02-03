@@ -1,25 +1,17 @@
 import Link from "next/link";
-import { LeftArrowIcon } from "public/assets/icons";
+import {
+  LeftArrowIcon,
+  MobileResultCardRightArrowIcon,
+  MobileResultSliderRightArrowIcon,
+} from "public/assets/icons";
 import React from "react";
+import Screen from "styles/Screen";
 import { LectureResultData } from "types/lectures.type";
 
 import Info from "./Info";
 import { LectureTitle, MoreButton, StyledRoot } from "./style";
 import SubInfo from "./SubInfo";
 import Tags from "./Tags";
-
-// type Answer = "fast" | "middle" | "slow";
-// interface ProcessResultData {
-//   id: number;
-//   lectureName: string;
-//   time: number;
-//   price: number;
-//   createdDate: number;
-//   replay: boolean;
-//   answer: Answer;
-//   tags: string[];
-//   url: string;
-// }
 
 type Props = {
   result: LectureResultData;
@@ -37,7 +29,12 @@ function ResultCard({ result }: Props) {
       <Link href={url} passHref>
         <MoreButton target="_blank">
           더보기
-          <LeftArrowIcon />
+          <Screen desktop>
+            <LeftArrowIcon />
+          </Screen>
+          <Screen mobile>
+            <MobileResultCardRightArrowIcon />
+          </Screen>
         </MoreButton>
       </Link>
     </StyledRoot>

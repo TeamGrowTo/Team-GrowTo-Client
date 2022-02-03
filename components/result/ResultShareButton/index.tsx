@@ -1,7 +1,8 @@
 import Modal from "components/common/Modal";
 import { useRouter } from "next/router";
-import { ResultShareIcon } from "public/assets/icons";
+import { MobileResultShareIcon, ResultShareIcon } from "public/assets/icons";
 import React, { useState } from "react";
+import Screen from "styles/Screen";
 
 import { ShareButton, StyledRoot } from "./style";
 
@@ -12,7 +13,7 @@ const ResultShareButton = function () {
   const handleClick = async () => {
     try {
       //배포시 배포 주소로 문자열 변경
-      await navigator.clipboard.writeText("https://growto.vercel.app" + router.asPath);
+      await navigator.clipboard.writeText(location.href + router.asPath);
       setFlagModal(true);
       document.body.style.overflow = "hidden";
     } catch {
@@ -23,7 +24,12 @@ const ResultShareButton = function () {
   return (
     <StyledRoot>
       <ShareButton onClick={handleClick}>
-        <ResultShareIcon />
+        <Screen desktop>
+          <ResultShareIcon />
+        </Screen>
+        <Screen mobile>
+          <MobileResultShareIcon />
+        </Screen>
         <span>공유하기</span>
       </ShareButton>
       <Modal
