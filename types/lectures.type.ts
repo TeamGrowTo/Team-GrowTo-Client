@@ -51,6 +51,7 @@ export interface LectureCompareRequest {
   skill: string | null;
   email: string | null;
 }
+
 export interface IProcessData {
   category: string;
   skill: string;
@@ -58,6 +59,7 @@ export interface IProcessData {
   timeAsc: boolean | null;
   priceAsc: boolean | null;
 }
+
 export interface ProcessDataState {
   category: string;
   skill: string;
