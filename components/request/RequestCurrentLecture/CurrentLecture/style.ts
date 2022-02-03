@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.div<{ order: number }>`
+  box-sizing: border-box;
   width: 19.6rem;
   height: 19.6rem;
   border-radius: 2.8rem;
@@ -11,6 +13,13 @@ const StyledRoot = styled.div<{ order: number }>`
   justify-content: center;
   align-items: center;
   margin-right: 2rem;
+
+  ${applyMediaQuery("mobile")} {
+    width: 15.8rem;
+    height: 8.8rem;
+    margin-bottom: 1.2rem;
+    margin-right: 1.2rem;
+  }
 
   ${(props) =>
     props.order === 1
@@ -45,11 +54,18 @@ const StyledRoot = styled.div<{ order: number }>`
     font-family: "Pretendard-Bold";
     font-size: 1.6rem;
     color: ${colors.gray5};
+    ${applyMediaQuery("mobile")} {
+      font-size: 1.2rem;
+    }
   }
 
   h2 {
     font-family: "Pretendard-Bold";
     font-size: 2rem;
+    color: ${colors.subBlack};
+    ${applyMediaQuery("mobile")} {
+      font-size: 1.7rem;
+    }
   }
 `;
 
