@@ -112,6 +112,7 @@ export const getLectureDataList = async (categoryId: number | null, skillId: num
 
       return data.data.map((data: ResponseLectureDataType) => {
         return {
+          id: data.id,
           LectureTitle: data.name,
           time: data.time,
           price: data.price,
@@ -144,6 +145,7 @@ export const getSortingLectureDataList = async (
 
     return data.map((data: ResponseLectureDataType) => {
       return {
+        id: data.id,
         LectureTitle: data.name,
         time: data.time,
         price: data.price,

@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { CloseButton, HamburgerIcon, SmallLogoIcon } from "public/assets/icons";
 import React, { useState } from "react";
-import { useResetRecoilState } from "recoil";
+import { useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  currentSortingState,
+  isDisableState,
+  isOpenState,
   lectureDataList,
   lectureSkillState,
+  processState,
 } from "store/state";
 
 import { ButtonWrapper, LinkA, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
@@ -22,12 +26,26 @@ function SmallNavBar() {
   const resetSkillData = useResetRecoilState(currentSkillState);
   const resetLectureSkillData = useResetRecoilState(lectureSkillState);
   const resetCategoryData = useResetRecoilState(currentCategoryState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetProcessData = useSetRecoilState(processState);
 
   const handleResetLectureData = () => {
     resetLectureListData();
     resetSkillData();
     resetCategoryData();
     resetLectureSkillData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
+    resetProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
   };
 
   return (
