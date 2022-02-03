@@ -70,7 +70,7 @@ const Title = styled.h3`
   }
 `;
 
-const InputWrapper = styled.form`
+const InputWrapper = styled.section`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -93,7 +93,7 @@ const EssentialInput = styled.div`
       margin-bottom: 2rem;
     }
   }
-  & > *:end-child {
+  & > *:last-child {
     margin-bottom: 0;
   }
 `;

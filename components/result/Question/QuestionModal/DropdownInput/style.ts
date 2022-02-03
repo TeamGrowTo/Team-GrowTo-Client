@@ -31,7 +31,8 @@ const Dropdown = styled.article<{ flagDropdown: boolean }>`
 
   & > button {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    font-family: "Pretendard-Regular";
     font-size: 2rem;
     text-align: start;
     ${applyMediaQuery("mobile")} {

@@ -1,5 +1,5 @@
 import { postLectureReport } from "apis/lectures.api";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Screen from "styles/Screen";
 
 import DescriptionInput from "./DescriptionInput";
@@ -28,11 +28,26 @@ function QuestionModal({ onCloseModal }: Props) {
   const [description, setDescription] = useState("");
   const [flagDropdown, setFlagDropdown] = useState(false);
   const [flagReport, setFlagReport] = useState(false);
+  const [flagEmailRegExp, setFlagEmailRegExp] = useState(true);
 
   const isBlank = (): boolean => {
     if (difference === -1 || lectureName === "" || email === "") return true;
 
     return false;
+  };
+
+  const checkEmail = () => {
+    const emailRegExp = /^[A-Za-z0-9]([-_]?[0-9a-zA-Z])*@[A-Za-z0-9]*\.[a-zA-Z]{2,3}$/;
+
+    return emailRegExp.test(email);
+  };
+
+  const resetState = () => {
+    setDifference(-1);
+    setLectureName("");
+    setEmail("");
+    setDescription("");
+    setFlagReport(!flagReport);
   };
 
   const handleFlagDropdown = () => {
@@ -57,18 +72,10 @@ function QuestionModal({ onCloseModal }: Props) {
   };
 
   const handleReport = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (isBlank()) {
-      e.preventDefault();
-
-      return;
-    }
+    if (isBlank()) return;
+    if (flagEmailRegExp) return;
     postReport();
-    setDifference(-1);
-    setLectureName("");
-    setEmail("");
-    setDescription("");
-    setFlagReport(!flagReport);
-    e.preventDefault();
+    resetState();
   };
 
   const postReport = async () => {
@@ -79,6 +86,11 @@ function QuestionModal({ onCloseModal }: Props) {
       email,
     });
   };
+
+  useEffect(() => {
+    if (email === "" || checkEmail()) setFlagEmailRegExp(false);
+    else setFlagEmailRegExp(true);
+  }, [email]);
 
   return (
     <StyledRoot>
@@ -99,7 +111,7 @@ function QuestionModal({ onCloseModal }: Props) {
                 difference={difference}
               />
               <LectureNameInput onLectureNameChange={handleLectureName} lectureName={lectureName} />
-              <EmailInput onEmailChange={handleEmail} email={email} />
+              <EmailInput onEmailChange={handleEmail} flagError={flagEmailRegExp} />
             </EssentialInput>
             <Screen desktop>
               <Line />
