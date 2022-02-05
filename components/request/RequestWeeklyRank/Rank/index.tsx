@@ -1,7 +1,8 @@
 // import { RequestRankLine } from "public/assets/icons";
 import React from "react";
+import Screen from "styles/Screen";
 
-import { Id, Line, Number, RequestNumber, StyledRoot, Title, Wrapper } from "./style";
+import { Id, Line, MobileLine, Number, RequestNumber, StyledRoot, Title, Wrapper } from "./style";
 
 interface IProps {
   rank: {
@@ -24,7 +25,12 @@ export default function Rank({ rank, rankNumber }: IProps) {
           <h4>{name}</h4>
           <h3>{skill}</h3>
         </Title>
-        <Line />
+        <Screen desktop>
+          <Line />
+        </Screen>
+        <Screen mobile>
+          <MobileLine />
+        </Screen>
         <RequestNumber>
           <h5>비교요청 수</h5>
           <Number>
