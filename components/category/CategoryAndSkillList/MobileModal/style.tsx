@@ -15,7 +15,7 @@ const StyledRoot = styled.section`
   flex-direction: column;
 `;
 
-const CloseCategoryAndSkill = styled.div`
+const CloseCategoryAndSkill = styled.button`
   width: 100%;
   min-height: 4.8rem;
   background-color: ${colors.mainBlue};

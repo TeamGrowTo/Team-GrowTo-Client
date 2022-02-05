@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { colors } from "styles/colors";
 
 const StyledRoot = styled.article`
@@ -12,38 +12,39 @@ const StyledRoot = styled.article`
   cursor: pointer;
 `;
 
-const Category = styled.div`
+const Category = styled.button`
   background-color: ${colors.mainBlue};
   width: 100%;
   text-align: center;
   line-height: 5.6rem;
   color: ${colors.gray6};
   display: flex;
-  & > div {
-    background: ${colors.blue3};
-    width: 40%;
-  }
+  padding: 0;
+  cursor: pointer;
+
   & > svg {
     position: absolute;
     top: 0;
     right: 50%;
   }
-  & > text {
+  & > span {
+    width: 90%;
+    height: 100%;
+    background: ${colors.blue3};
     font-size: 1.4rem;
-    font-family: "Pretendard-Medium";
-    position: absolute;
-    left: 20%;
+    font-family: "Pretendard-SemiBold";
   }
 `;
 
-const Skill = styled.div`
+const Skill = styled.button`
   background-color: ${colors.mainBlue};
   width: 100%;
   text-align: center;
   line-height: 5.6rem;
   color: white;
   font-size: 1.4rem;
-  font-family: "Pretendard-Medium";
+  font-family: "Pretendard-SemiBold";
+  cursor: pointer;
 `;
 
 export { Category, Skill, StyledRoot };

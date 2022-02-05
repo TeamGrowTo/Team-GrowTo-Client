@@ -1,23 +1,23 @@
 import { getLectureCategoryData, getLectureSkillData } from "apis/info.api";
 import { getLectureDataList } from "apis/lectures.api";
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
-import MobileModal from "components/category/CategoryAndSkillList/MobileModal";
-import MobileCategoryAndSkill from "components/category/MobileCategoryAndSkill";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
-import React, { useEffect, useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import React, { useEffect } from "react";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  currentSortingState,
   isDisableState,
+  isOpenState,
   lectureCategoryState,
   lectureDataList,
   lectureSkillState,
+  processState,
 } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
-import Screen from "styles/Screen";
 
 function Category() {
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
@@ -26,7 +26,11 @@ function Category() {
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
   const setIsDisable = useSetRecoilState(isDisableState);
   const setLectureDataList = useSetRecoilState(lectureDataList);
-  const [categorySkillOpenFlag, setCategorySkillOpenFlag] = useState(false);
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetProcessData = useSetRecoilState(processState);
 
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
@@ -44,6 +48,21 @@ function Category() {
     return await getLectureDataList(id, SkillId);
   };
 
+  //카테고리를 눌렀을 시 reset되어야하는 recoil값들
+  const resetData = () => {
+    resetLectureListData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
+    resetProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
+  };
+
   const handleCategoryClick = (id: number | null) => {
     if (id) {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
@@ -51,6 +70,7 @@ function Category() {
       setCurrentCategory(result);
       setLectureSkill(id);
       setCurrentSkill({ id: -1, skillName: "" });
+      resetData();
     }
   };
 
@@ -69,10 +89,6 @@ function Category() {
     }
   };
 
-  const handleCategorySkillOpen = (state: boolean) => {
-    setCategorySkillOpenFlag(state);
-  };
-
   useEffect(() => {
     setLectureCategory();
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
@@ -84,23 +100,7 @@ function Category() {
       {category && category?.id !== -1 && currentSkill && currentSkill?.id !== -1 && (
         <RedirectProcessButton />
       )}
-      <Screen desktop>
-        <CategoryAndSkillList
-          onCategoryClick={handleCategoryClick}
-          onSkillClick={handleSkillClick}
-        />
-      </Screen>
-      <Screen mobile>
-        {categorySkillOpenFlag ? (
-          <MobileModal
-            onCategoryClick={handleCategoryClick}
-            onSkillClick={handleSkillClick}
-            onClickCategorySkill={handleCategorySkillOpen}
-          />
-        ) : (
-          <MobileCategoryAndSkill onClick={handleCategorySkillOpen}></MobileCategoryAndSkill>
-        )}
-      </Screen>
+      <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
       <Background>
         <Result />
       </Background>

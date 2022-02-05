@@ -27,19 +27,20 @@ const LinkWrapper = styled.div`
   ${applyMediaQuery("desktop")} {
     justify-content: end;
   }
+  ${applyMediaQuery("mobile")} {
+    display: none;
+  }
 `;
 
 const RedirectRequestPage = styled.a`
-  ${applyMediaQuery("desktop")} {
-    border: 0;
-    font-size: 1.4rem;
-    font-family: "Pretendard-Regular";
-    color: ${colors.gray6};
-    margin-bottom: 4.3rem;
-    cursor: pointer;
-    & > svg {
-      margin-left: 1rem;
-    }
+  border: 0;
+  font-size: 1.4rem;
+  font-family: "Pretendard-Regular";
+  color: ${colors.gray6};
+  margin-bottom: 4.3rem;
+  cursor: pointer;
+  & > svg {
+    margin-left: 1rem;
   }
 `;
 

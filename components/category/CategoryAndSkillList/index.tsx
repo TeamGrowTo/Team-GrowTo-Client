@@ -1,20 +1,9 @@
-import Link from "next/link";
-import { CategoryRightArrowIcon } from "public/assets/icons";
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { currentSkillState } from "store/state";
+import React, { useState } from "react";
 import Screen from "styles/Screen";
 
-import CategoryList from "./CategoryList";
+import DesktopCategoryAndSkillList from "./DesktopCategoryAndSkillList";
+import MobileCategoryAndSkill from "./MobileCategoryAndSkill";
 import MobileModal from "./MobileModal";
-import SkillList from "./SkillList";
-import {
-  CategoryAndSkillWrapper,
-  LinkWrapper,
-  RedirectRequestPage,
-  StyledRoot,
-  Title,
-} from "./style";
 
 interface Props {
   onCategoryClick: (id: number | null) => void;
@@ -22,24 +11,32 @@ interface Props {
 }
 
 function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
-  const currentSkill = useRecoilValue(currentSkillState);
+  const [categorySkillOpenFlag, setCategorySkillOpenFlag] = useState(false);
+
+  const handleCategorySkillOpen = (state: boolean) => {
+    setCategorySkillOpenFlag(state);
+  };
 
   return (
-    <StyledRoot>
-      <CategoryAndSkillWrapper>
-        <Title currentSkillId={currentSkill?.id || -1}>강의 분야</Title>
-        <CategoryList onCategoryClick={onCategoryClick} />
-        <SkillList onSkillClick={onSkillClick} />
-        <LinkWrapper>
-          <Link href="/request" passHref>
-            <RedirectRequestPage>
-              <span>추가적으로 비교를 원하는 분야가 있다면?</span>
-              <CategoryRightArrowIcon />
-            </RedirectRequestPage>
-          </Link>
-        </LinkWrapper>
-      </CategoryAndSkillWrapper>
-    </StyledRoot>
+    <>
+      <Screen desktop>
+        <DesktopCategoryAndSkillList
+          onCategoryClick={onCategoryClick}
+          onSkillClick={onSkillClick}
+        />
+      </Screen>
+      <Screen mobile>
+        {categorySkillOpenFlag ? (
+          <MobileModal
+            onCategoryClick={onCategoryClick}
+            onSkillClick={onSkillClick}
+            onClickCategorySkill={handleCategorySkillOpen}
+          />
+        ) : (
+          <MobileCategoryAndSkill onClick={handleCategorySkillOpen}></MobileCategoryAndSkill>
+        )}
+      </Screen>
+    </>
   );
 }
 
