@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.section`
   position: relative;
   width: 100%;
   display: flex;
@@ -21,7 +21,7 @@ const ComparisonImgWrapper = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.h2`
   font-size: 4rem;
   font-family: "Pretendard-Bold";
   color: white;
