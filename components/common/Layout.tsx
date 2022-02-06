@@ -10,7 +10,11 @@ function Layout({ children }: LayoutProps) {
   const router = useRouter();
 
   const isProcess =
-    router.pathname === ("/processTag" || "/processTime" || "processTime") ? true : false;
+    router.pathname === "/processTag" ||
+    router.pathname === "/processTime" ||
+    router.pathname === "/processPrice"
+      ? true
+      : false;
 
   return (
     <>
