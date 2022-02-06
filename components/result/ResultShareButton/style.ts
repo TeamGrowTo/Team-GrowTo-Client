@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 2.2rem;
@@ -13,7 +13,7 @@ const StyledRoot = styled.div`
   }
 `;
 
-const ShareButton = styled.button`
+export const ShareButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,5 +43,3 @@ const ShareButton = styled.button`
     }
   }
 `;
-
-export { ShareButton, StyledRoot };
