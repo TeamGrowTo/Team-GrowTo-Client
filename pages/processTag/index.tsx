@@ -157,7 +157,7 @@ export const ProcessBox = styled.div`
 
 export const CardChoice = styled.section`
   width: 102rem;
-  height: 49.3rem;
+  min-height: 49.3rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 2.8rem 2.8rem;
   backdrop-filter: blur(2rem);
@@ -170,7 +170,7 @@ export const CardChoice = styled.section`
 
 export const TagWrapper = styled.div`
   width: 77.4rem;
-  margin: 6.5rem auto 0;
+  margin: 6.5rem auto 9rem;
   & > p {
     font-family: "Pretendard-Bold";
     font-size: 2.4rem;
