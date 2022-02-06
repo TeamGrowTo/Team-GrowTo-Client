@@ -107,8 +107,8 @@ function ProcessTag() {
             ))}
           </TagWrapper>
         </CardChoice>
-        <Link href="/processTime" replace passHref>
-          <NextButtonWrapper>
+        <NextButtonWrapper>
+          <Link href="/processTime" replace passHref>
             <NextButton
               onClick={handleNext}
               selectedTags={selectedTags}
@@ -116,11 +116,12 @@ function ProcessTag() {
             >
               다음
             </NextButton>
-            <NextArrowWrapper>
-              {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
-            </NextArrowWrapper>
-          </NextButtonWrapper>
-        </Link>
+          </Link>
+
+          <NextArrowWrapper>
+            {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
+          </NextArrowWrapper>
+        </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>
   );
