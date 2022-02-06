@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.div`
+export const StyledRoot = styled.section`
   display: flex;
   justify-content: center;
   padding-top: 2.2rem;
