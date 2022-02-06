@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import Screen from "styles/Screen";
 
 import { InputWrapper, LectureTypeBox } from "./style";
 
@@ -19,13 +20,24 @@ export default function LectureType({ setTypeFilled, setLecture, lecture }: Type
       <LectureTypeBox>
         <p>강의 종류*</p>
         <InputWrapper>
-          <input
-            type="text"
-            placeholder="강의 종류를 입력해주세요 (파이썬, 피그마, 블록체인 등)"
-            onChange={handleInputValue}
-            value={lecture}
-            required
-          />
+          <Screen desktop>
+            <input
+              type="text"
+              placeholder="강의 종류를 입력해주세요 (파이썬, 피그마, 블록체인 등)"
+              onChange={handleInputValue}
+              value={lecture}
+              required
+            />
+          </Screen>
+          <Screen mobile>
+            <input
+              type="text"
+              placeholder="강의 종류 입력 (파이썬, 피그마 등)"
+              onChange={handleInputValue}
+              value={lecture}
+              required
+            />
+          </Screen>
         </InputWrapper>
       </LectureTypeBox>
     </>

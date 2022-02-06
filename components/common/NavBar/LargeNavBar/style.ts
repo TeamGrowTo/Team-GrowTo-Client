@@ -35,6 +35,7 @@ const NavItem = styled.a<{ pathName: string; href: string }>`
   margin: 0 0.2rem;
   padding: 0 2.2rem;
   height: 11.6rem;
+  min-width: 11rem;
   line-height: 11.6rem;
   font-family: "Pretendard-Bold";
   font-size: 2rem;

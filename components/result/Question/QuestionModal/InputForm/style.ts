@@ -8,16 +8,6 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
   ${applyMediaQuery("mobile")} {
     width: 100%;
   }
-  & > span {
-    color: ${colors.subBlack};
-    font-size: 2rem;
-    font-family: "Pretendard-Bold";
-    line-height: 2.4rem;
-    margin-bottom: 0.8rem;
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.6rem;
-    }
-  }
   & > * {
     width: 50.2rem;
     ${applyMediaQuery("mobile")} {
@@ -52,13 +42,6 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
         : css`
             border-radius: 4.8rem;
           `}
-    svg {
-      width: 1.8rem;
-      height: 1rem;
-      ${applyMediaQuery("mobile")} {
-        margin: 0;
-      }
-    }
   }
 
   & > input {
@@ -69,11 +52,15 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
     color: ${colors.subBlack};
     font-size: 2rem;
     font-family: "Pretendard-Regular";
+    height: 6rem;
     ${applyMediaQuery("mobile")} {
       height: 4rem;
       padding: 1.1rem 2.4rem;
       font-size: 1.4rem;
     }
+  }
+  & > input::placeholder {
+    color: ${colors.gray4};
   }
 
   & > textarea {
@@ -95,13 +82,31 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
       margin-bottom: 6.4rem;
     }
   }
-
-  & > input::placeholder {
-    color: ${colors.gray4};
-  }
   & > textarea::placeholder {
     color: ${colors.gray4};
   }
 `;
 
-export { StyledRoot };
+const TitleWrapper = styled.header`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  & > span {
+    color: ${colors.subBlack};
+    font-size: 2rem;
+    font-family: "Pretendard-Bold";
+    line-height: 2.4rem;
+    ${applyMediaQuery("mobile")} {
+      font-size: 1.6rem;
+    }
+  }
+`;
+
+const Error = styled.small`
+  font-family: "Pretendard-Regular";
+  font-size: 0.8rem;
+  color: red;
+  margin-left: 0.8rem;
+`;
+
+export { Error, StyledRoot, TitleWrapper };
