@@ -52,11 +52,9 @@ export const getSkillTagList = async (id: number): Promise<SkillTagList[] | null
       },
     });
 
-    if (data.status === 200) {
-      return data.data;
-    } else {
-      return null;
-    }
+    return data.data.map((response: SkillTagList) => {
+      return { id: response.id, name: response.name };
+    });
   } catch (err) {
     return null;
   }
