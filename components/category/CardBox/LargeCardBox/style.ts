@@ -28,7 +28,7 @@ const LectureTitleBox = styled.div`
 
 const LectureInfoBox = styled(LectureTitleBox)`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   width: 35.4rem;
   min-width: 33.8rem;
   padding: 0 2.8rem;
@@ -57,6 +57,11 @@ const LectureTagBox = styled(LectureInfoBox)`
   padding: 0 2.4rem;
   border: none;
   overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const LectureTitleName = styled.h3`
