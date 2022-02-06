@@ -7,12 +7,11 @@ import Screen from "styles/Screen";
 import { ShareButton, StyledRoot } from "./style";
 
 const ResultShareButton = function () {
-  const router = useRouter();
   const [flagModal, setFlagModal] = useState(false);
 
   const copyLinkToClipBoard = async () => {
     try {
-      await navigator.clipboard.writeText(location.href + router.asPath);
+      await navigator.clipboard.writeText(location.href);
     } catch {
       throw new Error("복사 실패!");
     }
