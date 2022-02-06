@@ -8,7 +8,9 @@ function Share() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const shareUrl = async () => {
     try {
-      await navigator.clipboard.writeText(location.href);
+      await navigator.clipboard.writeText(
+        "https://www.growto.kr/?utm_source=Growto&utm_medium=share&utm_campaign=share",
+      );
       setIsModalOpen(true);
       document.body.style.overflow = "hidden";
     } catch {
