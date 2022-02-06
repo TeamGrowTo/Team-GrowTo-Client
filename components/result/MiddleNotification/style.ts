@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.aside`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
