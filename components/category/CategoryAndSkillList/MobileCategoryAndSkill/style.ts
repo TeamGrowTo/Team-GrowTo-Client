@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
-const StyledRoot = styled.article`
+export const StyledRoot = styled.article`
   display: flex;
   width: 100%;
   height: 5.6rem;
@@ -12,7 +12,7 @@ const StyledRoot = styled.article`
   cursor: pointer;
 `;
 
-const Category = styled.button`
+export const Category = styled.button`
   background-color: ${colors.mainBlue};
   width: 100%;
   text-align: center;
@@ -36,7 +36,7 @@ const Category = styled.button`
   }
 `;
 
-const Skill = styled.button`
+export const Skill = styled.button`
   background-color: ${colors.mainBlue};
   width: 100%;
   text-align: center;
@@ -46,5 +46,3 @@ const Skill = styled.button`
   font-family: "Pretendard-SemiBold";
   cursor: pointer;
 `;
-
-export { Category, Skill, StyledRoot };

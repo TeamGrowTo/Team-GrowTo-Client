@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.article`
+export const StyledRoot = styled.article`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 1.6rem;
@@ -31,7 +31,7 @@ const StyledRoot = styled.article`
   }
 `;
 
-const Category = styled.button<{ isSelected: boolean }>`
+export const Category = styled.button<{ isSelected: boolean }>`
   width: 16rem;
   height: 6.2rem;
   border-radius: 1.2rem;
@@ -85,5 +85,3 @@ const Category = styled.button<{ isSelected: boolean }>`
             }
             `}
 `;
-
-export { Category, StyledRoot };

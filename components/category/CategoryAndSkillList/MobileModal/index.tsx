@@ -4,33 +4,41 @@ import React, { useEffect } from "react";
 
 import CategoryList from "../CategoryList";
 import SkillList from "../SkillList";
-import { CloseCategoryAndSkill, ListWrapper, RedirectRequestPage, StyledRoot } from "./style";
+import {
+  BackButton,
+  CloseCategoryAndSkill,
+  ListWrapper,
+  RedirectRequestPage,
+  StyledRoot,
+} from "./style";
 
 interface Props {
   onCategoryClick: (id: number | null) => void;
   onSkillClick: (id: number | null) => void;
-  onClickCategorySkill?: (state: boolean) => void;
+  onClickMobileModal?: (state: boolean) => void;
 }
 
-function MobileModal({ onCategoryClick, onSkillClick, onClickCategorySkill }: Props) {
+function MobileModal({ onCategoryClick, onSkillClick, onClickMobileModal }: Props) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
   }, []);
 
   const onClickBack = () => {
-    if (onClickCategorySkill) onClickCategorySkill(false);
+    if (onClickMobileModal) onClickMobileModal(false);
     document.body.style.overflow = "unset";
   };
 
   return (
     <StyledRoot>
-      <CloseCategoryAndSkill onClick={onClickBack}>
-        <IcCategoryLeftArrowIcon />
-        <span>돌아가기</span>
+      <CloseCategoryAndSkill>
+        <BackButton onClick={onClickBack}>
+          <IcCategoryLeftArrowIcon />
+          <span>돌아가기</span>
+        </BackButton>
       </CloseCategoryAndSkill>
       <ListWrapper>
         <CategoryList onCategoryClick={onCategoryClick} />
-        <SkillList onSkillClick={onSkillClick} />
+        <SkillList onSkillClick={onSkillClick} onClickBack={onClickBack} />
       </ListWrapper>
       <Link href="/request" passHref>
         <RedirectRequestPage>

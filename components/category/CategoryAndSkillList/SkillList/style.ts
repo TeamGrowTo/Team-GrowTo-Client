@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.section`
+export const StyledRoot = styled.section`
   ${applyMediaQuery("desktop")} {
     width: 100%;
     height: 13rem;
@@ -22,13 +22,13 @@ const StyledRoot = styled.section`
   }
 `;
 
-const NotSelectedCategory = styled.span`
+export const NotSelectedCategory = styled.span`
   color: ${colors.mainBlue};
   font-size: 1.8rem;
   font-family: "Pretendard-Regular";
 `;
 
-const SkillWrapper = styled.div`
+export const SkillWrapper = styled.div`
   width: 118.4rem;
   height: 6.6rem;
   display: flex;
@@ -54,7 +54,7 @@ const SkillWrapper = styled.div`
   }
 `;
 
-const Skill = styled.button<{ isSelected: boolean }>`
+export const Skill = styled.button<{ isSelected: boolean }>`
   font-size: 1.5rem;
   cursor: pointer;
   ${applyMediaQuery("mobile")} {
@@ -82,5 +82,3 @@ const Skill = styled.button<{ isSelected: boolean }>`
           font-family: "Pretendard-Regular";
         `}
 `;
-
-export { NotSelectedCategory, Skill, SkillWrapper, StyledRoot };

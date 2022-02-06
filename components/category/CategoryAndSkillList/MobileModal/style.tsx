@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
-const StyledRoot = styled.section`
+export const StyledRoot = styled.section`
   display: relative;
   left: 0;
   right: 0;
@@ -15,7 +15,7 @@ const StyledRoot = styled.section`
   flex-direction: column;
 `;
 
-const CloseCategoryAndSkill = styled.button`
+export const CloseCategoryAndSkill = styled.div`
   width: 100%;
   min-height: 4.8rem;
   background-color: ${colors.mainBlue};
@@ -23,18 +23,19 @@ const CloseCategoryAndSkill = styled.button`
   justify-content: start;
   align-items: center;
   padding: 0 2.7rem;
+`;
+
+export const BackButton = styled.button`
   color: white;
   font-size: 1.4rem;
   font-family: "Pretendard-Medium";
-  & > span {
-    cursor: pointer;
-  }
+  cursor: pointer;
   & > svg {
     margin-right: 1.2rem;
   }
 `;
 
-const ListWrapper = styled.div`
+export const ListWrapper = styled.div`
   display: flex;
   width: 100%;
   z-index: 100;
@@ -44,7 +45,7 @@ const ListWrapper = styled.div`
   overflow: hidden;
 `;
 
-const RedirectRequestPage = styled.a`
+export const RedirectRequestPage = styled.a`
   position: absolute;
   bottom: 0;
   z-index: 100;
@@ -67,5 +68,3 @@ const RedirectRequestPage = styled.a`
     }
   }
 `;
-
-export { CloseCategoryAndSkill, ListWrapper, RedirectRequestPage, StyledRoot };

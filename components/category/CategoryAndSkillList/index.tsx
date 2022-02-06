@@ -11,10 +11,10 @@ interface Props {
 }
 
 function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
-  const [categorySkillOpenFlag, setCategorySkillOpenFlag] = useState(false);
+  const [categorySkillMobileModalFlag, setCategorySkillMobileModalFlag] = useState(false);
 
-  const handleCategorySkillOpen = (state: boolean) => {
-    setCategorySkillOpenFlag(state);
+  const handleCategorySkillMobileModal = (state: boolean) => {
+    setCategorySkillMobileModalFlag(state);
   };
 
   return (
@@ -26,14 +26,14 @@ function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
         />
       </Screen>
       <Screen mobile>
-        {categorySkillOpenFlag ? (
+        {categorySkillMobileModalFlag ? (
           <MobileModal
             onCategoryClick={onCategoryClick}
             onSkillClick={onSkillClick}
-            onClickCategorySkill={handleCategorySkillOpen}
+            onClickMobileModal={handleCategorySkillMobileModal}
           />
         ) : (
-          <MobileCategoryAndSkill onClick={handleCategorySkillOpen}></MobileCategoryAndSkill>
+          <MobileCategoryAndSkill onClick={handleCategorySkillMobileModal} />
         )}
       </Screen>
     </>

@@ -2,17 +2,17 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.section`
+export const StyledRoot = styled.article`
   width: 100%;
   display: flex;
   justify-content: center;
 `;
 
-const CategoryAndSkillWrapper = styled.div`
+export const CategoryAndSkillWrapper = styled.section`
   width: 128rem;
 `;
 
-const Title = styled.h1<{ currentSkillId: number | null | undefined }>`
+export const Title = styled.h1<{ currentSkillId: number | null | undefined }>`
   font-size: 3.6rem;
   font-family: "Pretendard-Bold";
   color: ${colors.subBlack};
@@ -22,7 +22,7 @@ const Title = styled.h1<{ currentSkillId: number | null | undefined }>`
   margin-bottom: 3.6rem;
 `;
 
-const LinkWrapper = styled.div`
+export const LinkWrapper = styled.div`
   display: flex;
   ${applyMediaQuery("desktop")} {
     justify-content: end;
@@ -32,7 +32,7 @@ const LinkWrapper = styled.div`
   }
 `;
 
-const RedirectRequestPage = styled.a`
+export const RedirectRequestPage = styled.a`
   border: 0;
   font-size: 1.4rem;
   font-family: "Pretendard-Regular";
@@ -43,5 +43,3 @@ const RedirectRequestPage = styled.a`
     margin-left: 1rem;
   }
 `;
-
-export { CategoryAndSkillWrapper, LinkWrapper, RedirectRequestPage, StyledRoot, Title };

@@ -6,12 +6,18 @@ import { NotSelectedCategory, Skill, SkillWrapper, StyledRoot } from "./style";
 
 interface Props {
   onSkillClick: (id: number | null) => void;
+  onClickBack?: () => void;
 }
 
-function SkillList({ onSkillClick }: Props) {
+function SkillList({ onSkillClick, onClickBack }: Props) {
   const skillList = useRecoilValue(lectureSkillState);
   const currentCategory = useRecoilValue(currentCategoryState);
   const currentSkill = useRecoilValue(currentSkillState);
+
+  const handleSkillClick = (id: number | null) => {
+    onSkillClick(id);
+    if (onClickBack) onClickBack();
+  };
 
   return (
     <StyledRoot>
@@ -23,7 +29,7 @@ function SkillList({ onSkillClick }: Props) {
             <Skill
               key={skill.id}
               isSelected={currentSkill?.id === skill.id}
-              onClick={() => onSkillClick(skill.id)}
+              onClick={() => handleSkillClick(skill.id)}
             >
               {skill.skillName}
             </Skill>
