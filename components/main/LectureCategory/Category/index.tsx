@@ -1,17 +1,18 @@
 import Link from "next/link";
 import React from "react";
 
-import { StyledRoot } from "./style";
+import { Button } from "./style";
 
 interface Prop {
-  children: string;
+  children: JSX.Element | null;
+  onCategoryClick: () => void;
 }
 
-const Category = function ({ children }: Prop) {
+const Category = function ({ onCategoryClick, children }: Prop) {
   return (
-    <StyledRoot>
-      <Link href="/category">{children}</Link>
-    </StyledRoot>
+    <Link href="/category" passHref>
+      <Button onClick={onCategoryClick}>{children}</Button>
+    </Link>
   );
 };
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
-
+import { applyMediaQuery } from "styles/mediaQuery";
 const StyledRoot = styled.section`
   height: 38rem;
   padding: 7.6rem 2.5rem 6rem 2.5rem;
@@ -8,6 +8,10 @@ const StyledRoot = styled.section`
   border-top: solid 1px ${colors.gray2};
   display: flex;
   justify-content: center;
+  ${applyMediaQuery("mobile")} {
+    padding-top: 0rem;
+    width: 100%;
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -16,6 +20,9 @@ const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  ${applyMediaQuery("mobile")} {
+    max-width: 40rem;
+  }
 `;
 
 const FooterTop = styled.div`
@@ -23,12 +30,19 @@ const FooterTop = styled.div`
   padding-bottom: 6.2rem;
   display: flex;
   justify-content: space-between;
+  ${applyMediaQuery("mobile")} {
+    flex-direction: column;
+    padding-bottom: 2.3rem;
+  }
 `;
 
 const CopyRight = styled.span`
   font-family: "Pretendard-Regular";
   font-size: 1.2rem;
   color: ${colors.gray5};
+  ${applyMediaQuery("mobile")} {
+    text-align: center;
+  }
 `;
 
 const ServiceIntroWrapper = styled.div`
@@ -37,6 +51,10 @@ const ServiceIntroWrapper = styled.div`
   min-width: 31.5rem;
   display: flex;
   flex-direction: column;
+  ${applyMediaQuery("mobile")} {
+    margin: 3.6rem auto 1.2rem;
+    align-items: center;
+  }
 `;
 
 const ServiceIntro = styled.p`
@@ -45,6 +63,11 @@ const ServiceIntro = styled.p`
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: ${colors.gray5};
+  ${applyMediaQuery("mobile")} {
+    text-align: center;
+    margin-top: 1.2rem;
+    margin-bottom: 2.9rem;
+  }
 `;
 
 const ServiceMenuBox = styled.div`
@@ -52,15 +75,25 @@ const ServiceMenuBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+  }
 `;
 
 const ServiceMenuList = styled.ul`
   display: flex;
   flex-direction: column;
   min-width: 9.5rem;
-  
   & + & {
     margin-left: 4.5rem;
+  }
+  ${applyMediaQuery("mobile")} {
+    flex-direction: row;
+    min-width: 6rem;
+    & + & {
+      margin-left: 1rem;
+    }
+  }
 `;
 
 const ServiceMenuTitle = styled.h4`
@@ -76,6 +109,12 @@ const ServiceMenuListItem = styled.li`
   font-size: 1.4rem;
   line-height: 2.6rem;
   color: ${colors.gray5};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    & + & {
+      margin-left: 3.2rem;
+    }
+  }
 `;
 
 export {

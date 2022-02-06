@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.button`
+const StyledRoot = styled.button<{ isDisable: boolean }>`
   display: inline-flex;
   align-items: center;
   background-color: white;
@@ -9,30 +10,49 @@ const StyledRoot = styled.button`
   height: 4.8rem;
   padding: 1.6rem 2.7rem;
 
-  border: 1px solid #E3E3E3;
+  border: 1px solid #e3e3e3;
   border-radius: 4.8rem;
 
   font-family: "Pretendard-Medium";
-  color: ${colors.gray6}
+  line-height: 4.8rem;
+  & span {
+    color: ${(props) => (props.isDisable ? colors.gray4 : colors.gray6)};
+  }
   transition: 200ms;
-  
-  cursor: pointer;
-
+  box-shadow: 0 0.2rem 0.6rem 0 #5858580a;
+  cursor: ${(props) => (props.isDisable ? "unset" : "pointer")};
+  path {
+    stroke: ${(props) => props.isDisable && colors.gray3};
+  }
   &:hover {
-    background-color: ${colors.gray2};
+    background-color: ${(props) => (props.isDisable ? "none" : colors.gray2)};
     transition: 200ms;
   }
 
   &:focus {
     background-color: white;
-    color: ${colors.mainBlue};
     border: 1px solid ${colors.mainBlue};
     box-shadow: 0px 2px 12px rgba(69, 121, 255, 0.08);
     transition: 200ms;
+    span {
+      color: ${colors.mainBlue};
+    }
+    path {
+      stroke: ${colors.mainBlue};
+    }
   }
 
   & + & {
     margin-left: 1.2rem;
+  }
+
+  ${applyMediaQuery("mobile")} {
+    height: 3.4rem;
+    line-height: 3.4rem;
+    padding: 1rem 1.2rem;
+    & + & {
+      margin-left: 0.6rem;
+    }
   }
 `;
 
@@ -42,7 +62,7 @@ const DropDownBox = styled.ul`
   left: 0;
 
   width: 18rem;
-
+  z-index: 1;
   background: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
   border-radius: 1.2rem;
@@ -67,6 +87,7 @@ const DropDownItem = styled.li`
   text-align: left;
   font-family: "Pretendard-Medium";
   font-size: 1.4rem;
+  line-height: 1.4rem;
   color: ${colors.gray6};
 
   cursor: pointer;
@@ -79,6 +100,12 @@ const CriteriaItem = styled.span`
   color: ${(props) => props.color || colors.gray3};
   font-size: 1.4rem;
   & + & {
+    margin-left: 0.8rem;
+  }
+
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
     margin-left: 0.8rem;
   }
 `;

@@ -8,7 +8,19 @@ interface Props {
   createdDate: number;
 }
 
-const Info = function ({ time, price, createdDate }: Props) {
+function Info({ time, price, createdDate }: Props) {
+  const formattingTime = (time: number) => {
+    return time === -1 ? "미표기" : `${time}시간`;
+  };
+
+  const formattingPrice = (price: number) => {
+    return price === -1 ? "미표기" : `${(price / 10000).toFixed(1)}만원`;
+  };
+
+  const formattingCreatedDate = (createdDate: number) => {
+    return createdDate === -1 ? "미표기" : createdDate;
+  };
+
   return (
     <StyledRoot>
       <InfoName>
@@ -17,12 +29,12 @@ const Info = function ({ time, price, createdDate }: Props) {
         <li>개설일</li>
       </InfoName>
       <InfoData>
-        <li>{time}시간</li>
-        <li>{price}만원</li>
-        <li>{createdDate}</li>
+        <li>{formattingTime(time)}</li>
+        <li>{formattingPrice(price)}</li>
+        <li>{formattingCreatedDate(createdDate)}</li>
       </InfoData>
     </StyledRoot>
   );
-};
+}
 
 export default Info;

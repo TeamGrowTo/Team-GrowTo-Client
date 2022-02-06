@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.div`
   position: relative;
@@ -7,20 +8,17 @@ const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(275.27deg, #caacff 8.92%, #4579ff 99.98%);
+  background: ${colors.paleViolet};
   overflow: hidden;
 `;
 
-const SmallCompass = styled.div`
+const ComparisonImgWrapper = styled.div`
   position: absolute;
-  left: 9.35rem;
-  bottom: 9.9rem;
-`;
-
-const LargeCompass = styled.div`
-  position: absolute;
-  right: 14.3rem;
-  top: -1.5rem;
+  right: 0;
+  top: 5.5rem;
+  ${applyMediaQuery("mobile")} {
+    display: none;
+  }
 `;
 
 const Title = styled.div`
@@ -29,6 +27,10 @@ const Title = styled.div`
   color: white;
   margin-bottom: 1.2rem;
   margin-top: 4.8rem;
+  ${applyMediaQuery("mobile")} {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const Description = styled.p`
@@ -38,6 +40,12 @@ const Description = styled.p`
   line-height: 3.8rem;
   font-size: 2.8rem;
   text-align: center;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.4rem;
+    width: 20rem;
+    height: auto;
+    line-height: 1.8rem;
+  }
 `;
 
 const LectureCount = styled.span`
@@ -58,6 +66,7 @@ const ResultData = styled.span`
 const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
   display: flex;
   justify-content: center;
+  margin-top: 3.1rem;
   & > * {
     ${({ resultDataCount }) =>
       resultDataCount === 3
@@ -71,16 +80,19 @@ const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
   & > *:last-child {
     margin-right: 0;
   }
+  ${applyMediaQuery("mobile")} {
+    /* margin: 0; */
+    margin-top: 1.6rem;
+  }
 `;
 
 export {
+  ComparisonImgWrapper,
   Description,
-  LargeCompass,
   LectureCount,
   LectureSkillData,
   ResultCardWrapper,
   ResultData,
-  SmallCompass,
   StyledRoot,
   Title,
 };

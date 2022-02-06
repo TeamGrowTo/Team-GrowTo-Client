@@ -1,4 +1,17 @@
-import { ReviewProfile } from "public/assets/images";
+import {
+  MainReviewProfile1,
+  MainReviewProfile1_mobile,
+  MainReviewProfile2,
+  MainReviewProfile2_mobile,
+  MainReviewProfile3,
+  MainReviewProfile3_mobile,
+  MainReviewProfile4,
+  MainReviewProfile4_mobile,
+  MainReviewProfile5,
+  MainReviewProfile5_mobile,
+  MainReviewProfile6,
+  MainReviewProfile6_mobile,
+} from "public/assets/images";
 import React from "react";
 
 import Review from "./Review";
@@ -7,39 +20,64 @@ import { ReviewList, StyledRoot, Title, Wrapper } from "./style";
 export default function MainReview() {
   const reviewInfo = [
     {
-      comment: "불편하게 일일이 돌아다니지 않아도 되어서 너무 편해요. 고마워요!",
-      Profile: ReviewProfile,
-      id: "1년차 마케터 봉봉음료수짱",
-    },
-    {
       comment:
-        "진짜 시간이랑 돈을 아껴주는 서비스. 개발 강의 찾을 때 기대 안하고 한번 사용해봤는데 너무 좋았음.",
-      Profile: ReviewProfile,
-      id: "2년차 마케터 봉봉음료수짱",
-    },
-    {
-      comment:
-        "새로운 강의를 들을 때마다 애용하고 있어요 ㅎㅎ 생각보다 더 편리해서 주변에 동료들에게도 알려주고 있어요.",
-      Profile: ReviewProfile,
-      id: "3년차 마케터 봉봉음료수짱",
-    },
-    {
-      comment:
-        "회원가입 없이 이런 서비스를 무료로 제공해주다니.. 감사합니다! 같은 직군 사람들한테 많이 전파하고 있어요!!",
-      Profile: ReviewProfile,
-      id: "4년차 마케터 봉봉음료수짱",
+        "새로운 강의를 들을 때마다 애용하고 있어요 ㅎㅎ 강의를 찾는게 일이었는데, 이제는 덕분에 비교해서 듣네요.",
+      Profile: MainReviewProfile1,
+      MobileProfile: MainReviewProfile1_mobile,
+      nickname: "사회초년생 개발자",
+      id: "jay2kxxx",
+      isTransparent: true,
+      isTransparentMobile: true,
     },
     {
       comment:
         "항상 강의를 듣고 싶을 때 일일히 찾고 비교하기가 귀찮았는데 대신 비교해주니 너무 좋아요!",
-      Profile: ReviewProfile,
-      id: "5년차 마케터 봉봉음료수짱",
+      Profile: MainReviewProfile2,
+      MobileProfile: MainReviewProfile2_mobile,
+      nickname: "2년차 디자이너",
+      id: "yoonsxxx",
+      isTransparent: false,
+      isTransparentMobile: false,
     },
     {
       comment:
-        "저한테 조금이라도 더 맞는 강의를 찾을 수 있게 되어서 뿌듯해용 앞으로 더 많은 종류의 강의 비교 부탁드려요!",
-      Profile: ReviewProfile,
-      id: "6년차 마케터 봉봉음료수짱",
+        "진짜 시간이랑 돈을 아껴주는 서비스. 개발 강의를 찾을 때 기대 안하고 한번 사용해봤는데 너무 좋았음",
+      Profile: MainReviewProfile3,
+      MobileProfile: MainReviewProfile3_mobile,
+      nickname: "3년차 개발자",
+      id: "ryu19xxx",
+      isTransparent: true,
+      isTransparentMobile: false,
+    },
+    {
+      comment:
+        "강의 찾기에 급급했고, 상세페이지 하나 읽어보려고 하면 머리 아팠는데 이렇게 정리해서 보여주니까 정말 편하네요",
+      Profile: MainReviewProfile4,
+      MobileProfile: MainReviewProfile4_mobile,
+      nickname: "취업준비생 데이터사이언티스트",
+      id: "v2tmexxx",
+      isTransparent: false,
+      isTransparentMobile: true,
+    },
+    {
+      comment:
+        "어떤 강의 들으면 좋을까요? 라는요청을 후배들한테 많이 받곤 하는데, 그로투를 추천해주면 딱 이네요.",
+      Profile: MainReviewProfile5,
+      MobileProfile: MainReviewProfile5_mobile,
+      nickname: "6년차 마케터",
+      id: "alphaxxx",
+      isTransparent: true,
+      isTransparentMobile: true,
+    },
+    {
+      comment:
+        "취준 불안감에 광고 나오는 강의를 무작정 결제해서 후회했던 경험이 있는데, 이렇게 비교해서 봤더라면 무지성 결제를 막을 수 있었을 듯ㅠㅠ",
+      Profile: MainReviewProfile6,
+      MobileProfile: MainReviewProfile6_mobile,
+      nickname: "취업준비생 기획자",
+      id: "re_recxxx",
+      isTransparent: false,
+      isTransparentMobile: false,
     },
   ];
 
@@ -48,10 +86,10 @@ export default function MainReview() {
       <Wrapper>
         <Title>
           <h2>그로투러들의 생생한 후기</h2>
-          <p>그로투 이메일 & DM 으로 보내주신 메시지 기반</p>
+          <p>*그로투 이메일 & DM 으로 보내주신 메시지 기반</p>
         </Title>
         <ReviewList>
-          {reviewInfo.map((review: IReviewInfo) => (
+          {reviewInfo.map((review) => (
             <Review review={review} key={review.id} />
           ))}
         </ReviewList>
