@@ -109,6 +109,12 @@ function SortingBox() {
           {criteria}
         </SortingBtn>
       ))}
+      <select name="job">
+        <option value="">직업선택</option>
+        <option value="학생">학생</option>
+        <option value="회사원">회사원</option>
+        <option value="기타">기타</option>
+      </select>
     </StyledRoot>
   );
 }

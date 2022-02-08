@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.div`
-  min-width: 128rem;
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
 
   ${applyMediaQuery("mobile")} {
     max-width: 55rem;

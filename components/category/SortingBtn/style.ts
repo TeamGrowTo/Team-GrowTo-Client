@@ -62,7 +62,7 @@ const DropDownBox = styled.ul`
   left: 0;
 
   width: 18rem;
-  z-index: 1;
+  z-index: 3;
   background: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
   border-radius: 1.2rem;
