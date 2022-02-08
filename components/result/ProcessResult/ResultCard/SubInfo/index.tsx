@@ -8,16 +8,17 @@ interface Props {
 
 function SubInfo({ replay, answer }: Props) {
   const formattingReplay = (replay: number) => {
-    return replay === 100000000 ? "무제한" : `${replay}시간`;
+    return replay === 100000000 ? "무제한" : `${replay}일`;
   };
 
   return (
     <StyledRoot>
       <SubInfoUnit>
-        반복시청 <span>{formattingReplay(replay)}</span>
+        반복시청 <span>{formattingReplay(replay)} </span>
       </SubInfoUnit>
       <span> | </span>
       <SubInfoUnit>
+        {" "}
         질문답변 <span>{answer}</span>
       </SubInfoUnit>
     </StyledRoot>

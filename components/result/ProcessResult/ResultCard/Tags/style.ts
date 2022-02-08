@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.section`
   display: flex;
   flex-wrap: wrap;
   & > * {
@@ -14,7 +14,7 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Tag = styled.div`
+const Tag = styled.article`
   padding: 0.9rem 2rem;
   background-color: ${colors.gray0};
   color: ${colors.gray6};

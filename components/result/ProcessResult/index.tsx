@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ComparisonImg } from "public/assets/images";
-import { useState } from "react";
 import { useRecoilValue } from "recoil";
 import { lectureDataList, lectureResultState } from "store/state";
 import Screen from "styles/Screen";
@@ -39,7 +38,7 @@ function ProcessResult({
   return (
     <StyledRoot>
       <ComparisonImgWrapper>
-        <Image src={ComparisonImg} alt="comparison" width="428" height="497" />
+        <Image src={ComparisonImg} alt="comparison" width="428" height="497" quality="100" />
       </ComparisonImgWrapper>
       <Title>그로투 강의 비교</Title>
       <Description>
