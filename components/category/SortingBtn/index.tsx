@@ -49,13 +49,13 @@ function SortingBtn({ onClickOpenSorting, onClickSortingItem, value, criteria }:
       <Screen mobile>{isOpen[value] ? <SmallArrowUp /> : <SmallArrowDown />}</Screen>
       <Screen desktop>{isOpen[value] ? <ArrowUp /> : <ArrowDown />}</Screen>
       {isOpen[value] && (
-        <option>
+        <DropDownBox>
           {dropListName[value].map((item) => (
             <DropDownItem key={item} onClick={() => onClickSortingItem(value, item)}>
               {item}
             </DropDownItem>
           ))}
-        </option>
+        </DropDownBox>
       )}
     </StyledRoot>
   );
