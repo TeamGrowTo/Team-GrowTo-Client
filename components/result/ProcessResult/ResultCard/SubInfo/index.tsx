@@ -14,11 +14,10 @@ function SubInfo({ replay, answer }: Props) {
   return (
     <StyledRoot>
       <SubInfoUnit>
-        반복시청 <span>{formattingReplay(replay)} </span>
+        반복시청 <span>{formattingReplay(replay)}</span>
       </SubInfoUnit>
       <span> | </span>
       <SubInfoUnit>
-        {" "}
         질문답변 <span>{answer}</span>
       </SubInfoUnit>
     </StyledRoot>
