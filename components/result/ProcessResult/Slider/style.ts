@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledRoot = styled.section`
+export const StyledRoot = styled.section`
   padding: 1.6rem 1.6rem 0 1.6rem;
   display: flex;
   align-items: center;
@@ -8,13 +8,13 @@ const StyledRoot = styled.section`
   width: 100%;
 `;
 
-const SliderBox = styled.article`
+export const SliderBox = styled.article`
   margin: 0 1rem;
   width: 29.6rem;
   overflow-x: hidden;
 `;
 
-const SliderWrapper = styled.div<{ page: number }>`
+export const SliderWrapper = styled.section<{ page: number }>`
   width: 100%;
   height: 100%;
   display: flex;
@@ -25,7 +25,7 @@ const SliderWrapper = styled.div<{ page: number }>`
   }
 `;
 
-const SliderIconWrapper = styled.button`
+export const SliderIconWrapper = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,9 +33,4 @@ const SliderIconWrapper = styled.button`
   height: 2rem;
   border-radius: 50%;
   cursor: pointer;
-  &:hover {
-    /* background-color: yellow; */
-  }
 `;
-
-export { SliderBox, SliderIconWrapper, SliderWrapper, StyledRoot };

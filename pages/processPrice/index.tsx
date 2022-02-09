@@ -3,7 +3,7 @@ import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import {
   NextArrowAble,
   NextArrowDisabled,
@@ -25,6 +25,7 @@ function ProcessPrice() {
   const priceTypeList = ["높은 가격", "낮은 가격", "상관없음"];
   const getTimeData = useRecoilValue(processState);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (
@@ -58,7 +59,7 @@ function ProcessPrice() {
       priceAsc: undefined,
     });
     setTimeout(() => {
-      Router.replace(`/result/${resultData.id}`);
+      router.replace(`/result/${resultData.id}`);
     }, 3000);
   };
 
@@ -142,9 +143,6 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
-  ${applyMediaQuery("mobile")} {
-    width: 50rem;
-  }
 `;
 export const PlayIcon = styled.div`
   position: absolute;
@@ -246,9 +244,6 @@ export const LoadingStyledRoot = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
-  ${applyMediaQuery("mobile")} {
-    width: 50rem;
-  }
 `;
 export const LogoWrapper = styled.div`
   width: 42.5rem;

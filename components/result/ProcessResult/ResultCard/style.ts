@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.article`
-  position: relative;
-  width: 41.3rem;
+export const StyledRoot = styled.article`
+  width: 41.4rem;
   height: 54rem;
   display: flex;
   flex-direction: column;
@@ -20,7 +19,7 @@ const StyledRoot = styled.article`
   }
 `;
 
-const LectureTitle = styled.h3`
+export const LectureTitle = styled.h3`
   width: 25.6rem;
   color: ${colors.subBlack};
   font-size: 2.4rem;
@@ -28,14 +27,13 @@ const LectureTitle = styled.h3`
   font-family: "Pretendard-Bold";
   margin-bottom: 2rem;
   ${applyMediaQuery("mobile")} {
-    /* width: 100%; */
     font-size: 2rem;
     line-height: 2.8rem;
     margin-bottom: 0.8rem;
   }
 `;
 
-const MoreButton = styled.a`
+export const MoreButton = styled.a`
   position: absolute;
   right: 2.4rem;
   bottom: 4rem;
@@ -51,9 +49,6 @@ const MoreButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  & > svg {
-    margin-left: 1rem;
-  }
   ${applyMediaQuery("mobile")} {
     right: 2rem;
     bottom: 2rem;
@@ -62,6 +57,11 @@ const MoreButton = styled.a`
     line-height: 4rem;
     font-size: 1.6rem;
   }
-`;
 
-export { LectureTitle, MoreButton, StyledRoot };
+  & > svg {
+    margin-left: 1rem;
+    ${applyMediaQuery("mobile")} {
+      margin-left: 0.8rem;
+    }
+  }
+`;
