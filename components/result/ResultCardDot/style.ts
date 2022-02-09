@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -16,12 +16,10 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Dot = styled.div<{ isSelected: boolean }>`
+export const Dot = styled.article<{ isSelected: boolean }>`
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 50%;
   ${({ isSelected }) =>
     isSelected ? `background-color: ${colors.mainBlue}` : `background-color: ${colors.gray2}`}
 `;
-
-export { Dot, StyledRoot };
