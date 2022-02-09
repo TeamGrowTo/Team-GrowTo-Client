@@ -27,27 +27,28 @@ const Wrapper = styled.div`
     width: 29.4rem;
   }
 
-  div {
+  p {
     font-family: "Pretendard-Bold";
     font-size: 4rem;
     line-height: 5rem;
     color: ${colors.white};
     display: flex;
+
     ${applyMediaQuery("mobile")} {
       font-size: 2.2rem;
       line-height: 2.8rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+  }
 
-    span {
-      ${applyMediaQuery("mobile")} {
-        display: flex;
-        flex-direction: column;
-      }
+  strong {
+    color: ${colors.mainBlue};
+  }
 
-      p {
-        color: ${colors.mainBlue};
-      }
-    }
+  div {
+    display: flex;
   }
 `;
 
