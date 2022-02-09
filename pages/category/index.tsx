@@ -31,6 +31,7 @@ function Category() {
   const resetIsDisable = useResetRecoilState(isDisableState);
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetProcessData = useSetRecoilState(processState);
+  const resetSkillData = useResetRecoilState(currentSkillState);
 
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
@@ -50,6 +51,7 @@ function Category() {
 
   //카테고리를 눌렀을 시 reset되어야하는 recoil값들
   const resetData = () => {
+    resetSkillData();
     resetLectureListData();
     resetIsDisable();
     resetIsOpen();
