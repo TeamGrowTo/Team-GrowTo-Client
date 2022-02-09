@@ -10,6 +10,7 @@ interface Props {
   onSkillClick: (id: number | null) => void;
 }
 
+//모바일과 데스크톱 컴포넌트를 핸들링하는 부분.(선택하는 부분)
 function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
   const [categorySkillMobileModalFlag, setCategorySkillMobileModalFlag] = useState(false);
 
@@ -25,6 +26,7 @@ function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
           onSkillClick={onSkillClick}
         />
       </Screen>
+      {/* 모바일은 클릭시 모달창이 떠야하기에 이에 따른 핸들링이 필요했습니다. */}
       <Screen mobile>
         {categorySkillMobileModalFlag ? (
           <MobileModal

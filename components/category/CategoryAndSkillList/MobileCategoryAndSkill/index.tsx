@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MobileCategoryTab } from "public/assets/images";
 import React from "react";
 import { useRecoilValue } from "recoil";

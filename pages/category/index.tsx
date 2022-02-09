@@ -24,13 +24,14 @@ function Category() {
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
+
   const setIsDisable = useSetRecoilState(isDisableState);
   const setLectureDataList = useSetRecoilState(lectureDataList);
+
   const resetLectureListData = useResetRecoilState(lectureDataList);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
   const resetIsDisable = useResetRecoilState(isDisableState);
   const resetIsOpen = useResetRecoilState(isOpenState);
-  const resetProcessData = useSetRecoilState(processState);
   const resetSkillData = useResetRecoilState(currentSkillState);
 
   const setLectureCategory = async (): Promise<void> => {
@@ -56,13 +57,6 @@ function Category() {
     resetIsDisable();
     resetIsOpen();
     resetCurrentSorting();
-    resetProcessData({
-      category: "",
-      skill: "",
-      tags: [""],
-      timeAsc: undefined,
-      priceAsc: undefined,
-    });
   };
 
   const handleCategoryClick = (id: number | null) => {
