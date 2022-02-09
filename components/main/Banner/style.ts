@@ -16,13 +16,16 @@ const StyledRoot = styled.section`
   }
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.article`
   display: flex;
   align-items: end;
   margin-top: 3.9rem;
+  ${applyMediaQuery("mobile")} {
+    margin-top: 3rem;
+  }
 `;
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled.article`
   width: 44.8rem;
   margin-right: 19.4rem;
   display: flex;
