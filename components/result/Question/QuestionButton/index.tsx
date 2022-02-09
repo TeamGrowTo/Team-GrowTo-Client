@@ -12,9 +12,14 @@ function QuestionButton({ onClickQuestionButton }: Props) {
   return (
     <StyledRoot onClick={onClickQuestionButton}>
       <Screen desktop>
-        <span>강의 정보가 다른가요?</span>
+        <>
+          <span>강의 정보가 다른가요?</span>
+          <QuestionIcon />
+        </>
       </Screen>
-      <QuestionIcon />
+      <Screen mobile>
+        <QuestionIcon />
+      </Screen>
     </StyledRoot>
   );
 }

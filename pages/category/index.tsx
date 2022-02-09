@@ -1,6 +1,8 @@
 import { getLectureCategoryData, getLectureSkillData } from "apis/info.api";
 import { getLectureDataList } from "apis/lectures.api";
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
+import MobileModal from "components/category/CategoryAndSkillList/MobileModal";
+import MobileCategoryAndSkill from "components/category/MobileCategoryAndSkill";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
 import React, { useEffect, useState } from "react";
@@ -15,6 +17,7 @@ import {
 } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import Screen from "styles/Screen";
 import { LectureCategoryData, LectureSkillData } from "types/info.type";
 
 const dummyCategoryList: LectureCategoryData[] = [
@@ -102,6 +105,7 @@ function Category() {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
   const setIsDisable = useSetRecoilState(isDisableState);
+  const [categorySkillOpenFlag, setCategorySkillOpenFlag] = useState(false);
 
   const setLectureDataList = useSetRecoilState(lectureDataList);
   const setLectureCategory = async (): Promise<void> => {
@@ -115,6 +119,7 @@ function Category() {
 
     setSkillList(result);
   };
+
   const handleCategoryClick = (id: number | null) => {
     if (id) {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
@@ -140,6 +145,10 @@ function Category() {
     }
   };
 
+  const handleCategorySkillOpen = (state: boolean) => {
+    setCategorySkillOpenFlag(state);
+  };
+
   useEffect(() => {
     setLectureCategory();
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
@@ -152,7 +161,23 @@ function Category() {
       {category && category?.id !== -1 && currentSkill && currentSkill?.id !== -1 && (
         <RedirectProcessButton />
       )}
-      <CategoryAndSkillList onCategoryClick={handleCategoryClick} onSkillClick={handleSkillClick} />
+      <Screen desktop>
+        <CategoryAndSkillList
+          onCategoryClick={handleCategoryClick}
+          onSkillClick={handleSkillClick}
+        />
+      </Screen>
+      <Screen mobile>
+        {categorySkillOpenFlag ? (
+          <MobileModal
+            onCategoryClick={handleCategoryClick}
+            onSkillClick={handleSkillClick}
+            onClickCategorySkill={handleCategorySkillOpen}
+          />
+        ) : (
+          <MobileCategoryAndSkill onClick={handleCategorySkillOpen}></MobileCategoryAndSkill>
+        )}
+      </Screen>
       <Background>
         <Result />
       </Background>

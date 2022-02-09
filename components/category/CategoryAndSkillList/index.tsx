@@ -3,10 +3,18 @@ import { CategoryRightArrowIcon } from "public/assets/icons";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentSkillState } from "store/state";
+import Screen from "styles/Screen";
 
 import CategoryList from "./CategoryList";
+import MobileModal from "./MobileModal";
 import SkillList from "./SkillList";
-import { CategoryAndSkillWrapper, RedirectRequestPage, StyledRoot, Title } from "./style";
+import {
+  CategoryAndSkillWrapper,
+  LinkWrapper,
+  RedirectRequestPage,
+  StyledRoot,
+  Title,
+} from "./style";
 
 interface Props {
   onCategoryClick: (id: number | null) => void;
@@ -22,12 +30,14 @@ function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
         <Title currentSkillId={currentSkill?.id || -1}>강의 분야</Title>
         <CategoryList onCategoryClick={onCategoryClick} />
         <SkillList onSkillClick={onSkillClick} />
-        <Link href="/request" passHref>
-          <RedirectRequestPage>
-            추가적으로 비교를 원하는 분야가 있다면?
-            <CategoryRightArrowIcon />
-          </RedirectRequestPage>
-        </Link>
+        <LinkWrapper>
+          <Link href="/request" passHref>
+            <RedirectRequestPage>
+              <span>추가적으로 비교를 원하는 분야가 있다면?</span>
+              <CategoryRightArrowIcon />
+            </RedirectRequestPage>
+          </Link>
+        </LinkWrapper>
       </CategoryAndSkillWrapper>
     </StyledRoot>
   );

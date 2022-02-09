@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const ResultBox = styled.div`
   max-width: 128rem;
   margin: 0 auto;
   padding-bottom: 19.2rem;
+  ${applyMediaQuery("mobile")} {
+    padding-bottom: 4.9rem;
+  }
 `;
 
 const ResultMessage = styled.h2`
@@ -12,7 +16,14 @@ const ResultMessage = styled.h2`
   display: inline;
   font-size: 3rem;
   line-height: 6rem;
-  color: colors.subBlack;
+  color: ${colors.subBlack};
+
+  ${applyMediaQuery("mobile")} {
+    text-align: left;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    letter-spacing: -0.01em;
+  }
 `;
 
 const ResultBlueMessage = styled(ResultMessage)`
@@ -29,6 +40,11 @@ const MessageWrapper = styled.div`
   text-align: center;
   padding-bottom: 4.4rem;
   padding-top: 6.8rem;
+
+  ${applyMediaQuery("mobile")} {
+    text-align: left;
+    padding-left: 1.6rem;
+  }
 `;
 
 export { MessageWrapper, NoResultMessage, ResultBlueMessage, ResultBox, ResultMessage };

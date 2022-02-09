@@ -27,4 +27,5 @@ export { default as MainReviewProfile5 } from "./mainReviewProfile5.svg";
 export { default as MainReviewProfile5_mobile } from "./mainReviewProfile5-mobile.svg";
 export { default as MainReviewProfile6 } from "./mainReviewProfile6.svg";
 export { default as MainReviewProfile6_mobile } from "./mainReviewProfile6-mobile.svg";
+export { default as MobileCategoryTab } from "./mobileCategoryTab.svg";
 export { default as MobileMainBannerCompass } from "./mobileMainBannerCompass.png";
