@@ -17,7 +17,7 @@ function Question() {
   };
 
   return (
-    <>
+    <div>
       <QuestionButton onClickQuestionButton={openModal} />
       {flagModal ? (
         <>
@@ -27,7 +27,7 @@ function Question() {
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 }
 

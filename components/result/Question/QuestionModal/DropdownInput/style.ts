@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const Dropdown = styled.article<{ flagDropdown: boolean }>`
+export const Dropdown = styled.article<{ flagDropdown: boolean }>`
   position: absolute;
   top: 9.1rem;
   padding: 2.2rem 3.2rem;
@@ -46,5 +46,3 @@ const Dropdown = styled.article<{ flagDropdown: boolean }>`
           display: none;
         `}
 `;
-
-export { Dropdown };
