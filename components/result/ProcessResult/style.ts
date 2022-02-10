@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.section`
   position: relative;
   width: 100%;
   display: flex;
@@ -11,47 +12,61 @@ const StyledRoot = styled.div`
   overflow: hidden;
 `;
 
-const ComparisonImgWrapper = styled.div`
+export const ComparisonImgWrapper = styled.div`
   position: absolute;
   right: 0;
   top: 5.5rem;
+  ${applyMediaQuery("mobile")} {
+    display: none;
+  }
 `;
 
-const Title = styled.div`
+export const Title = styled.h1`
   font-size: 4rem;
   font-family: "Pretendard-Bold";
   color: white;
   margin-bottom: 1.2rem;
   margin-top: 4.8rem;
+  ${applyMediaQuery("mobile")} {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   width: 48rem;
-  height: 7.6rem;
-  color: ${colors.gray0};
+  color: ${colors.gray2};
   line-height: 3.8rem;
   font-size: 2.8rem;
+  font-family: "Pretendard-Bold";
   text-align: center;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.4rem;
+    width: 20rem;
+    height: auto;
+    line-height: 1.8rem;
+  }
 `;
 
-const LectureCount = styled.span`
-  font-family: "Pretendard-Bold";
+export const LectureCount = styled.span`
   color: ${colors.gray0};
 `;
 
-const LectureSkillData = styled.span`
-  font-family: "Pretendard-Bold";
+export const LectureSkillData = styled.span`
   color: ${colors.gray0};
 `;
 
-const ResultData = styled.span`
-  font-family: "Pretendard-Bold";
+export const ResultData = styled.span`
   color: ${colors.gray0};
 `;
 
-const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
+export const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
   display: flex;
   justify-content: center;
+  margin-top: 3.1rem;
+  ${applyMediaQuery("mobile")} {
+    margin-top: 1.6rem;
+  }
   & > * {
     ${({ resultDataCount }) =>
       resultDataCount === 3
@@ -66,14 +81,3 @@ const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
     margin-right: 0;
   }
 `;
-
-export {
-  ComparisonImgWrapper,
-  Description,
-  LectureCount,
-  LectureSkillData,
-  ResultCardWrapper,
-  ResultData,
-  StyledRoot,
-  Title,
-};
