@@ -2,8 +2,7 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.article`
-  /* z-index: 100; */
+export const StyledRoot = styled.article`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 1.6rem;
@@ -32,7 +31,7 @@ const StyledRoot = styled.article`
   }
 `;
 
-const Category = styled.button<{ isSelected: boolean }>`
+export const Category = styled.button<{ isSelected: boolean }>`
   width: 16rem;
   height: 6.2rem;
   border-radius: 1.2rem;
@@ -41,6 +40,21 @@ const Category = styled.button<{ isSelected: boolean }>`
   font-family: "Pretendard-SemiBold";
   line-height: 100%;
   cursor: pointer;
+  ${applyMediaQuery("mobile")} {
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 4.8rem;
+    min-height: 4.8rem;
+    margin: 0;
+    padding-left: 3.9rem;
+    font-size: 1.4rem;
+    text-align: start;
+  }
+
+  &:active {
+    border: 0.1rem solid black;
+  }
 
   ${({ isSelected }) =>
     isSelected
@@ -49,6 +63,13 @@ const Category = styled.button<{ isSelected: boolean }>`
           box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
           border: 0.1rem solid ${colors.mainBlue};
           background: ${colors.blue4};
+          ${applyMediaQuery("mobile")} {
+            color: ${colors.mainBlue};
+            box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
+            border: 0.1rem solid ${colors.mainBlue};
+            background: ${colors.blue4};
+            border-radius: 1.2rem;
+          }
         `
       : css`
           color: ${colors.subBlack};
@@ -59,29 +80,8 @@ const Category = styled.button<{ isSelected: boolean }>`
               rgba(255, 255, 255, 0.4) 75.76%
             ),
             #ffffff;
-            `}
-  ${applyMediaQuery("mobile")} {
-    border: 0;
-    border-radius: 0;
-    width: 100%;
-    min-height: 4.8rem;
-    margin: 0;
-    padding-left: 3.9rem;
-    font-size: 1.4rem;
-    text-align: start;
-    ${({ isSelected }) =>
-      isSelected
-        ? css`
-            color: ${colors.mainBlue};
-            box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
-            border: 0.1rem solid ${colors.mainBlue};
-            background: ${colors.blue4};
-            border-radius: 1.2rem;
-          `
-        : css`
+            ${applyMediaQuery("mobile")} {
             color: ${colors.subBlack};
-          `}
-  }
+            }
+            `}
 `;
-
-export { Category, StyledRoot };

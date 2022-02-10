@@ -20,13 +20,12 @@ function MobileCategoryAndSkill({ onClick }: Props) {
       }}
     >
       <Category>
-        <MobileCategoryTab />
-        <div></div>
-        <text>
+        <span>
           {currentCategory && currentCategory?.categoryName !== ""
             ? currentCategory?.categoryName
             : "분야"}
-        </text>
+        </span>
+        <MobileCategoryTab />
       </Category>
       <Skill>
         {currentSkill && currentSkill?.skillName !== "" ? currentSkill?.skillName : "스킬"}
