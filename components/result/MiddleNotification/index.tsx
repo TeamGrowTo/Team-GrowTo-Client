@@ -7,7 +7,9 @@ const MiddleNotification = function () {
   return (
     <StyledRoot>
       <NotiBox>
-        <NotiIcon />
+        <span>
+          <NotiIcon />
+        </span>
         <NotiWrapper>
           <NotiTitle>
             <span>Q</span> 해당 추천 내용에 광고가 포함되어 있나요?
