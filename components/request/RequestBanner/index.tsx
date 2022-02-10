@@ -29,7 +29,7 @@ export default function RequestBanner() {
         <p>
           <div>
             그로투는
-            <strong>&nbsp;총 {totalNumber}개</strong>의
+            <strong>&nbsp;총 {totalNumber}개</strong>의&nbsp;
           </div>
           <div>강의를 비교해왔어요!</div>
         </p>
