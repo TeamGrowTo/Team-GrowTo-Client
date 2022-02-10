@@ -14,7 +14,7 @@ import {
   currentSkillState,
   currentSortingState,
   isDisableState,
-  isOpenState,
+  isSelectedState,
   lectureDataList,
   lectureResultState,
   lectureSkillState,
@@ -79,7 +79,7 @@ function Category() {
   const resetLectureSkillData = useResetRecoilState(lectureSkillState);
   const resetCategoryData = useResetRecoilState(currentCategoryState);
   const resetIsDisable = useResetRecoilState(isDisableState);
-  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetIsSelected = useResetRecoilState(isSelectedState);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
 
   const setLectureResultList = useSetRecoilState(lectureResultState);
@@ -140,7 +140,7 @@ function Category() {
     resetCategoryData();
     resetLectureSkillData();
     resetIsDisable();
-    resetIsOpen();
+    resetIsSelected();
     resetCurrentSorting();
     router.push("/category");
   };

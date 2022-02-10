@@ -38,14 +38,17 @@ export const sortingCriteria: SortingType[] = [
   "질의응답 시간",
 ];
 
-//sorting isOpen 객체의 type정의
+//sorting isSelectedDefault 객체의 type정의
 export interface ISorting {
   [key: string]: boolean;
 }
 
 //드랍다운 한 개가 열리면 다른 것들이 닫혀야 함 : 여러 개를 한 번에 관리해줘야함
 //드랍다운이 열렸는지 여부(isOpen)를 객체에 담는다. ex){"반복시청 기간": true, ... }
-export const isOpenDefault = {
+
+//select태그를 사용하면서 isOpen으로 드랍다운이 열렸는지 확인할 필요 없어짐.
+//대신 isSelected의 여부로 사용중.
+export const isSelectedDefault = {
   "총 소요시간": false,
   가격: false,
   개설일: false,
@@ -53,13 +56,6 @@ export const isOpenDefault = {
   "질의응답 시간": false,
 };
 
-export const isOpenState = atom<ISorting>({
-  key: "isOpenState",
-  default: isOpenDefault,
-});
-
-//-----------isSelected----------------
-//중복 선택이 안되기 때문에 isOpen처럼 isSelected도 객체로.. 한번에 관리한다.
 //초기값은 모두 false.
 export type ISelectedItemName = {
   [key in SortingType]: SortingItemType;
@@ -67,7 +63,7 @@ export type ISelectedItemName = {
 
 export const isSelectedState = atom<ISorting>({
   key: "isSelectedState",
-  default: isOpenDefault,
+  default: isSelectedDefault,
 });
 
 //---------------currentSortingState-----------
@@ -112,6 +108,7 @@ export const currentSortingDefault: ICurrentSortingType = {
   "반복시청 기간": "",
   "질의응답 시간": "",
 };
+
 export const currentSortingState = atom<ICurrentSortingType>({
   key: "currentSortingState",
   default: currentSortingDefault,

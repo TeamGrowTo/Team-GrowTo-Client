@@ -6,7 +6,7 @@ import {
   currentSkillState,
   currentSortingDefault,
   currentSortingState,
-  isOpenDefault,
+  isSelectedDefault,
   isSelectedState,
   lectureDataList,
   sortingCriteria,
@@ -94,7 +94,7 @@ function SortingBox() {
   //   }
   // };
 
-  const handleChangeSelect = async (value: SortingItemType, criteria: SortingType) => {
+  const handleChangeSelect = async (value: string, criteria: SortingType) => {
     switch (value) {
       case value:
         setCurrentSorting({
@@ -102,15 +102,15 @@ function SortingBox() {
           [criteria]: value,
         });
         setIsSelected({
-          ...isOpenDefault,
+          ...isSelectedDefault,
           [criteria]: true,
         });
         break;
-      // setInnerText(criteria + "|" + currentSorting[criteria]);
     }
+    const orderingValue = value as SortingItemType;
 
     if (category && skill) {
-      const ordering: string = SortingText[value];
+      const ordering: string = SortingText[orderingValue];
 
       const data = await getSortingLectureDataList(category.id, skill.id, ordering);
 
@@ -118,8 +118,6 @@ function SortingBox() {
         setLectureDataList(data); //확인필요
       }
     }
-
-    console.log(currentSorting);
   };
 
   return (

@@ -7,10 +7,6 @@ import {
   dropListName,
   ICurrentSortingType,
   isDisableState,
-  ISelectedItemName,
-  ISelectInnerText,
-  isOpenDefault,
-  isOpenState,
   isSelectedState,
   SortingItemType,
   SortingType,
@@ -75,9 +71,9 @@ function SortingBtn({ criteria, onChangeSelect }: SortingBtnProps) {
     //   )}
     // </StyledRoot>
     <Select
-      onChange={(e) => onChangeSelect(e.target.value, criteria)}
       name={criteria}
       value={currentSorting[criteria]}
+      onChange={(e) => onChangeSelect(e.currentTarget.value, criteria)}
       // value={innerText}
       // value={criteria + "|"}
       // value={`${criteria} | ${currentSorting[criteria]}`}
