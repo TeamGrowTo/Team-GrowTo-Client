@@ -8,7 +8,7 @@ export const StyledRoot = styled.article`
   display: flex;
   flex-direction: column;
   padding: 7.3rem 5rem 0 5rem;
-  border-radius: 28px 28px 0px 0px;
+  border-radius: 2.8rem 2.8rem 0 0;
   border: 0.2rem solid white;
   backdrop-filter: blur(2rem);
   background: rgba(255, 255, 255, 0.7);
