@@ -14,7 +14,7 @@ import {
 import { colors } from "styles/colors";
 import Screen from "styles/Screen";
 
-import { Select } from "./style";
+import { DropDownBox, DropDownItem, Select, SelectBox } from "./style";
 
 interface SortingBtnProps {
   criteria: SortingType;
@@ -28,23 +28,33 @@ function SortingBtn({ criteria, onChangeSelect }: SortingBtnProps) {
   const isSelected = useRecoilValue(isSelectedState);
 
   return (
-    <Select
-      name={criteria}
-      value={currentSorting[criteria]}
-      onChange={(e) => onChangeSelect(e.currentTarget.value, criteria)}
-      disabled={isDisable}
-      selected={isSelected[criteria]}
-      // value={`${criteria} | ${currentSorting[criteria]}`}
-      // value={criteria + (currentSorting[criteria] && `|${currentSorting[criteria]}`)}
-    >
-      {/* <option>{isSelected ? currentSorting[criteria] : criteria}</option> */}
-      <option>{criteria}</option>
-      {dropListName[criteria].map((listItem) => (
-        <option key={listItem} value={listItem}>
-          {listItem}
-        </option>
-      ))}
-    </Select>
+    <SelectBox selected={isSelected[criteria]}>
+      <Select
+        name={criteria}
+        // value={currentSorting[criteria]}
+        onChange={(e) => onChangeSelect(e.currentTarget.value, criteria)}
+        disabled={isDisable}
+        selected={isSelected[criteria]}
+        // value={`${criteria} | ${currentSorting[criteria]}`}
+        // value={criteria + (currentSorting[criteria] && `|${currentSorting[criteria]}`)}
+      >
+        {/* <option>{isSelected ? currentSorting[criteria] : criteria}</option> */}
+        <DropDownItem disabled selected>
+          {criteria}
+        </DropDownItem>
+        {dropListName[criteria].map((listItem) => (
+          <DropDownItem key={listItem} value={listItem}>
+            {listItem}
+          </DropDownItem>
+        ))}
+      </Select>
+      <Screen desktop>
+        <ArrowDown />
+      </Screen>
+      <Screen mobile>
+        <SmallArrowDown />
+      </Screen>
+    </SelectBox>
     // <StyledRoot
     //   onClick={() => onClickOpenSorting(criteria)}
     //   disabled={isDisable}
