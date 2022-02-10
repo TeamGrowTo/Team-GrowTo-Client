@@ -7,7 +7,6 @@ import {
   currentSortingDefault,
   currentSortingState,
   isOpenDefault,
-  isOpenState,
   isSelectedState,
   lectureDataList,
   sortingCriteria,
@@ -42,24 +41,23 @@ enum SortingText {
 function SortingBox() {
   const category = useRecoilValue(currentCategoryState);
   const skill = useRecoilValue(currentSkillState);
-  const [isOpen, setIsOpen] = useRecoilState(isOpenState);
   const setIsSelected = useSetRecoilState(isSelectedState);
-  const setCurrentSorting = useSetRecoilState(currentSortingState);
+  const [currentSorting, setCurrentSorting] = useRecoilState(currentSortingState);
   const setLectureDataList = useSetRecoilState(lectureDataList);
 
   //버튼 클릭 시, 버튼의 기준(sortingCriteria의 요소)을 가져와서 switch문에서 처리
   //각각의 case마다 선택한 기준을 제외하곤 모두 false로 바꿔주고,
   //선택된기준을 key로 하는 value는 반대 값으로 바꿔준다.
-  const handleOpenSorting = (criteria: SortingType) => {
-    switch (criteria) {
-      case criteria:
-        setIsOpen({
-          ...isOpenDefault,
-          [criteria]: !isOpen[criteria],
-        });
-        break;
-    }
-  };
+  // const handleOpenSorting = (criteria: SortingType) => {
+  //   switch (criteria) {
+  //     case criteria:
+  //       setIsOpen({
+  //         ...isOpenDefault,
+  //         [criteria]: !isOpen[criteria],
+  //       });
+  //       break;
+  //   }
+  // };
 
   //중복 정렬기능이 없기 때문에 한 곳에서 선택했으면 나머지는 초기화되어야함
   //어떤 기준의 어떤 기준 목록을 선택했는지 저장 필요 ex){"가격": "높은 순", ...}
@@ -72,21 +70,47 @@ function SortingBox() {
   //어떤 item이 선택되었는지 selectedItemd에 저장하고, 나머지는 빈 문자열로 초기화
   //어떤 기준(value)이 선택되었는지 true로 바꾸고 나머진 fale로 초기화
   //나중에 api연결도 추가해야함
-  const handleClickSortingItem = async (value: SortingType, item: SortingItemType) => {
-    switch (item) {
-      case item:
+  // const handleClickSortingItem = async (value: SortingType, item: SortingItemType) => {
+  //   switch (item) {
+  //     case item:
+  //       setCurrentSorting({
+  //         ...currentSortingDefault,
+  //         [value]: item,
+  //       });
+  //       setIsSelected({
+  //         ...isOpenDefault,
+  //         [value]: true,
+  //       });
+  //       break;
+  //   }
+  //   if (category && skill) {
+  //     const ordering: string = SortingText[item];
+
+  //     const data = await getSortingLectureDataList(category.id, skill.id, ordering);
+
+  //     if (data) {
+  //       setLectureDataList(data); //확인필요
+  //     }
+  //   }
+  // };
+
+  const handleChangeSelect = async (value: SortingItemType, criteria: SortingType) => {
+    switch (value) {
+      case value:
         setCurrentSorting({
           ...currentSortingDefault,
-          [value]: item,
+          [criteria]: value,
         });
         setIsSelected({
           ...isOpenDefault,
-          [value]: true,
+          [criteria]: true,
         });
         break;
+      // setInnerText(criteria + "|" + currentSorting[criteria]);
     }
+
     if (category && skill) {
-      const ordering: string = SortingText[item];
+      const ordering: string = SortingText[value];
 
       const data = await getSortingLectureDataList(category.id, skill.id, ordering);
 
@@ -94,11 +118,16 @@ function SortingBox() {
         setLectureDataList(data); //확인필요
       }
     }
+
+    console.log(currentSorting);
   };
 
   return (
     <StyledRoot>
       {sortingCriteria.map((criteria) => (
+        <SortingBtn criteria={criteria} key={criteria} onChangeSelect={handleChangeSelect} />
+      ))}
+      {/* {sortingCriteria.map((criteria) => (
         <SortingBtn
           key={criteria}
           value={criteria}
@@ -108,13 +137,7 @@ function SortingBox() {
         >
           {criteria}
         </SortingBtn>
-      ))}
-      <select name="job">
-        <option value="">직업선택</option>
-        <option value="학생">학생</option>
-        <option value="회사원">회사원</option>
-        <option value="기타">기타</option>
-      </select>
+      ))} */}
     </StyledRoot>
   );
 }

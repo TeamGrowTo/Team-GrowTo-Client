@@ -2,6 +2,49 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
+export const Select = styled.select`
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  height: 4.8rem;
+  padding: 1.6rem 2.7rem;
+
+  border: 1px solid #e3e3e3;
+  border-radius: 4.8rem;
+
+  font-family: "Pretendard-Medium";
+  line-height: 4.8rem;
+
+  transition: 200ms;
+  box-shadow: 0 0.2rem 0.6rem 0 #5858580a;
+
+  &:focus {
+    background-color: white;
+    border: 1px solid ${colors.mainBlue};
+    box-shadow: 0px 2px 12px rgba(69, 121, 255, 0.08);
+    transition: 200ms;
+    span {
+      color: ${colors.mainBlue};
+    }
+    path {
+      stroke: ${colors.mainBlue};
+    }
+  }
+
+  & + & {
+    margin-left: 1.2rem;
+  }
+
+  ${applyMediaQuery("mobile")} {
+    height: 3.4rem;
+    line-height: 3.4rem;
+    padding: 1rem 1.2rem;
+    & + & {
+      margin-left: 0.6rem;
+    }
+  }
+`;
 const StyledRoot = styled.button<{ isDisable: boolean }>`
   display: inline-flex;
   align-items: center;

@@ -21,6 +21,7 @@ export const lectureSkillState = atom<LectureSkillData[] | null>({
   default: null,
 });
 //--------------------카테고리 리스트 관련------------
+
 export const isDisableState = atom({
   key: "isDisableState",
   default: true,
@@ -111,11 +112,11 @@ export const currentSortingDefault: ICurrentSortingType = {
   "반복시청 기간": "",
   "질의응답 시간": "",
 };
-
 export const currentSortingState = atom<ICurrentSortingType>({
   key: "currentSortingState",
   default: currentSortingDefault,
 });
+export type SelectInnerText = SortingType | string;
 
 interface CurrentCategory {
   id: number | null;
