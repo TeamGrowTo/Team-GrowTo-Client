@@ -69,6 +69,7 @@ const Number = styled.div`
   font-size: 1.6rem;
   display: flex;
   p {
+    font-family: "Pretendard-Bold";
     color: ${colors.mainBlue};
   }
 `;
