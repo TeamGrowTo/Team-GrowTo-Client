@@ -14,36 +14,37 @@ import {
 import { colors } from "styles/colors";
 import Screen from "styles/Screen";
 
-import {
-  BtnTextWrapper,
-  CriteriaItem,
-  DropDownBox,
-  DropDownItem,
-  Select,
-  StyledRoot,
-} from "./style";
+import { Select } from "./style";
 
 interface SortingBtnProps {
   criteria: SortingType;
   onChangeSelect: (value: string, criteria: SortingType) => void;
-  // selectedValue: ICurrentSortingType;
-  // children: React.ReactNode;
-  // onClickOpenSorting: (criterial: SortingType) => void;
-  // onClickSortingItem: (value: SortingType, item: SortingItemType) => void;
-  // criteria: SortingType;
-  // onChangeSelect: (e: React.ChangeEvent<HTMLSelectElement>, criteria: SortingType) => void;
 }
 
 //sorting기준에 따라 dropDownList가 다르게보이도록 하자.
 function SortingBtn({ criteria, onChangeSelect }: SortingBtnProps) {
-  // const isDisable = useRecoilValue(isDisableState);
-  // const isSelected = useRecoilValue(isSelectedState);
-  // const isOpen = useRecoilValue(isOpenState);
-  const [isSelected, setIsSelected] = useRecoilState(isSelectedState);
   const [currentSorting, setCurrentSorting] = useRecoilState(currentSortingState);
+  const isDisable = useRecoilValue(isDisableState);
+  const isSelected = useRecoilValue(isSelectedState);
 
-  // const [innerText, setInnerText] = useState<ISelectInnerText>(criteria);
   return (
+    <Select
+      name={criteria}
+      value={currentSorting[criteria]}
+      onChange={(e) => onChangeSelect(e.currentTarget.value, criteria)}
+      disabled={isDisable}
+      selected={isSelected[criteria]}
+      // value={`${criteria} | ${currentSorting[criteria]}`}
+      // value={criteria + (currentSorting[criteria] && `|${currentSorting[criteria]}`)}
+    >
+      {/* <option>{isSelected ? currentSorting[criteria] : criteria}</option> */}
+      <option>{criteria}</option>
+      {dropListName[criteria].map((listItem) => (
+        <option key={listItem} value={listItem}>
+          {listItem}
+        </option>
+      ))}
+    </Select>
     // <StyledRoot
     //   onClick={() => onClickOpenSorting(criteria)}
     //   disabled={isDisable}
@@ -70,23 +71,6 @@ function SortingBtn({ criteria, onChangeSelect }: SortingBtnProps) {
     //     </DropDownBox>
     //   )}
     // </StyledRoot>
-    <Select
-      name={criteria}
-      value={currentSorting[criteria]}
-      onChange={(e) => onChangeSelect(e.currentTarget.value, criteria)}
-      // value={innerText}
-      // value={criteria + "|"}
-      // value={`${criteria} | ${currentSorting[criteria]}`}
-      // value={criteria + (currentSorting[criteria] && `|${currentSorting[criteria]}`)}
-    >
-      {/* <option>{isSelected ? currentSorting[criteria] : criteria}</option> */}
-      <option>{criteria}</option>
-      {dropListName[criteria].map((listItem) => (
-        <option key={listItem} value={listItem}>
-          {listItem}
-        </option>
-      ))}
-    </Select>
   );
 }
 

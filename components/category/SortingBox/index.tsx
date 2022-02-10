@@ -42,23 +42,10 @@ function SortingBox() {
   const category = useRecoilValue(currentCategoryState);
   const skill = useRecoilValue(currentSkillState);
   const setIsSelected = useSetRecoilState(isSelectedState);
-  const [currentSorting, setCurrentSorting] = useRecoilState(currentSortingState);
+  const setCurrentSorting = useSetRecoilState(currentSortingState);
   const setLectureDataList = useSetRecoilState(lectureDataList);
 
-  //버튼 클릭 시, 버튼의 기준(sortingCriteria의 요소)을 가져와서 switch문에서 처리
-  //각각의 case마다 선택한 기준을 제외하곤 모두 false로 바꿔주고,
-  //선택된기준을 key로 하는 value는 반대 값으로 바꿔준다.
-  // const handleOpenSorting = (criteria: SortingType) => {
-  //   switch (criteria) {
-  //     case criteria:
-  //       setIsOpen({
-  //         ...isOpenDefault,
-  //         [criteria]: !isOpen[criteria],
-  //       });
-  //       break;
-  //   }
-  // };
-
+  //isOpen은 select 태그 사용하면서 필요없어짐.
   //중복 정렬기능이 없기 때문에 한 곳에서 선택했으면 나머지는 초기화되어야함
   //어떤 기준의 어떤 기준 목록을 선택했는지 저장 필요 ex){"가격": "높은 순", ...}
   //초기값은 모두 빈 문자열
@@ -68,31 +55,7 @@ function SortingBox() {
   //드랍다운 아이템을 클릭하면 어떤 기준을 선택했고, 그 기준(value)의 어떤 목록(item)을 선택했는지 받아온다.
   //item이 '긴 순서' '짧은 순서'로 겹치는 경우가 있긴 한데 받아오는 value가 달라서 잘 작동되는 것 같다.
   //어떤 item이 선택되었는지 selectedItemd에 저장하고, 나머지는 빈 문자열로 초기화
-  //어떤 기준(value)이 선택되었는지 true로 바꾸고 나머진 fale로 초기화
-  //나중에 api연결도 추가해야함
-  // const handleClickSortingItem = async (value: SortingType, item: SortingItemType) => {
-  //   switch (item) {
-  //     case item:
-  //       setCurrentSorting({
-  //         ...currentSortingDefault,
-  //         [value]: item,
-  //       });
-  //       setIsSelected({
-  //         ...isOpenDefault,
-  //         [value]: true,
-  //       });
-  //       break;
-  //   }
-  //   if (category && skill) {
-  //     const ordering: string = SortingText[item];
-
-  //     const data = await getSortingLectureDataList(category.id, skill.id, ordering);
-
-  //     if (data) {
-  //       setLectureDataList(data); //확인필요
-  //     }
-  //   }
-  // };
+  //어떤 기준(value)이 선택되었는지 true로 바꾸고 나머진 false로 초기화
 
   const handleChangeSelect = async (value: string, criteria: SortingType) => {
     switch (value) {

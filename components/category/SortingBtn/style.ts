@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const Select = styled.select`
+export const Select = styled.select<{ selected: boolean }>`
   display: inline-flex;
   align-items: center;
   background-color: white;
@@ -14,7 +14,15 @@ export const Select = styled.select`
   border-radius: 4.8rem;
 
   font-family: "Pretendard-Medium";
+  font-size: 1.4rem;
   line-height: 4.8rem;
+  color: ${colors.gray6};
+
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-left: 0.8rem;
+  }
 
   transition: 200ms;
   box-shadow: 0 0.2rem 0.6rem 0 #5858580a;
@@ -24,12 +32,14 @@ export const Select = styled.select`
     border: 1px solid ${colors.mainBlue};
     box-shadow: 0px 2px 12px rgba(69, 121, 255, 0.08);
     transition: 200ms;
-    span {
-      color: ${colors.mainBlue};
-    }
-    path {
+    color: ${colors.mainBlue};
+    /* path {
       stroke: ${colors.mainBlue};
-    }
+    } */
+  }
+
+  &:focus-visible {
+    outline: none;
   }
 
   & + & {
@@ -45,7 +55,7 @@ export const Select = styled.select`
     }
   }
 `;
-const StyledRoot = styled.button<{ isDisable: boolean }>`
+export const StyledRoot = styled.button<{ isDisable: boolean }>`
   display: inline-flex;
   align-items: center;
   background-color: white;
@@ -99,7 +109,7 @@ const StyledRoot = styled.button<{ isDisable: boolean }>`
   }
 `;
 
-const DropDownBox = styled.ul`
+export const DropDownBox = styled.ul`
   position: absolute;
   top: 5.4rem;
   left: 0;
@@ -121,7 +131,7 @@ const DropDownBox = styled.ul`
   }
 `;
 
-const DropDownItem = styled.li`
+export const DropDownItem = styled.li`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -138,23 +148,21 @@ const DropDownItem = styled.li`
     background: ${colors.lightBlue};
   }
 `;
-const CriteriaItem = styled.span`
-  font-family: "Pretendard-Medium";
-  color: ${(props) => props.color || colors.gray3};
-  font-size: 1.4rem;
-  & + & {
-    margin-left: 0.8rem;
-  }
+// const CriteriaItem = styled.span`
+//   font-family: "Pretendard-Medium";
+//   color: ${(props) => props.color || colors.gray3};
+//   font-size: 1.4rem;
+//   & + & {
+//     margin-left: 0.8rem;
+//   }
 
-  ${applyMediaQuery("mobile")} {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    margin-left: 0.8rem;
-  }
-`;
+//   ${applyMediaQuery("mobile")} {
+//     font-size: 1.2rem;
+//     line-height: 1.4rem;
+//     margin-left: 0.8rem;
+//   }
+// `;
 
-const BtnTextWrapper = styled.span`
-  margin-right: 1.2rem;
-`;
-
-export { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot };
+// const BtnTextWrapper = styled.span`
+//   margin-right: 1.2rem;
+// `;
