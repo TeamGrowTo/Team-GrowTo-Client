@@ -1,19 +1,18 @@
 import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: boolean }>`
+export const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: boolean }>`
   display: flex;
   flex-direction: column;
-  & > span {
-    color: ${colors.subBlack};
-    font-size: 2rem;
-    font-family: "Pretendard-Bold";
-    line-height: 2.4rem;
-    margin-bottom: 0.8rem;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
   }
   & > * {
     width: 50.2rem;
-    /* height: 9.2rem; */
+    ${applyMediaQuery("mobile")} {
+      width: 100%;
+    }
   }
 
   & > button {
@@ -26,7 +25,13 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
     align-items: center;
     width: 100%;
     height: 6rem;
+    padding: 0 3.2rem;
     cursor: pointer;
+    ${applyMediaQuery("mobile")} {
+      height: 4rem;
+      font-size: 1.4rem;
+      padding: 0 2.4rem;
+    }
 
     ${({ flagDropdown }) =>
       flagDropdown
@@ -36,17 +41,6 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
         : css`
             border-radius: 4.8rem;
           `}
-
-    & > * {
-    }
-    span {
-      margin-left: 3.2rem;
-    }
-    svg {
-      margin-right: 3.3rem;
-      width: 1.8rem;
-      height: 1rem;
-    }
   }
 
   & > input {
@@ -57,6 +51,15 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
     color: ${colors.subBlack};
     font-size: 2rem;
     font-family: "Pretendard-Regular";
+    height: 6rem;
+    ${applyMediaQuery("mobile")} {
+      height: 4rem;
+      padding: 1.1rem 2.4rem;
+      font-size: 1.4rem;
+    }
+  }
+  & > input::placeholder {
+    color: ${colors.gray4};
   }
 
   & > textarea {
@@ -70,14 +73,37 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
     height: 18.4rem;
     outline: none;
     resize: none;
-  }
-
-  & > input::placeholder {
-    color: ${colors.gray4};
+    ${applyMediaQuery("mobile")} {
+      width: 100%;
+      height: 12rem;
+      padding: 1.6rem 2.5rem;
+      font-size: 1.4rem;
+      margin-bottom: 6.4rem;
+    }
   }
   & > textarea::placeholder {
     color: ${colors.gray4};
   }
 `;
 
-export { StyledRoot };
+export const TitleWrapper = styled.header`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  & > span {
+    color: ${colors.subBlack};
+    font-size: 2rem;
+    font-family: "Pretendard-Bold";
+    line-height: 2.4rem;
+    ${applyMediaQuery("mobile")} {
+      font-size: 1.6rem;
+    }
+  }
+`;
+
+export const Error = styled.small`
+  font-family: "Pretendard-Regular";
+  font-size: 0.8rem;
+  color: red;
+  margin-left: 0.8rem;
+`;

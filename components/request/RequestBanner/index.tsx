@@ -1,5 +1,6 @@
 import { getLectureTotalNumber } from "apis/count.api";
 import React, { useEffect, useState } from "react";
+import Screen from "styles/Screen";
 
 import { StyledRoot, Wrapper } from "./style";
 
@@ -20,12 +21,18 @@ export default function RequestBanner() {
   return (
     <StyledRoot>
       <Wrapper>
-        <div>
-          여러분의 <p>&nbsp;비교요청으로</p>
-        </div>
-        <div>
-          그로투는 <p>&nbsp;총 {totalNumber}개</p>의 강의를 비교해왔어요!
-        </div>
+        <p>
+          <div>
+            여러분의 <strong>&nbsp;비교요청으로</strong>
+          </div>
+        </p>
+        <p>
+          <div>
+            그로투는
+            <strong>&nbsp;총 {totalNumber}개</strong>의&nbsp;
+          </div>
+          <div>강의를 비교해왔어요!</div>
+        </p>
       </Wrapper>
     </StyledRoot>
   );
