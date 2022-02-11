@@ -57,7 +57,7 @@ const MainLectureCategory = function () {
           <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
             <>
               <Screen desktop>
-                <Image src={iconList[index]} alt="categoryIcon" width="30" height="32" />
+                <Image src={iconList[index]} alt="categoryIcon" />
               </Screen>
               <Screen mobile>
                 <Image src={iconList[index]} alt="categoryIcon" width="18" height="18" />
