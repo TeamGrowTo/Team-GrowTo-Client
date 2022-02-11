@@ -3,6 +3,7 @@ import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.article`
+  position: relative;
   width: 41.4rem;
   height: 54rem;
   display: flex;
