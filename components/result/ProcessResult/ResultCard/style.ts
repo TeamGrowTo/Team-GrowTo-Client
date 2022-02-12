@@ -22,12 +22,17 @@ export const StyledRoot = styled.article`
 
 export const LectureTitle = styled.h3`
   width: 25.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: ${colors.subBlack};
   font-size: 2.4rem;
   line-height: 3.4rem;
   font-family: "Pretendard-Bold";
   margin-bottom: 2rem;
   ${applyMediaQuery("mobile")} {
+    width: 21.2rem;
     font-size: 2rem;
     line-height: 2.8rem;
     margin-bottom: 0.8rem;
