@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
