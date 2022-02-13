@@ -51,7 +51,7 @@ const StyledRoot = styled.button<{ isDisable: boolean }>`
     line-height: 3.4rem;
     padding: 1rem 1.2rem;
     & + & {
-      margin-left: 0.6rem;
+      margin-left: 0;
     }
   }
 `;
