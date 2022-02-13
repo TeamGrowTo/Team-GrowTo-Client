@@ -2,8 +2,10 @@ import Image from "next/image";
 import { ComparisonImg } from "public/assets/images";
 import { useRecoilValue } from "recoil";
 import { lectureDataList, lectureResultState } from "store/state";
+import Screen from "styles/Screen";
 
 import ResultCard from "./ResultCard";
+import Slider from "./Slider";
 import {
   ComparisonImgWrapper,
   Description,
@@ -19,16 +21,24 @@ interface Props {
   listLength: number;
   categoryName: string;
   skillName: string;
+  sliderPage: number;
+  onChangeSliderPage: (page: number) => void;
 }
 
-function ProcessResult({ listLength, categoryName, skillName }: Props) {
+function ProcessResult({
+  listLength,
+  categoryName,
+  skillName,
+  sliderPage,
+  onChangeSliderPage,
+}: Props) {
   const lectureResultList = useRecoilValue(lectureResultState);
   const LectureDataList = useRecoilValue(lectureDataList);
 
   return (
     <StyledRoot>
       <ComparisonImgWrapper>
-        <Image src={ComparisonImg} alt="comparison" width="428" height="497" />
+        <Image src={ComparisonImg} alt="comparison" width="428" height="497" quality="100" />
       </ComparisonImgWrapper>
       <Title>그로투 강의 비교</Title>
       <Description>
@@ -38,11 +48,20 @@ function ProcessResult({ listLength, categoryName, skillName }: Props) {
         </LectureSkillData>{" "}
         나에게 <ResultData>딱 맞는 {listLength}가지</ResultData> 강의에요!
       </Description>
-      <ResultCardWrapper resultDataCount={lectureResultList?.length || 0}>
-        {lectureResultList?.map((data, index) => (
-          <ResultCard key={index} result={data} />
-        ))}
-      </ResultCardWrapper>
+      <Screen desktop>
+        <ResultCardWrapper resultDataCount={lectureResultList?.length || 0}>
+          {lectureResultList?.map((data, index) => (
+            <ResultCard key={index} result={data} />
+          ))}
+        </ResultCardWrapper>
+      </Screen>
+      <Screen mobile>
+        <Slider
+          listLength={listLength || 0}
+          onChangeSliderPage={onChangeSliderPage}
+          sliderPage={sliderPage}
+        />
+      </Screen>
     </StyledRoot>
   );
 }

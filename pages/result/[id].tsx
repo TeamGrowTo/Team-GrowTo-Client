@@ -4,6 +4,7 @@ import BlueButton from "components/common/BlueButton";
 import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
 import Question from "components/result/Question";
+import ResultCardDot from "components/result/ResultCardDot";
 import ResultShareButton from "components/result/ResultShareButton";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -89,7 +90,26 @@ function Category() {
   const [listLength, setListLength] = useState(0);
   const [category, setCategory] = useState({ id: -1, name: "" });
   const [skill, setSkill] = useState({ id: -1, name: "" });
+  const [sliderPage, setSliderPage] = useState(0);
   const { id } = router.query;
+
+  useEffect(() => {
+    //api불러오는 함수
+    if (category.id >= 0 && skill.id >= 0) {
+      GetLecturefromSkillId(skill.id, category.id);
+    }
+  }, [skill.id, category.id]);
+
+  useEffect(() => {
+    if (!id) {
+      return;
+    } else {
+      getLectureResult();
+      // setLectureResultList(dummy);
+      // setCategory({ id: 1, name: "마케팅" });
+      // setSkill({ id: 3, name: "디지털&퍼포먼스" });
+    }
+  }, [id]);
 
   const getLectureResult = async (): Promise<void> => {
     const data: Result = await getLectureResultData(id);
@@ -113,24 +133,6 @@ function Category() {
     setLectureDataList(data);
   };
 
-  useEffect(() => {
-    //api불러오는 함수
-    if (category.id >= 0 && skill.id >= 0) {
-      GetLecturefromSkillId(skill.id, category.id);
-    }
-  }, [skill.id, category.id]);
-
-  useEffect(() => {
-    if (!id) {
-      return;
-    } else {
-      getLectureResult();
-      // setLectureResultList(dummy);
-      // setCategory({ id: 1, name: "마케팅" });
-      // setSkill({ id: 3, name: "디지털&퍼포먼스" });
-    }
-  }, [id]);
-
   //categoryId, skillId로 api보내서 받은 response를 cardList 컴포넌트에 넣어주자
   const handleMoveToCategory = () => {
     resetLectureListData();
@@ -143,9 +145,22 @@ function Category() {
     router.push("/category");
   };
 
+  const onChangeSliderPage = (page: number) => {
+    setSliderPage(page);
+  };
+
   return (
     <StyledRoot>
-      <ProcessResult listLength={listLength} categoryName={category.name} skillName={skill.name} />
+      <ProcessResult
+        listLength={listLength}
+        categoryName={category.name}
+        skillName={skill.name}
+        sliderPage={sliderPage}
+        onChangeSliderPage={onChangeSliderPage}
+      />
+      <Screen mobile>
+        <ResultCardDot listLength={listLength} sliderPage={sliderPage} />
+      </Screen>
       <ResultShareButton />
       <MiddleNotification />
       <Result />

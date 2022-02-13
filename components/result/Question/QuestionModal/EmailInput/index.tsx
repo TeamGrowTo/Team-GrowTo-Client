@@ -3,14 +3,13 @@ import React from "react";
 import InputForm from "../InputForm";
 
 interface Props {
-  email: string;
   onEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  flagError?: boolean;
 }
 
-function EmailInput({ email, onEmailChange }: Props) {
+function EmailInput({ onEmailChange, flagError }: Props) {
   return (
-    // <form name="reportForm">
-    <InputForm title="이메일*">
+    <InputForm title="이메일*" flagError={flagError} errorMessage="이메일 형식이 맞지 않습니다.">
       <input
         type="email"
         placeholder="수정된 강의 정보를 메일로 보내드려요"
@@ -18,7 +17,6 @@ function EmailInput({ email, onEmailChange }: Props) {
         required
       />
     </InputForm>
-    // </form>
   );
 }
 

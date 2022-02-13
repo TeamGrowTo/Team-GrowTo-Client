@@ -8,7 +8,7 @@ interface Props {
 
 function SubInfo({ replay, answer }: Props) {
   const formattingReplay = (replay: number) => {
-    return replay === 100000000 ? "무제한" : `${replay}시간`;
+    return replay === 100000000 ? "무제한" : `${replay}일`;
   };
 
   return (
