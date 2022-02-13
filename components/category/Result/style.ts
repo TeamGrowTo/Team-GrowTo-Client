@@ -5,7 +5,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 const ResultBox = styled.div`
   max-width: 128rem;
   margin: 0 auto;
-  padding-bottom: 19.2rem;
+  padding-bottom: 9.2rem;
   ${applyMediaQuery("mobile")} {
     padding-bottom: 4.9rem;
   }

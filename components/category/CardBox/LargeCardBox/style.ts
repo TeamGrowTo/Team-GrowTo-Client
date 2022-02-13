@@ -13,6 +13,7 @@ const StyledRoot = styled.div`
   box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.1);
   &:hover {
     box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.15);
+    background: #fbfcff;
   }
 `;
 

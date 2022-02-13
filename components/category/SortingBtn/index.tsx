@@ -14,7 +14,14 @@ import {
 import { colors } from "styles/colors";
 import Screen from "styles/Screen";
 
-import { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
+import {
+  BtnTextWrapper,
+  CriteriaItem,
+  CriteriaSelectedItem,
+  DropDownBox,
+  DropDownItem,
+  StyledRoot,
+} from "./style";
 //propstype 잘받아온거 맞는지 확인부...탁...해요..
 interface SortingBtnProps {
   value: SortingType;
@@ -36,18 +43,18 @@ function SortingBtn({ onClickOpenSorting, onClickSortingItem, value, criteria }:
       onClick={() => onClickOpenSorting(criteria)}
       disabled={isDisable}
       isDisable={isDisable}
+      isSelected={isSelected[value]}
     >
-      <BtnTextWrapper>
-        <CriteriaItem color={colors.gray6}>{value}</CriteriaItem>
-        {isSelected[value] && (
-          <>
-            <CriteriaItem>|</CriteriaItem>
-            <CriteriaItem color={colors.mainBlue}>{currentSorting[value]}</CriteriaItem>
-          </>
-        )}
-      </BtnTextWrapper>
-      <Screen mobile>{isOpen[value] ? <SmallArrowUp /> : <SmallArrowDown />}</Screen>
-      <Screen desktop>{isOpen[value] ? <ArrowUp /> : <ArrowDown />}</Screen>
+      <CriteriaItem>{value}</CriteriaItem>
+      {isSelected[value] && (
+        <CriteriaSelectedItem color={colors.mainBlue}>{currentSorting[value]}</CriteriaSelectedItem>
+      )}
+      {isSelected[value] || (
+        <>
+          <Screen mobile>{isOpen[value] ? <SmallArrowUp /> : <SmallArrowDown />}</Screen>
+          <Screen desktop>{isOpen[value] ? <ArrowUp /> : <ArrowDown />}</Screen>
+        </>
+      )}
       {isOpen[value] && (
         <DropDownBox>
           {dropListName[value].map((item) => (
