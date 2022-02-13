@@ -31,6 +31,7 @@ export { default as NotiIcon } from "./notiIcon.svg";
 export { default as PrevArrow } from "./prevArrow.svg";
 export { default as ProcessLoading } from "./processLoading.svg";
 export { default as ProcessPlayIcon } from "./processPlayIcon.png";
+export { default as ProcessPrevIcon } from "./processPrev.svg";
 export { default as ProcessSquareIcon } from "./processSquareIcon.png";
 export { default as ProgressPrice } from "./progressPrice.svg";
 export { default as ProgressPriceM } from "./progressPriceM.svg";
