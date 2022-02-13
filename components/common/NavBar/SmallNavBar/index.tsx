@@ -8,6 +8,7 @@ import {
   currentSortingState,
   isDisableState,
   isOpenState,
+  isSelectedState,
   lectureDataList,
   lectureSkillState,
   processState,
@@ -30,6 +31,7 @@ function SmallNavBar() {
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
   const resetProcessData = useSetRecoilState(processState);
+  const resetIsSelected = useResetRecoilState(isSelectedState);
 
   const handleResetLectureData = () => {
     resetLectureListData();
@@ -39,6 +41,7 @@ function SmallNavBar() {
     resetIsDisable();
     resetIsOpen();
     resetCurrentSorting();
+    resetIsSelected();
     resetProcessData({
       category: "",
       skill: "",
