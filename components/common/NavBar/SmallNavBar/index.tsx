@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { CloseButton, HamburgerIcon, SmallLogoIcon } from "public/assets/icons";
 import React, { useState } from "react";
-import { useResetRecoilState } from "recoil";
+import { useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  currentSortingState,
+  isDisableState,
+  isOpenState,
   lectureDataList,
   lectureSkillState,
+  processState,
 } from "store/state";
 
-import { ButtonWrapper, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
+import { ButtonWrapper, LinkA, NavMenuList, NavMenuListItem, StyledRoot } from "./style";
 
 function SmallNavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,12 +26,26 @@ function SmallNavBar() {
   const resetSkillData = useResetRecoilState(currentSkillState);
   const resetLectureSkillData = useResetRecoilState(lectureSkillState);
   const resetCategoryData = useResetRecoilState(currentCategoryState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetProcessData = useSetRecoilState(processState);
 
   const handleResetLectureData = () => {
     resetLectureListData();
     resetSkillData();
     resetCategoryData();
     resetLectureSkillData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
+    resetProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
   };
 
   return (
@@ -44,15 +62,18 @@ function SmallNavBar() {
             <NavMenuList>
               <NavMenuListItem>
                 <Link href="/category" passHref>
-                  <button onClick={handleResetLectureData}>전체강의</button>
+                  <LinkA onClick={handleResetLectureData}>전체강의</LinkA>
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
                 <Link href="/request">비교요청</Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161">
-                  <a target="_blank">ABOUT</a>
+                <Link
+                  href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+                  passHref
+                >
+                  <LinkA target="_blank">ABOUT</LinkA>
                 </Link>
               </NavMenuListItem>
             </NavMenuList>

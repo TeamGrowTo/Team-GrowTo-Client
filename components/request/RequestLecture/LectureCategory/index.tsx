@@ -1,5 +1,6 @@
-import { Dropdown } from "public/assets/icons";
+import { Dropdown, Dropdown_mobile } from "public/assets/icons";
 import React, { useState } from "react";
+import Screen from "styles/Screen";
 
 import {
   CategoryButton,
@@ -49,7 +50,12 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
               <span>{categorySelected}</span>
             )}
             <DropdownWrapper>
-              <Dropdown />
+              <Screen desktop>
+                <Dropdown />
+              </Screen>
+              <Screen mobile>
+                <Dropdown_mobile />
+              </Screen>
             </DropdownWrapper>
           </CategoryButton>
           {open ? (

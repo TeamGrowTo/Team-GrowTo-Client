@@ -1,109 +1,39 @@
+import { getLectureCategoryData, getLectureSkillData } from "apis/info.api";
+import { getLectureDataList } from "apis/lectures.api";
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
-import { getLectureCategoryData, getLectureSkillData } from "pages/apis/info.api";
-import { getLectureDataList } from "pages/apis/lectures.api";
-import React, { useEffect, useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import React, { useEffect } from "react";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
+  currentSortingState,
   isDisableState,
+  isOpenState,
   lectureCategoryState,
   lectureDataList,
   lectureSkillState,
+  processState,
 } from "store/state";
-import { LectureCategoryData, LectureSkillData } from "types/info.type";
-
-import { Background } from "./style";
-
-const dummyCategoryList: LectureCategoryData[] = [
-  {
-    id: 1,
-    categoryName: "개발",
-  },
-  {
-    id: 2,
-    categoryName: "기획",
-  },
-  {
-    id: 3,
-    categoryName: "데이터",
-  },
-  {
-    id: 4,
-    categoryName: "디자인",
-  },
-  {
-    id: 5,
-    categoryName: "마케팅",
-  },
-  {
-    id: 6,
-    categoryName: "기타",
-  },
-];
-
-const dummySkillList: LectureSkillData[] = [
-  {
-    id: 1,
-    skillName: "퍼포먼스&디지털",
-  },
-  {
-    id: 2,
-    skillName: "컨텐츠",
-  },
-  {
-    id: 3,
-    skillName: "FB&IG",
-  },
-  {
-    id: 4,
-    skillName: "GA&GA4",
-  },
-  {
-    id: 5,
-    skillName: "검색(SEO, SEM)",
-  },
-  {
-    id: 6,
-    skillName: "데이터분석 Python",
-  },
-  {
-    id: 7,
-    skillName: "퍼포먼스&디지털",
-  },
-  {
-    id: 8,
-    skillName: "퍼포먼스&디지털",
-  },
-  {
-    id: 9,
-    skillName: "퍼포먼스&디지털",
-  },
-
-  {
-    id: 10,
-    skillName: "퍼포먼스&디지털",
-  },
-  {
-    id: 11,
-    skillName: "컨텐츠",
-  },
-  {
-    id: 12,
-    skillName: "데이터분석 Python",
-  },
-];
+import styled from "styled-components";
+import { colors } from "styles/colors";
 
 function Category() {
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
-  const setIsDisable = useSetRecoilState(isDisableState);
 
+  const setIsDisable = useSetRecoilState(isDisableState);
   const setLectureDataList = useSetRecoilState(lectureDataList);
+
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
 
@@ -115,13 +45,28 @@ function Category() {
 
     setSkillList(result);
   };
+
+  const getSkillList = async (id: number, SkillId: number | null) => {
+    return await getLectureDataList(id, SkillId);
+  };
+
+  //카테고리를 눌렀을 시 reset되어야하는 recoil값들
+  const resetData = () => {
+    resetSkillData();
+    resetLectureListData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
+  };
+
   const handleCategoryClick = (id: number | null) => {
     if (id) {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
 
       setCurrentCategory(result);
       setLectureSkill(id);
-      // setSkillList(dummySkillList);
+      setCurrentSkill({ id: -1, skillName: "" });
+      resetData();
     }
   };
 
@@ -131,7 +76,7 @@ function Category() {
       const categoryId = category?.id;
 
       if (categoryId) {
-        const data = await getLectureDataList(categoryId, SkillId);
+        const data = await getSkillList(categoryId, SkillId);
 
         setIsDisable(false);
         setLectureDataList(data); //확인필요
@@ -143,8 +88,7 @@ function Category() {
   useEffect(() => {
     setLectureCategory();
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
-    setCurrentSkill({ id: -1, skillName: "" });
-    // setCategoryList(dummyCategoryList);
+    if (!currentSkill) setCurrentSkill({ id: -1, skillName: "" });
   }, []);
 
   return (
@@ -161,3 +105,8 @@ function Category() {
 }
 
 export default Category;
+
+const Background = styled.section`
+  background-color: ${colors.gray0};
+  width: 100%;
+`;

@@ -1,4 +1,4 @@
-import { getSortingLectureDataList } from "pages/apis/lectures.api";
+import { getSortingLectureDataList } from "apis/lectures.api";
 import React, { useState } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import {

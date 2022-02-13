@@ -1,5 +1,5 @@
+import { postLectureRequest } from "apis/lectures.api";
 import Modal from "components/common/Modal";
-import { postLectureRequest } from "pages/apis/lectures.api";
 import React, { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { lectureCategoryState } from "store/state";
@@ -11,6 +11,7 @@ import LectureType from "./LectureType";
 import {
   ActiveRequestButton,
   DisabledRequestButton,
+  Form,
   RequestCard,
   StyledRoot,
   Title,
@@ -82,7 +83,7 @@ export default function RequestLecture() {
           <p>이런 강의도 비교해주세요!</p>
         </Title>
         <RequestCard>
-          <form>
+          <Form>
             <LectureCategory
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
@@ -98,7 +99,7 @@ export default function RequestLecture() {
                 <p>강의비교 요청하기</p>
               </DisabledRequestButton>
             )}
-          </form>
+          </Form>
         </RequestCard>
         <Modal
           isModalOpen={isModalOpen}

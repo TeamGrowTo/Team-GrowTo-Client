@@ -3,6 +3,7 @@ import { recoilPersist } from "recoil-persist";
 import {
   LectureCategoryData,
   LectureDataListType,
+  LectureDataType,
   LectureSkillData,
   ResponseLectureDataType,
 } from "types/info.type";
@@ -138,7 +139,7 @@ export const currentSkillState = atom<CurrentSkill | null>({
   effects_UNSTABLE: [persistAtom],
 });
 
-export const lectureDataList = atom<LectureDataListType | null>({
+export const lectureDataList = atom<LectureDataType[] | null>({
   key: "lectureDataState",
   default: null,
 });
