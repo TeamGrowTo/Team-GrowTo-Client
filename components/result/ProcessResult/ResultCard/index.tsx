@@ -1,9 +1,5 @@
 import Link from "next/link";
-import {
-  LeftArrowIcon,
-  MobileResultCardRightArrowIcon,
-  MobileResultSliderRightArrowIcon,
-} from "public/assets/icons";
+import { LeftArrowIcon, MobileResultCardRightArrowIcon } from "public/assets/icons";
 import React from "react";
 import Screen from "styles/Screen";
 import { LectureResultData } from "types/lectures.type";

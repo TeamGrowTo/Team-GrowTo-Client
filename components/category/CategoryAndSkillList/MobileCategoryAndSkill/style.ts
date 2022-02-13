@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { colors } from "styles/colors";
 
-const StyledRoot = styled.article`
+export const StyledRoot = styled.article`
   display: flex;
   width: 100%;
   height: 5.6rem;
@@ -12,38 +12,43 @@ const StyledRoot = styled.article`
   cursor: pointer;
 `;
 
-const Category = styled.div`
+export const Category = styled.button`
   background-color: ${colors.mainBlue};
   width: 100%;
+  height: 100%;
   text-align: center;
   line-height: 5.6rem;
   color: ${colors.gray6};
   display: flex;
-  & > div {
+  padding: 0;
+  cursor: pointer;
+
+  & > span {
+    width: 90%;
+    height: 100%;
     background: ${colors.blue3};
-    width: 40%;
+    font-size: 1.4rem;
+    font-family: "Pretendard-SemiBold";
   }
+`;
+
+export const Skill = styled.button`
+  background-color: ${colors.mainBlue};
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 5.6rem;
+  color: white;
+  font-size: 1.4rem;
+  font-family: "Pretendard-SemiBold";
+  cursor: pointer;
+`;
+
+export const ImageWrapper = styled.div`
+  height: 100%;
   & > svg {
     position: absolute;
     top: 0;
     right: 50%;
   }
-  & > text {
-    font-size: 1.4rem;
-    font-family: "Pretendard-Medium";
-    position: absolute;
-    left: 20%;
-  }
 `;
-
-const Skill = styled.div`
-  background-color: ${colors.mainBlue};
-  width: 100%;
-  text-align: center;
-  line-height: 5.6rem;
-  color: white;
-  font-size: 1.4rem;
-  font-family: "Pretendard-Medium";
-`;
-
-export { Category, Skill, StyledRoot };

@@ -1,7 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentCategoryState, lectureCategoryState } from "store/state";
-import Screen from "styles/Screen";
 import { LectureCategoryData } from "types/info.type";
 
 import { Category, StyledRoot } from "./style";

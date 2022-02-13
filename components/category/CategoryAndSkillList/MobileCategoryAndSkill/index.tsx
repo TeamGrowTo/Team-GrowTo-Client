@@ -3,7 +3,7 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentCategoryState, currentSkillState } from "store/state";
 
-import { Category, Skill, StyledRoot } from "./style";
+import { Category, ImageWrapper, Skill, StyledRoot } from "./style";
 
 interface Props {
   onClick: (state: boolean) => void;
@@ -20,13 +20,14 @@ function MobileCategoryAndSkill({ onClick }: Props) {
       }}
     >
       <Category>
-        <MobileCategoryTab />
-        <div></div>
-        <text>
+        <span>
           {currentCategory && currentCategory?.categoryName !== ""
             ? currentCategory?.categoryName
             : "분야"}
-        </text>
+        </span>
+        <ImageWrapper>
+          <MobileCategoryTab />
+        </ImageWrapper>
       </Category>
       <Skill>
         {currentSkill && currentSkill?.skillName !== "" ? currentSkill?.skillName : "스킬"}

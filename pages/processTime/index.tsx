@@ -2,7 +2,7 @@ import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -17,6 +17,7 @@ function ProcessTime() {
   const [processData, setProcessData] = useRecoilState(processState);
   const timeTypeList = ["긴 강의", "짧은 강의", "상관없음"];
   const getTimeData = useRecoilValue(processState);
+  const router = useRouter();
 
   useEffect(() => {
     if (
@@ -37,7 +38,7 @@ function ProcessTime() {
   const handleTimeClick = (timeType: string) => {
     setSelectedTime(timeType);
     setTimeout(() => {
-      Router.replace("/processPrice");
+      router.replace("/processPrice");
     }, 1000);
   };
 
@@ -98,9 +99,6 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
-  ${applyMediaQuery("mobile")} {
-    width: 50rem;
-  }
 `;
 
 export const PlayIcon = styled.div`

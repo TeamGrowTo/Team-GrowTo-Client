@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: boolean }>`
+export const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: boolean }>`
   display: flex;
   flex-direction: column;
   ${applyMediaQuery("mobile")} {
@@ -27,7 +27,6 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
     height: 6rem;
     padding: 0 3.2rem;
     cursor: pointer;
-
     ${applyMediaQuery("mobile")} {
       height: 4rem;
       font-size: 1.4rem;
@@ -87,7 +86,7 @@ const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlank: bool
   }
 `;
 
-const TitleWrapper = styled.header`
+export const TitleWrapper = styled.header`
   display: flex;
   align-items: center;
   margin-bottom: 0.8rem;
@@ -102,11 +101,9 @@ const TitleWrapper = styled.header`
   }
 `;
 
-const Error = styled.small`
+export const Error = styled.small`
   font-family: "Pretendard-Regular";
   font-size: 0.8rem;
   color: red;
   margin-left: 0.8rem;
 `;
-
-export { Error, StyledRoot, TitleWrapper };

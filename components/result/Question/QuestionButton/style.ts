@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.button`
+export const StyledRoot = styled.button`
   position: fixed;
   bottom: 4.4rem;
   right: 8.2rem;
@@ -42,5 +42,3 @@ const StyledRoot = styled.button`
     }
   }
 `;
-
-export { StyledRoot };
