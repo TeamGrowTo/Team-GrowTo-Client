@@ -15,6 +15,7 @@ export { default as ICRightIcon } from "./icRight.svg";
 export { default as ICRightSmallIcon } from "./icRightSmall.svg";
 export { default as InstagramLogo } from "./InstagramLogo.svg";
 export { default as LeftArrowIcon } from "./leftArrowIcon.svg";
+export { default as ProcessLoadingMobile } from "./loadingIconMobile.svg";
 export { default as LogoIcon } from "./logoIcon.svg";
 export { default as ReportLine } from "./mainReportLine.svg";
 export { default as ReportLine_mobile } from "./mainReportLine-mobile.svg";
