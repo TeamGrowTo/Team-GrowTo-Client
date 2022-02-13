@@ -77,8 +77,10 @@ export const DropDownBox = styled.ul`
   ${applyMediaQuery("mobile")} {
     width: 14rem;
     top: 4rem;
-    font-size: 14px;
-    line-height: 17px;
+    & > li {
+      font-size: 1.4rem;
+      line-height: 1rem;
+    }
   }
 `;
 
@@ -102,6 +104,10 @@ export const DropDownItem = styled.li`
   &:active {
     background: ${colors.lightBlue};
   }
+
+  & + & {
+    border-top: 1px solid ${colors.gray1};
+  }
 `;
 
 export const CriteriaItem = styled.span`
@@ -113,7 +119,6 @@ export const CriteriaItem = styled.span`
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
     line-height: 1.4rem;
-    margin-left: 0.8rem;
   }
 `;
 
@@ -125,4 +130,8 @@ export const CriteriaSelectedItem = styled.span`
 
   padding-left: 0.8rem;
   border-left: 1px solid #d3d3d3;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
 `;
