@@ -36,6 +36,10 @@ export const BackButton = styled.button`
   & > svg {
     margin-right: 1.2rem;
   }
+
+  &:focus {
+    background-color: ${colors.subBlack};
+  }
 `;
 
 export const ListWrapper = styled.div`

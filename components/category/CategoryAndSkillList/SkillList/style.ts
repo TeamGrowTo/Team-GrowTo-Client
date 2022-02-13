@@ -66,6 +66,14 @@ export const Skill = styled.button<{ isSelected: boolean }>`
     font-size: 1.4rem;
   }
 
+  &:focus {
+    color: ${colors.mainBlue};
+  }
+
+  &:active {
+    border: none;
+  }
+
   ${({ isSelected }) =>
     isSelected
       ? css`
