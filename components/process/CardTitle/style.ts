@@ -23,6 +23,8 @@ export const StyledRoot = styled.div`
   border-radius: 2.8rem 2.8rem 0 0;
   ${applyMediaQuery("mobile")} {
     width: 36rem;
+    height: 9.2rem;
+    margin: 0;
   }
 `;
 
