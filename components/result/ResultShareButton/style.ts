@@ -25,9 +25,12 @@ export const ShareButton = styled.button`
     width: 100%;
     height: 4.8rem;
   }
+
   &:hover {
     cursor: pointer;
+    background-color: ${colors.blue5};
   }
+
   & > svg {
     margin-right: 1.2rem;
     width: 2.4rem;
@@ -38,6 +41,7 @@ export const ShareButton = styled.button`
       height: 2rem;
     }
   }
+
   & > span {
     font-size: 2rem;
     font-family: "Pretendard-Bold";
