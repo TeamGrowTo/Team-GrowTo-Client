@@ -3,7 +3,6 @@ import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import {
   NextArrowAble,
   NextArrowDisabled,
@@ -23,7 +22,6 @@ function ProcessTime() {
   const [processData, setProcessData] = useRecoilState(processState);
   const timeTypeList = ["긴 강의", "짧은 강의", "상관없음"];
   const getTimeData = useRecoilValue(processState);
-  const router = useRouter();
 
   useEffect(() => {
     if (
