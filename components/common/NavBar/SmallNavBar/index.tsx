@@ -51,7 +51,7 @@ function SmallNavBar() {
   return (
     <StyledRoot>
       <Link href="/" passHref>
-        <ButtonWrapper>
+        <ButtonWrapper onClick={handleOpenMenu}>
           <SmallLogoIcon />
         </ButtonWrapper>
       </Link>
@@ -66,7 +66,9 @@ function SmallNavBar() {
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/request">비교요청</Link>
+                <Link href="/request">
+                  <LinkA>비교요청</LinkA>
+                </Link>
               </NavMenuListItem>
               <NavMenuListItem>
                 <Link
