@@ -41,6 +41,7 @@ const Comment = styled.div`
   font-size: 1.6rem;
   width: 26rem;
   line-height: 2.4rem;
+  color: ${colors.subBlack};
   ${applyMediaQuery("mobile")} {
     width: 13.6rem;
     font-size: 1.2rem;
