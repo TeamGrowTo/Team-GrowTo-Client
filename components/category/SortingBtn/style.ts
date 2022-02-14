@@ -76,6 +76,13 @@ const DropDownBox = styled.ul`
     border-bottom-left-radius: 1.2rem;
     border-bottom-right-radius: 1.2rem;
   }
+
+  ${applyMediaQuery("mobile")} {
+    width: 14rem;
+    top: 4rem;
+    font-size: 14px;
+    line-height: 17px;
+  }
 `;
 
 const DropDownItem = styled.li`

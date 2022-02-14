@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
-const StyledRoot = styled.article`
+export const StyledRoot = styled.article`
   width: 100%;
   height: 100%;
   display: flex;
@@ -36,8 +36,6 @@ const StyledRoot = styled.article`
   }
 `;
 
-const Highlight = styled.span`
+export const Highlight = styled.span`
   color: ${colors.subBlack};
 `;
-
-export { Highlight, StyledRoot };
