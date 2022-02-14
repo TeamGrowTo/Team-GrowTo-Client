@@ -22,10 +22,19 @@ export const StyledRoot = styled.section`
   }
 `;
 
-export const NotSelectedCategory = styled.span`
-  color: ${colors.mainBlue};
-  font-size: 1.8rem;
-  font-family: "Pretendard-Regular";
+export const NotSelectedCategory = styled.article`
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & > span {
+    color: ${colors.mainBlue};
+    font-size: 1.8rem;
+    font-family: "Pretendard-Regular";
+  }
 `;
 
 export const SkillWrapper = styled.div`

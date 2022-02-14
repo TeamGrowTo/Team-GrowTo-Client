@@ -37,9 +37,9 @@ export const BackButton = styled.button`
     margin-right: 1.2rem;
   }
 
-  &:focus {
+  /* &:focus {
     background-color: ${colors.subBlack};
-  }
+  } */
 `;
 
 export const ListWrapper = styled.div`
