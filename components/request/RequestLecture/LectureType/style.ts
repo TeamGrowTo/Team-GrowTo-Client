@@ -45,6 +45,7 @@ export const InputWrapper = styled.div`
     }
   }
   input::placeholder {
+    font-size: 2rem;
     color: ${colors.gray4};
     ${applyMediaQuery("mobile")} {
       font-size: 1.4rem;
