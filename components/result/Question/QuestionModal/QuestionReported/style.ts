@@ -46,6 +46,7 @@ export const StyledRoot = styled.article`
     text-align: center;
     color: white;
     font-size: 2rem;
+    font-family: "Pretendard-Bold";
     cursor: pointer;
     ${applyMediaQuery("mobile")} {
       bottom: 1.6rem;
