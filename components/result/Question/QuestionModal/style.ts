@@ -133,6 +133,9 @@ export const ReportButton = styled.button<{ isBlank: boolean }>`
           background-color: ${colors.mainBlue};
           color: white;
           cursor: pointer;
+          &:focus {
+            border: 0.1rem solid ${colors.subBlack};
+          }
         `}
 `;
 
