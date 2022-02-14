@@ -11,6 +11,14 @@ export const StyledRoot = styled.section`
   ${applyMediaQuery("mobile")} {
     padding: 3.6rem 1.6rem 2.4rem 1.6rem;
   }
+
+  & > div:nth-of-type(2) {
+    p:first-child {
+      width: 18rem;
+      text-align: center;
+      line-height: 2.5rem;
+    }
+  }
 `;
 
 export const ShareButton = styled.button`
