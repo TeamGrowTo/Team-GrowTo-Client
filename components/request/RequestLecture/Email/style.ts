@@ -28,6 +28,7 @@ export const InputWrapper = styled.div`
   height: 6.8rem;
   background-color: rgb(255, 255, 255, 0.7);
   border-radius: 4.8rem;
+  border: 0.1rem solid ${colors.white};
   display: flex;
   padding: 2.2rem 3.6rem;
   ${applyMediaQuery("mobile")} {

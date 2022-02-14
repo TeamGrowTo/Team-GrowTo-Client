@@ -37,6 +37,7 @@ export const CategoryButton = styled.button<IProps>`
   height: 6.8rem;
   background-color: rgb(255, 255, 255, 0.7);
   border-radius: ${(props) => (props.open ? "2.8rem 2.8rem 0 0" : "4.8rem")};
+  border: 0.1rem solid ${colors.white};
   display: flex;
   padding: 2.2rem 3.6rem;
   display: flex;
@@ -72,8 +73,8 @@ export const CategoryList = styled.div`
   width: 63rem;
   height: 32.4rem;
   padding-top: 1.2rem;
-  padding-left: 4rem;
   position: absolute;
+
   ${applyMediaQuery("mobile")} {
     border-bottom-left-radius: 2.6rem;
     border-bottom-right-radius: 2.6rem;
@@ -93,6 +94,7 @@ export const CategoryListItem = styled.div`
   padding-bottom: 2.2rem;
   width: 100%;
   display: flex;
+  margin-left: 4rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
