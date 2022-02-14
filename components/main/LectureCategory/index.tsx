@@ -9,8 +9,16 @@ import {
   MainLecturePlanIcon,
 } from "public/assets/images";
 import React, { useEffect } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { currentCategoryState, lectureCategoryState } from "store/state";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
+import {
+  currentCategoryState,
+  currentSkillState,
+  currentSortingState,
+  isDisableState,
+  isOpenState,
+  lectureCategoryState,
+  lectureDataList,
+} from "store/state";
 import Screen from "styles/Screen";
 
 import Category from "./Category";
@@ -29,6 +37,21 @@ const MainLectureCategory = function () {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
 
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+
+  //분야 선택시 category페이지의 기존 skill 및 강의목록 데이터 삭제
+  const resetData = () => {
+    resetSkillData();
+    resetLectureListData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
+  };
+
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
 
@@ -40,6 +63,7 @@ const MainLectureCategory = function () {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
 
       setCurrentCategory(result);
+      resetData();
     }
   };
 
@@ -57,7 +81,7 @@ const MainLectureCategory = function () {
           <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
             <>
               <Screen desktop>
-                <Image src={iconList[index]} alt="categoryIcon" width="30" height="32" />
+                <Image src={iconList[index]} alt="categoryIcon" />
               </Screen>
               <Screen mobile>
                 <Image src={iconList[index]} alt="categoryIcon" width="18" height="18" />
