@@ -39,6 +39,10 @@ export const ShareButton = styled.button`
     background-color: ${colors.blue5};
   }
 
+  &:focus {
+    background-color: ${colors.blue5};
+  }
+
   & > svg {
     margin-right: 1.2rem;
     width: 2.4rem;
