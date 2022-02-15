@@ -19,8 +19,12 @@ const StyledRoot = styled.div`
 const Wrapper = styled.div`
   width: 96rem;
   height: 40rem;
-  background: linear-gradient(rgb(255, 255, 255, 0.8), 80%, transparent);
-  backdrop-filter: blur(4rem);
+  background: linear-gradient(
+    159.4deg,
+    rgba(255, 255, 255, 0.4) 21.72%,
+    rgba(255, 255, 255, 0) 97.21%
+  );
+  backdrop-filter: blur(4.2rem);
   border: 0.2rem solid #ffffff;
   border-radius: 3rem;
   display: flex;
