@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ProcessPrevIcon } from "public/assets/icons";
 import React from "react";
 import Screen from "styles/Screen";
 
@@ -18,7 +19,7 @@ function Title() {
   return (
     <StyledRoot>
       <Link href={prevUrl} passHref>
-        &lt;
+        <ProcessPrevIcon />
       </Link>
       <Screen desktop>
         <Link href={prevUrl} passHref>
