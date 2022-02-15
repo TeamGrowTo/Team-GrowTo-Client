@@ -23,6 +23,10 @@ export const Category = styled.button`
   padding: 0;
   cursor: pointer;
 
+  /* &:focus {
+    opacity: 0.8;
+  } */
+
   & > span {
     width: 90%;
     height: 100%;
@@ -42,6 +46,10 @@ export const Skill = styled.button`
   font-size: 1.4rem;
   font-family: "Pretendard-SemiBold";
   cursor: pointer;
+
+  /* &:focus {
+    opacity: 0.8;
+  } */
 `;
 
 export const ImageWrapper = styled.div`
