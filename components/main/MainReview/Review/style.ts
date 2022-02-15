@@ -13,7 +13,7 @@ export const StyledRoot = styled.div<{ isTransparent: boolean; isTransparentMobi
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(40rem);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
   position: relative;
 
   background-color: ${(props) =>
