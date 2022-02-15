@@ -80,14 +80,12 @@ export const CategoryList = styled.div`
     border-bottom-right-radius: 2.6rem;
     width: 32.8rem;
     height: 23.2rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
   }
 `;
 
 export const CategoryListWrapper = styled.div`
-  margin-left: 0.2rem;
-  margin-right: 0.2rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
   &:hover {
     background-color: ${colors.blue1};
   }
@@ -97,6 +95,8 @@ export const CategoryListWrapper = styled.div`
   }
 
   ${applyMediaQuery("mobile")} {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
     &:nth-child(6) {
       border-bottom-left-radius: 2.6rem;
       border-bottom-right-radius: 2.6rem;
