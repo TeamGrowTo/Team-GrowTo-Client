@@ -25,10 +25,11 @@ const StyledRoot = styled.div<{ isTransparent: boolean; isTransparentMobile: boo
     width: 16rem;
     height: 14.8rem;
     background-color: ${(props) =>
-      props.isTransparentMobile == true ? "rgb(225,225,225, 0.3)" : `${colors.gray1}`};
+      props.isTransparentMobile == true ? "rgb(225,225,225, 0.32)" : `${colors.gray1}`};
     background: linear-gradient(
-      ${(props) => (props.isTransparentMobile == true ? "150deg, white, 60%, transparent" : "")}
+      ${(props) => (props.isTransparentMobile == true ? "150deg, white, 90%, transparent" : "")}
     );
+    backdrop-filter: blur(4rem);
     border-radius: 1.6rem;
     padding: 1.2rem;
     margin-bottom: 0.8rem;
