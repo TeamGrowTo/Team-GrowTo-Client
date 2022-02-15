@@ -14,10 +14,12 @@ const StyledRoot = styled.section`
 const TitleWrapper = styled.div`
   width: 17rem;
   height: 5.2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
   border-radius: 4rem;
   margin-top: 1.8rem;
   margin-bottom: 2.4rem;
-  background-color: ${colors.white};
   display: flex;
   align-items: center;
   justify-content: center;

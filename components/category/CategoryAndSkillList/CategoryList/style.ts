@@ -53,7 +53,16 @@ export const Category = styled.button<{ isSelected: boolean }>`
   }
 
   &:active {
-    border: 0.1rem solid black;
+    background: linear-gradient(0deg, rgba(69, 121, 255, 0.02), rgba(69, 121, 255, 0.02)), #ffffff;
+    opacity: 0.96;
+    box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
+    border: 0.1rem solid ${colors.mainBlue};
+    color: ${colors.mainBlue};
+  }
+
+  &:focus {
+    border: 0.1rem solid ${colors.mainBlue};
+    border-radius: 1.2rem;
   }
 
   ${({ isSelected }) =>
@@ -82,6 +91,15 @@ export const Category = styled.button<{ isSelected: boolean }>`
             #ffffff;
             ${applyMediaQuery("mobile")} {
             color: ${colors.subBlack};
+            }
+
+            &:hover {
+                background: linear-gradient(
+                101.6deg,
+                rgba(244, 250, 255, 0.4) 32.93%,
+                rgba(255, 255, 255, 0.4) 75.76%
+                ),
+                #f4f4f4;
             }
             `}
 `;

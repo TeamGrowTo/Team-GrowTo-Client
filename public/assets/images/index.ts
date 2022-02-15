@@ -1,5 +1,6 @@
 export { default as CategoryClickImg } from "./categoryClickImg.png";
 export { default as ComparisonImg } from "./comparisonImg.png";
+export { default as ICDeveloper } from "./ic_developer.png";
 export { default as MainBannerCompass } from "./mainBannerCompass.png";
 export { default as MainLectureDataIcon } from "./mainLectureCategoryDataIcon.png";
 export { default as MainLectureDesignIcon } from "./mainLectureCategoryDesignIcon.png";
