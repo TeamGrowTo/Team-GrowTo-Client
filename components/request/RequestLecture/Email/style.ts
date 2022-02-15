@@ -37,7 +37,7 @@ export const InputWrapper = styled.div`
     padding: 1.15rem 2.4rem;
   }
 
-  input {
+  & > input {
     width: 100%;
     font-family: "Pretendard-Regular";
     font-size: 2rem;
@@ -45,11 +45,7 @@ export const InputWrapper = styled.div`
       font-size: 1.4rem;
     }
   }
-  input::placeholder {
-    font-size: 2rem;
+  & > input::placeholder {
     color: ${colors.gray4};
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.4rem;
-    }
   }
 `;
