@@ -8,7 +8,6 @@ import {
   CategoryList,
   CategoryListItem,
   CategoryListWrapper,
-  DropdownWrapper,
   LectureCategoryContainer,
 } from "./style";
 
@@ -50,14 +49,14 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
             ) : (
               <span>{categorySelected}</span>
             )}
-            <DropdownWrapper>
+            <span>
               <Screen desktop>
                 <Dropdown />
               </Screen>
               <Screen mobile>
                 <Dropdown_mobile />
               </Screen>
-            </DropdownWrapper>
+            </span>
           </CategoryButton>
           {open ? (
             <CategoryList>
@@ -67,10 +66,8 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
                 };
 
                 return (
-                  <CategoryListWrapper>
-                    <CategoryListItem key={index} onClick={handleOnClick}>
-                      {list}
-                    </CategoryListItem>
+                  <CategoryListWrapper key={index} onClick={handleOnClick}>
+                    <CategoryListItem>{list}</CategoryListItem>
                   </CategoryListWrapper>
                 );
               })}
