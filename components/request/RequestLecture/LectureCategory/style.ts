@@ -79,28 +79,24 @@ export const CategoryList = styled.div`
     border-bottom-left-radius: 2.6rem;
     border-bottom-right-radius: 2.6rem;
     width: 32.8rem;
-    height: 24.8rem;
-    padding-top: 1.5rem;
+    height: 23.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
   }
 `;
 
 export const CategoryListWrapper = styled.div`
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-
   &:hover {
     background-color: ${colors.blue1};
   }
-
   &:nth-child(6) {
     border-bottom-left-radius: 2.8rem;
     border-bottom-right-radius: 2.8rem;
   }
 
   ${applyMediaQuery("mobile")} {
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-
     &:nth-child(6) {
       border-bottom-left-radius: 2.6rem;
       border-bottom-right-radius: 2.6rem;
@@ -112,16 +108,16 @@ export const CategoryListItem = styled.div`
   cursor: pointer;
   font-family: "Pretendard-Regular";
   color: ${colors.subBlack};
+  display: flex;
   font-size: 2rem;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
   padding-left: 3.8rem;
-  display: flex;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
-    padding-top: 0.5rem;
-    padding-bottom: 2rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
     padding-left: 2.5rem;
   }
 `;
