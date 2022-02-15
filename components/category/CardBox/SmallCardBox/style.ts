@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
@@ -14,6 +13,10 @@ const StyledRoot = styled.div`
 
   box-shadow: 0rem 0.2rem 0.6rem rgba(3, 0, 167, 0.08);
   border-radius: 1.8rem;
+
+  &:hover {
+    background: #fbfcff;
+  }
 `;
 
 const LectureTitleBox = styled.div`
