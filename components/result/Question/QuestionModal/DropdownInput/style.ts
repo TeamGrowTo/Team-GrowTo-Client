@@ -29,9 +29,13 @@ export const Dropdown = styled.article<{ flagDropdown: boolean }>`
     ${applyMediaQuery("mobile")} {
       font-size: 1.4rem;
     }
+
     svg {
       width: 1.4rem;
     }
+  }
+  & > button:focus {
+    border: 0.1rem solid ${colors.subBlack};
   }
   & > button:hover {
     cursor: pointer;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const Button = styled.button`
@@ -34,6 +35,7 @@ const Button = styled.button`
   }
 
   & > span {
+    color: ${colors.subBlack};
     margin-left: 1.4rem;
     font-family: "Pretendard-SemiBold";
     ${applyMediaQuery("mobile")} {

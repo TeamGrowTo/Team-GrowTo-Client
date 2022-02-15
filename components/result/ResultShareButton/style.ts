@@ -11,6 +11,14 @@ export const StyledRoot = styled.section`
   ${applyMediaQuery("mobile")} {
     padding: 3.6rem 1.6rem 2.4rem 1.6rem;
   }
+
+  & > div:nth-of-type(2) {
+    p:first-child {
+      width: 18rem;
+      text-align: center;
+      line-height: 2.5rem;
+    }
+  }
 `;
 
 export const ShareButton = styled.button`
@@ -25,9 +33,16 @@ export const ShareButton = styled.button`
     width: 100%;
     height: 4.8rem;
   }
+
   &:hover {
     cursor: pointer;
+    background-color: ${colors.blue5};
   }
+
+  &:focus {
+    background-color: ${colors.blue5};
+  }
+
   & > svg {
     margin-right: 1.2rem;
     width: 2.4rem;
@@ -38,6 +53,7 @@ export const ShareButton = styled.button`
       height: 2rem;
     }
   }
+
   & > span {
     font-size: 2rem;
     font-family: "Pretendard-Bold";

@@ -215,6 +215,7 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
     margin-top: 4rem;
     width: 9.8rem;
     height: 5.2rem;
+    font-size: 1.6rem;
   }
 `;
 
