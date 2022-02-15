@@ -7,8 +7,9 @@ interface IProps {
   categorySelected: string;
 }
 
-export const LectureCategoryBox = styled.div`
+export const LectureCategoryContainer = styled.div`
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   align-items: baseline;
   margin-bottom: 2.8rem;
@@ -27,7 +28,7 @@ export const LectureCategoryBox = styled.div`
   }
 `;
 
-export const CategoryWrapper = styled.div`
+export const CategoryBox = styled.div`
   position: relative;
 `;
 
@@ -73,6 +74,7 @@ export const CategoryList = styled.div`
   width: 63rem;
   height: 32.4rem;
   padding-top: 1.2rem;
+
   position: absolute;
 
   ${applyMediaQuery("mobile")} {
@@ -81,9 +83,10 @@ export const CategoryList = styled.div`
     width: 32.8rem;
     height: 24.8rem;
     padding-top: 1.5rem;
-    padding-left: 2.7rem;
   }
 `;
+
+export const CategoryListWrapper = styled.div``;
 
 export const CategoryListItem = styled.div`
   cursor: pointer;
@@ -92,13 +95,19 @@ export const CategoryListItem = styled.div`
   font-size: 2rem;
   padding-top: 1rem;
   padding-bottom: 2.2rem;
+  padding-left: 4rem;
   width: 100%;
   display: flex;
-  margin-left: 4rem;
+  box-sizing: border-box;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
     padding-top: 0.5rem;
     padding-bottom: 2rem;
+    padding-left: 2.7rem;
+  }
+
+  &:hover {
+    background-color: ${colors.blue1};
   }
 `;
