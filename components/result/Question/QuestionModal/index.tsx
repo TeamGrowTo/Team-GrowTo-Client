@@ -130,7 +130,7 @@ function QuestionModal({ onCloseModal }: Props) {
                 onDescriptionInputClick={handleDescription}
                 description={description}
               />
-              <ReportButton onClick={handleReport} isBlank={isBlank()}>
+              <ReportButton onClick={handleReport} isDisabled={isBlank() || flagEmailRegExp}>
                 오류 내용 제보하기
               </ReportButton>
             </TextArea>
