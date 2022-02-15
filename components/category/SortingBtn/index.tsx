@@ -15,7 +15,6 @@ import { colors } from "styles/colors";
 import Screen from "styles/Screen";
 
 import {
-  BtnTextWrapper,
   CriteriaItem,
   CriteriaSelectedItem,
   DropDownBox,
