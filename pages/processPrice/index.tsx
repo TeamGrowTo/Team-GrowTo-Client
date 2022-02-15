@@ -8,6 +8,7 @@ import {
   NextArrowAble,
   NextArrowDisabled,
   ProcessLoading,
+  ProcessLoadingMobile,
   ProcessPlayIcon,
   ProcessSquareIcon,
 } from "public/assets/icons";
@@ -82,7 +83,13 @@ function ProcessPrice() {
   return isLoading ? (
     <LoadingStyledRoot>
       <LogoWrapper>
-        <LoadingLogo />
+        <Screen desktop>
+          <LoadingLogo />
+        </Screen>
+        <Screen mobile>
+          <LoadingLogoMobile />
+        </Screen>
+
         <p>
           당신을 위한 <br />
           맞춤 강의를 찾는 중...
@@ -242,8 +249,10 @@ export const NextArrowWrapper = styled.div`
 
 export const LoadingStyledRoot = styled.div`
   width: 100%;
-  height: 100%;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+  }
 `;
 export const LogoWrapper = styled.div`
   width: 42.5rem;
@@ -258,7 +267,17 @@ export const LogoWrapper = styled.div`
   }
   display: flex;
   flex-direction: column;
+  ${applyMediaQuery("mobile")} {
+    width: 17rem;
+    & > p {
+      font-size: 2rem;
+    }
+  }
 `;
 export const LoadingLogo = styled(ProcessLoading)`
   margin: 27.5rem auto 4.4rem;
+`;
+
+export const LoadingLogoMobile = styled(ProcessLoadingMobile)`
+  margin: 23.6rem auto 2.4rem;
 `;
