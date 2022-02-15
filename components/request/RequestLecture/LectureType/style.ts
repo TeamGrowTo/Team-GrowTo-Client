@@ -37,7 +37,6 @@ export const InputWrapper = styled.div`
   }
 
   input {
-    cursor: pointer;
     width: 100%;
     font-family: "Pretendard-Regular";
     font-size: 2rem;
