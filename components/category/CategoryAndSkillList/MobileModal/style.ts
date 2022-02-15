@@ -48,7 +48,7 @@ export const ListWrapper = styled.div`
   width: 100%;
   z-index: 100;
   flex-grow: 1;
-  text-align: none;
+  text-align: center;
   overflow: hidden;
 `;
 
