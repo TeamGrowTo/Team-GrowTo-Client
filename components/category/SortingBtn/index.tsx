@@ -1,11 +1,10 @@
 import { ArrowDown, ArrowUp, SmallArrowDown, SmallArrowUp } from "public/assets/icons";
 import React from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import {
   currentSortingState,
   dropListName,
   isDisableState,
-  ISelectedItemName,
   isOpenState,
   isSelectedState,
   SortingItemType,
@@ -14,14 +13,8 @@ import {
 import { colors } from "styles/colors";
 import Screen from "styles/Screen";
 
-import {
-  CriteriaItem,
-  CriteriaSelectedItem,
-  DropDownBox,
-  DropDownItem,
-  StyledRoot,
-} from "./style";
-//propstype 잘받아온거 맞는지 확인부...탁...해요..
+import { CriteriaItem, CriteriaSelectedItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
+
 interface SortingBtnProps {
   value: SortingType;
   children: React.ReactNode;
