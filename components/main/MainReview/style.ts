@@ -12,6 +12,7 @@ const StyledRoot = styled.div`
 
   ${applyMediaQuery("mobile")} {
     height: 65.4rem;
+    background-image: url("/assets/images/mainReviewBackground-mobile.png");
   }
 `;
 
