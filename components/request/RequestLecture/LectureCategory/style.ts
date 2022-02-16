@@ -39,7 +39,6 @@ export const CategoryButton = styled.button<IProps>`
   background-color: rgb(255, 255, 255, 0.7);
   border-radius: ${(props) => (props.open ? "2.8rem 2.8rem 0 0" : "4.8rem")};
   border: 0.1rem solid ${colors.white};
-  display: flex;
   padding: 2.2rem 3.6rem;
   display: flex;
   align-items: center;
