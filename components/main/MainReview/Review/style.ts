@@ -74,13 +74,6 @@ export const Bottom = styled.div`
   }
 `;
 
-export const ImgWrapper = styled.div`
-  ${applyMediaQuery("mobile")} {
-    width: 3.2rem;
-    height: 3.2rem;
-  }
-`;
-
 export const Introduce = styled.div`
   font-family: "Pretendard-Regular";
   font-size: 1.2rem;
