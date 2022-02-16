@@ -107,8 +107,8 @@ function ProcessTag() {
             ))}
           </TagWrapper>
         </CardChoice>
-        <Link href="/processTime" replace passHref>
-          <NextButtonWrapper>
+        <NextButtonWrapper>
+          <Link href="/processTime" replace passHref>
             <NextButton
               onClick={handleNext}
               selectedTags={selectedTags}
@@ -116,103 +116,18 @@ function ProcessTag() {
             >
               다음
             </NextButton>
-            <NextArrowWrapper>
-              {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
-            </NextArrowWrapper>
-          </NextButtonWrapper>
-        </Link>
+          </Link>
+
+          <NextArrowWrapper>
+            {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
+          </NextArrowWrapper>
+        </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>
   );
 }
 
 export default ProcessTag;
-const mockData = [
-  {
-    id: 1,
-    name: "실습프로젝트",
-  },
-  {
-    id: 2,
-    name: "광고집행툴",
-  },
-  {
-    id: 3,
-    name: "앱마케팅",
-  },
-  {
-    id: 4,
-    name: "GAIQ 자격증",
-  },
-  {
-    id: 5,
-    name: "웹마케팅",
-  },
-  {
-    id: 6,
-    name: "데이터수집*분석",
-  },
-  {
-    id: 7,
-    name: "디지털마케팅 이론",
-  },
-  {
-    id: 8,
-    name: "데이터수집*분석툴",
-  },
-  {
-    id: 9,
-    name: "SQL 자격증",
-  },
-  {
-    id: 10,
-    name: "실전프로젝트",
-  },
-  {
-    id: 11,
-    name: "집행툴",
-  },
-  {
-    id: 12,
-    name: "어플리케이션 마케팅",
-  },
-  {
-    id: 13,
-    name: "아무거나",
-  },
-  {
-    id: 14,
-    name: "왜앱마케팅",
-  },
-  {
-    id: 15,
-    name: "서버 분석툴",
-  },
-  {
-    id: 16,
-    name: "히히 자격증",
-  },
-  {
-    id: 17,
-    name: "꾸  프로젝트",
-  },
-  {
-    id: 18,
-    name: "마케팅 집행툴",
-  },
-  {
-    id: 19,
-    name: "iOS마케팅",
-  },
-  {
-    id: 20,
-    name: "정보처리기사 자격증",
-  },
-  {
-    id: 21,
-    name: "웹이 짱이야 마케팅",
-  },
-];
 
 export const StyledRoot = styled.section`
   width: 100%;
@@ -243,7 +158,7 @@ export const ProcessBox = styled.div`
 
 export const CardChoice = styled.section`
   width: 102rem;
-  height: 49.3rem;
+  min-height: 49.3rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 2.8rem 2.8rem;
   backdrop-filter: blur(2rem);
@@ -256,7 +171,7 @@ export const CardChoice = styled.section`
 
 export const TagWrapper = styled.div`
   width: 77.4rem;
-  margin: 6.5rem auto 0;
+  margin: 6.5rem auto 9rem;
   & > p {
     font-family: "Pretendard-Bold";
     font-size: 2.4rem;
@@ -268,7 +183,7 @@ export const TagWrapper = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    margin: 3.2rem auto 0;
+    margin: 3.2rem auto 4rem;
     & > p {
       font-size: 2rem;
     }
@@ -291,6 +206,7 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
   font-size: 2.4rem;
   font-family: "Pretendard-Bold";
   border-radius: 4.8rem;
+  padding-right: 1.5rem;
   color: ${({ selectedTags }) => (selectedTags.length > 1 ? "white" : `${colors.gray4}`)};
   :hover {
     cursor: pointer;
@@ -299,13 +215,15 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
     margin-top: 4rem;
     width: 9.8rem;
     height: 5.2rem;
+    font-size: 1.6rem;
   }
 `;
 
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
-  right: 6.5rem;
+  right: 7rem;
+  margin-right: 0.9rem;
   ${applyMediaQuery("mobile")} {
     top: 5.7rem;
     right: 1rem;

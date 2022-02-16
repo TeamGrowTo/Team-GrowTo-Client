@@ -7,6 +7,7 @@ import {
   ProgressTimeM,
 } from "public/assets/icons";
 import styled from "styled-components";
+import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.div`
   display: flex;
@@ -22,6 +23,8 @@ export const StyledRoot = styled.div`
   border-radius: 2.8rem 2.8rem 0 0;
   ${applyMediaQuery("mobile")} {
     width: 36rem;
+    height: 9.2rem;
+    margin: 0;
   }
 `;
 
@@ -29,6 +32,7 @@ export const CardText = styled.div`
   margin-left: 6.4rem;
   font-size: 2rem;
   line-height: 3rem;
+  color: ${colors.gray6};
   & > p:first-child {
     font-family: "Pretendard-Regular";
   }

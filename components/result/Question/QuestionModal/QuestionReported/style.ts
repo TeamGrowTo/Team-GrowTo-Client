@@ -1,26 +1,40 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.article`
+export const StyledRoot = styled.article`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   font-family: "Pretendard-Bold";
   color: ${colors.gray4};
+  ${applyMediaQuery("mobile")} {
+    justify-content: center;
+  }
   & > div {
     color: ${colors.subOrange};
     font-size: 3.2rem;
     margin-top: 20rem;
     margin-bottom: 1rem;
+    ${applyMediaQuery("mobile")} {
+      font-size: 2.4rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
   }
   & > p {
     font-size: 2.8rem;
     text-align: center;
     line-height: 4rem;
     margin-bottom: 14.6rem;
+    ${applyMediaQuery("mobile")} {
+      width: 22rem;
+      line-height: 3rem;
+      font-size: 2rem;
+      margin: 0;
+    }
   }
   & > button {
     position: absolute;
@@ -32,12 +46,21 @@ const StyledRoot = styled.article`
     text-align: center;
     color: white;
     font-size: 2rem;
+    font-family: "Pretendard-Bold";
     cursor: pointer;
+    ${applyMediaQuery("mobile")} {
+      bottom: 1.6rem;
+      width: 29.6rem;
+      height: 4.8rem;
+      font-size: 1.6rem;
+    }
+
+    &:focus {
+      border: 0.1rem solid ${colors.subBlack};
+    }
   }
 `;
 
-const Highlight = styled.span`
+export const Highlight = styled.span`
   color: ${colors.subBlack};
 `;
-
-export { Highlight, StyledRoot };

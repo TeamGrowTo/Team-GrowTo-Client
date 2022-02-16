@@ -1,13 +1,14 @@
-import { Dropdown } from "public/assets/icons";
+import { Dropdown, Dropdown_mobile } from "public/assets/icons";
 import React, { useState } from "react";
+import Screen from "styles/Screen";
 
 import {
+  CategoryBox,
   CategoryButton,
   CategoryList,
   CategoryListItem,
-  CategoryWrapper,
-  DropdownWrapper,
-  LectureCategoryBox,
+  CategoryListWrapper,
+  LectureCategoryContainer,
 } from "./style";
 
 interface SelectedProps {
@@ -34,9 +35,9 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
 
   return (
     <>
-      <LectureCategoryBox>
+      <LectureCategoryContainer>
         <p>강의 분야*</p>
-        <CategoryWrapper>
+        <CategoryBox>
           <CategoryButton
             type="button"
             open={open}
@@ -48,9 +49,14 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
             ) : (
               <span>{categorySelected}</span>
             )}
-            <DropdownWrapper>
-              <Dropdown />
-            </DropdownWrapper>
+            <span>
+              <Screen desktop>
+                <Dropdown />
+              </Screen>
+              <Screen mobile>
+                <Dropdown_mobile />
+              </Screen>
+            </span>
           </CategoryButton>
           {open ? (
             <CategoryList>
@@ -60,17 +66,17 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
                 };
 
                 return (
-                  <CategoryListItem key={index} onClick={handleOnClick}>
-                    {list}
-                  </CategoryListItem>
+                  <CategoryListWrapper key={index} onClick={handleOnClick}>
+                    <CategoryListItem>{list}</CategoryListItem>
+                  </CategoryListWrapper>
                 );
               })}
             </CategoryList>
           ) : (
             <></>
           )}
-        </CategoryWrapper>
-      </LectureCategoryBox>
+        </CategoryBox>
+      </LectureCategoryContainer>
     </>
   );
 }

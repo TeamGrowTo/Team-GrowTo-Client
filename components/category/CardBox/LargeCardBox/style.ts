@@ -13,6 +13,7 @@ const StyledRoot = styled.div`
   box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.1);
   &:hover {
     box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.15);
+    background: #fbfcff;
   }
 `;
 
@@ -27,7 +28,10 @@ const LectureTitleBox = styled.div`
 `;
 
 const LectureInfoBox = styled(LectureTitleBox)`
+  display: flex;
+  align-items: center;
   width: 35.4rem;
+  min-width: 33.8rem;
   padding: 0 2.8rem;
 
   flex-direction: row;
@@ -36,6 +40,7 @@ const LectureInfoBox = styled(LectureTitleBox)`
 `;
 
 const LectureDateBox = styled(LectureTitleBox)`
+  min-width: 9rem;
   width: 10.3rem;
   padding: 0;
   justify-content: center;
@@ -47,13 +52,17 @@ const LectureDateBox = styled(LectureTitleBox)`
 `;
 
 const LectureTagBox = styled(LectureInfoBox)`
+  min-width: 27rem;
   width: 50.2rem;
   align-items: center;
   padding: 0 2.4rem;
   border: none;
+  overflow: scroll;
+  overflow-x: hidden;
 `;
 
 const LectureTitleName = styled.h3`
+  width: 19.4rem;
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -106,6 +115,7 @@ const LectureTag = styled.span`
 `;
 
 const TagWrapper = styled.div`
+  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -120,7 +130,7 @@ const LectureLinkBtn = styled.a`
 
   cursor: pointer;
   text-align: center;
-  line-height: 14.4rem;
+  line-height: 15rem;
 `;
 
 export {

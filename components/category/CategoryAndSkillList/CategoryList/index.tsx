@@ -21,7 +21,7 @@ function CategoryList({ onCategoryClick }: Props) {
           isSelected={currentCategory?.id === category.id}
           onClick={() => onCategoryClick(category.id)}
         >
-          {category.categoryName}
+          <span>{category.categoryName}</span>
         </Category>
       ))}
     </StyledRoot>
