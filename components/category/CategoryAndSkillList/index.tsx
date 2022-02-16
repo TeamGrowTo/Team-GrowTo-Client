@@ -12,7 +12,7 @@ interface Props {
 
 //모바일과 데스크톱 컴포넌트를 핸들링하는 부분.(선택하는 부분)
 function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
-  const [categorySkillMobileModalFlag, setCategorySkillMobileModalFlag] = useState(false);
+  const [categorySkillMobileModalFlag, setCategorySkillMobileModalFlag] = useState(true);
 
   const handleCategorySkillMobileModal = (state: boolean) => {
     setCategorySkillMobileModalFlag(state);

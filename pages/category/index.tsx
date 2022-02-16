@@ -87,8 +87,9 @@ function Category() {
 
   useEffect(() => {
     setLectureCategory();
-    if (category?.id && category?.id !== -1) setLectureSkill(category.id);
+    if (!category) setCurrentCategory({ id: -1, categoryName: "" });
     if (!currentSkill) setCurrentSkill({ id: -1, skillName: "" });
+    if (category?.id && category?.id !== -1) setLectureSkill(category.id);
   }, []);
 
   return (
