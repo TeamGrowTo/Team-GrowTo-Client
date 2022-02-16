@@ -72,7 +72,6 @@ const MainLectureCategory = function () {
 
   useEffect(() => {
     setLectureCategory();
-    setCurrentCategory({ id: -1, categoryName: "" });
   }, []);
 
   return (
