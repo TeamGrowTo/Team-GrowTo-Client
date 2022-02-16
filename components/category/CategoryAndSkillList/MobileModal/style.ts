@@ -46,15 +46,17 @@ export const BackButton = styled.button`
 export const ListWrapper = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
   z-index: 100;
-  flex-grow: 1;
   text-align: center;
   overflow: hidden;
+  //7.2 + 4.8
+  margin-bottom: 12rem;
 `;
 
 export const RedirectRequestPage = styled.a`
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  bottom: 4.8rem;
   z-index: 100;
   display: flex;
   justify-content: center;
