@@ -8,7 +8,7 @@ export const StyledRoot = styled.article`
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: 4.8rem;
   bottom: 0;
   width: 100vw;
   height: 100vh;
