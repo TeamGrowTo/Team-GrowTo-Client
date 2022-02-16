@@ -54,7 +54,7 @@ function SmallNavBar() {
   return (
     <StyledRoot>
       <Link href="/" passHref>
-        <ButtonWrapper onClick={handleResetLectureData}>
+        <ButtonWrapper>
           <SmallLogoIcon />
         </ButtonWrapper>
       </Link>
