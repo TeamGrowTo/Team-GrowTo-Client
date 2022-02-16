@@ -75,8 +75,6 @@ export const Bottom = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  width: 7.2rem;
-  height: 7.2rem;
   ${applyMediaQuery("mobile")} {
     width: 3.2rem;
     height: 3.2rem;
@@ -87,7 +85,7 @@ export const Introduce = styled.div`
   font-family: "Pretendard-Regular";
   font-size: 1.2rem;
   color: ${colors.gray6};
-  margin-left: 1.2rem;
+  margin-left: 1.6rem;
   line-height: 1.8rem;
   width: 8.9rem;
 
