@@ -58,8 +58,7 @@ export const LectureTagBox = styled(LectureInfoBox)`
   align-items: center;
   padding: 0 2.4rem;
   border: none;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow: auto;
 `;
 
 export const LectureTitleName = styled.h3`
