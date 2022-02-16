@@ -29,6 +29,7 @@ export const InputWrapper = styled.div`
   border-radius: 4.8rem;
   border: 0.1rem solid ${colors.white};
   display: flex;
+  align-items: center;
   padding: 2.2rem 3.6rem;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
