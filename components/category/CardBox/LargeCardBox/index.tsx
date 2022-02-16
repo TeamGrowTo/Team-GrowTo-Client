@@ -4,7 +4,6 @@ import React from "react";
 import { LectureDataType } from "types/info.type";
 
 import {
-  InfoColumnWrapper,
   LectureDateBox,
   LectureInfoBox,
   LectureInfoData,

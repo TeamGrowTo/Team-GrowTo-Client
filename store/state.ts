@@ -19,6 +19,7 @@ export const lectureCategoryState = atom<LectureCategoryData[] | null>({
 export const lectureSkillState = atom<LectureSkillData[] | null>({
   key: "lectureSkillState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 //--------------------카테고리 리스트 관련------------
 export const isDisableState = atom({
@@ -55,6 +56,7 @@ export const isOpenDefault = {
 export const isOpenState = atom<ISorting>({
   key: "isOpenState",
   default: isOpenDefault,
+  effects_UNSTABLE: [persistAtom],
 });
 
 //-----------isSelected----------------
@@ -67,6 +69,7 @@ export type ISelectedItemName = {
 export const isSelectedState = atom<ISorting>({
   key: "isSelectedState",
   default: isOpenDefault,
+  effects_UNSTABLE: [persistAtom],
 });
 
 //---------------currentSortingState-----------
@@ -115,6 +118,7 @@ export const currentSortingDefault: ICurrentSortingType = {
 export const currentSortingState = atom<ICurrentSortingType>({
   key: "currentSortingState",
   default: currentSortingDefault,
+  effects_UNSTABLE: [persistAtom],
 });
 
 interface CurrentCategory {
@@ -142,11 +146,13 @@ export const currentSkillState = atom<CurrentSkill | null>({
 export const lectureDataList = atom<LectureDataType[] | null>({
   key: "lectureDataState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const lectureResultState = atom<LectureResultData[] | null>({
   key: "lectureResultState",
   default: null,
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const processState = atom<ProcessDataState>({

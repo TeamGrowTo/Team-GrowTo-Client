@@ -89,6 +89,7 @@ function Category() {
     setLectureCategory();
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
     if (!currentSkill) setCurrentSkill({ id: -1, skillName: "" });
+    if (currentSkill?.id !== -1) setIsDisable(false);
   }, []);
 
   return (
