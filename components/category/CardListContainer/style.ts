@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.main`
+const StyledRoot = styled.section`
   margin-top: 4.8rem;
   /* width: 128rem; */
   display: flex;
@@ -11,7 +11,7 @@ const StyledRoot = styled.main`
   align-items: center;
 `;
 
-const ImgWrapper = styled.section`
+const ImgWrapper = styled.figure`
   display: flex;
   margin: auto;
   width: 30rem;
