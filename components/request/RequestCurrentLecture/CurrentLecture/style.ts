@@ -24,30 +24,30 @@ const StyledRoot = styled.div<{ order: number }>`
   ${(props) =>
     props.order === 1
       ? css`
-          background-image: url("/assets/images/requestLectureBackground1.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground1.png");
         `
       : props.order === 2
       ? css`
-          background-image: url("/assets/images/requestLectureBackground2.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground2.png");
         `
       : props.order === 3
       ? css`
-          background-image: url("/assets/images/requestLectureBackground3.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground3.png");
         `
       : props.order === 4
       ? css`
-          background-image: url("/assets/images/requestLectureBackground4.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground4.png");
         `
       : props.order === 5
       ? css`
-          background-image: url("/assets/images/requestLectureBackground1.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground1.png");
         `
       : props.order === 6
       ? css`
-          background-image: url("/assets/images/requestLectureBackground2.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground2.png");
         `
       : css`
-          background-image: url("/assets/images/requestLectureBackground3.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground3.png");
         `};
 
   h3 {
