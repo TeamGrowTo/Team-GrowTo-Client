@@ -1,5 +1,4 @@
 import Modal from "components/common/Modal";
-import { useRouter } from "next/router";
 import { MobileResultShareIcon, ResultShareIcon } from "public/assets/icons";
 import React, { useState } from "react";
 import Screen from "styles/Screen";
