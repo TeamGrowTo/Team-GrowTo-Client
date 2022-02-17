@@ -50,7 +50,7 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
             ) : (
               <span>{categorySelected}</span>
             )}
-            <DropdownWrapper open={open} categorySelected={categorySelected}>
+            <DropdownWrapper open={open}>
               <Screen desktop>
                 <Dropdown />
               </Screen>
