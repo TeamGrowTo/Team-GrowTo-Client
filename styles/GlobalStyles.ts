@@ -9,7 +9,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    font-size: 62.5%;
+    font-size: 50%;
+    ${applyMediaQuery("mobile")} {
+      font-size: 62.5%;
+    } 
   }
   body{
     font-family: "Pretendard-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
