@@ -14,7 +14,7 @@ const Banner = function () {
       </TitleWrapper>
       <ImageWrapper>
         <Screen desktop>
-          <Image src={MainBannerCompass} alt="bannerImg" width={580} height={297} quality={100} />
+          <Image src={MainBannerCompass} alt="bannerImg" width={545} height={289} quality={100} />
         </Screen>
         <Screen mobile>
           <Image
