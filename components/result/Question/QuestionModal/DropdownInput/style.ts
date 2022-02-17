@@ -33,9 +33,9 @@ export const Dropdown = styled.article<{ flagDropdown: boolean }>`
       font-size: 1.4rem;
     }
 
-    svg {
+    /* svg {
       width: 1.4rem;
-    }
+    } */
   }
   & > button:first-child {
     height: 5.6rem;
