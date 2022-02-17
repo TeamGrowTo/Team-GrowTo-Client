@@ -19,9 +19,9 @@ import Screen from "styles/Screen";
 import { LineWrapper, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
-  const [totalNumber, setTotalNumber] = useState(82);
-  const [findNumber, setFindNumber] = useState(77);
-  const [requestNumber, setRequestNumber] = useState(74);
+  const [totalNumber, setTotalNumber] = useState(0);
+  const [findNumber, setFindNumber] = useState(0);
+  const [requestNumber, setRequestNumber] = useState(0);
 
   const ReportNumber = async () => {
     const nowTotalNumber = await getLectureTotalNumber();

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
-const BackGround = styled.div`
+export const BackGround = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -13,5 +13,3 @@ const BackGround = styled.div`
   max-width: 100%;
   max-height: 100%;
 `;
-
-export { BackGround };

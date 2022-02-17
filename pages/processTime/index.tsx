@@ -2,8 +2,13 @@ import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
-import Router from "next/router";
-import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
+import Link from "next/link";
+import {
+  NextArrowAble,
+  NextArrowDisabled,
+  ProcessPlayIcon,
+  ProcessSquareIcon,
+} from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
@@ -36,9 +41,6 @@ function ProcessTime() {
   }, []);
   const handleTimeClick = (timeType: string) => {
     setSelectedTime(timeType);
-    setTimeout(() => {
-      Router.replace("/processPrice");
-    }, 1000);
   };
 
   useEffect(() => {
@@ -87,6 +89,19 @@ function ProcessTime() {
             ))}
           </TimeWrapper>
         </CardChoice>
+        <NextButtonWrapper>
+          <Link href="/processPrice" replace passHref>
+            <NextButton
+              selectedPrice={selectedTime}
+              disabled={selectedTime.length > 0 ? false : true}
+            >
+              완료하기
+            </NextButton>
+          </Link>
+          <NextArrowWrapper>
+            {selectedTime.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />}
+          </NextArrowWrapper>
+        </NextButtonWrapper>
       </ProcessBox>
     </StyledRoot>
   );
@@ -98,9 +113,6 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
-  ${applyMediaQuery("mobile")} {
-    width: 50rem;
-  }
 `;
 
 export const PlayIcon = styled.div`
@@ -133,7 +145,6 @@ export const CardChoice = styled.section`
   border-radius: 0 0 2.8rem 2.8rem;
   backdrop-filter: blur(2rem);
   border: 2px solid white;
-  margin-bottom: 14.2rem;
   ${applyMediaQuery("mobile")} {
     width: 36rem;
     height: 100%;
@@ -158,5 +169,45 @@ export const TimeWrapper = styled.div`
     & > p {
       font-size: 2rem;
     }
+  }
+`;
+
+export const NextButtonWrapper = styled.div`
+  display: flex;
+  position: relative;
+`;
+
+export const NextButton = styled.button<{ selectedPrice: string }>`
+  margin-left: auto;
+  margin-top: 2.4rem;
+  margin-bottom: 5.8rem;
+  width: 22.4rem;
+  height: 6rem;
+  background: ${({ selectedPrice }) =>
+    selectedPrice.length > 0 ? `${colors.mainBlue}` : `${colors.gray2}`};
+  font-size: 2.4rem;
+  font-family: "Pretendard-Bold";
+  border-radius: 4.8rem;
+  padding-right: 1.7rem;
+  color: ${({ selectedPrice }) => (selectedPrice.length > 0 ? "white" : `${colors.gray4}`)};
+  :hover {
+    cursor: pointer;
+  }
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.6rem;
+    margin-top: 4rem;
+    width: 12.6rem;
+    height: 5.2rem;
+  }
+`;
+
+export const NextArrowWrapper = styled.div`
+  position: absolute;
+  top: 4.5rem;
+  right: 4.5rem;
+  margin-right: 1.1rem;
+  ${applyMediaQuery("mobile")} {
+    top: 5.7rem;
+    right: 1rem;
   }
 `;

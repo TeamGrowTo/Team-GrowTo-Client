@@ -3,11 +3,12 @@ import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import {
   NextArrowAble,
   NextArrowDisabled,
   ProcessLoading,
+  ProcessLoadingMobile,
   ProcessPlayIcon,
   ProcessSquareIcon,
 } from "public/assets/icons";
@@ -25,6 +26,7 @@ function ProcessPrice() {
   const priceTypeList = ["높은 가격", "낮은 가격", "상관없음"];
   const getTimeData = useRecoilValue(processState);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (
@@ -58,7 +60,7 @@ function ProcessPrice() {
       priceAsc: undefined,
     });
     setTimeout(() => {
-      Router.replace(`/result/${resultData.id}`);
+      router.replace(`/result/${resultData.id}`);
     }, 3000);
   };
 
@@ -81,7 +83,13 @@ function ProcessPrice() {
   return isLoading ? (
     <LoadingStyledRoot>
       <LogoWrapper>
-        <LoadingLogo />
+        <Screen desktop>
+          <LoadingLogo />
+        </Screen>
+        <Screen mobile>
+          <LoadingLogoMobile />
+        </Screen>
+
         <p>
           당신을 위한 <br />
           맞춤 강의를 찾는 중...
@@ -142,9 +150,6 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
-  ${applyMediaQuery("mobile")} {
-    width: 50rem;
-  }
 `;
 export const PlayIcon = styled.div`
   position: absolute;
@@ -244,10 +249,9 @@ export const NextArrowWrapper = styled.div`
 
 export const LoadingStyledRoot = styled.div`
   width: 100%;
-  height: 100%;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
   ${applyMediaQuery("mobile")} {
-    width: 50rem;
+    width: 100%;
   }
 `;
 export const LogoWrapper = styled.div`
@@ -263,7 +267,17 @@ export const LogoWrapper = styled.div`
   }
   display: flex;
   flex-direction: column;
+  ${applyMediaQuery("mobile")} {
+    width: 17rem;
+    & > p {
+      font-size: 2rem;
+    }
+  }
 `;
 export const LoadingLogo = styled(ProcessLoading)`
   margin: 27.5rem auto 4.4rem;
+`;
+
+export const LoadingLogoMobile = styled(ProcessLoadingMobile)`
+  margin: 23.6rem auto 2.4rem;
 `;

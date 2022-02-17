@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.section`
+export const StyledRoot = styled.section`
   position: fixed;
   margin: 0 auto;
   top: 50%;
@@ -29,7 +29,7 @@ const StyledRoot = styled.section`
   }
 `;
 
-const TitleWrapper = styled.div`
+export const TitleWrapper = styled.div`
   width: 100%;
   margin-left: 6.6rem;
   margin-top: 3.9rem;
@@ -55,7 +55,7 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   color: ${colors.gray5};
   font-size: 2.8rem;
   font-family: "Pretendard-Bold";
@@ -68,7 +68,7 @@ const Title = styled.h3`
   }
 `;
 
-const InputWrapper = styled.section`
+export const InputWrapper = styled.section`
   display: flex;
   justify-content: center;
   height: 100%;
@@ -79,7 +79,7 @@ const InputWrapper = styled.section`
   }
 `;
 
-const EssentialInput = styled.div`
+export const EssentialInput = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -97,7 +97,7 @@ const EssentialInput = styled.div`
   }
 `;
 
-const TextArea = styled.div`
+export const TextArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,7 +109,7 @@ const TextArea = styled.div`
   }
 `;
 
-const ReportButton = styled.button<{ isBlank: boolean }>`
+export const ReportButton = styled.button<{ isDisabled: boolean }>`
   text-align: center;
   font-family: "Pretendard-Bold";
   font-size: 2rem;
@@ -123,8 +123,8 @@ const ReportButton = styled.button<{ isBlank: boolean }>`
     margin-bottom: 1.6rem;
   }
 
-  ${({ isBlank }) =>
-    isBlank
+  ${({ isDisabled }) =>
+    isDisabled
       ? css`
           background-color: ${colors.gray2};
           color: ${colors.gray4};
@@ -133,22 +133,14 @@ const ReportButton = styled.button<{ isBlank: boolean }>`
           background-color: ${colors.mainBlue};
           color: white;
           cursor: pointer;
+          &:focus {
+            border: 0.1rem solid ${colors.subBlack};
+          }
         `}
 `;
 
-const Line = styled.div`
+export const Line = styled.div`
   width: 0.05rem;
   background-color: ${colors.gray3};
   margin: 1rem 3.2rem 1.8rem 3.2rem;
 `;
-
-export {
-  EssentialInput,
-  InputWrapper,
-  Line,
-  ReportButton,
-  StyledRoot,
-  TextArea,
-  Title,
-  TitleWrapper,
-};

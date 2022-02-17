@@ -1,22 +1,22 @@
+import { lectureDataList } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.button<{ isDisable: boolean }>`
+export const StyledRoot = styled.button<{ isDisable: boolean; isSelected: boolean }>`
   display: inline-flex;
   align-items: center;
   background-color: white;
   position: relative;
   height: 4.8rem;
   padding: 1.6rem 2.7rem;
-
-  border: 1px solid #e3e3e3;
+  border: 1px solid ${(props) => (props.isSelected ? colors.mainBlue : "#e3e3e3")};
   border-radius: 4.8rem;
 
   font-family: "Pretendard-Medium";
   line-height: 4.8rem;
   & span {
-    color: ${(props) => (props.isDisable ? colors.gray4 : colors.gray6)};
+    color: ${(props) => props.isDisable && colors.gray4};
   }
   transition: 200ms;
   box-shadow: 0 0.2rem 0.6rem 0 #5858580a;
@@ -34,9 +34,6 @@ const StyledRoot = styled.button<{ isDisable: boolean }>`
     border: 1px solid ${colors.mainBlue};
     box-shadow: 0px 2px 12px rgba(69, 121, 255, 0.08);
     transition: 200ms;
-    span {
-      color: ${colors.mainBlue};
-    }
     path {
       stroke: ${colors.mainBlue};
     }
@@ -51,12 +48,12 @@ const StyledRoot = styled.button<{ isDisable: boolean }>`
     line-height: 3.4rem;
     padding: 1rem 1.2rem;
     & + & {
-      margin-left: 0.6rem;
+      margin-left: 0;
     }
   }
 `;
 
-const DropDownBox = styled.ul`
+export const DropDownBox = styled.ul`
   position: absolute;
   top: 5.4rem;
   left: 0;
@@ -76,9 +73,18 @@ const DropDownBox = styled.ul`
     border-bottom-left-radius: 1.2rem;
     border-bottom-right-radius: 1.2rem;
   }
+
+  ${applyMediaQuery("mobile")} {
+    width: 14rem;
+    top: 4rem;
+    & > li {
+      font-size: 1.4rem;
+      line-height: 1rem;
+    }
+  }
 `;
 
-const DropDownItem = styled.li`
+export const DropDownItem = styled.li`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -89,29 +95,43 @@ const DropDownItem = styled.li`
   font-size: 1.4rem;
   line-height: 1.4rem;
   color: ${colors.gray6};
-
   cursor: pointer;
+  transition: 200ms;
   &:hover {
+    font-family: "Pretendard-Bold";
+  }
+
+  &:active {
     background: ${colors.lightBlue};
   }
-`;
-const CriteriaItem = styled.span`
-  font-family: "Pretendard-Medium";
-  color: ${(props) => props.color || colors.gray3};
-  font-size: 1.4rem;
+
   & + & {
-    margin-left: 0.8rem;
+    border-top: 1px solid ${colors.gray1};
   }
+`;
+
+export const CriteriaItem = styled.span`
+  font-family: "Pretendard-Medium";
+  color: ${(props) => props.color || colors.gray6};
+  font-size: 1.4rem;
+  margin-right: 0.8rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
     line-height: 1.4rem;
-    margin-left: 0.8rem;
   }
 `;
 
-const BtnTextWrapper = styled.span`
-  margin-right: 1.2rem;
-`;
+export const CriteriaSelectedItem = styled.span`
+  font-family: "Pretendard-Medium";
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: ${colors.mainBlue};
 
-export { BtnTextWrapper, CriteriaItem, DropDownBox, DropDownItem, StyledRoot };
+  padding-left: 0.8rem;
+  border-left: 1px solid #d3d3d3;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+`;

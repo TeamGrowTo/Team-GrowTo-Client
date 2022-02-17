@@ -113,6 +113,7 @@ const Number = styled.div`
     font-size: 1.2rem;
   }
   p {
+    font-family: "Pretendard-Bold";
     color: ${colors.mainBlue};
     font-family: "Pretendard-Bold";
   }
