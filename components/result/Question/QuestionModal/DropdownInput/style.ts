@@ -13,7 +13,6 @@ export const Dropdown = styled.article<{ flagDropdown: boolean }>`
   border: 0.1rem solid ${colors.gray3};
   border-radius: 0 0 2.8rem 2.8rem;
   ${applyMediaQuery("mobile")} {
-    padding: 1.8rem 2.4rem;
     top: 7rem;
     height: 13.1rem;
   }
@@ -28,6 +27,9 @@ export const Dropdown = styled.article<{ flagDropdown: boolean }>`
     text-align: start;
     color: ${colors.subBlack};
     ${applyMediaQuery("mobile")} {
+      height: 4.1rem;
+      line-height: 4.1rem;
+      padding: 0 2.3rem;
       font-size: 1.4rem;
     }
 
@@ -40,6 +42,11 @@ export const Dropdown = styled.article<{ flagDropdown: boolean }>`
     line-height: 0;
     padding-top: 2.1rem;
     padding-bottom: 1.5rem;
+    ${applyMediaQuery("mobile")} {
+      height: 4.4rem;
+      padding-top: 1.7rem;
+      padding-bottom: 1rem;
+    }
   }
   & > button:last-child {
     height: 5.6rem;
@@ -47,6 +54,11 @@ export const Dropdown = styled.article<{ flagDropdown: boolean }>`
     border-radius: 0 0 2.8rem 2.8rem;
     padding-top: 1.5rem;
     padding-bottom: 2.1rem;
+    ${applyMediaQuery("mobile")} {
+      height: 4.4rem;
+      padding-top: 1rem;
+      padding-bottom: 1.7rem;
+    }
   }
   & > button:focus {
     background: ${colors.blue1};
