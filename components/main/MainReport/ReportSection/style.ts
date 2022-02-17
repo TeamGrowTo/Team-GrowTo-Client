@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.section`
+const StyledRoot = styled.figure`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@ const StyledRoot = styled.section`
   }
 `;
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled.figcaption`
   width: 17rem;
   height: 5.2rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
@@ -41,7 +41,7 @@ const Title = styled.p`
   }
 `;
 
-const Data = styled.div`
+const Data = styled.figcaption`
   color: ${colors.subBlack};
   display: flex;
   align-items: center;
