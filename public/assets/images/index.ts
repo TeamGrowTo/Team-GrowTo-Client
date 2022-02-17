@@ -9,12 +9,6 @@ export { default as MainLectureEtcIcon } from "./mainLectureCategoryEtcIcon.png"
 export { default as MainLectureMarketingIcon } from "./mainLectureCategoryMarketingIcon.png";
 export { default as MainLecturePlanIcon } from "./mainLectureCategoryPlanIcon.png";
 export { default as MainReportBackground } from "./mainReportBackground.png";
-export { default as FindIcon } from "./mainReportFindIcon.png";
-export { default as FindIcon_mobile } from "./mainReportFindIcon-mobile.png";
-export { default as RequestIcon } from "./mainReportRequestIcon.png";
-export { default as RequestIcon_mobile } from "./mainReportRequestIcon-mobile.png";
-export { default as TotalIcon } from "./mainReportTotalIcon.png";
-export { default as TotalIcon_mobile } from "./mainReportTotalIcon-mobile.png";
 export { default as MainReviewBackground } from "./mainReviewBackground.png";
 export { default as MainReviewProfile1 } from "./mainReviewProfile1.svg";
 export { default as MainReviewProfile1_mobile } from "./mainReviewProfile1-mobile.svg";
