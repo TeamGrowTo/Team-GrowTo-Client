@@ -22,7 +22,6 @@ export { default as ReportLine_mobile } from "./mainReportLine-mobile.svg";
 export { default as MobileResultCardRightArrowIcon } from "./mobileResultCardRightArrowIcon.svg";
 export { default as MobileResultDropdownIcon } from "./mobileResultDropdownIcon.svg";
 export { default as MobileResultDropupIcon } from "./mobileResultDropupIcon.svg";
-export { default as MobileResultShareIcon } from "./mobileResultShareIcon.svg";
 export { default as MobileResultSliderLeftArrowIcon } from "./mobileResultSliderLeftArrowIcon.svg";
 export { default as MobileResultSliderRightArrowIcon } from "./mobileResultSliderRightArrowIcon.svg";
 export { default as NextArrowAble } from "./nextArrowAble.svg";
