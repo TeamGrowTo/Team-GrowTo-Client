@@ -1,6 +1,7 @@
 import "public/assets/fonts/font.css";
 
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "styled-components";
 
@@ -12,6 +13,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <RecoilRoot>
+        <Head>
+          <title>growto</title>
+          <meta property="og:url" content="https://www.growto.kr/" />
+          <meta property="og:title" content="Growto :: IT강의 비교 플랫폼 서비스" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="public/assets/icons/metaLogo.png" />
+        </Head>
         <Layout>
           <Component {...pageProps} />
         </Layout>
