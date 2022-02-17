@@ -96,6 +96,16 @@ function SortingBox() {
     }
   };
 
+  const handleKeyPressSortingItem = async (
+    value: SortingType,
+    item: SortingItemType,
+    e: React.KeyboardEvent<HTMLLIElement>,
+  ) => {
+    if (e.key === "Enter") {
+      handleClickSortingItem(value, item);
+    }
+  };
+
   return (
     <StyledRoot>
       <SortingWrapper>
@@ -105,6 +115,7 @@ function SortingBox() {
             value={criteria}
             onClickOpenSorting={handleOpenSorting}
             onClickSortingItem={handleClickSortingItem}
+            onKeyPressSortingItem={handleKeyPressSortingItem}
             criteria={criteria}
           >
             {criteria}
