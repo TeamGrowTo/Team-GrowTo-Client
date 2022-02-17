@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body{
     font-family: "Pretendard-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    margin-top: 11.6rem;
+    margin-top: 10.8rem;
     ${applyMediaQuery("mobile")} {
       margin-top: 4.8rem;
     } 

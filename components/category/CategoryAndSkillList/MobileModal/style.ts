@@ -4,11 +4,12 @@ import { colors } from "styles/colors";
 // 유저가 현재 보는 화면에서 꽉차게 하는 것이 필요했다.
 // 모바일은 폰마다 화면이 다르니 현재 화면을 반영하기 위해  vw, vh를 사용했음.
 // 가로 스크롤이 생기는것을 방지하기 위해 아래 max-xxxx 코드도 추가해줬다.
-export const StyledRoot = styled.section`
-  display: relative;
+export const StyledRoot = styled.article`
+  position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: 4.8rem;
+  bottom: 0;
   width: 100vw;
   height: 100vh;
   max-width: 100%;
@@ -45,16 +46,17 @@ export const BackButton = styled.button`
 export const ListWrapper = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
   z-index: 100;
-  flex-grow: 1;
-  text-align: none;
-  margin-bottom: 12rem;
+  text-align: center;
   overflow: hidden;
+  //7.2 + 4.8
+  margin-bottom: 12rem;
 `;
 
 export const RedirectRequestPage = styled.a`
   position: absolute;
-  bottom: 0;
+  bottom: 4.8rem;
   z-index: 100;
   display: flex;
   justify-content: center;

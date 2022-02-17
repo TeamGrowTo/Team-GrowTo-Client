@@ -30,6 +30,7 @@ export const InputWrapper = styled.div`
   border-radius: 4.8rem;
   border: 0.1rem solid ${colors.white};
   display: flex;
+  align-items: center;
   padding: 2.2rem 3.6rem;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
@@ -37,7 +38,7 @@ export const InputWrapper = styled.div`
     padding: 1.15rem 2.4rem;
   }
 
-  input {
+  & > input {
     width: 100%;
     font-family: "Pretendard-Regular";
     font-size: 2rem;
@@ -45,11 +46,7 @@ export const InputWrapper = styled.div`
       font-size: 1.4rem;
     }
   }
-  input::placeholder {
-    font-size: 2rem;
+  & > input::placeholder {
     color: ${colors.gray4};
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.4rem;
-    }
   }
 `;

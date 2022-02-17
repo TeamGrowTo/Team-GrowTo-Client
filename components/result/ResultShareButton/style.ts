@@ -14,9 +14,11 @@ export const StyledRoot = styled.section`
 
   & > div:nth-of-type(2) {
     p:first-child {
-      width: 18rem;
-      text-align: center;
-      line-height: 2.5rem;
+      ${applyMediaQuery("mobile")} {
+        width: 18rem;
+        text-align: center;
+        line-height: 2.5rem;
+      }
     }
   }
 `;
