@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.header`
   position: fixed;
   width: 100%;
   height: 6rem;

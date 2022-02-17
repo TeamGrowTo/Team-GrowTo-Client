@@ -16,6 +16,7 @@ import {
   currentSortingState,
   isDisableState,
   isOpenState,
+  isSelectedState,
   lectureCategoryState,
   lectureDataList,
 } from "store/state";
@@ -41,6 +42,7 @@ const MainLectureCategory = function () {
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
   const resetIsDisable = useResetRecoilState(isDisableState);
   const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetIsSelected = useResetRecoilState(isSelectedState);
   const resetSkillData = useResetRecoilState(currentSkillState);
 
   //분야 선택시 category페이지의 기존 skill 및 강의목록 데이터 삭제
@@ -49,6 +51,7 @@ const MainLectureCategory = function () {
     resetLectureListData();
     resetIsDisable();
     resetIsOpen();
+    resetIsSelected();
     resetCurrentSorting();
   };
 
