@@ -11,7 +11,7 @@ const StyledRoot = styled.main`
   align-items: center;
 `;
 
-const ImgWrapper = styled.div`
+const ImgWrapper = styled.section`
   display: flex;
   padding-top: 2rem;
   margin: auto;
