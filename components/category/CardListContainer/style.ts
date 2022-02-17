@@ -13,10 +13,9 @@ const StyledRoot = styled.main`
 
 const ImgWrapper = styled.section`
   display: flex;
-  padding-top: 2rem;
   margin: auto;
-  width: 40.1rem;
-  height: 38.2rem;
+  width: 30rem;
+  height: 28rem;
   ${applyMediaQuery("mobile")} {
     width: 20rem;
     height: auto;
