@@ -2,6 +2,7 @@ export { default as TenSecondIcon } from "./10second.svg";
 export { default as ArrowDown } from "./arrowDown.svg";
 export { default as ArrowRight } from "./arrowRight.svg";
 export { default as ArrowUp } from "./arrowUp.svg";
+export { default as CategoryRightArrowIcon } from "./categoryRightArrowIcon.svg";
 export { default as CloseButton } from "./closeButton.svg";
 export { default as DownArrowIcon } from "./desktopDownArrowIcon.svg";
 export { default as UpArrowIcon } from "./desktopUpArrowIcon.svg";
