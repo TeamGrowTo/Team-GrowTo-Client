@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100%;
   height: 94.1rem;
@@ -16,7 +16,7 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   width: 101.2rem;
   height: 64rem;
   margin-top: 13.6rem;
@@ -55,7 +55,7 @@ const Title = styled.div`
   }
 `;
 
-const ReviewList = styled.div`
+const ReviewList = styled.section`
   display: flex;
   flex-flow: row wrap;
   width: 120rem;
