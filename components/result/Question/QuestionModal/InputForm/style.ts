@@ -33,6 +33,10 @@ export const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlan
       padding: 0 2.4rem;
     }
 
+    /* &:focus {
+      border: 0.1rem solid ${colors.subBlack};
+    } */
+
     ${({ flagDropdown }) =>
       flagDropdown
         ? css`

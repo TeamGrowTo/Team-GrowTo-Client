@@ -18,6 +18,8 @@ export const StyledRoot = styled.article`
     width: 32%;
     height: 100%;
     margin: 0;
+    align-items: center;
+
     overflow-y: auto;
     background: linear-gradient(
         101.6deg,
@@ -35,11 +37,10 @@ export const Category = styled.button<{ isSelected: boolean }>`
   width: 16rem;
   height: 6.2rem;
   border-radius: 1.2rem;
-  text-align: center;
-  font-size: 1.8rem;
-  font-family: "Pretendard-SemiBold";
-  line-height: 100%;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${applyMediaQuery("mobile")} {
     border: 0;
     border-radius: 0;
@@ -47,13 +48,21 @@ export const Category = styled.button<{ isSelected: boolean }>`
     height: 4.8rem;
     min-height: 4.8rem;
     margin: 0;
-    padding-left: 3.9rem;
-    font-size: 1.4rem;
-    text-align: start;
+    display: flex;
+    align-items: center;
   }
 
   &:active {
-    border: 0.1rem solid black;
+    background: linear-gradient(0deg, rgba(69, 121, 255, 0.02), rgba(69, 121, 255, 0.02)), #ffffff;
+    opacity: 0.96;
+    box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
+    border: 0.1rem solid ${colors.mainBlue};
+    color: ${colors.mainBlue};
+  }
+
+  &:focus {
+    border: 0.1rem solid ${colors.mainBlue};
+    border-radius: 1.2rem;
   }
 
   ${({ isSelected }) =>
@@ -64,10 +73,7 @@ export const Category = styled.button<{ isSelected: boolean }>`
           border: 0.1rem solid ${colors.mainBlue};
           background: ${colors.blue4};
           ${applyMediaQuery("mobile")} {
-            color: ${colors.mainBlue};
-            box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
             border: 0.1rem solid ${colors.mainBlue};
-            background: ${colors.blue4};
             border-radius: 1.2rem;
           }
         `
@@ -80,8 +86,30 @@ export const Category = styled.button<{ isSelected: boolean }>`
               rgba(255, 255, 255, 0.4) 75.76%
             ),
             #ffffff;
-            ${applyMediaQuery("mobile")} {
-            color: ${colors.subBlack};
+            & > span {
+
+              ${applyMediaQuery("mobile")} {
+                /* color: ${colors.subBlack}; */
+              }
+            }
+
+            &:hover {
+                background: linear-gradient(
+                101.6deg,
+                rgba(244, 250, 255, 0.4) 32.93%,
+                rgba(255, 255, 255, 0.4) 75.76%
+                ),
+                #f4f4f4;
             }
             `}
+
+  & > span {
+    font-size: 1.8rem;
+    font-family: "Pretendard-SemiBold";
+    ${applyMediaQuery("mobile")} {
+      width: 3.7rem;
+      text-align: start;
+      font-size: 1.4rem;
+    }
+  }
 `;

@@ -7,7 +7,8 @@ import {
   LectureDateBox,
   LectureInfoBox,
   LectureInfoData,
-  LectureInfoName,
+  LectureInfoLongName,
+  LectureInfoShortName,
   LectureInfoWrapper,
   LectureLinkBtn,
   LectureTag,
@@ -35,25 +36,29 @@ function LargeCardBox({ lecture }: Props) {
         <LectureTitleName>{LectureTitle}</LectureTitleName>
       </LectureTitleBox>
       <LectureInfoBox>
-        <LectureInfoWrapper>
-          <LectureInfoName>총 소요시간</LectureInfoName>
-          <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
-        </LectureInfoWrapper>
-        <LectureInfoWrapper>
-          <LectureInfoName>질문 응답시간</LectureInfoName>
-          <LectureInfoData>{reviewTime}</LectureInfoData>
-        </LectureInfoWrapper>
-        <LectureInfoWrapper>
-          <LectureInfoName>가격</LectureInfoName>
-          <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
-        </LectureInfoWrapper>
-        <LectureInfoWrapper>
-          <LectureInfoName>반복 시청 기간</LectureInfoName>
-          <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
-        </LectureInfoWrapper>
+        <div>
+          <LectureInfoWrapper>
+            <LectureInfoShortName>총 소요시간</LectureInfoShortName>
+            <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
+          </LectureInfoWrapper>
+          <LectureInfoWrapper>
+            <LectureInfoShortName>가격</LectureInfoShortName>
+            <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
+          </LectureInfoWrapper>
+        </div>
+        <div>
+          <LectureInfoWrapper>
+            <LectureInfoLongName>질문 응답시간</LectureInfoLongName>
+            <LectureInfoData>{reviewTime}</LectureInfoData>
+          </LectureInfoWrapper>
+          <LectureInfoWrapper>
+            <LectureInfoLongName>반복 시청기간</LectureInfoLongName>
+            <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
+          </LectureInfoWrapper>
+        </div>
       </LectureInfoBox>
       <LectureDateBox>
-        <LectureInfoName>개설일</LectureInfoName>
+        <LectureInfoShortName>개설일</LectureInfoShortName>
         <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
       </LectureDateBox>
       <LectureTagBox>

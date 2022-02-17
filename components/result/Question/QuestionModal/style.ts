@@ -109,7 +109,7 @@ export const TextArea = styled.div`
   }
 `;
 
-export const ReportButton = styled.button<{ isBlank: boolean }>`
+export const ReportButton = styled.button<{ isDisabled: boolean }>`
   text-align: center;
   font-family: "Pretendard-Bold";
   font-size: 2rem;
@@ -123,8 +123,8 @@ export const ReportButton = styled.button<{ isBlank: boolean }>`
     margin-bottom: 1.6rem;
   }
 
-  ${({ isBlank }) =>
-    isBlank
+  ${({ isDisabled }) =>
+    isDisabled
       ? css`
           background-color: ${colors.gray2};
           color: ${colors.gray4};
@@ -133,6 +133,9 @@ export const ReportButton = styled.button<{ isBlank: boolean }>`
           background-color: ${colors.mainBlue};
           color: white;
           cursor: pointer;
+          &:focus {
+            border: 0.1rem solid ${colors.subBlack};
+          }
         `}
 `;
 
