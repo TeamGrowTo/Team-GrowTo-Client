@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100vw;
   height: 60.3rem;
@@ -16,7 +16,7 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   width: 96rem;
   height: 40rem;
   background: linear-gradient(
@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const LineWrapper = styled.div`
+const LineWrapper = styled.figure`
   margin-top: 1.4rem;
   ${applyMediaQuery("mobile")} {
     margin-top: 0;

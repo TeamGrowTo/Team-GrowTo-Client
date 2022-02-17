@@ -51,7 +51,7 @@ function LargeNavBar() {
     <StyledRoot>
       <NavItemBox>
         <Link href="/" passHref>
-          <LogoWrapper onClick={handleResetLectureData}>
+          <LogoWrapper>
             <LogoIcon />
           </LogoWrapper>
         </Link>
