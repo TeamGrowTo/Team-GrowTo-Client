@@ -15,7 +15,7 @@ export const StyledRoot = styled.header`
   background: linear-gradient(90deg, #a484fe 30.96%, #5c00f1 97.53%);
 
   ${applyMediaQuery("desktop")} {
-    top: 11.6rem;
+    top: 10.8rem;
   }
   ${applyMediaQuery("mobile")} {
     bottom: 0;
