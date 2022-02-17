@@ -39,6 +39,7 @@ export const InputWrapper = styled.div`
   }
 
   & > input {
+    width: 100%;
     font-family: "Pretendard-Regular";
     font-size: 2rem;
     ${applyMediaQuery("mobile")} {
