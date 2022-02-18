@@ -33,6 +33,7 @@ export const CloseIconWrapper = styled.button`
   position: absolute;
   top: 2.8rem;
   right: 2.8rem;
+  padding: 0;
   cursor: pointer;
   ${applyMediaQuery("mobile")} {
     top: 2.4rem;
