@@ -40,6 +40,7 @@ export { default as ProgressTagM } from "./progressTagM.svg";
 export { default as ProgressTime } from "./progressTime.svg";
 export { default as ProgressTimeM } from "./progressTimeM.svg";
 export { default as QuestionIcon } from "./questionIcon.svg";
+export { default as RedirectRequestArrowIcon } from "./redirectRequestArrowIcon.svg";
 export { default as RequestRankLine } from "./requestRankLine.svg";
 export { default as RequestRankLine_mobile } from "./requestRankLine-mobile.svg";
 export { default as ResultShareIcon } from "./resultShareIcon.svg";
