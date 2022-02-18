@@ -11,6 +11,7 @@ import {
   currentSortingState,
   isDisableState,
   isOpenState,
+  isSelectedState,
   lectureCategoryState,
   lectureDataList,
   lectureSkillState,
@@ -32,6 +33,7 @@ function Category() {
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
   const resetIsDisable = useResetRecoilState(isDisableState);
   const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetIsSelected = useResetRecoilState(isSelectedState);
   const resetSkillData = useResetRecoilState(currentSkillState);
 
   const setLectureCategory = async (): Promise<void> => {
@@ -57,6 +59,7 @@ function Category() {
     resetIsDisable();
     resetIsOpen();
     resetCurrentSorting();
+    resetIsSelected();
   };
 
   const handleCategoryClick = (id: number | null) => {
@@ -89,7 +92,7 @@ function Category() {
     setLectureCategory();
     if (!category) setCurrentCategory({ id: -1, categoryName: "" });
     if (!currentSkill) setCurrentSkill({ id: -1, skillName: "" });
-    if (currentSkill?.id !== -1) setIsDisable(false);
+    if (currentSkill?.id && currentSkill?.id !== -1) setIsDisable(false);
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
   }, []);
 
