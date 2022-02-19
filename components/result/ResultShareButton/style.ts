@@ -47,12 +47,8 @@ export const ShareButton = styled.button`
 
   & > svg {
     margin-right: 1.2rem;
-    width: 2.4rem;
-    height: 2.4rem;
     ${applyMediaQuery("mobile")} {
       margin-right: 0.6rem;
-      width: 2rem;
-      height: 2rem;
     }
   }
 
