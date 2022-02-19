@@ -59,24 +59,32 @@ function Category() {
     resetCurrentSorting();
   };
 
-  const handleCategoryClick = (id: number | null) => {
-    if (id) {
-      const result = categoryList?.filter((category) => category.id === id)[0] || null;
+  const findSelectedCategory = (currentSelectedCategoryId: number) => {
+    return categoryList?.filter((category) => category.id === currentSelectedCategoryId)[0] || null;
+  };
+
+  const findSelectedSkill = (currentSelectedSkillId: number) => {
+    return skillList?.filter((skill) => skill.id === currentSelectedSkillId)[0] || null;
+  };
+
+  const handleCategoryClick = (categoryId: number | null) => {
+    if (categoryId) {
+      const result = findSelectedCategory(categoryId);
 
       setCurrentCategory(result);
-      setLectureSkill(id);
+      setLectureSkill(categoryId);
       setCurrentSkill({ id: -1, skillName: "" });
       resetData();
     }
   };
 
-  const handleSkillClick = async (SkillId: number | null) => {
-    if (SkillId) {
-      const result = skillList?.filter((skill) => skill.id === SkillId)[0] || null;
+  const handleSkillClick = async (skillId: number | null) => {
+    if (skillId) {
+      const result = findSelectedSkill(skillId);
       const categoryId = category?.id;
 
       if (categoryId) {
-        const data = await getSkillList(categoryId, SkillId);
+        const data = await getSkillList(categoryId, skillId);
 
         setIsDisable(false);
         setLectureDataList(data); //확인필요
