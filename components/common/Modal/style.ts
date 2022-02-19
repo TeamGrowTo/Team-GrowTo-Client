@@ -7,6 +7,8 @@ export const BackGround = styled.div<{ isBlur: boolean }>`
   left: 0;
   width: 100vw;
   height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
   opacity: ${(props) => (props.isBlur ? 0.7 : undefined)};
   background-color: ${(props) => (props.isBlur ? "rgba(0,0,0,0.7)" : undefined)};
   z-index: 99;

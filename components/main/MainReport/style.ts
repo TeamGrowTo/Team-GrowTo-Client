@@ -5,6 +5,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100vw;
+  max-width: 100%;
   height: 60.3rem;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
