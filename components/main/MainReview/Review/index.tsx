@@ -1,7 +1,7 @@
 import React from "react";
 import Screen from "styles/Screen";
 
-import { Bottom, Comment, ImgWrapper, Introduce, StyledRoot } from "./style";
+import { Bottom, Comment, Introduce, StyledRoot } from "./style";
 
 interface IProps {
   review: {
@@ -23,14 +23,14 @@ export default function Review({ review }: IProps) {
     <StyledRoot isTransparent={isTransparent} isTransparentMobile={isTransparentMobile}>
       <Comment>{comment}</Comment>
       <Bottom>
-        <ImgWrapper>
+        <div>
           <Screen desktop>
             <Profile />
           </Screen>
           <Screen mobile>
             <MobileProfile />
           </Screen>
-        </ImgWrapper>
+        </div>
         <Introduce>
           <div>{nickname}</div>
           <div>{id}</div>
