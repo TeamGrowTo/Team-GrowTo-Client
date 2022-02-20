@@ -108,7 +108,7 @@ function ProcessTime() {
 }
 
 export default ProcessTime;
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.main`
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});

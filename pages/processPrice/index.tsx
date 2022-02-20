@@ -145,7 +145,7 @@ function ProcessPrice() {
 }
 
 export default ProcessPrice;
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.main`
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
@@ -250,7 +250,7 @@ export const NextArrowWrapper = styled.div`
   }
 `;
 
-export const LoadingStyledRoot = styled.div`
+export const LoadingStyledRoot = styled.main`
   width: 100%;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
   ${applyMediaQuery("mobile")} {
