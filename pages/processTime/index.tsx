@@ -202,6 +202,9 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
     width: 12.6rem;
     height: 5.2rem;
   }
+  :focus-visible {
+    outline: 3px solid #aaa;
+  }
 `;
 
 export const NextArrowWrapper = styled.div`

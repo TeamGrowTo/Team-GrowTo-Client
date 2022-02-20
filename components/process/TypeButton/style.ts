@@ -26,4 +26,7 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
     border: 1px solid ${colors.mainBlue};
     color: white;
   }
+  :focus-visible {
+    outline: 3px solid #aaa;
+  }
 `;

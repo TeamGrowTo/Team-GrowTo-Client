@@ -217,6 +217,9 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
     height: 5.2rem;
     font-size: 1.6rem;
   }
+  :focus-visible {
+    outline: 3px solid #aaa;
+  }
 `;
 
 export const NextArrowWrapper = styled.div`
