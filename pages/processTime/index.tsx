@@ -113,6 +113,9 @@ export const StyledRoot = styled.section`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
+  ${applyMediaQuery("mobile")} {
+    height: 80rem;
+  }
 `;
 
 export const PlayIcon = styled.div`
@@ -204,10 +207,10 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
-  right: 4.5rem;
+  right: 4.2rem;
   margin-right: 1.1rem;
   ${applyMediaQuery("mobile")} {
-    top: 5.7rem;
+    top: 5.9rem;
     right: 1rem;
   }
 `;

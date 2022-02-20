@@ -222,10 +222,10 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
-  right: 7rem;
+  right: 6.5rem;
   margin-right: 0.9rem;
   ${applyMediaQuery("mobile")} {
-    top: 5.7rem;
+    top: 5.9rem;
     right: 1rem;
   }
 `;
