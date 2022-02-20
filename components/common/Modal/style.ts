@@ -49,6 +49,9 @@ export const Wrapper = styled.div`
     margin-top: 7.9rem;
     border-radius: 4.8rem;
     cursor: pointer;
+    :focus-visible {
+      outline: 3px solid #aaa;
+    }
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
