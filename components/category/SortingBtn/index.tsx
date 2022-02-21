@@ -20,11 +20,22 @@ interface SortingBtnProps {
   children: React.ReactNode;
   onClickOpenSorting: (criterial: SortingType) => void;
   onClickSortingItem: (value: SortingType, item: SortingItemType) => void;
+  onKeyPressSortingItem: (
+    value: SortingType,
+    item: SortingItemType,
+    e: React.KeyboardEvent<HTMLLIElement>,
+  ) => void;
   criteria: SortingType;
 }
 
 //sorting기준에 따라 dropDownList가 다르게보이도록 하자.
-function SortingBtn({ onClickOpenSorting, onClickSortingItem, value, criteria }: SortingBtnProps) {
+function SortingBtn({
+  onClickOpenSorting,
+  onClickSortingItem,
+  onKeyPressSortingItem,
+  value,
+  criteria,
+}: SortingBtnProps) {
   const isDisable = useRecoilValue(isDisableState);
   const isSelected = useRecoilValue(isSelectedState);
   const isOpen = useRecoilValue(isOpenState);
@@ -50,7 +61,12 @@ function SortingBtn({ onClickOpenSorting, onClickSortingItem, value, criteria }:
       {isOpen[value] && (
         <DropDownBox>
           {dropListName[value].map((item) => (
-            <DropDownItem key={item} onClick={() => onClickSortingItem(value, item)}>
+            <DropDownItem
+              tabIndex={0}
+              key={item}
+              onClick={() => onClickSortingItem(value, item)}
+              onKeyPress={(e) => onKeyPressSortingItem(value, item, e)}
+            >
               {item}
             </DropDownItem>
           ))}
