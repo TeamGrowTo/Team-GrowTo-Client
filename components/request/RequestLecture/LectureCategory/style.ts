@@ -12,15 +12,15 @@ export const LectureCategoryContainer = styled.div`
   box-sizing: border-box;
   flex-direction: column;
   align-items: baseline;
-  margin-bottom: 2.8rem;
+  margin-bottom: 3.5rem;
   ${applyMediaQuery("mobile")} {
     margin-bottom: 2rem;
   }
 
   p {
     font-family: "Pretendard-Bold";
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: ${colors.gray6};
     ${applyMediaQuery("mobile")} {
       font-size: 1.6rem;
@@ -34,12 +34,12 @@ export const CategoryBox = styled.div`
 
 export const CategoryButton = styled.button<IProps>`
   cursor: pointer;
-  width: 63rem;
-  height: 6.8rem;
+  width: 78.75rem;
+  height: 8.5rem;
   background-color: rgb(255, 255, 255, 0.7);
   border-radius: ${(props) => (props.open ? "2.8rem 2.8rem 0 0" : "4.8rem")};
-  border: 0.1rem solid ${colors.white};
-  padding: 2.2rem 3.6rem;
+  border: 0.125rem solid ${colors.white};
+  padding: 2.75rem 4.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,12 +48,12 @@ export const CategoryButton = styled.button<IProps>`
     width: 32.8rem;
     height: 4rem;
     padding: 1.15rem 2.4rem;
-    border-radius: ${(props) => (props.open ? "2.6rem 2.6rem 0 0" : "4.8rem")};
+    border-radius: ${(props) => (props.open ? "3.25rem 3.25rem 0 0" : "6rem")};
   }
 
   span {
     font-family: "Pretendard-Regular";
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: ${(props) => (props.categorySelected === "" ? `${colors.gray4}` : `${colors.subBlack}`)};
     ${applyMediaQuery("mobile")} {
       font-size: 1.4rem;
@@ -64,23 +64,21 @@ export const CategoryButton = styled.button<IProps>`
 export const DropdownWrapper = styled.div<{ open: boolean }>`
   display: flex;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   & > svg {
     transform: rotate(${(props) => (props.open ? "180deg" : "0")});
-  }
-  ${applyMediaQuery("mobile")} {
   }
 `;
 
 export const CategoryList = styled.div`
-  border-bottom-left-radius: 2.8rem;
-  border-bottom-right-radius: 2.8rem;
+  border-bottom-left-radius: 3.5rem;
+  border-bottom-right-radius: 3.5rem;
   background-color: ${colors.white};
-  width: 63rem;
-  height: 31.6rem;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
+  width: 78.75rem;
+  height: 39.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   position: absolute;
 
   ${applyMediaQuery("mobile")} {
@@ -92,14 +90,14 @@ export const CategoryList = styled.div`
 `;
 
 export const CategoryListWrapper = styled.div`
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+  margin-left: 0.375rem;
+  margin-right: 0.375rem;
   &:hover {
     background-color: ${colors.blue1};
   }
   &:nth-child(6) {
-    border-bottom-left-radius: 2.8rem;
-    border-bottom-right-radius: 2.8rem;
+    border-bottom-left-radius: 3.5rem;
+    border-bottom-right-radius: 3.5rem;
   }
 
   ${applyMediaQuery("mobile")} {
@@ -117,10 +115,10 @@ export const CategoryListItem = styled.div`
   font-family: "Pretendard-Regular";
   color: ${colors.subBlack};
   display: flex;
-  font-size: 2rem;
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
-  padding-left: 3.8rem;
+  font-size: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 4.75rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
