@@ -117,8 +117,8 @@ export const CategoryListItem = styled.div`
   display: flex;
   font-size: 2.5rem;
   padding-top: 2rem;
-  padding-bottom: 1.6rem;
-  padding-left: 3.8rem;
+  padding-bottom: 2rem;
+  padding-left: 4.75rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
