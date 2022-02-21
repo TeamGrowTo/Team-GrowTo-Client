@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.div`
   margin-right: 2.5rem;
 
   ${applyMediaQuery("mobile")} {
@@ -14,7 +14,7 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Id = styled.div`
+export const Id = styled.div`
   font-family: "Pretendard-Bold";
   font-size: 2.5rem;
   color: ${colors.subOrange};
@@ -26,7 +26,7 @@ const Id = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   width: 38.125rem;
   height: 13.5rem;
   background-color: ${colors.gray1};
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   h4 {
     font-family: "Pretendard-Bold";
     font-size: 2rem;
@@ -66,17 +66,17 @@ const Title = styled.div`
     }
   }
 `;
-const Line = styled(RequestRankLine)`
+export const Line = styled(RequestRankLine)`
   position: absolute;
   left: 20.5rem;
 `;
 
-const MobileLine = styled(RequestRankLine_mobile)`
+export const MobileLine = styled(RequestRankLine_mobile)`
   position: absolute;
   left: 16rem;
 `;
 
-const RequestNumber = styled.div`
+export const RequestNumber = styled.div`
   font-size: 2rem;
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@ const RequestNumber = styled.div`
   }
 `;
 
-const Number = styled.div`
+export const Number = styled.div`
   font-family: "Pretendard-Regular";
   font-size: 2rem;
   display: flex;
@@ -113,5 +113,3 @@ const Number = styled.div`
     font-family: "Pretendard-Bold";
   }
 `;
-
-export { Id, Line, MobileLine, Number, RequestNumber, StyledRoot, Title, Wrapper };
