@@ -9,7 +9,7 @@ export const StyledRoot = styled.figure<{ isTransparent: boolean; isTransparentM
   border-radius: 3rem;
   padding: 2.875rem 3.5rem 3.1875rem;
   margin-bottom: 3.875rem;
-  margin-right: auto;
+  margin-right: 2.66rem;
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(5rem);
