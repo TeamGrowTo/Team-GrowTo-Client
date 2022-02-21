@@ -19,15 +19,12 @@ export { default as FindIcon } from "./mainReportFindIcon.png";
 export { default as FindIcon_mobile } from "./mainReportFindIcon-mobile.png";
 export { default as ReportLine } from "./mainReportLine.svg";
 export { default as ReportLine_mobile } from "./mainReportLine-mobile.svg";
-<<<<<<< HEAD
 export { default as RequestIcon } from "./mainReportRequestIcon.png";
 export { default as RequestIcon_mobile } from "./mainReportRequestIcon-mobile.png";
 export { default as TotalIcon } from "./mainReportTotalIcon.png";
 export { default as TotalIcon_mobile } from "./mainReportTotalIcon-mobile.png";
-=======
 export { default as MobileQuestionDropdownIcon } from "./mobileQuestionDropdownIcon.svg";
 export { default as MobileQuestionModalCloseIcon } from "./mobileQuestionModalXIcon.svg";
->>>>>>> 83698b968442d1ccc7b81579e39404ea5777c7cb
 export { default as MobileResultCardRightArrowIcon } from "./mobileResultCardRightArrowIcon.svg";
 export { default as MobileResultSliderLeftArrowIcon } from "./mobileResultSliderLeftArrowIcon.svg";
 export { default as MobileResultSliderRightArrowIcon } from "./mobileResultSliderRightArrowIcon.svg";
