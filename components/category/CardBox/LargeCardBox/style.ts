@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.div`
   display: flex;
@@ -127,6 +128,9 @@ export const TagWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+  }
 `;
 
 export const LectureLinkBtn = styled.a`

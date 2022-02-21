@@ -1,4 +1,5 @@
 import { getSkillTagList } from "apis/info.api";
+import SEO from "components/common/SEO";
 import CardTitle from "components/process/CardTitle";
 import TagButton from "components/process/TagButton";
 import Title from "components/process/Title";
@@ -77,53 +78,56 @@ function ProcessTag() {
   };
 
   return (
-    <StyledRoot>
-      <Screen desktop>
-        <>
-          <div></div>
-          <PlayIcon>
-            <Image src={ProcessPlayIcon} alt="processPlay" />
-          </PlayIcon>
-          <SquareIcon>
-            <Image src={ProcessSquareIcon} alt="processSqaure" />
-          </SquareIcon>
-        </>
-      </Screen>
-      <ProcessBox>
-        <Title></Title>
-        <CardTitle></CardTitle>
-        <CardChoice>
-          <TagWrapper>
-            <p>
-              원하는 <span>강의 특성 2가지</span>를 선택하세요.
-            </p>
-            {tagList?.map((tag) => (
-              <TagButton
-                key={tag.id}
-                tag={tag.name}
-                onTagClick={handleTagClick}
+    <>
+      <SEO title="그로투 - 나에게 맞는 강의 찾기" content="당신에게 맞는 IT강의를 찾는 중이에요" />
+      <StyledRoot>
+        <Screen desktop>
+          <>
+            <div></div>
+            <PlayIcon>
+              <Image src={ProcessPlayIcon} alt="processPlay" />
+            </PlayIcon>
+            <SquareIcon>
+              <Image src={ProcessSquareIcon} alt="processSqaure" />
+            </SquareIcon>
+          </>
+        </Screen>
+        <ProcessBox>
+          <Title></Title>
+          <CardTitle></CardTitle>
+          <CardChoice>
+            <TagWrapper>
+              <p>
+                원하는 <span>강의 특성 2가지</span>를 선택하세요.
+              </p>
+              {tagList?.map((tag) => (
+                <TagButton
+                  key={tag.id}
+                  tag={tag.name}
+                  onTagClick={handleTagClick}
+                  selectedTags={selectedTags}
+                ></TagButton>
+              ))}
+            </TagWrapper>
+          </CardChoice>
+          <NextButtonWrapper>
+            <Link href="/processTime" replace passHref>
+              <NextButton
+                onClick={handleNext}
                 selectedTags={selectedTags}
-              ></TagButton>
-            ))}
-          </TagWrapper>
-        </CardChoice>
-        <NextButtonWrapper>
-          <Link href="/processTime" replace passHref>
-            <NextButton
-              onClick={handleNext}
-              selectedTags={selectedTags}
-              disabled={selectedTags.length > 1 ? false : true}
-            >
-              다음
-            </NextButton>
-          </Link>
+                disabled={selectedTags.length > 1 ? false : true}
+              >
+                다음
+              </NextButton>
+            </Link>
 
-          <NextArrowWrapper>
-            {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
-          </NextArrowWrapper>
-        </NextButtonWrapper>
-      </ProcessBox>
-    </StyledRoot>
+            <NextArrowWrapper>
+              {selectedTags.length > 1 ? <NextArrowDisabled /> : <NextArrowAble />}
+            </NextArrowWrapper>
+          </NextButtonWrapper>
+        </ProcessBox>
+      </StyledRoot>
+    </>
   );
 }
 
