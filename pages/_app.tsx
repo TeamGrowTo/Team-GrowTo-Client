@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <RecoilRoot>
         <Head>
-          <title>growto</title>
           <meta property="og:url" content="https://www.growto.kr/" />
           <meta property="og:title" content="Growto :: IT강의 비교 플랫폼 서비스" />
           <meta property="og:type" content="website" />
