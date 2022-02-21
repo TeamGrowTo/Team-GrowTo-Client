@@ -1,3 +1,4 @@
+import SEO from "components/common/SEO";
 import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
@@ -59,51 +60,54 @@ function ProcessTime() {
   }, [selectedTime]);
 
   return (
-    <StyledRoot>
-      <Screen desktop>
-        <>
-          <div></div>
-          <PlayIcon>
-            <Image src={ProcessPlayIcon} alt="processPlay" />
-          </PlayIcon>
-          <SquareIcon>
-            <Image src={ProcessSquareIcon} alt="processSqaure" />
-          </SquareIcon>
-        </>
-      </Screen>
-      <ProcessBox>
-        <Title></Title>
-        <CardTitle></CardTitle>
-        <CardChoice>
-          <TimeWrapper>
-            <p>
-              강의 <span>총 완강 시간</span>은 어떤 타입을 선호하시나요?
-            </p>
-            {timeTypeList.map((timeType, index) => (
-              <TypeButton
-                key={index}
-                onTypeClick={handleTimeClick}
-                interestType={timeType}
-                selectedTime={selectedTime}
-              />
-            ))}
-          </TimeWrapper>
-        </CardChoice>
-        <NextButtonWrapper>
-          <Link href="/processPrice" replace passHref>
-            <NextButton
-              selectedPrice={selectedTime}
-              disabled={selectedTime.length > 0 ? false : true}
-            >
-              완료하기
-            </NextButton>
-          </Link>
-          <NextArrowWrapper>
-            {selectedTime.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />}
-          </NextArrowWrapper>
-        </NextButtonWrapper>
-      </ProcessBox>
-    </StyledRoot>
+    <>
+      <SEO title="그로투 - 나에게 맞는 강의 찾기 " content="당신에게 맞는 IT강의를 찾는 중이에요" />
+      <StyledRoot>
+        <Screen desktop>
+          <>
+            <div></div>
+            <PlayIcon>
+              <Image src={ProcessPlayIcon} alt="processPlay" />
+            </PlayIcon>
+            <SquareIcon>
+              <Image src={ProcessSquareIcon} alt="processSqaure" />
+            </SquareIcon>
+          </>
+        </Screen>
+        <ProcessBox>
+          <Title></Title>
+          <CardTitle></CardTitle>
+          <CardChoice>
+            <TimeWrapper>
+              <p>
+                강의 <span>총 완강 시간</span>은 어떤 타입을 선호하시나요?
+              </p>
+              {timeTypeList.map((timeType, index) => (
+                <TypeButton
+                  key={index}
+                  onTypeClick={handleTimeClick}
+                  interestType={timeType}
+                  selectedTime={selectedTime}
+                />
+              ))}
+            </TimeWrapper>
+          </CardChoice>
+          <NextButtonWrapper>
+            <Link href="/processPrice" replace passHref>
+              <NextButton
+                selectedPrice={selectedTime}
+                disabled={selectedTime.length > 0 ? false : true}
+              >
+                완료하기
+              </NextButton>
+            </Link>
+            <NextArrowWrapper>
+              {selectedTime.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />}
+            </NextArrowWrapper>
+          </NextButtonWrapper>
+        </ProcessBox>
+      </StyledRoot>
+    </>
   );
 }
 

@@ -3,6 +3,7 @@ import { getLectureDataList } from "apis/lectures.api";
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
+import SEO from "components/common/SEO";
 import React, { useEffect } from "react";
 import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
@@ -14,7 +15,6 @@ import {
   lectureCategoryState,
   lectureDataList,
   lectureSkillState,
-  processState,
 } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
@@ -95,6 +95,7 @@ function Category() {
 
   return (
     <div>
+      <SEO title="그로투 - IT강의 분야 비교 한 눈에" content="어떤 분야에서 성장을 원하시나요? " />
       {category && category?.id !== -1 && currentSkill && currentSkill?.id !== -1 && (
         <RedirectProcessButton />
       )}

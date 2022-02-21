@@ -1,4 +1,5 @@
 import { postProcessResult } from "apis/lectures.api";
+import SEO from "components/common/SEO";
 import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
@@ -80,67 +81,72 @@ function ProcessPrice() {
     setProcessData(tempProcessData);
   }, [selectedPrice]);
 
-  return isLoading ? (
-    <LoadingStyledRoot>
-      <LogoWrapper>
-        <Screen desktop>
-          <LoadingLogo />
-        </Screen>
-        <Screen mobile>
-          <LoadingLogoMobile />
-        </Screen>
+  return (
+    <>
+      <SEO title="그로투 - 나에게 맞는 강의 찾기 " content="당신에게 맞는 IT강의를 찾는 중이에요" />
+      {isLoading ? (
+        <LoadingStyledRoot>
+          <LogoWrapper>
+            <Screen desktop>
+              <LoadingLogo />
+            </Screen>
+            <Screen mobile>
+              <LoadingLogoMobile />
+            </Screen>
 
-        <p>
-          당신을 위한 <br />
-          맞춤 강의를 찾는 중...
-        </p>
-      </LogoWrapper>
-    </LoadingStyledRoot>
-  ) : (
-    <StyledRoot>
-      <Screen desktop>
-        <>
-          <div></div>
-          <PlayIcon>
-            <Image src={ProcessPlayIcon} alt="processPlay" />
-          </PlayIcon>
-          <SquareIcon>
-            <Image src={ProcessSquareIcon} alt="processSqaure" />
-          </SquareIcon>
-        </>
-      </Screen>
-      <ProcessBox>
-        <Title></Title>
-        <CardTitle></CardTitle>
-        <CardChoice>
-          <TimeWrapper>
             <p>
-              강의 <span>가격대</span>는 어떤 타입을 선호하시나요?
+              당신을 위한 <br />
+              맞춤 강의를 찾는 중...
             </p>
-            {priceTypeList.map((priceType, index) => (
-              <TypeButton
-                key={index}
-                onTypeClick={handlePriceClick}
-                interestType={priceType}
-                selectedTime={selectedPrice}
-              />
-            ))}
-          </TimeWrapper>
-        </CardChoice>
-        <NextButtonWrapper>
-          <NextButton
-            onClick={handleResult}
-            selectedPrice={selectedPrice}
-            disabled={selectedPrice.length > 0 ? false : true}
-          >
-            완료하기
-          </NextButton>
-          <NextArrowWrapper>
-            {selectedPrice.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />}
-          </NextArrowWrapper>
-        </NextButtonWrapper>
-      </ProcessBox>
-    </StyledRoot>
+          </LogoWrapper>
+        </LoadingStyledRoot>
+      ) : (
+        <StyledRoot>
+          <Screen desktop>
+            <>
+              <div></div>
+              <PlayIcon>
+                <Image src={ProcessPlayIcon} alt="processPlay" />
+              </PlayIcon>
+              <SquareIcon>
+                <Image src={ProcessSquareIcon} alt="processSqaure" />
+              </SquareIcon>
+            </>
+          </Screen>
+          <ProcessBox>
+            <Title></Title>
+            <CardTitle></CardTitle>
+            <CardChoice>
+              <TimeWrapper>
+                <p>
+                  강의 <span>가격대</span>는 어떤 타입을 선호하시나요?
+                </p>
+                {priceTypeList.map((priceType, index) => (
+                  <TypeButton
+                    key={index}
+                    onTypeClick={handlePriceClick}
+                    interestType={priceType}
+                    selectedTime={selectedPrice}
+                  />
+                ))}
+              </TimeWrapper>
+            </CardChoice>
+            <NextButtonWrapper>
+              <NextButton
+                onClick={handleResult}
+                selectedPrice={selectedPrice}
+                disabled={selectedPrice.length > 0 ? false : true}
+              >
+                완료하기
+              </NextButton>
+              <NextArrowWrapper>
+                {selectedPrice.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />}
+              </NextArrowWrapper>
+            </NextButtonWrapper>
+          </ProcessBox>
+        </StyledRoot>
+      )}
+    </>
   );
 }
 
