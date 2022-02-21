@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.div`
+export const StyledRoot = styled.header`
   position: relative;
   display: flex;
   height: 4rem;

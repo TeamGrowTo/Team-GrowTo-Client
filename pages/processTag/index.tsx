@@ -129,7 +129,7 @@ function ProcessTag() {
 
 export default ProcessTag;
 
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.main`
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
@@ -217,15 +217,18 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
     height: 5.2rem;
     font-size: 1.6rem;
   }
+  :focus-visible {
+    outline: 3px solid #aaa;
+  }
 `;
 
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
-  right: 7rem;
+  right: 6.5rem;
   margin-right: 0.9rem;
   ${applyMediaQuery("mobile")} {
-    top: 5.7rem;
+    top: 5.9rem;
     right: 1rem;
   }
 `;
