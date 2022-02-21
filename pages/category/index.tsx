@@ -3,8 +3,8 @@ import { getLectureDataList, getSortingLectureDataList } from "apis/lectures.api
 import CategoryAndSkillList from "components/category/CategoryAndSkillList";
 import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
-import SEO from "components/common/SEO";
 import { SortingText } from "components/category/SortingBox";
+import SEO from "components/common/SEO";
 import React, { useEffect } from "react";
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
 import {

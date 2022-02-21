@@ -2,8 +2,8 @@ import Head from "next/head";
 import React from "react";
 
 interface SEOProps {
-  title: string;
-  content: string;
+  title?: string;
+  content?: string;
 }
 
 function SEO({
