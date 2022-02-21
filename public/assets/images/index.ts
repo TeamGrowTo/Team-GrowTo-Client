@@ -4,7 +4,7 @@ export { default as ICDeveloper } from "./ic_developer.png";
 export { default as MainBannerCompass } from "./mainBannerCompass.png";
 export { default as MainLectureDataIcon } from "./mainLectureCategoryDataIcon.png";
 export { default as MainLectureDesignIcon } from "./mainLectureCategoryDesignIcon.png";
-export { default as MainLectureDevelopIcon } from "./mainLectureCategoryDevelopIcon.png";
+export { default as MainLectureDevelopIcon } from "./mainLectureCategoryDevIcon.png";
 export { default as MainLectureEtcIcon } from "./mainLectureCategoryEtcIcon.png";
 export { default as MainLectureMarketingIcon } from "./mainLectureCategoryMarketingIcon.png";
 export { default as MainLecturePlanIcon } from "./mainLectureCategoryPlanIcon.png";

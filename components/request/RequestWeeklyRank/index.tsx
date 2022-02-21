@@ -6,33 +6,6 @@ import Rank from "./Rank";
 import { RankList, StyledRoot, Title, Wrapper } from "./style";
 
 export default function RequestWeeklyRank() {
-  // const rankInfo = [
-  //   {
-  //     id: 1,
-  //     name: "데이터",
-  //     skill: "데이터",
-  //     number: 88,
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "데이터",
-  //     skill: "SQL 기초",
-  //     number: 88,
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "개발",
-  //     skill: "파이썬",
-  //     number: 78,
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "디자인",
-  //     skill: "피그마",
-  //     number: 68,
-  //   },
-  // ];
-
   const [weeklyRank, setweeklyRank] = useState<LectureRankData[] | null>([]);
 
   const weeklyLectureRank = async () => {

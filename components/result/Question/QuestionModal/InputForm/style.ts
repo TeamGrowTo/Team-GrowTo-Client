@@ -41,9 +41,16 @@ export const StyledRoot = styled.article<{ flagDropdown: boolean; isDropdownBlan
       flagDropdown
         ? css`
             border-radius: 2.8rem 2.8rem 0 0;
+            svg {
+              /* transition: 0.2s; */
+              transform: rotate(180deg);
+            }
           `
         : css`
             border-radius: 4.8rem;
+            /* svg {
+              transition: 0.2s;
+            } */
           `}
   }
 

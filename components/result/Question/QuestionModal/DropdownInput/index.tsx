@@ -1,9 +1,4 @@
-import {
-  DownArrowIcon,
-  MobileResultDropdownIcon,
-  MobileResultDropupIcon,
-  UpArrowIcon,
-} from "public/assets/icons";
+import { DesktopQuestionDropdownIcon, MobileQuestionDropdownIcon } from "public/assets/icons";
 import React from "react";
 import Screen from "styles/Screen";
 
@@ -38,10 +33,10 @@ function DropdownInput({
           <span>{dropdownList[difference]}</span>
         )}
         <Screen desktop>
-          <>{flagDropdown ? <UpArrowIcon /> : <DownArrowIcon />}</>
+          <DesktopQuestionDropdownIcon />
         </Screen>
         <Screen mobile>
-          <>{flagDropdown ? <MobileResultDropupIcon /> : <MobileResultDropdownIcon />}</>
+          <MobileQuestionDropdownIcon />
         </Screen>
       </button>
       <Dropdown flagDropdown={flagDropdown}>
