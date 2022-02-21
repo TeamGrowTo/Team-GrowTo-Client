@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
-const StyledRoot = styled.section`
+const StyledRoot = styled.footer`
   height: 38rem;
   padding: 7.6rem 2.5rem 6rem 2.5rem;
   background-color: ${colors.gray0};

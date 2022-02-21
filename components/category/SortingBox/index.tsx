@@ -23,7 +23,7 @@ import { SortingWrapper, StyledRoot } from "./style";
 //todo(4) : dropdown item선택하면 다른 선택된 item은 없애기 O
 //todo(5) : dropdown item선택하면 api 연결하기 O
 
-enum SortingText {
+export enum SortingText {
   //총 소요시간
   "긴 순" = "slow",
   "짧은 순" = "fast",
@@ -96,6 +96,16 @@ function SortingBox() {
     }
   };
 
+  const handleKeyPressSortingItem = async (
+    value: SortingType,
+    item: SortingItemType,
+    e: React.KeyboardEvent<HTMLLIElement>,
+  ) => {
+    if (e.key === "Enter") {
+      handleClickSortingItem(value, item);
+    }
+  };
+
   return (
     <StyledRoot>
       <SortingWrapper>
@@ -105,6 +115,7 @@ function SortingBox() {
             value={criteria}
             onClickOpenSorting={handleOpenSorting}
             onClickSortingItem={handleClickSortingItem}
+            onKeyPressSortingItem={handleKeyPressSortingItem}
             criteria={criteria}
           >
             {criteria}
