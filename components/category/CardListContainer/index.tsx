@@ -19,7 +19,7 @@ function CardListContainer() {
         ))
       ) : (
         <ImgWrapper>
-          <Image src={CategoryClickImg} alt="clickIcon" />
+          <Image src={CategoryClickImg} alt="clickIcon" quality={100} />
         </ImgWrapper>
       )}
     </StyledRoot>
