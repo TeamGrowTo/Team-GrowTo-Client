@@ -12,7 +12,7 @@ export const StyledRoot = styled.div`
   flex-direction: column;
   align-items: center;
   ${applyMediaQuery("mobile")} {
-    height: 60rem;
+    height: 48rem;
     background: linear-gradient(to top, #9aa4ff, #617fe2);
   }
 `;
