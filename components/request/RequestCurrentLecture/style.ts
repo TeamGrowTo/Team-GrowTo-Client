@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 41.2rem;
+  height: 51.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,18 +16,16 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Wrapper = styled.div``;
-
-const Title = styled.div`
-  margin-bottom: 2.8rem;
+export const Title = styled.div`
+  margin-bottom: 3.5rem;
   color: ${colors.subBlack};
   ${applyMediaQuery("mobile")} {
     margin-bottom: 1.2rem;
   }
   h2 {
     font-family: "Pretendard-Bold";
-    font-size: 2.8rem;
-    margin-bottom: 0.4rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
     ${applyMediaQuery("mobile")} {
       color: ${colors.gray6};
       font-size: 2rem;
@@ -36,14 +34,14 @@ const Title = styled.div`
   }
   p {
     font-family: "Pretendard-Regular";
-    font-size: 1.4rem;
+    font-size: 1.75rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
     }
   }
 `;
 
-const CurrentList = styled.div`
+export const CurrentList = styled.div`
   display: flex;
   justify-content: center;
 
@@ -53,5 +51,3 @@ const CurrentList = styled.div`
     width: 34rem;
   }
 `;
-
-export { CurrentList, StyledRoot, Title, Wrapper };
