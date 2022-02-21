@@ -51,8 +51,8 @@ const MainLectureCategory = function () {
     resetLectureListData();
     resetIsDisable();
     resetIsOpen();
-    resetIsSelected();
     resetCurrentSorting();
+    resetIsSelected();
   };
 
   const setLectureCategory = async (): Promise<void> => {

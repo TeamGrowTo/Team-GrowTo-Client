@@ -19,10 +19,7 @@ const StyledRoot = styled.section`
 const ImageWrapper = styled.article`
   display: flex;
   align-items: end;
-  margin-top: 3.9rem;
-  ${applyMediaQuery("mobile")} {
-    margin-top: 3rem;
-  }
+  margin-top: 3.2rem;
 `;
 
 const TitleWrapper = styled.article`

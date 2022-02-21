@@ -8,6 +8,7 @@ import {
   CategoryList,
   CategoryListItem,
   CategoryListWrapper,
+  DropdownWrapper,
   LectureCategoryContainer,
 } from "./style";
 
@@ -49,14 +50,14 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
             ) : (
               <span>{categorySelected}</span>
             )}
-            <span>
+            <DropdownWrapper open={open}>
               <Screen desktop>
                 <Dropdown />
               </Screen>
               <Screen mobile>
                 <Dropdown_mobile />
               </Screen>
-            </span>
+            </DropdownWrapper>
           </CategoryButton>
           {open ? (
             <CategoryList>

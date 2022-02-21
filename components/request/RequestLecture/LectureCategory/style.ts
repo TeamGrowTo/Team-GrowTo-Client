@@ -58,9 +58,18 @@ export const CategoryButton = styled.button<IProps>`
     ${applyMediaQuery("mobile")} {
       font-size: 1.4rem;
     }
-    & > svg {
-      transform: rotate(${(props) => (props.open ? "180deg" : "0")});
-    }
+  }
+`;
+
+export const DropdownWrapper = styled.div<{ open: boolean }>`
+  display: flex;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  & > svg {
+    transform: rotate(${(props) => (props.open ? "180deg" : "0")});
+  }
+  ${applyMediaQuery("mobile")} {
   }
 `;
 

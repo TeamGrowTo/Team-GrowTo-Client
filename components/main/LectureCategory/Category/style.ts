@@ -34,6 +34,10 @@ const Button = styled.button`
       linear-gradient(180deg, #ffffff 0%, #f0f8ff 11.58%, #f6fbff 71%);
   }
 
+  &:focus {
+    border: 0.1rem solid ${colors.subBlack};
+  }
+
   & > span {
     color: ${colors.subBlack};
     margin-left: 1.4rem;

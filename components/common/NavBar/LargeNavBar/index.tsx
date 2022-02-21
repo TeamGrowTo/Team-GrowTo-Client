@@ -47,11 +47,21 @@ function LargeNavBar() {
     });
   };
 
+  const handleResetProcessData = () => {
+    resetProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
+  };
+
   return (
     <StyledRoot>
       <NavItemBox>
         <Link href="/" passHref>
-          <LogoWrapper onClick={handleResetLectureData}>
+          <LogoWrapper onClick={handleResetProcessData}>
             <LogoIcon />
           </LogoWrapper>
         </Link>
