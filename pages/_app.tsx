@@ -34,7 +34,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta property="og:url" content="https://www.growto.kr/" />
           <meta property="og:title" content="Growto :: IT강의 비교 플랫폼 서비스" />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="public/assets/icons/metaLogo.png" />
+          <meta
+            property="og:image"
+            content="https://user-images.githubusercontent.com/60960130/155125076-48795651-3e6d-4357-bce7-69d0186ed83e.png"
+          />
         </Head>
         <Layout>
           <Component {...pageProps} />
