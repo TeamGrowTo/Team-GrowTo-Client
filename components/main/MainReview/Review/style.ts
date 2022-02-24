@@ -86,6 +86,7 @@ export const Introduce = styled.address`
   }
 
   ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
     line-height: 1.4rem;
   }
 `;
