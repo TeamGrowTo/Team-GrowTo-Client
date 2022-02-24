@@ -32,11 +32,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <RecoilRoot>
         <Head>
           <meta property="og:url" content="https://www.growto.kr/" />
-          <meta property="og:title" content="Growto :: IT강의 비교 플랫폼 서비스" />
+          <meta property="og:title" content="IT 강의 비교 한눈에, 그로투" />
           <meta property="og:type" content="website" />
           <meta
             property="og:image"
-            content="https://user-images.githubusercontent.com/60960130/155125076-48795651-3e6d-4357-bce7-69d0186ed83e.png"
+            content="https://user-images.githubusercontent.com/60960130/155514989-13974572-f474-41a9-8b11-09cd82d9320a.png"
           />
         </Head>
         <Layout>
