@@ -77,16 +77,17 @@ export const Introduce = styled.address`
   color: ${colors.gray6};
   margin-left: 2rem;
   line-height: 2.25rem;
-  width: 10.75rem;
-
-  div {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+  width: 19rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
     line-height: 1.4rem;
+
+    div {
+      width: 9rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 `;
