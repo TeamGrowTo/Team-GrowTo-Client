@@ -98,7 +98,7 @@ function ProcessTime() {
                 selectedPrice={selectedTime}
                 disabled={selectedTime.length > 0 ? false : true}
               >
-                완료하기
+                다음
               </NextButton>
             </Link>
             <NextArrowWrapper>
@@ -201,10 +201,10 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
     cursor: pointer;
   }
   ${applyMediaQuery("mobile")} {
-    font-size: 1.6rem;
     margin-top: 4rem;
-    width: 12.6rem;
+    width: 9.8rem;
     height: 5.2rem;
+    font-size: 1.6rem;
   }
   :focus-visible {
     outline: 3px solid #aaa;
@@ -214,8 +214,8 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
-  right: 4.2rem;
-  margin-right: 1.1rem;
+  right: 6.5rem;
+  margin-right: 0.9rem;
   ${applyMediaQuery("mobile")} {
     top: 5.9rem;
     right: 1rem;
