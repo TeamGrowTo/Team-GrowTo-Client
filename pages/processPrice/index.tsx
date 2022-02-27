@@ -153,12 +153,9 @@ function ProcessPrice() {
 export default ProcessPrice;
 export const StyledRoot = styled.main`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
-  ${applyMediaQuery("mobile")} {
-    height: 80rem;
-  }
 `;
 export const PlayIcon = styled.div`
   position: absolute;
@@ -261,6 +258,7 @@ export const NextArrowWrapper = styled.div`
 
 export const LoadingStyledRoot = styled.main`
   width: 100%;
+  height: 100vh;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
   ${applyMediaQuery("mobile")} {
     width: 100%;
