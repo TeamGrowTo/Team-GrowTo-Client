@@ -1,4 +1,5 @@
 import { postLectureReport } from "apis/lectures.api";
+import { MobileQuestionModalCloseIcon, QuestionModalCloseIcon } from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 import Screen from "styles/Screen";
 
@@ -8,6 +9,7 @@ import EmailInput from "./EmailInput";
 import LectureNameInput from "./LectureNameInput";
 import QuestionReported from "./QuestionReported";
 import {
+  CloseIconWrapper,
   EssentialInput,
   InputWrapper,
   Line,
@@ -107,6 +109,14 @@ function QuestionModal({ onCloseModal }: Props) {
         <QuestionReported onCloseModal={onCloseModal}></QuestionReported>
       ) : (
         <>
+          <CloseIconWrapper onClick={() => onCloseModal()}>
+            <Screen desktop>
+              <QuestionModalCloseIcon />
+            </Screen>
+            <Screen mobile>
+              <MobileQuestionModalCloseIcon />
+            </Screen>
+          </CloseIconWrapper>
           <TitleWrapper>
             <Title>제공된 강의 정보와 실제 강의 내용이 다른가요?</Title>
             <p>그로투에게 제보해주세요!</p>

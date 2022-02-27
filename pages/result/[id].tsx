@@ -1,6 +1,7 @@
 import { getLectureDataList, getLectureResultData } from "apis/lectures.api";
 import Result from "components/category/Result";
 import BlueButton from "components/common/BlueButton";
+import SEO from "components/common/SEO";
 import MiddleNotification from "components/result/MiddleNotification";
 import ProcessResult from "components/result/ProcessResult";
 import Question from "components/result/Question";
@@ -122,38 +123,46 @@ function Category() {
   };
 
   return (
-    <StyledRoot>
-      <ProcessResult
-        listLength={listLength}
-        categoryName={category.name}
-        skillName={skill.name}
-        sliderPage={sliderPage}
-        onChangeSliderPage={onChangeSliderPage}
-      />
-      <Screen mobile>
-        <ResultCardDot listLength={listLength} sliderPage={sliderPage} />
-      </Screen>
-      <ResultShareButton />
-      <MiddleNotification />
-      <Result />
-      <Screen desktop>
-        <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem" fontSize="1.6rem">
-          다른 강의 비교하기
-        </BlueButton>
-      </Screen>
-      <Screen mobile>
-        <BlueButton
-          onClick={handleMoveToCategory}
-          width="96%"
-          fontSize="1.6rem"
-          height="4rem"
-          maxWidth="32.8rem"
-        >
-          다른 강의 비교하기
-        </BlueButton>
-      </Screen>
-      <Question />
-    </StyledRoot>
+    <>
+      <SEO title="그로투 - 나에게 맞는 강의" content="당신에게 딱 맞는 IT강의를 가져왔어요" />
+      <StyledRoot>
+        <ProcessResult
+          listLength={listLength}
+          categoryName={category.name}
+          skillName={skill.name}
+          sliderPage={sliderPage}
+          onChangeSliderPage={onChangeSliderPage}
+        />
+        <Screen mobile>
+          <ResultCardDot listLength={listLength} sliderPage={sliderPage} />
+        </Screen>
+        <ResultShareButton />
+        <MiddleNotification />
+        <Result />
+        <Screen desktop>
+          <BlueButton
+            onClick={handleMoveToCategory}
+            width="96%"
+            maxWidth="84.5rem"
+            fontSize="1.6rem"
+          >
+            다른 강의 비교하기
+          </BlueButton>
+        </Screen>
+        <Screen mobile>
+          <BlueButton
+            onClick={handleMoveToCategory}
+            width="96%"
+            fontSize="1.6rem"
+            height="4rem"
+            maxWidth="32.8rem"
+          >
+            다른 강의 비교하기
+          </BlueButton>
+        </Screen>
+        <Question />
+      </StyledRoot>
+    </>
   );
 }
 export default Category;

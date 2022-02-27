@@ -2,17 +2,17 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div<{ order: number }>`
+export const StyledRoot = styled.div<{ order: number }>`
   box-sizing: border-box;
-  width: 19.6rem;
-  height: 19.6rem;
-  border-radius: 2.8rem;
+  width: 24.5rem;
+  height: 24.5rem;
+  border-radius: 3.5rem;
   background-color: ${colors.mainBlue};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 2.5rem;
 
   ${applyMediaQuery("mobile")} {
     width: 15.8rem;
@@ -24,35 +24,35 @@ const StyledRoot = styled.div<{ order: number }>`
   ${(props) =>
     props.order === 1
       ? css`
-          background-image: url("/assets/images/requestLectureBackground1.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground1.png");
         `
       : props.order === 2
       ? css`
-          background-image: url("/assets/images/requestLectureBackground2.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground2.png");
         `
       : props.order === 3
       ? css`
-          background-image: url("/assets/images/requestLectureBackground3.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground3.png");
         `
       : props.order === 4
       ? css`
-          background-image: url("/assets/images/requestLectureBackground4.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground4.png");
         `
       : props.order === 5
       ? css`
-          background-image: url("/assets/images/requestLectureBackground1.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground1.png");
         `
       : props.order === 6
       ? css`
-          background-image: url("/assets/images/requestLectureBackground2.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground2.png");
         `
       : css`
-          background-image: url("/assets/images/requestLectureBackground3.png");
+          background-image: url("/assets/images/requestCurrentLectureBackground3.png");
         `};
 
   h3 {
     font-family: "Pretendard-Bold";
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: ${colors.gray5};
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
@@ -61,12 +61,10 @@ const StyledRoot = styled.div<{ order: number }>`
 
   h2 {
     font-family: "Pretendard-Bold";
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: ${colors.subBlack};
     ${applyMediaQuery("mobile")} {
       font-size: 1.7rem;
     }
   }
 `;
-
-export { StyledRoot };
