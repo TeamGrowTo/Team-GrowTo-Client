@@ -12,11 +12,11 @@ const MiddleNotification = function () {
         </span>
         <NotiWrapper>
           <NotiTitle>
-            <span>Q</span> 해당 추천 내용에 광고가 포함되어 있나요?
+            <span>Q</span> 맞춤 강의 찾기에 광고가 포함되어있나요?
           </NotiTitle>
           <Content>
-            <span>A</span> 그로투 강의비교는 광고를 일체 받고 있지 않습니다. 그로투는 오로지
-            여러분의 성장만을 생각하는 서비스입니다.
+            <span>A</span> 아니요! 그로투는 우리가 함께 {"'성장'"}하기 위해 만든 서비스, 광고를 받지
+            않아요
           </Content>
         </NotiWrapper>
       </NotiBox>
