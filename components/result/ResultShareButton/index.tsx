@@ -29,7 +29,7 @@ const ResultShareButton = function () {
     <StyledRoot>
       <ShareButton onClick={handleClick}>
         <ResultShareIcon />
-        <span>공유하기</span>
+        <span>맞춤 강의 결과 저장하기</span>
       </ShareButton>
       <Modal
         isModalOpen={flagModal}
