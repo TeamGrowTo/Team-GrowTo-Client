@@ -117,6 +117,10 @@ export const StyledRoot = styled.main`
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const PlayIcon = styled.div`
@@ -138,7 +142,7 @@ export const ProcessBox = styled.div`
   display: flex;
   flex-direction: column;
   ${applyMediaQuery("mobile")} {
-    width: 36rem;
+    width: 100%;
   }
 `;
 
@@ -150,8 +154,9 @@ export const CardChoice = styled.section`
   backdrop-filter: blur(2rem);
   border: 2px solid white;
   ${applyMediaQuery("mobile")} {
-    width: 36rem;
+    width: 100%;
     height: 100%;
+    border-radius: 0;
   }
 `;
 
@@ -202,6 +207,7 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
     width: 9.8rem;
     height: 5.2rem;
     font-size: 1.6rem;
+    margin-right: 2.4rem;
   }
   :focus-visible {
     outline: 3px solid #aaa;
@@ -216,5 +222,6 @@ export const NextArrowWrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     top: 5.9rem;
     right: 1rem;
+    margin-right: 3.5rem;
   }
 `;
