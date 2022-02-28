@@ -4,15 +4,16 @@ import {
   getLectureTotalNumber,
 } from "apis/count.api";
 import ReportSection from "components/main/MainReport/ReportSection";
-import { ReportLine, ReportLine_mobile } from "public/assets/icons";
 import {
   FindIcon,
   FindIcon_mobile,
+  ReportLine,
+  ReportLine_mobile,
   RequestIcon,
   RequestIcon_mobile,
   TotalIcon,
   TotalIcon_mobile,
-} from "public/assets/images";
+} from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 import Screen from "styles/Screen";
 

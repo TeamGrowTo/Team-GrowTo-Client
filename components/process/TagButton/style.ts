@@ -21,4 +21,7 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   :hover {
     cursor: pointer;
   }
+  :focus-visible {
+    outline: 3px solid #aaa;
+  }
 `;

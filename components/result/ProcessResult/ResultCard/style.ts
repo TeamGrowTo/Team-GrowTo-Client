@@ -65,9 +65,6 @@ export const MoreButton = styled.a`
   }
 
   & > svg {
-    margin-left: 1rem;
-    ${applyMediaQuery("mobile")} {
-      margin-left: 0.8rem;
-    }
+    margin-left: 0.8rem;
   }
 `;

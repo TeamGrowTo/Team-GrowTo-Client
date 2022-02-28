@@ -5,9 +5,9 @@ import { applyMediaQuery } from "styles/mediaQuery";
 const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 40.3rem;
-  padding-top: 6.4rem;
-  padding-bottom: 10.8rem;
+  height: 50.375rem;
+  padding-top: 8rem;
+  padding-bottom: 13.5rem;
 
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@ const StyledRoot = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 128rem;
+  width: 160rem;
   height: 100%;
   ${applyMediaQuery("mobile")} {
     width: 100%;
@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  margin-bottom: 3.6rem;
+  margin-bottom: 4.5rem;
   color: ${colors.subBlack};
   ${applyMediaQuery("mobile")} {
     margin-bottom: 1.5rem;
@@ -36,15 +36,15 @@ const Title = styled.div`
 
   h2 {
     font-family: "Pretendard-Bold";
-    font-size: 2.8rem;
-    margin-bottom: 0.4rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
     ${applyMediaQuery("mobile")} {
       font-size: 2rem;
     }
   }
   p {
     font-family: "Pretendard-Regular";
-    font-size: 1.4rem;
+    font-size: 1.75rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
     }
