@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   html {
     font-size: 50%;
+    height: 100%;
     ${applyMediaQuery("mobile")} {
       font-size: 62.5%;
     } 
@@ -17,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   body{
     font-family: "Pretendard-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin-top: 10.8rem;
+    height: 100%;
     ${applyMediaQuery("mobile")} {
       margin-top: 4.8rem;
     } 

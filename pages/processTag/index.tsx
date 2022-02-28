@@ -98,7 +98,7 @@ function ProcessTag() {
           <CardChoice>
             <TagWrapper>
               <p>
-                원하는 <span>강의 특성 2가지</span>를 선택하세요.
+                원하는 <span>강의 특성 &#39;2가지&#39;</span>를 선택하세요.
               </p>
               {tagList?.map((tag) => (
                 <TagButton
@@ -135,7 +135,7 @@ export default ProcessTag;
 
 export const StyledRoot = styled.main`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
 `;

@@ -95,8 +95,8 @@ function ProcessPrice() {
             </Screen>
 
             <p>
-              당신을 위한 <br />
-              맞춤 강의를 찾는 중...
+              나를 위한 <br />
+              맞춤 강의 찾는 중...
             </p>
           </LogoWrapper>
         </LoadingStyledRoot>
@@ -153,7 +153,7 @@ function ProcessPrice() {
 export default ProcessPrice;
 export const StyledRoot = styled.main`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
 `;
@@ -258,7 +258,7 @@ export const NextArrowWrapper = styled.div`
 
 export const LoadingStyledRoot = styled.main`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
   ${applyMediaQuery("mobile")} {
     width: 100%;
