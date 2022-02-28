@@ -118,9 +118,17 @@ function ProcessPrice() {
             <CardTitle></CardTitle>
             <CardChoice>
               <TimeWrapper>
-                <p>
-                  강의 <span>가격대</span>는 어떤 타입을 선호하시나요?
-                </p>
+                <Screen desktop>
+                  <p>
+                    강의 <span>가격대</span>는 어떤 타입을 선호하시나요?
+                  </p>
+                </Screen>
+                <Screen mobile>
+                  <p>
+                    강의 <span>가격대</span>는 <br />
+                    어떤 타입을 선호하시나요?
+                  </p>
+                </Screen>
                 {priceTypeList.map((priceType, index) => (
                   <TypeButton
                     key={index}
@@ -212,6 +220,7 @@ export const TimeWrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     margin: 3.2rem auto 5rem;
+    line-height: 2.8rem;
     & > p {
       font-size: 2rem;
     }
