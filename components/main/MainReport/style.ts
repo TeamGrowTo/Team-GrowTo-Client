@@ -6,6 +6,7 @@ export const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100vw;
   height: 75.375rem;
+  max-width: 100%;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
   display: flex;
