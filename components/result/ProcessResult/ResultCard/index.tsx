@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LeftArrowIcon, MobileResultCardRightArrowIcon } from "public/assets/icons";
+import { MobileResultCardRightArrowIcon, ResultCardLeftArrowIcon } from "public/assets/icons";
 import React from "react";
 import Screen from "styles/Screen";
 import { LectureResultData } from "types/lectures.type";
@@ -26,7 +26,7 @@ function ResultCard({ result }: Props) {
         <MoreButton target="_blank">
           더보기
           <Screen desktop>
-            <LeftArrowIcon />
+            <ResultCardLeftArrowIcon />
           </Screen>
           <Screen mobile>
             <MobileResultCardRightArrowIcon />

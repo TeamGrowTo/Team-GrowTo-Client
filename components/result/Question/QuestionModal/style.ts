@@ -29,6 +29,31 @@ export const StyledRoot = styled.section`
   }
 `;
 
+export const CloseIconWrapper = styled.button`
+  position: absolute;
+  top: 2.8rem;
+  right: 2.8rem;
+  padding: 0;
+  cursor: pointer;
+  ${applyMediaQuery("mobile")} {
+    top: 2.4rem;
+    right: 2.4rem;
+  }
+
+  &:focus {
+    border: 0.1rem solid ${colors.subBlack};
+  }
+
+  & > svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    ${applyMediaQuery("mobile")} {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+`;
+
 export const TitleWrapper = styled.div`
   width: 100%;
   margin-left: 6.6rem;

@@ -51,10 +51,20 @@ function SmallNavBar() {
     });
   };
 
+  const handleResetProcessData = () => {
+    resetProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
+  };
+
   return (
     <StyledRoot>
       <Link href="/" passHref>
-        <ButtonWrapper>
+        <ButtonWrapper onClick={handleResetProcessData}>
           <SmallLogoIcon />
         </ButtonWrapper>
       </Link>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CategoryRightArrowIcon } from "public/assets/icons";
+import { RedirectRequestArrowIcon } from "public/assets/icons";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentSkillState } from "store/state";
@@ -32,7 +32,7 @@ function DesktopCategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
           <Link href="/request" passHref>
             <RedirectRequestPage>
               <span>추가적으로 비교를 원하는 분야가 있다면?</span>
-              <CategoryRightArrowIcon />
+              <RedirectRequestArrowIcon />
             </RedirectRequestPage>
           </Link>
         </LinkWrapper>
