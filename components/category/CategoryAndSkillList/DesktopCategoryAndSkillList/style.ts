@@ -33,6 +33,8 @@ export const LinkWrapper = styled.div`
 `;
 
 export const RedirectRequestPage = styled.a`
+  display: flex;
+  align-items: center;
   border: 0;
   font-size: 1.4rem;
   font-family: "Pretendard-Regular";
