@@ -86,7 +86,7 @@ export default function MainReview() {
       <Wrapper>
         <Title>
           <h2>그로투러들의 생생한 후기</h2>
-          <p>*그로투 이메일 & DM 으로 보내주신 메시지 기반</p>
+          <hgroup>*그로투 이메일 & DM 으로 보내주신 메시지 기반</hgroup>
         </Title>
         <ReviewList>
           {reviewInfo.map((review) => (
