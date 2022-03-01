@@ -1,35 +1,34 @@
 import Modal from "components/common/Modal";
-import { useRouter } from "next/router";
-import { MobileResultShareIcon, ResultShareIcon } from "public/assets/icons";
+import { ResultShareIcon } from "public/assets/icons";
 import React, { useState } from "react";
-import Screen from "styles/Screen";
 
 import { ShareButton, StyledRoot } from "./style";
 
 const ResultShareButton = function () {
-  const router = useRouter();
   const [flagModal, setFlagModal] = useState(false);
 
-  const handleClick = async () => {
+  const copyLinkToClipBoard = async () => {
     try {
-      //배포시 배포 주소로 문자열 변경
-      await navigator.clipboard.writeText(location.href + router.asPath);
-      setFlagModal(true);
-      document.body.style.overflow = "hidden";
+      await navigator.clipboard.writeText(location.href);
     } catch {
       throw new Error("복사 실패!");
     }
   };
 
+  const openModal = () => {
+    setFlagModal(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleClick = () => {
+    copyLinkToClipBoard();
+    openModal();
+  };
+
   return (
     <StyledRoot>
       <ShareButton onClick={handleClick}>
-        <Screen desktop>
-          <ResultShareIcon />
-        </Screen>
-        <Screen mobile>
-          <MobileResultShareIcon />
-        </Screen>
+        <ResultShareIcon />
         <span>공유하기</span>
       </ShareButton>
       <Modal

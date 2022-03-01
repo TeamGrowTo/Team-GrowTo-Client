@@ -14,7 +14,6 @@ interface Props {
   sliderPage: number | 0;
 }
 
-//container > box > wrapper
 function Slider({ listLength, onChangeSliderPage, sliderPage }: Props) {
   const lectureResultList = useRecoilValue(lectureResultState);
   const moveRight = () => {
@@ -22,7 +21,7 @@ function Slider({ listLength, onChangeSliderPage, sliderPage }: Props) {
   };
 
   const moveLeft = () => {
-    if (sliderPage >= 0) onChangeSliderPage(sliderPage - 1);
+    if (sliderPage > 0) onChangeSliderPage(sliderPage - 1);
   };
 
   return (

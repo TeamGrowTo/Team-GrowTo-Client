@@ -7,15 +7,15 @@ export const EmailBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  margin-bottom: 4.4rem;
+  margin-bottom: 5.5rem;
   ${applyMediaQuery("mobile")} {
     margin-bottom: 5.2rem;
   }
 
   p {
     font-family: "Pretendard-Bold";
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: ${colors.gray6};
     ${applyMediaQuery("mobile")} {
       font-size: 1.6rem;
@@ -24,27 +24,29 @@ export const EmailBox = styled.div`
 `;
 
 export const InputWrapper = styled.div`
-  width: 63rem;
-  height: 6.8rem;
+  width: 78.75rem;
+  height: 8.5rem;
   background-color: rgb(255, 255, 255, 0.7);
-  border-radius: 4.8rem;
+  border-radius: 6rem;
+  border: 0.125rem solid ${colors.white};
   display: flex;
-  padding: 2.2rem 3.6rem;
+  align-items: center;
+  padding: 2.75rem 4.5rem;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     height: 4rem;
     padding: 1.15rem 2.4rem;
   }
 
-  input {
+  & > input {
     width: 100%;
     font-family: "Pretendard-Regular";
-    font-size: 2rem;
+    font-size: 2.5rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.4rem;
     }
   }
-  input::placeholder {
+  & > input::placeholder {
     color: ${colors.gray4};
   }
 `;

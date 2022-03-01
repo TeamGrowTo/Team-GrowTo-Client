@@ -46,6 +46,7 @@ export const Slogan = styled.div`
   background: rgb(255, 255, 255, 0.7);
   font-family: "Pretendard-SemiBold";
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
+  color: ${colors.gray6};
   & > p {
     margin: auto;
     font-size: 2.6rem;

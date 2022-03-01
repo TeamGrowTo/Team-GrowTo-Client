@@ -8,6 +8,7 @@ import {
   currentSortingState,
   isDisableState,
   isOpenState,
+  isSelectedState,
   lectureDataList,
   lectureSkillState,
   processState,
@@ -30,6 +31,7 @@ function SmallNavBar() {
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
   const resetProcessData = useSetRecoilState(processState);
+  const resetIsSelected = useResetRecoilState(isSelectedState);
 
   const handleResetLectureData = () => {
     resetLectureListData();
@@ -39,6 +41,17 @@ function SmallNavBar() {
     resetIsDisable();
     resetIsOpen();
     resetCurrentSorting();
+    resetIsSelected();
+    resetProcessData({
+      category: "",
+      skill: "",
+      tags: [""],
+      timeAsc: undefined,
+      priceAsc: undefined,
+    });
+  };
+
+  const handleResetProcessData = () => {
     resetProcessData({
       category: "",
       skill: "",
@@ -51,7 +64,7 @@ function SmallNavBar() {
   return (
     <StyledRoot>
       <Link href="/" passHref>
-        <ButtonWrapper>
+        <ButtonWrapper onClick={handleResetProcessData}>
           <SmallLogoIcon />
         </ButtonWrapper>
       </Link>
@@ -66,7 +79,9 @@ function SmallNavBar() {
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/request">비교요청</Link>
+                <Link href="/request">
+                  <LinkA>비교요청</LinkA>
+                </Link>
               </NavMenuListItem>
               <NavMenuListItem>
                 <Link

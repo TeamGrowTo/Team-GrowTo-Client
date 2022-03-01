@@ -16,14 +16,14 @@ import {
 } from "store/state";
 
 import SortingBtn from "../SortingBtn";
-import { StyledRoot } from "./style";
+import { SortingWrapper, StyledRoot } from "./style";
 //todo(1) : 선택한 기준이 criteria 옆에 들어가게 O
 //todo(2) : active 효과 O
 //todo(3) : dropdown arrow icon isOpen에 따라서 위 아래 바꾸기 O
 //todo(4) : dropdown item선택하면 다른 선택된 item은 없애기 O
 //todo(5) : dropdown item선택하면 api 연결하기 O
 
-enum SortingText {
+export enum SortingText {
   //총 소요시간
   "긴 순" = "slow",
   "짧은 순" = "fast",
@@ -96,19 +96,32 @@ function SortingBox() {
     }
   };
 
+  const handleKeyPressSortingItem = async (
+    value: SortingType,
+    item: SortingItemType,
+    e: React.KeyboardEvent<HTMLLIElement>,
+  ) => {
+    if (e.key === "Enter") {
+      handleClickSortingItem(value, item);
+    }
+  };
+
   return (
     <StyledRoot>
-      {sortingCriteria.map((criteria) => (
-        <SortingBtn
-          key={criteria}
-          value={criteria}
-          onClickOpenSorting={handleOpenSorting}
-          onClickSortingItem={handleClickSortingItem}
-          criteria={criteria}
-        >
-          {criteria}
-        </SortingBtn>
-      ))}
+      <SortingWrapper>
+        {sortingCriteria.map((criteria) => (
+          <SortingBtn
+            key={criteria}
+            value={criteria}
+            onClickOpenSorting={handleOpenSorting}
+            onClickSortingItem={handleClickSortingItem}
+            onKeyPressSortingItem={handleKeyPressSortingItem}
+            criteria={criteria}
+          >
+            {criteria}
+          </SortingBtn>
+        ))}
+      </SortingWrapper>
     </StyledRoot>
   );
 }

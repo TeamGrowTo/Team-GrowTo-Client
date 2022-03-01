@@ -1,45 +1,44 @@
-import Link from "next/link";
-import { CategoryRightArrowIcon } from "public/assets/icons";
-import React from "react";
-import { useRecoilValue } from "recoil";
-import { currentSkillState } from "store/state";
+import React, { useState } from "react";
 import Screen from "styles/Screen";
 
-import CategoryList from "./CategoryList";
+import DesktopCategoryAndSkillList from "./DesktopCategoryAndSkillList";
+import MobileCategoryAndSkill from "./MobileCategoryAndSkill";
 import MobileModal from "./MobileModal";
-import SkillList from "./SkillList";
-import {
-  CategoryAndSkillWrapper,
-  LinkWrapper,
-  RedirectRequestPage,
-  StyledRoot,
-  Title,
-} from "./style";
 
 interface Props {
   onCategoryClick: (id: number | null) => void;
   onSkillClick: (id: number | null) => void;
 }
 
+//모바일과 데스크톱 컴포넌트를 핸들링하는 부분.(선택하는 부분)
 function CategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
-  const currentSkill = useRecoilValue(currentSkillState);
+  const [categorySkillMobileModalFlag, setCategorySkillMobileModalFlag] = useState(true);
+
+  const handleCategorySkillMobileModal = (state: boolean) => {
+    setCategorySkillMobileModalFlag(state);
+  };
 
   return (
-    <StyledRoot>
-      <CategoryAndSkillWrapper>
-        <Title currentSkillId={currentSkill?.id || -1}>강의 분야</Title>
-        <CategoryList onCategoryClick={onCategoryClick} />
-        <SkillList onSkillClick={onSkillClick} />
-        <LinkWrapper>
-          <Link href="/request" passHref>
-            <RedirectRequestPage>
-              <span>추가적으로 비교를 원하는 분야가 있다면?</span>
-              <CategoryRightArrowIcon />
-            </RedirectRequestPage>
-          </Link>
-        </LinkWrapper>
-      </CategoryAndSkillWrapper>
-    </StyledRoot>
+    <>
+      <Screen desktop>
+        <DesktopCategoryAndSkillList
+          onCategoryClick={onCategoryClick}
+          onSkillClick={onSkillClick}
+        />
+      </Screen>
+      {/* 모바일은 클릭시 모달창이 떠야하기에 이에 따른 핸들링이 필요했습니다. */}
+      <Screen mobile>
+        {categorySkillMobileModalFlag ? (
+          <MobileModal
+            onCategoryClick={onCategoryClick}
+            onSkillClick={onSkillClick}
+            onClickMobileModal={handleCategorySkillMobileModal}
+          />
+        ) : (
+          <MobileCategoryAndSkill onClick={handleCategorySkillMobileModal} />
+        )}
+      </Screen>
+    </>
   );
 }
 

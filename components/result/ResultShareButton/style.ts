@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.section`
   display: flex;
   justify-content: center;
   padding-top: 2.2rem;
@@ -11,9 +11,19 @@ const StyledRoot = styled.div`
   ${applyMediaQuery("mobile")} {
     padding: 3.6rem 1.6rem 2.4rem 1.6rem;
   }
+
+  & > div:nth-of-type(2) {
+    p:first-child {
+      ${applyMediaQuery("mobile")} {
+        width: 18rem;
+        text-align: center;
+        line-height: 2.5rem;
+      }
+    }
+  }
 `;
 
-const ShareButton = styled.button`
+export const ShareButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,15 +35,23 @@ const ShareButton = styled.button`
     width: 100%;
     height: 4.8rem;
   }
+
   &:hover {
     cursor: pointer;
+    background-color: ${colors.blue5};
   }
+
+  &:focus {
+    background-color: ${colors.blue5};
+  }
+
   & > svg {
     margin-right: 1.2rem;
     ${applyMediaQuery("mobile")} {
       margin-right: 0.6rem;
     }
   }
+
   & > span {
     font-size: 2rem;
     font-family: "Pretendard-Bold";
@@ -43,5 +61,3 @@ const ShareButton = styled.button`
     }
   }
 `;
-
-export { ShareButton, StyledRoot };

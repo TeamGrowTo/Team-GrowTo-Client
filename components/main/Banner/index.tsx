@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { MainBannerCompass } from "public/assets/images";
+import { MainBannerCompass, MobileMainBannerCompass } from "public/assets/images";
 import React from "react";
+import Screen from "styles/Screen";
 
 import { ImageWrapper, StyledRoot, TitleWrapper } from "./style";
 
@@ -12,7 +13,18 @@ const Banner = function () {
         <p>광고 없는 정직한 IT강의 비교 서비스, 그로투</p>
       </TitleWrapper>
       <ImageWrapper>
-        <Image src={MainBannerCompass} alt="bannerImg" width={580} height={297} quality={100} />
+        <Screen desktop>
+          <Image src={MainBannerCompass} alt="bannerImg" quality={100} />
+        </Screen>
+        <Screen mobile>
+          <Image
+            src={MobileMainBannerCompass}
+            alt="bannerImg"
+            width={304}
+            height={135}
+            quality={100}
+          />
+        </Screen>
       </ImageWrapper>
     </StyledRoot>
   );

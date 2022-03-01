@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-deploy": "next build && next export"
   },
   "dependencies": {
     "@types/react-responsive": "^8.0.5",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^6.1.2",
+    "@types/gtag.js": "0.0.8",
     "@types/node": "17.0.8",
     "@types/react": "17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.9.0",

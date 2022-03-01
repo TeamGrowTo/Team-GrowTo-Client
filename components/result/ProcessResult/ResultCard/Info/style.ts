@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.section`
   display: flex;
   margin-bottom: 0.8rem;
   ${applyMediaQuery("mobile")} {
@@ -21,7 +21,7 @@ const StyledRoot = styled.div`
   }
 `;
 
-const InfoName = styled.ul`
+export const InfoName = styled.ul`
   margin-right: 2.95rem;
   color: ${colors.subBlack};
   font-family: "Pretendard-Regular";
@@ -30,9 +30,7 @@ const InfoName = styled.ul`
   }
 `;
 
-const InfoData = styled.ul`
+export const InfoData = styled.ul`
   color: ${colors.subBlack};
   font-family: "Pretendard-Bold";
 `;
-
-export { InfoData, InfoName, StyledRoot };

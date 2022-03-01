@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import Screen from "styles/Screen";
 
 import {
+  CategoryBox,
   CategoryButton,
   CategoryList,
   CategoryListItem,
-  CategoryWrapper,
+  CategoryListWrapper,
   DropdownWrapper,
-  LectureCategoryBox,
+  LectureCategoryContainer,
 } from "./style";
 
 interface SelectedProps {
@@ -35,9 +36,9 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
 
   return (
     <>
-      <LectureCategoryBox>
+      <LectureCategoryContainer>
         <p>강의 분야*</p>
-        <CategoryWrapper>
+        <CategoryBox>
           <CategoryButton
             type="button"
             open={open}
@@ -49,7 +50,7 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
             ) : (
               <span>{categorySelected}</span>
             )}
-            <DropdownWrapper>
+            <DropdownWrapper open={open}>
               <Screen desktop>
                 <Dropdown />
               </Screen>
@@ -66,17 +67,17 @@ export default function LectureCategory({ categorySelected, setCategorySelected 
                 };
 
                 return (
-                  <CategoryListItem key={index} onClick={handleOnClick}>
-                    {list}
-                  </CategoryListItem>
+                  <CategoryListWrapper key={index} onClick={handleOnClick}>
+                    <CategoryListItem>{list}</CategoryListItem>
+                  </CategoryListWrapper>
                 );
               })}
             </CategoryList>
           ) : (
             <></>
           )}
-        </CategoryWrapper>
-      </LectureCategoryBox>
+        </CategoryBox>
+      </LectureCategoryContainer>
     </>
   );
 }

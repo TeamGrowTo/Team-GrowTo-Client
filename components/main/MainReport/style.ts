@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100vw;
-  height: 60.3rem;
+  height: 75.375rem;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
   display: flex;
@@ -16,17 +16,17 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  width: 96rem;
-  height: 40rem;
-  background: linear-gradient(rgb(255, 255, 255, 0.8), 80%, transparent);
-  backdrop-filter: blur(4rem);
-  border: 0.2rem solid #ffffff;
-  border-radius: 3rem;
+export const Wrapper = styled.article`
+  width: 120rem;
+  height: 50rem;
+  background: rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(5.25rem);
+  border: 0.25rem solid #ffffff;
+  border-radius: 3.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0 5rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
@@ -35,11 +35,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const LineWrapper = styled.div`
-  margin-top: 1.4rem;
+export const LineWrapper = styled.figure`
+  margin-top: 1.75rem;
   ${applyMediaQuery("mobile")} {
     margin-top: 0;
   }
 `;
-
-export { LineWrapper, StyledRoot, Wrapper };

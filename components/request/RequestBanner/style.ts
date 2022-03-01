@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 19.2rem;
+  height: 24rem;
   background-color: ${colors.subOrange};
   background-image: url("/assets/images/requestBannerBackground.png");
   display: flex;
@@ -18,8 +18,8 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  width: 69.8rem;
+export const Wrapper = styled.div`
+  width: 87.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,28 +27,27 @@ const Wrapper = styled.div`
     width: 29.4rem;
   }
 
-  div {
+  p {
     font-family: "Pretendard-Bold";
-    font-size: 4rem;
-    line-height: 5rem;
+    font-size: 5rem;
+    line-height: 6.5rem;
     color: ${colors.white};
     display: flex;
+
     ${applyMediaQuery("mobile")} {
       font-size: 2.2rem;
       line-height: 2.8rem;
-    }
-
-    span {
-      ${applyMediaQuery("mobile")} {
-        display: flex;
-        flex-direction: column;
-      }
-
-      p {
-        color: ${colors.mainBlue};
-      }
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
-`;
 
-export { StyledRoot, Wrapper };
+  strong {
+    color: ${colors.mainBlue};
+  }
+
+  div {
+    display: flex;
+  }
+`;

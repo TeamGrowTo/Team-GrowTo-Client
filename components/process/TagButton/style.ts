@@ -14,11 +14,14 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   border-radius: 4.8rem;
   border: 1px solid ${({ isClicked }) => (isClicked ? `${colors.mainBlue}` : "white")};
   ${applyMediaQuery("mobile")} {
-    padding: 1.3rem 2rem;
+    padding: 1.1rem 2rem;
     height: 4rem;
     font-size: 1.4rem;
   }
   :hover {
     cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid #aaa;
   }
 `;

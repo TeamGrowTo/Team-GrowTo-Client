@@ -1,7 +1,6 @@
 import { LectureDataListType, ResponseLectureDataType } from "types/info.type";
 import {
   CurrentCompareData,
-  IProcessData,
   LectureCompareRequest,
   LectureRankData,
   LecturesResultAllData,

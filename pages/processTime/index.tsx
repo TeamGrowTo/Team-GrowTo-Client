@@ -1,9 +1,15 @@
+import SEO from "components/common/SEO";
 import CardTitle from "components/process/CardTitle";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import Image from "next/image";
-import Router from "next/router";
-import { ProcessPlayIcon, ProcessSquareIcon } from "public/assets/icons";
+import Link from "next/link";
+import {
+  NextArrowAble,
+  NextArrowDisabled,
+  ProcessPlayIcon,
+  ProcessSquareIcon,
+} from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { processState } from "store/state";
@@ -36,9 +42,6 @@ function ProcessTime() {
   }, []);
   const handleTimeClick = (timeType: string) => {
     setSelectedTime(timeType);
-    setTimeout(() => {
-      Router.replace("/processPrice");
-    }, 1000);
   };
 
   useEffect(() => {
@@ -57,49 +60,65 @@ function ProcessTime() {
   }, [selectedTime]);
 
   return (
-    <StyledRoot>
-      <Screen desktop>
-        <>
-          <div></div>
-          <PlayIcon>
-            <Image src={ProcessPlayIcon} alt="processPlay" />
-          </PlayIcon>
-          <SquareIcon>
-            <Image src={ProcessSquareIcon} alt="processSqaure" />
-          </SquareIcon>
-        </>
-      </Screen>
-      <ProcessBox>
-        <Title></Title>
-        <CardTitle></CardTitle>
-        <CardChoice>
-          <TimeWrapper>
-            <p>
-              강의 <span>총 완강 시간</span>은 어떤 타입을 선호하시나요?
-            </p>
-            {timeTypeList.map((timeType, index) => (
-              <TypeButton
-                key={index}
-                onTypeClick={handleTimeClick}
-                interestType={timeType}
-                selectedTime={selectedTime}
-              />
-            ))}
-          </TimeWrapper>
-        </CardChoice>
-      </ProcessBox>
-    </StyledRoot>
+    <>
+      <SEO title="그로투 - 나에게 맞는 강의 찾기 " content="당신에게 맞는 IT강의를 찾는 중이에요" />
+      <StyledRoot>
+        <Screen desktop>
+          <>
+            <div></div>
+            <PlayIcon>
+              <Image src={ProcessPlayIcon} alt="processPlay" />
+            </PlayIcon>
+            <SquareIcon>
+              <Image src={ProcessSquareIcon} alt="processSqaure" />
+            </SquareIcon>
+          </>
+        </Screen>
+        <ProcessBox>
+          <Title></Title>
+          <CardTitle></CardTitle>
+          <CardChoice>
+            <TimeWrapper>
+              <p>
+                강의 <span>총 완강 시간</span>은 어떤 타입을 선호하시나요?
+              </p>
+              {timeTypeList.map((timeType, index) => (
+                <TypeButton
+                  key={index}
+                  onTypeClick={handleTimeClick}
+                  interestType={timeType}
+                  selectedTime={selectedTime}
+                />
+              ))}
+            </TimeWrapper>
+          </CardChoice>
+          <NextButtonWrapper>
+            <Link href="/processPrice" replace passHref>
+              <NextButton
+                selectedPrice={selectedTime}
+                disabled={selectedTime.length > 0 ? false : true}
+              >
+                완료하기
+              </NextButton>
+            </Link>
+            <NextArrowWrapper>
+              {selectedTime.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />}
+            </NextArrowWrapper>
+          </NextButtonWrapper>
+        </ProcessBox>
+      </StyledRoot>
+    </>
   );
 }
 
 export default ProcessTime;
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.main`
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
   ${applyMediaQuery("mobile")} {
-    width: 50rem;
+    height: 80rem;
   }
 `;
 
@@ -133,7 +152,6 @@ export const CardChoice = styled.section`
   border-radius: 0 0 2.8rem 2.8rem;
   backdrop-filter: blur(2rem);
   border: 2px solid white;
-  margin-bottom: 14.2rem;
   ${applyMediaQuery("mobile")} {
     width: 36rem;
     height: 100%;
@@ -158,5 +176,48 @@ export const TimeWrapper = styled.div`
     & > p {
       font-size: 2rem;
     }
+  }
+`;
+
+export const NextButtonWrapper = styled.div`
+  display: flex;
+  position: relative;
+`;
+
+export const NextButton = styled.button<{ selectedPrice: string }>`
+  margin-left: auto;
+  margin-top: 2.4rem;
+  margin-bottom: 5.8rem;
+  width: 22.4rem;
+  height: 6rem;
+  background: ${({ selectedPrice }) =>
+    selectedPrice.length > 0 ? `${colors.mainBlue}` : `${colors.gray2}`};
+  font-size: 2.4rem;
+  font-family: "Pretendard-Bold";
+  border-radius: 4.8rem;
+  padding-right: 1.7rem;
+  color: ${({ selectedPrice }) => (selectedPrice.length > 0 ? "white" : `${colors.gray4}`)};
+  :hover {
+    cursor: pointer;
+  }
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.6rem;
+    margin-top: 4rem;
+    width: 12.6rem;
+    height: 5.2rem;
+  }
+  :focus-visible {
+    outline: 3px solid #aaa;
+  }
+`;
+
+export const NextArrowWrapper = styled.div`
+  position: absolute;
+  top: 4.5rem;
+  right: 4.2rem;
+  margin-right: 1.1rem;
+  ${applyMediaQuery("mobile")} {
+    top: 5.9rem;
+    right: 1rem;
   }
 `;

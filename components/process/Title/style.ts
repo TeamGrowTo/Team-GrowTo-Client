@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.div`
+export const StyledRoot = styled.header`
   position: relative;
   display: flex;
   height: 4rem;
@@ -10,6 +10,9 @@ export const StyledRoot = styled.div`
   color: white;
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;
+  ${applyMediaQuery("mobile")} {
+    margin: 2.2rem 0;
+  }
 `;
 export const ProcessTitle = styled.h2`
   font-family: "Pretendard-Bold";
