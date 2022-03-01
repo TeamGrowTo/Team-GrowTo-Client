@@ -3,23 +3,22 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
-  margin-right: 2rem;
+export const StyledRoot = styled.div`
+  margin-right: 2.5rem;
 
   ${applyMediaQuery("mobile")} {
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-bottom: 0.8rem;
   }
 `;
 
-const Id = styled.div`
+export const Id = styled.div`
   font-family: "Pretendard-Bold";
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: ${colors.subOrange};
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
@@ -27,16 +26,14 @@ const Id = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  width: 30.5rem;
-  height: 10.8rem;
+export const Wrapper = styled.div`
+  width: 38.125rem;
+  height: 13.5rem;
   background-color: ${colors.gray1};
-  border-radius: 2.8rem;
-
+  border-radius: 3.5rem;
   display: flex;
-  padding: 1.4rem 3.6rem;
+  padding: 3rem 4.5rem;
   align-items: center;
-
   position: relative;
   z-index: -1;
 
@@ -45,17 +42,16 @@ const Wrapper = styled.div`
     height: 6.8rem;
     border-radius: 1.8rem;
     padding: 1rem 3.2rem;
-
     margin-left: 1.2rem;
   }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   h4 {
     font-family: "Pretendard-Bold";
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: ${colors.gray5};
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
@@ -64,30 +60,29 @@ const Title = styled.div`
   h3 {
     font-family: "Pretendard-Bold";
     color: ${colors.subBlack};
-    font-size: 2rem;
+    font-size: 2.5rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.4rem;
     }
   }
 `;
-const Line = styled(RequestRankLine)`
+export const Line = styled(RequestRankLine)`
   position: absolute;
-  left: 16.4rem;
+  left: 20.5rem;
 `;
 
-const MobileLine = styled(RequestRankLine_mobile)`
+export const MobileLine = styled(RequestRankLine_mobile)`
   position: absolute;
   left: 16rem;
 `;
 
-const RequestNumber = styled.div`
-  font-size: 1.6rem;
+export const RequestNumber = styled.div`
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   position: absolute;
-  right: 3.6rem;
+  right: 4.5rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
@@ -96,7 +91,7 @@ const RequestNumber = styled.div`
 
   h5 {
     font-family: "Pretendard-Bold";
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 
     ${applyMediaQuery("mobile")} {
       margin-bottom: 0.2rem;
@@ -104,9 +99,9 @@ const RequestNumber = styled.div`
   }
 `;
 
-const Number = styled.div`
+export const Number = styled.div`
   font-family: "Pretendard-Regular";
-  font-size: 1.6rem;
+  font-size: 2rem;
   display: flex;
 
   ${applyMediaQuery("mobile")} {
@@ -118,5 +113,3 @@ const Number = styled.div`
     font-family: "Pretendard-Bold";
   }
 `;
-
-export { Id, Line, MobileLine, Number, RequestNumber, StyledRoot, Title, Wrapper };

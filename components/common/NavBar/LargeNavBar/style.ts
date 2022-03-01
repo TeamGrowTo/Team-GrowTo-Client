@@ -3,14 +3,14 @@ import { colors } from "styles/colors";
 
 const StyledRoot = styled.nav`
   width: 100%;
-  height: 11.6rem;
+  height: 10.8rem;
   padding: 0 2.5rem;
   margin-bottom: 11.6rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 90;
+  z-index: 120;
   position: fixed;
   top: 0;
 
@@ -34,7 +34,7 @@ const NavItemWrapper = styled.div`
 const NavItem = styled.a<{ pathName: string; href: string }>`
   margin: 0 0.2rem;
   padding: 0 2.2rem;
-  height: 11.6rem;
+  height: 10.8rem;
   min-width: 11rem;
   line-height: 11.6rem;
   font-family: "Pretendard-Bold";
