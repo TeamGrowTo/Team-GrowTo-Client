@@ -58,6 +58,7 @@ export const Comment = styled.p`
 `;
 
 export const Bottom = styled.figcaption`
+  width: 100%;
   height: 6.375rem;
   display: flex;
   align-items: center;
