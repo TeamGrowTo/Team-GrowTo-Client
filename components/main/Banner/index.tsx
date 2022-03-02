@@ -9,7 +9,7 @@ const Banner = function () {
   return (
     <StyledRoot>
       <TitleWrapper>
-        <h1>나에게 맞는 IT강의 한 눈에, 간편하게 찾기</h1>
+        <h1>내게 맞는 IT강의 찾기 한 눈에, 간편하게</h1>
         <p>강의 찾는 시간 줄이고 성장에만 집중하세요, 그로투</p>
       </TitleWrapper>
       <ImageWrapper>
