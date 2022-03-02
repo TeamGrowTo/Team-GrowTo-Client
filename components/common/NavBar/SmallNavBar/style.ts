@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 
 const StyledRoot = styled.nav`
-  width: 100vw;
+  width: 100%;
   height: 4.8rem;
   padding: 0 1.4rem 0 2rem;
 
