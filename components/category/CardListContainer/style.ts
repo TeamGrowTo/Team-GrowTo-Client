@@ -2,11 +2,14 @@ import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
-  margin-top: 2rem;
+  margin-top: 4.8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${applyMediaQuery("mobile")} {
+    margin-top: 2rem;
+  }
 `;
 
 const ImgWrapper = styled.figure`
