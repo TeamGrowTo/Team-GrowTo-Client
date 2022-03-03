@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const StyledRoot = styled.div`
+export const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 50.375rem;
-  padding-top: 8rem;
-  padding-bottom: 13.5rem;
+  height: 40.3rem;
+  padding-top: 6.4rem;
+  padding-bottom: 10.8rem;
 
   display: flex;
   justify-content: center;
@@ -18,8 +18,8 @@ const StyledRoot = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  width: 160rem;
+export const Wrapper = styled.div`
+  width: 128rem;
   height: 100%;
   ${applyMediaQuery("mobile")} {
     width: 100%;
@@ -27,8 +27,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.div`
-  margin-bottom: 4.5rem;
+export const Title = styled.div`
+  margin-bottom: 3.6rem;
   color: ${colors.subBlack};
   ${applyMediaQuery("mobile")} {
     margin-bottom: 1.5rem;
@@ -36,26 +36,24 @@ const Title = styled.div`
 
   h2 {
     font-family: "Pretendard-Bold";
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 0.4rem;
     ${applyMediaQuery("mobile")} {
       font-size: 2rem;
     }
   }
   p {
     font-family: "Pretendard-Regular";
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
     }
   }
 `;
 
-const RankList = styled.div`
+export const RankList = styled.div`
   display: flex;
   ${applyMediaQuery("mobile")} {
     flex-direction: column;
   }
 `;
-
-export { RankList, StyledRoot, Title, Wrapper };
