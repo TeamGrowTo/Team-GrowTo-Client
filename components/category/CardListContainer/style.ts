@@ -3,8 +3,7 @@ import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
-  margin-top: 4.8rem;
-  /* width: 128rem; */
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
