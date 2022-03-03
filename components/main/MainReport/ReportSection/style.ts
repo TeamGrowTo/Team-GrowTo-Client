@@ -6,21 +6,21 @@ export const StyledRoot = styled.figure`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 7.5rem 2.875rem;
+  margin: 0 6rem 2.3rem;
   ${applyMediaQuery("mobile")} {
     margin: 1.6rem 1.4rem 2.5rem;
   }
 `;
 
 export const TitleWrapper = styled.figcaption`
-  width: 19.5rem;
-  height: 6.5rem;
+  width: 17rem;
+  height: 5.2rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
     rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(0.5rem);
-  border-radius: 5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
+  backdrop-filter: blur(4px);
+  border-radius: 4rem;
+  margin-top: 1.8rem;
+  margin-bottom: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@ export const TitleWrapper = styled.figcaption`
 `;
 
 export const Title = styled.p`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Pretendard-SemiBold";
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
@@ -48,10 +48,10 @@ export const Data = styled.figcaption`
 `;
 
 export const Count = styled.span`
-  font-size: 5.5rem;
+  font-size: 4.4rem;
   font-family: "Pretendard-Bold";
-  letter-spacing: -0.125rem;
-  margin-right: 0.75rem;
+  letter-spacing: -0.1rem;
+  margin-right: 0.6rem;
   ${applyMediaQuery("mobile")} {
     font-size: 2rem;
     margin-right: 0.2rem;
@@ -59,7 +59,7 @@ export const Count = styled.span`
 `;
 
 export const Unit = styled.span`
-  font-size: 3.75rem;
+  font-size: 3rem;
   font-family: "Pretendard-SemiBold";
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;

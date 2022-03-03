@@ -85,8 +85,8 @@ export default function MainReview() {
     <StyledRoot>
       <Wrapper>
         <Title>
-          <h2>그로투러들의 생생한 후기</h2>
-          <hgroup>*그로투 이메일 & DM 으로 보내주신 메시지 기반</hgroup>
+          <h2>성장하는 사람들의 생생한 후기</h2>
+          <hgroup>*베타 테스터들의 실사용 후기</hgroup>
         </Title>
         <ReviewList>
           {reviewInfo.map((review) => (

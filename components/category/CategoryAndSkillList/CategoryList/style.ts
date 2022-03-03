@@ -4,29 +4,42 @@ import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.article`
   display: flex;
-  flex-wrap: wrap;
   margin-bottom: 1.6rem;
-  & > * {
-    margin-right: 1.6rem;
-  }
-  & > *:last-child {
-    margin-right: 0;
-  }
+  width: 100%;
+
   ${applyMediaQuery("mobile")} {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 32%;
+    width: 11.6rem;
     height: 100%;
     margin: 0;
-    align-items: center;
+    flex-wrap: nowrap;
 
-    overflow-y: auto;
     background: linear-gradient(
         101.6deg,
         rgba(244, 250, 255, 0.4) 32.93%,
         rgba(255, 255, 255, 0.4) 75.76%
       ),
       #ffffff;
+  }
+`;
+
+export const CategoryWrapper = styled.section`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    margin-right: 1.6rem;
+  }
+  & > *:last-child {
+    margin-right: 0;
+  }
+
+  ${applyMediaQuery("mobile")} {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 11.6rem;
+    height: 100%;
+    align-items: center;
+    overflow-y: auto;
     &::-webkit-scrollbar {
       display: none;
     }
