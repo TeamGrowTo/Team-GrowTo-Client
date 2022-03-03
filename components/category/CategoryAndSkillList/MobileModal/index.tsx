@@ -19,13 +19,8 @@ interface Props {
 }
 
 function MobileModal({ onCategoryClick, onSkillClick, onClickMobileModal }: Props) {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-  }, []);
-
   const onClickBack = () => {
     if (onClickMobileModal) onClickMobileModal(false);
-    document.body.style.overflow = "unset";
   };
 
   return (

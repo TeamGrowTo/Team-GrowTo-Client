@@ -23,7 +23,7 @@ export default function RequestCurrentLecture() {
       <div>
         <Title>
           <h2>현재 비교중인 강의</h2>
-          <p>100명 이상이 비교를 요청하여, 그로투가 비교 중인 강의에요!</p>
+          <p>&lsquo;100명 이상&rsquo; 비교 요청해서, 그로투가 비교 중인 강의에요</p>
         </Title>
         <CurrentList>
           {compareLecture?.map((currentLecture, index) => (
