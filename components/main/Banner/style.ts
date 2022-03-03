@@ -29,7 +29,7 @@ const TitleWrapper = styled.article`
   flex-direction: column;
   justify-content: center;
   ${applyMediaQuery("mobile")} {
-    width: 23.2rem;
+    width: 24rem;
     margin: 0 auto;
   }
 
