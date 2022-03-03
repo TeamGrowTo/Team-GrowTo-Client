@@ -14,10 +14,12 @@ export const StyledRoot = styled.section`
   justify-content: center;
   align-items: center;
   margin-bottom: 0.8rem;
+  padding: 3.2rem 4.8rem;
   ${applyMediaQuery("mobile")} {
     width: 100%;
     height: 100%;
     margin: 0;
+    padding: 0;
     border-radius: 0;
   }
 `;
@@ -27,8 +29,9 @@ export const NotSelectedCategory = styled.article`
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 2.9rem 2.8rem 0;
+    /* justify-content: center;
+    align-items: center; */
   }
   & > span {
     color: ${colors.mainBlue};
@@ -38,7 +41,9 @@ export const NotSelectedCategory = styled.article`
 `;
 
 export const SkillWrapper = styled.div`
-  width: 118.4rem;
+  /* width: 118.4rem; */
+  width: 100%;
+  max-width: 100%;
   height: 6.6rem;
   display: flex;
   flex-wrap: wrap;

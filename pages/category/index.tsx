@@ -17,9 +17,7 @@ import {
   lectureCategoryState,
   lectureDataList,
   lectureSkillState,
-  processState,
   SortingItemType,
-  SortingType,
 } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
@@ -63,12 +61,20 @@ function Category() {
     resetIsSelected();
   };
 
-  const handleCategoryClick = (id: number | null) => {
-    if (id) {
-      const result = categoryList?.filter((category) => category.id === id)[0] || null;
+  const findSelectedCategory = (currentSelectedCategoryId: number) => {
+    return categoryList?.filter((category) => category.id === currentSelectedCategoryId)[0] || null;
+  };
+
+  const findSelectedSkill = (currentSelectedSkillId: number) => {
+    return skillList?.filter((skill) => skill.id === currentSelectedSkillId)[0] || null;
+  };
+
+  const handleCategoryClick = (categoryId: number | null) => {
+    if (categoryId) {
+      const result = findSelectedCategory(categoryId);
 
       setCurrentCategory(result);
-      setLectureSkill(id);
+      setLectureSkill(categoryId);
       setCurrentSkill({ id: -1, skillName: "" });
       resetData();
     }
@@ -100,7 +106,7 @@ function Category() {
   const handleSkillClick = async (skillId: number | null) => {
     if (skillId) {
       //click한 skill의 Id와 skillList의 skill들의 id와 같은 것을 result에 담는다.
-      const result = skillList?.filter((skill) => skill.id === skillId)[0] || null;
+      const result = findSelectedSkill(skillId);
       const categoryId = category?.id; //현재 선택되어 있는 category의 id.
 
       if (categoryId) {
