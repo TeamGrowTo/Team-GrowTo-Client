@@ -145,7 +145,13 @@ function Category() {
           </BlueButton>
         </Screen>
         <Screen mobile>
-          <BlueButton onClick={handleMoveToCategory} width="96%" height="4rem" maxWidth="32.8rem">
+          <BlueButton
+            onClick={handleMoveToCategory}
+            fontSize="1.6rem"
+            width="96%"
+            height="4rem"
+            maxWidth="32.8rem"
+          >
             다른 강의 비교하기
           </BlueButton>
         </Screen>
