@@ -33,7 +33,7 @@ function Result() {
             <ResultMessage> 강의 모두 보기</ResultMessage>
           </>
         ) : (
-          <NoResultMessage>상단에서 강의 세부분야를 먼저 선택해주세요</NoResultMessage>
+          <NoResultMessage>↑에서 ‘강의 세부 분야’ 먼저 선택해주세요</NoResultMessage>
         )}
       </MessageWrapper>
       <SortingBox />
