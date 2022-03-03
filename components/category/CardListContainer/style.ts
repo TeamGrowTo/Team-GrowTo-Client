@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
