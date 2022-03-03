@@ -9,8 +9,8 @@ const Banner = function () {
   return (
     <StyledRoot>
       <TitleWrapper>
-        <h1>나에게 맞는 IT강의를 간편하게 찾으세요</h1>
-        <p>광고 없는 정직한 IT강의 비교 서비스, 그로투</p>
+        <h1>내게 맞는 IT강의 찾기 한 눈에, 간편하게</h1>
+        <p>강의 찾는 시간 줄이고 성장에만 집중하세요, 그로투</p>
       </TitleWrapper>
       <ImageWrapper>
         <Screen desktop>
