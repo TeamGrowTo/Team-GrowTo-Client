@@ -4,15 +4,15 @@ import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.div<{ order: number }>`
   box-sizing: border-box;
-  width: 24.5rem;
-  height: 24.5rem;
-  border-radius: 3.5rem;
+  width: 19.6rem;
+  height: 19.6rem;
+  border-radius: 2.8rem;
   background-color: ${colors.mainBlue};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 2.5rem;
+  margin-right: 2rem;
 
   ${applyMediaQuery("mobile")} {
     width: 15.8rem;
@@ -52,7 +52,7 @@ export const StyledRoot = styled.div<{ order: number }>`
 
   h3 {
     font-family: "Pretendard-Bold";
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: ${colors.gray5};
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
@@ -61,7 +61,7 @@ export const StyledRoot = styled.div<{ order: number }>`
 
   h2 {
     font-family: "Pretendard-Bold";
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: ${colors.subBlack};
     ${applyMediaQuery("mobile")} {
       font-size: 1.7rem;
