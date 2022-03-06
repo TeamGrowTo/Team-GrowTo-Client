@@ -48,6 +48,16 @@ export default function RequestLecture() {
     return UseRegex().checkEmail(email);
   };
 
+  const postRequest = async () => {
+    await postLectureRequest(postData);
+  };
+
+  const resetState = () => {
+    setCategorySelected("");
+    setLecture("");
+    setEmail("");
+  };
+
   useEffect(() => {
     const temp = { ...postData };
 
@@ -69,16 +79,14 @@ export default function RequestLecture() {
     setPostData(temp);
   }, [lecture, email]);
 
-  const submitRequest = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const submitRequest = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (isBlank()) {
       e.preventDefault();
 
       return;
     }
-    await postLectureRequest(postData);
-    setCategorySelected("");
-    setLecture("");
-    setEmail("");
+    postRequest();
+    resetState();
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
   };
