@@ -1,5 +1,6 @@
 import { postLectureRequest } from "apis/lectures.api";
 import Modal from "components/common/Modal";
+import { UseRegex } from "hooks/UseRegex";
 import React, { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { lectureCategoryState } from "store/state";
