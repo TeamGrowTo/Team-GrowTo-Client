@@ -5,9 +5,9 @@ import { useRecoilValue } from "recoil";
 import { lectureCategoryState } from "store/state";
 import { LectureCategoryData } from "types/info.type";
 
-import Email from "./Email";
-import LectureCategory from "./LectureCategory";
-import LectureType from "./LectureType";
+import EmailInput from "./EmailInput";
+import LectureCategoryInput from "./LectureCategoryInput";
+import LectureTypeInput from "./LectureTypeInput";
 import {
   ActiveRequestButton,
   DisabledRequestButton,
@@ -17,11 +17,13 @@ import {
   Title,
   Wrapper,
 } from "./style";
+
 export interface IPostRequest {
   categoryId: number;
   skill: string;
   email: string;
 }
+
 export default function RequestLecture() {
   const [postData, setPostData] = useState<IPostRequest>({
     categoryId: 0,
@@ -35,10 +37,15 @@ export default function RequestLecture() {
   const [emailFilled, setEmailFilled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const getData = useRecoilValue(lectureCategoryState);
+
   const isBlank = (): boolean => {
     if (categorySelected === "" || lecture === "" || email === "") return true;
 
     return false;
+  };
+
+  const checkEmail = () => {
+    return UseRegex().checkEmail(email);
   };
 
   useEffect(() => {
@@ -61,6 +68,7 @@ export default function RequestLecture() {
     }
     setPostData(temp);
   }, [lecture, email]);
+
   const submitRequest = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (isBlank()) {
       e.preventDefault();
@@ -84,12 +92,16 @@ export default function RequestLecture() {
         </Title>
         <RequestCard>
           <Form>
-            <LectureCategory
+            <LectureCategoryInput
               categorySelected={categorySelected}
               setCategorySelected={setCategorySelected}
             />
-            <LectureType setTypeFilled={setTypeFilled} setLecture={setLecture} lecture={lecture} />
-            <Email setEmailFilled={setEmailFilled} setEmail={setEmail} email={email} />
+            <LectureTypeInput
+              setTypeFilled={setTypeFilled}
+              setLecture={setLecture}
+              lecture={lecture}
+            />
+            <EmailInput setEmailFilled={setEmailFilled} setEmail={setEmail} email={email} />
             {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
               <ActiveRequestButton type="button" onClick={submitRequest}>
                 <p>강의비교 요청하기</p>
