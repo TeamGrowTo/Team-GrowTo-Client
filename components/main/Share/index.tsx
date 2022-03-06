@@ -25,7 +25,7 @@ function Share() {
           href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
           passHref
         >
-          <StoryLink target="_blank">Growto 스토리 보러가기 &gt; </StoryLink>
+          <StoryLink target="_blank">그로투 이야기 보러가기 &gt; </StoryLink>
         </Link>
         <Slogan>
           <p>
