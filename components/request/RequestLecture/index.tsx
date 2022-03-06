@@ -58,6 +58,18 @@ export default function RequestLecture() {
     setEmail("");
   };
 
+  const submitRequest = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isBlank()) {
+      e.preventDefault();
+
+      return;
+    }
+    postRequest();
+    resetState();
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
   useEffect(() => {
     const temp = { ...postData };
 
@@ -73,23 +85,11 @@ export default function RequestLecture() {
     if (lecture) {
       temp["skill"] = lecture;
     }
-    if (email) {
+    if (email === "" || checkEmail()) {
       temp["email"] = email;
     }
     setPostData(temp);
   }, [lecture, email]);
-
-  const submitRequest = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (isBlank()) {
-      e.preventDefault();
-
-      return;
-    }
-    postRequest();
-    resetState();
-    setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
-  };
 
   return (
     <StyledRoot>
