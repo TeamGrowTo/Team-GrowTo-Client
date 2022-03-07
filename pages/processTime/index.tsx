@@ -79,9 +79,17 @@ function ProcessTime() {
           <CardTitle></CardTitle>
           <CardChoice>
             <TimeWrapper>
-              <p>
-                강의 <span>총 완강 시간</span>은 어떤 타입을 선호하시나요?
-              </p>
+              <Screen desktop>
+                <p>
+                  강의 <span>총 완강시간</span>은 어떤 타입을 선호하시나요?
+                </p>
+              </Screen>
+              <Screen mobile>
+                <p>
+                  강의 <span>총 완강시간</span>은 <br />
+                  어떤 타입을 선호하시나요?
+                </p>
+              </Screen>
               {timeTypeList.map((timeType, index) => (
                 <TypeButton
                   key={index}
@@ -98,7 +106,7 @@ function ProcessTime() {
                 selectedPrice={selectedTime}
                 disabled={selectedTime.length > 0 ? false : true}
               >
-                완료하기
+                다음
               </NextButton>
             </Link>
             <NextArrowWrapper>
@@ -118,7 +126,8 @@ export const StyledRoot = styled.main`
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
   ${applyMediaQuery("mobile")} {
-    height: 80rem;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -141,7 +150,7 @@ export const ProcessBox = styled.div`
   display: flex;
   flex-direction: column;
   ${applyMediaQuery("mobile")} {
-    width: 36rem;
+    width: 100%;
   }
 `;
 
@@ -153,8 +162,9 @@ export const CardChoice = styled.section`
   backdrop-filter: blur(2rem);
   border: 2px solid white;
   ${applyMediaQuery("mobile")} {
-    width: 36rem;
+    width: 100%;
     height: 100%;
+    border-radius: 0;
   }
 `;
 
@@ -173,6 +183,7 @@ export const TimeWrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     margin: 3.2rem auto 5rem;
+    line-height: 2.8rem;
     & > p {
       font-size: 2rem;
     }
@@ -201,10 +212,11 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
     cursor: pointer;
   }
   ${applyMediaQuery("mobile")} {
-    font-size: 1.6rem;
     margin-top: 4rem;
-    width: 12.6rem;
+    width: 9.8rem;
     height: 5.2rem;
+    font-size: 1.6rem;
+    margin-right: 2.4rem;
   }
   :focus-visible {
     outline: 3px solid #aaa;
@@ -214,10 +226,11 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
 export const NextArrowWrapper = styled.div`
   position: absolute;
   top: 4.5rem;
-  right: 4.2rem;
-  margin-right: 1.1rem;
+  right: 6.5rem;
+  margin-right: 0.9rem;
   ${applyMediaQuery("mobile")} {
     top: 5.9rem;
     right: 1rem;
+    margin-right: 3.5rem;
   }
 `;
