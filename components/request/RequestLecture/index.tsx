@@ -45,9 +45,9 @@ export default function RequestLecture() {
     return false;
   };
 
-  // const checkEmail = () => {
-  //   return UseRegex().checkEmail(email);
-  // };
+  const checkEmail = () => {
+    return UseRegex().checkEmail(email);
+  };
 
   const postRequest = async () => {
     await postLectureRequest(postData);
@@ -86,9 +86,9 @@ export default function RequestLecture() {
     if (lecture) {
       temp["skill"] = lecture;
     }
-    if (email) {
+    if (email === "" || checkEmail()) {
       temp["email"] = email;
-    }
+    } else return;
     setPostData(temp);
   }, [lecture, email]);
 
@@ -111,7 +111,10 @@ export default function RequestLecture() {
               lecture={lecture}
             />
             <EmailInput setEmailFilled={setEmailFilled} setEmail={setEmail} email={email} />
-            {categorySelected !== "" && typeFilled === true && emailFilled === true ? (
+            {categorySelected !== "" &&
+            typeFilled === true &&
+            emailFilled === true &&
+            checkEmail() === true ? (
               <ActiveRequestButton type="button" onClick={submitRequest}>
                 <p>강의비교 요청하기</p>
               </ActiveRequestButton>
