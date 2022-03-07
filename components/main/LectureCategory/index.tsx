@@ -51,8 +51,8 @@ const MainLectureCategory = function () {
     resetLectureListData();
     resetIsDisable();
     resetIsOpen();
-    resetIsSelected();
     resetCurrentSorting();
+    resetIsSelected();
   };
 
   const setLectureCategory = async (): Promise<void> => {
@@ -72,7 +72,6 @@ const MainLectureCategory = function () {
 
   useEffect(() => {
     setLectureCategory();
-    setCurrentCategory({ id: -1, categoryName: "" });
   }, []);
 
   return (

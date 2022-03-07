@@ -1,8 +1,6 @@
 import Modal from "components/common/Modal";
-import { useRouter } from "next/router";
-import { MobileResultShareIcon, ResultShareIcon } from "public/assets/icons";
+import { ResultShareIcon } from "public/assets/icons";
 import React, { useState } from "react";
-import Screen from "styles/Screen";
 
 import { ShareButton, StyledRoot } from "./style";
 
@@ -30,12 +28,7 @@ const ResultShareButton = function () {
   return (
     <StyledRoot>
       <ShareButton onClick={handleClick}>
-        <Screen desktop>
-          <ResultShareIcon />
-        </Screen>
-        <Screen mobile>
-          <MobileResultShareIcon />
-        </Screen>
+        <ResultShareIcon />
         <span>공유하기</span>
       </ShareButton>
       <Modal
