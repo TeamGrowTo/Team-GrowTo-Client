@@ -91,6 +91,14 @@ function SmallNavBar() {
                   <LinkA target="_blank">ABOUT</LinkA>
                 </Link>
               </NavMenuListItem>
+              <NavMenuListItem>
+                <Link
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfKYVx60U_JMVBjJPgmCLS6CbcN1WaVuiMZ3Fi2YN6VCA5W-Q/viewform"
+                  passHref
+                >
+                  <LinkA target="_blank">후기작성</LinkA>
+                </Link>
+              </NavMenuListItem>
             </NavMenuList>
           )}
         </ButtonWrapper>

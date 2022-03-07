@@ -88,6 +88,18 @@ function LargeNavBar() {
               ABOUT
             </NavItem>
           </Link>
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfKYVx60U_JMVBjJPgmCLS6CbcN1WaVuiMZ3Fi2YN6VCA5W-Q/viewform"
+            passHref
+          >
+            <NavItem
+              target="_blank"
+              pathName={router.pathname}
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfKYVx60U_JMVBjJPgmCLS6CbcN1WaVuiMZ3Fi2YN6VCA5W-Q/viewform"
+            >
+              후기작성
+            </NavItem>
+          </Link>
         </NavItemWrapper>
       </NavItemBox>
     </StyledRoot>
