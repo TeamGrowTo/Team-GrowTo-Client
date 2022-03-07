@@ -5,7 +5,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100vw;
-  height: 75.375rem;
+  height: 60.3rem;
   max-width: 100%;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
@@ -18,16 +18,16 @@ export const StyledRoot = styled.section`
 `;
 
 export const Wrapper = styled.article`
-  width: 120rem;
-  height: 50rem;
+  width: 96rem;
+  height: 40rem;
   background: rgba(255, 255, 255, 0.36);
-  backdrop-filter: blur(5.25rem);
-  border: 0.25rem solid #ffffff;
-  border-radius: 3.75rem;
+  backdrop-filter: blur(4.2rem);
+  border: 0.2rem solid #ffffff;
+  border-radius: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 5rem;
+  padding: 0 4rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
@@ -37,7 +37,7 @@ export const Wrapper = styled.article`
 `;
 
 export const LineWrapper = styled.figure`
-  margin-top: 1.75rem;
+  margin-top: 1.4rem;
   ${applyMediaQuery("mobile")} {
     margin-top: 0;
   }

@@ -13,7 +13,7 @@ const RedirectProcessButton = function () {
           <Screen desktop>
             <TenSecondIcon />
           </Screen>
-          <span>단 10초면, 나에게 꼭 맞는 강의를 찾을 수 있어요.</span>
+          <span>이 중에서 내게 맞는 강의를 찾으러가볼까요?</span>
         </Description>
         <Link href="/processTag" passHref>
           <RedirectButton>

@@ -95,8 +95,8 @@ function ProcessPrice() {
             </Screen>
 
             <p>
-              당신을 위한 <br />
-              맞춤 강의를 찾는 중...
+              나를 위한 <br />
+              맞춤 강의 찾는 중...
             </p>
           </LogoWrapper>
         </LoadingStyledRoot>
@@ -118,9 +118,17 @@ function ProcessPrice() {
             <CardTitle></CardTitle>
             <CardChoice>
               <TimeWrapper>
-                <p>
-                  강의 <span>가격대</span>는 어떤 타입을 선호하시나요?
-                </p>
+                <Screen desktop>
+                  <p>
+                    강의 <span>가격대</span>는 어떤 타입을 선호하시나요?
+                  </p>
+                </Screen>
+                <Screen mobile>
+                  <p>
+                    강의 <span>가격대</span>는 <br />
+                    어떤 타입을 선호하시나요?
+                  </p>
+                </Screen>
                 {priceTypeList.map((priceType, index) => (
                   <TypeButton
                     key={index}
@@ -157,7 +165,8 @@ export const StyledRoot = styled.main`
   background: linear-gradient(to right, ${colors.subNavy}, ${colors.subSkyBlue});
   position: relative;
   ${applyMediaQuery("mobile")} {
-    height: 80rem;
+    width: 100%;
+    height: 100%;
   }
 `;
 export const PlayIcon = styled.div`
@@ -178,7 +187,7 @@ export const ProcessBox = styled.div`
   display: flex;
   flex-direction: column;
   ${applyMediaQuery("mobile")} {
-    width: 36rem;
+    width: 100%;
   }
 `;
 
@@ -190,8 +199,9 @@ export const CardChoice = styled.section`
   backdrop-filter: blur(2rem);
   border: 2px solid white;
   ${applyMediaQuery("mobile")} {
-    width: 36rem;
+    width: 100%;
     height: 100%;
+    border-radius: 0;
   }
 `;
 
@@ -210,6 +220,7 @@ export const TimeWrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     margin: 3.2rem auto 5rem;
+    line-height: 2.8rem;
     & > p {
       font-size: 2rem;
     }
@@ -242,6 +253,7 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
     margin-top: 4rem;
     width: 12.6rem;
     height: 5.2rem;
+    margin-right: 2.4rem;
   }
   :focus-visible {
     outline: 3px solid #aaa;
@@ -256,11 +268,13 @@ export const NextArrowWrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     top: 5.9rem;
     right: 1rem;
+    margin-right: 3.5rem;
   }
 `;
 
 export const LoadingStyledRoot = styled.main`
   width: 100%;
+  height: 100%;
   background: linear-gradient(to bottom, ${colors.mainBlue}, ${colors.subPink});
   ${applyMediaQuery("mobile")} {
     width: 100%;

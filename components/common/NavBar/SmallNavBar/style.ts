@@ -13,7 +13,7 @@ const StyledRoot = styled.nav`
 
   position: fixed;
   top: 0;
-  z-index: 90;
+  z-index: 120;
 `;
 
 const ButtonWrapper = styled.button`

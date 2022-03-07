@@ -23,7 +23,7 @@ function SkillList({ onSkillClick, onClickBack }: Props) {
     <StyledRoot>
       {!currentCategory || currentCategory?.id === -1 ? (
         <NotSelectedCategory>
-          <span>강의 분야 {">"} 세부 분야를 선택해주세요</span>
+          <span>그로투에서 강의 찾는 시간 줄이고 {"'성장'"}에만 집중하세요</span>
         </NotSelectedCategory>
       ) : (
         <SkillWrapper>

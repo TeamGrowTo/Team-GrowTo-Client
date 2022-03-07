@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
   margin-top: 4.8rem;
-  /* width: 128rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${applyMediaQuery("mobile")} {
+    margin-top: 2rem;
+  }
 `;
 
 const ImgWrapper = styled.figure`

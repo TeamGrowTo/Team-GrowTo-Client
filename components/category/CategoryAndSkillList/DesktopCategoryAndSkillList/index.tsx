@@ -31,7 +31,7 @@ function DesktopCategoryAndSkillList({ onCategoryClick, onSkillClick }: Props) {
         <LinkWrapper>
           <Link href="/request" passHref>
             <RedirectRequestPage>
-              <span>추가적으로 비교를 원하는 분야가 있다면?</span>
+              <span>추가로 비교 원하는 분야가 있다면?</span>
               <RedirectRequestArrowIcon />
             </RedirectRequestPage>
           </Link>

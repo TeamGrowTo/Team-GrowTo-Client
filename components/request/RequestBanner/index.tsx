@@ -31,7 +31,7 @@ export default function RequestBanner() {
             그로투는
             <strong>&nbsp;총 {totalNumber}개</strong>의&nbsp;
           </div>
-          <div>강의를 비교해왔어요!</div>
+          <div>강의를 비교해왔어요</div>
         </p>
       </Wrapper>
     </StyledRoot>

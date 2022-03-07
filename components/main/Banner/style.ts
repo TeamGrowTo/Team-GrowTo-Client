@@ -23,7 +23,7 @@ const ImageWrapper = styled.article`
 `;
 
 const TitleWrapper = styled.article`
-  width: 44.8rem;
+  width: 46rem;
   margin-right: 19.4rem;
   display: flex;
   flex-direction: column;
