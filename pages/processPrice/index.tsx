@@ -286,9 +286,9 @@ export const LogoWrapper = styled.div`
   margin: 0 auto;
   & > p {
     font-family: "Pretendard-Bold";
-    font-size: 4rem;
+    font-size: 3.2rem;
     color: white;
-    line-height: 5.4rem;
+    line-height: 4rem;
     text-align: center;
   }
   display: flex;
