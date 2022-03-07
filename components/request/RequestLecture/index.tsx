@@ -45,9 +45,9 @@ export default function RequestLecture() {
     return false;
   };
 
-  const checkEmail = () => {
-    return UseRegex().checkEmail(email);
-  };
+  // const checkEmail = () => {
+  //   return UseRegex().checkEmail(email);
+  // };
 
   const postRequest = async () => {
     await postLectureRequest(postData);
@@ -86,7 +86,7 @@ export default function RequestLecture() {
     if (lecture) {
       temp["skill"] = lecture;
     }
-    if (email === "" || checkEmail()) {
+    if (email) {
       temp["email"] = email;
     }
     setPostData(temp);
