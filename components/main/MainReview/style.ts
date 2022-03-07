@@ -5,7 +5,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100%;
-  height: 117.625rem;
+  height: 94.1rem;
   display: flex;
   justify-content: center;
   background-image: url("/assets/images/mainReviewBackground.png");
@@ -17,10 +17,10 @@ export const StyledRoot = styled.section`
 `;
 
 export const Wrapper = styled.article`
-  width: 126.5rem;
-  height: 80rem;
-  margin-top: 17rem;
-  margin-bottom: 20.625rem;
+  width: 101.2rem;
+  height: 64rem;
+  margin-top: 13.6rem;
+  margin-bottom: 16.5rem;
 
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
@@ -31,14 +31,14 @@ export const Wrapper = styled.article`
 `;
 
 export const Title = styled.div`
-  margin-bottom: 8.75rem;
+  margin-bottom: 7rem;
   ${applyMediaQuery("mobile")} {
     margin-bottom: 3rem;
   }
   h2 {
     font-family: "Pretendard-Bold";
-    font-size: 5rem;
-    margin-bottom: 2rem;
+    font-size: 4rem;
+    margin-bottom: 1.6rem;
     color: ${colors.white};
     ${applyMediaQuery("mobile")} {
       font-size: 2rem;
@@ -47,7 +47,7 @@ export const Title = styled.div`
   }
   hgroup {
     font-family: "Pretendard-Regular";
-    font-size: 2.25rem;
+    font-size: 1.8rem;
     color: ${colors.gray2};
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
@@ -58,7 +58,7 @@ export const Title = styled.div`
 export const ReviewList = styled.section`
   display: flex;
   flex-flow: row wrap;
-  /* width: 120rem; */
+  width: 120rem;
 
   ${applyMediaQuery("mobile")} {
     display: flex;

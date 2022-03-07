@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ProcessPrevIcon } from "public/assets/icons";
 import React from "react";
 import Screen from "styles/Screen";
 
-import { ProcessTitle, StyledRoot } from "./style";
+import { ProcessPrev, ProcessTitle, StyledRoot } from "./style";
 function Title() {
   const router = useRouter();
   const PATH_NAME = router.pathname;
@@ -19,7 +18,7 @@ function Title() {
   return (
     <StyledRoot>
       <Link href={prevUrl} passHref>
-        <ProcessPrevIcon />
+        <ProcessPrev />
       </Link>
       <Screen desktop>
         <Link href={prevUrl} passHref>

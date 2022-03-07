@@ -1,4 +1,5 @@
 import { postLectureReport } from "apis/lectures.api";
+import { UseRegex } from "hooks/UseRegex";
 import { MobileQuestionModalCloseIcon, QuestionModalCloseIcon } from "public/assets/icons";
 import React, { useEffect, useState } from "react";
 import Screen from "styles/Screen";
@@ -39,9 +40,7 @@ function QuestionModal({ onCloseModal }: Props) {
   };
 
   const checkEmail = () => {
-    const emailRegExp = /^[A-Za-z0-9]([-_]?[0-9a-zA-Z])*@[A-Za-z0-9]*\.[a-zA-Z]{2,3}$/;
-
-    return emailRegExp.test(email);
+    return UseRegex().checkEmail(email);
   };
 
   const resetState = () => {

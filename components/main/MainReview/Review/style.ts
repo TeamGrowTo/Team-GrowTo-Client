@@ -4,16 +4,16 @@ import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.figure<{ isTransparent: boolean; isTransparentMobile: boolean }>`
   box-sizing: border-box;
-  width: 39.5rem;
-  height: 28.375rem;
-  border-radius: 3rem;
-  padding: 2.875rem 3.5rem 3.1875rem;
-  margin-bottom: 3.875rem;
-  margin-right: 2.66rem;
+  width: 31.6rem;
+  height: 22.8rem;
+  border-radius: 2.4rem;
+  padding: 2.4rem 2.8rem;
+  margin-bottom: 3.1rem;
+  margin-right: 3.2rem;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(5rem);
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40rem);
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
   position: relative;
   background-color: ${(props) =>
     props.isTransparent == true ? "rgb(225,225,225, 0.32)" : `${colors.gray1}`};
@@ -46,9 +46,9 @@ export const StyledRoot = styled.figure<{ isTransparent: boolean; isTransparentM
 
 export const Comment = styled.p`
   font-family: "Pretendard-Regular";
-  font-size: 2rem;
-  width: 32.5rem;
-  line-height: 3rem;
+  font-size: 1.6rem;
+  width: 26rem;
+  line-height: 2.4rem;
   color: ${colors.subBlack};
   ${applyMediaQuery("mobile")} {
     width: 13.6rem;
@@ -58,12 +58,12 @@ export const Comment = styled.p`
 `;
 
 export const Bottom = styled.figcaption`
-  height: 6.375rem;
+  height: 5.6rem;
   display: flex;
   align-items: center;
   position: absolute;
-  left: 3.875rem;
-  bottom: 3.1875rem;
+  left: 2.7rem;
+  bottom: 2.5rem;
   ${applyMediaQuery("mobile")} {
     height: 4rem;
     left: 1.4rem;
@@ -73,19 +73,21 @@ export const Bottom = styled.figcaption`
 
 export const Introduce = styled.address`
   font-family: "Pretendard-Regular";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: ${colors.gray6};
-  margin-left: 2rem;
-  line-height: 2.25rem;
-  width: 10.75rem;
-
-  div {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+  margin-left: 1.6rem;
+  line-height: 1.8rem;
+  width: 16rem;
 
   ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
     line-height: 1.4rem;
+
+    div {
+      width: 9rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 `;
