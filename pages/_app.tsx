@@ -1,9 +1,9 @@
 import "public/assets/fonts/font.css";
 
-import * as gtag from "libs/gtag";
+import { GTMPageView } from "libs/gtm";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { Router } from "next/router";
 import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "styled-components";
@@ -12,19 +12,15 @@ import Layout from "../components/common/Layout";
 import { GlobalStyle } from "../styles/GlobalStyles";
 import { theme } from "../styles/theme";
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
   useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url);
-    };
+    const handleRouteChange = (url: string) => GTMPageView(url);
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+    Router.events.on("routeChangeComplete", handleRouteChange);
 
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      Router.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, [router.events]);
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
