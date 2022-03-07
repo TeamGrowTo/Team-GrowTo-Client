@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta property="og:type" content="website" />
           <meta
             property="og:image"
-            content="https://user-images.githubusercontent.com/60960130/155514989-13974572-f474-41a9-8b11-09cd82d9320a.png"
+            content="https://user-images.githubusercontent.com/60960130/156963144-d1eb3c4b-4ba5-4db0-a281-aa23bc60afe0.png"
           />
         </Head>
         <Layout>
