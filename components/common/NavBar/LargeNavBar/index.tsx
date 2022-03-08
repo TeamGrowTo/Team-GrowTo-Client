@@ -77,18 +77,6 @@ function LargeNavBar() {
             </NavItem>
           </Link>
           <Link
-            href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
-            passHref
-          >
-            <NavItem
-              target="_blank"
-              pathName={router.pathname}
-              href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
-            >
-              ABOUT
-            </NavItem>
-          </Link>
-          <Link
             href="https://docs.google.com/forms/d/e/1FAIpQLSfKYVx60U_JMVBjJPgmCLS6CbcN1WaVuiMZ3Fi2YN6VCA5W-Q/viewform"
             passHref
           >
@@ -98,6 +86,18 @@ function LargeNavBar() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfKYVx60U_JMVBjJPgmCLS6CbcN1WaVuiMZ3Fi2YN6VCA5W-Q/viewform"
             >
               후기작성
+            </NavItem>
+          </Link>
+          <Link
+            href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+            passHref
+          >
+            <NavItem
+              target="_blank"
+              pathName={router.pathname}
+              href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+            >
+              ABOUT
             </NavItem>
           </Link>
         </NavItemWrapper>

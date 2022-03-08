@@ -79,16 +79,8 @@ function SmallNavBar() {
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/request">
+                <Link href="/request" passHref>
                   <LinkA>비교요청</LinkA>
-                </Link>
-              </NavMenuListItem>
-              <NavMenuListItem>
-                <Link
-                  href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
-                  passHref
-                >
-                  <LinkA target="_blank">ABOUT</LinkA>
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
@@ -97,6 +89,14 @@ function SmallNavBar() {
                   passHref
                 >
                   <LinkA target="_blank">후기작성</LinkA>
+                </Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link
+                  href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+                  passHref
+                >
+                  <LinkA target="_blank">ABOUT</LinkA>
                 </Link>
               </NavMenuListItem>
             </NavMenuList>
