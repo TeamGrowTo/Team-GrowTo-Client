@@ -34,7 +34,7 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  width: 48rem;
+  width: 49rem;
   color: ${colors.gray2};
   line-height: 3.8rem;
   font-size: 2.8rem;
