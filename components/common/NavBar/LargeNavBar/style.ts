@@ -43,6 +43,10 @@ const NavItem = styled.a<{ pathName: string; href: string }>`
   color: #606060;
   border-bottom: ${(props) =>
     props.pathName === props.href ? `solid 3px ${colors.gray5}` : "none"};
+  &:hover {
+    color: ${colors.subBlack};
+    transition: all 300ms ease-in;
+  }
 `;
 
 const LogoWrapper = styled.a`
