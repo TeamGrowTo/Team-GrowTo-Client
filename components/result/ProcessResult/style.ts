@@ -42,7 +42,7 @@ export const Description = styled.p`
   text-align: center;
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
-    width: 20rem;
+    width: 22rem;
     height: auto;
     line-height: 1.8rem;
   }
