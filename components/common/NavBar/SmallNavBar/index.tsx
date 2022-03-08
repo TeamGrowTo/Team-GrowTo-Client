@@ -79,8 +79,16 @@ function SmallNavBar() {
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
-                <Link href="/request">
+                <Link href="/request" passHref>
                   <LinkA>비교요청</LinkA>
+                </Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
+                <Link
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfKYVx60U_JMVBjJPgmCLS6CbcN1WaVuiMZ3Fi2YN6VCA5W-Q/viewform"
+                  passHref
+                >
+                  <LinkA target="_blank">후기작성</LinkA>
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
