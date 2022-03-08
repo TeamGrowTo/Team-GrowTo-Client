@@ -77,7 +77,7 @@ export const Introduce = styled.address`
   color: ${colors.gray6};
   margin-left: 1.6rem;
   line-height: 1.8rem;
-  width: 8.9rem;
+  width: 100%;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
