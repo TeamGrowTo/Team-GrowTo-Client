@@ -33,7 +33,13 @@ function LargeCardBox({ lecture }: Props) {
   return (
     <StyledRoot>
       <LectureTitleBox>
-        <LectureTitleName>{LectureTitle}</LectureTitleName>
+        <LectureTitleName>
+          <Link href={url} passHref>
+            <a href={url} target="_blank" rel="noreferrer">
+              {LectureTitle}
+            </a>
+          </Link>
+        </LectureTitleName>
       </LectureTitleBox>
       <LectureInfoBox>
         <div>
@@ -52,7 +58,7 @@ function LargeCardBox({ lecture }: Props) {
             <LectureInfoData>{reviewTime}</LectureInfoData>
           </LectureInfoWrapper>
           <LectureInfoWrapper>
-            <LectureInfoLongName>반복 시청기간</LectureInfoLongName>
+            <LectureInfoLongName>수강 기간</LectureInfoLongName>
             <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
           </LectureInfoWrapper>
         </div>

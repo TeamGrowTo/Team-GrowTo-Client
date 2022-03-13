@@ -48,7 +48,7 @@ function SmallCardBox({ lecture }: Props) {
           <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
-          <LectureInfoName>반복 시청 기간</LectureInfoName>
+          <LectureInfoName>수강 기간</LectureInfoName>
           <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
