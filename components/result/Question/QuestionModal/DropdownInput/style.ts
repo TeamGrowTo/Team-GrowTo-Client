@@ -14,7 +14,6 @@ export const Dropdown = styled.article<{ flagDropdown: boolean }>`
   border-radius: 0 0 2.8rem 2.8rem;
   ${applyMediaQuery("mobile")} {
     top: 7rem;
-    height: 13.1rem;
   }
 
   & > button {

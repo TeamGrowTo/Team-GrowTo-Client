@@ -5,7 +5,7 @@ export const BackGround = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 150;
   background: ${colors.subBlack};
   opacity: 0.7;
   width: 100vw;

@@ -12,7 +12,7 @@ interface Props {
   onDifferenceChange: (index: number) => void;
 }
 
-const dropdownList = ["강의 가격", "강의 정보", "사라진 강의"];
+const dropdownList = ["강의 가격", "강의 정보", "사라진 강의", "기타"];
 
 function DropdownInput({
   flagDropdown,

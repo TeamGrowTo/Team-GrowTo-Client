@@ -7,7 +7,7 @@ export const StyledRoot = styled.section`
   margin: 0 auto;
   top: 50%;
   left: 50%;
-  z-index: 100;
+  z-index: 151;
   transform: translate(-50%, -50%);
   width: 120rem;
   height: 54.2rem;

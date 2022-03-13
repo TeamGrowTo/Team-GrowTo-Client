@@ -23,8 +23,9 @@ function Footer() {
           <ServiceIntroWrapper>
             <LogoIcon />
             <ServiceIntro>
-              IT강의 비교 서비스 그로투입니다. <br />
-              간편하고 빠르게 나에게 맞는 IT강의를 찾아보세요!
+              IT강의 비교 서비스, 그로투
+              <br />
+              강의 찾는 시간 줄이고 성장에만 집중하세요
             </ServiceIntro>
           </ServiceIntroWrapper>
           <ServiceMenuBox>

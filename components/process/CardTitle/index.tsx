@@ -25,7 +25,7 @@ function CardTitle() {
     <StyledRoot>
       <CardText>
         <p>{categoryState?.categoryName} 실력 성장을 위한</p>
-        <p>{skillState?.skillName} 강의 찾기</p>
+        <p>&#91;{skillState?.skillName}&#93; 강의 찾기</p>
       </CardText>
       <Screen desktop>
         {PATH_NAME === "/processTag" ? (

@@ -11,10 +11,10 @@ export const BackGround = styled.div<{ isBlur: boolean }>`
   max-height: 100%;
   opacity: ${(props) => (props.isBlur ? 0.7 : undefined)};
   background-color: ${(props) => (props.isBlur ? "rgba(0,0,0,0.7)" : undefined)};
-  z-index: 99;
+  z-index: 150;
 `;
 export const Wrapper = styled.div`
-  z-index: 100;
+  z-index: 151;
   position: fixed;
   top: 0;
   right: 0;
