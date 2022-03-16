@@ -30,7 +30,10 @@ import { calcFontSize } from "./calcFontSize.mjs";
       startIndex = RegexStartIndex + lastIndex;
       lastIndex = fileContents.indexOf("rem", startIndex);
 
-      fileContents = replaceValue(fileContents, startIndex, lastIndex);
+      const replaceResult = replaceValue(fileContents, startIndex, lastIndex);
+
+      fileContents = replaceResult.replaceFile;
+      lastIndex = startIndex + replaceResult.replaceStringLen + 3;
     }
 
     return fileContents;
@@ -45,11 +48,14 @@ import { calcFontSize } from "./calcFontSize.mjs";
   };
 
   const replaceValue = (str, start, end) => {
-    const frontStr = str.substring(0, start + 1);
+    const frontStr = str.substring(0, start);
     const backStr = str.substring(end);
-    const transSize = calcFontSize(Number(str.substring(start + 2, end)));
+    const transSize = calcFontSize(Number(str.substring(start, end)));
 
-    return `${frontStr} ${transSize + backStr}`;
+    return {
+      replaceFile: `${frontStr}${transSize + backStr}`,
+      replaceStringLen: String(transSize).length,
+    };
   };
 
   const writeFile = (path) => {
