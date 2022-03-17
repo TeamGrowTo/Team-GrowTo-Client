@@ -40,9 +40,9 @@ export const LectureInfoBox = styled(LectureTitleBox)`
   justify-content: space-between;
 `;
 
-export const LectureDateBox = styled(LectureTitleBox)`
+export const LectureSiteBox = styled(LectureTitleBox)`
   min-width: 9rem;
-  width: 10.3rem;
+  width: 12.4rem;
   padding: 0;
   justify-content: center;
   flex-direction: column;

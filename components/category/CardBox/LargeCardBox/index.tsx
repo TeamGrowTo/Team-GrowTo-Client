@@ -4,13 +4,13 @@ import React from "react";
 import { LectureDataType } from "types/info.type";
 
 import {
-  LectureDateBox,
   LectureInfoBox,
   LectureInfoData,
   LectureInfoLongName,
   LectureInfoShortName,
   LectureInfoWrapper,
   LectureLinkBtn,
+  LectureSiteBox,
   LectureTag,
   LectureTagBox,
   LectureTitleBox,
@@ -24,7 +24,7 @@ interface Props {
 }
 
 function LargeCardBox({ lecture }: Props) {
-  const { LectureTitle, time, price, duration, reviewTime, startYear, tags, url } = lecture;
+  const { LectureTitle, time, price, duration, startYear, tags, url, site } = lecture;
 
   //총 소요시간 -1 : 미표기
   // 개설연도 -1 : 미표기
@@ -54,8 +54,8 @@ function LargeCardBox({ lecture }: Props) {
         </div>
         <div>
           <LectureInfoWrapper>
-            <LectureInfoLongName>질문 응답시간</LectureInfoLongName>
-            <LectureInfoData>{reviewTime}</LectureInfoData>
+            <LectureInfoLongName>개설일</LectureInfoLongName>
+            <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
           </LectureInfoWrapper>
           <LectureInfoWrapper>
             <LectureInfoLongName>수강 기간</LectureInfoLongName>
@@ -63,10 +63,10 @@ function LargeCardBox({ lecture }: Props) {
           </LectureInfoWrapper>
         </div>
       </LectureInfoBox>
-      <LectureDateBox>
-        <LectureInfoShortName>개설일</LectureInfoShortName>
-        <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
-      </LectureDateBox>
+      <LectureSiteBox>
+        <LectureInfoShortName>강의 사이트</LectureInfoShortName>
+        <LectureInfoData>{site}</LectureInfoData>
+      </LectureSiteBox>
       <LectureTagBox>
         <TagWrapper>
           {tags.map((tag) => (
