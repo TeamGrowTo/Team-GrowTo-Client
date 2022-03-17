@@ -24,7 +24,7 @@ export const LectureTitleBox = styled.div`
   align-items: center;
   justify-content: center;
   border-right: 1px solid #bfd8ff;
-  width: 34rem;
+  width: 38rem;
   margin: 2.9rem 0;
 `;
 
