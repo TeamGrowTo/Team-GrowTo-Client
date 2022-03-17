@@ -24,7 +24,7 @@ export const LectureTitleBox = styled.div`
   align-items: center;
   justify-content: center;
   border-right: 1px solid #bfd8ff;
-  width: 25.9rem;
+  width: 34rem;
   margin: 2.9rem 0;
 `;
 
@@ -54,7 +54,7 @@ export const LectureSiteBox = styled(LectureTitleBox)`
 `;
 
 export const LectureTagBox = styled(LectureInfoBox)`
-  min-width: 27rem;
+  min-width: 26rem;
   width: 50.2rem;
   align-items: center;
   padding: 0 2.4rem;
@@ -63,7 +63,6 @@ export const LectureTagBox = styled(LectureInfoBox)`
 `;
 
 export const LectureTitleName = styled.h3`
-  width: 19.4rem;
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;
   line-height: 2.8rem;
