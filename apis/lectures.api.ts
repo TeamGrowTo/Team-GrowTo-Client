@@ -120,6 +120,7 @@ export const getLectureDataList = async (categoryId: number | null, skillId: num
           startYear: data.startYear,
           tags: data.tags,
           url: data.url,
+          site: data.site,
         };
       });
     } else {
@@ -153,6 +154,7 @@ export const getSortingLectureDataList = async (
         startYear: data.startYear,
         tags: data.tags,
         url: data.url,
+        site: data.site,
       };
     });
   } else {
