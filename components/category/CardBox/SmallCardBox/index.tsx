@@ -20,7 +20,7 @@ interface Props {
   lecture: LectureDataType;
 }
 function SmallCardBox({ lecture }: Props) {
-  const { LectureTitle, time, price, duration, reviewTime, startYear, tags, url } = lecture;
+  const { LectureTitle, time, site, price, duration, startYear, tags, url } = lecture;
 
   return (
     <StyledRoot>
@@ -40,20 +40,20 @@ function SmallCardBox({ lecture }: Props) {
           <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
-          <LectureInfoName>질문 응답시간</LectureInfoName>
-          <LectureInfoData>{reviewTime}</LectureInfoData>
+          <LectureInfoName>개설일</LectureInfoName>
+          <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
           <LectureInfoName>가격</LectureInfoName>
           <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
-          <LectureInfoName>반복 시청 기간</LectureInfoName>
+          <LectureInfoName>수강 기간</LectureInfoName>
           <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
-          <LectureInfoName>개설일</LectureInfoName>
-          <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
+          <LectureInfoName>강의 사이트</LectureInfoName>
+          <LectureInfoData>{site}</LectureInfoData>
         </LectureInfoWrapper>
       </LectureInfoBox>
       <TagWrapper>

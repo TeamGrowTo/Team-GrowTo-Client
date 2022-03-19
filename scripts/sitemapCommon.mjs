@@ -3,9 +3,9 @@ import prettier from "prettier";
 
 (() => {
   const createdDate = new Date().toISOString();
-  const GROWTO_DOMAIN = "https://www.growto.kr/";
+  const GROWTO_DOMAIN = "https://www.growto.kr";
 
-  const pages = ["/", "/category", "/process", "/request", "./result/405"];
+  const pages = ["/", "/category", "/process", "/request", "/result/405"];
 
   const formatted = (sitemap) => prettier.format(sitemap, { parser: "html" });
 

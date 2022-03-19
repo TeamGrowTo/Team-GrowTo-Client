@@ -60,7 +60,7 @@ const LectureInfoBox = styled.div`
 const LectureInfoWrapper = styled.div`
   display: inline-flex;
   flex-direction: row;
-  min-width: 11.4rem;
+  min-width: 11.8rem;
   margin-bottom: 0.6rem;
   justify-content: space-between;
 `;
