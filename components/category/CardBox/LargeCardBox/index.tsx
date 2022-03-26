@@ -1,16 +1,21 @@
 import Link from "next/link";
-import { ArrowRight } from "public/assets/icons";
+import {
+  BookmarkIcon,
+  CalendarIcon,
+  LikeIcon,
+  MoveToIcon,
+  TimeIcon,
+  VideoIcon,
+} from "public/assets/icons";
 import React from "react";
 import { LectureDataType } from "types/info.type";
 
 import {
+  CardTop,
+  LectureInfo,
   LectureInfoBox,
   LectureInfoData,
-  LectureInfoLongName,
   LectureInfoShortName,
-  LectureInfoWrapper,
-  LectureLinkBtn,
-  LectureSiteBox,
   LectureTag,
   LectureTagBox,
   LectureTitleBox,
@@ -32,41 +37,31 @@ function LargeCardBox({ lecture }: Props) {
   // 가격단위 : 만원으로 변환 ex 19000원 => 1.9만원
   return (
     <StyledRoot>
-      <LectureTitleBox>
-        <LectureTitleName>
-          <Link href={url} passHref>
-            <a href={url} target="_blank" rel="noreferrer">
-              {LectureTitle}
-            </a>
-          </Link>
+      <CardTop>
+        <LikeIcon />
+        <BookmarkIcon />
+      </CardTop>
+      <Link href={url} passHref>
+        <LectureTitleName href={url} target="_blank" rel="noreferrer">
+          {LectureTitle}
         </LectureTitleName>
-      </LectureTitleBox>
+      </Link>
       <LectureInfoBox>
         <div>
-          <LectureInfoWrapper>
-            <LectureInfoShortName>총 소요시간</LectureInfoShortName>
-            <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
-          </LectureInfoWrapper>
-          <LectureInfoWrapper>
-            <LectureInfoShortName>가격</LectureInfoShortName>
-            <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
-          </LectureInfoWrapper>
+          <VideoIcon />
+          <LectureInfo>
+            {duration === 100000000 ? "무제한 반복 시청 가능" : `${duration}일 시청 가능`}
+          </LectureInfo>
         </div>
         <div>
-          <LectureInfoWrapper>
-            <LectureInfoLongName>개설일</LectureInfoLongName>
-            <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
-          </LectureInfoWrapper>
-          <LectureInfoWrapper>
-            <LectureInfoLongName>수강 기간</LectureInfoLongName>
-            <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
-          </LectureInfoWrapper>
+          <TimeIcon />
+          <LectureInfo>{time === -1 ? "미표기" : `총 ${time}시간`}</LectureInfo>
+        </div>
+        <div>
+          <CalendarIcon />
+          <LectureInfo>{startYear === -1 ? "미표기" : startYear}년 개설</LectureInfo>
         </div>
       </LectureInfoBox>
-      <LectureSiteBox>
-        <LectureInfoShortName>강의 사이트</LectureInfoShortName>
-        <LectureInfoData>{site}</LectureInfoData>
-      </LectureSiteBox>
       <LectureTagBox>
         <TagWrapper>
           {tags.map((tag) => (
@@ -74,10 +69,12 @@ function LargeCardBox({ lecture }: Props) {
           ))}
         </TagWrapper>
       </LectureTagBox>
+      {(price / 10000).toFixed(1)}만원
+      {site}
       <Link href={url} passHref>
-        <LectureLinkBtn target="_blank">
-          <ArrowRight />
-        </LectureLinkBtn>
+        <a href={url} target="_blank" rel="noreferrer">
+          <MoveToIcon />
+        </a>
       </Link>
     </StyledRoot>
   );
