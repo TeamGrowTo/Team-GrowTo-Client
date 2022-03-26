@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const ResultBox = styled.div`
+export const ResultBox = styled.div`
   max-width: 128rem;
   margin: 0 auto;
   padding-bottom: 9.2rem;
@@ -11,40 +11,32 @@ const ResultBox = styled.div`
   }
 `;
 
-const ResultMessage = styled.h2`
-  font-family: "Pretendard-SemiBold";
-  display: inline;
-  font-size: 3rem;
-  line-height: 6rem;
-  color: ${colors.subBlack};
-
+export const ResultTop = styled.div`
+  padding-top: 9rem;
+  display: flex;
+  justify-content: space-between;
   ${applyMediaQuery("mobile")} {
-    text-align: left;
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-    letter-spacing: -0.01em;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
-const ResultBlueMessage = styled(ResultMessage)`
-  color: ${colors.mainBlue};
+export const LectureCountBox = styled.span`
+  ${applyMediaQuery("mobile")} {
+    display: block;
+  }
 `;
 
-const NoResultMessage = styled(ResultMessage)`
-  font-family: "Pretendard-regular";
+export const NoLecture = styled.span`
+  font-family: "Pretendard-Regular";
+  font-size: 2.4rem;
+  line-height: 2.9rem;
   color: #b6b6b6;
 `;
 
-const MessageWrapper = styled.div`
-  margin: auto;
-  text-align: center;
-  padding-bottom: 4.4rem;
-  padding-top: 6.8rem;
-
-  ${applyMediaQuery("mobile")} {
-    text-align: left;
-    padding-left: 1.6rem;
-  }
+export const LectureCount = styled.span<{ color: "mainBlue" | "subBlack" }>`
+  font-family: "Pretendard-Bold";
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  color: ${(props) => colors[props.color] || colors.subBlack};
 `;
-
-export { MessageWrapper, NoResultMessage, ResultBlueMessage, ResultBox, ResultMessage };

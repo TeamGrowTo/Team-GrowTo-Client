@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
-  margin-top: 4.8rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   ${applyMediaQuery("mobile")} {
-    margin-top: 2rem;
+    margin-top: 2.4rem;
   }
 `;
 
