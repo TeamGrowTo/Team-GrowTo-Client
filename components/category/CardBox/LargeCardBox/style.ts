@@ -9,7 +9,6 @@ export const StyledRoot = styled.div`
   height: 41.6rem;
   width: 30.4rem;
   margin-bottom: 2.8rem;
-  padding: 1.7rem 1.8rem;
 
   border-radius: 2.2rem;
   background: rgba(255, 255, 255, 1);
@@ -22,7 +21,7 @@ export const StyledRoot = styled.div`
 `;
 
 export const CardTop = styled.div`
-  margin-bottom: 1.2rem;
+  padding: 1.7rem 1.8rem 1.2rem 1.8rem;
   text-align: right;
   & svg {
     cursor: pointer;
@@ -39,7 +38,7 @@ export const LectureTitleName = styled.a`
   font-size: 2.2rem;
   line-height: 3rem;
   text-align: left;
-  padding-bottom: 1rem;
+  margin: 0 1.8rem 1rem 1.8rem;
   border-bottom: 1px solid ${colors.gray2};
 `;
 
@@ -48,7 +47,7 @@ export const LectureInfoBox = styled.div`
   height: 7.2rem;
   justify-content: space-between;
   flex-direction: column;
-  margin: 1.6rem 0;
+  margin: 1.6rem 1.8rem;
   & svg {
     vertical-align: sub;
   }
@@ -101,4 +100,37 @@ export const TagWrapper = styled.div`
   ${applyMediaQuery("mobile")} {
     width: 100%;
   }
+`;
+
+export const CardBottom = styled.div`
+  height: 5.4rem;
+  margin: 0 1.8rem;
+  border-top: 1px solid ${colors.gray2};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & * {
+    vertical-align: middle;
+  }
+`;
+
+export const Site = styled.span`
+  font-family: "Pretendard-Regular";
+  font-size: 1.5rem;
+  color: ${colors.gray6};
+`;
+
+export const Price = styled.span`
+  font-family: "Pretendard-ExtraBold";
+  font-size: 1.8rem;
+  color: ${colors.mildBlack};
+`;
+
+export const PriceUnit = styled.span`
+  font-family: "Pretendard-Medium";
+  font-size: 1.4rem;
+  color: ${colors.mildBlack};
+  margin-left: 0.2rem;
+  margin-right: 1rem;
 `;

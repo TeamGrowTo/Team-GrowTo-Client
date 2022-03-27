@@ -11,15 +11,16 @@ import React from "react";
 import { LectureDataType } from "types/info.type";
 
 import {
+  CardBottom,
   CardTop,
   LectureInfo,
   LectureInfoBox,
-  LectureInfoData,
-  LectureInfoShortName,
   LectureTag,
   LectureTagBox,
-  LectureTitleBox,
   LectureTitleName,
+  Price,
+  PriceUnit,
+  Site,
   StyledRoot,
   TagWrapper,
 } from "./style";
@@ -69,11 +70,16 @@ function LargeCardBox({ lecture }: Props) {
           ))}
         </TagWrapper>
       </LectureTagBox>
-      {(price / 10000).toFixed(1)}만원
-      {site}
       <Link href={url} passHref>
-        <a href={url} target="_blank" rel="noreferrer">
-          <MoveToIcon />
+        <a href={url} target="_blank" rel="noreferrer" width="100%">
+          <CardBottom>
+            <Site>{site}</Site>
+            <div>
+              <Price>{price}</Price>
+              <PriceUnit>원</PriceUnit>
+              <MoveToIcon />
+            </div>
+          </CardBottom>
         </a>
       </Link>
     </StyledRoot>
