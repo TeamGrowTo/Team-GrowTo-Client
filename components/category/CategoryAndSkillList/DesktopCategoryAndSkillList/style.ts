@@ -21,27 +21,3 @@ export const Title = styled.h1<{ currentSkillId: number | null | undefined }>`
 
   margin-bottom: 3.6rem;
 `;
-
-export const LinkWrapper = styled.div`
-  display: flex;
-  ${applyMediaQuery("desktop")} {
-    justify-content: end;
-  }
-  ${applyMediaQuery("mobile")} {
-    display: none;
-  }
-`;
-
-export const RedirectRequestPage = styled.a`
-  display: flex;
-  align-items: center;
-  border: 0;
-  font-size: 1.4rem;
-  font-family: "Pretendard-Regular";
-  color: ${colors.gray6};
-  margin-bottom: 4.3rem;
-  cursor: pointer;
-  & > svg {
-    margin-left: 1rem;
-  }
-`;
