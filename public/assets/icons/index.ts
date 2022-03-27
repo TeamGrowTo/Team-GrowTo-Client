@@ -23,6 +23,7 @@ export { default as RequestIcon } from "./mainReportRequestIcon.png";
 export { default as RequestIcon_mobile } from "./mainReportRequestIcon-mobile.png";
 export { default as TotalIcon } from "./mainReportTotalIcon.png";
 export { default as TotalIcon_mobile } from "./mainReportTotalIcon-mobile.png";
+export { default as MainToProcessButtonIcon } from "./mainToProcessButtonIcon.png";
 export { default as MobileQuestionDropdownIcon } from "./mobileQuestionDropdownIcon.svg";
 export { default as MobileQuestionModalCloseIcon } from "./mobileQuestionModalXIcon.svg";
 export { default as MobileResultCardRightArrowIcon } from "./mobileResultCardRightArrowIcon.svg";
