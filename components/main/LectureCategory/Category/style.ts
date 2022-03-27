@@ -21,8 +21,7 @@ const Button = styled.button`
   }
 
   &:active {
-    background: linear-gradient(0deg, rgba(165, 168, 202, 0.2), rgba(165, 168, 202, 0.2)),
-      linear-gradient(180deg, #ffffff 0%, #f0f8ff 11.58%, #f6fbff 71%);
+    border: 0;
   }
 
   &:focus {

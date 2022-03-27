@@ -84,11 +84,23 @@ function MainLectureCategory() {
             <>
               <Screen desktop>
                 <div>
-                  <Image src={iconList[index]} alt="categoryIcon" width="97" height="97" />
+                  <Image
+                    src={iconList[index]}
+                    alt="categoryIcon"
+                    width="97"
+                    height="97"
+                    quality={100}
+                  />
                 </div>
               </Screen>
               <Screen mobile>
-                <Image src={iconList[index]} alt="categoryIcon" width="18" height="18" />
+                <Image
+                  src={iconList[index]}
+                  alt="categoryIcon"
+                  width="18"
+                  height="18"
+                  quality={100}
+                />
               </Screen>
               <span>{category.categoryName}</span>
             </>
