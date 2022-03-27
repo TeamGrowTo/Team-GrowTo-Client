@@ -28,9 +28,9 @@ import { CategoryWrapper, StyledRoot } from "./style";
 const iconList: StaticImageData[] = [
   MainLectureDevelopIcon,
   MainLecturePlanIcon,
-  MainLectureDataIcon,
   MainLectureDesignIcon,
   MainLectureMarketingIcon,
+  MainLectureDataIcon,
   MainLectureEtcIcon,
 ];
 
@@ -83,7 +83,9 @@ function MainLectureCategory() {
           <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
             <>
               <Screen desktop>
-                <Image src={iconList[index]} alt="categoryIcon" />
+                <div>
+                  <Image src={iconList[index]} alt="categoryIcon" width="97" height="97" />
+                </div>
               </Screen>
               <Screen mobile>
                 <Image src={iconList[index]} alt="categoryIcon" width="18" height="18" />
