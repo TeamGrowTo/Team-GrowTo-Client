@@ -23,4 +23,8 @@ export const colors = {
   gray4: "#AEAEAE",
   gray5: "#868686",
   gray6: "#585858",
+  tagTool: "#E5DCEE",
+  tagCurriculum: "#FDECC8",
+  tagProperty: "#DCEEEB",
+  tagLevel: "#FFE2DD",
 };

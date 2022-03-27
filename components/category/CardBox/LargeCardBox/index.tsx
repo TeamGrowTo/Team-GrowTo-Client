@@ -15,13 +15,12 @@ import {
   CardTop,
   LectureInfo,
   LectureInfoBox,
-  LectureTag,
-  LectureTagBox,
   LectureTitleName,
   Price,
   PriceUnit,
   Site,
   StyledRoot,
+  Tag,
   TagWrapper,
 } from "./style";
 
@@ -31,6 +30,10 @@ interface Props {
 
 function LargeCardBox({ lecture }: Props) {
   const { LectureTitle, time, price, duration, startYear, tags, url, site } = lecture;
+
+  //todo(1) : 제목 고정영역 벗어나면 ...처리 (4줄이상 제목)
+  //todo(2) : 가격 단위 반점 찍기
+  //todo(3) : 태그 종류별로 4가지 색 분류
 
   //총 소요시간 -1 : 미표기
   // 개설연도 -1 : 미표기
@@ -63,15 +66,13 @@ function LargeCardBox({ lecture }: Props) {
           <LectureInfo>{startYear === -1 ? "미표기" : startYear}년 개설</LectureInfo>
         </div>
       </LectureInfoBox>
-      <LectureTagBox>
-        <TagWrapper>
-          {tags.map((tag) => (
-            <LectureTag key={tag}>{tag}</LectureTag>
-          ))}
-        </TagWrapper>
-      </LectureTagBox>
+      <TagWrapper>
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </TagWrapper>
       <Link href={url} passHref>
-        <a href={url} target="_blank" rel="noreferrer" width="100%">
+        <a href={url} target="_blank" rel="noreferrer">
           <CardBottom>
             <Site>{site}</Site>
             <div>

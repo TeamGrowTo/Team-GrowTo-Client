@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
@@ -38,7 +37,7 @@ export const LectureTitleName = styled.a`
   font-size: 2.2rem;
   line-height: 3rem;
   text-align: left;
-  margin: 0 1.8rem 1rem 1.8rem;
+  margin: 0 1.8rem 0 1.8rem;
   border-bottom: 1px solid ${colors.gray2};
 `;
 
@@ -47,7 +46,7 @@ export const LectureInfoBox = styled.div`
   height: 7.2rem;
   justify-content: space-between;
   flex-direction: column;
-  margin: 1.6rem 1.8rem;
+  margin: 1.2rem 1.8rem 1.8rem 1.8rem;
   & svg {
     vertical-align: sub;
   }
@@ -61,31 +60,19 @@ export const LectureInfo = styled.span`
   color: ${colors.gray6};
 `;
 
-export const LectureTagBox = styled(LectureInfoBox)`
-  min-width: 26rem;
-  width: 50.2rem;
-  align-items: center;
-  padding: 0 2.4rem;
-  border: none;
-  overflow: auto;
-`;
-
-export const LectureTag = styled.span`
-  background-color: ${colors.gray2};
+export const Tag = styled.span`
+  background-color: ${colors.tagLevel};
   border-radius: 3.5rem;
-  padding: 0.5rem 1.4rem;
-  height: 2.4rem;
+  padding: 0rem 1.2rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
 
   font-family: "Pretendard-Regular";
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  text-align: center;
+  font-size: 1.5rem;
+  color: ${colors.mildBlack};
 
-  color: ${colors.subBlack};
-
-  margin-top: 0.65rem;
-  margin-bottom: 0.65rem;
-  margin-right: 0.8rem;
+  margin-bottom: 0.6rem;
+  margin-right: 0.6rem;
 
   &:last-child {
     margin-right: 0rem;
@@ -93,9 +80,11 @@ export const LectureTag = styled.span`
 `;
 
 export const TagWrapper = styled.div`
-  width: 41.6rem;
   display: flex;
+  height: 10rem;
+  padding: 0 0 0 1.8rem;
   flex-direction: row;
+  align-content: flex-start;
   flex-wrap: wrap;
   ${applyMediaQuery("mobile")} {
     width: 100%;
