@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const Button = styled.button`
+const Button = styled.a`
   font-size: 2.2rem;
   font-family: "Pretendard-SemiBold";
   display: flex;
@@ -18,14 +18,6 @@ const Button = styled.button`
     font-size: 1.4rem;
     border-radius: 1rem;
     margin-right: 1rem;
-  }
-
-  &:active {
-    border: 0;
-  }
-
-  &:focus {
-    border: 0.1rem solid ${colors.subBlack};
   }
 
   & > div {
