@@ -34,7 +34,7 @@ const iconList: StaticImageData[] = [
   MainLectureEtcIcon,
 ];
 
-const MainLectureCategory = function () {
+function MainLectureCategory() {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
 
@@ -95,6 +95,6 @@ const MainLectureCategory = function () {
       </CategoryWrapper>
     </StyledRoot>
   );
-};
+}
 
 export default MainLectureCategory;
