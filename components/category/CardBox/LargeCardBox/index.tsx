@@ -15,13 +15,14 @@ import {
   CardTop,
   LectureInfo,
   LectureInfoBox,
-  LectureTitleName,
   Price,
   PriceUnit,
   Site,
   StyledRoot,
   Tag,
   TagWrapper,
+  TitleBox,
+  TitleName,
 } from "./style";
 
 interface Props {
@@ -34,10 +35,10 @@ function LargeCardBox({ lecture }: Props) {
 
   console.log(commaPrice);
   //todo(1) : 제목 고정영역 벗어나면 ...처리 (4줄이상 제목)
-  //todo(2) : 가격 단위 반점 찍기
+  //todo(2) : 가격 단위 반점 찍기 => O toLocaleString으로 해결
   //todo(3) : 태그 종류별로 4가지 색 분류
   //todo(4) : 강의마지막 리스트 왼쪽 정렬되게 하기
-  //todo(5) : 태그영역 벗어날 시 스크롤
+  //todo(5) : 태그영역 벗어날 시 스크롤 O ( 스크롤 커스텀 )
 
   //총 소요시간 -1 : 미표기
   // 개설연도 -1 : 미표기
@@ -48,11 +49,11 @@ function LargeCardBox({ lecture }: Props) {
         <LikeIcon />
         <BookmarkIcon />
       </CardTop>
-      <Link href={url} passHref>
-        <LectureTitleName href={url} target="_blank" rel="noreferrer">
+      <TitleBox href={url} passHref>
+        <TitleName href={url} target="_blank" rel="noreferrer">
           {LectureTitle}
-        </LectureTitleName>
-      </Link>
+        </TitleName>
+      </TitleBox>
       <LectureInfoBox>
         <div>
           <VideoIcon />

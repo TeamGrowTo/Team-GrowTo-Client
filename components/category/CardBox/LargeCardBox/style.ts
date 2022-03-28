@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
@@ -30,15 +31,44 @@ export const CardTop = styled.div`
   }
 `;
 
-export const LectureTitleName = styled.a`
+export const TitleBox = styled(Link)`
+  /* width: 30.4rem; */
+  width: 26.8rem;
+  //제목 3줄이상 자르기, 말줄임표
   height: 10.4rem;
+
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+`;
+
+export const TitleName = styled.a`
+  height: 9.6rem;
+  margin: 0 1.8rem 0.8rem 1.8rem;
   font-family: "Pretendard-SemiBold";
   color: ${colors.mildBlack};
   font-size: 2.2rem;
   line-height: 3rem;
   text-align: left;
-  margin: 0 1.8rem 0 1.8rem;
+
   border-bottom: 1px solid ${colors.gray2};
+
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word; //단어 단위로 자르기
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; */
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export const LectureInfoBox = styled.div`
@@ -87,6 +117,7 @@ export const TagWrapper = styled.div`
   align-content: flex-start;
   flex-wrap: wrap;
   //scroll
+  margin-right: 0.8rem;
   overflow: auto;
   scrollbar-width: thin;
   &::-webkit-scrollbar {
