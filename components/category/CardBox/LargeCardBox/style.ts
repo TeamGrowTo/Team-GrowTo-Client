@@ -86,6 +86,20 @@ export const TagWrapper = styled.div`
   flex-direction: row;
   align-content: flex-start;
   flex-wrap: wrap;
+  //scroll
+  overflow: auto;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background-color: ${colors.gray0};
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: ${colors.gray2};
+  }
   ${applyMediaQuery("mobile")} {
     width: 100%;
   }
