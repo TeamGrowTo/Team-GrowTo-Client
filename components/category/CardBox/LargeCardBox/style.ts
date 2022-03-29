@@ -107,6 +107,13 @@ export const Tag = styled.span`
   &:last-child {
     margin-right: 0rem;
   }
+  ${applyMediaQuery("mobile")} {
+    height: 2.2rem;
+    line-height: 2.2rem;
+    padding: 0rem 0.8rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
 `;
 
 export const TagWrapper = styled.div`
@@ -133,6 +140,8 @@ export const TagWrapper = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     width: 100%;
+    height: unset;
+    padding: unset;
   }
 `;
 

@@ -7,9 +7,10 @@ const StyledRoot = styled.section`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+
   ${applyMediaQuery("mobile")} {
     margin-top: 2.4rem;
+    justify-content: center;
   }
 `;
 
