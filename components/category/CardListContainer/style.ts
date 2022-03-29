@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
-  margin-top: 5rem;
+  margin: -1rem;
+  margin-top: 6rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   ${applyMediaQuery("mobile")} {
     margin-top: 2.4rem;
   }

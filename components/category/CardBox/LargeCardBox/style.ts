@@ -8,7 +8,7 @@ export const StyledRoot = styled.div`
   flex-direction: column;
   height: 41.6rem;
   width: 30.4rem;
-  margin-bottom: 2.8rem;
+  margin: 1.4rem 1rem;
 
   border-radius: 2.2rem;
   background: rgba(255, 255, 255, 1);

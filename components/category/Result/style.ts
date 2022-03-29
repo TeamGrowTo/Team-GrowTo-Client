@@ -3,9 +3,19 @@ import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 export const ResultBox = styled.div`
-  max-width: 128rem;
+  width: 128rem;
   margin: 0 auto;
   padding-bottom: 9.2rem;
+
+  @media (max-width: 1024px) {
+    //카드 3개 넓이
+    width: 96rem;
+  }
+
+  @media (max-width: 720px) {
+    width: calc(100% - 2rem);
+  }
+
   ${applyMediaQuery("mobile")} {
     padding-bottom: 4.9rem;
   }
