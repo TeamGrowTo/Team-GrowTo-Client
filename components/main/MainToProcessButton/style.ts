@@ -10,6 +10,7 @@ export const StyledRoot = styled.section`
 
 export const ButtonWrapper = styled.article`
   width: 93.2rem;
+  max-width: 100%;
   height: 9.6rem;
   background: linear-gradient(90deg, #45a6ff 2.09%, #45deff 100%);
   color: white;

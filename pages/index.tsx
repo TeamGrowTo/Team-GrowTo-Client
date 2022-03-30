@@ -8,6 +8,7 @@ import Share from "components/main/Share";
 import type { NextPage } from "next";
 import { useResetRecoilState } from "recoil";
 import {
+  currentCategoryState,
   currentSkillState,
   currentSortingState,
   isDisableState,
@@ -22,9 +23,11 @@ const Home: NextPage = () => {
   const resetIsDisable = useResetRecoilState(isDisableState);
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetIsSelected = useResetRecoilState(isSelectedState);
+  const resetCurrentCategoryData = useResetRecoilState(currentCategoryState);
   const resetCurrentSkillData = useResetRecoilState(currentSkillState);
 
   const resetData = () => {
+    resetCurrentCategoryData();
     resetCurrentSkillData();
     resetLectureListData();
     resetIsDisable();
