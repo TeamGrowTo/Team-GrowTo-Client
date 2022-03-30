@@ -49,10 +49,11 @@ const CategoryWrapper = styled.div`
   flex-wrap: wrap;
 
   & > * {
-    margin-right: 6.4rem;
+    margin-right: 3.6rem;
 
     ${applyMediaQuery("mobile")} {
       margin-right: 0.8rem;
+      margin-bottom: 0.8rem;
     }
   }
   & > *:last-child {

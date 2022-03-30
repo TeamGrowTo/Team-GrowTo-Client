@@ -82,26 +82,9 @@ function MainLectureCategory() {
         {categoryList?.map((category, index) => (
           <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
             <>
-              <Screen desktop>
-                <div>
-                  <Image
-                    src={iconList[index]}
-                    alt="categoryIcon"
-                    width="97"
-                    height="97"
-                    quality={100}
-                  />
-                </div>
-              </Screen>
-              <Screen mobile>
-                <Image
-                  src={iconList[index]}
-                  alt="categoryIcon"
-                  width="18"
-                  height="18"
-                  quality={100}
-                />
-              </Screen>
+              <div>
+                <Image src={iconList[index]} alt="categoryIcon" quality={100} />
+              </div>
               <span>{category.categoryName}</span>
             </>
           </Category>

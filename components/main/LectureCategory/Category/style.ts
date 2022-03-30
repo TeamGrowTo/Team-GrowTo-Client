@@ -3,6 +3,8 @@ import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const Button = styled.a`
+  width: 12.5rem;
+  height: 16.4rem;
   font-size: 2.2rem;
   font-family: "Pretendard-SemiBold";
   display: flex;
@@ -23,6 +25,11 @@ const Button = styled.a`
   & > div {
     width: 9.7rem;
     height: 9.7rem;
+
+    ${applyMediaQuery("mobile")} {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 
   & > span {
@@ -30,8 +37,10 @@ const Button = styled.a`
     margin-top: 1.6rem;
     font-family: "Pretendard-SemiBold";
     font-size: 2.2rem;
+
     ${applyMediaQuery("mobile")} {
       font-family: "Pretendard-Medium";
+      font-size: 1rem;
     }
   }
 `;
