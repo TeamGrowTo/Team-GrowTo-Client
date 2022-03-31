@@ -1,8 +1,8 @@
-export { default as TenSecondIcon } from "./10second.svg";
 export { default as ArrowDown } from "./arrowDown.svg";
 export { default as ArrowRight } from "./arrowRight.svg";
 export { default as ArrowUp } from "./arrowUp.svg";
 export { default as CategoryRightArrowIcon } from "./categoryRightArrowIcon.svg";
+export { default as CategoryToProcessIcon } from "./categoryToProcessIcon.png";
 export { default as CloseButton } from "./closeButton.svg";
 export { default as DesktopQuestionDropdownIcon } from "./desktopQuestionDropdownIcon.svg";
 export { default as Dropdown } from "./dropdown.svg";
@@ -10,8 +10,6 @@ export { default as Dropdown_mobile } from "./dropdown-mobile.svg";
 export { default as EmailIcon } from "./emailIcon.svg";
 export { default as HamburgerIcon } from "./hamburgerIcon.svg";
 export { default as IcCategoryLeftArrowIcon } from "./icCategoryLeftArrow.svg";
-export { default as ICRightIcon } from "./icRight.svg";
-export { default as ICRightSmallIcon } from "./icRightSmall.svg";
 export { default as InstagramLogo } from "./InstagramLogo.svg";
 export { default as ProcessLoadingMobile } from "./loadingIconMobile.svg";
 export { default as LogoIcon } from "./logoIcon.svg";
