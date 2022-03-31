@@ -23,13 +23,13 @@ const ImageWrapper = styled.article`
 `;
 
 const TitleWrapper = styled.article`
-  width: 44.8rem;
-  margin-right: 19.4rem;
+  width: 48rem;
+  margin-right: 16.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   ${applyMediaQuery("mobile")} {
-    width: 23.2rem;
+    width: 26rem;
     margin: 0 auto;
   }
 

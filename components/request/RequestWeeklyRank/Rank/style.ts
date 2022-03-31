@@ -4,7 +4,7 @@ import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.div`
-  margin-right: 2.5rem;
+  margin-right: 2rem;
 
   ${applyMediaQuery("mobile")} {
     display: flex;
@@ -16,9 +16,9 @@ export const StyledRoot = styled.div`
 
 export const Id = styled.div`
   font-family: "Pretendard-Bold";
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: ${colors.subOrange};
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.4rem;
@@ -27,12 +27,12 @@ export const Id = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 38.125rem;
-  height: 13.5rem;
+  width: 30.5rem;
+  height: 10.8rem;
   background-color: ${colors.gray1};
-  border-radius: 3.5rem;
+  border-radius: 2.8rem;
   display: flex;
-  padding: 3rem 4.5rem;
+  padding: 1.4rem 3.6rem;
   align-items: center;
   position: relative;
   z-index: -1;
@@ -49,9 +49,9 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
   h4 {
     font-family: "Pretendard-Bold";
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: ${colors.gray5};
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
@@ -60,15 +60,16 @@ export const Title = styled.div`
   h3 {
     font-family: "Pretendard-Bold";
     color: ${colors.subBlack};
-    font-size: 2.5rem;
+    font-size: 2rem;
     ${applyMediaQuery("mobile")} {
       font-size: 1.4rem;
     }
   }
 `;
+
 export const Line = styled(RequestRankLine)`
   position: absolute;
-  left: 20.5rem;
+  left: 16.4rem;
 `;
 
 export const MobileLine = styled(RequestRankLine_mobile)`
@@ -77,12 +78,12 @@ export const MobileLine = styled(RequestRankLine_mobile)`
 `;
 
 export const RequestNumber = styled.div`
-  font-size: 2rem;
+  font-size: 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  right: 4.5rem;
+  right: 3.6rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
@@ -91,7 +92,7 @@ export const RequestNumber = styled.div`
 
   h5 {
     font-family: "Pretendard-Bold";
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 
     ${applyMediaQuery("mobile")} {
       margin-bottom: 0.2rem;
@@ -101,7 +102,7 @@ export const RequestNumber = styled.div`
 
 export const Number = styled.div`
   font-family: "Pretendard-Regular";
-  font-size: 2rem;
+  font-size: 1.6rem;
   display: flex;
 
   ${applyMediaQuery("mobile")} {

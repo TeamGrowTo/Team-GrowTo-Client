@@ -40,13 +40,18 @@ function ProcessResult({
       <ComparisonImgWrapper>
         <Image src={ComparisonImg} alt="comparison" width="428" height="497" quality="100" />
       </ComparisonImgWrapper>
-      <Title>그로투 강의 비교</Title>
+      <Title>맞춤 강의 찾기 결과</Title>
       <Description>
-        <LectureCount>총 {LectureDataList?.length}개</LectureCount>의{" "}
-        <LectureSkillData>
-          {categoryName} {skillName} 강의 중
-        </LectureSkillData>{" "}
-        나에게 <ResultData>딱 맞는 {listLength}가지</ResultData> 강의에요!
+        <div>
+          <LectureCount>총 {LectureDataList?.length}개</LectureCount>의{" "}
+          <LectureSkillData>
+            [{categoryName} {skillName}]
+          </LectureSkillData>{" "}
+          강의 중
+        </div>
+        <div>
+          나에게 <ResultData>딱 맞는 {listLength}가지</ResultData> 강의를 가져왔어요
+        </div>
       </Description>
       <Screen desktop>
         <ResultCardWrapper resultDataCount={lectureResultList?.length || 0}>

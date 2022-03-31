@@ -13,7 +13,7 @@ const StyledRoot = styled.nav`
 
   position: fixed;
   top: 0;
-  z-index: 90;
+  z-index: 120;
 `;
 
 const ButtonWrapper = styled.button`
@@ -25,7 +25,7 @@ const NavMenuList = styled.ul`
   top: 4.8rem;
   right: 0;
   width: 100%;
-  height: 20rem;
+  height: 25rem;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,7 @@ const NavMenuList = styled.ul`
   text-align: center;
   align-items: center;
   z-index: 1000;
+  transition: all 600ms ease-in-out;
 `;
 
 const NavMenuListItem = styled.li`
@@ -42,6 +43,7 @@ const NavMenuListItem = styled.li`
   font-size: 1.6rem;
   line-height: 5.1rem;
   letter-spacing: -0.05em;
+  transition: all 100ms;
 
   color: #606060;
 

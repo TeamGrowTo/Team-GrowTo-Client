@@ -5,7 +5,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 24rem;
+  height: 19.2rem;
   background-color: ${colors.subOrange};
   background-image: url("/assets/images/requestBannerBackground.png");
   display: flex;
@@ -19,7 +19,7 @@ export const StyledRoot = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 87.25rem;
+  width: 69.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,8 +29,8 @@ export const Wrapper = styled.div`
 
   p {
     font-family: "Pretendard-Bold";
-    font-size: 5rem;
-    line-height: 6.5rem;
+    font-size: 4rem;
+    line-height: 5rem;
     color: ${colors.white};
     display: flex;
 
