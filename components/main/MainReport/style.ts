@@ -5,7 +5,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100vw;
-  height: 60.3rem;
+  height: 83.3rem;
   max-width: 100%;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
@@ -17,7 +17,9 @@ export const StyledRoot = styled.section`
   }
 `;
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.div``;
+
+export const ReportBox = styled.article`
   width: 96rem;
   height: 40rem;
   background: rgba(255, 255, 255, 0.36);
@@ -41,4 +43,63 @@ export const LineWrapper = styled.figure`
   ${applyMediaQuery("mobile")} {
     margin-top: 0;
   }
+`;
+
+export const ShareBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 96rem;
+  ${applyMediaQuery("mobile")} {
+    width: 32.8rem;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > p {
+    color: ${colors.subBlack};
+    font-size: 3.6rem;
+    font-family: "Pretendard-ExtraBold";
+    margin: 3.2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  & > p > span {
+    color: ${colors.mainBlue};
+  }
+  ${applyMediaQuery("mobile")} {
+    flex-direction: column;
+    & > p {
+      font-size: 1.8rem;
+      font-family: "Pretendard-Bold";
+      margin: 2rem;
+    }
+  }
+`;
+
+export const ShareButton = styled.button`
+  width: 26rem;
+  height: 8.8rem;
+  background: ${colors.mainBlue};
+  border-radius: 5rem;
+  font-size: 2.4rem;
+  font-family: "Pretendard-SemiBold";
+  color: white;
+  :hover {
+    cursor: pointer;
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.4rem;
+  }
+`;
+
+export const Logo = styled.div`
+  background-image: url("/assets/images/mainGrowtoLogo.png");
 `;
