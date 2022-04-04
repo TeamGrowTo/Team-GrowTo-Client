@@ -1,6 +1,6 @@
+import { ProcessPrevIcon } from "public/assets/icons";
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
-
 export const StyledRoot = styled.header`
   position: relative;
   display: flex;
@@ -22,5 +22,11 @@ export const ProcessTitle = styled.h2`
   ${applyMediaQuery("mobile")} {
     font-size: 2.2rem;
     left: calc(50% - 6rem);
+  }
+`;
+
+export const ProcessPrev = styled(ProcessPrevIcon)`
+  ${applyMediaQuery("mobile")} {
+    margin-left: 1.4rem;
   }
 `;
