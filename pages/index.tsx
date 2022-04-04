@@ -12,8 +12,8 @@ const Home: NextPage = () => {
       <Banner />
       <MainLectureCategory />
       <MainReport />
-      <MainReview />
-      <Share />
+      {/* <MainReview />
+      <Share /> */}
     </div>
   );
 };
