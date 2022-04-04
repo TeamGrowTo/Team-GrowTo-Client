@@ -20,12 +20,11 @@ import { GrowtoLogo } from "public/assets/images";
 import React, { useEffect, useState } from "react";
 import Screen from "styles/Screen";
 
-import { ShareBox } from "../Share/style";
 import {
   ButtonWrapper,
   LineWrapper,
-  Logo,
   ReportBox,
+  ShareBox,
   ShareButton,
   StyledRoot,
   Wrapper,
@@ -111,8 +110,11 @@ export default function MainReport() {
         </ReportBox>
         <ShareBox>
           <ButtonWrapper>
-            <Image src={GrowtoLogo} alt="그로투" />
-            <p>가 필요한 친구에게</p>
+            <div>
+              <Image src={GrowtoLogo} alt="그로투" />
+              <p>가 필요한 친구에게</p>
+            </div>
+
             <ShareButton onClick={shareUrl}>공유하기</ShareButton>
           </ButtonWrapper>
         </ShareBox>

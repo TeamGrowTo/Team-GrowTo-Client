@@ -5,7 +5,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100vw;
-  height: 83.3rem;
+  height: 104.125rem;
   max-width: 100%;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
@@ -50,7 +50,8 @@ export const ShareBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin-top: 14.6337rem;
+  /* margin: 0 auto; */
   width: 96rem;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
@@ -61,20 +62,22 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  & > p {
-    color: ${colors.subBlack};
-    font-size: 3.6rem;
-    font-family: "Pretendard-ExtraBold";
-    margin: 3.2rem;
-    justify-content: center;
-    align-items: center;
+
+  div {
+    display: flex;
+    & > p {
+      color: ${colors.subBlack};
+      font-size: 3.6rem;
+      font-family: "Pretendard-ExtraBold";
+      padding-top: 3.5rem;
+      margin-left: 1.5rem;
+      margin-right: 3rem;
+    }
   }
-  & > p > span {
-    color: ${colors.mainBlue};
-  }
+
   ${applyMediaQuery("mobile")} {
     flex-direction: column;
-    & > p {
+    div > p {
       font-size: 1.8rem;
       font-family: "Pretendard-Bold";
       margin: 2rem;
@@ -98,8 +101,4 @@ export const ShareButton = styled.button`
     height: 4rem;
     font-size: 1.4rem;
   }
-`;
-
-export const Logo = styled.div`
-  background-image: url("/assets/images/mainGrowtoLogo.png");
 `;
