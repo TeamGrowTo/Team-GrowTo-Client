@@ -90,8 +90,8 @@ export const LectureInfo = styled.span`
   color: ${colors.gray6};
 `;
 
-export const Tag = styled.span`
-  background-color: ${colors.tagLevel};
+export const Tag = styled.span<{ type: "난이도" | "사용툴" | "커리큘럼" | "강좌특성" }>`
+  background-color: ${(props) => colors[props.type]};
   border-radius: 3.5rem;
   padding: 0rem 1.2rem;
   height: 2.8rem;

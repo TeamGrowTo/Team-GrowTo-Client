@@ -23,8 +23,8 @@ export const colors = {
   gray4: "#AEAEAE",
   gray5: "#868686",
   gray6: "#585858",
-  tagTool: "#E5DCEE",
-  tagCurriculum: "#FDECC8",
-  tagProperty: "#DCEEEB",
-  tagLevel: "#FFE2DD",
+  사용툴: "#E5DCEE",
+  커리큘럼: "#FDECC8",
+  강좌특성: "#DCEEEB",
+  난이도: "#FFE2DD",
 };

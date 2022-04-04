@@ -71,7 +71,9 @@ function LargeCardBox({ lecture }: Props) {
       </LectureInfoBox>
       <TagWrapper>
         {tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
+          <Tag key={tag} type={tag.type}>
+            {tag.name}
+          </Tag>
         ))}
       </TagWrapper>
       <Link href={url} passHref>
