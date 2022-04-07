@@ -28,13 +28,13 @@ import { CategoryWrapper, StyledRoot } from "./style";
 const iconList: StaticImageData[] = [
   MainLectureDevelopIcon,
   MainLecturePlanIcon,
-  MainLectureDataIcon,
   MainLectureDesignIcon,
   MainLectureMarketingIcon,
+  MainLectureDataIcon,
   MainLectureEtcIcon,
 ];
 
-const MainLectureCategory = function () {
+function MainLectureCategory() {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
 
@@ -82,12 +82,9 @@ const MainLectureCategory = function () {
         {categoryList?.map((category, index) => (
           <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
             <>
-              <Screen desktop>
-                <Image src={iconList[index]} alt="categoryIcon" />
-              </Screen>
-              <Screen mobile>
-                <Image src={iconList[index]} alt="categoryIcon" width="18" height="18" />
-              </Screen>
+              <div>
+                <Image src={iconList[index]} alt="categoryIcon" quality={100} />
+              </div>
               <span>{category.categoryName}</span>
             </>
           </Category>
@@ -95,6 +92,6 @@ const MainLectureCategory = function () {
       </CategoryWrapper>
     </StyledRoot>
   );
-};
+}
 
 export default MainLectureCategory;
