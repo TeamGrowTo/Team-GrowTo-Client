@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { tagType } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
@@ -21,6 +22,7 @@ export const StyledRoot = styled.div`
 `;
 
 export const CardTop = styled.div`
+  /* height: 4.8rem; */
   padding: 1.7rem 1.8rem 1.2rem 1.8rem;
   text-align: right;
   & svg {
@@ -46,23 +48,17 @@ export const TitleBox = styled(Link)`
 `;
 
 export const TitleName = styled.a`
-  height: 9.6rem;
+  height: 10rem;
   margin: 0 1.8rem 0.8rem 1.8rem;
+  padding-bottom: 1rem;
   font-family: "Pretendard-SemiBold";
+
   color: ${colors.mildBlack};
   font-size: 2.2rem;
   line-height: 3rem;
   text-align: left;
-
   border-bottom: 1px solid ${colors.gray2};
-
-  /* overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-  word-wrap: break-word; //단어 단위로 자르기
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical; */
+  //제목 4줄 이상이면 자르기
   white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -73,7 +69,7 @@ export const TitleName = styled.a`
 
 export const LectureInfoBox = styled.div`
   display: flex;
-  height: 7.2rem;
+  height: 7.4rem;
   justify-content: space-between;
   flex-direction: column;
   margin: 1.2rem 1.8rem 1.8rem 1.8rem;
@@ -90,7 +86,7 @@ export const LectureInfo = styled.span`
   color: ${colors.gray6};
 `;
 
-export const Tag = styled.span<{ type: "난이도" | "사용툴" | "커리큘럼" | "강좌특성" }>`
+export const Tag = styled.span<{ type: tagType }>`
   background-color: ${(props) => colors[props.type]};
   border-radius: 3.5rem;
   padding: 0rem 1.2rem;
@@ -118,13 +114,13 @@ export const Tag = styled.span<{ type: "난이도" | "사용툴" | "커리큘럼
 
 export const TagWrapper = styled.div`
   display: flex;
-  height: 10rem;
+  height: 12rem;
   padding: 0 0 0 1.8rem;
   flex-direction: row;
   align-content: flex-start;
   flex-wrap: wrap;
   //scroll
-  margin-right: 0.8rem;
+  margin-right: 0.8rem; //스크롤 오르쪽 띄우기위해서
   overflow: auto;
   scrollbar-width: thin;
   &::-webkit-scrollbar {
@@ -138,6 +134,8 @@ export const TagWrapper = styled.div`
     border-radius: 1rem;
     background-color: ${colors.gray2};
   }
+  scrollbar-width: 0.8rem;
+  scrollbar-color: ${colors.gray2};
   ${applyMediaQuery("mobile")} {
     width: 100%;
     height: unset;

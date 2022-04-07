@@ -84,7 +84,7 @@ export const Category = styled.button<{ isSelected: boolean }>`
           color: ${colors.mainBlue};
           box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
           border: 0.1rem solid ${colors.mainBlue};
-          background: ${colors.blue4};
+          background: ${colors.btnCategoryPressed};
           ${applyMediaQuery("mobile")} {
             border: 0.1rem solid ${colors.mainBlue};
             border-radius: 1.2rem;

@@ -4,7 +4,6 @@ export const colors = {
   blue1: "#F4F9FF",
   blue2: "#E9EFFF",
   blue3: "#BFD8FF",
-  blue4: "#FBFCFF",
   blue5: "#1A4FD8",
   lightBlue: "#E9EFFF",
   subOrange: "#FF8C21",
@@ -27,4 +26,5 @@ export const colors = {
   커리큘럼: "#FDECC8",
   강좌특성: "#DCEEEB",
   난이도: "#FFE2DD",
+  btnCategoryPressed: "#FBFCFF",
 };

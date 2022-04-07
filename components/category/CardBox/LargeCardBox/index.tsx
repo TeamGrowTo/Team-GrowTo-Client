@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
-  BookmarkIcon,
+  // BookmarkIcon,
   CalendarIcon,
-  LikeIcon,
+  // LikeIcon,
   MoveToIcon,
   TimeIcon,
   VideoIcon,
@@ -33,6 +33,8 @@ function LargeCardBox({ lecture }: Props) {
   const { LectureTitle, time, price, duration, startYear, tags, url, site } = lecture;
   const commaPrice = price.toLocaleString();
 
+  console.log(tags);
+
   //todo(1) : 제목 고정영역 벗어나면 ...처리 (4줄이상 제목) O
   //todo(2) : 가격 단위 반점 찍기 => O toLocaleString으로 해결
   //todo(3) : 태그 종류별로 4가지 색 분류
@@ -45,8 +47,8 @@ function LargeCardBox({ lecture }: Props) {
   return (
     <StyledRoot>
       <CardTop>
-        <LikeIcon />
-        <BookmarkIcon />
+        {/* <LikeIcon /> */}
+        {/* <BookmarkIcon /> */}
       </CardTop>
       <TitleBox href={url} passHref>
         <TitleName href={url} target="_blank" rel="noreferrer">
@@ -71,7 +73,7 @@ function LargeCardBox({ lecture }: Props) {
       </LectureInfoBox>
       <TagWrapper>
         {tags.map((tag) => (
-          <Tag key={tag} type={tag.type}>
+          <Tag key={tag.name} type={tag.type}>
             {tag.name}
           </Tag>
         ))}
