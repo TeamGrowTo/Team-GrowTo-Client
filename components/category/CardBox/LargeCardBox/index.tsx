@@ -41,9 +41,9 @@ function LargeCardBox({ lecture }: Props) {
   //todo(4) : 강의마지막 리스트 왼쪽 정렬되게 하기
   //todo(5) : 태그영역 벗어날 시 스크롤 O ( 스크롤 커스텀 )
 
-  //총 소요시간 -1 : 미표기
-  // 개설연도 -1 : 미표기
-  // 반복시청 가능 기간 : 100,000,000 : 무제한
+  //총 소요시간 = time -1 : 미표기
+  // 개설연도 = startYear -1 : 미표기
+  // 수강 기간 = duration : 100,000,000 : 무제한
   return (
     <StyledRoot>
       <CardTop>

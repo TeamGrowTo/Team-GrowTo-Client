@@ -37,7 +37,8 @@ const MoveLinkButton = styled.a`
 const LectureTitleName = styled.h3`
   width: 90%;
   font-family: "Pretendard-Bold";
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
   line-height: 1.8rem;
   text-align: left;
   color: ${colors.subBlack};
@@ -62,21 +63,17 @@ const LectureInfoWrapper = styled.div`
   flex-direction: row;
   min-width: 11.8rem;
   margin-bottom: 0.6rem;
-  justify-content: space-between;
-`;
-
-const LectureInfoName = styled.span`
-  font-family: "Pretendard-Light";
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  color: ${colors.subBlack};
+  justify-content: flex-start;
+  & svg {
+    margin-right: 1rem;
+  }
 `;
 
 const LectureInfoData = styled.span`
   font-family: "Pretendard-Medium";
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  color: ${colors.subBlack};
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: ${colors.mildBlack};
 `;
 
 const LectureTag = styled.span`
@@ -109,7 +106,6 @@ export {
   ArrowWrapper,
   LectureInfoBox,
   LectureInfoData,
-  LectureInfoName,
   LectureInfoWrapper,
   LectureTag,
   LectureTitleBox,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SmallArrowBlue } from "public/assets/icons";
+import { CalendarIcon, SmallArrowBlue, TimeIcon, VideoIcon } from "public/assets/icons";
 import React from "react";
 import { LectureDataType } from "types/info.type";
 
@@ -8,7 +8,6 @@ import {
   ArrowWrapper,
   LectureInfoBox,
   LectureInfoData,
-  LectureInfoName,
   LectureInfoWrapper,
   // LectureTag,
   LectureTitleBox,
@@ -37,29 +36,31 @@ function SmallCardBox({ lecture }: Props) {
       </LectureTitleBox>
       <LectureInfoBox>
         <LectureInfoWrapper>
-          <LectureInfoName>총 소요시간</LectureInfoName>
-          <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
-        </LectureInfoWrapper>
-        <LectureInfoWrapper>
-          <LectureInfoName>개설일</LectureInfoName>
-          <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
-        </LectureInfoWrapper>
-        <LectureInfoWrapper>
-          <LectureInfoName>가격</LectureInfoName>
-          <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
-        </LectureInfoWrapper>
-        <LectureInfoWrapper>
-          <LectureInfoName>수강 기간</LectureInfoName>
+          <VideoIcon />
           <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
         </LectureInfoWrapper>
         <LectureInfoWrapper>
-          <LectureInfoName>강의 사이트</LectureInfoName>
+          <TimeIcon />
+          <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
+        </LectureInfoWrapper>
+        <LectureInfoWrapper>
+          <CalendarIcon />
+          <LectureInfoData>{startYear === -1 ? "미표기" : startYear + "년 개설"}</LectureInfoData>
+        </LectureInfoWrapper>
+        <LectureInfoWrapper>
+          <VideoIcon />
+          <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
+        </LectureInfoWrapper>
+        <LectureInfoWrapper>
+          <VideoIcon />
           <LectureInfoData>{site}</LectureInfoData>
         </LectureInfoWrapper>
       </LectureInfoBox>
       <TagWrapper>
         {tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
+          <Tag key={tag.name} type={tag.type}>
+            {tag.name}
+          </Tag>
         ))}
       </TagWrapper>
     </StyledRoot>
