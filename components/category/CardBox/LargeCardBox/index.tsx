@@ -68,7 +68,7 @@ function LargeCardBox({ lecture }: Props) {
         </div>
         <div>
           <CalendarIcon />
-          <LectureInfo>{startYear === -1 ? "미표기" : startYear}년 개설</LectureInfo>
+          <LectureInfo>{startYear === -1 ? "미표기" : startYear + "년 개설"}</LectureInfo>
         </div>
       </LectureInfoBox>
       <TagWrapper>

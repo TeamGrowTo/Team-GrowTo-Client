@@ -12,12 +12,12 @@ export const StyledRoot = styled.div`
   margin: 1.4rem 1rem;
 
   border-radius: 2.2rem;
-  background: rgba(255, 255, 255, 1);
+  background: white;
 
   transition: all 0.15s;
   box-shadow: 0rem 0.2rem 0.8rem 0rem rgba(0, 0, 0, 0.12);
   &:hover {
-    box-shadow: 0 0.2rem 0.8rem 0 rgba(0, 0, 0, 0.14);
+    background-color: ${colors.btnCategoryPressed};
   }
 `;
 
