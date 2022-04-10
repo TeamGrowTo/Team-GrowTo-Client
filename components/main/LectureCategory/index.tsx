@@ -30,10 +30,12 @@ function MainLectureCategory() {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const { filterCategory } = UseSorting();
 
+  const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
+
   const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
 
-    const filteredCategoryList = filterCategory(result);
+    const filteredCategoryList = filterCategory(result, categoryViewArr);
 
     setCategoryList(filteredCategoryList);
   };
