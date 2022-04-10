@@ -1,4 +1,5 @@
 export const colors = {
+  mildBlack: "#2F2F2F;",
   mainBlue: "#4579FF",
   blue1: "#F4F9FF",
   blue2: "#E9EFFF",
@@ -23,4 +24,8 @@ export const colors = {
   gray4: "#AEAEAE",
   gray5: "#868686",
   gray6: "#585858",
+  tagTool: "#E5DCEE",
+  tagCurriculum: "#FDECC8",
+  tagProperty: "#DCEEEB",
+  tagLevel: "#FFE2DD",
 };
