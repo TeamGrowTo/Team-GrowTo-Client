@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.div`
+  display: inline-flex;
   ${applyMediaQuery("mobile")} {
     max-width: 55rem;
     display: flex;
@@ -9,6 +10,7 @@ export const StyledRoot = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    margin-top: 2.2rem;
   }
 `;
 
