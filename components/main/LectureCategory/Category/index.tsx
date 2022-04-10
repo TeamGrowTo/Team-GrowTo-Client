@@ -8,12 +8,12 @@ interface Prop {
   onCategoryClick: () => void;
 }
 
-const Category = function ({ onCategoryClick, children }: Prop) {
+function Category({ onCategoryClick, children }: Prop) {
   return (
     <Link href="/category" passHref>
       <Button onClick={onCategoryClick}>{children}</Button>
     </Link>
   );
-};
+}
 
 export default Category;

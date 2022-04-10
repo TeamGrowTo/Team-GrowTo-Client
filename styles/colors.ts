@@ -1,8 +1,5 @@
-interface IColors {
-  [key: string]: string;
-}
-
-export const colors: IColors = {
+export const colors = {
+  mildBlack: "#2F2F2F;",
   mainBlue: "#4579FF",
   blue1: "#F4F9FF",
   blue2: "#E9EFFF",
@@ -26,9 +23,8 @@ export const colors: IColors = {
   gray4: "#AEAEAE",
   gray5: "#868686",
   gray6: "#585858",
-  gray7: "#2F2F2F",
-  난이도: "#FFE2DD",
-  커리큘럼: "#FDECC8",
-  강좌특성: "#DCEEEB",
-  사용툴: "#E5DCEE",
+  tagTool: "#E5DCEE",
+  tagCurriculum: "#FDECC8",
+  tagProperty: "#DCEEEB",
+  tagLevel: "#FFE2DD",
 };

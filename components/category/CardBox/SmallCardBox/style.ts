@@ -5,7 +5,7 @@ const StyledRoot = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1.8rem 1.4rem;
+  padding: 1.8rem 1.4rem 1.2rem 1.4rem;
   margin-bottom: 1.2rem;
   max-width: 32.8rem;
   min-width: 30rem;
@@ -50,7 +50,7 @@ const ArrowWrapper = styled.div`
 `;
 
 const LectureInfoBox = styled.div`
-  padding: 1.2rem 0 0.4rem 0;
+  padding: 1.2rem 0 2rem 0;
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -60,7 +60,7 @@ const LectureInfoBox = styled.div`
 const LectureInfoWrapper = styled.div`
   display: inline-flex;
   flex-direction: row;
-  min-width: 11.4rem;
+  min-width: 11.8rem;
   margin-bottom: 0.6rem;
   justify-content: space-between;
 `;
@@ -91,9 +91,18 @@ const LectureTag = styled.span`
   line-height: 1.4rem;
   text-align: center;
   color: ${colors.subBlack};
-  & + & {
-    margin-left: 0.4rem;
+
+  margin-right: 0.4rem;
+  &:last-child {
+    margin-right: 0rem;
   }
+`;
+
+export const TagWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
 `;
 
 export {
