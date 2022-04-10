@@ -9,17 +9,8 @@ import {
   MainLecturePlanIcon,
 } from "public/assets/images";
 import React, { useEffect } from "react";
-import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
-import {
-  currentCategoryState,
-  currentSkillState,
-  currentSortingState,
-  isDisableState,
-  isOpenState,
-  isSelectedState,
-  lectureCategoryState,
-  lectureDataList,
-} from "store/state";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { currentCategoryState, lectureCategoryState } from "store/state";
 import Screen from "styles/Screen";
 
 import Category from "./Category";
@@ -34,27 +25,13 @@ const iconList: StaticImageData[] = [
   MainLectureEtcIcon,
 ];
 
-function MainLectureCategory() {
+interface Props {
+  resetData: () => void;
+}
+
+function MainLectureCategory({ resetData }: Props) {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
-
-  const resetLectureListData = useResetRecoilState(lectureDataList);
-  const resetCurrentSorting = useResetRecoilState(currentSortingState);
-  const resetIsDisable = useResetRecoilState(isDisableState);
-  const resetIsOpen = useResetRecoilState(isOpenState);
-  const resetIsSelected = useResetRecoilState(isSelectedState);
-  const resetSkillData = useResetRecoilState(currentSkillState);
-
-  //분야 선택시 category페이지의 기존 skill 및 강의목록 데이터 삭제
-  const resetData = () => {
-    resetSkillData();
-    resetLectureListData();
-    resetIsDisable();
-    resetIsOpen();
-    resetCurrentSorting();
-    resetIsSelected();
-  };
-
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
 
@@ -66,6 +43,7 @@ function MainLectureCategory() {
       const result = categoryList?.filter((category) => category.id === id)[0] || null;
 
       setCurrentCategory(result);
+      //분야 선택시 category페이지의 기존 skill 및 강의목록 데이터 삭제
       resetData();
     }
   };
