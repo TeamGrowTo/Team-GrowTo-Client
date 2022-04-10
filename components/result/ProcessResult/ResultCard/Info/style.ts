@@ -38,7 +38,7 @@ export const InfoName = styled.ul`
 `;
 
 export const InfoData = styled.ul`
-  color: ${colors.gray7};
+  color: ${colors.mildBlack};
   font-size: 2rem;
   font-family: "Pretendard-Medium";
 `;

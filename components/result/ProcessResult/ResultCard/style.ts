@@ -43,7 +43,7 @@ export const LectureTitle = styled.h3`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  color: ${colors.gray7};
+  color: ${colors.mildBlack};
   font-size: 2.4rem;
   line-height: 3.4rem;
   font-family: "Pretendard-Bold";
