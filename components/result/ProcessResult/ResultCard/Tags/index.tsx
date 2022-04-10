@@ -1,21 +1,22 @@
 import React from "react";
+import { TagData } from "types/lectures.type";
 
 import { StyledRoot, Tag } from "./style";
 
 interface Props {
-  tags: string[];
+  tags: TagData[];
 }
 
-const index = function ({ tags }: Props) {
+function Tags({ tags }: Props) {
   return (
     <StyledRoot>
-      {tags.map((name: string, index: number) => (
-        <Tag key={index}>
-          <small>{name}</small>
+      {tags.map((tag, index: number) => (
+        <Tag key={index} tagType={tag.type}>
+          <small>{tag.name}</small>
         </Tag>
       ))}
     </StyledRoot>
   );
-};
+}
 
-export default index;
+export default Tags;
