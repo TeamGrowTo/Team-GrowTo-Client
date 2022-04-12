@@ -16,12 +16,11 @@ import Screen from "styles/Screen";
 import { CriteriaItem, CriteriaSelectedItem, DropDownBox, DropDownItem, StyledRoot } from "./style";
 
 interface SortingBtnProps {
-  value: SortingType;
   children: React.ReactNode;
   onClickOpenSorting: (criterial: SortingType) => void;
-  onClickSortingItem: (value: SortingType, item: SortingItemType) => void;
+  onClickSortingItem: (criterial: SortingType, item: SortingItemType) => void;
   onKeyPressSortingItem: (
-    value: SortingType,
+    criterial: SortingType,
     item: SortingItemType,
     e: React.KeyboardEvent<HTMLLIElement>,
   ) => void;
@@ -33,7 +32,6 @@ function SortingBtn({
   onClickOpenSorting,
   onClickSortingItem,
   onKeyPressSortingItem,
-  value,
   criteria,
 }: SortingBtnProps) {
   const isDisable = useRecoilValue(isDisableState);
@@ -46,26 +44,28 @@ function SortingBtn({
       onClick={() => onClickOpenSorting(criteria)}
       disabled={isDisable}
       isDisable={isDisable}
-      isSelected={isSelected[value]}
+      isSelected={isSelected[criteria]}
     >
-      <CriteriaItem>{value}</CriteriaItem>
-      {isSelected[value] && (
-        <CriteriaSelectedItem color={colors.mainBlue}>{currentSorting[value]}</CriteriaSelectedItem>
+      <CriteriaItem>{criteria}</CriteriaItem>
+      {isSelected[criteria] && (
+        <CriteriaSelectedItem color={colors.mainBlue}>
+          {currentSorting[criteria]}
+        </CriteriaSelectedItem>
       )}
-      {isSelected[value] || (
+      {isSelected[criteria] || (
         <>
-          <Screen mobile>{isOpen[value] ? <SmallArrowUp /> : <SmallArrowDown />}</Screen>
-          <Screen desktop>{isOpen[value] ? <ArrowUp /> : <ArrowDown />}</Screen>
+          <Screen mobile>{isOpen[criteria] ? <SmallArrowUp /> : <SmallArrowDown />}</Screen>
+          <Screen desktop>{isOpen[criteria] ? <ArrowUp /> : <ArrowDown />}</Screen>
         </>
       )}
-      {isOpen[value] && (
+      {isOpen[criteria] && (
         <DropDownBox>
-          {dropListName[value].map((item) => (
+          {dropListName[criteria].map((item) => (
             <DropDownItem
               tabIndex={0}
               key={item}
-              onClick={() => onClickSortingItem(value, item)}
-              onKeyPress={(e) => onKeyPressSortingItem(value, item, e)}
+              onClick={() => onClickSortingItem(criteria, item)}
+              onKeyPress={(e) => onKeyPressSortingItem(criteria, item, e)}
             >
               {item}
             </DropDownItem>
