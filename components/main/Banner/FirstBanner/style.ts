@@ -3,7 +3,7 @@ import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: flex;
   justify-content: center;

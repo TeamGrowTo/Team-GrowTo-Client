@@ -1,7 +1,7 @@
 import { StyledRoot } from "./style";
 
-function SecondBanner() {
+function ThirdBanner() {
   return <StyledRoot>aa</StyledRoot>;
 }
 
-export default SecondBanner;
+export default ThirdBanner;
