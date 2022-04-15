@@ -6,12 +6,10 @@ import SecondBanner from "./SecondBanner";
 import ThirdBanner from "./ThirdBanner";
 const Banner = function () {
   return (
-    <AutoImageSlider moveWidth="100vw">
-      <ThirdBanner></ThirdBanner>
+    <AutoImageSlider>
       <FirstBanner></FirstBanner>
       <SecondBanner></SecondBanner>
       <ThirdBanner></ThirdBanner>
-      <FirstBanner></FirstBanner>
     </AutoImageSlider>
   );
 };

@@ -3,7 +3,8 @@ import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
-  width: 100vw;
+  width: 100%;
+  /* max-width: 100%; */
   height: auto;
   display: flex;
   justify-content: center;
@@ -19,12 +20,12 @@ const StyledRoot = styled.section`
 const ImageWrapper = styled.article`
   display: flex;
   align-items: end;
-  margin-top: 3.2rem;
+  margin-top: 5.2rem;
 `;
 
 const TitleWrapper = styled.article`
-  width: 48rem;
-  margin-right: 16.2rem;
+  width: 53rem;
+  margin-right: 7.1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,9 +36,9 @@ const TitleWrapper = styled.article`
 
   & > h1 {
     color: white;
-    font-size: 5.4rem;
+    font-size: 6rem;
     font-family: "Pretendard-ExtraBold";
-    margin-bottom: 2.8rem;
+    margin-bottom: 2rem;
     line-height: 6.8rem;
     ${applyMediaQuery("mobile")} {
       font-family: "Pretendard-Bold";
@@ -51,9 +52,9 @@ const TitleWrapper = styled.article`
   & > p {
     color: ${colors.gray3};
     font-size: 2.2rem;
-    line-height: 2.2rem;
+    line-height: 2.6rem;
     letter-spacing: -0.01em;
-    font-family: "Pretendard-Medium";
+    font-family: "Pretendard-SemiBold";
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
       text-align: center;

@@ -1,42 +1,39 @@
 import styled from "styled-components";
 
-interface SliderProps {
-  page: number;
-  moveWidth: number;
-}
+export const StyledRoot = styled.article`
+  button {
+    display: none !important;
+  }
+`;
 
-export const SliderBox = styled.header`
-  width: 100vw;
-  max-width: 100%;
-  height: auto;
+export const SliderIndexWrapper = styled.aside`
   position: relative;
-  overflow-x: hidden;
-`;
-
-export const SliderWrapper = styled.article<SliderProps>`
+  top: 7rem;
+  z-index: 10;
+  width: 100%;
+  height: 2.8rem;
   display: flex;
-  /* transform: translateX(-${({ page, moveWidth }) => page * 100}rem); */
-  transition: transform linear 0s 0.3s;
+  justify-content: center;
+  & > section {
+    width: 100%;
+    max-width: 132.1rem;
+    display: flex;
+    justify-content: end;
+  }
 `;
 
-export const LeftMoveButton = styled.button`
-  position: absolute;
-  bottom: 3rem;
-  left: 40.3rem;
-  background-color: white;
-  width: 2.4rem;
+export const ButtonBox = styled.section`
+  position: relative;
+  bottom: 5.7rem;
+  width: 100%;
   height: 2.4rem;
-  opacity: 0.4;
-  border-radius: 5rem;
+  display: flex;
+  justify-content: center;
 `;
 
-export const RightMoveButton = styled.button`
-  position: absolute;
-  bottom: 3rem;
-  left: 41.5rem;
-  background-color: white;
-  width: 2.4rem;
-  height: 2.4rem;
-  opacity: 0.4;
-  border-radius: 5rem;
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  max-width: 132.1rem;
+  display: flex;
+  justify-content: start;
 `;
