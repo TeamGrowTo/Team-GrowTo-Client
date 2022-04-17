@@ -5,15 +5,12 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   ${applyMediaQuery("desktop")} {
     width: 100%;
-    /* height: 13rem; */
   }
   z-index: 100;
-  /* border-radius: 1.6rem; */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 2.8rem;
-  /* padding: 3.2rem 4.8rem; */
 
   ${applyMediaQuery("mobile")} {
     background: #f4f9ff;
@@ -45,7 +42,6 @@ export const NotSelectedCategory = styled.article`
 export const SkillWrapper = styled.div`
   width: 100%;
   max-width: 100%;
-  /* height: 6.6rem; */
   display: flex;
   flex-wrap: wrap;
   & > * {
