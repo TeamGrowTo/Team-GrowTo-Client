@@ -3,18 +3,19 @@ import { SmallArrowBlue } from "public/assets/icons";
 import React from "react";
 import { LectureDataType } from "types/info.type";
 
-import { TagWrapper } from "../LargeCardBox/style";
+import { Tag } from "../LargeCardBox/style";
 import {
   ArrowWrapper,
   LectureInfoBox,
   LectureInfoData,
   LectureInfoName,
   LectureInfoWrapper,
-  LectureTag,
+  // LectureTag,
   LectureTitleBox,
   LectureTitleName,
   MoveLinkButton,
   StyledRoot,
+  TagWrapper,
 } from "./style";
 interface Props {
   lecture: LectureDataType;
@@ -58,7 +59,7 @@ function SmallCardBox({ lecture }: Props) {
       </LectureInfoBox>
       <TagWrapper>
         {tags.map((tag) => (
-          <LectureTag key={tag}>{tag}</LectureTag>
+          <Tag key={tag}>{tag}</Tag>
         ))}
       </TagWrapper>
     </StyledRoot>
