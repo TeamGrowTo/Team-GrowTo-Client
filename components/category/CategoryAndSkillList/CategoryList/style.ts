@@ -25,9 +25,7 @@ export const StyledRoot = styled.article`
 `;
 
 export const CategoryWrapper = styled.section`
-  /* width: 100%; */
   display: flex;
-  /* border-bottom: solid 0.1rem ${colors.gray2}; */
 
   ${applyMediaQuery("mobile")} {
     flex-direction: column;
@@ -63,17 +61,9 @@ export const Category = styled.button<{ isSelected: boolean }>`
     align-items: center;
   }
 
-  /* &:active {
-    background: linear-gradient(0deg, rgba(69, 121, 255, 0.02), rgba(69, 121, 255, 0.02)), #ffffff;
-    opacity: 0.96;
-    box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
+  /* &:focus {
     border: 0.1rem solid ${colors.mainBlue};
-    color: ${colors.mainBlue};
   } */
-
-  &:focus {
-    border: 0.1rem solid ${colors.mainBlue};
-  }
 
   ${({ isSelected }) =>
     isSelected
