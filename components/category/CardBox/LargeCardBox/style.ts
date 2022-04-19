@@ -117,10 +117,12 @@ export const TagWrapper = styled.div`
   display: flex;
   padding: 0 0 0 1.8rem;
   flex-direction: row;
+  flex-grow: 1;
   align-content: flex-start;
   flex-wrap: wrap;
   //scroll
   margin-right: 0.8rem; //스크롤 오르쪽 띄우기위해서
+  margin-bottom: 0.4rem;
   overflow: auto;
   scrollbar-width: thin;
   &::-webkit-scrollbar {

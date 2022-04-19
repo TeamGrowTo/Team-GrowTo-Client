@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarIcon, MoveToIcon, SmallArrowBlue, TimeIcon, VideoIcon } from "public/assets/icons";
+import { CalendarIcon, MoveToIcon, TimeIcon, VideoIcon } from "public/assets/icons";
 import React from "react";
 import { LectureDataType } from "types/info.type";
 
