@@ -26,7 +26,7 @@ function SmallCardBox({ lecture }: Props) {
     <StyledRoot>
       <LectureTitleBox>
         <Link href={url} passHref>
-          <MoveLinkButton target="_blank">
+          <MoveLinkButton target="_blank" rel="noopener noreferrer">
             <LectureTitleName>{LectureTitle}</LectureTitleName>
             <ArrowWrapper>
               <SmallArrowBlue />
