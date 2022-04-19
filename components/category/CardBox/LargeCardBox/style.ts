@@ -7,6 +7,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 41.6rem;
   width: 30.4rem;
   margin: 1.4rem 1rem;
@@ -23,7 +24,7 @@ export const StyledRoot = styled.div`
 
 export const CardTop = styled.div`
   /* height: 4.8rem; */
-  padding: 1.7rem 1.8rem 1.2rem 1.8rem;
+  padding: 1.6rem 1.8rem 1.2rem 1.8rem;
   text-align: right;
   & svg {
     cursor: pointer;
@@ -49,7 +50,7 @@ export const TitleBox = styled(Link)`
 
 export const TitleName = styled.a`
   height: 10rem;
-  margin: 0 1.8rem 0.8rem 1.8rem;
+  margin: 0 1.7rem 0rem 1.8rem;
   padding-bottom: 1rem;
   font-family: "Pretendard-SemiBold";
 
@@ -72,7 +73,7 @@ export const LectureInfoBox = styled.div`
   height: 7.4rem;
   justify-content: space-between;
   flex-direction: column;
-  margin: 1.2rem 1.8rem 1.8rem 1.8rem;
+  margin: 1.2rem 1.8rem 1.8rem 1.9rem;
   & svg {
     vertical-align: sub;
   }

@@ -31,9 +31,6 @@ interface Props {
 
 function LargeCardBox({ lecture }: Props) {
   const { LectureTitle, time, price, duration, startYear, tags, url, site } = lecture;
-  const commaPrice = price.toLocaleString();
-
-  console.log(tags);
 
   //todo(1) : 제목 고정영역 벗어나면 ...처리 (4줄이상 제목) O
   //todo(2) : 가격 단위 반점 찍기 => O toLocaleString으로 해결
@@ -51,7 +48,7 @@ function LargeCardBox({ lecture }: Props) {
         {/* <BookmarkIcon /> */}
       </CardTop>
       <TitleBox href={url} passHref>
-        <TitleName href={url} target="_blank" rel="noreferrer">
+        <TitleName href={url} target="_blank" rel="noopener noreferrer">
           {LectureTitle}
         </TitleName>
       </TitleBox>
@@ -83,7 +80,7 @@ function LargeCardBox({ lecture }: Props) {
           <CardBottom>
             <Site>{site}</Site>
             <div>
-              <Price>{commaPrice}</Price>
+              <Price>{price.toLocaleString("ko-KR")}</Price>
               <PriceUnit>원</PriceUnit>
               <MoveToIcon />
             </div>
