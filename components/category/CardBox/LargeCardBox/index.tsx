@@ -43,10 +43,10 @@ function LargeCardBox({ lecture }: Props) {
   // 수강 기간 = duration : 100,000,000 : 무제한
   return (
     <StyledRoot>
-      <CardTop>
-        {/* <LikeIcon /> */}
-        {/* <BookmarkIcon /> */}
-      </CardTop>
+      {/* <CardTop>
+        <LikeIcon />
+        <BookmarkIcon />
+      </CardTop> */}
       <TitleBox href={url} passHref>
         <TitleName href={url} target="_blank" rel="noopener noreferrer">
           {LectureTitle}

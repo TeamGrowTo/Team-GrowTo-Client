@@ -50,7 +50,7 @@ export const TitleBox = styled(Link)`
 
 export const TitleName = styled.a`
   height: 10rem;
-  margin: 0 1.7rem 0rem 1.8rem;
+  margin: 2.2rem 1.7rem 0rem 1.8rem;
   padding-bottom: 1rem;
   font-family: "Pretendard-SemiBold";
 
@@ -115,7 +115,6 @@ export const Tag = styled.span<{ type: tagType }>`
 
 export const TagWrapper = styled.div`
   display: flex;
-  height: 12rem;
   padding: 0 0 0 1.8rem;
   flex-direction: row;
   align-content: flex-start;
@@ -155,18 +154,28 @@ export const CardBottom = styled.div`
   & * {
     vertical-align: middle;
   }
+  ${applyMediaQuery("mobile")} {
+    height: 4.8rem;
+    margin: 0;
+  }
 `;
 
 export const Site = styled.span`
   font-family: "Pretendard-Regular";
   font-size: 1.5rem;
   color: ${colors.gray6};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.4rem;
+  }
 `;
 
 export const Price = styled.span`
   font-family: "Pretendard-ExtraBold";
   font-size: 1.8rem;
   color: ${colors.mildBlack};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const PriceUnit = styled.span`
@@ -175,4 +184,7 @@ export const PriceUnit = styled.span`
   color: ${colors.mildBlack};
   margin-left: 0.2rem;
   margin-right: 1rem;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+  }
 `;
