@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { useResetRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
@@ -8,20 +8,20 @@ import {
   isDisableState,
   isOpenState,
   isSelectedState,
+  lectureCategoryState,
   lectureDataList,
 } from "store/state";
-import { LectureCategoryData } from "types/info.type";
 
 import Category from "../Category";
 import { CategoryWrapper } from "./style";
 
 interface Props {
-  categoryList: LectureCategoryData[] | null;
   iconList: StaticImageData[];
 }
 
-function CategoryList({ categoryList, iconList }: Props) {
+function CategoryList({ iconList }: Props) {
   const setCurrentCategory = useSetRecoilState(currentCategoryState);
+  const categoryList = useRecoilValue(lectureCategoryState);
 
   const resetLectureListData = useResetRecoilState(lectureDataList);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
@@ -42,9 +42,9 @@ function CategoryList({ categoryList, iconList }: Props) {
 
   const handleCategoryClick = (id: number | null) => {
     if (id) {
-      const findCurrentCategory = categoryList?.filter((category) => category.id === id)[0] || null;
+      const findCurrentCategory = categoryList?.find((category) => category.id === id);
 
-      setCurrentCategory(findCurrentCategory);
+      findCurrentCategory && setCurrentCategory(findCurrentCategory);
       resetData();
     }
   };

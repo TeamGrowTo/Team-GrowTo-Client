@@ -9,7 +9,7 @@ import {
   MainLecturePlanIcon,
 } from "public/assets/images";
 import React, { useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { lectureCategoryState } from "store/state";
 
 import CategoryList from "./CategoryList";
@@ -26,7 +26,7 @@ const iconList: StaticImageData[] = [
 
 //server에서 들고온 데이터 가공 및 icon과 매핑 등 서버에서 가져온 데이터 관리는 여기서 수행함.
 function MainLectureCategory() {
-  const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
+  const setCategoryList = useSetRecoilState(lectureCategoryState);
   const { filterCategory } = UseSorting();
 
   const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
@@ -47,7 +47,7 @@ function MainLectureCategory() {
     <StyledRoot>
       <h3>내가 찾고 싶은 강의 분야는?</h3>
       <small>10초만에 내게 맞는 강의 찾기</small>
-      <CategoryList categoryList={categoryList} iconList={iconList} />
+      <CategoryList iconList={iconList} />
     </StyledRoot>
   );
 }
