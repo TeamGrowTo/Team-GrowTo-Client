@@ -5,6 +5,7 @@ import RedirectProcessButton from "components/category/RedirectProcessButton";
 import Result from "components/category/Result";
 import { SortingText } from "components/category/SortingBox";
 import SEO from "components/common/SEO";
+import { UseSorting } from "hooks/UseCategorySorting";
 import React, { useEffect } from "react";
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
@@ -42,7 +43,11 @@ function Category() {
   const setLectureCategory = async (): Promise<void> => {
     const result = await getLectureCategoryData();
 
-    setCategoryList(result);
+    const { filterCategory } = UseSorting();
+    const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
+    const filteredCategoryList = filterCategory(result, categoryViewArr);
+
+    setCategoryList(filteredCategoryList);
   };
 
   const setLectureSkill = async (id: number): Promise<void> => {
