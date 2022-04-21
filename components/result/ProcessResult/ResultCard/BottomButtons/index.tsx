@@ -25,7 +25,7 @@ function BottomButtons({ url }: Props) {
         <Image src={ResultCardBookMarkIcon} alt="bookmarkIcon" />
       </BookMarkImageWrapper>
       <Link href={url} passHref>
-        <MoreButton target="_blank">
+        <MoreButton target="_blank" rel="noopener noreferrer">
           바로가기
           <Screen desktop>
             <ResultCardLeftArrowIcon />
