@@ -8,7 +8,7 @@ export const StyledRoot = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${colors.paleViolet};
+  background: linear-gradient(180deg, #7878c8 0%, #401a93 100%);
   overflow: hidden;
 `;
 
