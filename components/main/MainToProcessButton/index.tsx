@@ -11,8 +11,9 @@ import {
   isSelectedState,
   lectureDataList,
 } from "store/state";
+import Screen from "styles/Screen";
 
-import { ButtonWrapper, Description, StyledRoot, ToProcessButton } from "./style";
+import { ButtonWrapper, Description, ImageWrapper, StyledRoot, ToProcessButton } from "./style";
 
 function MainToProcessButton() {
   const resetLectureListData = useResetRecoilState(lectureDataList);
@@ -43,16 +44,23 @@ function MainToProcessButton() {
       <ButtonWrapper>
         <Description>
           <h3>맞춤 강의 찾기</h3>
-          <p>
-            <strong>*5초</strong> 면 나에게 맞는 강의를 찾을 수 있어요
-          </p>
+          <Screen desktop>
+            <p>
+              <strong>*5초</strong> 면 나에게 맞는 강의를 찾을 수 있어요
+            </p>
+          </Screen>
+          <Screen mobile>
+            <p>
+              <strong>*5초</strong>면 나에게 맞는 강의를 찾을 수 있어요
+            </p>
+          </Screen>
         </Description>
         <Link href="/processMain" passHref>
           <ToProcessButton onClick={handleMainToProcessButton}>
             지금 시작하기
-            <span>
+            <ImageWrapper>
               <Image src={MainToProcessButtonIcon} alt="toProcessIcon" />
-            </span>
+            </ImageWrapper>
           </ToProcessButton>
         </Link>
       </ButtonWrapper>
