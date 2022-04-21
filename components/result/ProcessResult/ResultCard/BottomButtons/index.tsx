@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Screen from "styles/Screen";
 
-import { ImageWrapper, MoreButton, StyledRoot } from "./style";
+import { BookMarkImageWrapper, HeartImageWrapper, MoreButton, StyledRoot } from "./style";
 
 interface Props {
   url: string;
@@ -18,10 +18,12 @@ interface Props {
 function BottomButtons({ url }: Props) {
   return (
     <StyledRoot>
-      <ImageWrapper>
+      <HeartImageWrapper>
         <Image src={ResultCardHeartIcon} alt="likeIcon" />
+      </HeartImageWrapper>
+      <BookMarkImageWrapper>
         <Image src={ResultCardBookMarkIcon} alt="bookmarkIcon" />
-      </ImageWrapper>
+      </BookMarkImageWrapper>
       <Link href={url} passHref>
         <MoreButton target="_blank">
           바로가기
