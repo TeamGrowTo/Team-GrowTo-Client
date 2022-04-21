@@ -6,7 +6,7 @@ export const StyledRoot = styled.button`
   position: fixed;
   bottom: 4.4rem;
   right: 8.2rem;
-  background-color: ${colors.blue6};
+  background-color: ${colors.blue7};
   color: white;
   display: flex;
   align-items: center;
