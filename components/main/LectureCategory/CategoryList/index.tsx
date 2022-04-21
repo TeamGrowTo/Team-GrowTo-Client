@@ -24,15 +24,15 @@ function CategoryList({ iconList }: Props) {
   const categoryList = useRecoilValue(lectureCategoryState);
 
   const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetCurrentSkillData = useResetRecoilState(currentSkillState);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
   const resetIsDisable = useResetRecoilState(isDisableState);
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetIsSelected = useResetRecoilState(isSelectedState);
-  const resetSkillData = useResetRecoilState(currentSkillState);
 
   //분야 선택시 category페이지의 기존 skill 및 강의목록 데이터 삭제
   const resetData = () => {
-    resetSkillData();
+    resetCurrentSkillData();
     resetLectureListData();
     resetIsDisable();
     resetIsOpen();
