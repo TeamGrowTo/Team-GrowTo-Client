@@ -27,14 +27,14 @@ export const isDisableState = atom({
   default: true,
 });
 
-export type SortingType = "총 소요시간" | "가격" | "개설일" | "반복시청 기간" | "질의응답 시간";
+export type SortingType = "총 소요시간" | "가격" | "개설일" | "수강 기간" | "질의응답 시간";
 
 //정렬하는 select형식의 button들을 만들기 위해 기준을 배열로 만든 후 리턴문에서 map 해주기
 export const sortingCriteria: SortingType[] = [
   "총 소요시간",
   "가격",
   "개설일",
-  "반복시청 기간",
+  "수강 기간",
   "질의응답 시간",
 ];
 
@@ -49,7 +49,7 @@ export const isOpenDefault = {
   "총 소요시간": false,
   가격: false,
   개설일: false,
-  "반복시청 기간": false,
+  "수강 기간": false,
   "질의응답 시간": false,
 };
 
@@ -99,7 +99,7 @@ export const dropListName: IDropListName = {
   "총 소요시간": ["긴 순", "짧은 순"],
   가격: ["높은 순", "낮은 순"],
   개설일: ["최근 순"],
-  "반복시청 기간": ["긴 순서", "짧은 순서"],
+  "수강 기간": ["긴 순서", "짧은 순서"],
   "질의응답 시간": ["빠름"],
 };
 
@@ -111,7 +111,7 @@ export const currentSortingDefault: ICurrentSortingType = {
   "총 소요시간": "",
   가격: "",
   개설일: "",
-  "반복시청 기간": "",
+  "수강 기간": "",
   "질의응답 시간": "",
 };
 

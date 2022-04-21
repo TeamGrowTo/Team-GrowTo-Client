@@ -1,6 +1,8 @@
+import CategoryToRequest from "components/category/CategoryToRequest";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentCategoryState, lectureCategoryState } from "store/state";
+import Screen from "styles/Screen";
 import { LectureCategoryData } from "types/info.type";
 
 import { Category, CategoryWrapper, StyledRoot } from "./style";
@@ -26,6 +28,9 @@ function CategoryList({ onCategoryClick }: Props) {
           </Category>
         ))}
       </CategoryWrapper>
+      <Screen desktop>
+        <CategoryToRequest />
+      </Screen>
     </StyledRoot>
   );
 }

@@ -32,7 +32,7 @@ export enum SortingText {
   //가격
   "높은 순" = "price",
   "낮은 순" = "-price",
-  //반복시청 기간
+  //수강 기간
   "긴 순서" = "repeat",
   "짧은 순서" = "-repeat",
   //질의 응답시간
@@ -112,7 +112,6 @@ function SortingBox() {
         {sortingCriteria.map((criteria) => (
           <SortingBtn
             key={criteria}
-            value={criteria}
             onClickOpenSorting={handleOpenSorting}
             onClickSortingItem={handleClickSortingItem}
             onKeyPressSortingItem={handleKeyPressSortingItem}

@@ -64,10 +64,10 @@ export const CategoryButton = styled.button<IProps>`
 export const DropdownWrapper = styled.div<{ open: boolean }>`
   display: flex;
   align-items: center;
-  width: 2rem;
   height: 2rem;
   & > svg {
     transform: rotate(${(props) => (props.open ? "180deg" : "0")});
+    transition-duration: 0.2s;
   }
 `;
 

@@ -1,22 +1,28 @@
 import Link from "next/link";
-import { ArrowRight } from "public/assets/icons";
+import {
+  BookmarkIcon,
+  CalendarIcon,
+  LikeIcon,
+  MoveToIcon,
+  TimeIcon,
+  VideoIcon,
+} from "public/assets/icons";
 import React from "react";
 import { LectureDataType } from "types/info.type";
 
 import {
-  LectureDateBox,
+  CardBottom,
+  CardTop,
+  LectureInfo,
   LectureInfoBox,
-  LectureInfoData,
-  LectureInfoLongName,
-  LectureInfoShortName,
-  LectureInfoWrapper,
-  LectureLinkBtn,
-  LectureTag,
-  LectureTagBox,
-  LectureTitleBox,
-  LectureTitleName,
+  Price,
+  PriceUnit,
+  Site,
   StyledRoot,
+  Tag,
   TagWrapper,
+  TitleBox,
+  TitleName,
 } from "./style";
 
 interface Props {
@@ -24,54 +30,61 @@ interface Props {
 }
 
 function LargeCardBox({ lecture }: Props) {
-  const { LectureTitle, time, price, duration, reviewTime, startYear, tags, url } = lecture;
+  const { LectureTitle, time, price, duration, startYear, tags, url, site } = lecture;
+  const commaPrice = price.toLocaleString();
+
+  //todo(1) : 제목 고정영역 벗어나면 ...처리 (4줄이상 제목) O
+  //todo(2) : 가격 단위 반점 찍기 => O toLocaleString으로 해결
+  //todo(3) : 태그 종류별로 4가지 색 분류
+  //todo(4) : 강의마지막 리스트 왼쪽 정렬되게 하기
+  //todo(5) : 태그영역 벗어날 시 스크롤 O ( 스크롤 커스텀 )
 
   //총 소요시간 -1 : 미표기
   // 개설연도 -1 : 미표기
   // 반복시청 가능 기간 : 100,000,000 : 무제한
-  // 가격단위 : 만원으로 변환 ex 19000원 => 1.9만원
   return (
     <StyledRoot>
-      <LectureTitleBox>
-        <LectureTitleName>{LectureTitle}</LectureTitleName>
-      </LectureTitleBox>
+      <CardTop>
+        <LikeIcon />
+        <BookmarkIcon />
+      </CardTop>
+      <TitleBox href={url} passHref>
+        <TitleName href={url} target="_blank" rel="noreferrer">
+          {LectureTitle}
+        </TitleName>
+      </TitleBox>
       <LectureInfoBox>
         <div>
-          <LectureInfoWrapper>
-            <LectureInfoShortName>총 소요시간</LectureInfoShortName>
-            <LectureInfoData>{time === -1 ? "미표기" : `${time}시간`}</LectureInfoData>
-          </LectureInfoWrapper>
-          <LectureInfoWrapper>
-            <LectureInfoShortName>가격</LectureInfoShortName>
-            <LectureInfoData>{(price / 10000).toFixed(1)}만원</LectureInfoData>
-          </LectureInfoWrapper>
+          <VideoIcon />
+          <LectureInfo>
+            {duration === 100000000 ? "무제한 반복 시청 가능" : `${duration}일 시청 가능`}
+          </LectureInfo>
         </div>
         <div>
-          <LectureInfoWrapper>
-            <LectureInfoLongName>질문 응답시간</LectureInfoLongName>
-            <LectureInfoData>{reviewTime}</LectureInfoData>
-          </LectureInfoWrapper>
-          <LectureInfoWrapper>
-            <LectureInfoLongName>반복 시청기간</LectureInfoLongName>
-            <LectureInfoData>{duration === 100000000 ? "무제한" : `${duration}일`}</LectureInfoData>
-          </LectureInfoWrapper>
+          <TimeIcon />
+          <LectureInfo>{time === -1 ? "미표기" : `총 ${time}시간`}</LectureInfo>
+        </div>
+        <div>
+          <CalendarIcon />
+          <LectureInfo>{startYear === -1 ? "미표기" : startYear}년 개설</LectureInfo>
         </div>
       </LectureInfoBox>
-      <LectureDateBox>
-        <LectureInfoShortName>개설일</LectureInfoShortName>
-        <LectureInfoData>{startYear === -1 ? "미표기" : startYear}</LectureInfoData>
-      </LectureDateBox>
-      <LectureTagBox>
-        <TagWrapper>
-          {tags.map((tag) => (
-            <LectureTag key={tag}>{tag}</LectureTag>
-          ))}
-        </TagWrapper>
-      </LectureTagBox>
+      <TagWrapper>
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </TagWrapper>
       <Link href={url} passHref>
-        <LectureLinkBtn target="_blank">
-          <ArrowRight />
-        </LectureLinkBtn>
+        <a href={url} target="_blank" rel="noreferrer">
+          <CardBottom>
+            <Site>{site}</Site>
+            <div>
+              <Price>{commaPrice}</Price>
+              <PriceUnit>원</PriceUnit>
+              <MoveToIcon />
+            </div>
+          </CardBottom>
+        </a>
       </Link>
     </StyledRoot>
   );

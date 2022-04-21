@@ -32,6 +32,7 @@ export interface ResponseLectureDataType {
   startYear: string;
   tags: string[];
   url: string;
+  site: string;
 }
 export interface LectureDataType {
   id: number;
@@ -43,6 +44,7 @@ export interface LectureDataType {
   startYear: number;
   tags: string[];
   url: string;
+  site: string;
 }
 
 export interface LectureDataListType {
