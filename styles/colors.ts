@@ -1,4 +1,8 @@
-export const colors = {
+interface IColorsIndex {
+  [key: string]: string;
+}
+
+export const colors: IColorsIndex = {
   mildBlack: "#2F2F2F;",
   mainBlue: "#4579FF",
   blue1: "#F4F9FF",
