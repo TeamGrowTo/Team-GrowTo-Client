@@ -1,24 +1,57 @@
+import { getLectureCategoryData } from "apis/info.api";
 import SEO from "components/common/SEO";
 import CardTitle from "components/process/CardTitle";
+import CategoryList from "components/process/CategoryList";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
+import { UseSorting } from "hooks/UseCategorySorting";
 import Image from "next/image";
 import Link from "next/link";
 import {
   NextArrowAble,
   NextArrowDisabled,
+  ProcessDataIcon,
+  ProcessDesignIcon,
+  ProcessDevelopIcon,
+  ProcessEtcIcon,
+  ProcessMarketingIcon,
+  ProcessPlanIcon,
   ProcessPlayIcon,
   ProcessSquareIcon,
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { processState } from "store/state";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { lectureCategoryState, processState } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 import Screen from "styles/Screen";
+const iconList: StaticImageData[] = [
+  ProcessDevelopIcon,
+  ProcessPlanIcon,
+  ProcessDesignIcon,
+  ProcessMarketingIcon,
+  ProcessDataIcon,
+  ProcessEtcIcon,
+];
 
 function Process() {
+  const setCategoryList = useSetRecoilState(lectureCategoryState);
+  const { filterCategory } = UseSorting();
+  const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
+
+  const setLectureCategory = async () => {
+    const result = await getLectureCategoryData();
+
+    const filteredCategoryList = filterCategory(result, categoryViewArr);
+
+    setCategoryList(filteredCategoryList);
+  };
+
+  useEffect(() => {
+    setLectureCategory();
+  }, []);
+
   return (
     <>
       <SEO title="그로투 - 나에게 맞는 강의 찾기 " content="당신에게 맞는 IT강의를 찾는 중이에요" />
@@ -38,11 +71,10 @@ function Process() {
           <Title></Title>
           <CardChoice>
             <CategoryWrapper>
-              <Screen desktop>
-                <p>
-                  <span>강의 분야</span>를 선택하세요
-                </p>
-              </Screen>
+              <p>
+                <span>강의 분야</span>를 선택하세요
+              </p>
+              <CategoryList iconList={iconList} />
             </CategoryWrapper>
             <SkillWrapper>
               <Screen desktop>
@@ -122,7 +154,7 @@ export const CardChoice = styled.section`
 `;
 
 export const CategoryWrapper = styled.div`
-  width: 77.4rem;
+  width: 89.2rem;
   margin: 6rem auto 0 6.4rem;
   & > p {
     font-family: "Pretendard-Bold";

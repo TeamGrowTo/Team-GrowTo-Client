@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
+
 export const StyledRoot = styled.button`
   width: 13.2rem;
   height: 12.7rem;
@@ -10,13 +11,38 @@ export const StyledRoot = styled.button`
   color: ${colors.subBlack};
   background-color: rgba(255, 255, 255, 0.7);
   margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   ${applyMediaQuery("mobile")} {
-    font-size: 1.6rem;
-    width: 22rem;
-    height: 7.2rem;
-    margin: 0.8rem 6rem;
+    width: 9.2rem;
+    height: 5.6rem;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
   }
-  :focus-visible {
-    outline: 3px solid #aaa;
+
+  & > div {
+    width: 3.6rem;
+    height: 3.6rem;
+
+    ${applyMediaQuery("mobile")} {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  & > span {
+    color: ${colors.subBlack};
+    margin-top: 1.6rem;
+    font-family: "Pretendard-SemiBold";
+    font-size: 2rem;
+
+    ${applyMediaQuery("mobile")} {
+      font-family: "Pretendard-Medium";
+      font-size: 1rem;
+    }
   }
 `;
