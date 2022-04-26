@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-const Button = styled.a`
+export const Button = styled.a`
   width: 12.5rem;
   height: 16.4rem;
   font-size: 2.2rem;
@@ -44,5 +44,3 @@ const Button = styled.a`
     }
   }
 `;
-
-export { Button };

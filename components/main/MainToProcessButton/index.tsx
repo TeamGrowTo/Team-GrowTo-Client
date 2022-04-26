@@ -2,16 +2,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { MainToProcessButtonIcon } from "public/assets/icons";
 import { useResetRecoilState } from "recoil";
-import { currentCategoryState } from "store/state";
+import {
+  currentCategoryState,
+  currentSkillState,
+  currentSortingState,
+  isDisableState,
+  isOpenState,
+  isSelectedState,
+  lectureDataList,
+} from "store/state";
 
 import { ButtonWrapper, Description, StyledRoot, ToProcessButton } from "./style";
 
-interface Props {
-  resetData: () => void;
-}
+function MainToProcessButton() {
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetCurrentCategoryData = useResetRecoilState(currentCategoryState);
+  const resetCurrentSkillData = useResetRecoilState(currentSkillState);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetIsSelected = useResetRecoilState(isSelectedState);
 
-function MainToProcessButton({ resetData }: Props) {
-  const resetCurrentSkillData = useResetRecoilState(currentCategoryState);
+  const resetData = () => {
+    resetLectureListData();
+    resetCurrentCategoryData();
+    resetCurrentSkillData();
+    resetCurrentSorting();
+    resetIsDisable();
+    resetIsOpen();
+    resetIsSelected();
+  };
 
   const handleMainToProcessButton = () => {
     resetCurrentSkillData();

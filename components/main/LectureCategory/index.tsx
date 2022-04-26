@@ -1,5 +1,5 @@
 import { getLectureCategoryData } from "apis/info.api";
-import Image from "next/image";
+import { UseSorting } from "hooks/UseCategorySorting";
 import {
   MainLectureDataIcon,
   MainLectureDesignIcon,
@@ -9,12 +9,11 @@ import {
   MainLecturePlanIcon,
 } from "public/assets/images";
 import React, { useEffect } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { currentCategoryState, lectureCategoryState } from "store/state";
-import Screen from "styles/Screen";
+import { useSetRecoilState } from "recoil";
+import { lectureCategoryState } from "store/state";
 
-import Category from "./Category";
-import { CategoryWrapper, StyledRoot } from "./style";
+import CategoryList from "./CategoryList";
+import { StyledRoot } from "./style";
 
 const iconList: StaticImageData[] = [
   MainLectureDevelopIcon,
@@ -25,27 +24,19 @@ const iconList: StaticImageData[] = [
   MainLectureEtcIcon,
 ];
 
-interface Props {
-  resetData: () => void;
-}
+//server에서 들고온 데이터 가공 및 icon과 매핑 등 서버에서 가져온 데이터 관리는 여기서 수행함.
+function MainLectureCategory() {
+  const setCategoryList = useSetRecoilState(lectureCategoryState);
+  const { filterCategory } = UseSorting();
 
-function MainLectureCategory({ resetData }: Props) {
-  const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
-  const setCurrentCategory = useSetRecoilState(currentCategoryState);
-  const setLectureCategory = async (): Promise<void> => {
+  const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
+
+  const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
 
-    setCategoryList(result);
-  };
+    const filteredCategoryList = filterCategory(result, categoryViewArr);
 
-  const handleCategoryClick = (id: number | null) => {
-    if (id) {
-      const result = categoryList?.filter((category) => category.id === id)[0] || null;
-
-      setCurrentCategory(result);
-      //분야 선택시 category페이지의 기존 skill 및 강의목록 데이터 삭제
-      resetData();
-    }
+    setCategoryList(filteredCategoryList);
   };
 
   useEffect(() => {
@@ -56,18 +47,7 @@ function MainLectureCategory({ resetData }: Props) {
     <StyledRoot>
       <h3>내가 찾고 싶은 강의 분야는?</h3>
       <small>10초만에 내게 맞는 강의 찾기</small>
-      <CategoryWrapper>
-        {categoryList?.map((category, index) => (
-          <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
-            <>
-              <div>
-                <Image src={iconList[index]} alt="categoryIcon" quality={100} />
-              </div>
-              <span>{category.categoryName}</span>
-            </>
-          </Category>
-        ))}
-      </CategoryWrapper>
+      <CategoryList iconList={iconList} />
     </StyledRoot>
   );
 }
