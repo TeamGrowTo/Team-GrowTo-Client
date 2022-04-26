@@ -1,4 +1,6 @@
 import { getLectureCategoryData } from "apis/info.api";
+import { getLectureDataList, getSortingLectureDataList } from "apis/lectures.api";
+import { SortingText } from "components/category/SortingBox";
 import SEO from "components/common/SEO";
 import CardTitle from "components/process/CardTitle";
 import CategoryList from "components/process/CategoryList";
@@ -21,7 +23,19 @@ import {
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { lectureCategoryState, processState } from "store/state";
+import {
+  currentCategoryState,
+  currentSkillState,
+  currentSortingState,
+  isDisableState,
+  isOpenState,
+  isSelectedState,
+  lectureCategoryState,
+  lectureDataList,
+  lectureSkillState,
+  processState,
+  SortingItemType,
+} from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
@@ -39,6 +53,12 @@ function Process() {
   const setCategoryList = useSetRecoilState(lectureCategoryState);
   const { filterCategory } = UseSorting();
   const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
+  const [skillList, setSkillList] = useRecoilState(lectureSkillState);
+  const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
+  const currentSorting = useRecoilValue(currentSortingState);
+  const setLectureDataList = useSetRecoilState(lectureDataList);
+  const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
+  const setIsDisable = useSetRecoilState(isDisableState);
 
   const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
@@ -46,6 +66,22 @@ function Process() {
     const filteredCategoryList = filterCategory(result, categoryViewArr);
 
     setCategoryList(filteredCategoryList);
+  };
+  const findSelectedSkill = (currentSelectedSkillId: number) => {
+    return skillList?.filter((skill) => skill.id === currentSelectedSkillId)[0] || null;
+  };
+  const handleSkillClick = async (skillId: number | null) => {
+    if (skillId) {
+      //click한 skill의 Id와 skillList의 skill들의 id와 같은 것을 result에 담는다.
+      const result = findSelectedSkill(skillId);
+      const categoryId = category?.id; //현재 선택되어 있는 category의 id.
+
+      if (categoryId) {
+        setCurrentSkill(result);
+        setIsDisable(false);
+        //1-1없으면 전체리스트 불러온다.
+      }
+    }
   };
 
   useEffect(() => {
