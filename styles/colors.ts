@@ -11,6 +11,7 @@ export const colors: IColorsIndex = {
   blue4: "#FBFCFF",
   blue5: "#1A4FD8",
   blue6: "#4579ff33",
+  blue7: "#7CA1FF",
   lightBlue: "#E9EFFF",
   subOrange: "#FF8C21",
   subBlack: "#353535",
