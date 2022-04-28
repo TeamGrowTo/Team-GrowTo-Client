@@ -9,10 +9,6 @@ interface Props {
 }
 
 function PrevArrow({ onClick }: Props) {
-  const onHandleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (onClick) onClick(e);
-  };
-
   return (
     <Button onClick={onClick}>
       <Image src={MainToProcessButtonIcon} alt="nextImageIcon" quality={100} />
