@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledRoot = styled.aside`
   position: absolute;
   top: 29.8rem;
-  left: 1.6rem;
+  right: 10rem;
   padding-top: 10.8rem;
   width: auto;
   height: 100%;
