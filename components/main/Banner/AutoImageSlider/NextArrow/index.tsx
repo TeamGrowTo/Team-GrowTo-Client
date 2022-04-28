@@ -5,7 +5,7 @@ import React from "react";
 import { Button } from "./style";
 
 interface Props {
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 function NextArrow({ onClick }: Props) {

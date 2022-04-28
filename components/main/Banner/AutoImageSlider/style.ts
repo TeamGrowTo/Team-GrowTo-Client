@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledRoot = styled.article`
-  button {
+  & > button {
     display: none !important;
   }
 `;
@@ -14,6 +14,7 @@ export const SliderIndexWrapper = styled.aside`
   height: 2.8rem;
   display: flex;
   justify-content: center;
+
   & > section {
     width: 100%;
     max-width: 132.1rem;
@@ -36,4 +37,5 @@ export const ButtonWrapper = styled.div`
   max-width: 132.1rem;
   display: flex;
   justify-content: start;
+  padding: 0;
 `;

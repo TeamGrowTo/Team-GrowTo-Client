@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.div`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,4 +11,5 @@ export const Button = styled.div`
   margin-right: 1.2rem;
   cursor: pointer;
   transform: rotate(180deg);
+  padding: 0;
 `;
