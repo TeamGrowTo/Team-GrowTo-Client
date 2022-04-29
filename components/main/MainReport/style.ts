@@ -9,9 +9,8 @@ export const StyledRoot = styled.section`
   max-width: 100%;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
-  /* position: relative; */
   ${applyMediaQuery("mobile")} {
-    height: 22.6rem;
+    height: 36.8rem;
   }
 `;
 
@@ -20,10 +19,8 @@ export const StyledBox = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 4%;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: (translate(50%, -50%)); */
+  ${applyMediaQuery("mobile")} {
+  }
 `;
 
 export const Wrapper = styled.article`
@@ -35,6 +32,7 @@ export const Wrapper = styled.article`
   border-radius: 3rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 4rem;
   margin-bottom: 11.7rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -42,6 +40,7 @@ export const Wrapper = styled.article`
     width: 32.8rem;
     height: 14.6rem;
     border-radius: 1.8rem;
+    margin-bottom: 4.7rem;
   }
 `;
 

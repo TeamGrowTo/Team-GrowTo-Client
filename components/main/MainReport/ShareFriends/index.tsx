@@ -1,7 +1,8 @@
 import Modal from "components/common/Modal";
 import Image from "next/image";
-import { GrowToLogoIcon } from "public/assets/icons";
+import { GrowToLogoIcon, GrowToLogoIcon_mobile } from "public/assets/icons";
 import React, { useState } from "react";
+import Screen from "styles/Screen";
 
 import { ButtonWrapper, ShareBox, ShareButton, StyledRoot } from "./style";
 
@@ -25,7 +26,12 @@ function Share() {
         <ButtonWrapper>
           <p>
             <span>
-              <GrowToLogoIcon />
+              <Screen desktop>
+                <GrowToLogoIcon />
+              </Screen>
+              <Screen mobile>
+                <GrowToLogoIcon_mobile />
+              </Screen>
             </span>
             가 필요한 친구에게
           </p>

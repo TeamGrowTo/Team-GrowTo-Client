@@ -7,7 +7,7 @@ export const StyledRoot = styled.section`
   /* height: 80rem; */
   font-family: "Pretendard-Regular";
   ${applyMediaQuery("mobile")} {
-    height: 34.6rem;
+    /* height: 34.6rem; */
   }
 `;
 
@@ -42,7 +42,10 @@ export const ButtonWrapper = styled.div`
     & > p {
       font-size: 1.8rem;
       font-family: "Pretendard-Bold";
-      margin: 2rem;
+      margin: 2.1rem;
+    }
+    & > p > span {
+      margin-right: 0.2rem;
     }
   }
 `;
