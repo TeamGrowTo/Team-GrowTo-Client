@@ -11,6 +11,11 @@ interface ItemObj {
   id: number;
   name: string;
 }
+
+export interface TagData {
+  name: string;
+  type: string;
+}
 export interface ResponseResultProperty {
   lectures: ResponseResultData[];
   category: ItemObj;
@@ -25,10 +30,9 @@ export interface ResponseResultData {
   reviewTime: string;
   startYear: number;
   duration: number;
-  tags: string[];
+  tags: TagData[];
   url: string;
 }
-
 export interface LectureResultData {
   name: string;
   time: number;
@@ -36,7 +40,7 @@ export interface LectureResultData {
   replay: number;
   answer: string;
   createdDate: number;
-  tags: string[];
+  tags: TagData[];
   url: string;
 }
 

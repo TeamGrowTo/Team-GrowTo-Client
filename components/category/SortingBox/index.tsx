@@ -112,7 +112,6 @@ function SortingBox() {
         {sortingCriteria.map((criteria) => (
           <SortingBtn
             key={criteria}
-            value={criteria}
             onClickOpenSorting={handleOpenSorting}
             onClickSortingItem={handleClickSortingItem}
             onKeyPressSortingItem={handleKeyPressSortingItem}
