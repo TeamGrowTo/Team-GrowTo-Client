@@ -1,12 +1,9 @@
-import Link from "next/link";
-import { MobileResultCardRightArrowIcon, ResultCardLeftArrowIcon } from "public/assets/icons";
 import React from "react";
-import Screen from "styles/Screen";
 import { LectureResultData } from "types/lectures.type";
 
+import BottomButtons from "./BottomButtons";
 import Info from "./Info";
-import { LectureTitle, MoreButton, StyledRoot } from "./style";
-import SubInfo from "./SubInfo";
+import { Description, LectureSite, LectureTitle, Line, StyledRoot } from "./style";
 import Tags from "./Tags";
 
 type Props = {
@@ -14,25 +11,18 @@ type Props = {
 };
 
 function ResultCard({ result }: Props) {
-  const { name, time, price, createdDate, replay, answer, tags, url } = result;
+  const { name, time, price, createdDate, replay, tags, url } = result;
 
   return (
     <StyledRoot>
-      <LectureTitle>{name}</LectureTitle>
-      <Info time={time} price={price} createdDate={createdDate} />
-      <SubInfo replay={replay} answer={answer} />
-      <Tags tags={tags} />
-      <Link href={url} passHref>
-        <MoreButton target="_blank">
-          더보기
-          <Screen desktop>
-            <ResultCardLeftArrowIcon />
-          </Screen>
-          <Screen mobile>
-            <MobileResultCardRightArrowIcon />
-          </Screen>
-        </MoreButton>
-      </Link>
+      <Description>
+        <LectureSite>인프런</LectureSite>
+        <LectureTitle>{name}</LectureTitle>
+        <Info replay={replay} time={time} price={price} createdDate={createdDate} />
+        <Tags tags={tags} />
+      </Description>
+      <Line />
+      <BottomButtons url={url} />
     </StyledRoot>
   );
 }
