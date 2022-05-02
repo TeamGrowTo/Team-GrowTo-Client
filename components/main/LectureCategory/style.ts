@@ -12,7 +12,7 @@ export const StyledRoot = styled.div`
 
   ${applyMediaQuery("mobile")} {
     margin-top: 4rem;
-    margin-bottom: 5.2rem;
+    margin-bottom: 3.8rem;
   }
 
   & > h3 {
@@ -23,8 +23,8 @@ export const StyledRoot = styled.div`
     color: ${colors.subBlack};
 
     ${applyMediaQuery("mobile")} {
-      font-size: 1.8rem;
-      line-height: 1rem;
+      font-size: 2rem;
+      line-height: 2.4rem;
       font-family: "Pretendard-Bold";
     }
   }
@@ -38,7 +38,8 @@ export const StyledRoot = styled.div`
 
     ${applyMediaQuery("mobile")} {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
+      line-height: 1.4rem;
+      margin-bottom: 2.6rem;
     }
   }
 `;
