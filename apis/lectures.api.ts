@@ -59,6 +59,7 @@ export const getLectureResultData = async (
         createdDate: response.startYear,
         tags: response.tags,
         url: response.url,
+        site: response.site,
       };
     });
 
