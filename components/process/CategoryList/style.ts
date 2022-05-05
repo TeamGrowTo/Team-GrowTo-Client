@@ -18,3 +18,12 @@ export const StyledRoot = styled.div`
     margin: 0;
   }
 `;
+
+export const ImageWrapper = styled.div`
+  width: 3.6rem;
+  height: 3.6rem;
+  ${applyMediaQuery("mobile")} {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+`;

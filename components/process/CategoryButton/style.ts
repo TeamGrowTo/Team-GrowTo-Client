@@ -19,14 +19,19 @@ export const StyledRoot = styled.button<{ isSelected: boolean; isClicked: boolea
   border: solid 0.3rem
     ${({ isSelected }) => (isSelected ? `${colors.mainBlue}` : "rgba(255, 255, 255, 0.7)")};
   ${applyMediaQuery("mobile")} {
-    width: 9.2rem;
-    height: 5.6rem;
+    display: flex;
+    flex-direction: row;
+    width: 10.4rem;
+    height: 4.8rem;
+    display: flex;
     font-size: 1.4rem;
-    border-radius: 1rem;
-    margin-right: 1rem;
+    border-radius: 4.8rem;
+    margin-right: 0.8rem;
+    border: solid 0.2rem
+      ${({ isSelected }) => (isSelected ? `${colors.mainBlue}` : "rgba(255, 255, 255, 0.7)")};
   }
 
-  & > div {
+  /* & > div {
     width: 3.6rem;
     height: 3.6rem;
 
@@ -35,7 +40,7 @@ export const StyledRoot = styled.button<{ isSelected: boolean; isClicked: boolea
       height: 4rem;
     }
   }
-
+*/
   & > span {
     color: ${colors.subBlack};
     margin-top: 1.6rem;
@@ -43,8 +48,10 @@ export const StyledRoot = styled.button<{ isSelected: boolean; isClicked: boolea
     font-size: 2rem;
 
     ${applyMediaQuery("mobile")} {
-      font-family: "Pretendard-Medium";
-      font-size: 1rem;
+      margin-top: 0rem;
+      margin-left: 1rem;
+      font-family: "Pretendard-Bold";
+      font-size: 1.4rem;
     }
   }
   :hover {
