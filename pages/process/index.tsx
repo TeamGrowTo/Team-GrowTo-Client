@@ -58,6 +58,7 @@ function Process() {
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const setIsDisable = useSetRecoilState(isDisableState);
+  const resetProcessData = useSetRecoilState(processState);
 
   const resetLectureListData = useResetRecoilState(lectureDataList);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
@@ -88,6 +89,13 @@ function Process() {
 
       if (categoryId) {
         setCurrentSkill(result);
+        resetProcessData({
+          category: "",
+          skill: "",
+          tags: [""],
+          timeAsc: undefined,
+          priceAsc: undefined,
+        });
         setIsDisable(false);
         //1-1없으면 전체리스트 불러온다.
       }
