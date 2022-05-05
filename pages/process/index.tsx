@@ -1,12 +1,8 @@
 import { getLectureCategoryData, getLectureSkillData } from "apis/info.api";
-import { getLectureDataList, getSortingLectureDataList } from "apis/lectures.api";
-import { SortingText } from "components/category/SortingBox";
 import SEO from "components/common/SEO";
-import CardTitle from "components/process/CardTitle";
 import CategoryList from "components/process/CategoryList";
 import SkillList from "components/process/SkillList";
 import Title from "components/process/Title";
-import TypeButton from "components/process/TypeButton";
 import { UseSorting } from "hooks/UseCategorySorting";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,8 +18,8 @@ import {
   ProcessPlayIcon,
   ProcessSquareIcon,
 } from "public/assets/icons";
-import { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
+import { useEffect } from "react";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
@@ -35,7 +31,6 @@ import {
   lectureDataList,
   lectureSkillState,
   processState,
-  SortingItemType,
 } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
@@ -51,8 +46,6 @@ const iconList: StaticImageData[] = [
 ];
 
 function Process() {
-  //const setCategoryList = useSetRecoilState(lectureCategoryState);
-
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
@@ -66,7 +59,7 @@ function Process() {
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetIsSelected = useResetRecoilState(isSelectedState);
   const resetSkillData = useResetRecoilState(currentSkillState);
-  // main에서 가져온 category click 부분 - 카테고리 아이콘
+
   const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
 
@@ -76,7 +69,6 @@ function Process() {
 
     setCategoryList(filteredCategoryList);
   };
-  //여기까지
 
   const findSelectedSkill = (currentSelectedSkillId: number) => {
     return skillList?.filter((skill) => skill.id === currentSelectedSkillId)[0] || null;
@@ -102,7 +94,6 @@ function Process() {
     }
   };
 
-  // page/category handle categoryclick부분
   const findSelectedCategory = (currentSelectedCategoryId: number) => {
     return categoryList?.filter((category) => category.id === currentSelectedCategoryId)[0] || null;
   };
@@ -129,7 +120,6 @@ function Process() {
       resetData();
     }
   };
-  // 여기까지
 
   useEffect(() => {
     setLectureCategory();
@@ -271,7 +261,7 @@ export const CategoryWrapper = styled.div`
 `;
 
 export const SkillWrapper = styled.div`
-  width: 77.4rem;
+  width: 89.2rem;
   margin: 6rem auto 0 6.4rem;
   & > p {
     font-family: "Pretendard-Bold";

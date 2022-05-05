@@ -1,8 +1,8 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { currentCategoryState, currentSkillState, lectureSkillState } from "store/state";
+import { currentSkillState, lectureSkillState } from "store/state";
 
-import { NotSelectedCategory, Skill, SkillWrapper, StyledRoot } from "./style";
+import { Skill, SkillWrapper, StyledRoot } from "./style";
 
 interface Props {
   onSkillClick: (id: number | null) => void;
@@ -11,7 +11,6 @@ interface Props {
 
 function SkillList({ onSkillClick, onClickBack }: Props) {
   const skillList = useRecoilValue(lectureSkillState);
-  const currentCategory = useRecoilValue(currentCategoryState);
   const currentSkill = useRecoilValue(currentSkillState);
 
   const handleSkillClick = (id: number | null) => {

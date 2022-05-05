@@ -22,23 +22,6 @@ export const StyledRoot = styled.section`
   }
 `;
 
-export const NotSelectedCategory = styled.article`
-  ${applyMediaQuery("mobile")} {
-    width: 100%;
-    height: 100%;
-    line-height: 2.2rem;
-    display: flex;
-    padding: 2.9rem 2.8rem 0;
-    text-align: left;
-  }
-
-  & > span {
-    color: ${colors.mainBlue};
-    font-size: 1.8rem;
-    font-family: "Pretendard-Medium";
-  }
-`;
-
 export const SkillWrapper = styled.div`
   width: 100%;
   max-width: 100%;
