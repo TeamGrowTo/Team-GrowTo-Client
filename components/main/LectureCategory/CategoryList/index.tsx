@@ -13,7 +13,7 @@ import {
 } from "store/state";
 
 import Category from "../Category";
-import { CategoryWrapper } from "./style";
+import { CategoryWrapper, ImageWrapper } from "./style";
 
 interface Props {
   iconList: StaticImageData[];
@@ -54,9 +54,9 @@ function CategoryList({ iconList }: Props) {
       {categoryList?.map((category, index) => (
         <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
           <>
-            <div>
+            <ImageWrapper>
               <Image src={iconList[index]} alt="categoryIcon" quality={100} />
-            </div>
+            </ImageWrapper>
             <span>{category.categoryName}</span>
           </>
         </Category>
