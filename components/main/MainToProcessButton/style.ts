@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.section`
   width: 100%;
@@ -16,10 +17,17 @@ export const ButtonWrapper = styled.article`
   color: white;
   padding-left: 5.2rem;
   padding-right: 4.2rem;
+  margin: 0 1.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 2.4rem;
+
+  ${applyMediaQuery("mobile")} {
+    height: 8rem;
+    padding: 0 1.6rem;
+    border-radius: 1.2rem;
+  }
 `;
 
 export const Description = styled.aside`
@@ -27,16 +35,32 @@ export const Description = styled.aside`
     font-size: 2.4rem;
     font-family: "Pretendard-ExtraBold";
     margin-bottom: 0.3rem;
+
+    ${applyMediaQuery("mobile")} {
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
   }
 
   p {
     font-size: 1.7rem;
     font-family: "Pretendard-Medium";
     line-height: 2rem;
+    margin: 0;
+
+    ${applyMediaQuery("mobile")} {
+      width: 14rem;
+      font-size: 1.2rem;
+    }
+
     strong {
       font-size: 2rem;
       font-family: "Pretendard-Bold";
       line-height: 2.4rem;
+
+      ${applyMediaQuery("mobile")} {
+        font-size: 1.3rem;
+      }
     }
   }
 `;
@@ -55,15 +79,30 @@ export const ToProcessButton = styled.a`
   padding-left: 2.9rem;
   padding-right: 2.1rem;
 
+  ${applyMediaQuery("mobile")} {
+    width: 10.6rem;
+    height: 3.2rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.2rem;
+  }
+
   &:hover {
     cursor: pointer;
   }
+`;
 
-  span {
-    margin-left: 1.3rem;
-    width: 1.4rem;
-    height: 1.4rem;
-    display: flex;
-    align-items: center;
+export const ImageWrapper = styled.span`
+  margin-left: 1.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+
+  ${applyMediaQuery("mobile")} {
+    width: 0.65rem;
+    height: 0.65rem;
+    margin-left: 0.73rem;
   }
 `;

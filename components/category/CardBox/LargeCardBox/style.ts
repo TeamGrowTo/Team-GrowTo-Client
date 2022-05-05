@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { tagType } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
@@ -6,22 +7,24 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 41.6rem;
   width: 30.4rem;
   margin: 1.4rem 1rem;
 
   border-radius: 2.2rem;
-  background: rgba(255, 255, 255, 1);
+  background: white;
 
   transition: all 0.15s;
   box-shadow: 0rem 0.2rem 0.8rem 0rem rgba(0, 0, 0, 0.12);
   &:hover {
-    box-shadow: 0 0.2rem 0.8rem 0 rgba(0, 0, 0, 0.14);
+    background-color: ${colors.btnCategoryPressed};
   }
 `;
 
 export const CardTop = styled.div`
-  padding: 1.7rem 1.8rem 1.2rem 1.8rem;
+  /* height: 4.8rem; */
+  padding: 1.6rem 1.8rem 1.2rem 1.8rem;
   text-align: right;
   & svg {
     cursor: pointer;
@@ -46,23 +49,17 @@ export const TitleBox = styled(Link)`
 `;
 
 export const TitleName = styled.a`
-  height: 9.6rem;
-  margin: 0 1.8rem 0.8rem 1.8rem;
+  height: 10rem;
+  margin: 2.2rem 1.7rem 0rem 1.8rem;
+  padding-bottom: 1rem;
   font-family: "Pretendard-SemiBold";
+
   color: ${colors.mildBlack};
   font-size: 2.2rem;
   line-height: 3rem;
   text-align: left;
-
   border-bottom: 1px solid ${colors.gray2};
-
-  /* overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-  word-wrap: break-word; //단어 단위로 자르기
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical; */
+  //제목 4줄 이상이면 자르기
   white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -73,10 +70,10 @@ export const TitleName = styled.a`
 
 export const LectureInfoBox = styled.div`
   display: flex;
-  height: 7.2rem;
+  height: 7.4rem;
   justify-content: space-between;
   flex-direction: column;
-  margin: 1.2rem 1.8rem 1.8rem 1.8rem;
+  margin: 1.2rem 1.8rem 1.8rem 1.9rem;
   & svg {
     vertical-align: sub;
   }
@@ -90,8 +87,8 @@ export const LectureInfo = styled.span`
   color: ${colors.gray6};
 `;
 
-export const Tag = styled.span`
-  background-color: ${colors.tagLevel};
+export const Tag = styled.span<{ type: tagType }>`
+  background-color: ${(props) => colors[props.type]};
   border-radius: 3.5rem;
   padding: 0rem 1.2rem;
   height: 2.8rem;
@@ -118,13 +115,14 @@ export const Tag = styled.span`
 
 export const TagWrapper = styled.div`
   display: flex;
-  height: 10rem;
   padding: 0 0 0 1.8rem;
   flex-direction: row;
+  flex-grow: 1;
   align-content: flex-start;
   flex-wrap: wrap;
   //scroll
-  margin-right: 0.8rem;
+  margin-right: 0.8rem; //스크롤 오르쪽 띄우기위해서
+  margin-bottom: 0.4rem;
   overflow: auto;
   scrollbar-width: thin;
   &::-webkit-scrollbar {
@@ -138,6 +136,8 @@ export const TagWrapper = styled.div`
     border-radius: 1rem;
     background-color: ${colors.gray2};
   }
+  scrollbar-width: 0.8rem;
+  scrollbar-color: ${colors.gray2};
   ${applyMediaQuery("mobile")} {
     width: 100%;
     height: unset;
@@ -156,18 +156,28 @@ export const CardBottom = styled.div`
   & * {
     vertical-align: middle;
   }
+  ${applyMediaQuery("mobile")} {
+    height: 4.8rem;
+    margin: 0;
+  }
 `;
 
 export const Site = styled.span`
   font-family: "Pretendard-Regular";
   font-size: 1.5rem;
   color: ${colors.gray6};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.4rem;
+  }
 `;
 
 export const Price = styled.span`
   font-family: "Pretendard-ExtraBold";
   font-size: 1.8rem;
   color: ${colors.mildBlack};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const PriceUnit = styled.span`
@@ -176,4 +186,7 @@ export const PriceUnit = styled.span`
   color: ${colors.mildBlack};
   margin-left: 0.2rem;
   margin-right: 1rem;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+  }
 `;

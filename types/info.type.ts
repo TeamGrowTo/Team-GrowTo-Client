@@ -1,3 +1,5 @@
+import { tagType } from "store/state";
+
 export interface ResponseCategoryData {
   id: number | null;
   name: string | null;
@@ -42,7 +44,7 @@ export interface LectureDataType {
   reviewTime: string;
   duration: number;
   startYear: number;
-  tags: string[];
+  tags: [{ type: tagType; name: string }];
   url: string;
   site: string;
 }
