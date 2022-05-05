@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 export const StyledRoot = styled.article`
-  & > button {
-    display: none !important;
+  width: 100vw;
+  max-width: 100%;
+
+  & > section {
+    button {
+      display: none !important;
+    }
   }
 `;
 
