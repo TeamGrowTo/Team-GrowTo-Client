@@ -9,11 +9,14 @@ import { StyledRoot } from "./style";
 interface Props {
   iconList: StaticImageData[];
   onCategoryClick: (id: number | null) => void;
+  isClicked: boolean;
 }
 
-function CategoryList({ iconList, onCategoryClick }: Props) {
+function CategoryList({ iconList, onCategoryClick, isClicked }: Props) {
   const currentCategory = useRecoilValue(currentCategoryState);
   const categoryList = useRecoilValue(lectureCategoryState);
+
+  console.log(isClicked);
 
   return (
     <StyledRoot>
@@ -21,6 +24,7 @@ function CategoryList({ iconList, onCategoryClick }: Props) {
         <CategoryButton
           key={category.id}
           isSelected={currentCategory?.id === category.id}
+          isClicked={isClicked}
           onCategoryClick={() => onCategoryClick(category.id)}
         >
           <>

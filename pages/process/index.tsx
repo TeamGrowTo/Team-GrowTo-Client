@@ -18,7 +18,7 @@ import {
   ProcessPlayIcon,
   ProcessSquareIcon,
 } from "public/assets/icons";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
@@ -52,6 +52,7 @@ function Process() {
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const setIsDisable = useSetRecoilState(isDisableState);
   const resetProcessData = useSetRecoilState(processState);
+  const [isClicked, setIsClicked] = useState(false);
 
   const resetLectureListData = useResetRecoilState(lectureDataList);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
@@ -112,6 +113,7 @@ function Process() {
   };
   const handleCategoryClick = (categoryId: number | null) => {
     if (categoryId) {
+      setIsClicked(true);
       const result = findSelectedCategory(categoryId);
 
       setCurrentCategory(result);
@@ -150,7 +152,11 @@ function Process() {
               <p>
                 <span>강의 분야</span>를 선택하세요
               </p>
-              <CategoryList iconList={iconList} onCategoryClick={handleCategoryClick} />
+              <CategoryList
+                iconList={iconList}
+                onCategoryClick={handleCategoryClick}
+                isClicked={isClicked}
+              />
             </CategoryWrapper>
             <SkillWrapper>
               <p>
@@ -239,7 +245,7 @@ export const CardChoice = styled.section`
 `;
 
 export const CategoryWrapper = styled.div`
-  width: 89.2rem;
+  width: 90rem;
   margin: 6rem auto 0 6.4rem;
   & > p {
     font-family: "Pretendard-Bold";

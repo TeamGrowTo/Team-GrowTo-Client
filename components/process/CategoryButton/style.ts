@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.button<{ isSelected: boolean }>`
+export const StyledRoot = styled.button<{ isSelected: boolean; isClicked: boolean }>`
   width: 13.2rem;
   height: 12.7rem;
   border-radius: 2.8rem;
@@ -10,6 +10,7 @@ export const StyledRoot = styled.button<{ isSelected: boolean }>`
   font-size: 2rem;
   color: ${colors.subBlack};
   background-color: rgba(255, 255, 255, 0.7);
+  opacity: ${({ isClicked }) => (isClicked ? ({ isSelected }) => (isSelected ? 1 : 0.5) : 1)};
   margin-right: 2rem;
   display: flex;
   flex-direction: column;
