@@ -50,7 +50,6 @@ function Process() {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
-  const setIsDisable = useSetRecoilState(isDisableState);
   const resetProcessData = useSetRecoilState(processState);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -60,6 +59,7 @@ function Process() {
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetIsSelected = useResetRecoilState(isSelectedState);
   const resetSkillData = useResetRecoilState(currentSkillState);
+  const resetLectureSkill = useResetRecoilState(lectureSkillState);
 
   const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
@@ -89,8 +89,6 @@ function Process() {
           timeAsc: undefined,
           priceAsc: undefined,
         });
-        setIsDisable(false);
-        //1-1없으면 전체리스트 불러온다.
       }
     }
   };
@@ -128,6 +126,7 @@ function Process() {
     if (!category) setCurrentCategory({ id: -1, categoryName: "" });
     if (!currentSkill) setCurrentSkill({ id: -1, skillName: "" });
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
+    resetLectureSkill();
   }, []);
 
   return (
