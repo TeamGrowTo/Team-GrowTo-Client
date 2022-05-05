@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CategoryToProcessIcon } from "public/assets/icons";
-import React from "react";
+import { CategoryReduceIcon, CategoryToProcessIcon } from "public/assets/icons";
+import React, { useState } from "react";
 
 import {
   Description,
@@ -9,22 +9,40 @@ import {
   ImageWrapper,
   Line,
   RedirectButton,
+  ReduceCustomLectureButton,
+  ReduceIconWrapper,
   StickyContent,
   StyledRoot,
+  Title,
 } from "./style";
 
 const DesktopProcessButton = function () {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const onClickReduceButton = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <StyledRoot>
-      <StickyContent>
+      <StickyContent isOpen={isOpen}>
+        {isOpen ? (
+          <ReduceIconWrapper onClick={onClickReduceButton}>
+            <Image src={CategoryReduceIcon} alt="categoryReduceIcon" quality={100} />
+          </ReduceIconWrapper>
+        ) : (
+          <ReduceCustomLectureButton onClick={onClickReduceButton}>
+            <span>맞춤강의</span>
+          </ReduceCustomLectureButton>
+        )}
         <Link href="/processTag" passHref>
-          <RedirectButton>
-            <h3>
+          <RedirectButton isOpen={isOpen}>
+            <Title>
               맞춤 강의 찾기
               <ImageWrapper>
-                <Image src={CategoryToProcessIcon} alt="categoryToProcess" />
+                <Image src={CategoryToProcessIcon} alt="categoryToProcess" quality={100} />
               </ImageWrapper>
-            </h3>
+            </Title>
             <Line></Line>
             <Description>
               <span>

@@ -3,6 +3,7 @@ export { default as ArrowRight } from "./arrowRight.svg";
 export { default as ArrowUp } from "./arrowUp.svg";
 export { default as BookmarkIcon } from "./bookmarkIcon.svg";
 export { default as CalendarIcon } from "./calendarIcon.svg";
+export { default as CategoryReduceIcon } from "./categoryReduceIcon.png";
 export { default as CategoryRightArrowIcon } from "./categoryRightArrowIcon.svg";
 export { default as CategoryToProcessIcon } from "./categoryToProcessIcon.png";
 export { default as CloseButton } from "./closeButton.svg";
