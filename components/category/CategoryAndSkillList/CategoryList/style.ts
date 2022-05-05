@@ -69,9 +69,7 @@ export const Category = styled.button<{ isSelected: boolean }>`
     isSelected
       ? css`
           color: ${colors.mainBlue};
-          box-shadow: 0 0.1rem 0.8rem rgba(69, 121, 255, 0.3);
-          border: 0.1rem solid ${colors.mainBlue};
-          background: ${colors.btnCategoryPressed};
+          background: ${colors.blue2};
           ${applyMediaQuery("mobile")} {
             background: linear-gradient(
                 101.6deg,
