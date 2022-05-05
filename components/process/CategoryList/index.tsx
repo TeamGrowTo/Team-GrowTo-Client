@@ -17,12 +17,14 @@ import { StyledRoot } from "./style";
 
 interface Props {
   iconList: StaticImageData[];
+  onCategoryClick: (id: number | null) => void;
 }
 
-function CategoryList({ iconList }: Props) {
-  const setCurrentCategory = useSetRecoilState(currentCategoryState);
+function CategoryList({ iconList, onCategoryClick }: Props) {
+  const currentCategory = useRecoilValue(currentCategoryState);
   const categoryList = useRecoilValue(lectureCategoryState);
-
+  /*
+  const setCurrentCategory = useSetRecoilState(currentCategoryState);
   const resetLectureListData = useResetRecoilState(lectureDataList);
   const resetCurrentSkillData = useResetRecoilState(currentSkillState);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
@@ -48,11 +50,16 @@ function CategoryList({ iconList }: Props) {
       resetData();
     }
   };
+*/
 
   return (
     <StyledRoot>
       {categoryList?.map((category, index) => (
-        <CategoryButton key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
+        <CategoryButton
+          key={category.id}
+          isSelected={currentCategory?.id === category.id}
+          onCategoryClick={() => onCategoryClick(category.id)}
+        >
           <>
             <div>
               <Image src={iconList[index]} alt="categoryIcon" quality={100} />

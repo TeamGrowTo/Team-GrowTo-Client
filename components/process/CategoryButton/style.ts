@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.button`
+export const StyledRoot = styled.button<{ isSelected: boolean }>`
   width: 13.2rem;
   height: 12.7rem;
   border-radius: 2.8rem;
@@ -15,7 +15,8 @@ export const StyledRoot = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  border: solid 0.3rem
+    ${({ isSelected }) => (isSelected ? `${colors.mainBlue}` : "rgba(255, 255, 255, 0.7)")};
   ${applyMediaQuery("mobile")} {
     width: 9.2rem;
     height: 5.6rem;
@@ -44,5 +45,8 @@ export const StyledRoot = styled.button`
       font-family: "Pretendard-Medium";
       font-size: 1rem;
     }
+  }
+  :hover {
+    cursor: pointer;
   }
 `;

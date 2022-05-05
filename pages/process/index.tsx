@@ -1,4 +1,4 @@
-import { getLectureCategoryData } from "apis/info.api";
+import { getLectureCategoryData, getLectureSkillData } from "apis/info.api";
 import { getLectureDataList, getSortingLectureDataList } from "apis/lectures.api";
 import { SortingText } from "components/category/SortingBox";
 import SEO from "components/common/SEO";
@@ -22,7 +22,7 @@ import {
   ProcessSquareIcon,
 } from "public/assets/icons";
 import { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   currentCategoryState,
   currentSkillState,
@@ -50,23 +50,34 @@ const iconList: StaticImageData[] = [
 ];
 
 function Process() {
-  const setCategoryList = useSetRecoilState(lectureCategoryState);
-  const { filterCategory } = UseSorting();
-  const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
+  //const setCategoryList = useSetRecoilState(lectureCategoryState);
+
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
   const currentSorting = useRecoilValue(currentSortingState);
   const setLectureDataList = useSetRecoilState(lectureDataList);
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const setIsDisable = useSetRecoilState(isDisableState);
+  const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
 
+  const resetLectureListData = useResetRecoilState(lectureDataList);
+  const resetCurrentSorting = useResetRecoilState(currentSortingState);
+  const resetIsDisable = useResetRecoilState(isDisableState);
+  const resetIsOpen = useResetRecoilState(isOpenState);
+  const resetIsSelected = useResetRecoilState(isSelectedState);
+  const resetSkillData = useResetRecoilState(currentSkillState);
+  // main에서 가져온 category click 부분 - 카테고리 아이콘
   const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
 
+    const { filterCategory } = UseSorting();
+    const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
     const filteredCategoryList = filterCategory(result, categoryViewArr);
 
     setCategoryList(filteredCategoryList);
   };
+  //여기까지
+
   const findSelectedSkill = (currentSelectedSkillId: number) => {
     return skillList?.filter((skill) => skill.id === currentSelectedSkillId)[0] || null;
   };
@@ -84,8 +95,40 @@ function Process() {
     }
   };
 
+  // page/category handle categoryclick부분
+  const findSelectedCategory = (currentSelectedCategoryId: number) => {
+    return categoryList?.filter((category) => category.id === currentSelectedCategoryId)[0] || null;
+  };
+  const setLectureSkill = async (id: number): Promise<void> => {
+    const result = await getLectureSkillData(id);
+
+    setSkillList(result);
+  };
+  const resetData = () => {
+    resetSkillData();
+    resetLectureListData();
+    resetIsDisable();
+    resetIsOpen();
+    resetCurrentSorting();
+    resetIsSelected();
+  };
+  const handleCategoryClick = (categoryId: number | null) => {
+    if (categoryId) {
+      const result = findSelectedCategory(categoryId);
+
+      setCurrentCategory(result);
+      setLectureSkill(categoryId);
+      setCurrentSkill({ id: -1, skillName: "" });
+      resetData();
+    }
+  };
+  // 여기까지
+
   useEffect(() => {
     setLectureCategory();
+    if (!category) setCurrentCategory({ id: -1, categoryName: "" });
+    if (!currentSkill) setCurrentSkill({ id: -1, skillName: "" });
+    if (category?.id && category?.id !== -1) setLectureSkill(category.id);
   }, []);
 
   return (
@@ -110,7 +153,7 @@ function Process() {
               <p>
                 <span>강의 분야</span>를 선택하세요
               </p>
-              <CategoryList iconList={iconList} />
+              <CategoryList iconList={iconList} onCategoryClick={handleCategoryClick} />
             </CategoryWrapper>
             <SkillWrapper>
               <Screen desktop>
