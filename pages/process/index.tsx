@@ -158,7 +158,7 @@ function Process() {
                 isClicked={isClicked}
               />
             </CategoryWrapper>
-            <SkillWrapper>
+            <SkillWrapper isClicked={isClicked}>
               <p>
                 <span>강의 세부 분야</span>를 선택하세요
               </p>
@@ -266,17 +266,17 @@ export const CategoryWrapper = styled.div`
   }
 `;
 
-export const SkillWrapper = styled.div`
+export const SkillWrapper = styled.div<{ isClicked: boolean }>`
   width: 89.2rem;
   margin: 6rem auto 0 6.4rem;
   & > p {
     font-family: "Pretendard-Bold";
     font-size: 2.4rem;
-    color: ${colors.subBlack};
+    color: ${({ isClicked }) => (isClicked ? `${colors.subBlack}` : `${colors.gray4}`)};
     margin-bottom: 2rem;
   }
   & > p > span {
-    color: ${colors.subOrange};
+    color: ${({ isClicked }) => (isClicked ? `${colors.subOrange}` : `${colors.gray4}`)};
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
