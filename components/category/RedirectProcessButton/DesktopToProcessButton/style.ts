@@ -13,7 +13,7 @@ export const StickyContent = styled.article<{ isOpen: boolean }>`
   /* position: sticky;
   top: 12rem; */
   position: fixed;
-  bottom: 10rem;
+  bottom: 7rem;
   right: 10rem;
   z-index: 100;
   width: 20.8rem;
@@ -21,7 +21,7 @@ export const StickyContent = styled.article<{ isOpen: boolean }>`
   background: linear-gradient(90deg, #45a6ff 2.09%, #45d2ff 100%);
   box-shadow: 0 0.6rem 1.8rem rgba(0, 0, 0, 0.22);
   border-radius: 4.8rem;
-  transition: all 0.2s ease-in;
+  transition: all 0.1s ease-in;
 
   ${({ isOpen }) =>
     !isOpen &&
