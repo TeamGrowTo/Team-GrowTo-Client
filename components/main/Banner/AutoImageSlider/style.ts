@@ -22,7 +22,8 @@ export const SliderIndexWrapper = styled.aside`
 
   & > section {
     width: 100%;
-    max-width: 132.1rem;
+    //136.4 + 2.8
+    max-width: 139.2rem;
     display: flex;
     justify-content: end;
   }
@@ -39,8 +40,9 @@ export const ButtonBox = styled.section`
 
 export const ButtonWrapper = styled.div`
   width: 100%;
-  max-width: 132.1rem;
+  max-width: 133.5rem;
   display: flex;
   justify-content: start;
   padding: 0;
+  padding-left: 2.8rem;
 `;
