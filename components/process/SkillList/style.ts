@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
@@ -67,48 +67,25 @@ export const SkillWrapper = styled.div`
 `;
 
 export const Skill = styled.button<{ isSelected: boolean }>`
+  height: 4.8rem;
+  margin-right: 0.8rem;
+  margin-bottom: 1.2rem;
+  padding: 0.7rem 3.2rem;
+  background: rgb(255, 255, 255, 0.7);
+  font-family: "Pretendard-Bold";
   font-size: 1.8rem;
-  font-family: "Pretendard-Medium";
-  color: ${colors.gray7};
-  padding: 1.2rem 1.7rem;
-  background-color: ${colors.gray0};
-  border-radius: 4rem;
-  cursor: pointer;
-
+  color: ${colors.gray6};
+  border-radius: 4.8rem;
+  border: 1px solid ${({ isSelected }) => (isSelected ? `${colors.mainBlue}` : "white")};
   ${applyMediaQuery("mobile")} {
-    width: 100%;
-    margin: 0;
-    padding: 1.5rem 0;
-    padding-left: 2.8rem;
-    text-align: start;
+    padding: 1.1rem 2rem;
+    height: 4rem;
     font-size: 1.4rem;
-    background-color: #f4f9ff;
-    border-radius: 0;
   }
-
-  /* &:focus {
-    color: ${colors.mainBlue};
-  } */
-
-  &:active {
-    border: none;
+  :hover {
+    cursor: pointer;
   }
-
-  ${({ isSelected }) =>
-    isSelected
-      ? css`
-          color: white;
-          background-color: ${colors.mainBlue};
-          font-size: 1.8rem;
-          font-family: "Pretendard-Bold";
-          ${applyMediaQuery("mobile")} {
-            color: ${colors.mainBlue};
-            background-color: rgba(69, 121, 255, 0.1);
-            font-size: 1.4rem;
-          }
-        `
-      : css`
-          color: ${colors.subBlack};
-          font-family: "Pretendard-Medium";
-        `}
+  :focus-visible {
+    outline: 3px solid #aaa;
+  }
 `;

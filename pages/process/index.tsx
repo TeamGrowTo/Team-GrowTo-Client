@@ -4,6 +4,7 @@ import { SortingText } from "components/category/SortingBox";
 import SEO from "components/common/SEO";
 import CardTitle from "components/process/CardTitle";
 import CategoryList from "components/process/CategoryList";
+import SkillList from "components/process/SkillList";
 import Title from "components/process/Title";
 import TypeButton from "components/process/TypeButton";
 import { UseSorting } from "hooks/UseCategorySorting";
@@ -53,12 +54,10 @@ function Process() {
   //const setCategoryList = useSetRecoilState(lectureCategoryState);
 
   const [skillList, setSkillList] = useRecoilState(lectureSkillState);
+  const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
-  const currentSorting = useRecoilValue(currentSortingState);
-  const setLectureDataList = useSetRecoilState(lectureDataList);
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
   const setIsDisable = useSetRecoilState(isDisableState);
-  const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
 
   const resetLectureListData = useResetRecoilState(lectureDataList);
   const resetCurrentSorting = useResetRecoilState(currentSortingState);
@@ -156,24 +155,33 @@ function Process() {
               <CategoryList iconList={iconList} onCategoryClick={handleCategoryClick} />
             </CategoryWrapper>
             <SkillWrapper>
-              <Screen desktop>
-                <p>
-                  <span>강의 세부 분야</span>를 선택하세요
-                </p>
-              </Screen>
+              <p>
+                <span>강의 세부 분야</span>를 선택하세요
+              </p>
+              <SkillList onSkillClick={handleSkillClick} />
             </SkillWrapper>
           </CardChoice>
           <NextButtonWrapper>
-            {/* <Link href="/processTag" replace passHref>
-               <NextButton
-                selectedPrice={selectedTime}
-                disabled={selectedTime.length > 0 ? false : true}
+            <Link href="/processTag" replace passHref>
+              <NextButton
+                isAllClicked={
+                  category?.id !== -1 && (currentSkill?.id === -1 || currentSkill !== null)
+                }
+                disabled={
+                  category?.id !== -1 && (currentSkill?.id === -1 || currentSkill !== null)
+                    ? false
+                    : true
+                }
               >
                 다음
-              </NextButton> 
-            </Link> */}
+              </NextButton>
+            </Link>
             <NextArrowWrapper>
-              {/* {selectedTime.length > 0 ? <NextArrowDisabled /> : <NextArrowAble />} */}
+              {category?.id !== -1 && (currentSkill?.id === -1 || currentSkill !== null) ? (
+                <NextArrowDisabled />
+              ) : (
+                <NextArrowAble />
+              )}
             </NextArrowWrapper>
           </NextButtonWrapper>
         </ProcessBox>
@@ -281,19 +289,18 @@ export const NextButtonWrapper = styled.div`
   position: relative;
 `;
 
-export const NextButton = styled.button<{ selectedPrice: string }>`
+export const NextButton = styled.button<{ isAllClicked: boolean }>`
   margin-left: auto;
   margin-top: 2.4rem;
   margin-bottom: 5.8rem;
   width: 22.4rem;
   height: 6rem;
-  background: ${({ selectedPrice }) =>
-    selectedPrice.length > 0 ? `${colors.mainBlue}` : `${colors.gray2}`};
+  background: ${({ isAllClicked }) => (isAllClicked ? `${colors.mainBlue}` : `${colors.gray2}`)};
   font-size: 2.4rem;
   font-family: "Pretendard-Bold";
   border-radius: 4.8rem;
   padding-right: 1.7rem;
-  color: ${({ selectedPrice }) => (selectedPrice.length > 0 ? "white" : `${colors.gray4}`)};
+  color: ${({ isAllClicked }) => (isAllClicked ? "white" : `${colors.gray4}`)};
   :hover {
     cursor: pointer;
   }

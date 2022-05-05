@@ -21,23 +21,17 @@ function SkillList({ onSkillClick, onClickBack }: Props) {
 
   return (
     <StyledRoot>
-      {!currentCategory || currentCategory?.id === -1 ? (
-        <NotSelectedCategory>
-          <span>그로투에서 강의 찾는 시간 줄이고 {"'성장'"}에만 집중하세요</span>
-        </NotSelectedCategory>
-      ) : (
-        <SkillWrapper>
-          {skillList?.map((skill) => (
-            <Skill
-              key={skill.id}
-              isSelected={currentSkill?.id === skill.id}
-              onClick={() => handleSkillClick(skill.id)}
-            >
-              {skill.skillName}
-            </Skill>
-          ))}
-        </SkillWrapper>
-      )}
+      <SkillWrapper>
+        {skillList?.map((skill) => (
+          <Skill
+            key={skill.id}
+            isSelected={currentSkill?.id === skill.id}
+            onClick={() => handleSkillClick(skill.id)}
+          >
+            {skill.skillName}
+          </Skill>
+        ))}
+      </SkillWrapper>
     </StyledRoot>
   );
 }
