@@ -6,7 +6,7 @@ export const StyledRoot = styled.button`
   position: fixed;
   bottom: 4.4rem;
   right: 8.2rem;
-  background-color: ${colors.mainBlue};
+  background-color: ${colors.blue7};
   color: white;
   display: flex;
   align-items: center;
@@ -15,6 +15,7 @@ export const StyledRoot = styled.button`
   height: 4.8rem;
   box-shadow: 0 0.6rem 1.8rem rgba(0, 0, 0, 0.22);
   border-radius: 2.8rem;
+
   ${applyMediaQuery("mobile")} {
     width: 4rem;
     height: 4rem;

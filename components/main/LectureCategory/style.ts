@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
-const StyledRoot = styled.div`
+export const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,23 +42,3 @@ const StyledRoot = styled.div`
     }
   }
 `;
-
-const CategoryWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  & > * {
-    margin-right: 3.6rem;
-
-    ${applyMediaQuery("mobile")} {
-      margin-right: 0.8rem;
-      margin-bottom: 0.8rem;
-    }
-  }
-  & > *:last-child {
-    margin: 0;
-  }
-`;
-
-export { CategoryWrapper, StyledRoot };
