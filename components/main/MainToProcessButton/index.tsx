@@ -55,7 +55,7 @@ function MainToProcessButton() {
             </p>
           </Screen>
         </Description>
-        <Link href="/processMain" passHref>
+        <Link href="/process" passHref>
           <ToProcessButton onClick={handleMainToProcessButton}>
             지금 시작하기
             <ImageWrapper>
