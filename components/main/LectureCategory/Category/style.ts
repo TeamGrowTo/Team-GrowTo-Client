@@ -15,21 +15,15 @@ export const Button = styled.a`
   padding: 0;
 
   ${applyMediaQuery("mobile")} {
-    width: 9.2rem;
-    height: 5.6rem;
+    width: 6rem;
+    height: 7.8rem;
     font-size: 1.4rem;
     border-radius: 1rem;
     margin-right: 1rem;
   }
 
-  & > div {
-    width: 9.7rem;
-    height: 9.7rem;
-
-    ${applyMediaQuery("mobile")} {
-      width: 4rem;
-      height: 4rem;
-    }
+  & + & {
+    margin-bottom: 1.6rem;
   }
 
   & > span {
@@ -39,8 +33,10 @@ export const Button = styled.a`
     font-size: 2.2rem;
 
     ${applyMediaQuery("mobile")} {
+      margin-top: 0.6rem;
       font-family: "Pretendard-Medium";
-      font-size: 1rem;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
     }
   }
 `;
