@@ -29,6 +29,8 @@ export const isDisableState = atom({
 
 export type SortingType = "총 소요시간" | "가격" | "개설일" | "수강 기간" | "질의응답 시간";
 
+export type tagType = "난이도" | "사용툴" | "커리큘럼" | "강좌특성";
+
 //정렬하는 select형식의 button들을 만들기 위해 기준을 배열로 만든 후 리턴문에서 map 해주기
 export const sortingCriteria: SortingType[] = [
   "총 소요시간",

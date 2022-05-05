@@ -6,6 +6,10 @@ export const CategoryWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 
+  ${applyMediaQuery("mobile")} {
+    width: 22.8rem;
+  }
+
   & > * {
     margin-right: 3.6rem;
 
@@ -14,7 +18,11 @@ export const CategoryWrapper = styled.div`
       margin-bottom: 0.8rem;
     }
   }
-  & > *:last-child {
-    margin: 0;
+`;
+
+export const ImageWrapper = styled.div`
+  ${applyMediaQuery("mobile")} {
+    width: 5.2rem;
+    height: 5.2rem;
   }
 `;
