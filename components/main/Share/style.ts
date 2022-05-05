@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
+
 export const StyledRoot = styled.section`
   display: flex;
   width: 100%;
-  height: 80rem;
-  background: linear-gradient(to bottom, rgb(138, 186, 197, 0.3), rgb(209, 201, 241, 0.3));
+  height: 44.8rem;
+  background-image: url("/assets/images/mainMissionBackground.png");
   font-family: "Pretendard-Regular";
   ${applyMediaQuery("mobile")} {
     height: 34.6rem;

@@ -14,9 +14,9 @@ const Home: NextPage = () => {
       <Banner />
       <MainLectureCategory />
       <MainToProcessButton />
+      <Share />
       <MainReport />
       <MainReview />
-      <Share />
     </div>
   );
 };
