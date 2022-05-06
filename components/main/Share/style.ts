@@ -17,6 +17,7 @@ export const Background = styled.div`
   background-image: url("/assets/images/mainMissionBackground.png");
   height: 100%;
   background-size: cover;
+  background-position: bottom;
 `;
 
 export const OurMission = styled.h3`
