@@ -8,7 +8,7 @@ export const StyledRoot = styled.section`
   background: linear-gradient(180deg, #e6f0f4 -5.17%, #e3e9f9 95%);
   font-family: "Pretendard-Regular";
   ${applyMediaQuery("mobile")} {
-    height: 34.6rem;
+    height: 21.6rem;
   }
   text-align: center;
 `;
@@ -24,6 +24,10 @@ export const OurMission = styled.h3`
   font-family: "Poppins-Bold";
   color: ${colors.mildBlack};
   font-size: 3.6rem;
+  ${applyMediaQuery("mobile")} {
+    padding-top: 3.6rem;
+    font-size: 2rem;
+  }
 `;
 
 export const ShareBox = styled.div`
@@ -31,6 +35,7 @@ export const ShareBox = styled.div`
   margin-top: 3rem;
   width: 94.8rem;
   ${applyMediaQuery("mobile")} {
+    margin-top: 1.5rem;
     width: 32.8rem;
   }
 `;
@@ -79,16 +84,12 @@ export const Slogan = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    height: 9.7rem;
-    padding: 1.6rem;
-    font-family: "Pretendard-Regular";
-    margin-bottom: 4.8rem;
+    height: 10rem;
+    padding: 2.8rem 0;
+    font-family: "Pretendard-Medium";
     & > p {
       font-size: 1.4rem;
       line-height: 2rem;
-    }
-    & > p:last-child {
-      font-size: 1.2rem;
     }
   }
 `;
