@@ -49,25 +49,32 @@ export const StoryLink = styled.a`
   }
 `;
 export const Slogan = styled.div`
-  width: 96rem;
+  width: 94.8rem;
   height: 18.4rem;
   padding: 5.4rem;
 
-  border-radius: 2.6rem;
-  background: rgb(255, 255, 255, 0.7);
-  font-family: "Pretendard-SemiBold";
+  background: linear-gradient(
+    158.59deg,
+    rgba(255, 255, 255, 0.7) 22.48%,
+    rgba(255, 255, 255, 0.4) 97.52%
+  );
+  border-radius: 3rem;
+  border: 2px solid;
+  border-image-source: linear-gradient(
+    47.86deg,
+    rgba(255, 255, 255, 0.1) 29.04%,
+    rgba(255, 255, 255, 0.5) 76.38%
+  );
+  backdrop-filter: blur(4rem);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
   color: ${colors.gray6};
   & > p {
-    margin: auto;
+    font-family: "Pretendard-Medium";
     font-size: 2.6rem;
     line-height: 3.8rem;
-    font-family: "Pretendard-Regular";
     color: ${colors.gray6};
-    line-height: 3.8rem;
   }
   & > p > span {
-    font-family: "Pretendard-Medium";
     color: ${colors.mainBlue};
   }
   ${applyMediaQuery("mobile")} {
