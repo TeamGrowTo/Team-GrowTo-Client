@@ -2,7 +2,7 @@
 import React from "react";
 
 import { Background, OurMission, ShareBox, Slogan, StyledRoot } from "./style";
-function Share() {
+function MainMission() {
   // const [isModalOpen, setIsModalOpen] = useState(false);
   // const shareUrl = async () => {
   //   try {
@@ -45,4 +45,4 @@ function Share() {
   );
 }
 
-export default Share;
+export default MainMission;
