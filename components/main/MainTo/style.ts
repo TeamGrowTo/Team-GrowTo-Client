@@ -1,0 +1,77 @@
+import styled from "styled-components";
+import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
+
+export const StyledRoot = styled.section`
+  width: 100%;
+`;
+
+export const MainToCategory = styled.section`
+  width: 102.8rem;
+  height: 44rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+`;
+
+export const CircleWrapper = styled.div`
+  margin-right: 4.25rem;
+  & < img {
+    width: 44rem;
+    height: 44rem;
+  }
+`;
+
+export const ArrowToCircleWrapper = styled.div`
+  margin-right: 4.5rem;
+  width: 10.8rem;
+  height: 8rem;
+`;
+
+export const CategoryComment = styled.div`
+  width: 60rem;
+  & > div {
+    display: flex;
+    align-items: center;
+    & > p {
+      color: ${colors.blue7};
+      font-size: 1.6rem;
+      font-family: "Pretendard-Medium";
+      margin-left: 0.9rem;
+    }
+  }
+  & > p:nth-child(2) {
+    color: ${colors.mildBlack};
+    font-family: "Pretendard-Bold";
+    font-size: 4.8rem;
+    margin-top: 1.6rem;
+  }
+  & > p:nth-child(3) {
+    color: ${colors.gray6};
+    font-family: "Pretendard-Bold";
+    font-size: 3.2rem;
+    margin-top: 1rem;
+    line-height: 4.6rem;
+  }
+  & > button {
+    width: 26.8rem;
+    height: 5.4rem;
+    border-radius: 4.8rem;
+    background-color: ${colors.mainBlue};
+    font-family: "Pretendard-Bold";
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.6rem;
+  }
+`;
+
+export const MainToProcess = styled.section`
+  width: 100%;
+`;
+
+export const MainToStory = styled.section`
+  width: 100%;
+`;
