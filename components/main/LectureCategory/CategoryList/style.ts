@@ -21,6 +21,9 @@ export const CategoryWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+  width: 9.7rem;
+  height: 9.7rem;
+
   ${applyMediaQuery("mobile")} {
     width: 5.2rem;
     height: 5.2rem;

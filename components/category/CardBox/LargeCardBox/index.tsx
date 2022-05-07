@@ -47,7 +47,7 @@ function LargeCardBox({ lecture }: Props) {
         <LikeIcon />
         <BookmarkIcon />
       </CardTop> */}
-      <TitleBox href={url} passHref>
+      <TitleBox>
         <TitleName href={url} target="_blank" rel="noopener noreferrer">
           {LectureTitle}
         </TitleName>
