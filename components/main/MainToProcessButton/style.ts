@@ -30,18 +30,18 @@ export const ButtonWrapper = styled.article`
   }
 `;
 
-export const Description = styled.aside`
-  h3 {
-    font-size: 2.4rem;
-    font-family: "Pretendard-ExtraBold";
-    margin-bottom: 0.3rem;
+export const Title = styled.h3`
+  font-size: 2.4rem;
+  font-family: "Pretendard-ExtraBold";
+  margin-bottom: 0.3rem;
 
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.6rem;
-      line-height: 1.9rem;
-    }
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
   }
+`;
 
+export const Description = styled.aside`
   p {
     font-size: 1.7rem;
     font-family: "Pretendard-Medium";
