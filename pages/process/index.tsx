@@ -258,11 +258,13 @@ export const CategoryWrapper = styled.div`
     color: ${colors.subOrange};
   }
   ${applyMediaQuery("mobile")} {
-    width: 33.7rem;
-    margin: 1.2rem auto 0 1.6rem;
+    width: 32.8rem;
+    margin: 2.4rem auto 0;
     line-height: 2.8rem;
     & > p {
       font-size: 2rem;
+      margin-bottom: 1.2rem;
+      margin-left: 1.6rem;
     }
   }
 `;
@@ -281,10 +283,11 @@ export const SkillWrapper = styled.div<{ isClicked: boolean }>`
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    margin: 3.2rem auto 5rem;
+    margin: 2.8rem auto 5rem;
     line-height: 2.8rem;
     & > p {
       font-size: 2rem;
+      margin-left: 1.6rem;
     }
   }
 `;

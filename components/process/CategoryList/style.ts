@@ -17,6 +17,11 @@ export const StyledRoot = styled.div`
   & > *:last-child {
     margin: 0;
   }
+  ${applyMediaQuery("mobile")} {
+    & > *:nth-child(3) {
+      margin: 0;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
