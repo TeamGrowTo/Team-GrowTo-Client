@@ -34,31 +34,24 @@ export const CardTop = styled.div`
   }
 `;
 
-export const TitleBox = styled(Link)`
+export const TitleBox = styled.div`
   /* width: 30.4rem; */
   width: 26.8rem;
+  margin: 2.2rem 1.7rem 0rem 1.8rem;
+  height: 10rem;
   //제목 3줄이상 자르기, 말줄임표
-  height: 10.4rem;
-
-  white-space: normal;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid ${colors.gray2};
 `;
 
 export const TitleName = styled.a`
-  height: 10rem;
-  margin: 2.2rem 1.7rem 0rem 1.8rem;
-  padding-bottom: 1rem;
   font-family: "Pretendard-SemiBold";
 
   color: ${colors.mildBlack};
   font-size: 2.2rem;
   line-height: 3rem;
   text-align: left;
-  border-bottom: 1px solid ${colors.gray2};
+
   //제목 4줄 이상이면 자르기
   white-space: normal;
   display: -webkit-box;

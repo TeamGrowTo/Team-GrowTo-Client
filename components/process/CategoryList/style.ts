@@ -1,14 +1,10 @@
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const CategoryWrapper = styled.div`
+export const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
-  ${applyMediaQuery("mobile")} {
-    width: 22.8rem;
-  }
 
   & > * {
     margin-right: 3.6rem;
@@ -18,14 +14,7 @@ export const CategoryWrapper = styled.div`
       margin-bottom: 0.8rem;
     }
   }
-`;
-
-export const ImageWrapper = styled.div`
-  width: 9.7rem;
-  height: 9.7rem;
-
-  ${applyMediaQuery("mobile")} {
-    width: 5.2rem;
-    height: 5.2rem;
+  & > *:last-child {
+    margin: 0;
   }
 `;

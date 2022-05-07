@@ -32,6 +32,7 @@ export interface ResponseResultData {
   duration: number;
   tags: TagData[];
   url: string;
+  site: string;
 }
 export interface LectureResultData {
   name: string;
@@ -42,6 +43,7 @@ export interface LectureResultData {
   createdDate: number;
   tags: TagData[];
   url: string;
+  site: string;
 }
 
 export interface LecturesResultAllData {

@@ -24,7 +24,7 @@ export const Description = styled.section`
   padding: 4rem 5rem 0 5rem;
   overflow: hidden;
   ${applyMediaQuery("mobile")} {
-    padding: 4.2rem 2.4rem 0 2.4rem;
+    padding: 2.2rem 1.9rem 0 2.8rem;
   }
 `;
 
@@ -34,6 +34,13 @@ export const LectureSite = styled.div`
   color: ${colors.gray6};
   line-height: 2.2rem;
   margin-bottom: 0.4rem;
+
+  ${applyMediaQuery("mobile")} {
+    font-family: "Pretendard-Regular";
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin: 0;
+  }
 `;
 
 export const LectureTitle = styled.h3`
@@ -50,10 +57,11 @@ export const LectureTitle = styled.h3`
   margin-bottom: 1.6rem;
 
   ${applyMediaQuery("mobile")} {
-    width: 21.2rem;
+    width: 24.8rem;
+    height: 5.6rem;
     font-size: 2rem;
     line-height: 2.8rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
   }
 `;
 
@@ -62,4 +70,8 @@ export const Line = styled.div`
   background-color: ${colors.gray1};
   margin: 2.4rem 1.6rem 0;
   z-index: 30;
+
+  ${applyMediaQuery("mobile")} {
+    margin: 1.2rem 1.4rem 0;
+  }
 `;
