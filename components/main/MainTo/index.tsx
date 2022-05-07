@@ -11,6 +11,7 @@ import {
   ZoomIcon,
 } from "public/assets/images";
 import React from "react";
+import Screen from "styles/Screen";
 
 import {
   ArrowToCircleWrapper,
@@ -20,6 +21,7 @@ import {
   MainToCategory,
   MainToProcess,
   MainToStory,
+  MobileCircleContainer,
   ResultCardComment,
   ResultCardWrapper,
   StoryComment,
@@ -29,12 +31,17 @@ function MainTo() {
   return (
     <StyledRoot>
       <MainToCategory>
-        <CircleWrapper>
-          <Image src={MainCircleImg} alt="mainCircle" quality={100} />
-        </CircleWrapper>
-        <ArrowToCircleWrapper>
-          <Image src={ArrowToCircle} alt="arrowToCircle" quality={100} />
-        </ArrowToCircleWrapper>
+        <Screen desktop>
+          <CircleWrapper>
+            <Image src={MainCircleImg} alt="mainCircle" quality={100} />
+          </CircleWrapper>
+        </Screen>
+        <Screen desktop>
+          <ArrowToCircleWrapper>
+            <Image src={ArrowToCircle} alt="arrowToCircle" quality={100} />
+          </ArrowToCircleWrapper>
+        </Screen>
+
         <CategoryComment>
           <div>
             <Image src={ZoomIcon} alt="arrowToCircle" quality={100} />
@@ -53,6 +60,16 @@ function MainTo() {
             </button>
           </Link>
         </CategoryComment>
+        <Screen mobile>
+          <MobileCircleContainer>
+            <CircleWrapper>
+              <Image src={MainCircleImg} alt="mainCircle" quality={100} />
+            </CircleWrapper>
+            <ArrowToCircleWrapper>
+              <Image src={ArrowToCircle} alt="arrowToCircle" quality={100} />
+            </ArrowToCircleWrapper>
+          </MobileCircleContainer>
+        </Screen>
       </MainToCategory>
 
       <MainToProcess>
@@ -80,9 +97,11 @@ function MainTo() {
       </MainToProcess>
 
       <MainToStory>
-        <GraphWrapper>
-          <Image src={GraphImg} alt="growGraph" quality={100} />
-        </GraphWrapper>
+        <Screen desktop>
+          <GraphWrapper>
+            <Image src={GraphImg} alt="growGraph" quality={100} />
+          </GraphWrapper>
+        </Screen>
         <StoryComment>
           <div>
             <Image src={EyeIcon} alt="eyeIcon" quality={100} />
@@ -104,6 +123,11 @@ function MainTo() {
             </button>
           </Link>
         </StoryComment>
+        <Screen mobile>
+          <GraphWrapper>
+            <Image src={GraphImg} alt="growGraph" quality={100} />
+          </GraphWrapper>
+        </Screen>
       </MainToStory>
     </StyledRoot>
   );
