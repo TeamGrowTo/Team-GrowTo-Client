@@ -4,6 +4,7 @@ import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.section`
   width: 100%;
+  margin-bottom: 14.8rem;
 `;
 
 export const MainToCategory = styled.section`
@@ -65,6 +66,9 @@ export const CategoryComment = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 5.6rem;
+    :hover {
+      cursor: pointer;
+    }
   }
 `;
 
@@ -118,6 +122,9 @@ export const ResultCardComment = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 5.6rem;
+    :hover {
+      cursor: pointer;
+    }
   }
 `;
 
@@ -128,5 +135,61 @@ export const ResultCardWrapper = styled.div`
 `;
 
 export const MainToStory = styled.section`
-  width: 100%;
+  width: 127.8rem;
+  height: 50rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background-color: ${colors.gray0};
+  border-radius: 2.6rem;
+`;
+
+export const GraphWrapper = styled.div`
+  width: 37.8rem;
+  height: 33.6rem;
+  margin-right: 21.3rem;
+  margin-left: 12.3rem;
+`;
+
+export const StoryComment = styled.div`
+  width: 60rem;
+  & > div {
+    display: flex;
+    align-items: center;
+    & > p {
+      color: ${colors.blue7};
+      font-size: 1.6rem;
+      font-family: "Pretendard-Medium";
+      margin-left: 0.9rem;
+    }
+  }
+  & > p:nth-child(2) {
+    color: ${colors.mildBlack};
+    font-family: "Pretendard-Bold";
+    font-size: 4.8rem;
+    margin-top: 1.6rem;
+  }
+  & > p:nth-child(3) {
+    color: ${colors.gray6};
+    font-family: "Pretendard-Bold";
+    font-size: 3.2rem;
+    margin-top: 1rem;
+    line-height: 4.6rem;
+  }
+  & > button {
+    width: 26.8rem;
+    height: 5.4rem;
+    border-radius: 4.8rem;
+    background-color: ${colors.mainBlue};
+    font-family: "Pretendard-Bold";
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.6rem;
+    :hover {
+      cursor: pointer;
+    }
+  }
 `;
