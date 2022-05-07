@@ -11,7 +11,7 @@ export const StyledRoot = styled.article`
   }
 `;
 
-export const SliderIndexWrapper = styled.aside`
+export const SliderIndexBox = styled.aside`
   position: relative;
   top: 7rem;
   z-index: 10;
@@ -19,14 +19,14 @@ export const SliderIndexWrapper = styled.aside`
   height: 2.8rem;
   display: flex;
   justify-content: center;
+`;
 
-  & > section {
-    width: 100%;
-    //136.4 + 2.8
-    max-width: 139.2rem;
-    display: flex;
-    justify-content: end;
-  }
+export const SliderIndexWrapper = styled.section`
+  width: 100%;
+  //136.4 + 2.8
+  max-width: 139.2rem;
+  display: flex;
+  justify-content: end;
 `;
 
 export const ButtonBox = styled.section`
