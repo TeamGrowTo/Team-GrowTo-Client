@@ -69,7 +69,62 @@ export const CategoryComment = styled.div`
 `;
 
 export const MainToProcess = styled.section`
-  width: 100%;
+  width: 102.8rem;
+  height: 44rem;
+  margin: 12.5rem auto 0;
+  display: flex;
+`;
+
+export const ResultCardComment = styled.div`
+  width: 50rem;
+  & > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    & > p {
+      text-align: right;
+      color: ${colors.blue7};
+      font-size: 1.6rem;
+      font-family: "Pretendard-Medium";
+      margin-left: 0.9rem;
+    }
+  }
+  & > p:nth-child(2) {
+    text-align: right;
+    color: ${colors.mildBlack};
+    font-family: "Pretendard-Bold";
+    font-size: 4.8rem;
+    margin-top: 1.6rem;
+  }
+  & > p:nth-child(3) {
+    text-align: right;
+    margin-left: auto;
+    color: ${colors.gray6};
+    font-family: "Pretendard-Bold";
+    font-size: 3.2rem;
+    margin-top: 1rem;
+    line-height: 4.6rem;
+  }
+  & > button {
+    margin-left: auto;
+    width: 26.8rem;
+    height: 5.4rem;
+    border-radius: 4.8rem;
+    background-color: ${colors.mainBlue};
+    font-family: "Pretendard-Bold";
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.6rem;
+  }
+`;
+
+export const ResultCardWrapper = styled.div`
+  width: 66rem;
+  height: 44rem;
+  margin-left: 11rem;
 `;
 
 export const MainToStory = styled.section`

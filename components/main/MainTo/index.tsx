@@ -18,6 +18,8 @@ import {
   MainToCategory,
   MainToProcess,
   MainToStory,
+  ResultCardComment,
+  ResultCardWrapper,
   StyledRoot,
 } from "./style";
 function MainTo() {
@@ -48,7 +50,27 @@ function MainTo() {
           </button>
         </CategoryComment>
       </MainToCategory>
-      <MainToProcess></MainToProcess>
+      <MainToProcess>
+        <ResultCardComment>
+          <div>
+            <Image src={RecommendIcon} alt="arrowToCircle" quality={100} />
+            <p>강의 추천 받기</p>
+          </div>
+          <p>언제 다 비교하지?</p>
+          <p>
+            간단한 선택만으로 내게 맞는
+            <br />
+            3가지 강의를 추천해드려요
+          </p>
+          <button>
+            맞춤 강의 찾기 &nbsp;
+            <Image src={nextArrow} alt="nextArrow" quality={100} />
+          </button>
+        </ResultCardComment>
+        <ResultCardWrapper>
+          <Image src={MainResultCard} alt="mainResultCard" quality={100} />
+        </ResultCardWrapper>
+      </MainToProcess>
       <MainToStory></MainToStory>
     </StyledRoot>
   );
