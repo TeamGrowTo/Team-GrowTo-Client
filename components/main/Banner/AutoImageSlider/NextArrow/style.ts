@@ -11,3 +11,8 @@ export const Button = styled.div`
   cursor: pointer;
   padding: 0;
 `;
+
+export const ImageWrapper = styled.div`
+  width: 1.4rem;
+  height: 1.4rem;
+`;
