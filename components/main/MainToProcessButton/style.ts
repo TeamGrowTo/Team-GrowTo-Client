@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.aside`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -30,10 +30,16 @@ export const ButtonWrapper = styled.article`
   }
 `;
 
+export const Contents = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Title = styled.h3`
   font-size: 2.4rem;
   font-family: "Pretendard-ExtraBold";
   margin-bottom: 0.3rem;
+  line-height: 2.9rem;
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.6rem;

@@ -10,6 +10,7 @@ export const Description = styled.aside`
   ${applyMediaQuery("mobile")} {
     width: 14rem;
     font-size: 1.2rem;
+    line-height: 1.7rem;
   }
 `;
 
@@ -20,5 +21,6 @@ export const Highlight = styled.strong`
 
   ${applyMediaQuery("mobile")} {
     font-size: 1.3rem;
+    line-height: 1.7rem;
   }
 `;

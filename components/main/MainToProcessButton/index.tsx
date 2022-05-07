@@ -13,7 +13,7 @@ import {
 } from "store/state";
 
 import { ProcessButtonDescription } from "./ProcessButtonDescription";
-import { ButtonWrapper, ImageWrapper, StyledRoot, Title, ToProcessButton } from "./style";
+import { ButtonWrapper, Contents, ImageWrapper, StyledRoot, Title, ToProcessButton } from "./style";
 
 function MainToProcessButton() {
   const resetLectureListData = useResetRecoilState(lectureDataList);
@@ -42,8 +42,10 @@ function MainToProcessButton() {
   return (
     <StyledRoot>
       <ButtonWrapper>
-        <Title>맞춤 강의 찾기</Title>
-        <ProcessButtonDescription />
+        <Contents>
+          <Title>맞춤 강의 찾기</Title>
+          <ProcessButtonDescription />
+        </Contents>
         <Link href="/process" passHref>
           <ToProcessButton onClick={handleMainToProcessButton}>
             지금 시작하기
