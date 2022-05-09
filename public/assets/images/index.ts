@@ -1,7 +1,13 @@
+export { default as ArrowToCircle } from "./arrowToCircle.png";
 export { default as CategoryClickImg } from "./categoryClickImg.png";
 export { default as ComparisonImg } from "./comparisonImg.png";
+export { default as GraphImg } from "./graph.png";
 export { default as ICDeveloper } from "./ic_developer.png";
+export { default as EyeIcon } from "./ic_eye.png";
+export { default as RecommendIcon } from "./ic_recommend.png";
+export { default as ZoomIcon } from "./ic_zoom.png";
 export { default as MainBannerCompass } from "./mainBannerCompass.png";
+export { default as MainCircleImg } from "./mainCircle.png";
 export { default as MainLectureDataIcon } from "./mainLectureDataIcon.png";
 export { default as MainLectureDesignIcon } from "./mainLectureDesignIcon.png";
 export { default as MainLectureDevelopIcon } from "./mainLectureDevelopIcon.png";
@@ -10,6 +16,7 @@ export { default as MainLectureMarketingIcon } from "./mainLectureMarketingIcon.
 export { default as MainLecturePlanIcon } from "./mainLecturePlanIcon.png";
 export { default as MainMissionBackground } from "./mainMissionBackground.png";
 export { default as MainReportBackground } from "./mainReportBackground.png";
+export { default as MainResultCard } from "./mainResultCard.png";
 export { default as MainReviewBackground } from "./mainReviewBackground.png";
 export { default as MainReviewProfile1 } from "./mainReviewProfile1.svg";
 export { default as MainReviewProfile1_mobile } from "./mainReviewProfile1-mobile.svg";
@@ -25,3 +32,4 @@ export { default as MainReviewProfile6 } from "./mainReviewProfile6.svg";
 export { default as MainReviewProfile6_mobile } from "./mainReviewProfile6-mobile.svg";
 export { default as MobileCategoryTab } from "./mobileCategoryTab.svg";
 export { default as MobileMainBannerCompass } from "./mobileMainBannerCompass.png";
+export { default as nextArrow } from "./nextArrow.png";
