@@ -11,6 +11,7 @@ export const StyledRoot = styled.section`
   background-image: url("/assets/images/mainReportBackground.png");
   ${applyMediaQuery("mobile")} {
     height: 36.8rem;
+    background-image: url("/assets/images/mainReportBackground-mobile.png");
   }
 `;
 
