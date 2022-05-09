@@ -69,7 +69,6 @@ export const Category = styled.button<{ isSelected: boolean }>`
     isSelected
       ? css`
           color: ${colors.mainBlue};
-
           background: ${colors.blue2};
           ${applyMediaQuery("mobile")} {
             background: linear-gradient(

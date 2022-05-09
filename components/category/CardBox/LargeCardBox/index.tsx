@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
-  BookmarkIcon,
+  // BookmarkIcon,
   CalendarIcon,
-  LikeIcon,
+  // LikeIcon,
   MoveToIcon,
   TimeIcon,
   VideoIcon,
@@ -31,7 +31,6 @@ interface Props {
 
 function LargeCardBox({ lecture }: Props) {
   const { LectureTitle, time, price, duration, startYear, tags, url, site } = lecture;
-  const commaPrice = price.toLocaleString();
 
   //todo(1) : 제목 고정영역 벗어나면 ...처리 (4줄이상 제목) O
   //todo(2) : 가격 단위 반점 찍기 => O toLocaleString으로 해결
@@ -39,17 +38,17 @@ function LargeCardBox({ lecture }: Props) {
   //todo(4) : 강의마지막 리스트 왼쪽 정렬되게 하기
   //todo(5) : 태그영역 벗어날 시 스크롤 O ( 스크롤 커스텀 )
 
-  //총 소요시간 -1 : 미표기
-  // 개설연도 -1 : 미표기
-  // 반복시청 가능 기간 : 100,000,000 : 무제한
+  //총 소요시간 = time -1 : 미표기
+  // 개설연도 = startYear -1 : 미표기
+  // 수강 기간 = duration : 100,000,000 : 무제한
   return (
     <StyledRoot>
-      <CardTop>
+      {/* <CardTop>
         <LikeIcon />
         <BookmarkIcon />
-      </CardTop>
-      <TitleBox href={url} passHref>
-        <TitleName href={url} target="_blank" rel="noreferrer">
+      </CardTop> */}
+      <TitleBox>
+        <TitleName href={url} target="_blank" rel="noopener noreferrer">
           {LectureTitle}
         </TitleName>
       </TitleBox>
@@ -66,12 +65,14 @@ function LargeCardBox({ lecture }: Props) {
         </div>
         <div>
           <CalendarIcon />
-          <LectureInfo>{startYear === -1 ? "미표기" : startYear}년 개설</LectureInfo>
+          <LectureInfo>{startYear === -1 ? "미표기" : startYear + "년 개설"}</LectureInfo>
         </div>
       </LectureInfoBox>
       <TagWrapper>
         {tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
+          <Tag key={tag.name} type={tag.type}>
+            {tag.name}
+          </Tag>
         ))}
       </TagWrapper>
       <Link href={url} passHref>
@@ -79,7 +80,7 @@ function LargeCardBox({ lecture }: Props) {
           <CardBottom>
             <Site>{site}</Site>
             <div>
-              <Price>{commaPrice}</Price>
+              <Price>{price.toLocaleString("ko-KR")}</Price>
               <PriceUnit>원</PriceUnit>
               <MoveToIcon />
             </div>
