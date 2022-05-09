@@ -245,7 +245,7 @@ export const CardChoice = styled.section`
   }
 `;
 
-export const CategoryWrapper = styled.div`
+export const CategoryWrapper = styled.section`
   width: 90rem;
   margin: 6rem auto 0 6.4rem;
   & > p {

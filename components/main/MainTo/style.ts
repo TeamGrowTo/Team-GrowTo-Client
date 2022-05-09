@@ -5,7 +5,10 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   width: 100%;
   margin-bottom: 14.8rem;
+  margin-top: 15.4rem;
   ${applyMediaQuery("mobile")} {
+    margin-bottom: 6.4rem;
+    margin-top: 5rem;
   }
 `;
 
@@ -128,7 +131,7 @@ export const CategoryComment = styled.div`
 export const MainToProcess = styled.section`
   width: 102.8rem;
   height: 44rem;
-  margin: 12.5rem auto 0;
+  margin: 12.5rem auto 7.7rem;
   display: flex;
   ${applyMediaQuery("mobile")} {
     width: 100%;
@@ -242,7 +245,7 @@ export const MainToStory = styled.section`
   }
 `;
 
-export const GraphWrapper = styled.div`
+export const GraphWrapper = styled.section`
   width: 37.8rem;
   height: 33.6rem;
   margin-right: 21.3rem;
