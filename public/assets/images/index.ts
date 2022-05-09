@@ -14,6 +14,7 @@ export { default as MainLectureDevelopIcon } from "./mainLectureDevelopIcon.png"
 export { default as MainLectureEtcIcon } from "./mainLectureEtcIcon.png";
 export { default as MainLectureMarketingIcon } from "./mainLectureMarketingIcon.png";
 export { default as MainLecturePlanIcon } from "./mainLecturePlanIcon.png";
+export { default as MainMissionBackground } from "./mainMissionBackground.png";
 export { default as MainReportBackground } from "./mainReportBackground.png";
 export { default as MainResultCard } from "./mainResultCard.png";
 export { default as MainReviewBackground } from "./mainReviewBackground.png";

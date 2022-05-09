@@ -50,7 +50,6 @@ function Process() {
   const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
   const [currentSkill, setCurrentSkill] = useRecoilState(currentSkillState);
-  const setIsDisable = useSetRecoilState(isDisableState);
   const resetProcessData = useSetRecoilState(processState);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -60,6 +59,7 @@ function Process() {
   const resetIsOpen = useResetRecoilState(isOpenState);
   const resetIsSelected = useResetRecoilState(isSelectedState);
   const resetSkillData = useResetRecoilState(currentSkillState);
+  const resetLectureSkill = useResetRecoilState(lectureSkillState);
 
   const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
@@ -89,8 +89,6 @@ function Process() {
           timeAsc: undefined,
           priceAsc: undefined,
         });
-        setIsDisable(false);
-        //1-1없으면 전체리스트 불러온다.
       }
     }
   };
@@ -128,6 +126,7 @@ function Process() {
     if (!category) setCurrentCategory({ id: -1, categoryName: "" });
     if (!currentSkill) setCurrentSkill({ id: -1, skillName: "" });
     if (category?.id && category?.id !== -1) setLectureSkill(category.id);
+    resetLectureSkill();
   }, []);
 
   return (
@@ -241,6 +240,8 @@ export const CardChoice = styled.section`
     width: 100%;
     height: 100%;
     border-radius: 0;
+    margin-top: 0;
+    border-radius: 2.8rem 2.8rem 0 0;
   }
 `;
 
@@ -258,10 +259,12 @@ export const CategoryWrapper = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    margin: 3.2rem auto 5rem;
+    margin: 2.4rem auto 0;
     line-height: 2.8rem;
     & > p {
       font-size: 2rem;
+      margin-bottom: 1.2rem;
+      margin-left: 1.6rem;
     }
   }
 `;
@@ -280,10 +283,11 @@ export const SkillWrapper = styled.div<{ isClicked: boolean }>`
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    margin: 3.2rem auto 5rem;
+    margin: 2.8rem auto 5rem;
     line-height: 2.8rem;
     & > p {
       font-size: 2rem;
+      margin-left: 1.6rem;
     }
   }
 `;

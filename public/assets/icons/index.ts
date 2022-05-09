@@ -11,6 +11,8 @@ export { default as DesktopQuestionDropdownIcon } from "./desktopQuestionDropdow
 export { default as Dropdown } from "./dropdown.svg";
 export { default as Dropdown_mobile } from "./dropdown-mobile.svg";
 export { default as EmailIcon } from "./emailIcon.svg";
+export { default as GrowToLogoIcon } from "./growToLogo.svg";
+export { default as GrowToLogoIcon_mobile } from "./growToLogo-mobile.svg";
 export { default as HamburgerIcon } from "./hamburgerIcon.svg";
 export { default as ProcessDataIcon } from "./ic_data.png";
 export { default as ProcessDesignIcon } from "./ic_design.png";

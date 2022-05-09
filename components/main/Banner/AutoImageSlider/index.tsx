@@ -8,7 +8,7 @@ import Screen from "styles/Screen";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
 import SlideIndexView from "./SlideIndexView";
-import { ButtonBox, ButtonWrapper, SliderIndexWrapper, StyledRoot } from "./style";
+import { ButtonBox, ButtonWrapper, SliderIndexBox, SliderIndexWrapper, StyledRoot } from "./style";
 
 interface Props {
   children?: JSX.Element[];
@@ -41,11 +41,11 @@ function AutoImageSlider({ children }: Props) {
   return (
     <StyledRoot>
       <Screen desktop>
-        <SliderIndexWrapper>
-          <section>
+        <SliderIndexBox>
+          <SliderIndexWrapper>
             <SlideIndexView nowIndex={page.slideIndex + 1} slideSize={children?.length} />
-          </section>
-        </SliderIndexWrapper>
+          </SliderIndexWrapper>
+        </SliderIndexBox>
       </Screen>
       <section className="page-carousel">
         <Slider ref={(elem) => (slider = elem)} {...settings}>

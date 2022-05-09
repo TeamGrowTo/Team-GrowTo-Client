@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
-export const StyledRoot = styled.section`
+export const StyledRoot = styled.aside`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -30,38 +30,20 @@ export const ButtonWrapper = styled.article`
   }
 `;
 
-export const Description = styled.aside`
-  h3 {
-    font-size: 2.4rem;
-    font-family: "Pretendard-ExtraBold";
-    margin-bottom: 0.3rem;
+export const Contents = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.6rem;
-      line-height: 1.9rem;
-    }
-  }
+export const Title = styled.h3`
+  font-size: 2.4rem;
+  font-family: "Pretendard-ExtraBold";
+  margin-bottom: 0.3rem;
+  line-height: 2.9rem;
 
-  p {
-    font-size: 1.7rem;
-    font-family: "Pretendard-Medium";
-    line-height: 2rem;
-    margin: 0;
-
-    ${applyMediaQuery("mobile")} {
-      width: 14rem;
-      font-size: 1.2rem;
-    }
-
-    strong {
-      font-size: 2rem;
-      font-family: "Pretendard-Bold";
-      line-height: 2.4rem;
-
-      ${applyMediaQuery("mobile")} {
-        font-size: 1.3rem;
-      }
-    }
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
   }
 `;
 
