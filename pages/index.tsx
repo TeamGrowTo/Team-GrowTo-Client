@@ -17,8 +17,7 @@ const Home: NextPage = () => {
       <MainToProcessButton />
       <MainTo />
       <MainReport />
-      <MainReview />
-      <Share />
+      {/* <Share /> */}
     </div>
   );
 };
