@@ -8,8 +8,9 @@ const StyledRoot = styled.section`
   height: auto;
   display: flex;
   justify-content: center;
-  background: black;
+  background: ${colors.lightGreen};
   flex-wrap: wrap;
+
   ${applyMediaQuery("mobile")} {
     flex-direction: column;
     padding-top: 3.2rem;
@@ -29,36 +30,39 @@ const TitleWrapper = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   ${applyMediaQuery("mobile")} {
     width: 26rem;
     margin: 0 auto;
   }
+`;
 
-  & > h1 {
-    color: white;
-    font-size: 6rem;
-    font-family: "Pretendard-ExtraBold";
-    margin-bottom: 2rem;
-    line-height: 6.8rem;
-    ${applyMediaQuery("mobile")} {
-      font-family: "Pretendard-Bold";
-      font-size: 2.8rem;
-      text-align: center;
-      line-height: 3.4rem;
-      margin-bottom: 1.2rem;
-    }
+export const Title = styled.h1`
+  color: white;
+  font-size: 6rem;
+  font-family: "Pretendard-ExtraBold";
+  margin-bottom: 2rem;
+  line-height: 6.8rem;
+
+  ${applyMediaQuery("mobile")} {
+    font-family: "Pretendard-Bold";
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 3.4rem;
+    margin-bottom: 1.2rem;
   }
+`;
 
-  & > p {
-    color: ${colors.gray3};
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-    letter-spacing: -0.01em;
-    font-family: "Pretendard-SemiBold";
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.2rem;
-      text-align: center;
-    }
+export const Description = styled.p`
+  color: white;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.01em;
+  font-family: "Pretendard-SemiBold";
+
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    text-align: center;
   }
 `;
 
