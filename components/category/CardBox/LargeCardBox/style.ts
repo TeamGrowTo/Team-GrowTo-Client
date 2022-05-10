@@ -1,145 +1,185 @@
+import Link from "next/link";
+import { tagType } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 export const StyledRoot = styled.div`
   display: flex;
-  max-width: 126.2rem;
-  width: 100%;
-  height: 14rem;
-  background-color: white;
-  border-radius: 2.4rem;
-  margin-bottom: 1.8rem;
-  transition: all 0.15s;
-  box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.1);
-  &:hover {
-    box-shadow: 0rem 0.2rem 1rem rgba(3, 0, 167, 0.15);
-    background: #fbfcff;
-  }
-`;
-
-export const LectureTitleBox = styled.div`
-  padding: 0 3.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid #bfd8ff;
-  width: 38rem;
-  margin: 2.9rem 0;
-`;
-
-export const LectureInfoBox = styled(LectureTitleBox)`
-  display: flex;
-  align-items: center;
-  width: 35.4rem;
-  min-width: 33.8rem;
-  padding: 0 2.8rem;
-
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-`;
-
-export const LectureSiteBox = styled(LectureTitleBox)`
-  min-width: 9rem;
-  width: 12.4rem;
-  padding: 0;
-  justify-content: center;
   flex-direction: column;
-  text-align: center;
+  justify-content: space-between;
+  height: 41.6rem;
+  width: 30.4rem;
+  margin: 1.4rem 1rem;
 
-  & span:first-child {
-    margin-bottom: 0.8rem;
+  border-radius: 2.2rem;
+  background: white;
+
+  transition: all 0.15s;
+  box-shadow: 0rem 0.2rem 0.8rem 0rem rgba(0, 0, 0, 0.12);
+  &:hover {
+    background-color: ${colors.btnCategoryPressed};
   }
 `;
 
-export const LectureTagBox = styled(LectureInfoBox)`
-  min-width: 26rem;
-  width: 50.2rem;
-  align-items: center;
-  padding: 0 2.4rem;
-  border: none;
-  overflow: auto;
+export const CardTop = styled.div`
+  /* height: 4.8rem; */
+  padding: 1.6rem 1.8rem 1.2rem 1.8rem;
+  text-align: right;
+  & svg {
+    cursor: pointer;
+  }
+  & svg + svg {
+    margin-left: 2rem;
+  }
 `;
 
-export const LectureTitleName = styled.h3`
-  font-family: "Pretendard-Bold";
-  font-size: 1.8rem;
-  line-height: 2.8rem;
-  text-align: center;
-  color: ${colors.subBlack};
+export const TitleBox = styled.div`
+  /* width: 30.4rem; */
+  width: 26.8rem;
+  margin: 2.2rem 1.7rem 0rem 1.8rem;
+  height: 10rem;
+  //제목 3줄이상 자르기, 말줄임표
+  padding-bottom: 1rem;
+  border-bottom: 1px solid ${colors.gray2};
 `;
 
-export const LectureInfoShortName = styled.span`
-  font-family: "Pretendard-Light";
-  font-size: 1.4em;
-  line-height: 1.7rem;
-  width: 7.8rem;
-  color: ${colors.subBlack};
+export const TitleName = styled.a`
+  font-family: "Pretendard-SemiBold";
+
+  color: ${colors.mildBlack};
+  font-size: 2.2rem;
+  line-height: 3rem;
+  text-align: left;
+
+  //제목 4줄 이상이면 자르기
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
-export const LectureInfoLongName = styled(LectureInfoShortName)`
-  width: 9.4rem;
-`;
-
-export const LectureInfoWrapper = styled.span`
+export const LectureInfoBox = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-
-  & + & {
-    margin-top: 1.2rem;
+  height: 7.4rem;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 1.2rem 1.8rem 1.8rem 1.9rem;
+  & svg {
+    vertical-align: sub;
   }
 `;
 
-export const LectureInfoData = styled.span`
+export const LectureInfo = styled.span`
   font-family: "Pretendard-Medium";
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-  color: ${colors.subBlack};
+  font-size: 1.7rem;
+  text-align: left;
+  margin-left: 1rem;
+  color: ${colors.gray6};
 `;
 
-export const LectureTag = styled.span`
-  background-color: ${colors.gray2};
+export const Tag = styled.span<{ type: tagType }>`
+  background-color: ${(props) => colors[props.type]};
   border-radius: 3.5rem;
-  padding: 0.5rem 1.4rem;
-  height: 2.4rem;
+  padding: 0rem 1.2rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
 
   font-family: "Pretendard-Regular";
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  text-align: center;
+  font-size: 1.5rem;
+  color: ${colors.mildBlack};
 
-  color: ${colors.subBlack};
-
-  margin-top: 0.65rem;
-  margin-bottom: 0.65rem;
-  margin-right: 0.8rem;
+  margin-bottom: 0.6rem;
+  margin-right: 0.6rem;
 
   &:last-child {
     margin-right: 0rem;
   }
-`;
-
-export const TagWrapper = styled.div`
-  width: 41.6rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   ${applyMediaQuery("mobile")} {
-    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    padding: 0rem 0.8rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
   }
 `;
 
-export const LectureLinkBtn = styled.a`
-  height: 100%;
-  width: 4.4rem;
-  background: linear-gradient(206.51deg, #bde3ff -1.36%, #4579ff 83.36%);
-  border-top-right-radius: 2.4rem;
-  border-bottom-right-radius: 2.4rem;
+export const TagWrapper = styled.div`
+  display: flex;
+  padding: 0 0 0 1.8rem;
+  flex-direction: row;
+  flex-grow: 1;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  //scroll
+  margin-right: 0.8rem; //스크롤 오르쪽 띄우기위해서
+  margin-bottom: 0.4rem;
+  overflow: auto;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background-color: ${colors.gray0};
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: ${colors.gray2};
+  }
+  scrollbar-width: 0.8rem;
+  scrollbar-color: ${colors.gray2};
+  ${applyMediaQuery("mobile")} {
+    width: 100%;
+    height: unset;
+    padding: unset;
+  }
+`;
 
-  cursor: pointer;
-  text-align: center;
-  line-height: 15rem;
+export const CardBottom = styled.div`
+  height: 5.4rem;
+  margin: 0 1.8rem;
+  border-top: 1px solid ${colors.gray2};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & * {
+    vertical-align: middle;
+  }
+  ${applyMediaQuery("mobile")} {
+    height: 4.8rem;
+    margin: 0;
+  }
+`;
+
+export const Site = styled.span`
+  font-family: "Pretendard-Regular";
+  font-size: 1.5rem;
+  color: ${colors.gray6};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.4rem;
+  }
+`;
+
+export const Price = styled.span`
+  font-family: "Pretendard-ExtraBold";
+  font-size: 1.8rem;
+  color: ${colors.mildBlack};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.5rem;
+  }
+`;
+
+export const PriceUnit = styled.span`
+  font-family: "Pretendard-Medium";
+  font-size: 1.4rem;
+  color: ${colors.mildBlack};
+  margin-left: 0.2rem;
+  margin-right: 1rem;
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+  }
 `;

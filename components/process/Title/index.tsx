@@ -13,6 +13,8 @@ function Title() {
       ? "/processTime"
       : PATH_NAME === "/processTime"
       ? "/processTag"
+      : PATH_NAME === "/processTag"
+      ? "/process"
       : "/category";
 
   return (

@@ -17,7 +17,8 @@ import {
 import React, { useEffect, useState } from "react";
 import Screen from "styles/Screen";
 
-import { LineWrapper, StyledRoot, Wrapper } from "./style";
+import ShareFriends from "./ShareFriends";
+import { LineWrapper, StyledBox, StyledRoot, Wrapper } from "./style";
 
 export default function MainReport() {
   const [totalNumber, setTotalNumber] = useState(0);
@@ -62,27 +63,30 @@ export default function MainReport() {
 
   return (
     <StyledRoot>
-      <Wrapper>
-        <ReportSection reportInfo={TotalCompare} />
-        <LineWrapper>
-          <Screen desktop>
-            <ReportLine />
-          </Screen>
-          <Screen mobile>
-            <ReportLine_mobile />
-          </Screen>
-        </LineWrapper>
-        <ReportSection reportInfo={CustomSearch} />
-        <LineWrapper>
-          <Screen desktop>
-            <ReportLine />
-          </Screen>
-          <Screen mobile>
-            <ReportLine_mobile />
-          </Screen>
-        </LineWrapper>
-        <ReportSection reportInfo={RequestCompare} />
-      </Wrapper>
+      <StyledBox>
+        <Wrapper>
+          <ReportSection reportInfo={TotalCompare} />
+          <LineWrapper>
+            <Screen desktop>
+              <ReportLine />
+            </Screen>
+            <Screen mobile>
+              <ReportLine_mobile />
+            </Screen>
+          </LineWrapper>
+          <ReportSection reportInfo={CustomSearch} />
+          <LineWrapper>
+            <Screen desktop>
+              <ReportLine />
+            </Screen>
+            <Screen mobile>
+              <ReportLine_mobile />
+            </Screen>
+          </LineWrapper>
+          <ReportSection reportInfo={RequestCompare} />
+        </Wrapper>
+        <ShareFriends />
+      </StyledBox>
     </StyledRoot>
   );
 }

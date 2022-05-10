@@ -1,29 +1,48 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
+
 export const StyledRoot = styled.section`
-  display: flex;
   width: 100%;
-  height: 80rem;
-  background: linear-gradient(to bottom, rgb(138, 186, 197, 0.3), rgb(209, 201, 241, 0.3));
+  height: 44.8rem;
+  background: linear-gradient(180deg, #e6f0f4 -5.17%, #e3e9f9 95%);
   font-family: "Pretendard-Regular";
   ${applyMediaQuery("mobile")} {
-    height: 34.6rem;
+    height: 21.6rem;
+  }
+  text-align: center;
+`;
+
+export const Background = styled.div`
+  background-image: url("/assets/images/mainMissionBackground.png");
+  height: 100%;
+  background-size: cover;
+  background-position: bottom;
+`;
+
+export const OurMission = styled.h3`
+  padding-top: 8rem;
+  font-family: "Poppins-Bold";
+  color: ${colors.mildBlack};
+  font-size: 3.6rem;
+  ${applyMediaQuery("mobile")} {
+    padding-top: 3.6rem;
+    font-size: 2rem;
   }
 `;
 
 export const ShareBox = styled.div`
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
-  width: 96rem;
+  margin-top: 3rem;
+  width: 94.8rem;
   ${applyMediaQuery("mobile")} {
+    margin-top: 1.5rem;
     width: 32.8rem;
   }
 `;
+
 export const StoryLink = styled.a`
   margin-bottom: 1.6rem;
-  margin-top: 9.1rem;
   text-align: right;
   color: ${colors.subBlack};
   font-family: "Pretendard-Medium";
@@ -36,42 +55,42 @@ export const StoryLink = styled.a`
   }
 `;
 export const Slogan = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 14.8rem;
+  width: 94.8rem;
+  height: 18.4rem;
   padding: 5.4rem;
-  width: 96rem;
-  height: 22.7rem;
-  border-radius: 2.6rem;
-  background: rgb(255, 255, 255, 0.7);
-  font-family: "Pretendard-SemiBold";
+
+  background: linear-gradient(
+    158.59deg,
+    rgba(255, 255, 255, 0.7) 22.48%,
+    rgba(255, 255, 255, 0.4) 97.52%
+  );
+  border-radius: 3rem;
+  border: 2px solid;
+  border-image-source: linear-gradient(
+    47.86deg,
+    rgba(255, 255, 255, 0.1) 29.04%,
+    rgba(255, 255, 255, 0.5) 76.38%
+  );
+  backdrop-filter: blur(4rem);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
   color: ${colors.gray6};
   & > p {
-    margin: auto;
+    font-family: "Pretendard-Medium";
     font-size: 2.6rem;
     line-height: 3.8rem;
-  }
-  & > p:last-child {
-    font-size: 1.6rem;
-    color: ${colors.mainBlue};
-    font-family: "Pretendard-Medium";
+    color: ${colors.gray6};
   }
   & > p > span {
     color: ${colors.mainBlue};
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    height: 9.7rem;
-    padding: 1.6rem;
-    font-family: "Pretendard-Regular";
-    margin-bottom: 4.8rem;
+    height: 10rem;
+    padding: 2.8rem 0;
+    font-family: "Pretendard-Medium";
     & > p {
       font-size: 1.4rem;
       line-height: 2rem;
-    }
-    & > p:last-child {
-      font-size: 1.2rem;
     }
   }
 `;
