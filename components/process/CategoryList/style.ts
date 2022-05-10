@@ -4,7 +4,6 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 
   & > * {
     margin-right: 3.6rem;
@@ -16,5 +15,20 @@ export const StyledRoot = styled.div`
   }
   & > *:last-child {
     margin: 0;
+  }
+  ${applyMediaQuery("mobile")} {
+    flex-wrap: wrap;
+    & > *:nth-child(3) {
+      margin: 0;
+    }
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  width: 3.6rem;
+  height: 3.6rem;
+  ${applyMediaQuery("mobile")} {
+    width: 2.6rem;
+    height: 2.6rem;
   }
 `;

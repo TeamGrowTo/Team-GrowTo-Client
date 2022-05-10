@@ -13,12 +13,6 @@ export const StyledRoot = styled.section`
   margin-bottom: 2.8rem;
 
   ${applyMediaQuery("mobile")} {
-    background: #f4f9ff;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
   }
 `;
 
@@ -35,17 +29,16 @@ export const SkillWrapper = styled.div`
     margin-right: 0;
   }
   ${applyMediaQuery("mobile")} {
-    width: 100%;
+    /* width: 100%;
     height: 100%;
-    margin: 0;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    margin: 0; */
+    /*
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
     &::-webkit-scrollbar {
       display: none;
-    }
+    } */
   }
 `;
 
@@ -61,8 +54,8 @@ export const Skill = styled.button<{ isSelected: boolean }>`
   border-radius: 4.8rem;
   border: 1px solid ${({ isSelected }) => (isSelected ? `${colors.mainBlue}` : "white")};
   ${applyMediaQuery("mobile")} {
-    padding: 1.1rem 2rem;
-    height: 4rem;
+    padding: 1rem 2rem;
+    height: 3.4rem;
     font-size: 1.4rem;
   }
   :hover {

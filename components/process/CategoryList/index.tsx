@@ -2,9 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentCategoryState, lectureCategoryState } from "store/state";
+import Screen from "styles/Screen";
 
 import CategoryButton from "../CategoryButton";
-import { StyledRoot } from "./style";
+import { ImageWrapper, StyledRoot } from "./style";
 
 interface Props {
   iconList: StaticImageData[];
@@ -28,9 +29,14 @@ function CategoryList({ iconList, onCategoryClick, isClicked }: Props) {
           onCategoryClick={() => onCategoryClick(category.id)}
         >
           <>
-            <div>
+            <ImageWrapper>
               <Image src={iconList[index]} alt="categoryIcon" quality={100} />
-            </div>
+            </ImageWrapper>
+            {/* <Screen mobile>
+              <ImageWrapper>
+                <Image src={iconList[index]} alt="categoryIcon" quality={100} />
+              </ImageWrapper>
+            </Screen> */}
             <span>{category.categoryName}</span>
           </>
         </CategoryButton>
