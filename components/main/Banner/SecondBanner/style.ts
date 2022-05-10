@@ -35,34 +35,34 @@ const TitleWrapper = styled.article`
     width: 26rem;
     margin: 0 auto;
   }
+`;
 
-  & > h1 {
-    color: white;
-    font-size: 6rem;
-    font-family: "Pretendard-ExtraBold";
-    margin-bottom: 2rem;
-    line-height: 6.8rem;
+export const Title = styled.h1`
+  color: white;
+  font-size: 6rem;
+  font-family: "Pretendard-ExtraBold";
+  margin-bottom: 2rem;
+  line-height: 6.8rem;
 
-    ${applyMediaQuery("mobile")} {
-      font-family: "Pretendard-Bold";
-      font-size: 2.8rem;
-      text-align: center;
-      line-height: 3.4rem;
-      margin-bottom: 1.2rem;
-    }
+  ${applyMediaQuery("mobile")} {
+    font-family: "Pretendard-Bold";
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 3.4rem;
+    margin-bottom: 1.2rem;
   }
+`;
 
-  & > p {
-    color: white;
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-    letter-spacing: -0.01em;
-    font-family: "Pretendard-SemiBold";
+export const Description = styled.p`
+  color: white;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.01em;
+  font-family: "Pretendard-SemiBold";
 
-    ${applyMediaQuery("mobile")} {
-      font-size: 1.2rem;
-      text-align: center;
-    }
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
+    text-align: center;
   }
 `;
 

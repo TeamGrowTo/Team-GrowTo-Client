@@ -3,17 +3,17 @@ import { MainBannerCustomLecture } from "public/assets/images";
 import React from "react";
 import Screen from "styles/Screen";
 
-import { ImageWrapper, StyledRoot, TitleWrapper } from "./style";
+import { Description, ImageWrapper, StyledRoot, Title, TitleWrapper } from "./style";
 
 function SecondBanner() {
   return (
     <StyledRoot>
       <TitleWrapper>
-        <h1>
+        <Title>
           <div>무슨 강의 듣지..?</div>
           <div>{"고민된다면 '맞춤강의'"}</div>
-        </h1>
-        <p>{"'맞춤 강의 찾기' Click! 5초만에 강의를 찾을 수 있어요"}</p>
+        </Title>
+        <Description>{"'맞춤 강의 찾기' Click! 5초만에 강의를 찾을 수 있어요"}</Description>
       </TitleWrapper>
       <ImageWrapper>
         <Screen desktop>
