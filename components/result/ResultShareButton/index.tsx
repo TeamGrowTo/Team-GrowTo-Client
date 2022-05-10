@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import { ShareButton, StyledRoot } from "./style";
 
-const ResultShareButton = function () {
+function ResultShareButton() {
   const [flagModal, setFlagModal] = useState(false);
 
   const copyLinkToClipBoard = async () => {
@@ -39,6 +39,6 @@ const ResultShareButton = function () {
       />
     </StyledRoot>
   );
-};
+}
 
 export default ResultShareButton;
