@@ -3,7 +3,7 @@ import React from "react";
 
 import { Content, NotiBox, NotiTitle, NotiWrapper, StyledRoot } from "./style";
 
-const MiddleNotification = function () {
+function MiddleNotification() {
   return (
     <StyledRoot>
       <NotiBox>
@@ -22,6 +22,6 @@ const MiddleNotification = function () {
       </NotiBox>
     </StyledRoot>
   );
-};
+}
 
 export default MiddleNotification;
