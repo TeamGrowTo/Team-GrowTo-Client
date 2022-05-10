@@ -2,6 +2,7 @@ export { default as CategoryClickImg } from "./categoryClickImg.png";
 export { default as ComparisonImg } from "./comparisonImg.png";
 export { default as ICDeveloper } from "./ic_developer.png";
 export { default as MainBannerCompass } from "./mainBannerCompass.png";
+export { default as MainBannerCustomLecture } from "./mainBannerCustomLecture.png";
 export { default as MainLectureDataIcon } from "./mainLectureDataIcon.png";
 export { default as MainLectureDesignIcon } from "./mainLectureDesignIcon.png";
 export { default as MainLectureDevelopIcon } from "./mainLectureDevelopIcon.png";

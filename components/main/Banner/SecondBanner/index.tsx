@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MainBannerCompass, MobileMainBannerCompass } from "public/assets/images";
+import { MainBannerCustomLecture } from "public/assets/images";
 import React from "react";
 import Screen from "styles/Screen";
 
@@ -10,18 +10,24 @@ function SecondBanner() {
     <StyledRoot>
       <TitleWrapper>
         <h1>
-          <div>내게 맞는 IT강의</div>
-          <div>한 눈에, 간편하게 찾기</div>
+          <div>무슨 강의 듣지..?</div>
+          <div>{"고민된다면 '맞춤강의'"}</div>
         </h1>
-        <p>강의 찾는 시간 줄이고 성장에만 집중하세요, 그로투</p>
+        <p>{"'맞춤 강의 찾기' Click! 5초만에 강의를 찾을 수 있어요"}</p>
       </TitleWrapper>
       <ImageWrapper>
         <Screen desktop>
-          <Image src={MainBannerCompass} alt="bannerImg" quality={100} />
+          <Image
+            src={MainBannerCustomLecture}
+            width={547}
+            height={288}
+            alt="bannerImg"
+            quality={100}
+          />
         </Screen>
         <Screen mobile>
           <Image
-            src={MobileMainBannerCompass}
+            src={MainBannerCustomLecture}
             alt="bannerImg"
             width={304}
             height={135}
