@@ -138,7 +138,7 @@ function Category() {
         </Screen>
         <ResultShareButton />
         <MiddleNotification />
-        {/* <Result /> */}
+        <Result />
         <Screen desktop>
           <BlueButton onClick={handleMoveToCategory} width="96%" maxWidth="84.5rem">
             다른 강의 비교하기

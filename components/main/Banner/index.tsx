@@ -4,13 +4,13 @@ import AutoImageSlider from "./AutoImageSlider";
 import FirstBanner from "./FirstBanner";
 import SecondBanner from "./SecondBanner";
 
-const Banner = function () {
+function Banner() {
   return (
     <AutoImageSlider>
       <FirstBanner></FirstBanner>
       <SecondBanner></SecondBanner>
     </AutoImageSlider>
   );
-};
+}
 
 export default Banner;
