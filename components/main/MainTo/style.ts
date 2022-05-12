@@ -107,7 +107,6 @@ export const CategoryComment = styled.div`
 export const NextArrowWrapper = styled.div`
   display: flex;
   margin-left: 0.8rem;
-
   ${applyMediaQuery("mobile")} {
     margin-left: 0.4rem;
     width: 0.7rem;
@@ -116,7 +115,7 @@ export const NextArrowWrapper = styled.div`
 `;
 
 export const NextButton = styled.button`
-  width: 26.8rem;
+  padding: 1.5rem 4.2rem;
   height: 5.4rem;
   border-radius: 4.8rem;
   background-color: ${colors.mainBlue};
@@ -131,7 +130,7 @@ export const NextButton = styled.button`
     cursor: pointer;
   }
   ${applyMediaQuery("mobile")} {
-    width: 16.3rem;
+    padding: 1rem 1.6rem;
     height: 3.7rem;
     font-size: 1.4rem;
     margin-top: 3.2rem;
