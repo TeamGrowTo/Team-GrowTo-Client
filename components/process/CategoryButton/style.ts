@@ -51,7 +51,6 @@ export const StyledRoot = styled.button<{ isSelected: boolean; isClicked: boolea
     ${applyMediaQuery("mobile")} {
       margin-top: 0rem;
       margin-left: 0.4rem;
-      font-family: "Pretendard-Regular";
       font-size: 1.4rem;
     }
   }
