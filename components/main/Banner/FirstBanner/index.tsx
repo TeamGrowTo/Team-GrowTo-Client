@@ -3,17 +3,17 @@ import { MainBannerCompass, MobileMainBannerCompass } from "public/assets/images
 import React from "react";
 import Screen from "styles/Screen";
 
-import { ImageWrapper, StyledRoot, TitleWrapper } from "./style";
+import { Description, ImageWrapper, StyledRoot, Title, TitleWrapper } from "./style";
 
 function FirstBanner() {
   return (
     <StyledRoot>
       <TitleWrapper>
-        <h1>
+        <Title>
           <div>내게 맞는 IT강의</div>
           <div>한 눈에, 간편하게 찾기</div>
-        </h1>
-        <p>강의 찾는 시간 줄이고 성장에만 집중하세요, 그로투</p>
+        </Title>
+        <Description>강의 찾는 시간 줄이고 성장에만 집중하세요, 그로투</Description>
       </TitleWrapper>
       <ImageWrapper>
         <Screen desktop>

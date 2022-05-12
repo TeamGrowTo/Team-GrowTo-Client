@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 export const StyledRoot = styled.article`
-  & > button {
-    display: none !important;
+  width: 100vw;
+  max-width: 100%;
+
+  & > section {
+    button {
+      display: none !important;
+    }
   }
 `;
 
-export const SliderIndexWrapper = styled.aside`
+export const SliderIndexBox = styled.aside`
   position: relative;
   top: 7rem;
   z-index: 10;
@@ -14,13 +19,14 @@ export const SliderIndexWrapper = styled.aside`
   height: 2.8rem;
   display: flex;
   justify-content: center;
+`;
 
-  & > section {
-    width: 100%;
-    max-width: 132.1rem;
-    display: flex;
-    justify-content: end;
-  }
+export const SliderIndexWrapper = styled.section`
+  width: 100%;
+  //136.4 + 2.8
+  max-width: 139.2rem;
+  display: flex;
+  justify-content: end;
 `;
 
 export const ButtonBox = styled.section`
@@ -34,8 +40,9 @@ export const ButtonBox = styled.section`
 
 export const ButtonWrapper = styled.div`
   width: 100%;
-  max-width: 132.1rem;
+  max-width: 133.5rem;
   display: flex;
   justify-content: start;
   padding: 0;
+  padding-left: 2.8rem;
 `;
