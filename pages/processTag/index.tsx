@@ -257,7 +257,7 @@ export const NextArrowWrapper = styled.div`
 
 export const TagBox = styled.div`
   ${applyMediaQuery("mobile")} {
-    height: 32.6rem;
+    height: 25rem;
     overflow: scroll;
   }
 `;
