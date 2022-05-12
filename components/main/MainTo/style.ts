@@ -151,6 +151,9 @@ export const MainToProcess = styled.section`
 
 export const ResultCardComment = styled.div`
   width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     margin: 0 auto;
@@ -181,7 +184,7 @@ export const ResultCardComment = styled.div`
     color: ${colors.mildBlack};
     font-family: "Pretendard-Bold";
     font-size: 4.8rem;
-    margin-top: 1.6rem;
+    margin-top: 1.9rem;
     ${applyMediaQuery("mobile")} {
       margin-top: 1.2rem;
       font-size: 2.8rem;
@@ -264,7 +267,7 @@ export const StoryComment = styled.div`
     color: ${colors.mildBlack};
     font-family: "Pretendard-Bold";
     font-size: 4.8rem;
-    margin-top: 1.6rem;
+    margin-top: 2rem;
     ${applyMediaQuery("mobile")} {
       margin-top: 1.2rem;
       font-size: 2.8rem;
