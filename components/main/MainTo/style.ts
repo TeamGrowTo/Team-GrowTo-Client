@@ -102,32 +102,41 @@ export const CategoryComment = styled.div`
       line-height: 2.3rem;
     }
   }
-  & > button {
-    width: 26.8rem;
-    height: 5.4rem;
-    border-radius: 4.8rem;
-    background-color: ${colors.mainBlue};
-    font-family: "Pretendard-Bold";
-    font-size: 2rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5.6rem;
-    :hover {
-      cursor: pointer;
-    }
-    ${applyMediaQuery("mobile")} {
-      width: 16.3rem;
-      height: 3.7rem;
-      font-size: 1.4rem;
-      font-family: "Pretendard-SemiBold";
-      margin-top: 3.2rem;
-      margin-bottom: 3.6rem;
-    }
+`;
+
+export const NextArrowWrapper = styled.div`
+  display: flex;
+  margin-left: 0.8rem;
+  ${applyMediaQuery("mobile")} {
+    margin-left: 0.4rem;
+    width: 0.7rem;
+    height: 0.7rem;
   }
 `;
 
+export const NextButton = styled.button`
+  padding: 1.5rem 4.2rem;
+  height: 5.4rem;
+  border-radius: 4.8rem;
+  background-color: ${colors.mainBlue};
+  font-family: "Pretendard-Regular";
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5.6rem;
+  :hover {
+    cursor: pointer;
+  }
+  ${applyMediaQuery("mobile")} {
+    padding: 1rem 1.6rem;
+    height: 3.7rem;
+    font-size: 1.4rem;
+    margin-top: 3.2rem;
+    margin-bottom: 3.6rem;
+  }
+`;
 export const MainToProcess = styled.section`
   width: 102.8rem;
   height: 44rem;
@@ -142,6 +151,9 @@ export const MainToProcess = styled.section`
 
 export const ResultCardComment = styled.div`
   width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     margin: 0 auto;
@@ -172,7 +184,7 @@ export const ResultCardComment = styled.div`
     color: ${colors.mildBlack};
     font-family: "Pretendard-Bold";
     font-size: 4.8rem;
-    margin-top: 1.6rem;
+    margin-top: 1.9rem;
     ${applyMediaQuery("mobile")} {
       margin-top: 1.2rem;
       font-size: 2.8rem;
@@ -190,31 +202,6 @@ export const ResultCardComment = styled.div`
       margin-top: 0.8rem;
       font-size: 1.6rem;
       line-height: 2.3rem;
-    }
-  }
-  & > button {
-    margin-left: auto;
-    width: 26.8rem;
-    height: 5.4rem;
-    border-radius: 4.8rem;
-    background-color: ${colors.mainBlue};
-    font-family: "Pretendard-Bold";
-    font-size: 2rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5.6rem;
-    :hover {
-      cursor: pointer;
-    }
-    ${applyMediaQuery("mobile")} {
-      width: 16.3rem;
-      height: 3.7rem;
-      font-size: 1.4rem;
-      font-family: "Pretendard-SemiBold";
-      margin-top: 3.2rem;
-      margin-bottom: 3.6rem;
     }
   }
 `;
@@ -280,7 +267,7 @@ export const StoryComment = styled.div`
     color: ${colors.mildBlack};
     font-family: "Pretendard-Bold";
     font-size: 4.8rem;
-    margin-top: 1.6rem;
+    margin-top: 2rem;
     ${applyMediaQuery("mobile")} {
       margin-top: 1.2rem;
       font-size: 2.8rem;
@@ -296,30 +283,6 @@ export const StoryComment = styled.div`
       margin-top: 0.8rem;
       font-size: 1.6rem;
       line-height: 2.3rem;
-    }
-  }
-  & > button {
-    width: 26.8rem;
-    height: 5.4rem;
-    border-radius: 4.8rem;
-    background-color: ${colors.mainBlue};
-    font-family: "Pretendard-Bold";
-    font-size: 2rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5.6rem;
-    :hover {
-      cursor: pointer;
-    }
-    ${applyMediaQuery("mobile")} {
-      width: 16.3rem;
-      height: 3.7rem;
-      font-size: 1.4rem;
-      font-family: "Pretendard-SemiBold";
-      margin-top: 3.2rem;
-      margin-bottom: 3.6rem;
     }
   }
 `;
