@@ -123,12 +123,18 @@ function MainTo() {
             href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
             passHref
           >
-            <NextButton>
-              그로투 이야기 보러가기
-              <NextArrowWrapper>
-                <Image src={nextArrow} alt="nextArrow" quality={100} />
-              </NextArrowWrapper>
-            </NextButton>
+            <a
+              target="_blank"
+              href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
+              rel="noreferrer"
+            >
+              <NextButton>
+                그로투 이야기 보러가기
+                <NextArrowWrapper>
+                  <Image src={nextArrow} alt="nextArrow" quality={100} />
+                </NextArrowWrapper>
+              </NextButton>
+            </a>
           </Link>
         </StoryComment>
         <Screen mobile>
