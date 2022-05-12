@@ -19,6 +19,7 @@ export const StyledRoot = styled.button<{ isSelected: boolean; isClicked: boolea
   border: solid 0.3rem
     ${({ isSelected }) => (isSelected ? `${colors.mainBlue}` : "rgba(255, 255, 255, 0.7)")};
   ${applyMediaQuery("mobile")} {
+    //font-family: "Pretendard-Regular";
     display: flex;
     flex-direction: row;
     width: 10.4rem;
@@ -50,7 +51,7 @@ export const StyledRoot = styled.button<{ isSelected: boolean; isClicked: boolea
     ${applyMediaQuery("mobile")} {
       margin-top: 0rem;
       margin-left: 1rem;
-      font-family: "Pretendard-Bold";
+      font-family: "Pretendard-Regular";
       font-size: 1.4rem;
     }
   }
