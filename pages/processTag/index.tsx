@@ -150,7 +150,7 @@ export const StyledRoot = styled.main`
   position: relative;
   ${applyMediaQuery("mobile")} {
     width: 100%;
-    height: 100%;
+    height: 85rem;
   }
 `;
 export const PlayIcon = styled.div`
@@ -257,7 +257,7 @@ export const NextArrowWrapper = styled.div`
 
 export const TagBox = styled.div`
   ${applyMediaQuery("mobile")} {
-    height: 25rem;
+    height: 20rem;
     overflow: scroll;
   }
 `;
