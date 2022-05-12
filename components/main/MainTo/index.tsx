@@ -55,7 +55,7 @@ function MainTo() {
           </p>
           <Link href="/category" passHref>
             <button>
-              모든 강의 한눈에 보기 &nbsp;
+              모든 강의 한눈에 보기&nbsp;
               <Image src={nextArrow} alt="nextArrow" quality={100} />
             </button>
           </Link>
@@ -86,7 +86,7 @@ function MainTo() {
           </p>
           <Link href="/process" passHref>
             <button>
-              맞춤 강의 찾기 &nbsp;
+              맞춤 강의 찾기&nbsp;
               <Image src={nextArrow} alt="nextArrow" quality={100} />
             </button>
           </Link>
@@ -118,7 +118,7 @@ function MainTo() {
             passHref
           >
             <button>
-              그로투 이야기 보러가기 &nbsp;
+              그로투 이야기 보러가기&nbsp;
               <Image src={nextArrow} alt="nextArrow" quality={100} />
             </button>
           </Link>

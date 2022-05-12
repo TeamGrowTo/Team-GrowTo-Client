@@ -107,7 +107,7 @@ export const CategoryComment = styled.div`
     height: 5.4rem;
     border-radius: 4.8rem;
     background-color: ${colors.mainBlue};
-    font-family: "Pretendard-Bold";
+    font-family: "Pretendard-Regular";
     font-size: 2rem;
     color: white;
     display: flex;
@@ -121,7 +121,6 @@ export const CategoryComment = styled.div`
       width: 16.3rem;
       height: 3.7rem;
       font-size: 1.4rem;
-      font-family: "Pretendard-SemiBold";
       margin-top: 3.2rem;
       margin-bottom: 3.6rem;
     }
@@ -198,7 +197,7 @@ export const ResultCardComment = styled.div`
     height: 5.4rem;
     border-radius: 4.8rem;
     background-color: ${colors.mainBlue};
-    font-family: "Pretendard-Bold";
+    font-family: "Pretendard-Regular";
     font-size: 2rem;
     color: white;
     display: flex;
@@ -208,11 +207,11 @@ export const ResultCardComment = styled.div`
     :hover {
       cursor: pointer;
     }
+
     ${applyMediaQuery("mobile")} {
       width: 16.3rem;
       height: 3.7rem;
       font-size: 1.4rem;
-      font-family: "Pretendard-SemiBold";
       margin-top: 3.2rem;
       margin-bottom: 3.6rem;
     }
@@ -303,7 +302,7 @@ export const StoryComment = styled.div`
     height: 5.4rem;
     border-radius: 4.8rem;
     background-color: ${colors.mainBlue};
-    font-family: "Pretendard-Bold";
+    font-family: "Pretendard-Regular";
     font-size: 2rem;
     color: white;
     display: flex;
@@ -317,7 +316,6 @@ export const StoryComment = styled.div`
       width: 16.3rem;
       height: 3.7rem;
       font-size: 1.4rem;
-      font-family: "Pretendard-SemiBold";
       margin-top: 3.2rem;
       margin-bottom: 3.6rem;
     }
