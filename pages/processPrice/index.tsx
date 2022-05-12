@@ -166,7 +166,7 @@ export const StyledRoot = styled.main`
   position: relative;
   ${applyMediaQuery("mobile")} {
     width: 100%;
-    height: 100%;
+    height: 85rem;
   }
 `;
 export const PlayIcon = styled.div`
