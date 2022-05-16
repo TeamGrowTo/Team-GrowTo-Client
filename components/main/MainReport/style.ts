@@ -5,15 +5,22 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = styled.section`
   box-sizing: border-box;
   width: 100vw;
-  height: 60.3rem;
+  height: 83.3rem;
   max-width: 100%;
   background-color: ${colors.skyBlue};
   background-image: url("/assets/images/mainReportBackground.png");
-  display: flex;
-  justify-content: center;
-  align-items: center;
   ${applyMediaQuery("mobile")} {
-    height: 22.6rem;
+    height: 36.8rem;
+    background-image: url("/assets/images/mainReportBackground-mobile.png");
+  }
+`;
+
+export const StyledBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4%;
+  ${applyMediaQuery("mobile")} {
   }
 `;
 
@@ -25,14 +32,16 @@ export const Wrapper = styled.article`
   border: 0.2rem solid #ffffff;
   border-radius: 3rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 0 4rem;
+  margin-bottom: 11.7rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
     height: 14.6rem;
     border-radius: 1.8rem;
+    margin-bottom: 4.7rem;
   }
 `;
 

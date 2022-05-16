@@ -11,12 +11,12 @@ type Props = {
 };
 
 function ResultCard({ result }: Props) {
-  const { name, time, price, createdDate, replay, tags, url } = result;
+  const { name, time, price, createdDate, replay, tags, url, site } = result;
 
   return (
     <StyledRoot>
       <Description>
-        <LectureSite>인프런</LectureSite>
+        <LectureSite>{site}</LectureSite>
         <LectureTitle>{name}</LectureTitle>
         <Info replay={replay} time={time} price={price} createdDate={createdDate} />
         <Tags tags={tags} />

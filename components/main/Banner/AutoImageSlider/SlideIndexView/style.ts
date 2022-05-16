@@ -6,6 +6,7 @@ export const StyledRoot = styled.aside`
   align-items: center;
   width: 5.2rem;
   height: 2.8rem;
+  margin-right: 2.8rem;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 5rem;
   color: white;

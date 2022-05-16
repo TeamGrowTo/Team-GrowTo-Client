@@ -7,7 +7,7 @@ export const StyledRoot = styled.section`
   margin-bottom: 2rem;
 
   ${applyMediaQuery("mobile")} {
-    margin-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
   }
 
   & > ul {
@@ -18,7 +18,7 @@ export const StyledRoot = styled.section`
     font-size: 2rem;
 
     ${applyMediaQuery("mobile")} {
-      height: 7.8rem;
+      height: 10.4rem;
       font-size: 1.6rem;
     }
   }
@@ -34,11 +34,23 @@ export const InfoName = styled.ul`
   & > li {
     width: 2.4rem;
     height: 2.4rem;
+
+    ${applyMediaQuery("mobile")} {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
   }
 `;
 
 export const InfoData = styled.ul`
   color: ${colors.mildBlack};
-  font-size: 2rem;
   font-family: "Pretendard-Medium";
+
+  & > li {
+    font-size: 2rem;
+
+    ${applyMediaQuery("mobile")} {
+      font-size: 1.6rem;
+    }
+  }
 `;
