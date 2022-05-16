@@ -13,8 +13,6 @@ type Props = {
 function ResultCard({ result }: Props) {
   const { name, time, price, createdDate, replay, tags, url, site } = result;
 
-  console.log(result);
-
   return (
     <StyledRoot>
       <Description>

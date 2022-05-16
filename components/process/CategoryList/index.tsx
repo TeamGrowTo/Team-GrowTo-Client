@@ -17,8 +17,6 @@ function CategoryList({ iconList, onCategoryClick, isClicked }: Props) {
   const currentCategory = useRecoilValue(currentCategoryState);
   const categoryList = useRecoilValue(lectureCategoryState);
 
-  console.log(isClicked);
-
   return (
     <StyledRoot>
       {categoryList?.map((category, index) => (

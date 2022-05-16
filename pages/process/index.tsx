@@ -201,7 +201,7 @@ export const StyledRoot = styled.main`
   position: relative;
   ${applyMediaQuery("mobile")} {
     width: 100%;
-    height: 100%;
+    height: 85rem;
   }
 `;
 
@@ -245,7 +245,7 @@ export const CardChoice = styled.section`
   }
 `;
 
-export const CategoryWrapper = styled.div`
+export const CategoryWrapper = styled.section`
   width: 90rem;
   margin: 6rem auto 0 6.4rem;
   & > p {

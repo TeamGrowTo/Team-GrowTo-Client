@@ -47,6 +47,9 @@ export const Skill = styled.button<{ isSelected: boolean }>`
   margin-right: 0.8rem;
   margin-bottom: 1.2rem;
   padding: 0.7rem 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgb(255, 255, 255, 0.7);
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;

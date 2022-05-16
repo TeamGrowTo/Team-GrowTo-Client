@@ -7,6 +7,7 @@ export { default as EyeIcon } from "./ic_eye.png";
 export { default as RecommendIcon } from "./ic_recommend.png";
 export { default as ZoomIcon } from "./ic_zoom.png";
 export { default as MainBannerCompass } from "./mainBannerCompass.png";
+export { default as MainBannerCustomLecture } from "./mainBannerCustomLecture.png";
 export { default as MainCircleImg } from "./mainCircle.png";
 export { default as MainLectureDataIcon } from "./mainLectureDataIcon.png";
 export { default as MainLectureDesignIcon } from "./mainLectureDesignIcon.png";
