@@ -16,7 +16,7 @@ export const StyledRoot = styled.div`
 
 export const SortingWrapper = styled.div`
   ${applyMediaQuery("mobile")} {
-    max-width: 32.8rem;
+    max-width: 37rem;
     min-width: 30rem;
     height: 100%;
     display: flex;
@@ -27,8 +27,8 @@ export const SortingWrapper = styled.div`
     height: 100%;
 
     & > * {
-      margin-right: 0.6rem;
-      margin-bottom: 0.6rem;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
     }
 
     & > *:last-child {
