@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { currentSkillState, lectureDataList } from "store/state";
+import { currentCategoryState, currentSkillState, lectureDataList } from "store/state";
 
 import CardListContainer from "../CardListContainer";
 import SortingBox from "../SortingBox";
@@ -16,14 +16,17 @@ function Result() {
   //categoryId, skillId 받아와서 api요청하기
   const LectureDataList = useRecoilValue(lectureDataList);
   const skill = useRecoilValue(currentSkillState);
+  const category = useRecoilValue(currentCategoryState);
 
   return (
     <ResultBox>
       <ResultTop>
         {skill?.skillName ? (
           <LectureCountBox>
-            <LectureCount color="mainBlue">총 {LectureDataList?.length}개</LectureCount>
-            <LectureCount color="subBlack">강의</LectureCount>
+            <LectureCount color="mainBlue">총 {LectureDataList?.length}개 </LectureCount>
+            <LectureCount color="mildBlack">
+              {skill.skillName} {category?.categoryName} 강의
+            </LectureCount>
           </LectureCountBox>
         ) : (
           <NoLecture>전체 0</NoLecture>

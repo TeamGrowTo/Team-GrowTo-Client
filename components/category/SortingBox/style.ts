@@ -10,7 +10,6 @@ export const StyledRoot = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 2.2rem;
   }
 `;
 
