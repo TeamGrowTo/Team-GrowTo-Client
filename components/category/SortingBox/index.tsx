@@ -35,8 +35,6 @@ export enum SortingText {
   //수강 기간
   "긴 순서" = "repeat",
   "짧은 순서" = "-repeat",
-  //질의 응답시간
-  "빠름" = "answer",
 }
 
 function SortingBox() {
