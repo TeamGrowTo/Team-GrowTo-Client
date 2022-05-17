@@ -20,13 +20,7 @@ function FirstBanner() {
           <Image src={MainBannerCompass} alt="bannerImg" quality={100} />
         </Screen>
         <Screen mobile>
-          <Image
-            src={MobileMainBannerCompass}
-            alt="bannerImg"
-            width={304}
-            height={135}
-            quality={100}
-          />
+          <Image src={MobileMainBannerCompass} alt="bannerImg" quality={100} />
         </Screen>
       </ImageWrapper>
     </StyledRoot>
