@@ -4,7 +4,7 @@ import { currentCategoryState, currentSkillState, lectureDataList } from "store/
 
 import CardListContainer from "../CardListContainer";
 import SortingBox from "../SortingBox";
-import { LectureCount, LectureCountBox, NoLecture, ResultBox, ResultTop } from "./style";
+import { LectureCount, LectureCountBox, ResultBox, ResultTop } from "./style";
 function Result() {
   //todo(1):skill선택 후 response 받아서 강의 몇개인지 표시
   //todo(2):sorting버튼에 따라 결과 정렬 : 중복안됨O
@@ -29,7 +29,7 @@ function Result() {
             </LectureCount>
           </LectureCountBox>
         ) : (
-          <NoLecture>전체 0</NoLecture>
+          <LectureCountBox>전체 0</LectureCountBox>
         )}
         <SortingBox />
       </ResultTop>

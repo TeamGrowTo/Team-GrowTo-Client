@@ -156,7 +156,7 @@ const Background = styled.section`
   background-color: ${colors.gray0};
   width: 100%;
   position: relative;
-  padding-top: 9rem;
+  padding-top: 6.6rem;
   ${applyMediaQuery("mobile")} {
     padding-top: 5.2rem;
   }

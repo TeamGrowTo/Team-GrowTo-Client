@@ -26,25 +26,21 @@ export const ResultTop = styled.div`
   display: flex;
   justify-content: space-between;
   ${applyMediaQuery("mobile")} {
-    flex-direction: column;
     align-items: center;
+  }
+  @media (max-width: 720px) {
+    flex-direction: column;
   }
 `;
 
 export const LectureCountBox = styled.span`
+  font-family: "Pretendard-Regular";
+  color: #b6b6b6;
+  @media (max-width: 720px) {
+    margin-bottom: 2.6rem;
+  }
   ${applyMediaQuery("mobile")} {
     display: block;
-    margin-bottom: 2rem;
-  }
-`;
-
-export const NoLecture = styled.span`
-  font-family: "Pretendard-Regular";
-  font-size: 2.4rem;
-  line-height: 2.9rem;
-  color: #b6b6b6;
-  ${applyMediaQuery("mobile")} {
-    font-size: 1.8rem;
   }
 `;
 
