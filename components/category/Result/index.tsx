@@ -20,8 +20,6 @@ function Result() {
   const category = useRecoilValue(currentCategoryState);
   const router = useRouter();
 
-  console.log(router.pathname);
-
   return (
     <ResultBox>
       <ResultTop>

@@ -30,6 +30,7 @@ export const colors: IColorsIndex = {
   gray5: "#868686",
   gray6: "#585858",
   gray7: "#2F2F2F",
+  bgGray: "#B6B6B6",
   사용툴: "#E5DCEE",
   커리큘럼: "#FDECC8",
   강좌특성: "#DCEEEB",
