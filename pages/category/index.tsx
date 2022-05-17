@@ -22,6 +22,7 @@ import {
 } from "store/state";
 import styled from "styled-components";
 import { colors } from "styles/colors";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 function Category() {
   const [category, setCurrentCategory] = useRecoilState(currentCategoryState);
@@ -155,4 +156,9 @@ const Background = styled.section`
   background-color: ${colors.gray0};
   width: 100%;
   position: relative;
+  padding-top: 6.6rem;
+  ${applyMediaQuery("mobile")} {
+    min-width: 300px;
+    padding-top: 5.2rem;
+  }
 `;
