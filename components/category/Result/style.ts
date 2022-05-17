@@ -35,6 +35,7 @@ export const ResultTop = styled.div`
 
 export const LectureCountBox = styled.span`
   font-family: "Pretendard-Regular";
+  font-size: 2.4rem;
   color: #b6b6b6;
   @media (max-width: 720px) {
     margin-bottom: 2.6rem;

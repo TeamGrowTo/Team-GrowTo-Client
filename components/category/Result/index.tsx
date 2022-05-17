@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { currentCategoryState, currentSkillState, lectureDataList } from "store/state";
@@ -17,6 +18,9 @@ function Result() {
   const LectureDataList = useRecoilValue(lectureDataList);
   const skill = useRecoilValue(currentSkillState);
   const category = useRecoilValue(currentCategoryState);
+  const router = useRouter();
+
+  console.log(router.pathname);
 
   return (
     <ResultBox>
@@ -24,9 +28,12 @@ function Result() {
         {skill?.skillName ? (
           <LectureCountBox>
             <LectureCount color="mainBlue">총 {LectureDataList?.length}개 </LectureCount>
-            <LectureCount color="mildBlack">
-              {skill.skillName} {category?.categoryName} 강의
-            </LectureCount>
+            {router.pathname == "/result/[id]" && (
+              <LectureCount color="mildBlack">
+                {skill.skillName} {category?.categoryName}
+              </LectureCount>
+            )}
+            <LectureCount color="mildBlack"> 강의</LectureCount>
           </LectureCountBox>
         ) : (
           <LectureCountBox>전체 0</LectureCountBox>
