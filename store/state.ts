@@ -27,18 +27,12 @@ export const isDisableState = atom({
   default: true,
 });
 
-export type SortingType = "총 소요시간" | "가격" | "개설일" | "수강 기간" | "질의응답 시간";
+export type SortingType = "총 소요시간" | "가격" | "개설일" | "수강 기간";
 
 export type tagType = "난이도" | "사용툴" | "커리큘럼" | "강좌특성";
 
 //정렬하는 select형식의 button들을 만들기 위해 기준을 배열로 만든 후 리턴문에서 map 해주기
-export const sortingCriteria: SortingType[] = [
-  "총 소요시간",
-  "가격",
-  "개설일",
-  "수강 기간",
-  "질의응답 시간",
-];
+export const sortingCriteria: SortingType[] = ["총 소요시간", "가격", "개설일", "수강 기간"];
 
 //sorting isOpen 객체의 type정의
 export interface ISorting {
@@ -52,7 +46,6 @@ export const isOpenDefault = {
   가격: false,
   개설일: false,
   "수강 기간": false,
-  "질의응답 시간": false,
 };
 
 export const isOpenState = atom<ISorting>({
@@ -83,7 +76,6 @@ export type SortingItemType =
   | "최근 순"
   | "높은 순"
   | "낮은 순"
-  | "빠름"
   | "긴 순서"
   | "짧은 순서";
 
@@ -102,7 +94,6 @@ export const dropListName: IDropListName = {
   가격: ["높은 순", "낮은 순"],
   개설일: ["최근 순"],
   "수강 기간": ["긴 순서", "짧은 순서"],
-  "질의응답 시간": ["빠름"],
 };
 
 //어떤 것이 선택되었는지를 표시하기 위한 객체. 처음에는 아무것도 선택되지 않았기 때문에 빈문자열.
@@ -114,7 +105,6 @@ export const currentSortingDefault: ICurrentSortingType = {
   가격: "",
   개설일: "",
   "수강 기간": "",
-  "질의응답 시간": "",
 };
 
 export const currentSortingState = atom<ICurrentSortingType>({
