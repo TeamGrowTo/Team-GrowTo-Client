@@ -158,6 +158,7 @@ const Background = styled.section`
   position: relative;
   padding-top: 6.6rem;
   ${applyMediaQuery("mobile")} {
+    min-width: 300px;
     padding-top: 5.2rem;
   }
 `;

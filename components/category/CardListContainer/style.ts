@@ -12,10 +12,9 @@ const StyledRoot = styled.section`
     margin: 6rem auto;
     width: 65rem;
   }
-
   ${applyMediaQuery("mobile")} {
     margin: 0;
-    margin-top: 2.4rem;
+    margin-top: -10.6rem;
     width: unset;
     justify-content: center;
   }
