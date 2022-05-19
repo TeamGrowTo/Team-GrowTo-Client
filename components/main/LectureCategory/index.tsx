@@ -1,5 +1,5 @@
 import { getLectureCategoryData } from "apis/info.api";
-import Image from "next/image";
+import { UseSorting } from "hooks/UseCategorySorting";
 import {
   MainLectureDataIcon,
   MainLectureDesignIcon,
@@ -9,65 +9,34 @@ import {
   MainLecturePlanIcon,
 } from "public/assets/images";
 import React, { useEffect } from "react";
-import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
-import {
-  currentCategoryState,
-  currentSkillState,
-  currentSortingState,
-  isDisableState,
-  isOpenState,
-  isSelectedState,
-  lectureCategoryState,
-  lectureDataList,
-} from "store/state";
-import Screen from "styles/Screen";
+import { useSetRecoilState } from "recoil";
+import { lectureCategoryState } from "store/state";
 
-import Category from "./Category";
-import { CategoryWrapper, StyledRoot } from "./style";
+import CategoryList from "./CategoryList";
+import { StyledRoot } from "./style";
 
 const iconList: StaticImageData[] = [
   MainLectureDevelopIcon,
   MainLecturePlanIcon,
-  MainLectureDataIcon,
   MainLectureDesignIcon,
   MainLectureMarketingIcon,
+  MainLectureDataIcon,
   MainLectureEtcIcon,
 ];
 
-const MainLectureCategory = function () {
-  const [categoryList, setCategoryList] = useRecoilState(lectureCategoryState);
-  const setCurrentCategory = useSetRecoilState(currentCategoryState);
+//server에서 들고온 데이터 가공 및 icon과 매핑 등 서버에서 가져온 데이터 관리는 여기서 수행함.
+function MainLectureCategory() {
+  const setCategoryList = useSetRecoilState(lectureCategoryState);
+  const { filterCategory } = UseSorting();
 
-  const resetLectureListData = useResetRecoilState(lectureDataList);
-  const resetCurrentSorting = useResetRecoilState(currentSortingState);
-  const resetIsDisable = useResetRecoilState(isDisableState);
-  const resetIsOpen = useResetRecoilState(isOpenState);
-  const resetIsSelected = useResetRecoilState(isSelectedState);
-  const resetSkillData = useResetRecoilState(currentSkillState);
+  const categoryViewArr = ["개발", "기획", "디자인", "마케팅", "데이터", "기타"];
 
-  //분야 선택시 category페이지의 기존 skill 및 강의목록 데이터 삭제
-  const resetData = () => {
-    resetSkillData();
-    resetLectureListData();
-    resetIsDisable();
-    resetIsOpen();
-    resetCurrentSorting();
-    resetIsSelected();
-  };
-
-  const setLectureCategory = async (): Promise<void> => {
+  const setLectureCategory = async () => {
     const result = await getLectureCategoryData();
 
-    setCategoryList(result);
-  };
+    const filteredCategoryList = filterCategory(result, categoryViewArr);
 
-  const handleCategoryClick = (id: number | null) => {
-    if (id) {
-      const result = categoryList?.filter((category) => category.id === id)[0] || null;
-
-      setCurrentCategory(result);
-      resetData();
-    }
+    setCategoryList(filteredCategoryList);
   };
 
   useEffect(() => {
@@ -78,23 +47,9 @@ const MainLectureCategory = function () {
     <StyledRoot>
       <h3>내가 찾고 싶은 강의 분야는?</h3>
       <small>10초만에 내게 맞는 강의 찾기</small>
-      <CategoryWrapper>
-        {categoryList?.map((category, index) => (
-          <Category key={category.id} onCategoryClick={() => handleCategoryClick(category.id)}>
-            <>
-              <Screen desktop>
-                <Image src={iconList[index]} alt="categoryIcon" />
-              </Screen>
-              <Screen mobile>
-                <Image src={iconList[index]} alt="categoryIcon" width="18" height="18" />
-              </Screen>
-              <span>{category.categoryName}</span>
-            </>
-          </Category>
-        ))}
-      </CategoryWrapper>
+      <CategoryList iconList={iconList} />
     </StyledRoot>
   );
-};
+}
 
 export default MainLectureCategory;

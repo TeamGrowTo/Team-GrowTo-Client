@@ -79,6 +79,11 @@ function SmallNavBar() {
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
+                <Link href="/process" passHref>
+                  <LinkA onClick={handleResetLectureData}>맞춤강의</LinkA>
+                </Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
                 <Link href="/request" passHref>
                   <LinkA>비교요청</LinkA>
                 </Link>
@@ -88,7 +93,9 @@ function SmallNavBar() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSfKYVx60U_JMVBjJPgmCLS6CbcN1WaVuiMZ3Fi2YN6VCA5W-Q/viewform"
                   passHref
                 >
-                  <LinkA target="_blank">후기작성</LinkA>
+                  <LinkA target="_blank" rel="noreferrer noopener">
+                    후기작성
+                  </LinkA>
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
@@ -96,7 +103,9 @@ function SmallNavBar() {
                   href="https://lud2ns.notion.site/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
                   passHref
                 >
-                  <LinkA target="_blank">ABOUT</LinkA>
+                  <LinkA target="_blank" rel="noreferrer noopener">
+                    ABOUT
+                  </LinkA>
                 </Link>
               </NavMenuListItem>
             </NavMenuList>

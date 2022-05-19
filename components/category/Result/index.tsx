@@ -1,16 +1,11 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { currentSkillState, lectureDataList } from "store/state";
+import { currentCategoryState, currentSkillState, lectureDataList } from "store/state";
 
 import CardListContainer from "../CardListContainer";
 import SortingBox from "../SortingBox";
-import {
-  MessageWrapper,
-  NoResultMessage,
-  ResultBlueMessage,
-  ResultBox,
-  ResultMessage,
-} from "./style";
+import { LectureCount, LectureCountBox, ResultBox, ResultTop } from "./style";
 function Result() {
   //todo(1):skill선택 후 response 받아서 강의 몇개인지 표시
   //todo(2):sorting버튼에 따라 결과 정렬 : 중복안됨O
@@ -22,21 +17,27 @@ function Result() {
   //categoryId, skillId 받아와서 api요청하기
   const LectureDataList = useRecoilValue(lectureDataList);
   const skill = useRecoilValue(currentSkillState);
+  const category = useRecoilValue(currentCategoryState);
+  const router = useRouter();
 
   return (
     <ResultBox>
-      <MessageWrapper>
+      <ResultTop>
         {skill?.skillName ? (
-          <>
-            <ResultBlueMessage>총 {LectureDataList?.length}개의 </ResultBlueMessage>
-            <ResultBlueMessage>{skill?.skillName}</ResultBlueMessage>
-            <ResultMessage> 강의 모두 보기</ResultMessage>
-          </>
+          <LectureCountBox>
+            <LectureCount color="mainBlue">총 {LectureDataList?.length}개 </LectureCount>
+            {router.pathname == "/result/[id]" && (
+              <LectureCount color="mildBlack">
+                {skill.skillName} {category?.categoryName}
+              </LectureCount>
+            )}
+            <LectureCount color="mildBlack"> 강의</LectureCount>
+          </LectureCountBox>
         ) : (
-          <NoResultMessage>↑에서 ‘강의 세부 분야’ 먼저 선택해주세요</NoResultMessage>
+          <LectureCountBox>전체 0</LectureCountBox>
         )}
-      </MessageWrapper>
-      <SortingBox />
+        <SortingBox />
+      </ResultTop>
       <CardListContainer />
     </ResultBox>
   );

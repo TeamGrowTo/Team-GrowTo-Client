@@ -69,3 +69,12 @@
     url("./Pretendard-SemiBold.subset.woff") format("woff"),
     url("./Pretendard-SemiBold.ttf") format("ttf");
 }
+
+@font-face {
+  font-family: "Poppins-Bold";
+  font-display: fallback;
+  src: local("Poppins-Bold"), url("./Poppins-Bold.woff2") format("woff2"),
+    url("./Poppins-Bold.woff") format("woff"),
+    url("./Poppins-Bold.ttf") format("ttf");
+}
+

@@ -10,6 +10,7 @@ function Layout({ children }: LayoutProps) {
   const router = useRouter();
 
   const isProcess =
+    router.pathname === "/process" ||
     router.pathname === "/processTag" ||
     router.pathname === "/processTime" ||
     router.pathname === "/processPrice"

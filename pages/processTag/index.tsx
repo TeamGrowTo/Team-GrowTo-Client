@@ -97,17 +97,27 @@ function ProcessTag() {
           <CardTitle></CardTitle>
           <CardChoice>
             <TagWrapper>
-              <p>
-                원하는 <span>강의 특성 &#39;2가지&#39;</span>를 선택하세요.
-              </p>
-              {tagList?.map((tag) => (
-                <TagButton
-                  key={tag.id}
-                  tag={tag.name}
-                  onTagClick={handleTagClick}
-                  selectedTags={selectedTags}
-                ></TagButton>
-              ))}
+              <Screen desktop>
+                <p>
+                  원하는 <span>강의 특성 &#39;2가지&#39;</span>를 선택하세요.
+                </p>
+              </Screen>
+              <Screen mobile>
+                <p>
+                  원하는 <span>강의 특성 &#39;2가지&#39;</span>를 <br />
+                  선택하세요.
+                </p>
+              </Screen>
+              <TagBox>
+                {tagList?.map((tag) => (
+                  <TagButton
+                    key={tag.id}
+                    tag={tag.name}
+                    onTagClick={handleTagClick}
+                    selectedTags={selectedTags}
+                  ></TagButton>
+                ))}
+              </TagBox>
             </TagWrapper>
           </CardChoice>
           <NextButtonWrapper>
@@ -140,7 +150,7 @@ export const StyledRoot = styled.main`
   position: relative;
   ${applyMediaQuery("mobile")} {
     width: 100%;
-    height: 100%;
+    height: 85rem;
   }
 `;
 export const PlayIcon = styled.div`
@@ -173,7 +183,7 @@ export const CardChoice = styled.section`
   border: 2px solid white;
   ${applyMediaQuery("mobile")} {
     width: 100%;
-    height: 100%;
+    min-height: 30rem;
     border-radius: 0;
   }
 `;
@@ -195,6 +205,7 @@ export const TagWrapper = styled.div`
     margin: 3.2rem auto 4rem;
     & > p {
       font-size: 2rem;
+      line-height: 2.8rem;
     }
   }
 `;
@@ -241,5 +252,12 @@ export const NextArrowWrapper = styled.div`
     top: 5.9rem;
     right: 1rem;
     margin-right: 3.5rem;
+  }
+`;
+
+export const TagBox = styled.div`
+  ${applyMediaQuery("mobile")} {
+    height: 20rem;
+    overflow: scroll;
   }
 `;

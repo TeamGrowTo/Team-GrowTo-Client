@@ -2,13 +2,21 @@ import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 const StyledRoot = styled.section`
-  margin-top: 4.8rem;
+  margin: -1rem;
+  margin-top: 6rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  @media (max-width: 720px) {
+    margin: 6rem auto;
+    width: 65rem;
+  }
   ${applyMediaQuery("mobile")} {
-    margin-top: 2rem;
+    margin: 0;
+    margin-top: -10.6rem;
+    width: unset;
+    justify-content: center;
   }
 `;
 

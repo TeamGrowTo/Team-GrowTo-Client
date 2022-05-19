@@ -8,7 +8,7 @@ export const StyledRoot = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${colors.paleViolet};
+  background: linear-gradient(180deg, #7878c8 0%, #401a93 100%);
   overflow: hidden;
 `;
 
@@ -31,33 +31,6 @@ export const Title = styled.h1`
     font-size: 2.2rem;
     margin-bottom: 0.8rem;
   }
-`;
-
-export const Description = styled.p`
-  width: 49rem;
-  color: ${colors.gray2};
-  line-height: 3.8rem;
-  font-size: 2.8rem;
-  font-family: "Pretendard-Bold";
-  text-align: center;
-  ${applyMediaQuery("mobile")} {
-    font-size: 1.4rem;
-    width: 22rem;
-    height: auto;
-    line-height: 1.8rem;
-  }
-`;
-
-export const LectureCount = styled.span`
-  color: ${colors.gray0};
-`;
-
-export const LectureSkillData = styled.span`
-  color: ${colors.gray0};
-`;
-
-export const ResultData = styled.span`
-  color: ${colors.gray0};
 `;
 
 export const ResultCardWrapper = styled.section<{ resultDataCount: number }>`
