@@ -7,12 +7,12 @@ import {
   CopyRight,
   FooterContainer,
   FooterTop,
+  ItemWrapper,
+  MenuList,
+  MenuListItem,
+  MenuTitle,
   ServiceIntro,
   ServiceIntroWrapper,
-  ServiceMenuBox,
-  ServiceMenuList,
-  ServiceMenuListItem,
-  ServiceMenuTitle,
   StyledRoot,
 } from "./style";
 function Footer() {
@@ -28,12 +28,12 @@ function Footer() {
               강의 찾는 시간 줄이고 성장에만 집중하세요
             </ServiceIntro>
           </ServiceIntroWrapper>
-          <ServiceMenuBox>
-            <ServiceMenuList>
+          <MenuList>
+            <div>
               <Screen desktop>
-                <ServiceMenuTitle>Service</ServiceMenuTitle>
+                <MenuTitle>Service</MenuTitle>
               </Screen>
-              <ServiceMenuListItem>
+              <MenuListItem>
                 <Link href="https://www.notion.so/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161">
                   <a
                     href="https://www.notion.so/lud2ns/ABOUT-_-Growto-9f2bd2594f914160b0ff08397a78a161"
@@ -43,24 +43,24 @@ function Footer() {
                     서비스 소개
                   </a>
                 </Link>
-              </ServiceMenuListItem>
-            </ServiceMenuList>
-            <ServiceMenuList>
+              </MenuListItem>
+            </div>
+            <ItemWrapper>
               <Screen desktop>
-                <ServiceMenuTitle>Contact Us</ServiceMenuTitle>
+                <MenuTitle>Contact Us</MenuTitle>
               </Screen>
-              <ServiceMenuListItem>
+              <MenuListItem>
                 <Link href="mailto:go.growto@gmail.com">기업 참여</Link>
-              </ServiceMenuListItem>
-              <ServiceMenuListItem>
+              </MenuListItem>
+              <MenuListItem>
                 <Link href="mailto:go.growto@gmail.com">문의하기</Link>
-              </ServiceMenuListItem>
-            </ServiceMenuList>
-            <ServiceMenuList>
+              </MenuListItem>
+            </ItemWrapper>
+            <div>
               <Screen desktop>
-                <ServiceMenuTitle>Social</ServiceMenuTitle>
+                <MenuTitle>Social</MenuTitle>
               </Screen>
-              <ServiceMenuListItem>
+              <MenuListItem>
                 <a
                   href="https://www.instagram.com/growto.official/"
                   target="_blank"
@@ -68,9 +68,9 @@ function Footer() {
                 >
                   <InstagramLogo />
                 </a>
-              </ServiceMenuListItem>
-            </ServiceMenuList>
-          </ServiceMenuBox>
+              </MenuListItem>
+            </div>
+          </MenuList>
         </FooterTop>
         <CopyRight>© 2022 Growto, Inc.</CopyRight>
       </FooterContainer>

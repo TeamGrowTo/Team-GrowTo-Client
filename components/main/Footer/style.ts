@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import { applyMediaQuery } from "styles/mediaQuery";
-const StyledRoot = styled.footer`
+
+export const StyledRoot = styled.footer`
   height: 38rem;
   padding: 7.6rem 2.5rem 6rem 2.5rem;
   background-color: ${colors.gray0};
@@ -9,12 +10,13 @@ const StyledRoot = styled.footer`
   display: flex;
   justify-content: center;
   ${applyMediaQuery("mobile")} {
+    padding: 7.6rem 0rem 6rem 0;
     padding-top: 0rem;
     width: 100%;
   }
 `;
 
-const FooterContainer = styled.div`
+export const FooterContainer = styled.div`
   width: 100%;
   max-width: 128rem;
   display: flex;
@@ -25,7 +27,7 @@ const FooterContainer = styled.div`
   }
 `;
 
-const FooterTop = styled.div`
+export const FooterTop = styled.div`
   border-bottom: solid 1px ${colors.gray3};
   padding-bottom: 6.2rem;
   display: flex;
@@ -36,7 +38,7 @@ const FooterTop = styled.div`
   }
 `;
 
-const CopyRight = styled.span`
+export const CopyRight = styled.span`
   font-family: "Pretendard-Regular";
   font-size: 1.2rem;
   color: ${colors.gray5};
@@ -45,7 +47,7 @@ const CopyRight = styled.span`
   }
 `;
 
-const ServiceIntroWrapper = styled.div`
+export const ServiceIntroWrapper = styled.div`
   margin-top: 0.2rem;
   margin-right: 4.5rem;
   min-width: 31.5rem;
@@ -57,7 +59,7 @@ const ServiceIntroWrapper = styled.div`
   }
 `;
 
-const ServiceIntro = styled.p`
+export const ServiceIntro = styled.p`
   margin-top: 3.4rem;
   font-family: "Pretendard-Medium";
   font-size: 1.6rem;
@@ -70,33 +72,27 @@ const ServiceIntro = styled.p`
   }
 `;
 
-const ServiceMenuBox = styled.div`
-  width: 45.2rem;
+export const MenuList = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  ${applyMediaQuery("mobile")} {
-    width: 100%;
-  }
-`;
-
-const ServiceMenuList = styled.ul`
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 36rem;
   min-width: 9.5rem;
   & + & {
     margin-left: 4.5rem;
   }
   ${applyMediaQuery("mobile")} {
     flex-direction: row;
+    justify-content: space-evenly;
     min-width: 6rem;
+    width: unset;
     & + & {
       margin-left: 1rem;
     }
   }
 `;
 
-const ServiceMenuTitle = styled.h4`
+export const MenuTitle = styled.h4`
   font-family: "Pretendard-Bold";
   font-size: 1.8rem;
   line-height: 2.2rem;
@@ -104,28 +100,18 @@ const ServiceMenuTitle = styled.h4`
   margin-bottom: 2.8rem;
 `;
 
-const ServiceMenuListItem = styled.li`
+export const MenuListItem = styled.li`
   font-family: "Pretendard-Regular";
   font-size: 1.4rem;
   line-height: 2.6rem;
   color: ${colors.gray5};
   ${applyMediaQuery("mobile")} {
     font-size: 1.2rem;
-    & + & {
-      margin-left: 3.2rem;
-    }
   }
 `;
 
-export {
-  CopyRight,
-  FooterContainer,
-  FooterTop,
-  ServiceIntro,
-  ServiceIntroWrapper,
-  ServiceMenuBox,
-  ServiceMenuList,
-  ServiceMenuListItem,
-  ServiceMenuTitle,
-  StyledRoot,
-};
+export const ItemWrapper = styled.span`
+  ${applyMediaQuery("mobile")} {
+    display: contents;
+  }
+`;
