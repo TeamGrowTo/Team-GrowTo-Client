@@ -53,14 +53,18 @@ function SmallCardBox({ lecture }: Props) {
           </Tag>
         ))}
       </TagWrapper>
-      <CardBottom>
-        <Site>{site}</Site>
-        <div>
-          <Price>{price.toLocaleString("ko-KR")}</Price>
-          <PriceUnit>원</PriceUnit>
-          <MoveToIcon />
-        </div>
-      </CardBottom>
+      <Link href={url} passHref>
+        <a href={url} target="_blank" rel="noreferrer">
+          <CardBottom>
+            <Site>{site}</Site>
+            <div>
+              <Price>{price.toLocaleString("ko-KR")}</Price>
+              <PriceUnit>원</PriceUnit>
+              <MoveToIcon />
+            </div>
+          </CardBottom>
+        </a>
+      </Link>
     </StyledRoot>
   );
 }

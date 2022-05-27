@@ -5,7 +5,7 @@ export const StyledRoot = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1.6rem 1.4rem 0rem 1.4rem;
+  padding: 1.6rem 0 0rem 0;
   margin-bottom: 1.2rem;
   max-width: 32.8rem;
   min-width: 30rem;
@@ -14,6 +14,10 @@ export const StyledRoot = styled.div`
   box-shadow: 0rem 0.2rem 0.6rem rgba(3, 0, 167, 0.08);
   border-radius: 1.8rem;
 
+  & div:not(:last-child) {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
   &:hover {
     background: #fbfcff;
   }
@@ -51,7 +55,7 @@ export const LectureInfoBox = styled.div`
   justify-content: space-between;
 `;
 
-export const LectureInfoWrapper = styled.div`
+export const LectureInfoWrapper = styled.span`
   display: inline-flex;
   flex-direction: row;
   min-width: 11.8rem;

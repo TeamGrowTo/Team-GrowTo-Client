@@ -51,7 +51,7 @@ export const TitleName = styled.a`
   font-size: 2.2rem;
   line-height: 3rem;
   text-align: left;
-
+  height: 100%;
   //제목 4줄 이상이면 자르기
   white-space: normal;
   display: -webkit-box;
@@ -151,7 +151,7 @@ export const CardBottom = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     height: 4.8rem;
-    margin: 0;
+    margin: 0 1.4rem;
   }
 `;
 
