@@ -25,7 +25,7 @@ const NavMenuList = styled.ul`
   top: 4.8rem;
   right: 0;
   width: 100%;
-  height: 25rem;
+  height: 29.5rem;
   background-color: white;
   display: flex;
   flex-direction: column;

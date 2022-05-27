@@ -71,6 +71,11 @@ function LargeNavBar() {
               전체강의
             </NavItem>
           </Link>
+          <Link href="/process" passHref>
+            <NavItem onClick={handleResetLectureData} pathName={router.pathname} href="/process">
+              맞춤강의
+            </NavItem>
+          </Link>
           <Link href="/request" passHref>
             <NavItem pathName={router.pathname} href="/request">
               비교요청

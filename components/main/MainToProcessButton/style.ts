@@ -7,6 +7,10 @@ export const StyledRoot = styled.aside`
   display: flex;
   justify-content: center;
   margin-bottom: 11.2rem;
+
+  ${applyMediaQuery("mobile")} {
+    margin-bottom: 4.8rem;
+  }
 `;
 
 export const ButtonWrapper = styled.article`

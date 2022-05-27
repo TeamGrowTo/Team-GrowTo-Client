@@ -79,6 +79,11 @@ function SmallNavBar() {
                 </Link>
               </NavMenuListItem>
               <NavMenuListItem>
+                <Link href="/process" passHref>
+                  <LinkA onClick={handleResetLectureData}>맞춤강의</LinkA>
+                </Link>
+              </NavMenuListItem>
+              <NavMenuListItem>
                 <Link href="/request" passHref>
                   <LinkA>비교요청</LinkA>
                 </Link>
