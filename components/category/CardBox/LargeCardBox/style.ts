@@ -151,7 +151,7 @@ export const CardBottom = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     height: 4.8rem;
-    margin: 0;
+    margin: 0 1.4rem;
   }
 `;
 
