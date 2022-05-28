@@ -46,7 +46,7 @@ function MainLectureCategory() {
   return (
     <StyledRoot>
       <h3>내가 찾고 싶은 강의 분야는?</h3>
-      <small>10초만에 내게 맞는 강의 찾기</small>
+      <small>5초만에 내게 맞는 강의 찾기</small>
       <CategoryList iconList={iconList} />
     </StyledRoot>
   );
