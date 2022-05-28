@@ -182,7 +182,7 @@ export const TimeWrapper = styled.div`
   }
   ${applyMediaQuery("mobile")} {
     width: 32.8rem;
-    margin: 3.2rem auto 5rem;
+    margin: 3.2rem auto 3.5rem;
     line-height: 2.8rem;
     & > p {
       font-size: 2rem;
