@@ -17,7 +17,7 @@ export const StyledRoot = styled.button<{ isClicked: boolean }>`
   ${applyMediaQuery("mobile")} {
     font-size: 1.6rem;
     width: 22rem;
-    height: 6.5rem;
+    height: 5.8rem;
     margin: 0.8rem 6rem;
   }
   :hover {
