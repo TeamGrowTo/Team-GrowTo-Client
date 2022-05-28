@@ -232,9 +232,9 @@ export const NextButton = styled.button<{ selectedTags: string[] }>`
     cursor: pointer;
   }
   ${applyMediaQuery("mobile")} {
-    margin-top: 4rem;
+    margin-top: 3rem;
     width: 9.8rem;
-    height: 5.2rem;
+    height: 4.8rem;
     font-size: 1.6rem;
     margin-right: 2.4rem;
   }
@@ -249,9 +249,9 @@ export const NextArrowWrapper = styled.div`
   right: 6.5rem;
   margin-right: 0.9rem;
   ${applyMediaQuery("mobile")} {
-    top: 5.9rem;
+    top: 4.75rem;
     right: 1rem;
-    margin-right: 3.5rem;
+    margin-right: 3.3rem;
   }
 `;
 
