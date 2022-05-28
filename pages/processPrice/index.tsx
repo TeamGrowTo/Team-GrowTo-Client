@@ -250,9 +250,9 @@ export const NextButton = styled.button<{ selectedPrice: string }>`
   }
   ${applyMediaQuery("mobile")} {
     font-size: 1.6rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
     width: 12.6rem;
-    height: 5.2rem;
+    height: 4.8rem;
     margin-right: 2.4rem;
   }
   :focus-visible {
@@ -266,9 +266,9 @@ export const NextArrowWrapper = styled.div`
   right: 4.2rem;
   margin-right: 1.1rem;
   ${applyMediaQuery("mobile")} {
-    top: 5.9rem;
+    top: 4.75rem;
     right: 1rem;
-    margin-right: 3.5rem;
+    margin-right: 3.3rem;
   }
 `;
 
