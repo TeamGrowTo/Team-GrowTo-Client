@@ -8,8 +8,14 @@ const StyledRoot = styled.section`
   flex-wrap: wrap;
   flex-direction: row;
 
+  @media (max-width: 720px) {
+    margin: 6rem auto;
+    width: 65rem;
+  }
   ${applyMediaQuery("mobile")} {
-    margin-top: 2.4rem;
+    margin: 0;
+    margin-top: -10.6rem;
+    width: unset;
     justify-content: center;
   }
 `;

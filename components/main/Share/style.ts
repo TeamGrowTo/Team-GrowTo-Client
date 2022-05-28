@@ -31,7 +31,7 @@ export const OurMission = styled.h3`
   }
 `;
 
-export const ShareBox = styled.div`
+export const SloganBox = styled.div`
   margin: 0 auto;
   margin-top: 3rem;
   width: 94.8rem;

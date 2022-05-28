@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MainBannerCustomLecture } from "public/assets/images";
+import { MainBannerCustomLecture, MobileMainBannerCustomLecture } from "public/assets/images";
 import React from "react";
 import Screen from "styles/Screen";
 
@@ -27,10 +27,10 @@ function SecondBanner() {
         </Screen>
         <Screen mobile>
           <Image
-            src={MainBannerCustomLecture}
+            src={MobileMainBannerCustomLecture}
             alt="bannerImg"
-            width={304}
-            height={135}
+            width={288}
+            height={131}
             quality={100}
           />
         </Screen>

@@ -22,31 +22,35 @@ export const ResultBox = styled.div`
 `;
 
 export const ResultTop = styled.div`
-  padding-top: 9rem;
+  padding-top: 2.4rem;
   display: flex;
   justify-content: space-between;
   ${applyMediaQuery("mobile")} {
-    flex-direction: column;
     align-items: center;
+  }
+  @media (max-width: 720px) {
+    flex-direction: column;
   }
 `;
 
 export const LectureCountBox = styled.span`
+  font-family: "Pretendard-Regular";
+  font-size: 2.4rem;
+  color: ${colors.bgGray};
+  @media (max-width: 720px) {
+    margin-bottom: 2.6rem;
+  }
   ${applyMediaQuery("mobile")} {
     display: block;
   }
 `;
 
-export const NoLecture = styled.span`
-  font-family: "Pretendard-Regular";
-  font-size: 2.4rem;
-  line-height: 2.9rem;
-  color: #b6b6b6;
-`;
-
-export const LectureCount = styled.span<{ color: "mainBlue" | "subBlack" }>`
+export const LectureCount = styled.span<{ color: "mainBlue" | "mildBlack" }>`
   font-family: "Pretendard-Bold";
   font-size: 2.4rem;
   line-height: 2.9rem;
-  color: ${(props) => colors[props.color] || colors.subBlack};
+  color: ${(props) => colors[props.color] || colors.mildBlack};
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.8rem;
+  }
 `;
